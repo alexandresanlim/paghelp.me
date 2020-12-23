@@ -53,14 +53,18 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             var success = false;
 
             if (IsEdit)
+            {
                 success = PixKeyDataBase.Update(CurrentPixKey);
+                DashboardViewModel.LoadDataCommand.Execute(null);
+            }
 
             else
+            {
                 success = PixKeyDataBase.Insert(CurrentPixKey);
-
-            DashboardViewModel.PixKeyList.Insert((DashboardViewModel.PixKeyList.Count - 1), CurrentPixKey);
-            CurrentPixKey.RaisePresentation();
-            await DashboardViewModel.LoadCurrentPixKey(CurrentPixKey);
+                DashboardViewModel.PixKeyList.Insert((DashboardViewModel.PixKeyList.Count - 1), CurrentPixKey);
+                CurrentPixKey.RaisePresentation();
+                await DashboardViewModel.LoadCurrentPixKey(CurrentPixKey);
+            }
 
             //if (success)
             //{
