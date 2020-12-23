@@ -56,11 +56,12 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 success = PixKeyDataBase.Update(CurrentPixKey);
 
             else
+            {
                 success = PixKeyDataBase.Insert(CurrentPixKey);
-
-            DashboardViewModel.PixKeyList.Insert((DashboardViewModel.PixKeyList.Count - 1), CurrentPixKey);
-            CurrentPixKey.RaisePresentation();
-            await DashboardViewModel.LoadCurrentPixKey(CurrentPixKey);
+                DashboardViewModel.PixKeyList.Insert((DashboardViewModel.PixKeyList.Count - 1), CurrentPixKey);
+                CurrentPixKey.RaisePresentation();
+                await DashboardViewModel.LoadCurrentPixKey(CurrentPixKey);
+            }
 
             //if (success)
             //{
