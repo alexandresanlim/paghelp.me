@@ -18,3 +18,16 @@
 # Build Status
 [![Build status](https://build.appcenter.ms/v0.1/apps/114095c5-8cba-402d-94bb-31a1f3df8a98/branches/master/badge)](https://appcenter.ms)
 
+# Pacotes usados
+[pix-payload-generator.net](https://github.com/alexandresanlim/pix-payload-generator.net)
+
+[LiteDB](https://github.com/mbdavid/LiteDB)
+
+[Xam.Forms.QRCode](https://github.com/dotnet-ad/Xam.Forms.QRCode)
+
+[Xamarin.Forms.PancakeView](https://github.com/sthewissen/Xamarin.Forms.PancakeView)
+
+[userdialogs](https://github.com/aritchie/userdialogs)
+
+
+
