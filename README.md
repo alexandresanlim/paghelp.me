@@ -1,8 +1,9 @@
-# PIX OFF - Gerador de QrCode Offline
 
 <p align='center'> 
-  <img width='250' src='https://github.com/alexandresanlim/PixQrCodeGeneratorOffline/blob/master/PixQrCodeGeneratorOffline/PixQrCodeGeneratorOffline.Android/Resources/drawable/splash.png?raw=true' />
+  <img width='200' src='https://github.com/alexandresanlim/PixQrCodeGeneratorOffline/blob/master/PixQrCodeGeneratorOffline/PixQrCodeGeneratorOffline.Android/Resources/drawable/splash.png?raw=true' />
  </p>
+ 
+ # PIX OFF - Gerador de QrCode Offline
     
 <p align='center'> 
   <a href='https://play.google.com/store/apps/details?id=io.github.pixqrcodegeneratoroffline'><img src="https://img.shields.io/badge/Google_Play-414141?style=for-the-badge&logo=google-play&logoColor=white" /></a>
