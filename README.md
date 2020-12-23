@@ -10,10 +10,11 @@
   <a href='https://install.appcenter.ms/users/alexandre.sanlim/apps/pix-off/distribution_groups/public'><img src="https://img.shields.io/badge/Android_Apk-3DDC84?style=for-the-badge&logo=android&logoColor=white" /></a>
 </p>
     
-
+<p align='center'>
 | First Header  | Second Header | First Header  | Second Header |
 | ------------- | ------------- | ------------- | ------------- |
-| <img width="150" src="https://github.com/alexandresanlim/XamarinUI.MyGallery/blob/master/screen/android/pixqrcodegeneratoroffline/animation.gif?raw=true"/>  | <img width="150" src="https://github.com/alexandresanlim/XamarinUI.MyGallery/blob/master/screen/android/pixqrcodegeneratoroffline/3.png?raw=true"/> | <img width="150" src="https://github.com/alexandresanlim/XamarinUI.MyGallery/blob/master/screen/android/pixqrcodegeneratoroffline/4.png?raw=true"/> | <img width="150" src="https://github.com/alexandresanlim/XamarinUI.MyGallery/blob/master/screen/android/pixqrcodegeneratoroffline/5.png?raw=true"/> |
+| <img width="200" src="https://github.com/alexandresanlim/XamarinUI.MyGallery/blob/master/screen/android/pixqrcodegeneratoroffline/animation.gif?raw=true"/>  | <img width="200" src="https://github.com/alexandresanlim/XamarinUI.MyGallery/blob/master/screen/android/pixqrcodegeneratoroffline/3.png?raw=true"/> | <img width="200" src="https://github.com/alexandresanlim/XamarinUI.MyGallery/blob/master/screen/android/pixqrcodegeneratoroffline/4.png?raw=true"/> | <img width="200" src="https://github.com/alexandresanlim/XamarinUI.MyGallery/blob/master/screen/android/pixqrcodegeneratoroffline/5.png?raw=true"/> |
+  </p>
 
 
 # Build Status
