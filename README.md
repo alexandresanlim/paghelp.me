@@ -11,9 +11,9 @@
 </p>
     
 
-| First Header  | Second Header | First Header  | Second Header | First Header  | Second Header |
-| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
-| <img width="150" src="https://github.com/alexandresanlim/XamarinUI.MyGallery/blob/master/screen/android/pixqrcodegeneratoroffline/animation.gif?raw=true"/>  | <img width="150" src="https://github.com/alexandresanlim/XamarinUI.MyGallery/blob/master/screen/android/pixqrcodegeneratoroffline/1.png?raw=true"/> | <img width="150" src="https://github.com/alexandresanlim/XamarinUI.MyGallery/blob/master/screen/android/pixqrcodegeneratoroffline/2.png?raw=true"/> | <img width="150" src="https://github.com/alexandresanlim/XamarinUI.MyGallery/blob/master/screen/android/pixqrcodegeneratoroffline/3.png?raw=true"/> | <img width="150" src="https://github.com/alexandresanlim/XamarinUI.MyGallery/blob/master/screen/android/pixqrcodegeneratoroffline/4.png?raw=true"/> | <img width="150" src="https://github.com/alexandresanlim/XamarinUI.MyGallery/blob/master/screen/android/pixqrcodegeneratoroffline/5.png?raw=true"/> |
+| First Header  | Second Header | First Header  | Second Header |
+| ------------- | ------------- | ------------- | ------------- |
+| <img width="150" src="https://github.com/alexandresanlim/XamarinUI.MyGallery/blob/master/screen/android/pixqrcodegeneratoroffline/animation.gif?raw=true"/>  | <img width="150" src="https://github.com/alexandresanlim/XamarinUI.MyGallery/blob/master/screen/android/pixqrcodegeneratoroffline/3.png?raw=true"/> | <img width="150" src="https://github.com/alexandresanlim/XamarinUI.MyGallery/blob/master/screen/android/pixqrcodegeneratoroffline/4.png?raw=true"/> | <img width="150" src="https://github.com/alexandresanlim/XamarinUI.MyGallery/blob/master/screen/android/pixqrcodegeneratoroffline/5.png?raw=true"/> |
 
 
 # Build Status
