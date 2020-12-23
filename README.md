@@ -11,9 +11,7 @@
 </p>
     
 <p align='center'>
-| First Header  | Second Header | First Header  | Second Header |
-| ------------- | ------------- | ------------- | ------------- |
-| <img width="200" src="https://github.com/alexandresanlim/XamarinUI.MyGallery/blob/master/screen/android/pixqrcodegeneratoroffline/animation.gif?raw=true"/>  | <img width="200" src="https://github.com/alexandresanlim/XamarinUI.MyGallery/blob/master/screen/android/pixqrcodegeneratoroffline/3.png?raw=true"/> | <img width="200" src="https://github.com/alexandresanlim/XamarinUI.MyGallery/blob/master/screen/android/pixqrcodegeneratoroffline/4.png?raw=true"/> | <img width="200" src="https://github.com/alexandresanlim/XamarinUI.MyGallery/blob/master/screen/android/pixqrcodegeneratoroffline/5.png?raw=true"/> |
+<img width="200" src="https://github.com/alexandresanlim/XamarinUI.MyGallery/blob/master/screen/android/pixqrcodegeneratoroffline/animation.gif?raw=true"/> <img width="200" src="https://github.com/alexandresanlim/XamarinUI.MyGallery/blob/master/screen/android/pixqrcodegeneratoroffline/3.png?raw=true"/> <img width="200" src="https://github.com/alexandresanlim/XamarinUI.MyGallery/blob/master/screen/android/pixqrcodegeneratoroffline/4.png?raw=true"/> <img width="200" src="https://github.com/alexandresanlim/XamarinUI.MyGallery/blob/master/screen/android/pixqrcodegeneratoroffline/5.png?raw=true"/>
   </p>
 
 
