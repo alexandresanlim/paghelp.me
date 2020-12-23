@@ -53,7 +53,10 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             var success = false;
 
             if (IsEdit)
+            {
                 success = PixKeyDataBase.Update(CurrentPixKey);
+                DashboardViewModel.LoadDataCommand.Execute(null);
+            }
 
             else
             {
