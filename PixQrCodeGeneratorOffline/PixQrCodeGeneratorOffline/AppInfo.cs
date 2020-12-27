@@ -30,6 +30,19 @@ namespace PixQrCodeGeneratorOffline
 
             public static string AppStoreLink => "itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id={" + PackageName + "}&amp;onlyLatestVersion=true&amp;pageNumber=0&amp;sortOrdering=1&amp;type=Purple+Software";
 
+            public static string StoreTextToShare
+            {
+                get
+                {
+                    var text = "Estou usando e indico instalar o app " + AppName + "\n\n";
+
+                    text += "Link para Play Store (Android): " + GooglePlayLink + "\n";
+                    text += "Link para App Store (iOS): " + AppStoreLink;
+
+                    return text;
+                }
+            }
+
             public static string StoreNameByDeviceInfo => DeviceInfo.IsAndroid ? "Google Play" : "App Store";
         }
 

@@ -2,51 +2,72 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PixQrCodeGeneratorOffline.Views.AboutPage"
-             xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
-             Title="{Binding Title}">
-    
-    <ContentPage.BindingContext>
-        <vm:AboutViewModel />
-    </ContentPage.BindingContext>
-    
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <Color x:Key="Accent">#96d1ff</Color>
-        </ResourceDictionary>
-    </ContentPage.Resources>
+             xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels" xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
+             Title="{Binding Title}"
+             BackgroundColor="{DynamicResource primary}"
+             Shell.NavBarIsVisible="False"
+             >
 
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-        <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
-            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
-                <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
-                    <Image Source="xamarin_logo.png" VerticalOptions="Center" HeightRequest="64" />
-                </ContentView>
-            </StackLayout>
-        </StackLayout>
-        <ScrollView Grid.Row="1">
-            <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
-                <Label Text="Start developing now" FontSize="Title"/>
-                <Label Text="Make changes to your XAML file and save to see your UI update in the running app with XAML Hot Reload. Give it a try!" FontSize="16" Padding="0,0,0,0"/>
-                <Label FontSize="16" Padding="0,24,0,0">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <FormattedString.Spans>
-                                <Span Text="Learn more at "/>
-                                <Span Text="https://aka.ms/xamarin-quickstart" FontAttributes="Bold"/>
-                            </FormattedString.Spans>
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
-                <Button Margin="0,10,0,0" Text="Learn more"
-                        Command="{Binding OpenWebCommand}"
-                        BackgroundColor="{StaticResource Primary}"
-                        TextColor="White" />
+    <ContentPage.Content>
+        <ScrollView Padding="15,10">
+            <StackLayout Spacing="15">
+                <StackLayout Spacing="0">
+                    <controls:CustomLabel Text="Segurança" TextColor="{DynamicResource textOnPrimary}" FontSize="Large" FontAttributes="Bold"  />
+
+                    <controls:CustomFrame Padding="15" BackgroundColor="{DynamicResource primaryDark}" CornerRadius="10">
+                        <controls:CustomFrame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding OpenGithubCommand}" />
+                        </controls:CustomFrame.GestureRecognizers>
+
+                        <StackLayout>
+                            <controls:CustomLabel Text="Somos open source! O que isso significa? Todo o código deste aplicativo é aberto, com isso é possível que quarquer pessoa no mundo possa audita-lo, evitando assim fraudes, compartilhamento de informações ou quaisquer outros tipos de praticas abusivas." TextColor="{DynamicResource textOnPrimary}" FontSize="Small" />
+
+                            <controls:CustomLabel Text="Toque aqui para visualizar" FontAttributes="Bold" TextColor="{DynamicResource textOnPrimary}" FontSize="Small" />
+                        </StackLayout>
+                        
+                        
+                    </controls:CustomFrame>
+
+                </StackLayout>
+
+                <!--<StackLayout Spacing="0">
+                    <controls:CustomLabel Text="Build" TextColor="{DynamicResource textOnPrimary}" FontSize="Large" FontAttributes="Bold" />
+                    <controls:CustomFrame Padding="15" BackgroundColor="{DynamicResource primaryDark}" CornerRadius="10">
+                        <controls:CustomLabel x:Name="lbBuild" Text="Build" TextColor="{DynamicResource textOnPrimary}" FontSize="Small" />
+                    </controls:CustomFrame>
+                </StackLayout>-->
+
+                <StackLayout Spacing="0">
+                    <controls:CustomLabel Text="Versão" TextColor="{DynamicResource textOnPrimary}" FontSize="Large" FontAttributes="Bold" />
+                    <controls:CustomFrame Padding="15" BackgroundColor="{DynamicResource primaryDark}" CornerRadius="10">
+                        <controls:CustomLabel x:Name="lbVersion" Text="versão" TextColor="{DynamicResource textOnPrimary}" FontSize="Small" />
+                    </controls:CustomFrame>
+                </StackLayout>
+
+                <StackLayout Spacing="0">
+                    <controls:CustomLabel Text="Lançamento da versão" TextColor="{DynamicResource textOnPrimary}" FontSize="Large" FontAttributes="Bold" />
+                    <controls:CustomFrame Padding="15" BackgroundColor="{DynamicResource primaryDark}" CornerRadius="10">
+                        <controls:CustomLabel x:Name="lbDate" Text="lançamento" TextColor="{DynamicResource textOnPrimary}" FontSize="Small" />
+                    </controls:CustomFrame>
+                </StackLayout>
+
+                <StackLayout Spacing="0">
+                    <controls:CustomLabel Text="Ajude-nos a manter" TextColor="{DynamicResource textOnPrimary}" FontSize="Large" FontAttributes="Bold" />
+                    <controls:CustomFrame Padding="15" BackgroundColor="{DynamicResource primaryDark}" CornerRadius="10">
+                        <controls:CustomFrame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding SupportCommand}" />
+                        </controls:CustomFrame.GestureRecognizers>
+                        <StackLayout>
+                            <controls:CustomLabel Text="Somos gratuítos e independentes, estamos sempre buscando constatantes melhorias para os nossos usuários, corrigindo bugs e melhorando a sua esperiência, assim pedidos encarecidamente que apoie-nos de alguma forma, são essas: compartilhando, avaliando na loja ou fazendo uma doação." TextColor="{DynamicResource textOnPrimary}" FontSize="Small" />
+
+                            <controls:CustomLabel Text="Toque aqui para ver as opções" FontAttributes="Bold" TextColor="{DynamicResource textOnPrimary}" FontSize="Small" />
+                        </StackLayout>
+                        
+                    </controls:CustomFrame>
+                </StackLayout>
+
             </StackLayout>
         </ScrollView>
-    </Grid>
+    </ContentPage.Content>
 
 </ContentPage>
