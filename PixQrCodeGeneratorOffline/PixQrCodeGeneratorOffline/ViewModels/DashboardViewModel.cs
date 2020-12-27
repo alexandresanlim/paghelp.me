@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
@@ -71,29 +72,28 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             //await SetStatusFormCurrentPixColor();
         }
 
-        public Command NavigateToAddNewKeyPageCommand => new Command(async () =>
+        public ICommand NavigateToAddNewKeyPageCommand => new Command(async () =>
         {
             await NavigateModalAsync(new AddPixKeyPage(this));
         });
 
-        public Command ChangeSelectPixKeyCommand => new Command(async () =>
+        public ICommand ChangeSelectPixKeyCommand => new Command(async () =>
         {
             await SetStatusFormCurrentPixColor();
         });
 
-        public Command SharePayloadCommand => new Command(async () =>
+        public ICommand SharePayloadCommand => new Command(async () =>
         {
             var options = new List<Acr.UserDialogs.ActionSheetOption>
             {
-                new Acr.UserDialogs.ActionSheetOption("Compartilhar", async () =>
+                new Acr.UserDialogs.ActionSheetOption("Copiar Código", async () =>
+                {
+                   await CopyText(CurrentPixKey.Payload, "Código copiado com sucesso!");
+                }),
+                new Acr.UserDialogs.ActionSheetOption("Compartilhar Código", async () =>
                 {
                     await ShareText(CurrentPixKey?.Payload);
                 }),
-                new Acr.UserDialogs.ActionSheetOption("Copiar", async () =>
-                {
-                    await Clipboard.SetTextAsync(CurrentPixKey?.Payload);
-                    DialogService.Toast("Código copiado com sucesso!");
-                })
             };
 
             DialogService.ActionSheet(new Acr.UserDialogs.ActionSheetConfig
@@ -108,22 +108,22 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             });
         });
 
-        public Command OpenOptionsCommand => new Command(() =>
+        public ICommand OpenOptionsCommand => new Command(() =>
         {
             var options = new List<Acr.UserDialogs.ActionSheetOption>
             {
-                new Acr.UserDialogs.ActionSheetOption("Editar", async () =>
+                new Acr.UserDialogs.ActionSheetOption("Editar Chaver", async () =>
                 {
                     await NavigateModalAsync(new AddPixKeyPage(this,CurrentPixKey));
-                }),
-                new Acr.UserDialogs.ActionSheetOption("Compartilhar chave", async () =>
-                {
-                    await ShareText(CurrentPixKey?.Key);
                 }),
                 new Acr.UserDialogs.ActionSheetOption("Copiar chave", async () =>
                 {
                     await Clipboard.SetTextAsync(CurrentPixKey?.Key);
                     DialogService.Toast("Chave copiada com sucesso!");
+                }),
+                new Acr.UserDialogs.ActionSheetOption("Compartilhar chave", async () =>
+                {
+                    await ShareText(CurrentPixKey?.Key);
                 })
             };
 
@@ -138,15 +138,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 })
             });
         });
-
-        public async Task ShareText(string text)
-        {
-            await Share.RequestAsync(new ShareTextRequest
-            {
-                Text = text,
-                Title = "Escolha uma opção"
-            });
-        }
 
         private async Task SetStatusFormCurrentPixColor()
         {

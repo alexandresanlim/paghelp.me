@@ -16,6 +16,21 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public IUserDialogs DialogService => UserDialogs.Instance;
 
+        public async Task ShareText(string text)
+        {
+            await Xamarin.Essentials.Share.RequestAsync(new Xamarin.Essentials.ShareTextRequest
+            {
+                Text = text,
+                Title = "Escolha uma opção"
+            });
+        }
+
+        public async Task CopyText(string text, string textSuccess = "Copiado com sucesso!")
+        {
+            await Xamarin.Essentials.Clipboard.SetTextAsync(text);
+            DialogService.Toast(textSuccess);
+        }
+
         #region Loading
 
         bool isLoading = false;

@@ -14,12 +14,12 @@
     <Shell.Resources>
         <ResourceDictionary>
             <Style x:Key="BaseStyle" TargetType="Element">
-                <Setter Property="Shell.BackgroundColor" Value="{DynamicResource primary}" />
+                <Setter Property="Shell.BackgroundColor" Value="{DynamicResource primaryDark}" />
                 <Setter Property="Shell.ForegroundColor" Value="{DynamicResource textOnPrimary}" />
                 <Setter Property="Shell.TitleColor" Value="{DynamicResource textOnPrimary}" />
                 <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
                 <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
-                <Setter Property="Shell.TabBarBackgroundColor" Value="{DynamicResource primary}" />
+                <Setter Property="Shell.TabBarBackgroundColor" Value="{DynamicResource primaryDark}" />
                 <Setter Property="Shell.TabBarForegroundColor" Value="White"/>
                 <Setter Property="Shell.TabBarUnselectedColor" Value="{DynamicResource primaryLight}"/>
                 <Setter Property="Shell.TabBarTitleColor" Value="{DynamicResource textOnPrimary}"/>
@@ -30,8 +30,8 @@
     </Shell.Resources>
 
     <TabBar>
-        <ShellContent Title="About" Icon="icon_about.png" Route="AboutPage" ContentTemplate="{DataTemplate local:DashboardPage}" />
-        <!--<ShellContent Title="Browse" Icon="icon_feed.png" ContentTemplate="{DataTemplate local:ItemsPage}" />-->
+        <ShellContent Title="Minhas Chaves" Icon="icon_about.png" ContentTemplate="{DataTemplate local:DashboardPage}" />
+        <ShellContent Title="Sobre" Icon="icon_feed.png" ContentTemplate="{DataTemplate local:AboutPage}" />
     </TabBar>
 
     <!--
