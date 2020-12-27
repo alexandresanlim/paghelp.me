@@ -11,8 +11,12 @@
 </p>
     
 <p align='center'>
-<img width="200" src="https://github.com/alexandresanlim/XamarinUI.MyGallery/blob/master/screen/android/pixqrcodegeneratoroffline/animation.gif?raw=true"/> <img width="200" src="https://github.com/alexandresanlim/XamarinUI.MyGallery/blob/master/screen/android/pixqrcodegeneratoroffline/0.jpg?raw=true"/> <img width="200" src="https://github.com/alexandresanlim/XamarinUI.MyGallery/blob/master/screen/android/pixqrcodegeneratoroffline/1.jpg?raw=true"/> <img width="200" src="https://github.com/alexandresanlim/XamarinUI.MyGallery/blob/master/screen/android/pixqrcodegeneratoroffline/2.jpg?raw=true"/> <img width="200" src="https://github.com/alexandresanlim/XamarinUI.MyGallery/blob/master/screen/android/pixqrcodegeneratoroffline/3.jpg?raw=true"/> <img width="200" src="https://github.com/alexandresanlim/XamarinUI.MyGallery/blob/master/screen/android/pixqrcodegeneratoroffline/4.jpg?raw=true"/>
-  </p>
+  <img width="200" src="https://github.com/alexandresanlim/XamarinUI.MyGallery/blob/master/screen/android/pixqrcodegeneratoroffline/0.jpg?raw=true"/> <img width="200" src="https://github.com/alexandresanlim/XamarinUI.MyGallery/blob/master/screen/android/pixqrcodegeneratoroffline/1.jpg?raw=true"/> <img width="200" src="https://github.com/alexandresanlim/XamarinUI.MyGallery/blob/master/screen/android/pixqrcodegeneratoroffline/2.jpg?raw=true"/> <img width="200" src="https://github.com/alexandresanlim/XamarinUI.MyGallery/blob/master/screen/android/pixqrcodegeneratoroffline/3.jpg?raw=true"/> <img width="200" src="https://github.com/alexandresanlim/XamarinUI.MyGallery/blob/master/screen/android/pixqrcodegeneratoroffline/4.jpg?raw=true"/>
+ </p>
+  
+ <p align='center'>
+  <img width="200" src="https://github.com/alexandresanlim/XamarinUI.MyGallery/blob/master/screen/android/pixqrcodegeneratoroffline/animation.gif?raw=true"/> 
+ </p>
 
 
 # Build Status
