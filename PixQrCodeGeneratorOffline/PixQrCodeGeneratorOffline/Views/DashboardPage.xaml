@@ -67,17 +67,24 @@
                             <controls:CustomFrame BackgroundColor="#ffffff" VerticalOptions="FillAndExpand" CornerRadius="15" Padding="15">
                                 <ScrollView>
                                     <StackLayout>
-                                        <StackLayout IsVisible="{Binding Key, Converter={StaticResource HasDataConverterInverted}}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Spacing="25">
+                                        <StackLayout IsVisible="{Binding Key, Converter={StaticResource HasDataConverterInverted}}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Spacing="15">
                                             <StackLayout.GestureRecognizers>
                                                 <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:DashboardViewModel}}, Path=NavigateToAddNewKeyPageCommand}" />
                                             </StackLayout.GestureRecognizers>
 
-                                            <controls:CustomLabel Text="Use este espaço para adicionar suas chaves, gerencia-las e gerar códigos para cobranças" TextColor="{DynamicResource textSecondary}" />
 
-                                            <StackLayout>
-                                                <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.PlusCircle }" Size="50" IconColor="{DynamicResource textSecondary}" />
-                                                <controls:CustomLabel Text="Toque para adicionar chave" TextColor="{DynamicResource textSecondary}" HorizontalOptions="Center" />
+                                            <StackLayout Spacing="0">
+                                                <controls:CustomLabel Text="Chave PIX" TextColor="{DynamicResource textSecondary}" HorizontalOptions="Center" FontAttributes="Bold" FontSize="Title" />
+                                                <controls:CustomLabel Text="Toque para adicionar" TextColor="{DynamicResource textSecondary}" HorizontalOptions="Center" FontAttributes="Bold" FontSize="Subtitle" />
                                             </StackLayout>
+
+                                            <controls:CustomAnimation HeightRequest="250" VerticalOptions="Center" Animation="keys.json" ClickedCommand="{Binding Source={RelativeSource AncestorType={x:Type vm:DashboardViewModel}}, Path=NavigateToAddNewKeyPageCommand}" />
+
+                                            <controls:CustomLabel Text="Use este espaço para adicionar suas chaves. Odiamos formularios, telas de loads e falta de segurança, por isso pedimos poucas informações e a gravação sera feita de forma offline, criptografada e você poderá excluir para sempre quando quiser." TextColor="{DynamicResource textSecondary}" FontSize="Small" />
+
+                                            
+
+                                            
                                         </StackLayout>
 
                                         <StackLayout IsVisible="{Binding Key, Converter={StaticResource HasDataConverter}}" VerticalOptions="FillAndExpand">

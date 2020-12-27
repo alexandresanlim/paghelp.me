@@ -20,7 +20,7 @@
                         </controls:CustomFrame.GestureRecognizers>
 
                         <StackLayout>
-                            <controls:CustomLabel Text="Somos open source! O que isso significa? Todo o código deste aplicativo é aberto, com isso é possível que quarquer pessoa do mundo possa audita-lo, evitando assim qualquer tipo de fraude ou pratica abusiva." TextColor="{DynamicResource textOnPrimary}" FontSize="Small" />
+                            <controls:CustomLabel Text="Somos open source! O que isso significa? Todo o código deste aplicativo é aberto, com isso é possível que quarquer pessoa no mundo possa audita-lo, evitando assim fraudes, compartilhamento de informações ou quaisquer outros tipos de praticas abusivas." TextColor="{DynamicResource textOnPrimary}" FontSize="Small" />
 
                             <controls:CustomLabel Text="Toque aqui para visualizar" FontAttributes="Bold" TextColor="{DynamicResource textOnPrimary}" FontSize="Small" />
                         </StackLayout>
