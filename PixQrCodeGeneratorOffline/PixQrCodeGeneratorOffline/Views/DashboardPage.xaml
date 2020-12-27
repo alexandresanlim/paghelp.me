@@ -72,7 +72,6 @@
                                                 <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:DashboardViewModel}}, Path=NavigateToAddNewKeyPageCommand}" />
                                             </StackLayout.GestureRecognizers>
 
-
                                             <StackLayout Spacing="0">
                                                 <controls:CustomLabel Text="Chave PIX" TextColor="{DynamicResource textSecondary}" HorizontalOptions="Center" FontAttributes="Bold" FontSize="Title" />
                                                 <controls:CustomLabel Text="Toque para adicionar" TextColor="{DynamicResource textSecondary}" HorizontalOptions="Center" FontAttributes="Bold" FontSize="Subtitle" />
@@ -82,9 +81,6 @@
 
                                             <controls:CustomLabel Text="Use este espaço para adicionar suas chaves. Odiamos formularios, telas de loads e falta de segurança, por isso pedimos poucas informações e a gravação sera feita de forma offline, criptografada e você poderá excluir para sempre quando quiser." TextColor="{DynamicResource textSecondary}" FontSize="Small" />
 
-                                            
-
-                                            
                                         </StackLayout>
 
                                         <StackLayout IsVisible="{Binding Key, Converter={StaticResource HasDataConverter}}" VerticalOptions="FillAndExpand">
