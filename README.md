@@ -1,5 +1,5 @@
-<h1 align='center'> PIX OFF - Gerador de QrCode Offline </h1>
-<p align='center'> Aplicativo gerador de QrCode offline para pagamento e gerenciador de chaves. </p>
+<h1 align='center'> PIX OFF - Gerador de QR Code Offline </h1>
+<p align='center'> Aplicativo gerador de QR Code offline para pagamento e gerenciador de chaves. </p>
 
 <p align='center'> 
   <img width='200' src='https://github.com/alexandresanlim/PixQrCodeGeneratorOffline/blob/master/PixQrCodeGeneratorOffline/PixQrCodeGeneratorOffline.Android/Resources/drawable/splash.png?raw=true' />
