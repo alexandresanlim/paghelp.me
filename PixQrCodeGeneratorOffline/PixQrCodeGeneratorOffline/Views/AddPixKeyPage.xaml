@@ -3,11 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
              x:Class="PixQrCodeGeneratorOffline.Views.AddPixKeyPage"
              xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon"
-             BackgroundColor="White"
+             BackgroundColor="{DynamicResource primary}"
+             Shell.NavBarIsVisible="False"
              >
     <ContentPage.Content>
         <Grid RowDefinitions="auto,*">
-            <StackLayout Grid.Row="0" Spacing="0" BackgroundColor="{DynamicResource primary}" Padding="15,0,0,0" Orientation="Horizontal">
+            <StackLayout Grid.Row="0" Spacing="0" BackgroundColor="{DynamicResource primaryDark}" Padding="15,0,0,0" Orientation="Horizontal">
                 <controls:CustomLabel Text="Editar Chave" FontAttributes="Bold" TextColor="{DynamicResource textOnPrimary}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" FontSize="Medium" />
 
                 <StackLayout Padding="10" IsVisible="{Binding IsEdit}">
@@ -30,36 +31,36 @@
                 <StackLayout Padding="15,10">
 
                     <StackLayout Spacing="0">
-                        <controls:CustomLabel Text="Instituição Financeira" FontSize="Medium" FontAttributes="Bold" Margin="10,0,0,0" />
-                        <controls:CustomFrame BackgroundColor="{DynamicResource background_page}" Padding="15" CornerRadius="10">
+                        <controls:CustomLabel Text="Instituição Financeira" FontSize="Medium" FontAttributes="Bold" Margin="10,0,0,0" TextColor="{DynamicResource textOnPrimary}" />
+                        <controls:CustomFrame BackgroundColor="{DynamicResource backgroundTransparent}" Padding="15" CornerRadius="10">
                             <controls:CustomFrame.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding SelectedInstitutionCommand}" />
                             </controls:CustomFrame.GestureRecognizers>
                             <StackLayout Orientation="Horizontal">
-                                <controls:CustomLabel Text="{Binding CurrenSelectedFinancialInstitutionText}" FontAttributes="Bold" FontSize="Medium" TextColor="{DynamicResource textSecondary}" HorizontalOptions="FillAndExpand" />
-                                <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.ChevronDown }" IconSize="Medium" IconColor="{DynamicResource textSecondary}" />
+                                <controls:CustomLabel Text="{Binding CurrenSelectedFinancialInstitutionText}" FontAttributes="Bold" FontSize="Medium" TextColor="{DynamicResource textOnBackgroundTransparent}" HorizontalOptions="FillAndExpand" />
+                                <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.ChevronDown }" IconSize="Medium" IconColor="{DynamicResource textOnBackgroundTransparent}" />
                             </StackLayout>
 
                         </controls:CustomFrame>
                     </StackLayout>
 
                     <StackLayout Spacing="0">
-                        <controls:CustomLabel Text="Chave" FontSize="Medium" FontAttributes="Bold" Margin="10,0,0,0" />
-                        <controls:CustomFrame BackgroundColor="{DynamicResource background_page}" Padding="10,5" CornerRadius="10">
+                        <controls:CustomLabel Text="Chave" FontSize="Medium" FontAttributes="Bold" Margin="10,0,0,0" TextColor="{DynamicResource textOnPrimary}" />
+                        <controls:CustomFrame BackgroundColor="{DynamicResource backgroundTransparent}" Padding="10,5" CornerRadius="10">
                             <controls:CustomEntry Placeholder="Digite sua chave pix" FontSize="Medium" Text="{Binding CurrentPixKey.Key}" ReturnType="Next" />
                         </controls:CustomFrame>
                     </StackLayout>
 
                     <StackLayout Spacing="0">
-                        <controls:CustomLabel Text="Nome" FontSize="Medium" FontAttributes="Bold" Margin="10,0,0,0" />
-                        <controls:CustomFrame BackgroundColor="{DynamicResource background_page}" Padding="10,5" CornerRadius="10">
+                        <controls:CustomLabel Text="Nome" FontSize="Medium" FontAttributes="Bold" Margin="10,0,0,0" TextColor="{DynamicResource textOnPrimary}" />
+                        <controls:CustomFrame BackgroundColor="{DynamicResource backgroundTransparent}" Padding="10,5" CornerRadius="10">
                             <controls:CustomEntry Placeholder="Digite o nome" Text="{Binding CurrentPixKey.Name}" ReturnType="Next" />
                         </controls:CustomFrame>
                     </StackLayout>
 
                     <StackLayout Spacing="0">
-                        <controls:CustomLabel Text="Cidade" FontSize="Medium" FontAttributes="Bold" Margin="10,0,0,0" />
-                        <controls:CustomFrame BackgroundColor="{DynamicResource background_page}" Padding="10,5" CornerRadius="10">
+                        <controls:CustomLabel Text="Cidade" FontSize="Medium" FontAttributes="Bold" Margin="10,0,0,0" TextColor="{DynamicResource textOnPrimary}" />
+                        <controls:CustomFrame BackgroundColor="{DynamicResource backgroundTransparent}" Padding="10,5" CornerRadius="10">
                             <controls:CustomEntry Placeholder="Digite a cidade" Text="{Binding CurrentPixKey.City}" ReturnType="Done" />
                         </controls:CustomFrame>
                     </StackLayout>

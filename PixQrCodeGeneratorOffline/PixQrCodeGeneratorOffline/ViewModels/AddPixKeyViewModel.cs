@@ -74,7 +74,9 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             {
                 success = PixKeyDataBase.Insert(CurrentPixKey);
                 //CurrentPixKey.RaisePresentation();
-                DashboardViewModel.PixKeyList.Insert((DashboardViewModel.PixKeyList.Count - 1), CurrentPixKey);
+                //var positionInsert = (DashboardViewModel.PixKeyList.Count - 1);
+                //var last = DashboardViewModel.PixKeyList.IndexOf(DashboardViewModel.PixKeyList.LastOrDefault());
+                DashboardViewModel.PixKeyList.Add(CurrentPixKey);
             }
 
             await DashboardViewModel.LoadCurrentPixKey(CurrentPixKey);

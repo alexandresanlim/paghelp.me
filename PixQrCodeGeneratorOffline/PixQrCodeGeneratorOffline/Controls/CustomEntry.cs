@@ -10,8 +10,8 @@ namespace PixQrCodeGeneratorOffline.Controls
         public CustomEntry()
         {
             //BackgroundColor = Color.Red;
-            TextColor = App.ThemeColors.TextPrimary;
-            PlaceholderColor = App.ThemeColors.TextSecondary;
+            TextColor = Color.White; //App.ThemeColors.TextPrimary;
+            PlaceholderColor = Color.LightGray; //App.ThemeColors.TextSecondary;
             ClearButtonVisibility = ClearButtonVisibility.WhileEditing;
             FontFamily = "FontPoppinsRegular";
             //FontSize = Device.GetNamedSize(NamedSize.Small, typeof(CustomEntry));

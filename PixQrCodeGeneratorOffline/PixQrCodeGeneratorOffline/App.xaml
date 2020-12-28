@@ -21,6 +21,9 @@
         <Color x:Key="textPrimary">#212121</Color>
         <Color x:Key="textSecondary">#757575</Color>
 
+        <Color x:Key="backgroundTransparent">#25000000</Color>
+        <Color x:Key="textOnBackgroundTransparent">#ffffff</Color>
+
         <!--<Color x:Key="background_page">#0c143c</Color>-->
         
         <Color x:Key="background_page">#ecf0f1</Color>
