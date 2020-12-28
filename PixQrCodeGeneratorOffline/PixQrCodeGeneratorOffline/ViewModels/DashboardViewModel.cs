@@ -30,7 +30,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             //{
             //    SetIsLoading(true);
 
-            await Task.Delay(1000);
+            //await Task.Delay(1000);
 
             var list = PixKeyDataBase.GetAll();
 
@@ -47,7 +47,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
             PixKeyList = list.ToObservableCollection();
 
-            await LoadCurrentPixKey();
+            //await LoadCurrentPixKey();
 
             //await LoadHideData();
             //}
@@ -69,7 +69,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
             CurrentPixKey = pixkey ?? PixKeyList.FirstOrDefault();
 
-            //await SetStatusFormCurrentPixColor();
+            await SetStatusFormCurrentPixColor();
         }
 
         public ICommand NavigateToAddNewKeyPageCommand => new Command(async () =>

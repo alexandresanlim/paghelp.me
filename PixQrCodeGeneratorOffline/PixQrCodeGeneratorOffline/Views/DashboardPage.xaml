@@ -59,7 +59,7 @@
 
                                 <StackLayout Padding="0,0,10,10">
 
-                                    <controls:CustomFrame BackgroundColor="#ffffff" VerticalOptions="FillAndExpand" CornerRadius="15" Padding="15">
+                                    <controls:CustomFrame VerticalOptions="FillAndExpand" CornerRadius="15" Padding="15">
                                         <ScrollView>
                                             <StackLayout>
                                                 <StackLayout IsVisible="{Binding Key, Converter={StaticResource HasDataConverterInverted}}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Spacing="15">

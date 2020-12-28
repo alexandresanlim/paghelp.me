@@ -1,4 +1,5 @@
 ﻿using PixQrCodeGeneratorOffline.DataBase;
+using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models;
 using PixQrCodeGeneratorOffline.Style;
 using PixQrCodeGeneratorOffline.Style.Interfaces;
@@ -52,23 +53,38 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
             var success = false;
 
+            CurrentPixKey.RaisePresentation();
+
             if (IsEdit)
             {
                 success = PixKeyDataBase.Update(CurrentPixKey);
-                DashboardViewModel.LoadDataCommand.Execute(null);
+                
+                var l = DashboardViewModel.PixKeyList.FirstOrDefault(x => x.Id.Equals(CurrentPixKey.Id));
+
+                if (l != null)
+                {
+                    int index = DashboardViewModel.PixKeyList.IndexOf(l);
+
+                    if (index != -1)
+                        DashboardViewModel.PixKeyList[index] = CurrentPixKey;
+                }
             }
 
             else
             {
                 success = PixKeyDataBase.Insert(CurrentPixKey);
+                //CurrentPixKey.RaisePresentation();
                 DashboardViewModel.PixKeyList.Insert((DashboardViewModel.PixKeyList.Count - 1), CurrentPixKey);
-                CurrentPixKey.RaisePresentation();
-                await DashboardViewModel.LoadCurrentPixKey(CurrentPixKey);
             }
+
+            await DashboardViewModel.LoadCurrentPixKey(CurrentPixKey);
+
+            //DashboardViewModel.LoadDataCommand.Execute(null);
 
             //if (success)
             //{
             DialogService.Toast("Chave salva com sucesso");
+
             await CloseModal();
             //}
 

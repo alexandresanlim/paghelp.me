@@ -26,7 +26,16 @@ namespace PixQrCodeGeneratorOffline.Views
 
         protected override bool OnBackButtonPressed()
         {
-            _dashboardViewModel.LoadCurrentPixKey((_dashboardViewModel.PixKeyList.FirstOrDefault()));
+            _dashboardViewModel.LoadCurrentPixKey((_dashboardViewModel.PixKeyList.LastOrDefault()));
+
+            //if (!_viewModel.IsEdit)
+            //{
+            //    Task.Run(async () =>
+            //    {
+            //        await _dashboardViewModel.LoadCurrentPixKey((_dashboardViewModel.PixKeyList.LastOrDefault()));
+            //    });
+            //}
+
             return base.OnBackButtonPressed();
         }
     }
