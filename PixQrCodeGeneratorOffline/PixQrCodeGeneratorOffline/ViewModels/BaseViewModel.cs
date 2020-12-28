@@ -12,7 +12,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
-        public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>();
+        //public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>();
 
         public IUserDialogs DialogService => UserDialogs.Instance;
 
