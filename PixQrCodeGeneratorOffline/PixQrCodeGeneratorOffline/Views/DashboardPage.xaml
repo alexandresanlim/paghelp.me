@@ -24,7 +24,6 @@
             <yummy:PancakeView.BackgroundGradientStops>
                 <yummy:GradientStopCollection>
                     <yummy:GradientStop Color="{Binding CurrentPixKey.Color.Primary}" Offset="0.1" />
-
                     <yummy:GradientStop Color="{Binding CurrentPixKey.Color.PrimaryDark}" Offset="1.0" />
                 </yummy:GradientStopCollection>
             </yummy:PancakeView.BackgroundGradientStops>
@@ -102,6 +101,7 @@
 
                                                     <qr:QRCode
                                                     Content="{Binding Payload}"
+                                                        BackgroundColor="White"
                                                     Color="#000000" 
                                                     Level="H" 
                                                     WidthRequest="300" 
