@@ -10,13 +10,13 @@ namespace PixQrCodeGeneratorOffline
 {
     public partial class App
     {
-        public const string AppName = "Pix Off";
+        public const string AppName = "PIX OFF";
 
         public const string IconName = "pixoff";
 
         public static class Info
         {
-            public static string Date => new DateTime(2020, 12, 21).ToString("dd MMM yyyy");
+            public static string Date => new DateTime(2020, 12, 28).ToString("dd MMM yyyy");
 
             public static string AppName => AppInfo.Name;
 
