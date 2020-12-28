@@ -26,12 +26,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public Command LoadDataCommand => new Command(async () =>
         {
-            //try
-            //{
-            //    SetIsLoading(true);
-
-            //await Task.Delay(1000);
-
             var list = PixKeyDataBase.GetAll();
 
             list.Add(new PixKey
@@ -46,20 +40,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }).ToList();
 
             PixKeyList = list.ToObservableCollection();
-
-            //await LoadCurrentPixKey();
-
-            //await LoadHideData();
-            //}
-            //catch (System.Exception)
-            //{
-
-            //    throw;
-            //}
-            //finally
-            //{
-            //    SetIsLoading(false);
-            //}
         });
 
         public async Task LoadCurrentPixKey(PixKey pixkey = null)
@@ -143,11 +123,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         {
             App.LoadTheme(CurrentPixKey.Color);
         }
-
-        //private async Task LoadHideData()
-        //{
-        //    HideData = PreferenceService.HideData;
-        //}
 
         private ObservableCollection<PixKey> _pixKeyList;
         public ObservableCollection<PixKey> PixKeyList
