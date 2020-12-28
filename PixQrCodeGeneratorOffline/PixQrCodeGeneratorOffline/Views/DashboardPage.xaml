@@ -44,14 +44,14 @@
                             <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
                                 <!--<Grid>-->
                                 <StackLayout Padding="0,5" Spacing="0">
-                                    <StackLayout.GestureRecognizers>
+                                    <!--<StackLayout.GestureRecognizers>
                                         <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:DashboardViewModel}}, Path=OpenOptionsCommand}" />
-                                    </StackLayout.GestureRecognizers>
+                                    </StackLayout.GestureRecognizers>-->
 
-                                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                                        <controls:CustomLabel Text="{Binding InstitutionPresentation}" FontSize="Medium" FontAttributes="Bold" TextColor="{DynamicResource textOnPrimary}" />
-                                        <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Edit }" IconSize="Micro" IconColor="{DynamicResource textOnPrimary}" VerticalOptions="CenterAndExpand" Margin="0,0,0,5" IsVisible="{Binding Key, Converter={StaticResource HasDataConverter}}" />
-                                    </StackLayout>
+                                    <!--<StackLayout Orientation="Horizontal" HorizontalOptions="Center">-->
+                                        <controls:CustomLabel Text="{Binding InstitutionPresentation}" FontSize="Medium" HorizontalOptions="Center" FontAttributes="Bold" TextColor="{DynamicResource textOnPrimary}" />
+                                        <!--<controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Edit }" IconSize="Micro" IconColor="{DynamicResource textOnPrimary}" VerticalOptions="CenterAndExpand" Margin="0,0,0,5" IsVisible="{Binding Key, Converter={StaticResource HasDataConverter}}" />
+                                    </StackLayout>-->
 
                                     <controls:CustomLabel Text="{Binding NameAndCity}" FontSize="Small" HorizontalOptions="Center" TextColor="{DynamicResource textOnPrimary}" FontAttributes="Bold"  />
                                     <controls:CustomLabel Text="{Binding KeyPresentation}" FontSize="Micro" HorizontalOptions="Center" FontAttributes="Bold" TextColor="{DynamicResource textOnPrimary}" />
@@ -151,7 +151,8 @@
 
                 </controls:CustomCarouselView>
 
-                <controls:CustomFrame BackgroundColor="{DynamicResource backgroundTransparent}" HorizontalOptions="End" VerticalOptions="Start" Padding="15,10" CornerRadius="30" Margin="10">
+
+                <controls:CustomFrame BackgroundColor="{DynamicResource backgroundTransparent}" HorizontalOptions="Start" VerticalOptions="Start" Padding="15,10" CornerRadius="30" Margin="10">
                     <controls:CustomFrame.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding NavigateToAddNewKeyPageCommand}" />
                     </controls:CustomFrame.GestureRecognizers>
@@ -160,6 +161,20 @@
                         <controls:CustomLabel Text="Adicionar" FontSize="Micro" FontAttributes="Bold" TextColor="{DynamicResource textOnBackgroundTransparent}" />
                     </StackLayout>
                 </controls:CustomFrame>
+
+                <controls:CustomFrame BackgroundColor="{DynamicResource backgroundTransparent}" HorizontalOptions="End" VerticalOptions="Start" Padding="15,10" CornerRadius="30" Margin="10">
+                    <controls:CustomFrame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding OpenOptionsCommand}" />
+                    </controls:CustomFrame.GestureRecognizers>
+                    <StackLayout Orientation="Horizontal">
+                        <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Cog }" IconSize="Small" IconColor="{DynamicResource textOnBackgroundTransparent}" VerticalOptions="CenterAndExpand" />
+                        <controls:CustomLabel Text="Opções" FontSize="Micro" FontAttributes="Bold" TextColor="{DynamicResource textOnBackgroundTransparent}" />
+                    </StackLayout>
+                </controls:CustomFrame>
+                
+                
+
+                
 
             </Grid>
 

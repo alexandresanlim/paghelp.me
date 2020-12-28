@@ -23,6 +23,23 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         {
             CurrentPixKey = pixKey ?? new PixKey();
 
+            //CurrentPixKey = OriginPixKey;
+
+            if (pixKey != null)
+            {
+                OriginPixKey = new PixKey
+                {
+                    City = pixKey?.City,
+                    Color = pixKey?.Color,
+                    Description = pixKey?.Description,
+                    FinancialInstitution = pixKey?.FinancialInstitution,
+                    Id = pixKey.Id,
+                    Key = pixKey?.Key,
+                    Name = pixKey?.Name,
+                    Payload = pixKey?.Payload,
+                };
+            }
+
             DashboardViewModel = dbViewModel;
 
             ResetProps();
@@ -58,7 +75,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             if (IsEdit)
             {
                 success = PixKeyDataBase.Update(CurrentPixKey);
-                
+
                 var l = DashboardViewModel.PixKeyList.FirstOrDefault(x => x.Id.Equals(CurrentPixKey.Id));
 
                 if (l != null)
@@ -215,6 +232,8 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             set => SetProperty(ref _currentPixKey, value);
             get => _currentPixKey;
         }
+
+        public static PixKey OriginPixKey { get; set; }
 
         private string _currenSelectedFinancialInstitutionText;
         public string CurrenSelectedFinancialInstitutionText
