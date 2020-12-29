@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.ViewModels
@@ -22,8 +23,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         public AddPixKeyViewModel(DashboardViewModel dbViewModel, PixKey pixKey = null)
         {
             CurrentPixKey = pixKey ?? new PixKey();
-
-            //CurrentPixKey = OriginPixKey;
 
             if (pixKey != null)
             {
@@ -42,17 +41,35 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
             DashboardViewModel = dbViewModel;
 
-            ResetProps();
+            LoadData.Execute(null);
         }
 
-        private void ResetProps()
+        public ICommand LoadData => new Command(async () =>
+        {
+            await ResetProps();
+        });
+
+        private async Task ResetProps()
         {
             IsEdit = CurrentPixKey.Id > 0;
+
             CurrenSelectedFinancialInstitutionText = !IsEdit ? "Toque para selecionar" : CurrentPixKey?.FinancialInstitution?.Name;
+
+            if (!IsEdit)
+            {
+                var firstKey = PixKeyDataBase.GetFirst();
+
+                if (firstKey != null && firstKey.Id > 0)
+                {
+                    CurrentPixKey.Name = firstKey?.Name;
+                    CurrentPixKey.City = firstKey?.City;
+                }
+            }
+
             ReloadStatusBar();
         }
 
-        public Command SaveCommand => new Command(async () =>
+        public ICommand SaveCommand => new Command(async () =>
         {
             if (!await ValidateSave())
                 return;
@@ -111,7 +128,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             //    DialogService.Toast("Algo de errado aconteceu, tente novamente mais tarde ou atualize o app");
         });
 
-        public Command DeleteCommand => new Command(async () =>
+        public ICommand DeleteCommand => new Command(async () =>
         {
             var confirm = await DialogService.ConfirmAsync("Tem certeza que deseja excluir a chave " + CurrentPixKey.Key + "?", "Confirmação", "Sim", "Cancelar");
 
@@ -135,7 +152,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 DialogService.Toast("Algo de errado aconteceu, tente novamente mais tarde ou atualize o app");
         });
 
-        public Command SelectedInstitutionCommand => new Command(() =>
+        public ICommand SelectedInstitutionCommand => new Command(() =>
         {
             var options = new List<Acr.UserDialogs.ActionSheetOption>();
 

@@ -23,6 +23,18 @@ namespace PixQrCodeGeneratorOffline.DataBase
             }
         }
 
+        public static PixKey GetFirst()
+        {
+            try
+            {
+                return ItemCollection.FindAll().FirstOrDefault();
+            }
+            catch (Exception e)
+            {
+                return new PixKey();
+            }
+        }
+
         public static bool UpInsert(PixKey item)
         {
             try
