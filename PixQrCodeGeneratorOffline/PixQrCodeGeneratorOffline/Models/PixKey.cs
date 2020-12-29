@@ -16,7 +16,14 @@ namespace PixQrCodeGeneratorOffline.Models
         [LiteDB.BsonId]
         public int Id { get; set; }
 
-        public string Key { get; set; }
+        //public string Key { get; set; }
+
+        private string _key;
+        public string Key
+        {
+            set { SetProperty(ref _key, value); }
+            get { return _key; }
+        }
 
         public string Name { get; set; }
 

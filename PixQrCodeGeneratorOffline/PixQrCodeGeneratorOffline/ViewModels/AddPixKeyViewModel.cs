@@ -96,8 +96,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 DashboardViewModel.PixKeyList.Add(CurrentPixKey);
             }
 
-            await DashboardViewModel.LoadCurrentPixKey(CurrentPixKey);
-
             //DashboardViewModel.LoadDataCommand.Execute(null);
 
             //if (success)
@@ -105,6 +103,8 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             DialogService.Toast("Chave salva com sucesso");
 
             await CloseModal();
+
+            await DashboardViewModel.LoadCurrentPixKey(CurrentPixKey);
             //}
 
             //else
@@ -123,8 +123,12 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             if (success)
             {
                 DashboardViewModel.PixKeyList.Remove(CurrentPixKey);
+
                 DialogService.Toast("Chave removida com sucesso");
+
                 await CloseModal();
+
+                await DashboardViewModel.LoadCurrentPixKey();
             }
 
             else

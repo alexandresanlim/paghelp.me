@@ -40,16 +40,32 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }).ToList();
 
             PixKeyList = list.ToObservableCollection();
+
+            await LoadCurrentPixKey();
         });
 
         public async Task LoadCurrentPixKey(PixKey pixkey = null)
         {
-            if (PixKeyList == null || !(PixKeyList.Count > 0))
-                return;
+            //Xamarin.Essentials.MainThread.BeginInvokeOnMainThread(async () =>
+            //{
+                if (PixKeyList == null || !(PixKeyList.Count > 0))
+                {
+                    CurrentPixKey = new PixKey
+                    {
+                        Color = new MaterialColor
+                        {
+                            Primary = Color.FromHex("#2c3e50"),
+                            PrimaryDark = Color.FromHex("#34495e"),
+                            TextOnPrimary = Color.White
+                        }//MaterialColor.GetByCurrentResourceThemeColor()
+                    };
+                }
 
-            CurrentPixKey = pixkey ?? PixKeyList.FirstOrDefault();
+                else
+                    CurrentPixKey = pixkey ?? PixKeyList.FirstOrDefault();
 
-            await SetStatusFormCurrentPixColor();
+                await SetStatusFormCurrentPixColor();
+            //});            
         }
 
         public ICommand NavigateToAddNewKeyPageCommand => new Command(async () =>

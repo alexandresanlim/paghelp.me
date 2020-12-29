@@ -32,7 +32,7 @@ namespace PixQrCodeGeneratorOffline.Droid
             //ZXing.Net.Mobile.Forms.Android.Platform.Init();
             //CrossCurrentActivity.Current.Init(this, savedInstanceState);
             //PlatformGestureEffect.Init();
-            //AnimationViewRenderer.Init();
+            Lottie.Forms.Droid.AnimationViewRenderer.Init();
 
             CurrentWindow = (this).Window;
             DependencyService.Register<IStatusBar, StatusBarChanger>();

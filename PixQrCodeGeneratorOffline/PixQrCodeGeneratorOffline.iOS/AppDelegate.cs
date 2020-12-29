@@ -24,6 +24,7 @@ namespace PixQrCodeGeneratorOffline.iOS
         {
             global::Xamarin.Forms.Forms.SetFlags("CollectionView_Experimental");
             global::Xamarin.Forms.Forms.Init();
+            Lottie.Forms.iOS.Renderers.AnimationViewRenderer.Init();
             //ZXing.Net.Mobile.Forms.iOS.Platform.Init();
 
             LoadApplication(new App());
