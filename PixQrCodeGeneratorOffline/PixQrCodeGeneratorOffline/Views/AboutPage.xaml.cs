@@ -20,7 +20,7 @@ namespace PixQrCodeGeneratorOffline.Views
         protected override void OnAppearing()
         {
             lbVersion.Text = App.Info.VersionString;
-            lbDate.Text = App.Info.Date;
+            //lbDate.Text = App.Info.Date;
 
             base.OnAppearing();
         }
