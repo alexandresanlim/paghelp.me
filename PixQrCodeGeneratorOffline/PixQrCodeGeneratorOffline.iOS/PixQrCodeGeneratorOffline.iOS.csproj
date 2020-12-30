@@ -160,4 +160,13 @@
       <Name>PixQrCodeGeneratorOffline</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon_key.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon_key%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon_key%403x.png" />
+  </ItemGroup>
 </Project>
