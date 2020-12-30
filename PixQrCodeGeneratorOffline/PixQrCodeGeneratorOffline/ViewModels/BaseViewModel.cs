@@ -45,7 +45,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             IsLoading = isLoading;
 
             if (IsLoading)
-                DialogService.ShowLoading(title, MaskType.Gradient);
+                DialogService.ShowLoading(title);
 
             else
                 DialogService.HideLoading();

@@ -108,7 +108,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         {
             var options = new List<Acr.UserDialogs.ActionSheetOption>
             {
-                new Acr.UserDialogs.ActionSheetOption("Editar Chave", async () =>
+                new Acr.UserDialogs.ActionSheetOption("Editar chave", async () =>
                 {
                     await NavigateModalAsync(new AddPixKeyPage(this,CurrentPixKey));
                 }),

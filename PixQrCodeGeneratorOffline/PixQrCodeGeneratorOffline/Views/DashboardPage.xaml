@@ -143,8 +143,8 @@
                                 <TapGestureRecognizer Command="{Binding OpenOptionsCommand}" />
                             </controls:CustomFrame.GestureRecognizers>
                             <StackLayout Orientation="Horizontal">
-                                <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Cog }" IconSize="Small" IconColor="{DynamicResource textOnBackgroundTransparent}" VerticalOptions="CenterAndExpand" />
                                 <controls:CustomLabel Text="Opções" FontSize="Micro" FontAttributes="Bold" TextColor="{DynamicResource textOnBackgroundTransparent}" />
+                                <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Cog }" IconSize="Small" IconColor="{DynamicResource textOnBackgroundTransparent}" VerticalOptions="CenterAndExpand" />
                             </StackLayout>
                         </controls:CustomFrame>
                     </StackLayout>
