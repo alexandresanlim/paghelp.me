@@ -53,10 +53,10 @@ namespace PixQrCodeGeneratorOffline.Models
                 else
                 {
                     if (IsToday)
-                        return "Today " + PublishDateLocal.Value.ToString("hh tt", CultureInfo.InvariantCulture);
+                        return "Hoje ás " + PublishDateLocal.Value.ToString("HH tt");
 
                     else
-                        return "Yesterday " + PublishDateLocal.Value.ToString("hh tt", CultureInfo.InvariantCulture);
+                        return "Ontem ás " + PublishDateLocal.Value.ToString("HH tt");
                 }
             }
         }
