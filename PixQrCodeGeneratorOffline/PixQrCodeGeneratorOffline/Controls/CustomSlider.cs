@@ -9,8 +9,9 @@ namespace PixQrCodeGeneratorOffline.Controls
     {
         public CustomSlider()
         {
-            ThumbColor = App.ThemeColors.Secondary;
-            MinimumTrackColor = App.ThemeColors.Secondary;
+            ThumbColor = App.ThemeColors.PrimaryDark;
+            MinimumTrackColor = App.ThemeColors.Primary;
+            MaximumTrackColor = App.ThemeColors.TextSecondary;
         }
     }
 }

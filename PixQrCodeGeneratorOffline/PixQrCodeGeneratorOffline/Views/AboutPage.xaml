@@ -58,7 +58,6 @@
                         </controls:CustomFrame.GestureRecognizers>
                         <StackLayout>
                             <controls:CustomLabel Text="Somos gratuitos e independentes, estamos sempre buscando constantes melhorias para os nossos usuários, corrigindo bugs e melhorando a sua experiência, assim pedidos encarecidamente que apoie-nos de alguma forma, são essas: compartilhando, avaliando na loja ou fazendo uma doação." TextColor="{DynamicResource textOnBackgroundTransparent}" FontSize="Small" />
-
                             <controls:CustomLabel Text="Toque aqui para ver as opções" FontAttributes="Bold" TextColor="{DynamicResource textOnBackgroundTransparent}" FontSize="Small" />
                         </StackLayout>
                         

@@ -52,6 +52,8 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 var itens = FeedService.Get("https://news.google.com/rss/search?q=pix&hl=pt-BR&gl=BR&ceid=BR%3Apt-419");
 
                 CurrentFeedList = itens?.ToObservableCollection();
+
+                NotFoundVisible = !(CurrentFeedList.Count > 0);
             }
             catch (Exception)
             {
@@ -79,6 +81,13 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         {
             get => _currentFeedList;
             set => SetProperty(ref _currentFeedList, value);
+        }
+
+        private bool _notFoundVisible;
+        public bool NotFoundVisible
+        {
+            get => _notFoundVisible;
+            set => SetProperty(ref _notFoundVisible, value);
         }
     }
 }

@@ -40,5 +40,10 @@ namespace PixQrCodeGeneratorOffline.Views
         {
             _viewModel.CurrentPixKey.RaisePresentation();
         }
+
+        private void CustomSlider_ValueChanged(object sender, ValueChangedEventArgs e)
+        {
+            _viewModel.CurrentPixKey.Value = e.NewValue.ToString();
+        }
     }
 }

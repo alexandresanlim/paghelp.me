@@ -21,8 +21,8 @@
         <RefreshView Command="{Binding LoadDataCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
 
             <Grid>
-                
-                <StackLayout IsVisible="{Binding CurrentFeedList, Converter={StaticResource HasDataConverterInverted}}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="30">
+
+                <StackLayout IsVisible="{Binding NotFoundVisible}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="30">
                     <controls:CustomAnimation HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Animation="not-found.json" Speed="0.5" />
                     <controls:CustomLabel Text="Ops!" FontSize="50" FontAttributes="Bold" HorizontalOptions="Center" TextColor="{DynamicResource textOnPrimary}" />
                     <controls:CustomLabel Text="Nenhuma notícia encontrada no momento" FontSize="Small" FontAttributes="Bold" HorizontalOptions="Center" TextColor="{DynamicResource textOnPrimary}" />
