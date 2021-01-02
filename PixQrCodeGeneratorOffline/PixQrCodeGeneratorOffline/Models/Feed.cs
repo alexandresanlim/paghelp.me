@@ -45,10 +45,10 @@ namespace PixQrCodeGeneratorOffline.Models
             get
             {
                 if (PublishDuration.TotalSeconds < 60)
-                    return "há " + (int)PublishDuration.TotalSeconds + " sec";
+                    return "há " + (int)PublishDuration.TotalSeconds + " segundos";
 
                 else if (PublishDuration.TotalMinutes < 60)
-                    return "há " + (int)PublishDuration.TotalMinutes + " min";
+                    return "há " + (int)PublishDuration.TotalMinutes + " minutos";
 
                 else
                 {

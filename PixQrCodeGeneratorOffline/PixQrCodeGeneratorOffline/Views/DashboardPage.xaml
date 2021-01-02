@@ -102,7 +102,7 @@
 
                                                         <controls:CustomLabel Text="Código copia e cola" FontAttributes="Bold" Margin="15,0,0,0" FontSize="Small" TextColor="{DynamicResource textPrimary}" />
 
-                                                        <controls:CustomFrame BackgroundColor="#25000000" Padding="15" CornerRadius="10">
+                                                        <controls:CustomFrame BackgroundColor="{DynamicResource backgroundTransparent}" Padding="15" CornerRadius="10">
                                                             <Grid ColumnDefinitions="*, auto">
                                                                 <controls:CustomLabel Grid.Column="0" Text="{Binding Payload}" FontSize="Micro" MaxLines="2" LineBreakMode="TailTruncation" TextColor="{DynamicResource textSecondary}" />
                                                                 <controls:CustomIcon Grid.Column="1" Glyph="{x:Static icons:FontAwesomeSolid.ShareSquare }" IconSize="Medium" IconColor="{DynamicResource textSecondary}" VerticalOptions="CenterAndExpand" />
