@@ -32,7 +32,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 }),
                 new Acr.UserDialogs.ActionSheetOption("Copiar código copia e cola pix para doação", async () =>
                 {
-                    await CopyText("00020126580014br.gov.bcb.pix0136bee05743-4291-4f3c-9259-595df1307ba1520400005303986540510.005802BR5914Alexandre Lima6019Presidente Prudente62180514Um-Id-Qualquer6304D475", "Código copiado com sucesso!");
+                    await CopyText("00020126760014br.gov.bcb.pix0136bee05743-4291-4f3c-9259-595df1307ba10214Doação PIX OFF5204000053039865802BR5909Alexandre6008Curitiba62200516PIXOFFe2d72825e26304208D", "Código copiado com sucesso!");
                 })
             };
 
