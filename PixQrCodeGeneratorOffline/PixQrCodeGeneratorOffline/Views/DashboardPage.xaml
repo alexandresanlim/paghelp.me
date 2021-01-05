@@ -69,17 +69,17 @@
                                                             </controls:CustomFrame>
 
                                                             <StackLayout Grid.Column="1" Spacing="2">
-                                                                <controls:CustomFrame BackgroundColor="{DynamicResource primary}" Padding="10" CornerRadius="15,15,0,0">
+                                                                <controls:CustomFrame BackgroundColor="{DynamicResource background_page}" Padding="10" CornerRadius="15,15,0,0">
                                                                     <controls:CustomFrame.GestureRecognizers>
                                                                         <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:DashboardViewModel}}, Path=AddValueCommand}" />
                                                                     </controls:CustomFrame.GestureRecognizers>
-                                                                    <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.PlusCircle }" IconColor="{DynamicResource textOnPrimary}" IconSize="Small" />
+                                                                    <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.PlusCircle }" IconColor="{DynamicResource textSecondary}" IconSize="Small" />
                                                                 </controls:CustomFrame>
-                                                                <controls:CustomFrame BackgroundColor="{DynamicResource primary}" Padding="10" CornerRadius="0,0,15,15">
+                                                                <controls:CustomFrame BackgroundColor="{DynamicResource background_page}" Padding="10" CornerRadius="0,0,15,15">
                                                                     <controls:CustomFrame.GestureRecognizers>
                                                                         <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:DashboardViewModel}}, Path=RmValueCommand}" />
                                                                     </controls:CustomFrame.GestureRecognizers>
-                                                                    <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.MinusCircle }" IconColor="{DynamicResource textOnPrimary}" IconSize="Small" />
+                                                                    <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.MinusCircle }" IconColor="{DynamicResource textSecondary}" IconSize="Small" />
                                                                 </controls:CustomFrame>
                                                             </StackLayout>
                                                         </Grid>
@@ -121,7 +121,7 @@
 
                                                         <controls:CustomLabel Text="Código copia e cola" FontAttributes="Bold" Margin="15,0,0,0" FontSize="Small" TextColor="{DynamicResource textPrimary}" />
 
-                                                        <controls:CustomFrame BackgroundColor="{DynamicResource backgroundTransparent}" Padding="15" CornerRadius="10">
+                                                        <controls:CustomFrame BackgroundColor="{DynamicResource background_page}" Padding="15" CornerRadius="10">
                                                             <Grid ColumnDefinitions="*, auto">
                                                                 <controls:CustomLabel Grid.Column="0" Text="{Binding Payload}" FontSize="Micro" MaxLines="2" LineBreakMode="TailTruncation" TextColor="{DynamicResource textSecondary}" />
                                                                 <controls:CustomIcon Grid.Column="1" Glyph="{x:Static icons:FontAwesomeSolid.ShareSquare }" IconSize="Medium" IconColor="{DynamicResource textSecondary}" VerticalOptions="CenterAndExpand" />
