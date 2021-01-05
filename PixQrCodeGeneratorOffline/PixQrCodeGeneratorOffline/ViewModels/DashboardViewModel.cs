@@ -24,7 +24,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             LoadDataCommand.Execute(null);
         }
 
-        public Command LoadDataCommand => new Command(async () =>
+        public ICommand LoadDataCommand => new Command(async () =>
         {
             var list = PixKeyDataBase.GetAll();
 
@@ -133,6 +133,32 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                     return;
                 })
             });
+        });
+
+        public ICommand AddValueCommand => new Command(() =>
+        {
+            var initial = CurrentPixKey.Value ?? "0";
+
+            var d = decimal.Parse(initial);
+            d = d += 1;
+
+            CurrentPixKey.Value = d.ToString();
+        });
+
+        public ICommand RmValueCommand => new Command(() =>
+        {
+            if (string.IsNullOrEmpty(CurrentPixKey?.Value) || CurrentPixKey.Value == "0")
+            { 
+                CurrentPixKey.Value = "";
+                return;
+            }
+
+            var initial = CurrentPixKey.Value;
+
+            var d = decimal.Parse(initial);
+            d = d -= 1;
+
+            CurrentPixKey.Value = d.ToString();
         });
 
         private async Task SetStatusFormCurrentPixColor()
