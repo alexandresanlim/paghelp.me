@@ -83,7 +83,7 @@
                                                                 </controls:CustomFrame>
                                                             </StackLayout>
                                                         </Grid>
-                                                        <controls:CustomLabel Text="*Se nenhum valor for informado, o pagador poderá informar qualquer valor." FontSize="Micro" TextColor="{DynamicResource textSecondary}" Margin="10,0,0,0" />
+                                                        <controls:CustomLabel Text="*(Opcional) Se nenhum valor for informado, o pagador poderá informar qualquer valor." FontSize="Micro" TextColor="{DynamicResource textSecondary}" Margin="10,0,0,0" />
                                                     </StackLayout>
 
                                                     <StackLayout Spacing="0">
@@ -94,7 +94,7 @@
                                                             <!--<controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Edit }" IconColor="{DynamicResource textSecondary}" HorizontalOptions="End" VerticalOptions="Center" Margin="0,0,0,10" />
                                                         </Grid>-->
                                                         </controls:CustomFrame>
-                                                        <controls:CustomLabel Text="*Texto que aparecerá para o pagador no momento do pagamento." FontSize="Micro" TextColor="{DynamicResource textSecondary}" Margin="10,0,0,0" />
+                                                        <controls:CustomLabel Text="*(Opcional) Texto que aparecerá para o pagador no momento do pagamento." FontSize="Micro" TextColor="{DynamicResource textSecondary}" Margin="10,0,0,0" />
                                                     </StackLayout>
 
                                                     <qr:QRCode
