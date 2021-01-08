@@ -2,6 +2,8 @@
 {
     public class FontAwesomeBrands
     {
+
+
         public static string AccessibleIcon { get { return "\uf368"; } }
         public static string Accusoft { get { return "\uf369"; } }
         public static string Adn { get { return "\uf170"; } }
