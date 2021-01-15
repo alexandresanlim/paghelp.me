@@ -30,7 +30,7 @@ namespace PixQrCodeGeneratorOffline.Views
 
             //_dashboardViewModel.LoadCurrentPixKey((_dashboardViewModel.PixKeyList.FirstOrDefault(x => x.Id == _dashboardViewModel.CurrentPixKey.Id)));
 
-            _dashboardViewModel.CurrentPixKey = _viewModel.IsEdit ? AddPixKeyViewModel.OriginPixKey : _dashboardViewModel.CurrentPixKey;
+            //_dashboardViewModel.CurrentPixKey = _viewModel.IsEdit ? AddPixKeyViewModel.OriginPixKey : _dashboardViewModel.CurrentPixKey;
 
             _dashboardViewModel.LoadCurrentPixKey(_dashboardViewModel.CurrentPixKey);
 
