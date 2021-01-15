@@ -13,7 +13,7 @@ namespace PixQrCodeGeneratorOffline.Controls
             //var isdark = Application.Current.UserAppTheme == OSAppTheme.Dark;
             //BackgroundColor = isdark ? Color.Black : Color.White;
 
-            BackgroundColor = Color.White;
+            //BackgroundColor = Color.White;
         }
     }
 }

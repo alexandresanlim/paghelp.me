@@ -36,14 +36,14 @@ namespace PixQrCodeGeneratorOffline.Views
         //    base.OnAppearing();
         //}
 
-        private void CustomEntry_Unfocused(object sender, FocusEventArgs e)
-        {
-            _viewModel.CurrentPixKey.RaisePresentation();
-        }
+        //private void CustomEntry_Unfocused(object sender, FocusEventArgs e)
+        //{
+        //    _viewModel.CurrentPixKey.RaisePresentation();
+        //}
 
-        private void CustomSlider_ValueChanged(object sender, ValueChangedEventArgs e)
-        {
-            _viewModel.CurrentPixKey.Value = e.NewValue.ToString();
-        }
+        //private void CustomSlider_ValueChanged(object sender, ValueChangedEventArgs e)
+        //{
+        //    _viewModel.CurrentPixKey.Value = e.NewValue.ToString();
+        //}
     }
 }

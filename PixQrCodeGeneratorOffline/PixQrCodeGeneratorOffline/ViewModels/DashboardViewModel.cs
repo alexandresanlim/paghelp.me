@@ -68,6 +68,11 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             //});            
         }
 
+        public ICommand NavigateToCreateBillingPageCommand => new Command(async () =>
+        {
+            await NavigateModalAsync(new CreateBillingPage(CurrentPixKey));
+        });
+
         public ICommand NavigateToAddNewKeyPageCommand => new Command(async () =>
         {
             await NavigateModalAsync(new AddPixKeyPage(this));
@@ -78,88 +83,52 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             await SetStatusFormCurrentPixColor();
         });
 
-        public ICommand SharePayloadCommand => new Command(async () =>
+        public ICommand CopyKeyCommand => new Command(async () =>
         {
-            var options = new List<Acr.UserDialogs.ActionSheetOption>
-            {
-                new Acr.UserDialogs.ActionSheetOption("Copiar Código", async () =>
-                {
-                   await CopyText(CurrentPixKey.Payload, "Código copiado com sucesso!");
-                }),
-                new Acr.UserDialogs.ActionSheetOption("Compartilhar Código", async () =>
-                {
-                    await ShareText(CurrentPixKey?.Payload);
-                }),
-            };
-
-            DialogService.ActionSheet(new Acr.UserDialogs.ActionSheetConfig
-            {
-                Title = "O que deseja fazer?",
-                //UseBottomSheet = true,
-                Options = options,
-                Cancel = new Acr.UserDialogs.ActionSheetOption("Cancelar", () =>
-                {
-                    return;
-                })
-            });
+            await Clipboard.SetTextAsync(CurrentPixKey?.Key);
+            DialogService.Toast("Chave copiada com sucesso!");
         });
 
-        public ICommand OpenOptionsCommand => new Command(() =>
+        public ICommand ShareKeyCommand => new Command(async () =>
         {
-            var options = new List<Acr.UserDialogs.ActionSheetOption>
-            {
-                new Acr.UserDialogs.ActionSheetOption("Editar chave", async () =>
-                {
-                    await NavigateModalAsync(new AddPixKeyPage(this,CurrentPixKey));
-                }),
-                new Acr.UserDialogs.ActionSheetOption("Copiar chave", async () =>
-                {
-                    await Clipboard.SetTextAsync(CurrentPixKey?.Key);
-                    DialogService.Toast("Chave copiada com sucesso!");
-                }),
-                new Acr.UserDialogs.ActionSheetOption("Compartilhar chave", async () =>
-                {
-                    await ShareText(CurrentPixKey?.Key);
-                })
-            };
-
-            DialogService.ActionSheet(new Acr.UserDialogs.ActionSheetConfig
-            {
-                Title = "O que deseja fazer?",
-                //UseBottomSheet = true,
-                Options = options,
-                Cancel = new Acr.UserDialogs.ActionSheetOption("Cancelar", () =>
-                {
-                    return;
-                })
-            });
+            await ShareText(CurrentPixKey?.Key);
         });
 
-        public ICommand AddValueCommand => new Command(() =>
+        public ICommand EditKeyCommand => new Command(async () =>
         {
-            var initial = CurrentPixKey.Value ?? "0";
-
-            var d = decimal.Parse(initial);
-            d = d += 1;
-
-            CurrentPixKey.Value = d.ToString();
+            await NavigateModalAsync(new AddPixKeyPage(this, CurrentPixKey));
         });
 
-        public ICommand RmValueCommand => new Command(() =>
-        {
-            if (string.IsNullOrEmpty(CurrentPixKey?.Value) || CurrentPixKey.Value == "0")
-            { 
-                CurrentPixKey.Value = "";
-                return;
-            }
+        //public ICommand OpenOptionsCommand => new Command(() =>
+        //{
+        //    var options = new List<Acr.UserDialogs.ActionSheetOption>
+        //    {
+        //        new Acr.UserDialogs.ActionSheetOption("Editar chave", async () =>
+        //        {
+        //            await NavigateModalAsync(new AddPixKeyPage(this,CurrentPixKey));
+        //        }),
+        //        new Acr.UserDialogs.ActionSheetOption("Copiar chave", async () =>
+        //        {
+        //            await Clipboard.SetTextAsync(CurrentPixKey?.Key);
+        //            DialogService.Toast("Chave copiada com sucesso!");
+        //        }),
+        //        new Acr.UserDialogs.ActionSheetOption("Compartilhar chave", async () =>
+        //        {
+        //            await ShareText(CurrentPixKey?.Key);
+        //        })
+        //    };
 
-            var initial = CurrentPixKey.Value;
-
-            var d = decimal.Parse(initial);
-            d = d -= 1;
-
-            CurrentPixKey.Value = d.ToString();
-        });
+        //    DialogService.ActionSheet(new Acr.UserDialogs.ActionSheetConfig
+        //    {
+        //        Title = "O que deseja fazer?",
+        //        //UseBottomSheet = true,
+        //        Options = options,
+        //        Cancel = new Acr.UserDialogs.ActionSheetOption("Cancelar", () =>
+        //        {
+        //            return;
+        //        })
+        //    });
+        //});
 
         private async Task SetStatusFormCurrentPixColor()
         {
@@ -187,25 +156,18 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             get => _currentPayload;
         }
 
-        private string _currentQrCode;
-        public string CurrentQrCode
-        {
-            set => SetProperty(ref _currentQrCode, value);
-            get => _currentQrCode;
-        }
+        //private bool _hideData;
+        //public bool HideData
+        //{
+        //    set => SetProperty(ref _hideData, value);
+        //    get => _hideData;
+        //}
 
-        private bool _hideData;
-        public bool HideData
-        {
-            set => SetProperty(ref _hideData, value);
-            get => _hideData;
-        }
-
-        ImageSource _qrCodeImage;
-        public ImageSource QrCodeImage
-        {
-            get => _qrCodeImage;
-            set => SetProperty(ref _qrCodeImage, value);
-        }
+        //ImageSource _qrCodeImage;
+        //public ImageSource QrCodeImage
+        //{
+        //    get => _qrCodeImage;
+        //    set => SetProperty(ref _qrCodeImage, value);
+        //}
     }
 }
