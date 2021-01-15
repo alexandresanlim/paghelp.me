@@ -42,29 +42,35 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             PixKeyList = list.ToObservableCollection();
 
             await LoadCurrentPixKey();
+
+            await SetStatusFromCurrentPixColor();
         });
 
-        public async Task LoadCurrentPixKey(PixKey pixkey = null)
+        public async Task LoadCurrentPixKey(PixKey pixKeySelected = null)
         {
             //Xamarin.Essentials.MainThread.BeginInvokeOnMainThread(async () =>
             //{
-                if (PixKeyList == null || !(PixKeyList.Count > 0))
+
+            //if (PixKeyList != null && PixKeyList.Count > 0 && pixKeyRemove != null)
+            //    PixKeyList.Remove(CurrentPixKey);
+
+            if (PixKeyList == null || !(PixKeyList.Count > 0))
+            {
+                CurrentPixKey = new PixKey
                 {
-                    CurrentPixKey = new PixKey
+                    Color = new MaterialColor
                     {
-                        Color = new MaterialColor
-                        {
-                            Primary = Color.FromHex("#2c3e50"),
-                            PrimaryDark = Color.FromHex("#34495e"),
-                            TextOnPrimary = Color.White
-                        }//MaterialColor.GetByCurrentResourceThemeColor()
-                    };
-                }
+                        Primary = Color.FromHex("#2c3e50"),
+                        PrimaryDark = Color.FromHex("#34495e"),
+                        TextOnPrimary = Color.White
+                    }//MaterialColor.GetByCurrentResourceThemeColor()
+                };
+            }
 
-                else
-                    CurrentPixKey = pixkey ?? PixKeyList.FirstOrDefault();
+            else
+                CurrentPixKey = pixKeySelected ?? PixKeyList.FirstOrDefault();
 
-                await SetStatusFormCurrentPixColor();
+            //await SetStatusFromCurrentPixColor();
             //});            
         }
 
@@ -80,7 +86,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public ICommand ChangeSelectPixKeyCommand => new Command(async () =>
         {
-            await SetStatusFormCurrentPixColor();
+            await SetStatusFromCurrentPixColor();
         });
 
         public ICommand CopyKeyCommand => new Command(async () =>
@@ -130,7 +136,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         //    });
         //});
 
-        private async Task SetStatusFormCurrentPixColor()
+        private async Task SetStatusFromCurrentPixColor()
         {
             App.LoadTheme(CurrentPixKey.Color);
         }

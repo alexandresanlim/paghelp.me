@@ -53,8 +53,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         #endregion
 
-        #region Navigate
-
         public async Task DisplayAlert(string title, string message, string cancel)
         {
             await Application.Current.MainPage.DisplayAlert(title, message, cancel);
@@ -65,9 +63,11 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             return await Application.Current.MainPage.DisplayAlert(title, message, accept, cancel);
         }
 
+        #region Navigate
+
         public Command CloseModalCommand => new Command(async () =>
         {
-            await CloseModal();
+            await NavigateBackModalAsync();
         });
 
         public Command NavigateToRootCommand => new Command(async () =>
@@ -77,27 +77,27 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public async Task NavigateAsync(Page page)
         {
-            await Shell.Current.Navigation.PushAsync(page);
+            await Shell.Current.Navigation.PushAsync(page, true);
         }
 
         public async Task NavigateModalAsync(Page page)
         {
-            await Shell.Current.Navigation.PushModalAsync(page);
+            await Shell.Current.Navigation.PushModalAsync(page, true);
         }
 
-        public async Task CloseModal()
+        public async Task NavigateBackModalAsync()
         {
             await Shell.Current.Navigation.PopModalAsync();
         }
 
-        public async Task NavigateBack()
+        public async Task NavigateBackAsync()
         {
             await Shell.Current.Navigation.PopAsync();
         }
 
         public async Task NavigateToRootAsync()
         {
-            await Shell.Current.Navigation.PopToRootAsync();
+            await Shell.Current.Navigation.PopToRootAsync(true);
         }
 
         #endregion

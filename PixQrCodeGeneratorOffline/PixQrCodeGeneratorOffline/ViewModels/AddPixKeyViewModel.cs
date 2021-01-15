@@ -119,7 +119,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             //{
             DialogService.Toast("Chave salva com sucesso");
 
-            await CloseModal();
+            await NavigateBackModalAsync();
 
             await DashboardViewModel.LoadCurrentPixKey(CurrentPixKey);
             //}
@@ -139,13 +139,18 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
             if (success)
             {
-                DashboardViewModel.PixKeyList.Remove(CurrentPixKey);
+                
 
                 DialogService.Toast("Chave removida com sucesso");
 
-                await CloseModal();
 
-                await DashboardViewModel.LoadCurrentPixKey();
+                await DashboardViewModel.LoadCurrentPixKey(null);
+
+                //DashboardViewModel.PixKeyList.Remove(CurrentPixKey);
+
+                await NavigateBackModalAsync();
+
+                
             }
 
             else
