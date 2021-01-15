@@ -139,18 +139,15 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
             if (success)
             {
-                
-
                 DialogService.Toast("Chave removida com sucesso");
-
 
                 await DashboardViewModel.LoadCurrentPixKey(null);
 
-                //DashboardViewModel.PixKeyList.Remove(CurrentPixKey);
-
                 await NavigateBackModalAsync();
 
-                
+                await Task.Delay(1000);
+
+                DashboardViewModel.PixKeyList.Remove(CurrentPixKey);
             }
 
             else
