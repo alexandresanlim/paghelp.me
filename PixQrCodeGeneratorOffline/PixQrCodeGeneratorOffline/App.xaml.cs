@@ -1,4 +1,5 @@
 ﻿using PixQrCodeGeneratorOffline.Services;
+using PixQrCodeGeneratorOffline.Style.Interfaces;
 using PixQrCodeGeneratorOffline.Views;
 using System;
 using Xamarin.Forms;
@@ -19,7 +20,8 @@ namespace PixQrCodeGeneratorOffline
 
         protected override void OnStart()
         {
-            //LoadTheme(null);
+            var service = DependencyService.Get<IStatusBar>();
+            service?.SetStatusBarColor(App.ThemeColors.Primary);
         }
 
         protected override void OnSleep()

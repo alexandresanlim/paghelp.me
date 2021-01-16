@@ -142,6 +142,10 @@
 
                 <StackLayout VerticalOptions="End" HorizontalOptions="End" Margin="15">
 
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding NavigateToAddNewKeyPageCommand}" />
+                    </StackLayout.GestureRecognizers>
+
                     <StackLayout Spacing="0" IsVisible="{Binding ShowWelcome}">
                         <controls:CustomFrame BackgroundColor="{DynamicResource backgroundTransparent}" Padding="15" CornerRadius="10">
                             <StackLayout Spacing="0">
@@ -156,9 +160,7 @@
                     </StackLayout>
 
                     <controls:CustomFrame BackgroundColor="{DynamicResource backgroundTransparent}" Padding="15" CornerRadius="30" HorizontalOptions="End">
-                        <controls:CustomFrame.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding NavigateToAddNewKeyPageCommand}" />
-                        </controls:CustomFrame.GestureRecognizers>
+                       
                         <StackLayout Orientation="Horizontal">
                             <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.PlusCircle }" IconSize="Medium" IconColor="{DynamicResource textOnBackgroundTransparent}" />
                             <controls:CustomLabel Text="Adicionar Chave" FontSize="Small" FontAttributes="Bold" TextColor="{DynamicResource textOnBackgroundTransparent}" />
