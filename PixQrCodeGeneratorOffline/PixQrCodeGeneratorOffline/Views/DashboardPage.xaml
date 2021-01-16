@@ -38,6 +38,7 @@
                     PeekAreaInsets="40,0"
                     ItemsSource="{Binding PixKeyList}"
                     IsScrollAnimated="True"
+                    Loop="False"
                     CurrentItem="{Binding CurrentPixKey}"
                     CurrentItemChangedCommand="{Binding ChangeSelectPixKeyCommand}"
                     IsVisible="{Binding CurrentPixKey.Key, Converter={StaticResource HasDataConverter}}"
@@ -116,83 +117,6 @@
                                                 </StackLayout>
                                             </Grid>
 
-                                            <!--<StackLayout VerticalOptions="FillAndExpand">
-
-                                                    <StackLayout Spacing="0">
-                                                        <controls:CustomLabel Text="Valor:" FontAttributes="Bold" FontSize="Small" Margin="10,0,0,0" TextColor="{DynamicResource textPrimary}" />
-                                                        
-                                                        <Grid ColumnDefinitions="*, auto">
-                                                            
-                                                            <controls:CustomFrame Grid.Column="0" BackgroundColor="{DynamicResource background_page}" Padding="10,5" CornerRadius="10">
-                                                                <controls:CustomEntry Placeholder="R$0,00" Text="{Binding Value, Converter={StaticResource CurrencyConverter}}" Unfocused="CustomEntry_Unfocused" Keyboard="Numeric" FontSize="Large" ReturnType="Next" MaxLength="11" />
-                                                            </controls:CustomFrame>
-
-                                                            <StackLayout Grid.Column="1" Spacing="2">
-                                                                <controls:CustomFrame BackgroundColor="{DynamicResource background_page}" Padding="10" CornerRadius="15,15,0,0">
-                                                                    <controls:CustomFrame.GestureRecognizers>
-                                                                        <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:DashboardViewModel}}, Path=AddValueCommand}" />
-                                                                    </controls:CustomFrame.GestureRecognizers>
-                                                                    <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.PlusCircle }" IconColor="{DynamicResource textSecondary}" IconSize="Small" />
-                                                                </controls:CustomFrame>
-                                                                <controls:CustomFrame BackgroundColor="{DynamicResource background_page}" Padding="10" CornerRadius="0,0,15,15">
-                                                                    <controls:CustomFrame.GestureRecognizers>
-                                                                        <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:DashboardViewModel}}, Path=RmValueCommand}" />
-                                                                    </controls:CustomFrame.GestureRecognizers>
-                                                                    <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.MinusCircle }" IconColor="{DynamicResource textSecondary}" IconSize="Small" />
-                                                                </controls:CustomFrame>
-                                                            </StackLayout>
-                                                        </Grid>
-                                                        <controls:CustomLabel Text="*(Opcional) Se nenhum valor for informado, o pagador poderá informar qualquer valor." FontSize="Micro" TextColor="{DynamicResource textSecondary}" Margin="10,0,0,0" />
-                                                    </StackLayout>
-
-                                                    <StackLayout Spacing="0">
-                                                        <controls:CustomLabel Text="Solicitação Pagador:" FontAttributes="Bold" FontSize="Small" Margin="10,0,0,0" TextColor="{DynamicResource textPrimary}" />
-                                                        <controls:CustomFrame BackgroundColor="{DynamicResource background_page}" Padding="10,5" CornerRadius="10">
-                                                            
-                                                <Grid>
-                                                
-                                                            <controls:CustomEntry Placeholder="Pedido 1" Text="{Binding Description}" Unfocused="CustomEntry_Unfocused" ReturnType="Done" />
-                                                            
-                                                <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Edit }" IconColor="{DynamicResource textSecondary}" HorizontalOptions="End" VerticalOptions="Center" Margin="0,0,0,10" />
-                                                        </Grid>
-                                                
-                                                        </controls:CustomFrame>
-                                                        <controls:CustomLabel Text="*(Opcional) Texto que aparecerá para o pagador no momento do pagamento." FontSize="Micro" TextColor="{DynamicResource textSecondary}" Margin="10,0,0,0" />
-                                                    </StackLayout>
-
-                                                    <qr:QRCode
-                                                        Content="{Binding Payload}"
-                                                        BackgroundColor="White"
-                                                        Color="#000000" 
-                                                        Level="H" 
-                                                        WidthRequest="300" 
-                                                        HeightRequest="300" 
-                                                        VerticalOptions="CenterAndExpand" 
-                                                        HorizontalOptions="CenterAndExpand" 
-                                                        >
-
-                                                        <qr:QRCode.GestureRecognizers>
-                                                            <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:DashboardViewModel}}, Path=SharePayloadCommand}" />
-                                                        </qr:QRCode.GestureRecognizers>
-
-                                                    </qr:QRCode>
-
-                                                    <StackLayout Spacing="0" VerticalOptions="EndAndExpand">
-                                                        <StackLayout.GestureRecognizers>
-                                                            <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:DashboardViewModel}}, Path=SharePayloadCommand}" />
-                                                        </StackLayout.GestureRecognizers>
-
-                                                        <controls:CustomLabel Text="Código copia e cola" FontAttributes="Bold" Margin="15,0,0,0" FontSize="Small" TextColor="{DynamicResource textPrimary}" />
-
-                                                        <controls:CustomFrame BackgroundColor="{DynamicResource background_page}" Padding="15" CornerRadius="10">
-                                                            <Grid ColumnDefinitions="*, auto">
-                                                                <controls:CustomLabel Grid.Column="0" Text="{Binding Payload}" FontSize="Micro" MaxLines="2" LineBreakMode="TailTruncation" TextColor="{DynamicResource textSecondary}" />
-                                                                <controls:CustomIcon Grid.Column="1" Glyph="{x:Static icons:FontAwesomeSolid.ShareSquare }" IconSize="Medium" IconColor="{DynamicResource textSecondary}" VerticalOptions="CenterAndExpand" />
-                                                            </Grid>
-                                                        </controls:CustomFrame>
-                                                    </StackLayout>
-
-                                                </StackLayout>-->
                                         </StackLayout>
                                     </ScrollView>
                                     <!--</controls:CustomFrame>-->
@@ -221,8 +145,6 @@
                         </controls:CustomFrame>
                     </StackLayout>
 
-
-
                     <controls:CustomFrame BackgroundColor="{DynamicResource backgroundTransparent}" Padding="15" CornerRadius="30" HorizontalOptions="End">
                         <controls:CustomFrame.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding NavigateToAddNewKeyPageCommand}" />
@@ -233,10 +155,6 @@
                         </StackLayout>
                     </controls:CustomFrame>
                 </StackLayout>
-
-
-
-
 
             </Grid>
 
