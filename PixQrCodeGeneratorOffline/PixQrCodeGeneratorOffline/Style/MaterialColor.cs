@@ -60,6 +60,7 @@ namespace PixQrCodeGeneratorOffline.Style
             {
                 Name = "wine",
                 PrimaryDark = Color.FromHex("#001f2a"),
+                PrimaryLight = Color.FromHex("#2a4653"),
                 Primary = Color.FromHex("#264653"),
                 TextOnPrimary = Color.FromHex("#ffffff"),
                 SecondaryDark = Color.FromHex("#3c0006"),
@@ -70,6 +71,7 @@ namespace PixQrCodeGeneratorOffline.Style
             {
                 Name = "wine",
                 PrimaryDark = Color.FromHex("#006e62"),
+                PrimaryLight = Color.FromHex("#459d8f"),
                 Primary = Color.FromHex("#2a9d8f"),
                 TextOnPrimary = Color.FromHex("#000000"),
                 SecondaryDark = Color.FromHex("#3c0006"),
@@ -80,6 +82,7 @@ namespace PixQrCodeGeneratorOffline.Style
             {
                 Name = "wine",
                 PrimaryDark = Color.FromHex("#b4943c"),
+                PrimaryLight = Color.FromHex("#e9c46a"),
                 Primary = Color.FromHex("#e9c46a"),
                 TextOnPrimary = Color.FromHex("#000000"),
                 SecondaryDark = Color.FromHex("#3c0006"),
@@ -90,6 +93,7 @@ namespace PixQrCodeGeneratorOffline.Style
             {
                 Name = "wine",
                 PrimaryDark = Color.FromHex("#be7334"),
+                PrimaryLight = Color.FromHex("#f4a261"),
                 Primary = Color.FromHex("#f4a261"),
                 TextOnPrimary = Color.FromHex("#000000"),
                 SecondaryDark = Color.FromHex("#3c0006"),
@@ -100,6 +104,7 @@ namespace PixQrCodeGeneratorOffline.Style
             {
                 Name = "wine",
                 PrimaryDark = Color.FromHex("#b04027"),
+                PrimaryLight = Color.FromHex("#e76f51"),
                 Primary = Color.FromHex("#e76f51"),
                 TextOnPrimary = Color.FromHex("#000000"),
                 SecondaryDark = Color.FromHex("#3c0006"),
