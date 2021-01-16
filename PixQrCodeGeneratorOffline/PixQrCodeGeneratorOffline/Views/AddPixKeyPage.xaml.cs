@@ -26,12 +26,6 @@ namespace PixQrCodeGeneratorOffline.Views
 
         protected override bool OnBackButtonPressed()
         {
-            //if (!_viewModel.IsEdit)
-
-            //_dashboardViewModel.LoadCurrentPixKey((_dashboardViewModel.PixKeyList.FirstOrDefault(x => x.Id == _dashboardViewModel.CurrentPixKey.Id)));
-
-            //_dashboardViewModel.CurrentPixKey = _viewModel.IsEdit ? AddPixKeyViewModel.OriginPixKey : _dashboardViewModel.CurrentPixKey;
-
             _dashboardViewModel.SetStatusFromCurrentPixColor();
 
             return base.OnBackButtonPressed();
