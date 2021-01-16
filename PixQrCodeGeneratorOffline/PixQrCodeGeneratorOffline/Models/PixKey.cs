@@ -67,7 +67,7 @@ namespace PixQrCodeGeneratorOffline.Models
         [LiteDB.BsonIgnore]
         public string InstitutionPresentation => !string.IsNullOrEmpty(FinancialInstitution?.Name) ? FinancialInstitution?.Name : "";
 
-        public void RaisePresentation()
+        public void RaiseCob()
         {
             if (string.IsNullOrEmpty(Key))
                 return;

@@ -33,11 +33,11 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             //    Color = MaterialColor.GetRandom()
             //});
 
-            list.Select(x =>
-            {
-                x.RaisePresentation();
-                return x;
-            }).ToList();
+            //list.Select(x =>
+            //{
+            //    x.RaisePresentation();
+            //    return x;
+            //}).ToList();
 
             PixKeyList = list.ToObservableCollection();
 
@@ -47,31 +47,22 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         });
 
         public async Task LoadCurrentPixKey(PixKey pixKeySelected = null)
-        {
-            //Xamarin.Essentials.MainThread.BeginInvokeOnMainThread(async () =>
-            //{
-
-            //if (PixKeyList != null && PixKeyList.Count > 0 && pixKeyRemove != null)
-            //    PixKeyList.Remove(CurrentPixKey);
-
+       {
             if (PixKeyList == null || !(PixKeyList.Count > 0))
             {
+                ShowWelcome = true;
+
                 CurrentPixKey = new PixKey
                 {
-                    Color = new MaterialColor
-                    {
-                        Primary = Color.FromHex("#2c3e50"),
-                        PrimaryDark = Color.FromHex("#34495e"),
-                        TextOnPrimary = Color.White
-                    }//MaterialColor.GetByCurrentResourceThemeColor()
+                    Color = MaterialColor.GetByCurrentResourceThemeColor()
                 };
             }
 
             else
+            { 
                 CurrentPixKey = pixKeySelected ?? PixKeyList.FirstOrDefault();
-
-            //await SetStatusFromCurrentPixColor();
-            //});            
+                ShowWelcome = false;
+            }
         }
 
         public ICommand NavigateToCreateBillingPageCommand => new Command(async () =>
@@ -170,7 +161,10 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         private async Task SetStatusFromCurrentPixColor()
         {
-            App.LoadTheme(CurrentPixKey.Color);
+            if (CurrentPixKey?.Color == null)
+                return;
+
+            App.LoadTheme(CurrentPixKey?.Color);
         }
 
         private ObservableCollection<PixKey> _pixKeyList;
@@ -194,12 +188,12 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             get => _currentPayload;
         }
 
-        //private bool _hideData;
-        //public bool HideData
-        //{
-        //    set => SetProperty(ref _hideData, value);
-        //    get => _hideData;
-        //}
+        private bool _showWelcome;
+        public bool ShowWelcome
+        {
+            set => SetProperty(ref _showWelcome, value);
+            get => _showWelcome;
+        }
 
         //ImageSource _qrCodeImage;
         //public ImageSource QrCodeImage

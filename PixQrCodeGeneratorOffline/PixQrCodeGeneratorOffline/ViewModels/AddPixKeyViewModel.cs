@@ -87,7 +87,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
             var success = false;
 
-            CurrentPixKey.RaisePresentation();
+            //CurrentPixKey.RaisePresentation();
 
             if (IsEdit)
             {
@@ -105,11 +105,8 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
 
             else
-            {
+            { 
                 success = PixKeyDataBase.Insert(CurrentPixKey);
-                //CurrentPixKey.RaisePresentation();
-                //var positionInsert = (DashboardViewModel.PixKeyList.Count - 1);
-                //var last = DashboardViewModel.PixKeyList.IndexOf(DashboardViewModel.PixKeyList.LastOrDefault());
                 DashboardViewModel.PixKeyList.Add(CurrentPixKey);
             }
 
@@ -117,11 +114,13 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
             //if (success)
             //{
+
+            await DashboardViewModel.LoadCurrentPixKey(CurrentPixKey);
+
             DialogService.Toast("Chave salva com sucesso");
 
             await NavigateBackModalAsync();
 
-            await DashboardViewModel.LoadCurrentPixKey(CurrentPixKey);
             //}
 
             //else
@@ -139,15 +138,14 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
             if (success)
             {
-                DialogService.Toast("Chave removida com sucesso");
+                DashboardViewModel.PixKeyList.Remove(CurrentPixKey);
 
                 await DashboardViewModel.LoadCurrentPixKey(null);
 
+                DialogService.Toast("Chave removida com sucesso");
+
                 await NavigateBackModalAsync();
 
-                await Task.Delay(1000);
-
-                DashboardViewModel.PixKeyList.Remove(CurrentPixKey);
             }
 
             else

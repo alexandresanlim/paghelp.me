@@ -17,6 +17,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         public Command<PixKey> LoadDataCommand => new Command<PixKey>((pixKey) =>
         {
             CurrentPixKey = pixKey;
+            CurrentPixKey.RaiseCob();
         });
 
         public ICommand SharePayloadCommand => new Command(async () =>
@@ -54,7 +55,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
             CurrentPixKey.Value = d.ToString();
 
-            CurrentPixKey.RaisePresentation();
+            CurrentPixKey.RaiseCob();
         });
 
         public ICommand RmValueCommand => new Command(() =>
@@ -72,7 +73,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
             CurrentPixKey.Value = d.ToString();
 
-            CurrentPixKey.RaisePresentation();
+            CurrentPixKey.RaiseCob();
         });
 
         private PixKey _currentPixKey;

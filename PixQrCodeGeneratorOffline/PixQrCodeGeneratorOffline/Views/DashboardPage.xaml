@@ -58,12 +58,12 @@
                                 <StackLayout Padding="15">
 
                                     <!--<controls:CustomFrame VerticalOptions="FillAndExpand" CornerRadius="15" Padding="15">-->
-                                        <ScrollView>
-                                            <StackLayout>
+                                    <ScrollView>
+                                        <StackLayout>
 
-                                                <Grid ColumnDefinitions="*,*">
-                                                
-                                                    <StackLayout Grid.Column="0">
+                                            <Grid ColumnDefinitions="*,*">
+
+                                                <StackLayout Grid.Column="0">
                                                     <controls:CustomFrame Padding="10,15" CornerRadius="10" BackgroundColor="{DynamicResource backgroundTransparent}">
                                                         <controls:CustomFrame.GestureRecognizers>
                                                             <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:DashboardViewModel}}, Path=EditKeyCommand}" />
@@ -85,7 +85,7 @@
                                                         </StackLayout>
                                                     </controls:CustomFrame>
                                                 </StackLayout>
-                                                    
+
                                                 <StackLayout Grid.Column="1">
                                                     <controls:CustomFrame Padding="10,20" CornerRadius="10" BackgroundColor="{DynamicResource backgroundTransparentDashboard}">
                                                         <controls:CustomFrame.GestureRecognizers>
@@ -116,7 +116,7 @@
                                                 </StackLayout>
                                             </Grid>
 
-                                                <!--<StackLayout VerticalOptions="FillAndExpand">
+                                            <!--<StackLayout VerticalOptions="FillAndExpand">
 
                                                     <StackLayout Spacing="0">
                                                         <controls:CustomLabel Text="Valor:" FontAttributes="Bold" FontSize="Small" Margin="10,0,0,0" TextColor="{DynamicResource textPrimary}" />
@@ -193,8 +193,8 @@
                                                     </StackLayout>
 
                                                 </StackLayout>-->
-                                            </StackLayout>
-                                        </ScrollView>
+                                        </StackLayout>
+                                    </ScrollView>
                                     <!--</controls:CustomFrame>-->
                                 </StackLayout>
 
@@ -206,53 +206,35 @@
 
                 </controls:CustomCarouselView>
 
-                <controls:CustomFrame BackgroundColor="{DynamicResource backgroundTransparent}" Padding="15" CornerRadius="30" VerticalOptions="End" HorizontalOptions="End" Margin="15">
-                    <controls:CustomFrame.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding NavigateToAddNewKeyPageCommand}" />
-                    </controls:CustomFrame.GestureRecognizers>
-                    <StackLayout Orientation="Horizontal">
-                        <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.PlusCircle }" IconSize="Medium" IconColor="{DynamicResource textOnBackgroundTransparent}" />
-                        <controls:CustomLabel Text="Adicionar Chave" FontSize="Small" FontAttributes="Bold" TextColor="{DynamicResource textOnBackgroundTransparent}" />
-                    </StackLayout>
-                </controls:CustomFrame>
+                <StackLayout VerticalOptions="End" HorizontalOptions="End" Margin="15">
 
-                
-
-
-                <!--<Grid RowDefinitions="auto,auto" VerticalOptions="Start">
-
-                    <StackLayout Grid.Row="0" Orientation="Horizontal" Padding="10" HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand">
-                        <controls:CustomFrame BackgroundColor="{DynamicResource backgroundTransparent}" HorizontalOptions="EndAndExpand" VerticalOptions="Start" Padding="15,10" CornerRadius="30">
-                            <controls:CustomFrame.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding NavigateToAddNewKeyPageCommand}" />
-                            </controls:CustomFrame.GestureRecognizers>
-                            <StackLayout Orientation="Horizontal">
-                                <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.PlusCircle }" IconSize="Small" IconColor="{DynamicResource textOnBackgroundTransparent}" VerticalOptions="CenterAndExpand" />
-                                <controls:CustomLabel Text="Adicionar" FontSize="Micro" FontAttributes="Bold" TextColor="{DynamicResource textOnBackgroundTransparent}" />
+                    <StackLayout Spacing="0" IsVisible="{Binding ShowWelcome}">
+                        <controls:CustomFrame BackgroundColor="{DynamicResource backgroundTransparent}" Padding="15" CornerRadius="10">
+                            <StackLayout Spacing="0">
+                                <controls:CustomLabel Text="👋" FontSize="35" HorizontalOptions="Center" />
+                                <controls:CustomLabel Text="Bem vindo ao PIX COB!" FontSize="Small" HorizontalOptions="Center" FontAttributes="Bold" TextColor="{DynamicResource textOnBackgroundTransparent}" />
+                                <controls:CustomLabel Text="Comece adicionando sua primeira chave" FontSize="Micro" FontAttributes="Bold"  HorizontalOptions="Center" TextColor="{DynamicResource textOnBackgroundTransparent}" />
                             </StackLayout>
                         </controls:CustomFrame>
-
-                        -->
-                <!--<controls:CustomFrame BackgroundColor="{DynamicResource backgroundTransparent}" HorizontalOptions="EndAndExpand" VerticalOptions="Start" Padding="15,10" CornerRadius="30" IsVisible="{Binding CurrentPixKey.Key, Converter={StaticResource HasDataConverter}}">
-                            <controls:CustomFrame.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding OpenOptionsCommand}" />
-                            </controls:CustomFrame.GestureRecognizers>
-                            <StackLayout Orientation="Horizontal">
-                                <controls:CustomLabel Text="Opções" FontSize="Micro" FontAttributes="Bold" TextColor="{DynamicResource textOnBackgroundTransparent}" />
-                                <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Cog }" IconSize="Small" IconColor="{DynamicResource textOnBackgroundTransparent}" VerticalOptions="CenterAndExpand" />
-                            </StackLayout>
-                        </controls:CustomFrame>-->
-                <!--
+                        <controls:CustomFrame CornerRadius="0,0,15,15" HorizontalOptions="Center" Padding="10,0,10,10" BackgroundColor="{DynamicResource backgroundTransparent}">
+                            <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.ChevronDown }" IconSize="Medium" IconColor="{DynamicResource textOnBackgroundTransparent}" />
+                        </controls:CustomFrame>
                     </StackLayout>
 
 
-                    <StackLayout Grid.Row="1" IsVisible="{Binding CurrentPixKey.Key, Converter={StaticResource HasDataConverterInverted}}">
-                        <controls:CustomAnimation HeightRequest="250" VerticalOptions="Center" Animation="arrow_up_left.json" Speed="0.5" />
-                        <controls:CustomLabel Text="Seja bem vindo!" FontSize="Small" FontAttributes="Bold" HorizontalOptions="Center" Margin="0,30,0,0" TextColor="{DynamicResource textOnPrimary}" />
-                        <controls:CustomLabel Text="Comece adicionando a sua primeira chave" FontSize="Micro" FontAttributes="Bold" HorizontalOptions="Center" TextColor="{DynamicResource textOnPrimary}" />
-                    </StackLayout>
 
-                </Grid>-->
+                    <controls:CustomFrame BackgroundColor="{DynamicResource backgroundTransparent}" Padding="15" CornerRadius="30" HorizontalOptions="End">
+                        <controls:CustomFrame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding NavigateToAddNewKeyPageCommand}" />
+                        </controls:CustomFrame.GestureRecognizers>
+                        <StackLayout Orientation="Horizontal">
+                            <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.PlusCircle }" IconSize="Medium" IconColor="{DynamicResource textOnBackgroundTransparent}" />
+                            <controls:CustomLabel Text="Adicionar Chave" FontSize="Small" FontAttributes="Bold" TextColor="{DynamicResource textOnBackgroundTransparent}" />
+                        </StackLayout>
+                    </controls:CustomFrame>
+                </StackLayout>
+
+
 
 
 
