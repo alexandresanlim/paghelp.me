@@ -109,7 +109,22 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public ICommand ShareKeyCommand => new Command(async () =>
         {
-            await ShareText(CurrentPixKey?.Key);
+            try
+            {
+                SetIsLoading(true);
+
+                await Task.Delay(1000);
+
+                await ShareText(CurrentPixKey?.Key);
+            }
+            catch (System.Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                SetIsLoading(false);
+            }
         });
 
         public ICommand EditKeyCommand => new Command(async () =>
