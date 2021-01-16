@@ -28,17 +28,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         {
             var list = PixKeyDataBase.GetAll();
 
-            //list.Add(new PixKey
-            //{
-            //    Color = MaterialColor.GetRandom()
-            //});
-
-            //list.Select(x =>
-            //{
-            //    x.RaisePresentation();
-            //    return x;
-            //}).ToList();
-
             PixKeyList = list.ToObservableCollection();
 
             await LoadCurrentPixKey();

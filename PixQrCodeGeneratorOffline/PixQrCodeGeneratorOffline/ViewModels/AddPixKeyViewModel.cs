@@ -24,21 +24,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         {
             CurrentPixKey = pixKey ?? new PixKey();
 
-            //if (pixKey != null)
-            //{
-            //    OriginPixKey = new PixKey
-            //    {
-            //        City = pixKey?.City,
-            //        Color = pixKey?.Color,
-            //        Description = pixKey?.Description,
-            //        FinancialInstitution = pixKey?.FinancialInstitution,
-            //        Id = pixKey.Id,
-            //        Key = pixKey?.Key,
-            //        Name = pixKey?.Name,
-            //        Payload = pixKey?.Payload,
-            //    };
-            //}
-
             DashboardViewModel = dbViewModel;
 
             LoadData.Execute(null);
