@@ -32,7 +32,7 @@ namespace PixQrCodeGeneratorOffline.Views
 
             //_dashboardViewModel.CurrentPixKey = _viewModel.IsEdit ? AddPixKeyViewModel.OriginPixKey : _dashboardViewModel.CurrentPixKey;
 
-            _dashboardViewModel.LoadCurrentPixKey(_dashboardViewModel.CurrentPixKey);
+            _dashboardViewModel.SetStatusFromCurrentPixColor();
 
             return base.OnBackButtonPressed();
         }

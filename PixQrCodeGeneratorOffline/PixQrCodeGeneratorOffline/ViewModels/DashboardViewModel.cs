@@ -159,7 +159,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         //    });
         //});
 
-        private async Task SetStatusFromCurrentPixColor()
+        public async Task SetStatusFromCurrentPixColor()
         {
             if (CurrentPixKey?.Color == null)
                 return;
