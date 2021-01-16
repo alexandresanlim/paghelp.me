@@ -19,12 +19,23 @@
 
     <ContentPage.Content>
         <controls:CustomFrame BackgroundGradientStartPoint="0,0" BackgroundGradientEndPoint="0,1">
-            <yummy:PancakeView.BackgroundGradientStops>
+
+            <controls:CustomFrame.Background>
+                <!-- StartPoint defaults to (0,0) -->
+                <LinearGradientBrush EndPoint="0,1">
+                    <GradientStop Color="{DynamicResource primary}"
+                          Offset="0.1" />
+                    <GradientStop Color="{DynamicResource primaryDark}"
+                          Offset="1.0" />
+                </LinearGradientBrush>
+            </controls:CustomFrame.Background>
+
+            <!--<yummy:PancakeView.BackgroundGradientStops>
                 <yummy:GradientStopCollection>
                     <yummy:GradientStop Color="{Binding CurrentPixKey.Color.Primary}" Offset="0.1" />
                     <yummy:GradientStop Color="{Binding CurrentPixKey.Color.PrimaryDark}" Offset="1.0" />
                 </yummy:GradientStopCollection>
-            </yummy:PancakeView.BackgroundGradientStops>
+            </yummy:PancakeView.BackgroundGradientStops>-->
 
             <Grid>
 
@@ -136,7 +147,7 @@
                         <controls:CustomFrame BackgroundColor="{DynamicResource backgroundTransparent}" Padding="15" CornerRadius="10">
                             <StackLayout Spacing="0">
                                 <controls:CustomLabel Text="👋" FontSize="35" HorizontalOptions="Center" />
-                                <controls:CustomLabel Text="Bem vindo ao PIX COB!" FontSize="Small" HorizontalOptions="Center" FontAttributes="Bold" TextColor="{DynamicResource textOnBackgroundTransparent}" />
+                                <controls:CustomLabel Text="Bem vindo ao PIX OFF!" FontSize="Small" HorizontalOptions="Center" FontAttributes="Bold" TextColor="{DynamicResource textOnBackgroundTransparent}" />
                                 <controls:CustomLabel Text="Comece adicionando sua primeira chave" FontSize="Micro" FontAttributes="Bold"  HorizontalOptions="Center" TextColor="{DynamicResource textOnBackgroundTransparent}" />
                             </StackLayout>
                         </controls:CustomFrame>

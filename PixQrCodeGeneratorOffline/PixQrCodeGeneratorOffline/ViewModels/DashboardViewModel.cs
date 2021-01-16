@@ -36,19 +36,12 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         });
 
         public async Task LoadCurrentPixKey(PixKey pixKeySelected = null)
-       {
+        {
             if (PixKeyList == null || !(PixKeyList.Count > 0))
-            {
                 ShowWelcome = true;
 
-                CurrentPixKey = new PixKey
-                {
-                    Color = MaterialColor.GetByCurrentResourceThemeColor()
-                };
-            }
-
             else
-            { 
+            {
                 CurrentPixKey = pixKeySelected ?? PixKeyList.FirstOrDefault();
                 ShowWelcome = false;
             }
