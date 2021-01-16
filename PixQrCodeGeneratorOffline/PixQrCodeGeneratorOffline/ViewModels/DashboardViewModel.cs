@@ -76,12 +76,44 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public ICommand NavigateToCreateBillingPageCommand => new Command(async () =>
         {
-            await NavigateModalAsync(new CreateBillingPage(CurrentPixKey));
+            try
+            {
+                SetIsLoading(true);
+
+                await Task.Delay(1000);
+
+                await NavigateModalAsync(new CreateBillingPage(CurrentPixKey));
+            }
+            catch (System.Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                SetIsLoading(false);
+            }
         });
 
         public ICommand NavigateToAddNewKeyPageCommand => new Command(async () =>
         {
-            await NavigateModalAsync(new AddPixKeyPage(this));
+            try
+            {
+                SetIsLoading(true);
+
+                await Task.Delay(1000);
+
+                await NavigateModalAsync(new AddPixKeyPage(this));
+            }
+            catch (System.Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                SetIsLoading(false);
+            }
         });
 
         public ICommand ChangeSelectPixKeyCommand => new Command(async () =>
