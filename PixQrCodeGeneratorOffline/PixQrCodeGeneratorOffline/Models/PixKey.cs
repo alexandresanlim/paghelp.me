@@ -67,6 +67,9 @@ namespace PixQrCodeGeneratorOffline.Models
         [LiteDB.BsonIgnore]
         public string InstitutionPresentation => !string.IsNullOrEmpty(FinancialInstitution?.Name) ? FinancialInstitution?.Name : "";
 
+        [LiteDB.BsonIgnore]
+        public string ValueUSString => !string.IsNullOrEmpty(Value) ? Value.Replace(",", ".") : "";
+
         //[LiteDB.BsonIgnore]
         //public decimal ValueUSCulture => !string.IsNullOrEmpty(Value) ? System.Convert.ToDecimal(Value, new System.Globalization.CultureInfo("en-US")) : 0;
 
@@ -85,7 +88,7 @@ namespace PixQrCodeGeneratorOffline.Models
                     SolicitacaoPagador = Description,
                     Valor = new Valor
                     {
-                        Original = Value
+                        Original = ValueUSString
                     }
                 };
 

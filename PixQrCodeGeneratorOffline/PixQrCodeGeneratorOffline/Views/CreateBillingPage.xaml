@@ -6,7 +6,8 @@
              xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels" 
              x:Class="PixQrCodeGeneratorOffline.Views.CreateBillingPage"
              xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon" 
-             xmlns:local="clr-namespace:PixQrCodeGeneratorOffline.Converters"
+             xmlns:local="clr-namespace:PixQrCodeGeneratorOffline.Converters" 
+             xmlns:shared="clr-namespace:PixQrCodeGeneratorOffline.Views.Shared"
              Title="Cobrança Offline"
              >
 
@@ -28,204 +29,150 @@
                 </LinearGradientBrush>
             </controls:CustomFrame.Background>
 
-            <ScrollView>
-                <Grid RowDefinitions="auto,*" Padding="15" RowSpacing="50">
+            <Grid RowDefinitions="auto, *" RowSpacing="0">
+                <shared:BackButtonView Grid.Row="0" />
 
-                    <StackLayout Grid.Row="0" Spacing="0">
-                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                            <controls:CustomLabel Text="R$" FontSize="30" TextColor="{DynamicResource textOnPrimary}" Margin="0,15,0,0"/>
-                            <controls:CustomLabel Text="{Binding CurrentPixKey.Value}" FontAttributes="Bold" FontSize="60" TextColor="{DynamicResource textOnPrimary}"/>
+                <ScrollView Grid.Row="1">
+                    <Grid RowDefinitions="auto,*" Padding="15,0,15,15" RowSpacing="50">
+
+                        <StackLayout Grid.Row="0" Spacing="0">
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                                <controls:CustomLabel Text="R$" FontSize="30" TextColor="{DynamicResource textOnPrimary}" Margin="0,15,0,0"/>
+                                <controls:CustomLabel Text="{Binding CurrentPixKey.Value}" FontAttributes="Bold" FontSize="60" TextColor="{DynamicResource textOnPrimary}"/>
+                            </StackLayout>
+
+                            <controls:CustomFrame BackgroundColor="{DynamicResource backgroundTransparent}" Padding="10" CornerRadius="10">
+                                <controls:CustomFrame.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding SetDescriptionCommand}"/>
+                                </controls:CustomFrame.GestureRecognizers>
+
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                                    <controls:CustomLabel Text="{Binding CurrentDescription}" FontSize="Small" TextColor="{DynamicResource textOnBackgroundTransparent}" FontAttributes="Bold"/>
+                                    <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Edit }" IconSize="Micro" IconColor="{DynamicResource textOnBackgroundTransparent}" />
+                                </StackLayout>
+                            </controls:CustomFrame>
                         </StackLayout>
 
-                        <controls:CustomFrame BackgroundColor="{DynamicResource backgroundTransparent}" Padding="10" CornerRadius="10">
-                            <controls:CustomFrame.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding SetDescriptionCommand}"/>
-                            </controls:CustomFrame.GestureRecognizers>
+                        <Grid Grid.Row="1" VerticalOptions="FillAndExpand" RowDefinitions="0.5*,0.5*,0.5*,*" ColumnDefinitions="*,*,*">
 
-                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                                <controls:CustomLabel Text="{Binding CurrentDescription}" FontSize="Small" TextColor="{DynamicResource textOnBackgroundTransparent}" FontAttributes="Bold"/>
-                                <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Edit }" IconSize="Micro" IconColor="{DynamicResource textOnBackgroundTransparent}" />
-                            </StackLayout>
-                        </controls:CustomFrame>
-                    </StackLayout>
-
-                    <Grid Grid.Row="1" VerticalOptions="FillAndExpand" RowDefinitions="0.5*,0.5*,0.5*,*" ColumnDefinitions="*,*,*">
-
-                        <controls:CustomFrame Grid.Row="0" Grid.Column="0" BackgroundColor="{DynamicResource backgroundTransparent}" CornerRadius="15">
-                            <controls:CustomFrame.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding InputTextCommand}" CommandParameter="1"/>
-                            </controls:CustomFrame.GestureRecognizers>
-                            <controls:CustomLabel Text="1" FontAttributes="Bold" TextColor="{DynamicResource textOnBackgroundTransparent}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="35" />
-                        </controls:CustomFrame>
-
-                        <controls:CustomFrame Grid.Row="0" Grid.Column="1" BackgroundColor="{DynamicResource backgroundTransparent}" CornerRadius="15">
-                            <controls:CustomFrame.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding InputTextCommand}" CommandParameter="2"/>
-                            </controls:CustomFrame.GestureRecognizers>
-                            <controls:CustomLabel Text="2" FontAttributes="Bold" TextColor="{DynamicResource textOnBackgroundTransparent}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="35" />
-                        </controls:CustomFrame>
-
-                        <controls:CustomFrame Grid.Row="0" Grid.Column="2" BackgroundColor="{DynamicResource backgroundTransparent}" CornerRadius="15">
-                            <controls:CustomFrame.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding InputTextCommand}" CommandParameter="3"/>
-                            </controls:CustomFrame.GestureRecognizers>
-                            <controls:CustomLabel Text="3" FontAttributes="Bold" TextColor="{DynamicResource textOnBackgroundTransparent}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="35" />
-                        </controls:CustomFrame>
-
-
-                        <controls:CustomFrame Grid.Row="1" Grid.Column="0" BackgroundColor="{DynamicResource backgroundTransparent}" CornerRadius="15">
-                            <controls:CustomFrame.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding InputTextCommand}" CommandParameter="4"/>
-                            </controls:CustomFrame.GestureRecognizers>
-                            <controls:CustomLabel Text="4" FontAttributes="Bold" TextColor="{DynamicResource textOnBackgroundTransparent}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="35" />
-                        </controls:CustomFrame>
-
-                        <controls:CustomFrame Grid.Row="1" Grid.Column="1" BackgroundColor="{DynamicResource backgroundTransparent}" CornerRadius="15">
-                            <controls:CustomFrame.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding InputTextCommand}" CommandParameter="5"/>
-                            </controls:CustomFrame.GestureRecognizers>
-                            <controls:CustomLabel Text="5" FontAttributes="Bold" TextColor="{DynamicResource textOnBackgroundTransparent}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="35" />
-                        </controls:CustomFrame>
-
-                        <controls:CustomFrame Grid.Row="1" Grid.Column="2" BackgroundColor="{DynamicResource backgroundTransparent}" CornerRadius="15">
-                            <controls:CustomFrame.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding InputTextCommand}" CommandParameter="6"/>
-                            </controls:CustomFrame.GestureRecognizers>
-                            <controls:CustomLabel Text="6" FontAttributes="Bold" TextColor="{DynamicResource textOnBackgroundTransparent}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="35" />
-                        </controls:CustomFrame>
-
-
-                        <controls:CustomFrame Grid.Row="2" Grid.Column="0" BackgroundColor="{DynamicResource backgroundTransparent}" CornerRadius="15">
-                            <controls:CustomFrame.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding InputTextCommand}" CommandParameter="7"/>
-                            </controls:CustomFrame.GestureRecognizers>
-                            <controls:CustomLabel Text="7" FontAttributes="Bold" TextColor="{DynamicResource textOnBackgroundTransparent}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="35" />
-                        </controls:CustomFrame>
-
-                        <controls:CustomFrame Grid.Row="2" Grid.Column="1" BackgroundColor="{DynamicResource backgroundTransparent}" CornerRadius="15">
-                            <controls:CustomFrame.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding InputTextCommand}" CommandParameter="8"/>
-                            </controls:CustomFrame.GestureRecognizers>
-                            <controls:CustomLabel Text="8" FontAttributes="Bold" TextColor="{DynamicResource textOnBackgroundTransparent}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="35" />
-                        </controls:CustomFrame>
-
-                        <controls:CustomFrame Grid.Row="2" Grid.Column="2" BackgroundColor="{DynamicResource backgroundTransparent}" CornerRadius="15">
-                            <controls:CustomFrame.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding InputTextCommand}" CommandParameter="9"/>
-                            </controls:CustomFrame.GestureRecognizers>
-                            <controls:CustomLabel Text="9" FontAttributes="Bold" TextColor="{DynamicResource textOnBackgroundTransparent}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="35" />
-                        </controls:CustomFrame>
-
-
-                        <controls:CustomFrame Grid.Row="3" Grid.Column="0" BackgroundColor="{DynamicResource backgroundTransparent}" CornerRadius="15">
-                            <controls:CustomFrame.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding ResetCurrentValueCommand}"/>
-                            </controls:CustomFrame.GestureRecognizers>
-                            <StackLayout VerticalOptions="CenterAndExpand">
-                                <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.TimesCircle}" IconSize="Title" IconColor="White" HorizontalOptions="CenterAndExpand" />
-                                <controls:CustomLabel Text="anula" TextTransform="Uppercase" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" FontSize="Title" TextColor="White" />
-                            </StackLayout>
-                        </controls:CustomFrame>
-
-
-                        <Grid Grid.Row="3" Grid.Column="1" RowDefinitions="*,*">
-                            <controls:CustomFrame Grid.Row="0" BackgroundColor="{DynamicResource backgroundTransparent}" CornerRadius="15">
+                            <controls:CustomFrame Grid.Row="0" Grid.Column="0" BackgroundColor="{DynamicResource backgroundTransparent}" CornerRadius="15">
                                 <controls:CustomFrame.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding InputTextCommand}" CommandParameter="0"/>
+                                    <TapGestureRecognizer Command="{Binding InputTextCommand}" CommandParameter="1"/>
                                 </controls:CustomFrame.GestureRecognizers>
-                                <controls:CustomLabel Text="0" FontAttributes="Bold" TextColor="{DynamicResource textOnBackgroundTransparent}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="35" />
+                                <controls:CustomLabel Text="1" FontAttributes="Bold" TextColor="{DynamicResource textOnBackgroundTransparent}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="35" />
                             </controls:CustomFrame>
 
-                            <controls:CustomFrame Grid.Row="1" BackgroundColor="{DynamicResource backgroundTransparent}" CornerRadius="15">
+                            <controls:CustomFrame Grid.Row="0" Grid.Column="1" BackgroundColor="{DynamicResource backgroundTransparent}" CornerRadius="15">
                                 <controls:CustomFrame.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding InputTextCommand}" CommandParameter=""/>
+                                    <TapGestureRecognizer Command="{Binding InputTextCommand}" CommandParameter="2"/>
                                 </controls:CustomFrame.GestureRecognizers>
-                                <StackLayout VerticalOptions="CenterAndExpand" Spacing="0">
-                                    <!--<controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Backspace }" IconSize="Title" IconColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />-->
-                                    <controls:CustomLabel Text="limpa" TextTransform="Uppercase" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" FontSize="Title" TextColor="{DynamicResource textOnBackgroundTransparent}" />
+                                <controls:CustomLabel Text="2" FontAttributes="Bold" TextColor="{DynamicResource textOnBackgroundTransparent}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="35" />
+                            </controls:CustomFrame>
+
+                            <controls:CustomFrame Grid.Row="0" Grid.Column="2" BackgroundColor="{DynamicResource backgroundTransparent}" CornerRadius="15">
+                                <controls:CustomFrame.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding InputTextCommand}" CommandParameter="3"/>
+                                </controls:CustomFrame.GestureRecognizers>
+                                <controls:CustomLabel Text="3" FontAttributes="Bold" TextColor="{DynamicResource textOnBackgroundTransparent}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="35" />
+                            </controls:CustomFrame>
+
+
+                            <controls:CustomFrame Grid.Row="1" Grid.Column="0" BackgroundColor="{DynamicResource backgroundTransparent}" CornerRadius="15">
+                                <controls:CustomFrame.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding InputTextCommand}" CommandParameter="4"/>
+                                </controls:CustomFrame.GestureRecognizers>
+                                <controls:CustomLabel Text="4" FontAttributes="Bold" TextColor="{DynamicResource textOnBackgroundTransparent}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="35" />
+                            </controls:CustomFrame>
+
+                            <controls:CustomFrame Grid.Row="1" Grid.Column="1" BackgroundColor="{DynamicResource backgroundTransparent}" CornerRadius="15">
+                                <controls:CustomFrame.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding InputTextCommand}" CommandParameter="5"/>
+                                </controls:CustomFrame.GestureRecognizers>
+                                <controls:CustomLabel Text="5" FontAttributes="Bold" TextColor="{DynamicResource textOnBackgroundTransparent}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="35" />
+                            </controls:CustomFrame>
+
+                            <controls:CustomFrame Grid.Row="1" Grid.Column="2" BackgroundColor="{DynamicResource backgroundTransparent}" CornerRadius="15">
+                                <controls:CustomFrame.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding InputTextCommand}" CommandParameter="6"/>
+                                </controls:CustomFrame.GestureRecognizers>
+                                <controls:CustomLabel Text="6" FontAttributes="Bold" TextColor="{DynamicResource textOnBackgroundTransparent}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="35" />
+                            </controls:CustomFrame>
+
+
+                            <controls:CustomFrame Grid.Row="2" Grid.Column="0" BackgroundColor="{DynamicResource backgroundTransparent}" CornerRadius="15">
+                                <controls:CustomFrame.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding InputTextCommand}" CommandParameter="7"/>
+                                </controls:CustomFrame.GestureRecognizers>
+                                <controls:CustomLabel Text="7" FontAttributes="Bold" TextColor="{DynamicResource textOnBackgroundTransparent}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="35" />
+                            </controls:CustomFrame>
+
+                            <controls:CustomFrame Grid.Row="2" Grid.Column="1" BackgroundColor="{DynamicResource backgroundTransparent}" CornerRadius="15">
+                                <controls:CustomFrame.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding InputTextCommand}" CommandParameter="8"/>
+                                </controls:CustomFrame.GestureRecognizers>
+                                <controls:CustomLabel Text="8" FontAttributes="Bold" TextColor="{DynamicResource textOnBackgroundTransparent}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="35" />
+                            </controls:CustomFrame>
+
+                            <controls:CustomFrame Grid.Row="2" Grid.Column="2" BackgroundColor="{DynamicResource backgroundTransparent}" CornerRadius="15">
+                                <controls:CustomFrame.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding InputTextCommand}" CommandParameter="9"/>
+                                </controls:CustomFrame.GestureRecognizers>
+                                <controls:CustomLabel Text="9" FontAttributes="Bold" TextColor="{DynamicResource textOnBackgroundTransparent}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="35" />
+                            </controls:CustomFrame>
+
+
+                            <controls:CustomFrame Grid.Row="3" Grid.Column="0" BackgroundColor="{DynamicResource backgroundTransparent}" CornerRadius="15">
+                                <controls:CustomFrame.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding ResetCurrentValueCommand}"/>
+                                </controls:CustomFrame.GestureRecognizers>
+                                <StackLayout VerticalOptions="CenterAndExpand">
+                                    <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.TimesCircle}" IconSize="Title" IconColor="White" HorizontalOptions="CenterAndExpand" />
+                                    <controls:CustomLabel Text="anula" TextTransform="Uppercase" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" FontSize="Title" TextColor="White" />
                                 </StackLayout>
-                                <!--<controls:CustomLabel Text="⌫" FontAttributes="Bold" TextColor="{DynamicResource textOnPrimary}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="45" />-->
                             </controls:CustomFrame>
+
+
+                            <Grid Grid.Row="3" Grid.Column="1" RowDefinitions="*,*">
+                                <controls:CustomFrame Grid.Row="0" BackgroundColor="{DynamicResource backgroundTransparent}" CornerRadius="15">
+                                    <controls:CustomFrame.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding InputTextCommand}" CommandParameter="0"/>
+                                    </controls:CustomFrame.GestureRecognizers>
+                                    <controls:CustomLabel Text="0" FontAttributes="Bold" TextColor="{DynamicResource textOnBackgroundTransparent}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="35" />
+                                </controls:CustomFrame>
+
+                                <controls:CustomFrame Grid.Row="1" BackgroundColor="{DynamicResource backgroundTransparent}" CornerRadius="15">
+                                    <controls:CustomFrame.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding InputTextCommand}" CommandParameter=""/>
+                                    </controls:CustomFrame.GestureRecognizers>
+                                    <StackLayout VerticalOptions="CenterAndExpand" Spacing="0">
+                                        <!--<controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Backspace }" IconSize="Title" IconColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />-->
+                                        <controls:CustomLabel Text="limpa" TextTransform="Uppercase" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" FontSize="Title" TextColor="{DynamicResource textOnBackgroundTransparent}" />
+                                    </StackLayout>
+                                    <!--<controls:CustomLabel Text="⌫" FontAttributes="Bold" TextColor="{DynamicResource textOnPrimary}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="45" />-->
+                                </controls:CustomFrame>
+                            </Grid>
+
+                            <controls:CustomFrame Grid.Row="3" Grid.Column="2" BackgroundColor="{DynamicResource backgroundTransparent}" CornerRadius="15">
+                                <controls:CustomFrame.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding NavigateToPaymentPageCommand}"/>
+                                </controls:CustomFrame.GestureRecognizers>
+                                <StackLayout VerticalOptions="CenterAndExpand">
+                                    <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.CheckCircle}" IconSize="Title" IconColor="{DynamicResource textOnBackgroundTransparent}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
+                                    <controls:CustomLabel Text="entra" TextTransform="Uppercase" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" FontSize="Title" TextColor="{DynamicResource textOnBackgroundTransparent}" />
+                                </StackLayout>
+                            </controls:CustomFrame>
+
+
+
+
+
                         </Grid>
 
-                        <controls:CustomFrame Grid.Row="3" Grid.Column="2" BackgroundColor="{DynamicResource backgroundTransparent}" CornerRadius="15">
-                            <controls:CustomFrame.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding NavigateToPaymentPageCommand}"/>
-                            </controls:CustomFrame.GestureRecognizers>
-                            <StackLayout VerticalOptions="CenterAndExpand">
-                                <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.CheckCircle}" IconSize="Title" IconColor="{DynamicResource textOnBackgroundTransparent}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
-                                <controls:CustomLabel Text="entra" TextTransform="Uppercase" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" FontSize="Title" TextColor="{DynamicResource textOnBackgroundTransparent}" />
-                            </StackLayout>
-                        </controls:CustomFrame>
-
-         
-                        
 
 
                     </Grid>
-
-                    <!--<StackLayout>
-                        <controls:CustomLabel Text="Solicitação Pagador:" FontAttributes="Bold" FontSize="Title" Margin="10,0,0,0" TextColor="{DynamicResource textOnPrimary}" />
-
-                        <controls:CustomFrame BackgroundColor="{DynamicResource backgroundTransparent}" Padding="15" CornerRadius="15">
-                            <StackLayout Spacing="15">
-                                <controls:CustomFrame BackgroundColor="{DynamicResource backgroundTransparent}" Padding="10,5" CornerRadius="10">
-                                    <controls:CustomEntry Text="{Binding CurrentPixKey.Description}" Unfocused="CustomEntry_Unfocused" ReturnType="Done" TextColor="{DynamicResource textOnBackgroundTransparent}" />
-                                </controls:CustomFrame>
-                                <controls:CustomLabel Text="*(Opcional) Texto que aparecerá para o pagador no momento do pagamento." FontSize="Small" TextColor="{DynamicResource textOnBackgroundTransparent}" />
-                            </StackLayout>
-                        </controls:CustomFrame>
-
-                    </StackLayout>
-
-                    <StackLayout>
-                        <controls:CustomLabel Text="QRCode Gerado:" FontAttributes="Bold" FontSize="Title" Margin="10,0,0,0" TextColor="{DynamicResource textOnPrimary}" />
-
-                        <controls:CustomFrame BackgroundColor="{DynamicResource backgroundTransparent}" Padding="15" CornerRadius="15">
-                            <StackLayout Spacing="15">
-                                <controls:CustomLabel Text="Mostre o QRCode para o pagador ou compartilhe o código copia e cola" FontSize="Small" TextColor="{DynamicResource textOnBackgroundTransparent}" />
-
-                                <qr:QRCode
-                            Content="{Binding CurrentPixKey.Payload}"
-                            BackgroundColor="White"
-                            Color="#000000" 
-                            Level="H" 
-                            WidthRequest="300" 
-                            HeightRequest="300" 
-                            VerticalOptions="CenterAndExpand" 
-                            HorizontalOptions="CenterAndExpand" 
-                            >
-
-                                    <qr:QRCode.GestureRecognizers>
-                                        <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:CreateBillingViewModel}}, Path=SharePayloadCommand}" />
-                                    </qr:QRCode.GestureRecognizers>
-
-                                </qr:QRCode>
-
-
-                                <StackLayout>
-                                    <StackLayout.GestureRecognizers>
-                                        <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:CreateBillingViewModel}}, Path=SharePayloadCommand}" />
-                                    </StackLayout.GestureRecognizers>
-
-                                    <controls:CustomLabel Text="Código copia e cola" FontAttributes="Bold" FontSize="Small" TextColor="{DynamicResource textOnBackgroundTransparent}" />
-
-                                    <controls:CustomFrame BackgroundColor="{DynamicResource backgroundTransparent}" Padding="15" CornerRadius="10">
-                                        <Grid ColumnDefinitions="*, auto">
-                                            <controls:CustomLabel Grid.Column="0" Text="{Binding CurrentPixKey.Payload}" FontSize="Micro" MaxLines="2" LineBreakMode="TailTruncation" TextColor="{DynamicResource textOnBackgroundTransparent}" />
-                                            <controls:CustomIcon Grid.Column="1" Glyph="{x:Static icons:FontAwesomeSolid.ShareSquare }" IconSize="Medium" IconColor="{DynamicResource textOnBackgroundTransparent}" VerticalOptions="CenterAndExpand" />
-                                        </Grid>
-                                    </controls:CustomFrame>
-                                </StackLayout>
-
-                            </StackLayout>
-                        </controls:CustomFrame>
-                    </StackLayout>-->
-
-
-
-                </Grid>
-            </ScrollView>
+                </ScrollView>
+            </Grid>
 
         </controls:CustomFrame>
     </ContentPage.Content>

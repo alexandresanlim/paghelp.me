@@ -4,7 +4,8 @@
              xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls" 
              xmlns:qr="clr-namespace:Xam.Forms;assembly=Xam.Forms.QRCode"
              xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
-             xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon"
+             xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon" 
+             xmlns:shared="clr-namespace:PixQrCodeGeneratorOffline.Views.Shared"
              x:Class="PixQrCodeGeneratorOffline.Views.PaymentPage"
              >
     
@@ -21,8 +22,11 @@
             </controls:CustomFrame.Background>
 
 
-            <Grid RowDefinitions="*,auto">
-                <ScrollView Grid.Row="0" Padding="15,15,15,0">
+            <Grid RowDefinitions="auto,*,auto">
+
+                <shared:BackButtonView Grid.Row="0" />
+
+                <ScrollView Grid.Row="1" Padding="15,0">
                     <StackLayout>
                         <controls:CustomLabel Text="Mostre o QR Code ou campartilhe o código copia e cola" FontAttributes="Bold" FontSize="Large" TextColor="{DynamicResource textOnPrimary}" />
 
@@ -59,7 +63,7 @@
                     </StackLayout>
                 </ScrollView>
 
-                <StackLayout Grid.Row="1" Padding="10" BackgroundColor="{DynamicResource backgroundTransparent}">
+                <StackLayout Grid.Row="2" Padding="10" BackgroundColor="{DynamicResource backgroundTransparent}">
                     <StackLayout.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:PaymentViewModel}}, Path=SharePayloadCommand}" />
                     </StackLayout.GestureRecognizers>
