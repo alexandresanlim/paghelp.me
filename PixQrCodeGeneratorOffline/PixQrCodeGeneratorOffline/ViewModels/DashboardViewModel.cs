@@ -1,4 +1,5 @@
-﻿using pix_payload_generator.net.Models.PayloadModels;
+﻿using Microsoft.AppCenter.Crashes;
+using pix_payload_generator.net.Models.PayloadModels;
 using PixQrCodeGeneratorOffline.DataBase;
 using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models;
@@ -56,11 +57,12 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 await Task.Delay(500);
 
                 await NavigateModalAsync(new CreateBillingPage(CurrentPixKey));
-            }
-            catch (System.Exception)
-            {
 
-                throw;
+                Crashes.GenerateTestCrash();
+            }
+            catch (System.Exception e)
+            {
+                e.SendToLog();
             }
             finally
             {

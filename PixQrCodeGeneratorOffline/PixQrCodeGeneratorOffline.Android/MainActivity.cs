@@ -9,6 +9,9 @@ using Android.OS;
 using PixQrCodeGeneratorOffline.Style.Interfaces;
 using Xamarin.Essentials;
 using Xamarin.Forms;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 
 namespace PixQrCodeGeneratorOffline.Droid
 {
@@ -33,6 +36,7 @@ namespace PixQrCodeGeneratorOffline.Droid
             //CrossCurrentActivity.Current.Init(this, savedInstanceState);
             //PlatformGestureEffect.Init();
             Lottie.Forms.Droid.AnimationViewRenderer.Init();
+            AppCenter.Start("18439db5-b775-4a96-bb6f-6c4612d3daab", typeof(Analytics), typeof(Crashes));
 
             CurrentWindow = (this).Window;
             DependencyService.Register<IStatusBar, StatusBarChanger>();
