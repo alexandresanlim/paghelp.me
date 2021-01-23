@@ -2,6 +2,7 @@
 using PixQrCodeGeneratorOffline.Style.Interfaces;
 using PixQrCodeGeneratorOffline.Views;
 using System;
+using System.Globalization;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -22,6 +23,8 @@ namespace PixQrCodeGeneratorOffline
         {
             var service = DependencyService.Get<IStatusBar>();
             service?.SetStatusBarColor(App.ThemeColors.Primary);
+
+            CultureInfo.CurrentCulture = CultureInfo.CreateSpecificCulture("pt-BR");
         }
 
         protected override void OnSleep()

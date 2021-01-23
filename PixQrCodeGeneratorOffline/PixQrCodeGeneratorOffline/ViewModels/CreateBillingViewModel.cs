@@ -1,7 +1,12 @@
-﻿using PixQrCodeGeneratorOffline.Models;
+﻿using PixQrCodeGeneratorOffline.Extention;
+using PixQrCodeGeneratorOffline.Models;
+using PixQrCodeGeneratorOffline.Views;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -9,71 +14,116 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 {
     public class CreateBillingViewModel : BaseViewModel
     {
-        public CreateBillingViewModel()
-        {
-            //LoadDataCommand.Execute(null);
-        }
-
         public Command<PixKey> LoadDataCommand => new Command<PixKey>((pixKey) =>
         {
             CurrentPixKey = pixKey;
-            CurrentPixKey.RaiseCob();
+            ResetCurrentValue();
         });
 
-        public ICommand SharePayloadCommand => new Command(async () =>
+        public string AddDescriptionValue => "Adicionar Descrição";
+
+        private void ResetCurrentValue()
         {
-            var options = new List<Acr.UserDialogs.ActionSheetOption>
+            ValueInput = "";
+            CurrentDescription = AddDescriptionValue;
+            SetValueCurrencyFormat();
+        }
+
+        public Command<string> InputTextCommand => new Command<string>(async (text) =>
+        {
+            if (string.IsNullOrEmpty(text))
+                ValueInput = ValueInput.RemoveLastChar();
+
+            else
+                ValueInput += text;
+
+            SetValueCurrencyFormat();
+        });
+
+        public ICommand ResetCurrentValueCommand => new Command(() =>
+        {
+            ResetCurrentValue();
+        });
+
+        private void SetValueCurrencyFormat()
+        {
+            string valueFromString = Regex.Replace(ValueInput, @"\D", "");
+
+            decimal d;
+
+            if (valueFromString.Length <= 0)
+                d = 0m;
+
+            long valueLong;
+            if (!long.TryParse(valueFromString, out valueLong))
+                d = 0m;
+
+            if (valueLong <= 0)
+                d = 0m;
+
+            d = valueLong / 100m;
+
+            var finalString = System.Convert.ToDecimal(d, new System.Globalization.CultureInfo("en-US")).ToString("N");
+
+            if (finalString.Length > 11)
+                return;
+
+            CurrentPixKey.Value = finalString;
+        }
+
+        public string ValueInput { get; set; }
+
+        public ICommand NavigateToPaymentPageCommand => new Command(async () =>
+        {
+            try
             {
-                new Acr.UserDialogs.ActionSheetOption("Copiar Código", async () =>
+                SetIsLoading(true);
+
+                await Task.Delay(500);
+
+                await NavigateAsync(new PaymentPage(CurrentPixKey));
+            }
+            catch (System.Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                SetIsLoading(false);
+            }
+        });
+
+        public ICommand SetDescriptionCommand => new Command(async () =>
+        {
+            var promptConfig = new Acr.UserDialogs.PromptConfig
+            {
+                CancelText = "Cancelar",
+                OkText = "Ok",
+                Title = "Descrição",
+                Message = "Digite o texto que aparecerá para o pagador",
+                Placeholder = "Pedido 1",
+                Text = !CurrentDescription.Equals(AddDescriptionValue) ? CurrentDescription : "",
+                OnAction = new Action<Acr.UserDialogs.PromptResult>((result) =>
                 {
-                   await CopyText(CurrentPixKey.Payload, "Código copiado com sucesso!");
-                }),
-                new Acr.UserDialogs.ActionSheetOption("Compartilhar Código", async () =>
-                {
-                    await ShareText(CurrentPixKey?.Payload);
-                }),
+                    if (!result.Ok)
+                        return;
+
+                    var text = result?.Text;
+
+                    if (string.IsNullOrEmpty(text))
+                    {
+                        CurrentDescription = AddDescriptionValue;
+                        CurrentPixKey.Description = "";
+                        return;
+                    }
+
+                    CurrentDescription = text;
+                    CurrentPixKey.Description = text;
+                })
             };
 
-            DialogService.ActionSheet(new Acr.UserDialogs.ActionSheetConfig
-            {
-                Title = "O que deseja fazer?",
-                //UseBottomSheet = true,
-                Options = options,
-                Cancel = new Acr.UserDialogs.ActionSheetOption("Cancelar", () =>
-                {
-                    return;
-                })
-            });
-        });
-
-        public ICommand AddValueCommand => new Command(() =>
-        {
-            var initial = CurrentPixKey.Value ?? "0";
-
-            var d = decimal.Parse(initial);
-            d = d += 1;
-
-            CurrentPixKey.Value = d.ToString();
-
-            CurrentPixKey.RaiseCob();
-        });
-
-        public ICommand RmValueCommand => new Command(() =>
-        {
-            if (string.IsNullOrEmpty(CurrentPixKey?.Value) || CurrentPixKey.Value == "0")
-            {
-                CurrentPixKey.Value = "";
-                return;
-            }
-
-            var initial = CurrentPixKey.Value;
-
-            var d = decimal.Parse(initial);
-            d = d -= 1;
-
-            CurrentPixKey.Value = d.ToString();
-
-            CurrentPixKey.RaiseCob();
+            DialogService.Prompt(promptConfig);
         });
 
         private PixKey _currentPixKey;
@@ -83,11 +133,11 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             get => _currentPixKey;
         }
 
-        private string _currentQrCode;
-        public string CurrentQrCode
+        private string _currentDescription;
+        public string CurrentDescription
         {
-            set => SetProperty(ref _currentQrCode, value);
-            get => _currentQrCode;
+            set => SetProperty(ref _currentDescription, value);
+            get => _currentDescription;
         }
     }
 }

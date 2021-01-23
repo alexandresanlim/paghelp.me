@@ -53,7 +53,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             {
                 SetIsLoading(true);
 
-                await Task.Delay(1000);
+                await Task.Delay(500);
 
                 await NavigateModalAsync(new CreateBillingPage(CurrentPixKey));
             }

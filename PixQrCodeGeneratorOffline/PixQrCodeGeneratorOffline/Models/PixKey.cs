@@ -67,6 +67,12 @@ namespace PixQrCodeGeneratorOffline.Models
         [LiteDB.BsonIgnore]
         public string InstitutionPresentation => !string.IsNullOrEmpty(FinancialInstitution?.Name) ? FinancialInstitution?.Name : "";
 
+        //[LiteDB.BsonIgnore]
+        //public decimal ValueUSCulture => !string.IsNullOrEmpty(Value) ? System.Convert.ToDecimal(Value, new System.Globalization.CultureInfo("en-US")) : 0;
+
+        [LiteDB.BsonIgnore]
+        public string ValuePresentation => "R$ " + Value;
+
         public void RaiseCob()
         {
             if (string.IsNullOrEmpty(Key))

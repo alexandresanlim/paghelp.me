@@ -49,7 +49,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             {
                 IsBusy = true;
 
-                var itens = FeedService.Get("https://news.google.com/rss/search?q=pix&hl=pt-BR&gl=BR&ceid=BR%3Apt-419");
+                var itens = FeedService.Get("https://news.google.com/rss/search?q=pix%20-frade%20-golpista%20-golpistas%20-erro%20-golpe%20-hack%20-hacker&hl=pt-BR&gl=BR&ceid=BR%3Apt-419");
 
                 CurrentFeedList = itens?.ToObservableCollection();
 

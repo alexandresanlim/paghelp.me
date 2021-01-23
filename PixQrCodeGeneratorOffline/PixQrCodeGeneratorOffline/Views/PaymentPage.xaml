@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls" 
+             xmlns:qr="clr-namespace:Xam.Forms;assembly=Xam.Forms.QRCode"
+             xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
+             xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon"
+             x:Class="PixQrCodeGeneratorOffline.Views.PaymentPage"
+             >
+    
+    <ContentPage.Content>
+        <controls:CustomFrame>
+
+            <controls:CustomFrame.Background>
+                <LinearGradientBrush EndPoint="0,1">
+                    <GradientStop Color="{DynamicResource primary}"
+                          Offset="0.1" />
+                    <GradientStop Color="{DynamicResource primaryDark}"
+                          Offset="1.0" />
+                </LinearGradientBrush>
+            </controls:CustomFrame.Background>
+
+
+            <Grid RowDefinitions="*,auto">
+                <ScrollView Grid.Row="0" Padding="15,15,15,0">
+                    <StackLayout>
+                        <controls:CustomLabel Text="Mostre o QR Code ou campartilhe o código copia e cola" FontAttributes="Bold" FontSize="Large" TextColor="{DynamicResource textOnPrimary}" />
+
+
+                        <StackLayout Spacing="15">
+                            <controls:CustomLabel Text="O pagador precisa abir o app que vai fazer a transferência PIX e escanear este QR Code ou colar o código copia e cola." FontSize="Small" TextColor="{DynamicResource textOnPrimary}" />
+
+                            <qr:QRCode
+                            Content="{Binding CurrentPixKey.Payload}"
+                            BackgroundColor="White"
+                            Color="#000000" 
+                            Level="H" 
+                            WidthRequest="300" 
+                            HeightRequest="300" 
+                            VerticalOptions="CenterAndExpand" 
+                            HorizontalOptions="CenterAndExpand" 
+                            >
+
+                                <qr:QRCode.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:PaymentViewModel}}, Path=SharePayloadCommand}" />
+                                </qr:QRCode.GestureRecognizers>
+
+                            </qr:QRCode>
+
+                        </StackLayout>
+
+                        <controls:CustomLabel Text="{Binding CurrentPixKey.ValuePresentation}" FontSize="35" TextColor="{DynamicResource textOnPrimary}" HorizontalOptions="Center" FontAttributes="Bold" />
+
+                        <controls:CustomLabel Text="{Binding CurrentPixKey.NameAndCity, StringFormat='Para: {0}'}" TextColor="{DynamicResource textOnPrimary}" />
+
+                        <controls:CustomLabel Text="{Binding CurrentPixKey.InstitutionPresentation, StringFormat='Instituição: {0}'}" TextColor="{DynamicResource textOnPrimary}" />
+
+                        <controls:CustomLabel Text="{Binding CurrentPixKey.KeyPresentation}" TextColor="{DynamicResource textOnPrimary}" />
+                    </StackLayout>
+                </ScrollView>
+
+                <StackLayout Grid.Row="1" Padding="10" BackgroundColor="{DynamicResource backgroundTransparent}">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:PaymentViewModel}}, Path=SharePayloadCommand}" />
+                    </StackLayout.GestureRecognizers>
+
+                    <controls:CustomLabel Text="Código copia e cola" FontAttributes="Bold" FontSize="Small" TextColor="{DynamicResource textOnBackgroundTransparent}" />
+
+                    <controls:CustomFrame BackgroundColor="{DynamicResource backgroundTransparent}" CornerRadius="10" Padding="15">
+                        <Grid ColumnDefinitions="*, auto">
+                            <controls:CustomLabel Grid.Column="0" Text="{Binding CurrentPixKey.Payload}" FontSize="Micro" MaxLines="2" LineBreakMode="TailTruncation" TextColor="{DynamicResource textOnBackgroundTransparent}" />
+                            <controls:CustomIcon Grid.Column="1" Glyph="{x:Static icons:FontAwesomeSolid.ShareSquare }" IconSize="Medium" IconColor="{DynamicResource textOnBackgroundTransparent}" VerticalOptions="CenterAndExpand" />
+                        </Grid>
+                    </controls:CustomFrame>
+                </StackLayout>
+
+            </Grid>
+        </controls:CustomFrame>
+    </ContentPage.Content>
+</ContentPage>

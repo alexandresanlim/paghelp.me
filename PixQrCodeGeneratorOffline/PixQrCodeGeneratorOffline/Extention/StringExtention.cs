@@ -52,5 +52,13 @@ namespace PixQrCodeGeneratorOffline.Extention
 
             return TimeSpan.MinValue;
         }
+
+        public static string RemoveLastChar(this string text)
+        {
+            if (string.IsNullOrEmpty(text))
+                return text;
+
+            return text.Remove(text.Length - 1);
+        }
     }
 }
