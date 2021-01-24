@@ -91,7 +91,7 @@
 
                                                             <StackLayout Spacing="0">
                                                                 <controls:CustomLabel Text="Cobrança" TextColor="{DynamicResource textOnBackgroundTransparent}" HorizontalOptions="Center" FontAttributes="Bold"/>
-                                                                <controls:CustomLabel Text="Simples" TextColor="{DynamicResource textOnBackgroundTransparent}" HorizontalOptions="Center" FontAttributes="Bold"/>
+                                                                <controls:CustomLabel Text="Offline" TextColor="{DynamicResource textOnBackgroundTransparent}" HorizontalOptions="Center" FontAttributes="Bold"/>
                                                             </StackLayout>
                                                         </StackLayout>
                                                     </controls:CustomFrame>

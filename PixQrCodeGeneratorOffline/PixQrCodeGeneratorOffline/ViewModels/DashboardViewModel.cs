@@ -1,13 +1,8 @@
-﻿using Microsoft.AppCenter.Crashes;
-using pix_payload_generator.net.Models.PayloadModels;
+﻿using pix_payload_generator.net.Models.PayloadModels;
 using PixQrCodeGeneratorOffline.DataBase;
 using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models;
-using PixQrCodeGeneratorOffline.Services;
-using PixQrCodeGeneratorOffline.Style;
-using PixQrCodeGeneratorOffline.Style.Interfaces;
 using PixQrCodeGeneratorOffline.Views;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;

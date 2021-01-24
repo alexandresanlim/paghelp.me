@@ -26,6 +26,8 @@ namespace PixQrCodeGeneratorOffline
 
             public static string PackageName => AppInfo.PackageName;
 
+            public static string AndroidId => PackageName;
+
             public static string GooglePlayLink => "https://play.google.com/store/apps/details?id=" + PackageName;
 
             public static string AppStoreLink => "itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id={" + PackageName + "}&amp;onlyLatestVersion=true&amp;pageNumber=0&amp;sortOrdering=1&amp;type=Purple+Software";
