@@ -30,7 +30,10 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 CurrentPixKey = pixKey;
                 ResetCurrentValue();
             }
-            catch (Exception e) { e.SendToLog(); }
+            catch (Exception e) 
+            { 
+                e.SendToLog(); 
+            }
         });
 
         public Command<string> InputTextCommand => new Command<string>(async (text) =>
@@ -45,7 +48,10 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 SetValueCurrencyFormat();
             }
-            catch (Exception e) { e.SendToLog(); }
+            catch (Exception e) 
+            { 
+                e.SendToLog(); 
+            }
         });
 
         public ICommand ResetCurrentValueCommand => new Command(() =>
@@ -91,7 +97,10 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 await NavigateAsync(new PaymentPage(CurrentPixKey));
             }
-            catch (Exception e) { e.SendToLog(); }
+            catch (Exception e) 
+            { 
+                e.SendToLog(); 
+            }
             finally
             {
                 SetIsLoading(false);
@@ -131,7 +140,10 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 DialogService.Prompt(promptConfig);
             }
-            catch (Exception e) { e.SendToLog(); }
+            catch (Exception e) 
+            { 
+                e.SendToLog(); 
+            }
         });
 
         private PixKey _currentPixKey;
