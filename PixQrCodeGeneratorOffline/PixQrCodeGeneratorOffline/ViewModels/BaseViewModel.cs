@@ -1,4 +1,5 @@
 ﻿using Acr.UserDialogs;
+using Microsoft.AppCenter.Analytics;
 using PixQrCodeGeneratorOffline.Models;
 using PixQrCodeGeneratorOffline.Services;
 using System;
@@ -52,6 +53,11 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         }
 
         #endregion
+
+        public void SetEvent(string text)
+        {
+            Analytics.TrackEvent(text);
+        }
 
         public async Task DisplayAlert(string title, string message, string cancel)
         {

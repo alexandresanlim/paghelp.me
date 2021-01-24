@@ -36,154 +36,181 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         private async Task ResetProps()
         {
-            IsEdit = CurrentPixKey.Id > 0;
-
-            CurrenSelectedFinancialInstitutionText = !IsEdit ? "Toque para selecionar" : CurrentPixKey?.FinancialInstitution?.Name;
-
-            if (!IsEdit)
+            try
             {
-                var firstKey = PixKeyDataBase.GetFirst();
+                IsEdit = CurrentPixKey.Id > 0;
 
-                if (firstKey != null && firstKey.Id > 0)
+                CurrenSelectedFinancialInstitutionText = !IsEdit ? "Toque para selecionar" : CurrentPixKey?.FinancialInstitution?.Name;
+
+                if (!IsEdit)
                 {
-                    CurrentPixKey.Name = firstKey?.Name;
-                    CurrentPixKey.City = firstKey?.City;
-                }
-            }
+                    var firstKey = PixKeyDataBase.GetFirst();
 
-            ReloadStatusBar();
+                    if (firstKey != null && firstKey.Id > 0)
+                    {
+                        CurrentPixKey.Name = firstKey?.Name;
+                        CurrentPixKey.City = firstKey?.City;
+                    }
+                }
+
+                ReloadStatusBar();
+            }
+            catch (Exception e)
+            {
+                e.SendToLog();
+            }
         }
 
         public ICommand SaveCommand => new Command(async () =>
         {
-            if (!await ValidateSave())
-                return;
-
-            //CurrentPixKey.Color = MaterialColor.GetRandom();
-
-            if (string.IsNullOrEmpty(CurrentPixKey?.FinancialInstitution?.Name))
+            try
             {
-                CurrentPixKey.FinancialInstitution = new FinancialInstitution
+                if (!await ValidateSave())
+                    return;
+
+                //CurrentPixKey.Color = MaterialColor.GetRandom();
+
+                if (string.IsNullOrEmpty(CurrentPixKey?.FinancialInstitution?.Name))
                 {
-                    Name = "Não informado"
-                };
-                CurrentPixKey.Color = MaterialColor.GetRandom();
-            }
-
-            var success = false;
-
-            //CurrentPixKey.RaisePresentation();
-
-            if (IsEdit)
-            {
-                success = PixKeyDataBase.Update(CurrentPixKey);
-
-                var l = DashboardViewModel.PixKeyList.FirstOrDefault(x => x.Id.Equals(CurrentPixKey.Id));
-
-                if (l != null)
-                {
-                    int index = DashboardViewModel.PixKeyList.IndexOf(l);
-
-                    if (index != -1)
-                        DashboardViewModel.PixKeyList[index] = CurrentPixKey;
+                    CurrentPixKey.FinancialInstitution = new FinancialInstitution
+                    {
+                        Name = "Não informado"
+                    };
+                    CurrentPixKey.Color = MaterialColor.GetRandom();
                 }
+
+                var success = false;
+
+                //CurrentPixKey.RaisePresentation();
+
+                if (IsEdit)
+                {
+                    success = PixKeyDataBase.Update(CurrentPixKey);
+
+                    var l = DashboardViewModel.PixKeyList.FirstOrDefault(x => x.Id.Equals(CurrentPixKey.Id));
+
+                    if (l != null)
+                    {
+                        int index = DashboardViewModel.PixKeyList.IndexOf(l);
+
+                        if (index != -1)
+                            DashboardViewModel.PixKeyList[index] = CurrentPixKey;
+                    }
+                }
+
+                else
+                {
+                    success = PixKeyDataBase.Insert(CurrentPixKey);
+                    DashboardViewModel.PixKeyList.Add(CurrentPixKey);
+                }
+
+                //DashboardViewModel.LoadDataCommand.Execute(null);
+
+                //if (success)
+                //{
+
+                await DashboardViewModel.LoadCurrentPixKey(CurrentPixKey);
+
+                DialogService.Toast("Chave salva com sucesso");
+
+                await NavigateBackModalAsync();
+
+                //}
+
+                //else
+                //    DialogService.Toast("Algo de errado aconteceu, tente novamente mais tarde ou atualize o app");
             }
-
-            else
-            { 
-                success = PixKeyDataBase.Insert(CurrentPixKey);
-                DashboardViewModel.PixKeyList.Add(CurrentPixKey);
+            catch (Exception e)
+            {
+                e.SendToLog();
             }
-
-            //DashboardViewModel.LoadDataCommand.Execute(null);
-
-            //if (success)
-            //{
-
-            await DashboardViewModel.LoadCurrentPixKey(CurrentPixKey);
-
-            DialogService.Toast("Chave salva com sucesso");
-
-            await NavigateBackModalAsync();
-
-            //}
-
-            //else
-            //    DialogService.Toast("Algo de errado aconteceu, tente novamente mais tarde ou atualize o app");
         });
 
         public ICommand DeleteCommand => new Command(async () =>
         {
-            var confirm = await DialogService.ConfirmAsync("Tem certeza que deseja excluir a chave " + CurrentPixKey.Key + "?", "Confirmação", "Sim", "Cancelar");
-
-            if (!confirm)
-                return;
-
-            var success = PixKeyDataBase.Remove(CurrentPixKey);
-
-            if (success)
+            try
             {
-                DashboardViewModel.PixKeyList.Remove(CurrentPixKey);
+                var confirm = await DialogService.ConfirmAsync("Tem certeza que deseja excluir a chave " + CurrentPixKey.Key + "?", "Confirmação", "Sim", "Cancelar");
 
-                await DashboardViewModel.LoadCurrentPixKey(null);
+                if (!confirm)
+                    return;
 
-                DialogService.Toast("Chave removida com sucesso");
+                var success = PixKeyDataBase.Remove(CurrentPixKey);
 
-                await NavigateBackModalAsync();
+                if (success)
+                {
+                    DashboardViewModel.PixKeyList.Remove(CurrentPixKey);
 
+                    await DashboardViewModel.LoadCurrentPixKey(null);
+
+                    DialogService.Toast("Chave removida com sucesso");
+
+                    await NavigateBackModalAsync();
+                }
+
+                else
+                    DialogService.Toast("Algo de errado aconteceu, tente novamente mais tarde ou atualize o app");
             }
-
-            else
-                DialogService.Toast("Algo de errado aconteceu, tente novamente mais tarde ou atualize o app");
+            catch (Exception e)
+            {
+                e.SendToLog();
+            }
         });
 
         public ICommand SelectedInstitutionCommand => new Command(() =>
         {
-            var options = new List<Acr.UserDialogs.ActionSheetOption>();
-
-            var intitutionList = FinancialInstitution.GetList();
-
-            foreach (var item in intitutionList)
+            try
             {
-                options.Add(new Acr.UserDialogs.ActionSheetOption(item.Name, () =>
-                {
-                    SetNewInstitution(item);
-                }));
-            }
+                var options = new List<Acr.UserDialogs.ActionSheetOption>();
 
-            DialogService.ActionSheet(new Acr.UserDialogs.ActionSheetConfig
-            {
-                Title = "Selecione um instituição",
-                Message = "Caso sua instituição não esteja na lista, toque em adicionar nova",
-                Options = options,
-                //UseBottomSheet = true,
-                Destructive = new Acr.UserDialogs.ActionSheetOption("ADICIONAR NOVA", async () =>
+                var intitutionList = FinancialInstitution.GetList();
+
+                foreach (var item in intitutionList)
                 {
-                    var newInstitution = await DialogService.PromptAsync(new Acr.UserDialogs.PromptConfig
+                    options.Add(new Acr.UserDialogs.ActionSheetOption(item.Name, () =>
                     {
-                        CancelText = "Cancelar",
-                        InputType = Acr.UserDialogs.InputType.Name,
-                        OkText = "Adicionar",
-                        Title = "Instituição: ",
-                        Placeholder = "Digite o nome da instituição",
-                    });
+                        SetNewInstitution(item);
+                    }));
+                }
 
-                    if (!newInstitution.Ok)
+                DialogService.ActionSheet(new Acr.UserDialogs.ActionSheetConfig
+                {
+                    Title = "Selecione um instituição",
+                    Message = "Caso sua instituição não esteja na lista, toque em adicionar nova",
+                    Options = options,
+                    //UseBottomSheet = true,
+                    Destructive = new Acr.UserDialogs.ActionSheetOption("ADICIONAR NOVA", async () =>
+                    {
+                        var newInstitution = await DialogService.PromptAsync(new Acr.UserDialogs.PromptConfig
+                        {
+                            CancelText = "Cancelar",
+                            InputType = Acr.UserDialogs.InputType.Name,
+                            OkText = "Adicionar",
+                            Title = "Instituição: ",
+                            Placeholder = "Digite o nome da instituição",
+                        });
+
+                        if (!newInstitution.Ok)
+                            return;
+
+                        var institution = new FinancialInstitution
+                        {
+                            Name = newInstitution.Text,
+                            Style = MaterialColor.GetRandom()
+                        };
+
+                        SetNewInstitution(institution);
+                    }),
+                    Cancel = new Acr.UserDialogs.ActionSheetOption("Cancelar", () =>
+                    {
                         return;
-
-                    var institution = new FinancialInstitution
-                    {
-                        Name = newInstitution.Text,
-                        Style = MaterialColor.GetRandom()
-                    };
-
-                    SetNewInstitution(institution);
-                }),
-                Cancel = new Acr.UserDialogs.ActionSheetOption("Cancelar", () =>
-                {
-                    return;
-                })
-            });
+                    })
+                });
+            }
+            catch (Exception e)
+            {
+                e.SendToLog();
+            }
         });
 
         private void SetNewInstitution(FinancialInstitution institution)
@@ -212,9 +239,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
             if (string.IsNullOrEmpty(CurrentPixKey?.City))
                 msg += "- Cidade não informada\n";
-
-            //if (string.IsNullOrEmpty(CurrentPixKey?.FinancialInstitution?.Name))
-            //    msg += "- Selecione uma instituição financeira\n";
 
             if (!string.IsNullOrEmpty(msg))
             {

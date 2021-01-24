@@ -14,12 +14,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 {
     public class CreateBillingViewModel : BaseViewModel
     {
-        public Command<PixKey> LoadDataCommand => new Command<PixKey>((pixKey) =>
-        {
-            CurrentPixKey = pixKey;
-            ResetCurrentValue();
-        });
-
         public string AddDescriptionValue => "Adicionar Descrição";
 
         private void ResetCurrentValue()
@@ -29,15 +23,29 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             SetValueCurrencyFormat();
         }
 
+        public Command<PixKey> LoadDataCommand => new Command<PixKey>((pixKey) =>
+        {
+            try
+            {
+                CurrentPixKey = pixKey;
+                ResetCurrentValue();
+            }
+            catch (Exception e) { e.SendToLog(); }
+        });
+
         public Command<string> InputTextCommand => new Command<string>(async (text) =>
         {
-            if (string.IsNullOrEmpty(text))
-                ValueInput = ValueInput.RemoveLastChar();
+            try
+            {
+                if (string.IsNullOrEmpty(text))
+                    ValueInput = ValueInput.RemoveLastChar();
 
-            else
-                ValueInput += text;
+                else
+                    ValueInput += text;
 
-            SetValueCurrencyFormat();
+                SetValueCurrencyFormat();
+            }
+            catch (Exception e) { e.SendToLog(); }
         });
 
         public ICommand ResetCurrentValueCommand => new Command(() =>
@@ -83,11 +91,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 await NavigateAsync(new PaymentPage(CurrentPixKey));
             }
-            catch (System.Exception)
-            {
-
-                throw;
-            }
+            catch (Exception e) { e.SendToLog(); }
             finally
             {
                 SetIsLoading(false);
@@ -96,34 +100,38 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public ICommand SetDescriptionCommand => new Command(async () =>
         {
-            var promptConfig = new Acr.UserDialogs.PromptConfig
+            try
             {
-                CancelText = "Cancelar",
-                OkText = "Ok",
-                Title = "Descrição",
-                Message = "Digite o texto que aparecerá para o pagador",
-                Placeholder = "Pedido 1",
-                Text = !CurrentDescription.Equals(AddDescriptionValue) ? CurrentDescription : "",
-                OnAction = new Action<Acr.UserDialogs.PromptResult>((result) =>
+                var promptConfig = new Acr.UserDialogs.PromptConfig
                 {
-                    if (!result.Ok)
-                        return;
-
-                    var text = result?.Text;
-
-                    if (string.IsNullOrEmpty(text))
+                    CancelText = "Cancelar",
+                    OkText = "Ok",
+                    Title = "Descrição",
+                    Message = "Digite o texto que aparecerá para o pagador",
+                    Placeholder = "Pedido 1",
+                    Text = !CurrentDescription.Equals(AddDescriptionValue) ? CurrentDescription : "",
+                    OnAction = new Action<Acr.UserDialogs.PromptResult>((result) =>
                     {
-                        CurrentDescription = AddDescriptionValue;
-                        CurrentPixKey.Description = "";
-                        return;
-                    }
+                        if (!result.Ok)
+                            return;
 
-                    CurrentDescription = text;
-                    CurrentPixKey.Description = text;
-                })
-            };
+                        var text = result?.Text;
 
-            DialogService.Prompt(promptConfig);
+                        if (string.IsNullOrEmpty(text))
+                        {
+                            CurrentDescription = AddDescriptionValue;
+                            CurrentPixKey.Description = "";
+                            return;
+                        }
+
+                        CurrentDescription = text;
+                        CurrentPixKey.Description = text;
+                    })
+                };
+
+                DialogService.Prompt(promptConfig);
+            }
+            catch (Exception e) { e.SendToLog(); }
         });
 
         private PixKey _currentPixKey;

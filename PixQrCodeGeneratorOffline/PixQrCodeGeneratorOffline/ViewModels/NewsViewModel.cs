@@ -27,18 +27,19 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 {
                     SetIsLoading(true);
 
-                    await Task.Delay(1000);
+                    await Task.Delay(500);
 
                     await LoadData();
                 });
             }
-            catch (Exception)
+            catch (Exception e)
             {
-
-                throw;
+                e.SendToLog();
             }
             finally
             {
+                SetEvent("Viu lista de notícias");
+
                 SetIsLoading(false);
             }
         }
@@ -55,10 +56,9 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 NotFoundVisible = !(CurrentFeedList.Count > 0);
             }
-            catch (Exception)
+            catch (Exception e)
             {
-
-                throw;
+                e.SendToLog();
             }
             finally
             {
@@ -68,12 +68,47 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public ICommand ItemTappedCommand => new Command<Feed>(async (item) =>
         {
-            await Xamarin.Essentials.Browser.OpenAsync(item.Link, new CustomBrowserLaunchOptions());
+            try
+            {
+                SetIsLoading(true);
+
+                await Task.Delay(500);
+
+                await Xamarin.Essentials.Browser.OpenAsync(item.Link, new CustomBrowserLaunchOptions());
+            }
+            catch (Exception e)
+            {
+                e.SendToLog();
+            }
+            finally
+            {
+                SetEvent("Entrou em uma notícia");
+
+                SetIsLoading(false);
+            }
         });
 
         public ICommand ShareCommand => new Command<Feed>(async (item) =>
         {
-            await ShareText(item.Link.AbsoluteUri);
+            try
+            {
+
+                SetIsLoading(true);
+
+                await Task.Delay(500);
+
+                await ShareText(item.Link.AbsoluteUri);
+            }
+            catch (Exception e)
+            {
+                e.SendToLog();
+            }
+            finally
+            {
+                SetEvent("Compartilhou uma notícia: " + item?.Title);
+
+                SetIsLoading(false);
+            }
         });
 
         private ObservableCollection<Feed> _currentFeedList;

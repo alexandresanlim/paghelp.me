@@ -57,8 +57,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 await Task.Delay(500);
 
                 await NavigateModalAsync(new CreateBillingPage(CurrentPixKey));
-
-                Crashes.GenerateTestCrash();
             }
             catch (System.Exception e)
             {
@@ -66,6 +64,8 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
             finally
             {
+                SetEvent("Navegou para criação de cobrança");
+
                 SetIsLoading(false);
             }
         });
@@ -76,17 +76,18 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             {
                 SetIsLoading(true);
 
-                await Task.Delay(1000);
+                await Task.Delay(500);
 
                 await NavigateModalAsync(new AddPixKeyPage(this));
             }
-            catch (System.Exception)
+            catch (System.Exception e)
             {
-
-                throw;
+                e.SendToLog();
             }
             finally
             {
+                SetEvent("Navegou para adicionar nova chave");
+
                 SetIsLoading(false);
             }
         });
@@ -108,55 +109,43 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             {
                 SetIsLoading(true);
 
-                await Task.Delay(1000);
+                await Task.Delay(500);
 
                 await ShareText(CurrentPixKey?.Key);
             }
-            catch (System.Exception)
+            catch (System.Exception e)
             {
-                throw;
+                e.SendToLog();
             }
             finally
             {
+                SetEvent("Compartilhou chave");
+
                 SetIsLoading(false);
             }
         });
 
         public ICommand EditKeyCommand => new Command(async () =>
         {
-            await NavigateModalAsync(new AddPixKeyPage(this, CurrentPixKey));
+            try
+            {
+                SetIsLoading(true);
+
+                await Task.Delay(500);
+
+                await NavigateModalAsync(new AddPixKeyPage(this, CurrentPixKey));
+            }
+            catch (System.Exception e)
+            {
+                e.SendToLog();
+            }
+            finally
+            {
+                SetEvent("Editou chave");
+
+                SetIsLoading(false);
+            }
         });
-
-        //public ICommand OpenOptionsCommand => new Command(() =>
-        //{
-        //    var options = new List<Acr.UserDialogs.ActionSheetOption>
-        //    {
-        //        new Acr.UserDialogs.ActionSheetOption("Editar chave", async () =>
-        //        {
-        //            await NavigateModalAsync(new AddPixKeyPage(this,CurrentPixKey));
-        //        }),
-        //        new Acr.UserDialogs.ActionSheetOption("Copiar chave", async () =>
-        //        {
-        //            await Clipboard.SetTextAsync(CurrentPixKey?.Key);
-        //            DialogService.Toast("Chave copiada com sucesso!");
-        //        }),
-        //        new Acr.UserDialogs.ActionSheetOption("Compartilhar chave", async () =>
-        //        {
-        //            await ShareText(CurrentPixKey?.Key);
-        //        })
-        //    };
-
-        //    DialogService.ActionSheet(new Acr.UserDialogs.ActionSheetConfig
-        //    {
-        //        Title = "O que deseja fazer?",
-        //        //UseBottomSheet = true,
-        //        Options = options,
-        //        Cancel = new Acr.UserDialogs.ActionSheetOption("Cancelar", () =>
-        //        {
-        //            return;
-        //        })
-        //    });
-        //});
 
         public async Task SetStatusFromCurrentPixColor()
         {
@@ -193,12 +182,5 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             set => SetProperty(ref _showWelcome, value);
             get => _showWelcome;
         }
-
-        //ImageSource _qrCodeImage;
-        //public ImageSource QrCodeImage
-        //{
-        //    get => _qrCodeImage;
-        //    set => SetProperty(ref _qrCodeImage, value);
-        //}
     }
 }
