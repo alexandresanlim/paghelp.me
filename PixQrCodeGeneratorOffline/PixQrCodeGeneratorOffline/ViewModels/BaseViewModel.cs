@@ -69,9 +69,9 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         #region Navigate
 
-        public Command CloseModalCommand => new Command(async () =>
+        public Command NavigateBackCommand => new Command(() =>
         {
-            await NavigateBackModalAsync();
+            NavigateBack();
         });
 
         public Command NavigateToRootCommand => new Command(async () =>
@@ -89,15 +89,20 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             await Shell.Current.Navigation.PushModalAsync(page, true);
         }
 
-        public async Task NavigateBackModalAsync()
+        public void NavigateBack()
         {
-            await Shell.Current.Navigation.PopModalAsync();
+            Shell.Current.SendBackButtonPressed();
         }
 
-        public async Task NavigateBackAsync()
-        {
-            await Shell.Current.Navigation.PopAsync();
-        }
+        //public async Task NavigateBackModalAsync()
+        //{
+        //    await Shell.Current.Navigation.PopModalAsync();
+        //}
+
+        //public async Task NavigateBackAsync()
+        //{
+        //    await Shell.Current.Navigation.PopAsync();
+        //}
 
         public async Task NavigateToRootAsync()
         {

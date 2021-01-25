@@ -6,5 +6,9 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 {
     public class GuideViewModel : BaseViewModel
     {
+        public GuideViewModel()
+        {
+            SetEvent("Visualizou guia PIX");
+        }
     }
 }

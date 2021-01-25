@@ -113,7 +113,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 DialogService.Toast("Chave salva com sucesso");
 
-                await NavigateBackModalAsync();
+                NavigateBack();
 
                 //}
 
@@ -145,7 +145,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                     DialogService.Toast("Chave removida com sucesso");
 
-                    await NavigateBackModalAsync();
+                    NavigateBack();
                 }
 
                 else
