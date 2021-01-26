@@ -30,9 +30,9 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 CurrentPixKey = pixKey;
                 ResetCurrentValue();
             }
-            catch (Exception e) 
-            { 
-                e.SendToLog(); 
+            catch (Exception e)
+            {
+                e.SendToLog();
             }
         });
 
@@ -44,13 +44,16 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                     ValueInput = ValueInput.RemoveLastChar();
 
                 else
-                    ValueInput += text;
+                {
+                    if (ValueInput.Length < 7)
+                        ValueInput += text;
+                }
 
                 SetValueCurrencyFormat();
             }
-            catch (Exception e) 
-            { 
-                e.SendToLog(); 
+            catch (Exception e)
+            {
+                e.SendToLog();
             }
         });
 
@@ -79,9 +82,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
             var finalString = System.Convert.ToDecimal(d, new System.Globalization.CultureInfo("en-US")).ToString("N");
 
-            if (finalString.Length > 11)
-                return;
-
             CurrentPixKey.Value = finalString;
         }
 
@@ -97,9 +97,9 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 await NavigateAsync(new PaymentPage(CurrentPixKey));
             }
-            catch (Exception e) 
-            { 
-                e.SendToLog(); 
+            catch (Exception e)
+            {
+                e.SendToLog();
             }
             finally
             {
@@ -140,9 +140,9 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 DialogService.Prompt(promptConfig);
             }
-            catch (Exception e) 
-            { 
-                e.SendToLog(); 
+            catch (Exception e)
+            {
+                e.SendToLog();
             }
         });
 

@@ -71,7 +71,7 @@ namespace PixQrCodeGeneratorOffline.Models
         public string ValueUSString => !string.IsNullOrEmpty(Value) ? Value.Replace(",", ".") : "";
 
         //[LiteDB.BsonIgnore]
-        //public decimal ValueUSCulture => !string.IsNullOrEmpty(Value) ? System.Convert.ToDecimal(Value, new System.Globalization.CultureInfo("en-US")) : 0;
+        //public decimal ValueUSCulture => !string.IsNullOrEmpty(Value) ? decimal.Parse(ValueUSString) : 0;
 
         [LiteDB.BsonIgnore]
         public string ValuePresentation => "R$ " + Value;

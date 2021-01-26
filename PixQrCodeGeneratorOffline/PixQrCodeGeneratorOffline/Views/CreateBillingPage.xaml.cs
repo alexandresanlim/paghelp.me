@@ -31,9 +31,9 @@ namespace PixQrCodeGeneratorOffline.Views
             _createBillingViewModel.LoadDataCommand.Execute(_pixKey);
         }
 
-        private void CustomEntry_Unfocused(object sender, FocusEventArgs e)
-        {
-            _createBillingViewModel.CurrentPixKey.RaiseCob();
-        }
+        //private void CustomEntry_Unfocused(object sender, FocusEventArgs e)
+        //{
+        //    _createBillingViewModel.CurrentPixKey.RaiseCob();
+        //}
     }
 }
