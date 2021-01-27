@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace PixQrCodeGeneratorOffline.Droid
 {
-    [Activity(Theme = "@style/MyTheme.Splash", MainLauncher = true, NoHistory = true, Label = App.AppName, Icon = "@mipmap/icon")]
+    [Activity(Theme = "@style/MyTheme.Splash", MainLauncher = true, NoHistory = true, Label = App.AppName, Icon = "@mipmap/icon", HardwareAccelerated = false)]
     public class LoaderActivity : Activity
     {
         static readonly string TAG = "X:" + typeof(LoaderActivity).Name;
