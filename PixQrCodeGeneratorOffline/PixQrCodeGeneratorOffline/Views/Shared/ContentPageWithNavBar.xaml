@@ -26,6 +26,8 @@
                         VerticalOptions="Center" 
                         FontAttributes="Bold"
                         TextColor="{DynamicResource textOnPrimary}"
+                        MaxLines="1"
+                        LineBreakMode="TailTruncation"
                         />
                 </StackLayout>
                 <ContentPresenter Grid.Row="1" />

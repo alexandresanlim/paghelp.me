@@ -2,6 +2,7 @@
 using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models;
 using PixQrCodeGeneratorOffline.Services;
+using PixQrCodeGeneratorOffline.Views.Shared;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -68,13 +69,19 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public ICommand ItemTappedCommand => new Command<Feed>(async (item) =>
         {
+            if(string.IsNullOrEmpty(item?.Link?.AbsoluteUri))
+            {
+                DialogService.Toast("Link para a notícia não encontrado.");
+                return;
+            }
+
             try
             {
                 SetIsLoading(true);
 
                 await Task.Delay(500);
 
-                await Xamarin.Essentials.Browser.OpenAsync(item.Link, new CustomBrowserLaunchOptions());
+                await NavigateModalAsync(new WebViewPage(item.Link, item?.Title));
             }
             catch (Exception e)
             {
