@@ -1,4 +1,5 @@
 ﻿using PixQrCodeGeneratorOffline.ViewModels;
+using PixQrCodeGeneratorOffline.Views.Shared;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,7 @@ using Xamarin.Forms.Xaml;
 namespace PixQrCodeGeneratorOffline.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class CreateBillingPage : ContentPage
+    public partial class CreateBillingPage : ContentPageWithNavBar
     {
         CreateBillingViewModel _createBillingViewModel;
 

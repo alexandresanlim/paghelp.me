@@ -10,14 +10,14 @@ using Xamarin.Forms.Xaml;
 namespace PixQrCodeGeneratorOffline.Views.Shared
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class BackButtonView : ContentView
+    public partial class ContentPageWithNavBar : ContentPage
     {
-        public BackButtonView()
+        public ContentPageWithNavBar()
         {
             InitializeComponent();
         }
 
-        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        private void TapGestureRecognizerBackButtonPressed_Tapped(object sender, EventArgs e)
         {
             Shell.Current.SendBackButtonPressed();
         }

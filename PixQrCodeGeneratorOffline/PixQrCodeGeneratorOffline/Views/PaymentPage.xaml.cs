@@ -11,7 +11,7 @@ using Xamarin.Forms.Xaml;
 namespace PixQrCodeGeneratorOffline.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class PaymentPage : ContentPage
+    public partial class PaymentPage : Shared.ContentPageWithNavBar
     {
         PaymentViewModel _paymentViewModel;
 

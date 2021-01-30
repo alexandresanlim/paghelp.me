@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<share:ContentPageWithNavBar 
+    xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls" 
              xmlns:qr="clr-namespace:Xam.Forms;assembly=Xam.Forms.QRCode"
@@ -8,6 +9,7 @@
              xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon" 
              xmlns:local="clr-namespace:PixQrCodeGeneratorOffline.Converters" 
              xmlns:shared="clr-namespace:PixQrCodeGeneratorOffline.Views.Shared"
+    xmlns:share="clr-namespace:PixQrCodeGeneratorOffline.Views.Shared"
              Title="Cobrança Offline"
              >
 
@@ -30,7 +32,6 @@
             </controls:CustomFrame.Background>
 
             <Grid RowDefinitions="auto, *" RowSpacing="0">
-                <shared:BackButtonView Grid.Row="0" />
 
                 <ScrollView Grid.Row="1">
                     <Grid RowDefinitions="auto,*" Padding="15,0,15,15" RowSpacing="50">
@@ -176,4 +177,4 @@
 
         </controls:CustomFrame>
     </ContentPage.Content>
-</ContentPage>
+</share:ContentPageWithNavBar>
