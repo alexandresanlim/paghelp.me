@@ -67,8 +67,8 @@ namespace PixQrCodeGeneratorOffline.Models
         [LiteDB.BsonIgnore]
         public string InstitutionPresentation => !string.IsNullOrEmpty(FinancialInstitution?.Name) ? FinancialInstitution?.Name : "";
 
-        [LiteDB.BsonIgnore]
-        public string ValueUSString => !string.IsNullOrEmpty(Value) ? Value.Replace(",", ".") : "";
+        //[LiteDB.BsonIgnore]
+        //public string ValueUSString => !string.IsNullOrEmpty(Value) ? Value.Replace(",", ".") : "";
 
         //[LiteDB.BsonIgnore]
         //public decimal ValueUSCulture => !string.IsNullOrEmpty(Value) ? decimal.Parse(ValueUSString) : 0;
@@ -81,6 +81,8 @@ namespace PixQrCodeGeneratorOffline.Models
             if (string.IsNullOrEmpty(Key))
                 return;
 
+            var value = Value.Replace(".", "").Replace(",",".");
+
             Xamarin.Essentials.MainThread.BeginInvokeOnMainThread(() =>
             {
                 Cobranca cobranca = new Cobranca(_chave: Key)
@@ -88,11 +90,11 @@ namespace PixQrCodeGeneratorOffline.Models
                     SolicitacaoPagador = Description,
                     Valor = new Valor
                     {
-                        Original = ValueUSString
+                        Original = value
                     }
                 };
 
-                var payload = cobranca?.ToPayload("PIXOFF" + Guid.NewGuid().ToString("N").Substring(0,10), new Merchant(Name, City));
+                var payload = cobranca?.ToPayload("PIXOFF" + Guid.NewGuid().ToString("N").Substring(0, 10), new Merchant(Name, City));
 
                 Payload = payload?.GenerateStringToQrCode();
             });
