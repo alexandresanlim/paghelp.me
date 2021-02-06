@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Acr.UserDialogs;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,7 +29,21 @@ namespace PixQrCodeGeneratorOffline.Views.Shared
         protected override void OnAppearing()
         {
             Wv.Source = CurrentUri;
+
+            Wv.Navigating += Wv_Navigating;
+            Wv.Navigated += Wv_Navigated;
+
             base.OnAppearing();
+        }
+
+        private void Wv_Navigating(object sender, WebNavigatingEventArgs e)
+        {
+            UserDialogs.Instance.ShowLoading("");
+        }
+
+        private void Wv_Navigated(object sender, WebNavigatedEventArgs e)
+        {
+            UserDialogs.Instance.HideLoading();
         }
     }
 }
