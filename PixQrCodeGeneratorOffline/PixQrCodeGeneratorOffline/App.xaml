@@ -1,7 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PixQrCodeGeneratorOffline.App">
+             x:Class="PixQrCodeGeneratorOffline.App"
+             xmlns:adscontrols="clr-namespace:MarcTron.Plugin.Controls;assembly=Plugin.MtAdmob"
+             >
     <!--
         Define global resources and styles here, that apply to all pages in your app.
     -->
@@ -29,6 +31,19 @@
         <!--<Color x:Key="background_page">#0c143c</Color>-->
         
         <Color x:Key="background_page">#ecf0f1</Color>
-       
+
+        <Style TargetType="adscontrols:MTAdView">
+            <Setter Property="HeightRequest">
+                <Setter.Value>
+                    <x:OnIdiom Phone="90" Tablet="130"/>
+                </Setter.Value>
+            </Setter>
+            <!--<Setter Property="WidthRequest">
+                <Setter.Value>
+                    <x:OnIdiom Phone="320" Tablet="320"/>
+                </Setter.Value>
+            </Setter>-->
+        </Style>
+
     </Application.Resources>
 </Application>

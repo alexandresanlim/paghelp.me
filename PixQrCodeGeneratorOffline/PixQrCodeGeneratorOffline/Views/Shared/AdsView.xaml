@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PixQrCodeGeneratorOffline.Views.Shared.AdsView"
+             xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls" 
+             xmlns:adscontrols="clr-namespace:MarcTron.Plugin.Controls;assembly=Plugin.MtAdmob"
+             xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon" 
+             VerticalOptions="End"
+             IsVisible="{Binding ShowAds}"
+             BackgroundColor="Black"
+             >
+    
+  <ContentView.Content>
+        <!--<controls:CustomFrame BackgroundColor="Black" CornerRadius="5" VerticalOptions="End" Padding="0,10" Margin="5">-->
+        <Grid>
+            <adscontrols:MTAdView x:Name="myAds"/>
+
+            <StackLayout HorizontalOptions="EndAndExpand" VerticalOptions="Start" Padding="10,5,10,10" BackgroundColor="Black">
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding CloseAdsCommand}" />
+                </StackLayout.GestureRecognizers>
+                <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Times }" IconSize="Medium" IconColor="{DynamicResource textOnBackgroundTransparent}" />
+            </StackLayout>
+        </Grid>
+        <!--</controls:CustomFrame>-->
+    </ContentView.Content>
+</ContentView>

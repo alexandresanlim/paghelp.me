@@ -5,7 +5,7 @@
              xmlns:cv="clr-namespace:PixQrCodeGeneratorOffline.Converters"
              xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
              x:Class="PixQrCodeGeneratorOffline.Views.NewsPage"
-             xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon"
+             xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon" xmlns:share="clr-namespace:PixQrCodeGeneratorOffline.Views.Shared"
              Shell.NavBarIsVisible="False"
              BackgroundColor="{DynamicResource primary}"
              >
@@ -38,46 +38,51 @@
                         <controls:CustomLabel Text="Nenhuma notícia encontrada no momento" FontSize="Small" FontAttributes="Bold" HorizontalOptions="Center" TextColor="{DynamicResource textOnPrimary}" />
                     </StackLayout>
 
-                    <controls:CustomCollectionView ItemsSource="{Binding CurrentFeedList}" SelectionMode="None" Margin="10,5,10,0" IsVisible="{Binding CurrentFeedList, Converter={StaticResource HasDataConverter}}">
+                    <Grid RowDefinitions="auto, *" RowSpacing="0">
+                        <share:AdsView Grid.Row="0" />
+                        
+                        <controls:CustomCollectionView Grid.Row="1" ItemsSource="{Binding CurrentFeedList}" SelectionMode="None" Margin="10,5,10,0" IsVisible="{Binding CurrentFeedList, Converter={StaticResource HasDataConverter}}">
 
-                        <controls:CustomCollectionView.ItemTemplate>
-                            <DataTemplate>
-                                <StackLayout Padding="0,5">
+                            <controls:CustomCollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <StackLayout Padding="0,5">
 
-                                    <StackLayout.GestureRecognizers>
-                                        <TapGestureRecognizer 
+                                        <StackLayout.GestureRecognizers>
+                                            <TapGestureRecognizer 
                                     Command="{Binding Source={RelativeSource AncestorType={x:Type vm:NewsViewModel}}, Path=ItemTappedCommand}"
                                     CommandParameter="{Binding .}">
-                                        </TapGestureRecognizer>
-                                    </StackLayout.GestureRecognizers>
+                                            </TapGestureRecognizer>
+                                        </StackLayout.GestureRecognizers>
 
-                                    <controls:CustomFrame BackgroundColor="{DynamicResource backgroundTransparent}" CornerRadius="15" HeightRequest="150" Padding="15">
+                                        <controls:CustomFrame BackgroundColor="{DynamicResource backgroundTransparent}" CornerRadius="15" HeightRequest="150" Padding="15">
 
-                                        <StackLayout>
-                                            <controls:CustomLabel Text="{Binding Source}" FontSize="Micro" TextColor="{DynamicResource textOnBackgroundTransparent}"/>
-                                            <controls:CustomLabel Text="{Binding Title}" FontSize="Small" TextColor="{DynamicResource textOnBackgroundTransparent}" FontAttributes="Bold" VerticalOptions="FillAndExpand"/>
-                                            <StackLayout Orientation="Horizontal">
-                                                <controls:CustomLabel Text="{Binding PublishDateDisplay}" FontSize="Micro" TextColor="{DynamicResource textOnBackgroundTransparent}" HorizontalOptions="StartAndExpand" VerticalOptions="EndAndExpand" />
-                                                <StackLayout Padding="15,15,0,0">
-                                                    <StackLayout.GestureRecognizers>
-                                                        <TapGestureRecognizer 
+                                            <StackLayout>
+                                                <controls:CustomLabel Text="{Binding Source}" FontSize="Micro" TextColor="{DynamicResource textOnBackgroundTransparent}"/>
+                                                <controls:CustomLabel Text="{Binding Title}" FontSize="Small" TextColor="{DynamicResource textOnBackgroundTransparent}" FontAttributes="Bold" VerticalOptions="FillAndExpand"/>
+                                                <StackLayout Orientation="Horizontal">
+                                                    <controls:CustomLabel Text="{Binding PublishDateDisplay}" FontSize="Micro" TextColor="{DynamicResource textOnBackgroundTransparent}" HorizontalOptions="StartAndExpand" VerticalOptions="EndAndExpand" />
+                                                    <StackLayout Padding="15,15,0,0">
+                                                        <StackLayout.GestureRecognizers>
+                                                            <TapGestureRecognizer 
                                                     Command="{Binding Source={RelativeSource AncestorType={x:Type vm:NewsViewModel}}, Path=ShareCommand}"
                                                     CommandParameter="{Binding .}">
-                                                        </TapGestureRecognizer>
-                                                    </StackLayout.GestureRecognizers>
-                                                    <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.ShareAlt }" IconColor="{DynamicResource textOnBackgroundTransparent}" HorizontalOptions="CenterAndExpand" />
+                                                            </TapGestureRecognizer>
+                                                        </StackLayout.GestureRecognizers>
+                                                        <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.ShareAlt }" IconColor="{DynamicResource textOnBackgroundTransparent}" HorizontalOptions="CenterAndExpand" />
+                                                    </StackLayout>
                                                 </StackLayout>
                                             </StackLayout>
-                                        </StackLayout>
 
-                                    </controls:CustomFrame>
+                                        </controls:CustomFrame>
 
-                                </StackLayout>
-                            </DataTemplate>
-                        </controls:CustomCollectionView.ItemTemplate>
-                    </controls:CustomCollectionView>
+                                    </StackLayout>
+                                </DataTemplate>
+                            </controls:CustomCollectionView.ItemTemplate>
+                        </controls:CustomCollectionView>
 
-                    <StackLayout BackgroundColor="{DynamicResource primary}" IsVisible="{Binding IsLoading}"/>
+                    </Grid>
+
+                    <!--<StackLayout BackgroundColor="Black" IsVisible="{Binding IsLoading}"/>-->
                 </Grid>
             </RefreshView>
 

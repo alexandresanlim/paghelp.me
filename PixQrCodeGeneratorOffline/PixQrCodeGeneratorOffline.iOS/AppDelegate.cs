@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 using Foundation;
+using Google.MobileAds;
 using UIKit;
 
 namespace PixQrCodeGeneratorOffline.iOS
@@ -24,6 +25,7 @@ namespace PixQrCodeGeneratorOffline.iOS
         {
             global::Xamarin.Forms.Forms.SetFlags("CollectionView_Experimental");
             global::Xamarin.Forms.Forms.Init();
+            MobileAds.SharedInstance.Start(CompletionHandler);
             Lottie.Forms.iOS.Renderers.AnimationViewRenderer.Init();
             //ZXing.Net.Mobile.Forms.iOS.Platform.Init();
 
@@ -31,5 +33,7 @@ namespace PixQrCodeGeneratorOffline.iOS
 
             return base.FinishedLaunching(app, options);
         }
+
+        private void CompletionHandler(InitializationStatus status) { }
     }
 }

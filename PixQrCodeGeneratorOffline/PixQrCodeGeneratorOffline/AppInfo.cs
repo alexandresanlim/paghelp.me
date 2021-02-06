@@ -52,6 +52,16 @@ namespace PixQrCodeGeneratorOffline
             public static string InstagramLink => "https://www.instagram.com/" + InstagramUsername;
         }
 
+        public static class Ads
+        {
+            public static string AdsId => DeviceInfo.IsAndroid ?
+#if DEBUG
+                "ca-app-pub-3940256099942544/6300978111" : "ca-app-pub-3940256099942544/2934735716";
+#else
+                "ca-app-pub-1328926374682196/6888131347" : "";
+#endif
+        }
+
         public static class Evironment
         {
             public enum EviromentType

@@ -144,6 +144,9 @@
     <PackageReference Include="LiteDB">
       <Version>5.0.10</Version>
     </PackageReference>
+    <PackageReference Include="MarcTron.Admob">
+      <Version>1.6.1</Version>
+    </PackageReference>
     <PackageReference Include="Microsoft.AppCenter.Analytics">
       <Version>4.1.0</Version>
     </PackageReference>

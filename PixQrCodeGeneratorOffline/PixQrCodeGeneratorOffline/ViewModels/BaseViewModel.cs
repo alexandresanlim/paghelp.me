@@ -7,12 +7,18 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
+        public BaseViewModel()
+        {
+            ShowAds = true;
+        }
+
         public IUserDialogs DialogService => UserDialogs.Instance;
 
         public async Task ShareText(string text)
@@ -110,6 +116,18 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         }
 
         #endregion
+
+        public ICommand CloseAdsCommand => new Command(() =>
+        {
+            ShowAds = false;
+        });
+
+        private bool _showAds;
+        public bool ShowAds
+        {
+            get => _showAds;
+            set => SetProperty(ref _showAds, value);
+        }
 
         bool isBusy = false;
         public bool IsBusy

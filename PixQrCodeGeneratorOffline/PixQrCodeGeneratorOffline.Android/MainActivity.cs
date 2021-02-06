@@ -12,6 +12,7 @@ using Xamarin.Forms;
 using Microsoft.AppCenter;
 using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
+using Android.Gms.Ads;
 
 namespace PixQrCodeGeneratorOffline.Droid
 {
@@ -32,6 +33,7 @@ namespace PixQrCodeGeneratorOffline.Droid
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             Acr.UserDialogs.UserDialogs.Init(this);
+            MobileAds.Initialize(ApplicationContext);
             //ZXing.Net.Mobile.Forms.Android.Platform.Init();
             //CrossCurrentActivity.Current.Init(this, savedInstanceState);
             //PlatformGestureEffect.Init();
