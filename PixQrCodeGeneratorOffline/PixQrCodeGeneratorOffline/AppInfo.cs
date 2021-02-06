@@ -46,6 +46,10 @@ namespace PixQrCodeGeneratorOffline
             }
 
             public static string StoreNameByDeviceInfo => DeviceInfo.IsAndroid ? "Google Play" : "App Store";
+
+            public static string InstagramUsername => "pixoff.app";
+
+            public static string InstagramLink => "https://www.instagram.com/" + InstagramUsername;
         }
 
         public static class Evironment
@@ -84,6 +88,19 @@ namespace PixQrCodeGeneratorOffline
             {
                 var storeLink = Device.RuntimePlatform == Device.Android ? Info.GooglePlayLink : Info.AppStoreLink;
                 await Launcher.OpenAsync(new Uri(storeLink));
+            }
+        }
+
+        public static async Task OpenAppIntagram()
+        {
+            var supportsUri = await Launcher.CanOpenAsync("instagram://");
+
+            if (supportsUri)
+                await Launcher.OpenAsync(new Uri("instagram://user?username=" + Info.InstagramUsername));
+
+            else
+            {
+                await Launcher.OpenAsync(new Uri(Info.InstagramLink));
             }
         }
     }
