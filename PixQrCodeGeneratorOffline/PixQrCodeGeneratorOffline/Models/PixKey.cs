@@ -62,6 +62,9 @@ namespace PixQrCodeGeneratorOffline.Models
         public string NameAndCity => (!string.IsNullOrEmpty(Name) && !string.IsNullOrEmpty(City)) ? Name + ", " + City : "";
 
         [LiteDB.BsonIgnore]
+        public string NamePresentation => !string.IsNullOrEmpty(Name) ? Name : "";
+
+        [LiteDB.BsonIgnore]
         public string KeyPresentation => !string.IsNullOrEmpty(Key) ? "Chave: " + Key : "";
 
         [LiteDB.BsonIgnore]

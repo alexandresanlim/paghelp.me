@@ -61,7 +61,7 @@
                                 <StackLayout Padding="0,5" Spacing="0">
 
                                     <controls:CustomLabel Text="{Binding InstitutionPresentation}" FontSize="Title" HorizontalOptions="Center" FontAttributes="Bold" TextColor="{DynamicResource textOnPrimary}" />
-                                    <controls:CustomLabel Text="{Binding NameAndCity}" FontSize="Subtitle" HorizontalOptions="Center" TextColor="{DynamicResource textOnPrimary}" FontAttributes="Bold"  />
+                                    <controls:CustomLabel Text="{Binding NamePresentation}" FontSize="Subtitle" HorizontalOptions="Center" TextColor="{DynamicResource textOnPrimary}" FontAttributes="Bold"  />
                                     <controls:CustomLabel Text="{Binding KeyPresentation}" FontSize="Micro" HorizontalOptions="Center" FontAttributes="Bold" TextColor="{DynamicResource textOnPrimary}" />
 
                                 </StackLayout>

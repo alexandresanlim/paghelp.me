@@ -79,6 +79,9 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                     CurrentPixKey.Color = MaterialColor.GetRandom();
                 }
 
+                if (string.IsNullOrEmpty(CurrentPixKey?.City))
+                    CurrentPixKey.City = "Cidade";
+
                 var success = false;
 
                 //CurrentPixKey.RaisePresentation();
@@ -237,8 +240,8 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             if (string.IsNullOrEmpty(CurrentPixKey?.Name))
                 msg += "- Nome não informado\n";
 
-            if (string.IsNullOrEmpty(CurrentPixKey?.City))
-                msg += "- Cidade não informada\n";
+            //if (string.IsNullOrEmpty(CurrentPixKey?.City))
+            //    msg += "- Cidade não informada\n";
 
             if (!string.IsNullOrEmpty(msg))
             {

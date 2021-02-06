@@ -69,7 +69,7 @@
                         </StackLayout>
 
                         <StackLayout Spacing="0">
-                            <controls:CustomLabel Text="Cidade" FontSize="Medium" FontAttributes="Bold" Margin="10,0,0,0" TextColor="{DynamicResource textOnPrimary}" />
+                            <controls:CustomLabel Text="Cidade (opcional)" FontSize="Medium" FontAttributes="Bold" Margin="10,0,0,0" TextColor="{DynamicResource textOnPrimary}" />
                             <controls:CustomFrame BackgroundColor="{DynamicResource backgroundTransparent}" Padding="10,5" CornerRadius="10">
                                 <controls:CustomEntry Placeholder="Digite a cidade" Text="{Binding CurrentPixKey.City}" ReturnType="Done" TextColor="{DynamicResource textOnBackgroundTransparent}" PlaceholderColor="LightGray" />
                             </controls:CustomFrame>
