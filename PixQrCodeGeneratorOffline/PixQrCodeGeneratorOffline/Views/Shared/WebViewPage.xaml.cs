@@ -1,4 +1,5 @@
 ﻿using Acr.UserDialogs;
+using PixQrCodeGeneratorOffline.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,24 +14,21 @@ namespace PixQrCodeGeneratorOffline.Views.Shared
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class WebViewPage : ContentPageWithNavBar
     {
-        public static Uri CurrentUri { get; set; }
+        WebViewViewModel _webViewVM;
 
         public WebViewPage(Uri linkToShow, string title = "")
         {
             InitializeComponent();
 
-            BindingContext = this;
-
-            CurrentUri = linkToShow;
+            BindingContext = _webViewVM = new WebViewViewModel(linkToShow);
 
             Title = title;
         }
 
         protected override void OnAppearing()
         {
-            Wv.Source = CurrentUri;
-
             Wv.Navigating += Wv_Navigating;
+
             Wv.Navigated += Wv_Navigated;
 
             base.OnAppearing();

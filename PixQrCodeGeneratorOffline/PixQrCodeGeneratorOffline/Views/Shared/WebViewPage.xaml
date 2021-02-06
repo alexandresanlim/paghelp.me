@@ -7,7 +7,7 @@
     
     <ContentPage.Content>
         <Grid RowDefinitions="*, auto" RowSpacing="0">
-            <WebView Grid.Row="0" x:Name="Wv" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+            <WebView Grid.Row="0" x:Name="Wv" Source="{Binding CurrentUri}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
             <share:AdsView Grid.Row="1" />
         </Grid>
     </ContentPage.Content>
