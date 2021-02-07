@@ -4,18 +4,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Threading.Tasks;
 using System.Xml.Linq;
 
 namespace PixQrCodeGeneratorOffline.Services
 {
     public static class FeedService
     {
-        public static List<Feed> Get(string feedUrl)
+        public static async Task<List<Feed>> Get(string feedUrl)
         {
             try
             {
                 WebClient wclient = new WebClient();
-                string RSSData = wclient.DownloadString(feedUrl);
+                string RSSData = await wclient.DownloadStringTaskAsync(feedUrl);
 
                 var xml = XDocument.Parse(RSSData);
                 //var itens = xml.Descendants("item");

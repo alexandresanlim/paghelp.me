@@ -15,23 +15,20 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 {
     public class NewsViewModel : BaseViewModel
     {
-        public ICommand LoadDataCommand => new Command(async () =>
-        {
-            await LoadData();
-        });
-
         public async Task Navigating()
         {
             try
             {
-                await Task.Run(async () =>
-                {
-                    SetIsLoading(true);
+                IsBusy = true;
 
-                    await Task.Delay(500);
+                //await Task.Run(async () =>
+                //{
+                //    SetIsLoading(true);
 
-                    await LoadData();
-                });
+                //    await Task.Delay(500);
+
+                //    await LoadData();
+                //});
             }
             catch (Exception e)
             {
@@ -41,9 +38,16 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             {
                 SetEvent("Viu lista de notícias");
 
-                SetIsLoading(false);
+                //SetIsLoading(false);
             }
         }
+
+        public ICommand LoadDataCommand => new Command(async () =>
+        {
+            await LoadData();
+        });
+
+        public List<Feed> FeedFromService { get; set; }
 
         public async Task LoadData()
         {
@@ -51,9 +55,9 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             {
                 IsBusy = true;
 
-                var itens = FeedService.Get("https://news.google.com/rss/search?q=pix%20-frade%20-golpista%20-golpistas%20-erro%20-golpe%20-hack%20-hacker&hl=pt-BR&gl=BR&ceid=BR%3Apt-419");
+                FeedFromService = FeedFromService?.Count > 0 ? FeedFromService : await FeedService.Get("https://news.google.com/rss/search?q=pix%20-frade%20-golpista%20-golpistas%20-erro%20-golpe%20-hack%20-hacker&hl=pt-BR&gl=BR&ceid=BR%3Apt-419");
 
-                CurrentFeedList = itens?.ToObservableCollection();
+                CurrentFeedList = FeedFromService?.ToObservableCollection();
 
                 NotFoundVisible = !(CurrentFeedList.Count > 0);
             }

@@ -15,12 +15,12 @@
         <Grid>
             <adscontrols:MTAdView x:Name="myAds"/>
 
-            <StackLayout HorizontalOptions="EndAndExpand" VerticalOptions="Start" Padding="10,5,10,10" BackgroundColor="Black">
-                <StackLayout.GestureRecognizers>
+            <controls:CustomFrame HorizontalOptions="EndAndExpand" VerticalOptions="Start" Padding="10" BackgroundColor="#99000000">
+                <controls:CustomFrame.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding CloseAdsCommand}" />
-                </StackLayout.GestureRecognizers>
-                <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Times }" IconSize="Medium" IconColor="{DynamicResource textOnBackgroundTransparent}" />
-            </StackLayout>
+                </controls:CustomFrame.GestureRecognizers>
+                <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.TimesCircle }" IconSize="Medium" IconColor="{DynamicResource primary}" BackgroundColor="#99000000" />
+            </controls:CustomFrame>
         </Grid>
         <!--</controls:CustomFrame>-->
     </ContentView.Content>

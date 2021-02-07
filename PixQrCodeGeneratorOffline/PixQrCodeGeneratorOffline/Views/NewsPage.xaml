@@ -28,20 +28,21 @@
                 </LinearGradientBrush>
             </controls:CustomFrame.Background>
 
-            <RefreshView Command="{Binding LoadDataCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
 
-                <Grid>
 
-                    <StackLayout IsVisible="{Binding NotFoundVisible}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="30">
-                        <controls:CustomAnimation HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Animation="not-found.json" Speed="0.5" />
-                        <controls:CustomLabel Text="Ops!" FontSize="50" FontAttributes="Bold" HorizontalOptions="Center" TextColor="{DynamicResource textOnPrimary}" />
-                        <controls:CustomLabel Text="Nenhuma notícia encontrada no momento" FontSize="Small" FontAttributes="Bold" HorizontalOptions="Center" TextColor="{DynamicResource textOnPrimary}" />
-                    </StackLayout>
+            <Grid>
 
-                    <Grid RowDefinitions="auto, *" RowSpacing="0">
-                        <share:AdsView Grid.Row="0" />
-                        
-                        <controls:CustomCollectionView Grid.Row="1" ItemsSource="{Binding CurrentFeedList}" SelectionMode="None" Margin="10,5,10,0" IsVisible="{Binding CurrentFeedList, Converter={StaticResource HasDataConverter}}">
+                <StackLayout IsVisible="{Binding NotFoundVisible}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="30">
+                    <controls:CustomAnimation HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Animation="not-found.json" Speed="0.5" />
+                    <controls:CustomLabel Text="Ops!" FontSize="50" FontAttributes="Bold" HorizontalOptions="Center" TextColor="{DynamicResource textOnPrimary}" />
+                    <controls:CustomLabel Text="Nenhuma notícia encontrada no momento" FontSize="Small" FontAttributes="Bold" HorizontalOptions="Center" TextColor="{DynamicResource textOnPrimary}" />
+                </StackLayout>
+
+                <Grid RowDefinitions="auto, *" RowSpacing="0">
+                    <share:AdsView Grid.Row="0" />
+
+                    <RefreshView Grid.Row="1" Command="{Binding LoadDataCommand}" IsRefreshing="{Binding IsBusy}">
+                        <controls:CustomCollectionView ItemsSource="{Binding CurrentFeedList}" SelectionMode="None" Margin="10,5,10,0" IsVisible="{Binding CurrentFeedList, Converter={StaticResource HasDataConverter}}">
 
                             <controls:CustomCollectionView.ItemTemplate>
                                 <DataTemplate>
@@ -79,14 +80,14 @@
                                 </DataTemplate>
                             </controls:CustomCollectionView.ItemTemplate>
                         </controls:CustomCollectionView>
-
-                    </Grid>
-
-                    <!--<StackLayout BackgroundColor="Black" IsVisible="{Binding IsLoading}"/>-->
+                    </RefreshView>
                 </Grid>
-            </RefreshView>
+
+                <!--<StackLayout BackgroundColor="Black" IsVisible="{Binding IsLoading}"/>-->
+            </Grid>
+
 
         </controls:CustomFrame>
-        
+
     </ContentPage.Content>
 </ContentPage>
