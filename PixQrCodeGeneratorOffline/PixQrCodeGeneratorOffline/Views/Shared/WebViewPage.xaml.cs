@@ -29,19 +29,23 @@ namespace PixQrCodeGeneratorOffline.Views.Shared
         {
             Wv.Navigating += Wv_Navigating;
 
-            Wv.Navigated += Wv_Navigated;
+            //Wv.Navigated += Wv_Navigated;
 
             base.OnAppearing();
         }
 
-        private void Wv_Navigating(object sender, WebNavigatingEventArgs e)
+        private async void Wv_Navigating(object sender, WebNavigatingEventArgs e)
         {
             UserDialogs.Instance.ShowLoading("");
-        }
 
-        private void Wv_Navigated(object sender, WebNavigatedEventArgs e)
-        {
+            await Task.Delay(2000);
+
             UserDialogs.Instance.HideLoading();
         }
+
+        //private void Wv_Navigated(object sender, WebNavigatedEventArgs e)
+        //{
+            
+        //}
     }
 }

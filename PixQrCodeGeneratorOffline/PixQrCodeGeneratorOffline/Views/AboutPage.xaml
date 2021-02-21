@@ -93,7 +93,7 @@
                     </controls:CustomFrame>
                 </StackLayout>-->
 
-                    <StackLayout Spacing="0">
+                    <!--<StackLayout Spacing="0">
                         <controls:CustomLabel Text="Ajude-nos a manter" TextColor="{DynamicResource textOnPrimary}" FontSize="Large" FontAttributes="Bold" />
                         <controls:CustomFrame Padding="15" BackgroundColor="{DynamicResource backgroundTransparent}" CornerRadius="10">
                             <controls:CustomFrame.GestureRecognizers>
@@ -116,7 +116,7 @@
                                 <controls:CustomLabel Text="- Canal WDEV no YouTube, por ensinamentos técnicos de implementação." TextColor="{DynamicResource textOnBackgroundTransparent}" FontSize="Small" />
                             </StackLayout>
                         </controls:CustomFrame>
-                    </StackLayout>
+                    </StackLayout>-->
 
                 </StackLayout>
             </ScrollView>

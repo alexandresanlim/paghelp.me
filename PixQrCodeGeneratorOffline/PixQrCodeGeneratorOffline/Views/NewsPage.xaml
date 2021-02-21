@@ -38,10 +38,9 @@
                     <controls:CustomLabel Text="Nenhuma notícia encontrada no momento" FontSize="Small" FontAttributes="Bold" HorizontalOptions="Center" TextColor="{DynamicResource textOnPrimary}" />
                 </StackLayout>
 
-                <Grid RowDefinitions="auto, *" RowSpacing="0">
-                    <share:AdsView Grid.Row="0" />
+                <Grid RowDefinitions="*, auto" RowSpacing="0">
 
-                    <RefreshView Grid.Row="1" Command="{Binding LoadDataCommand}" IsRefreshing="{Binding IsBusy}">
+                    <RefreshView Grid.Row="0" Command="{Binding LoadDataCommand}" IsRefreshing="{Binding IsBusy}">
                         <controls:CustomCollectionView ItemsSource="{Binding CurrentFeedList}" SelectionMode="None" Margin="10,5,10,0" IsVisible="{Binding CurrentFeedList, Converter={StaticResource HasDataConverter}}">
 
                             <controls:CustomCollectionView.ItemTemplate>
@@ -81,6 +80,8 @@
                             </controls:CustomCollectionView.ItemTemplate>
                         </controls:CustomCollectionView>
                     </RefreshView>
+
+                    <share:AdsView Grid.Row="1" />
                 </Grid>
 
                 <!--<StackLayout BackgroundColor="Black" IsVisible="{Binding IsLoading}"/>-->

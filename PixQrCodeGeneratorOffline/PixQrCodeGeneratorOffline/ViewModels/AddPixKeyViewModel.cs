@@ -221,7 +221,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             CurrentPixKey.FinancialInstitution = institution;
             CurrentPixKey.Color = institution.Style;
             CurrenSelectedFinancialInstitutionText = institution.Name;
-            App.LoadTheme(CurrentPixKey.Color);
+            App.LoadTheme(CurrentPixKey?.Color);
             ReloadStatusBar();
         }
 
