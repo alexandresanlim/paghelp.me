@@ -2,7 +2,9 @@
 using PixQrCodeGeneratorOffline.DataBase;
 using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models;
+using PixQrCodeGeneratorOffline.Services;
 using PixQrCodeGeneratorOffline.Views;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
@@ -28,7 +30,9 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
             await LoadCurrentPixKey();
 
-            await SetStatusFromCurrentPixColor();
+            //SetStatusFromCurrentPixColor();
+
+            ReloadShowInList();
         });
 
         public async Task LoadCurrentPixKey(PixKey pixKeySelected = null)
@@ -89,7 +93,8 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public ICommand ChangeSelectPixKeyCommand => new Command(async () =>
         {
-            await SetStatusFromCurrentPixColor();
+            if (!ShowInList)
+                SetStatusFromCurrentPixColor();
         });
 
         public ICommand CopyKeyCommand => new Command(async () =>
@@ -142,7 +147,99 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
         });
 
-        public async Task SetStatusFromCurrentPixColor()
+        public Command<PixKey> OpenOptionsKeyCommand => new Command<PixKey>(async (key) =>
+        {
+            CurrentPixKey = key;
+
+            var options = new List<Acr.UserDialogs.ActionSheetOption>()
+            {
+                new Acr.UserDialogs.ActionSheetOption("Editar", () =>
+                {
+                    EditKeyCommand.Execute(null);
+                }),
+                new Acr.UserDialogs.ActionSheetOption("Copiar", () =>
+                {
+                    CopyKeyCommand.Execute(null);
+                }),
+                new Acr.UserDialogs.ActionSheetOption("Compartilhar", () =>
+                {
+                    ShareKeyCommand.Execute(null);
+                }),
+                new Acr.UserDialogs.ActionSheetOption("Criar Cobrança", () =>
+                {
+                    NavigateToCreateBillingPageCommand.Execute(null);
+                })
+            };
+
+            DialogService.ActionSheet(new Acr.UserDialogs.ActionSheetConfig
+            {
+                Title = $"O que deseja fazer com a chave {CurrentPixKey.Key} ?",
+                Options = options,
+                Cancel = new Acr.UserDialogs.ActionSheetOption("Cancelar", () =>
+                {
+                    return;
+                })
+            });
+        });
+
+        public ICommand SettingsCommand => new Command(async () =>
+        {
+            if (PixKeyList == null || PixKeyList.Count.Equals(0))
+            {
+                await DialogService.AlertAsync("Adicione pelo menos 1(uma) chave para customizar suas preferências.");
+                return;
+            }
+
+            var options = new List<Acr.UserDialogs.ActionSheetOption>()
+            {
+                new Acr.UserDialogs.ActionSheetOption(PreferenceService.ShowInList ? "Exibir em carrossel" : "Exibir em lista", () =>
+                {
+                    PreferenceService.ShowInList = !PreferenceService.ShowInList;
+                    ReloadShowInList();
+                }),
+            };
+
+            DialogService.ActionSheet(new Acr.UserDialogs.ActionSheetConfig
+            {
+                Title = "Preferências",
+                Options = options,
+                Cancel = new Acr.UserDialogs.ActionSheetOption("Cancelar", () =>
+                {
+                    return;
+                })
+            });
+        });
+
+        private void ReloadShowInList()
+        {
+            ShowInList = PreferenceService.ShowInList;
+
+            if (ShowInList)
+            {
+                var darkColor = new Style.MaterialColor
+                {
+                    Primary = Color.FromHex("#212121"),
+                    PrimaryDark = Color.FromHex("#000000"),
+                    PrimaryLight = Color.FromHex("#484848"),
+                    TextOnPrimary = Color.FromHex("ffffff")
+                };
+
+                var lightColor = new Style.MaterialColor
+                {
+                    Primary = Color.FromHex("#ffffff"),
+                    PrimaryDark = Color.FromHex("#cccccc"),
+                    PrimaryLight = Color.FromHex("#ffffff"),
+                    TextOnPrimary = Color.FromHex("#000000")
+                };
+
+                App.LoadTheme(darkColor);
+            }
+
+            else
+                SetStatusFromCurrentPixColor();
+        }
+
+        public void SetStatusFromCurrentPixColor()
         {
             if (CurrentPixKey?.Color == null)
                 return;
@@ -176,6 +273,13 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         {
             set => SetProperty(ref _showWelcome, value);
             get => _showWelcome;
+        }
+
+        private bool _showInList;
+        public bool ShowInList
+        {
+            set => SetProperty(ref _showInList, value);
+            get => _showInList;
         }
     }
 }
