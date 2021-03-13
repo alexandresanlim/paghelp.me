@@ -147,11 +147,13 @@
                     </StackLayout.GestureRecognizers>
 
                     <StackLayout Spacing="0" IsVisible="{Binding ShowWelcome}">
-                        <controls:CustomFrame BackgroundColor="{DynamicResource backgroundTransparent}" CornerRadius="10" Padding="0,30">
+                        <controls:CustomFrame BackgroundColor="{DynamicResource backgroundTransparent}" CornerRadius="10" Padding="10,30">
                             <StackLayout Spacing="0">
                                 <controls:CustomLabel Text="👋" FontSize="50" HorizontalOptions="Center" />
                                 <controls:CustomLabel Text="Bem vindo ao PIX APP!" FontSize="Title" HorizontalOptions="Center" FontAttributes="Bold" TextColor="{DynamicResource textOnBackgroundTransparent}" />
-                                <controls:CustomLabel Text="Comece adicionando sua primeira chave." FontSize="Small" FontAttributes="Bold"  HorizontalOptions="Center" TextColor="{DynamicResource textOnBackgroundTransparent}" />
+                                <controls:CustomLabel Text=
+                                                      "Com este app você vai conseguir guardar suas chaves de uma forma segura e criptografada, compartilhar de uma forma rápida, gerar cobranças e mais!" FontSize="Small" TextColor="{DynamicResource textOnBackgroundTransparent}" Margin="0,15" />
+                                <controls:CustomLabel Text="Comece adicionando sua primeira chave." FontSize="Small" FontAttributes="Bold" TextColor="{DynamicResource textOnBackgroundTransparent}" HorizontalOptions="Center" />
                             </StackLayout>
                         </controls:CustomFrame>
                         <controls:CustomFrame CornerRadius="0,0,15,15" HorizontalOptions="End" Padding="10,0,10,10" BackgroundColor="{DynamicResource backgroundTransparent}" Margin="0,0,70,0">
