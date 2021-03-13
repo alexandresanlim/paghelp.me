@@ -37,7 +37,7 @@ namespace PixQrCodeGeneratorOffline.Droid
             //ZXing.Net.Mobile.Forms.Android.Platform.Init();
             //CrossCurrentActivity.Current.Init(this, savedInstanceState);
             //PlatformGestureEffect.Init();
-            Lottie.Forms.Droid.AnimationViewRenderer.Init();
+            //Lottie.Forms.Droid.AnimationViewRenderer.Init();
             AppCenter.Start("18439db5-b775-4a96-bb6f-6c4612d3daab", typeof(Analytics), typeof(Crashes));
 
             CurrentWindow = (this).Window;

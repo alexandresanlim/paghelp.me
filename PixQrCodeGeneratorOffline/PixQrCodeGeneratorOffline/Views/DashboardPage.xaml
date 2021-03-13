@@ -140,22 +140,22 @@
 
                 </controls:CustomCarouselView>
 
-                <StackLayout VerticalOptions="End" HorizontalOptions="End" Margin="15">
+                <StackLayout VerticalOptions="End" Margin="15">
 
                     <StackLayout.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding NavigateToAddNewKeyPageCommand}" />
                     </StackLayout.GestureRecognizers>
 
                     <StackLayout Spacing="0" IsVisible="{Binding ShowWelcome}">
-                        <controls:CustomFrame BackgroundColor="{DynamicResource backgroundTransparent}" Padding="15" CornerRadius="10">
+                        <controls:CustomFrame BackgroundColor="{DynamicResource backgroundTransparent}" CornerRadius="10" Padding="0,30">
                             <StackLayout Spacing="0">
-                                <controls:CustomLabel Text="👋" FontSize="35" HorizontalOptions="Center" />
-                                <controls:CustomLabel Text="Bem vindo ao PIX OFF!" FontSize="Small" HorizontalOptions="Center" FontAttributes="Bold" TextColor="{DynamicResource textOnBackgroundTransparent}" />
-                                <controls:CustomLabel Text="Comece adicionando sua primeira chave" FontSize="Micro" FontAttributes="Bold"  HorizontalOptions="Center" TextColor="{DynamicResource textOnBackgroundTransparent}" />
+                                <controls:CustomLabel Text="👋" FontSize="50" HorizontalOptions="Center" />
+                                <controls:CustomLabel Text="Bem vindo ao PIX APP!" FontSize="Title" HorizontalOptions="Center" FontAttributes="Bold" TextColor="{DynamicResource textOnBackgroundTransparent}" />
+                                <controls:CustomLabel Text="Comece adicionando sua primeira chave." FontSize="Small" FontAttributes="Bold"  HorizontalOptions="Center" TextColor="{DynamicResource textOnBackgroundTransparent}" />
                             </StackLayout>
                         </controls:CustomFrame>
-                        <controls:CustomFrame CornerRadius="0,0,15,15" HorizontalOptions="Center" Padding="10,0,10,10" BackgroundColor="{DynamicResource backgroundTransparent}">
-                            <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.ChevronDown }" IconSize="Medium" IconColor="{DynamicResource textOnBackgroundTransparent}" />
+                        <controls:CustomFrame CornerRadius="0,0,15,15" HorizontalOptions="End" Padding="10,0,10,10" BackgroundColor="{DynamicResource backgroundTransparent}" Margin="0,0,70,0">
+                            <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.ChevronDown }" IconSize="Title" IconColor="{DynamicResource textOnBackgroundTransparent}" />
                         </controls:CustomFrame>
                     </StackLayout>
 

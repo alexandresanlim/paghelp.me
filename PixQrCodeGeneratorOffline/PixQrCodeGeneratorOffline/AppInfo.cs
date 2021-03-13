@@ -10,7 +10,7 @@ namespace PixQrCodeGeneratorOffline
 {
     public partial class App
     {
-        public const string AppName = "PIX OFF";
+        public const string AppName = "PIX APP";
 
         public const string IconName = "pixoff";
 
