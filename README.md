@@ -1,5 +1,5 @@
-<h1 align='center'> PIX OFF - Gerador de QrCode Offline </h1>
-<p align='center'> Aplicativo gerador de QrCode offline para pagamento e gerenciador de chaves. </p>
+<h1 align='center'> PIX OFF - Gerador de QR Code Offline </h1>
+<p align='center'> Aplicativo gerador de QR Code offline para pagamento e gerenciador de chaves. </p>
 
 <p align='center'> 
   <img width='200' src='https://github.com/alexandresanlim/PixQrCodeGeneratorOffline/blob/master/PixQrCodeGeneratorOffline/PixQrCodeGeneratorOffline.Android/Resources/drawable/splash.png?raw=true' />
@@ -11,7 +11,7 @@
 </p>
     
 <p align='center'>
-  <img width="150" src="https://github.com/alexandresanlim/XamarinUI.MyGallery/blob/master/screen/android/pixqrcodegeneratoroffline/0.jpg?raw=true"/> <img width="150" src="https://github.com/alexandresanlim/XamarinUI.MyGallery/blob/master/screen/android/pixqrcodegeneratoroffline/1.jpg?raw=true"/> <img width="150" src="https://github.com/alexandresanlim/XamarinUI.MyGallery/blob/master/screen/android/pixqrcodegeneratoroffline/2.jpg?raw=true"/> <img width="150" src="https://github.com/alexandresanlim/XamarinUI.MyGallery/blob/master/screen/android/pixqrcodegeneratoroffline/3.jpg?raw=true"/> <img width="150" src="https://github.com/alexandresanlim/XamarinUI.MyGallery/blob/master/screen/android/pixqrcodegeneratoroffline/4.jpg?raw=true"/>
+  <img width="150" src="https://github.com/alexandresanlim/XamarinUI.MyGallery/blob/master/screen/android/pixqrcodegeneratoroffline/0.jpg?raw=true"/> <img width="150" src="https://github.com/alexandresanlim/XamarinUI.MyGallery/blob/master/screen/android/pixqrcodegeneratoroffline/3.jpg?raw=true"/> <img width="150" src="https://github.com/alexandresanlim/XamarinUI.MyGallery/blob/master/screen/android/pixqrcodegeneratoroffline/1.jpg?raw=true"/> <img width="150" src="https://github.com/alexandresanlim/XamarinUI.MyGallery/blob/master/screen/android/pixqrcodegeneratoroffline/2.jpg?raw=true"/> <img width="150" src="https://github.com/alexandresanlim/XamarinUI.MyGallery/blob/master/screen/android/pixqrcodegeneratoroffline/4.jpg?raw=true"/>
  </p>
   
 <!-- <p align='center'>

@@ -1,4 +1,5 @@
 ﻿using Acr.UserDialogs;
+using Microsoft.AppCenter.Analytics;
 using PixQrCodeGeneratorOffline.Models;
 using PixQrCodeGeneratorOffline.Services;
 using System;
@@ -6,13 +7,17 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
-        public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>();
+        public BaseViewModel()
+        {
+            ShowAds = true;
+        }
 
         public IUserDialogs DialogService => UserDialogs.Instance;
 
@@ -45,7 +50,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             IsLoading = isLoading;
 
             if (IsLoading)
-                DialogService.ShowLoading(title, MaskType.Gradient);
+                DialogService.ShowLoading(title);
 
             else
                 DialogService.HideLoading();
@@ -53,7 +58,10 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         #endregion
 
-        #region Navigate
+        public void SetEvent(string text)
+        {
+            Analytics.TrackEvent(text);
+        }
 
         public async Task DisplayAlert(string title, string message, string cancel)
         {
@@ -65,9 +73,11 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             return await Application.Current.MainPage.DisplayAlert(title, message, accept, cancel);
         }
 
-        public Command CloseModalCommand => new Command(async () =>
+        #region Navigate
+
+        public Command NavigateBackCommand => new Command(() =>
         {
-            await CloseModal();
+            NavigateBack();
         });
 
         public Command NavigateToRootCommand => new Command(async () =>
@@ -77,30 +87,47 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public async Task NavigateAsync(Page page)
         {
-            await Shell.Current.Navigation.PushAsync(page);
+            await Shell.Current.Navigation.PushAsync(page, true);
         }
 
         public async Task NavigateModalAsync(Page page)
         {
-            await Shell.Current.Navigation.PushModalAsync(page);
+            await Shell.Current.Navigation.PushModalAsync(page, true);
         }
 
-        public async Task CloseModal()
+        public void NavigateBack()
         {
-            await Shell.Current.Navigation.PopModalAsync();
+            Shell.Current.SendBackButtonPressed();
         }
 
-        public async Task NavigateBack()
-        {
-            await Shell.Current.Navigation.PopAsync();
-        }
+        //public async Task NavigateBackModalAsync()
+        //{
+        //    await Shell.Current.Navigation.PopModalAsync();
+        //}
+
+        //public async Task NavigateBackAsync()
+        //{
+        //    await Shell.Current.Navigation.PopAsync();
+        //}
 
         public async Task NavigateToRootAsync()
         {
-            await Shell.Current.Navigation.PopToRootAsync();
+            await Shell.Current.Navigation.PopToRootAsync(true);
         }
 
         #endregion
+
+        public ICommand CloseAdsCommand => new Command(() =>
+        {
+            ShowAds = false;
+        });
+
+        private bool _showAds;
+        public bool ShowAds
+        {
+            get => _showAds;
+            set => SetProperty(ref _showAds, value);
+        }
 
         bool isBusy = false;
         public bool IsBusy

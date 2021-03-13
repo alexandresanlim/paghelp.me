@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 
 using Foundation;
+using Google.MobileAds;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 using UIKit;
 
 namespace PixQrCodeGeneratorOffline.iOS
@@ -22,13 +26,18 @@ namespace PixQrCodeGeneratorOffline.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
-            global::Xamarin.Forms.Forms.SetFlags("CollectionView_Experimental");
+            //global::Xamarin.Forms.Forms.SetFlags("CollectionView_Experimental");
             global::Xamarin.Forms.Forms.Init();
+            MobileAds.SharedInstance.Start(CompletionHandler);
+            Lottie.Forms.iOS.Renderers.AnimationViewRenderer.Init();
             //ZXing.Net.Mobile.Forms.iOS.Platform.Init();
+            AppCenter.Start("c586d6bd-a614-4d5a-b786-8acd36a85fa6", typeof(Analytics), typeof(Crashes));
 
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);
         }
+
+        private void CompletionHandler(InitializationStatus status) { }
     }
 }

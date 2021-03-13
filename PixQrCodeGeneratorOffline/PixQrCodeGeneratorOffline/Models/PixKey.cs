@@ -16,7 +16,14 @@ namespace PixQrCodeGeneratorOffline.Models
         [LiteDB.BsonId]
         public int Id { get; set; }
 
-        public string Key { get; set; }
+        //public string Key { get; set; }
+
+        private string _key;
+        public string Key
+        {
+            set { SetProperty(ref _key, value); }
+            get { return _key; }
+        }
 
         public string Name { get; set; }
 
@@ -55,15 +62,29 @@ namespace PixQrCodeGeneratorOffline.Models
         public string NameAndCity => (!string.IsNullOrEmpty(Name) && !string.IsNullOrEmpty(City)) ? Name + ", " + City : "";
 
         [LiteDB.BsonIgnore]
+        public string NamePresentation => !string.IsNullOrEmpty(Name) ? Name : "";
+
+        [LiteDB.BsonIgnore]
         public string KeyPresentation => !string.IsNullOrEmpty(Key) ? "Chave: " + Key : "";
 
         [LiteDB.BsonIgnore]
         public string InstitutionPresentation => !string.IsNullOrEmpty(FinancialInstitution?.Name) ? FinancialInstitution?.Name : "";
 
-        public void RaisePresentation()
+        //[LiteDB.BsonIgnore]
+        //public string ValueUSString => !string.IsNullOrEmpty(Value) ? Value.Replace(",", ".") : "";
+
+        //[LiteDB.BsonIgnore]
+        //public decimal ValueUSCulture => !string.IsNullOrEmpty(Value) ? decimal.Parse(ValueUSString) : 0;
+
+        [LiteDB.BsonIgnore]
+        public string ValuePresentation => "R$ " + Value;
+
+        public void RaiseCob()
         {
             if (string.IsNullOrEmpty(Key))
                 return;
+
+            var value = Value.Replace(".", "").Replace(",",".");
 
             Xamarin.Essentials.MainThread.BeginInvokeOnMainThread(() =>
             {
@@ -72,11 +93,11 @@ namespace PixQrCodeGeneratorOffline.Models
                     SolicitacaoPagador = Description,
                     Valor = new Valor
                     {
-                        Original = Value
+                        Original = value
                     }
                 };
 
-                var payload = cobranca?.ToPayload("PIXOFF" + Guid.NewGuid().ToString("N").Substring(0,10), new Merchant(Name, City));
+                var payload = cobranca?.ToPayload("PIXOFF" + Guid.NewGuid().ToString("N").Substring(0, 10), new Merchant(Name, City));
 
                 Payload = payload?.GenerateStringToQrCode();
             });

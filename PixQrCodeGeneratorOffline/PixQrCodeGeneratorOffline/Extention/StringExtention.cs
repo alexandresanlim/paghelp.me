@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Text;
 
 namespace PixQrCodeGeneratorOffline.Extention
 {
@@ -34,23 +32,20 @@ namespace PixQrCodeGeneratorOffline.Extention
             return int.Parse(text.Replace(" ", "").Trim());
         }
 
-        public static string ToImageFormatter(this string imageUri, string placeholder = "")
-        {
-            if (string.IsNullOrEmpty(imageUri))
-                return placeholder;
-
-            if (imageUri.ToLower().Contains("instagram") && !imageUri.ToLower().Contains("cdn"))
-                return imageUri += "media?size=m";
-
-            return imageUri;
-        }
-
         public static TimeSpan ToTimeSpan(this string time)
         {
             if (TimeSpan.TryParse(time, out TimeSpan timeOutput))
                 return timeOutput;
 
             return TimeSpan.MinValue;
+        }
+
+        public static string RemoveLastChar(this string text)
+        {
+            if (string.IsNullOrEmpty(text))
+                return text;
+
+            return text.Remove(text.Length - 1);
         }
     }
 }

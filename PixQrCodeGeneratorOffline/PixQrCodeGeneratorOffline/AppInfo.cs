@@ -10,13 +10,13 @@ namespace PixQrCodeGeneratorOffline
 {
     public partial class App
     {
-        public const string AppName = "Pix Off";
+        public const string AppName = "PIX OFF";
 
         public const string IconName = "pixoff";
 
         public static class Info
         {
-            public static string Date => new DateTime(2020, 12, 21).ToString("dd MMM yyyy");
+            public static string Date => new DateTime(2020, 12, 28).ToString("dd MMM yyyy");
 
             public static string AppName => AppInfo.Name;
 
@@ -25,6 +25,8 @@ namespace PixQrCodeGeneratorOffline
             public static string VersionString => AppInfo.VersionString;
 
             public static string PackageName => AppInfo.PackageName;
+
+            public static string AndroidId => PackageName;
 
             public static string GooglePlayLink => "https://play.google.com/store/apps/details?id=" + PackageName;
 
@@ -44,6 +46,20 @@ namespace PixQrCodeGeneratorOffline
             }
 
             public static string StoreNameByDeviceInfo => DeviceInfo.IsAndroid ? "Google Play" : "App Store";
+
+            public static string InstagramUsername => "pixoff.app";
+
+            public static string InstagramLink => "https://www.instagram.com/" + InstagramUsername;
+        }
+
+        public static class Ads
+        {
+            public static string AdsId => DeviceInfo.IsAndroid ?
+#if DEBUG
+                "ca-app-pub-3940256099942544/6300978111" : "ca-app-pub-3940256099942544/2934735716";
+#else
+                "ca-app-pub-1328926374682196/6888131347" : "";
+#endif
         }
 
         public static class Evironment
@@ -82,6 +98,19 @@ namespace PixQrCodeGeneratorOffline
             {
                 var storeLink = Device.RuntimePlatform == Device.Android ? Info.GooglePlayLink : Info.AppStoreLink;
                 await Launcher.OpenAsync(new Uri(storeLink));
+            }
+        }
+
+        public static async Task OpenAppIntagram()
+        {
+            var supportsUri = await Launcher.CanOpenAsync("instagram://");
+
+            if (supportsUri)
+                await Launcher.OpenAsync(new Uri("instagram://user?username=" + Info.InstagramUsername));
+
+            else
+            {
+                await Launcher.OpenAsync(new Uri(Info.InstagramLink));
             }
         }
     }

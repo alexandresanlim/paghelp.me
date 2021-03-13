@@ -14,6 +14,9 @@ namespace PixQrCodeGeneratorOffline.Converters
             if (value == null)
                 return value;
 
+            if (value is string @string && string.IsNullOrEmpty(@string))
+                return value;
+
             NumberFormatInfo nfi = culture.NumberFormat;
             return System.Convert.ToDecimal(value, new System.Globalization.CultureInfo("en-US")).ToString("C");
         }

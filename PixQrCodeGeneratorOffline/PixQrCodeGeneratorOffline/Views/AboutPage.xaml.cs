@@ -1,4 +1,5 @@
 ﻿using PixQrCodeGeneratorOffline.ViewModels;
+using PixQrCodeGeneratorOffline.Views.Shared;
 using System;
 using System.ComponentModel;
 using Xamarin.Forms;
@@ -20,7 +21,7 @@ namespace PixQrCodeGeneratorOffline.Views
         protected override void OnAppearing()
         {
             lbVersion.Text = App.Info.VersionString;
-            lbDate.Text = App.Info.Date;
+            //lbDate.Text = App.Info.Date;
 
             base.OnAppearing();
         }

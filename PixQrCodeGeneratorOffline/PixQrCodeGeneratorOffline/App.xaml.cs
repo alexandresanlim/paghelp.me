@@ -1,6 +1,8 @@
 ﻿using PixQrCodeGeneratorOffline.Services;
+using PixQrCodeGeneratorOffline.Style.Interfaces;
 using PixQrCodeGeneratorOffline.Views;
 using System;
+using System.Globalization;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -13,13 +15,16 @@ namespace PixQrCodeGeneratorOffline
         {
             InitializeComponent();
 
-            DependencyService.Register<MockDataStore>();
+            //DependencyService.Register<MockDataStore>();
             MainPage = new AppShell();
         }
 
         protected override void OnStart()
         {
-            //LoadTheme(null);
+            var service = DependencyService.Get<IStatusBar>();
+            service?.SetStatusBarColor(App.ThemeColors.Primary);
+
+            CultureInfo.CurrentCulture = CultureInfo.CreateSpecificCulture("pt-BR");
         }
 
         protected override void OnSleep()

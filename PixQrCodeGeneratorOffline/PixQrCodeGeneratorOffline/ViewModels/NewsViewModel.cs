@@ -1,0 +1,139 @@
+﻿using PixQrCodeGeneratorOffline.Controls;
+using PixQrCodeGeneratorOffline.Extention;
+using PixQrCodeGeneratorOffline.Models;
+using PixQrCodeGeneratorOffline.Services;
+using PixQrCodeGeneratorOffline.Views.Shared;
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Input;
+using Xamarin.Forms;
+
+namespace PixQrCodeGeneratorOffline.ViewModels
+{
+    public class NewsViewModel : BaseViewModel
+    {
+        public async Task Navigating()
+        {
+            try
+            {
+                IsBusy = true;
+
+                //await Task.Run(async () =>
+                //{
+                //    SetIsLoading(true);
+
+                //    await Task.Delay(500);
+
+                //    await LoadData();
+                //});
+            }
+            catch (Exception e)
+            {
+                e.SendToLog();
+            }
+            finally
+            {
+                SetEvent("Viu lista de notícias");
+
+                //SetIsLoading(false);
+            }
+        }
+
+        public ICommand LoadDataCommand => new Command(async () =>
+        {
+            await LoadData();
+        });
+
+        public List<Feed> FeedFromService { get; set; }
+
+        public async Task LoadData()
+        {
+            try
+            {
+                IsBusy = true;
+
+                FeedFromService = FeedFromService?.Count > 0 ? FeedFromService : await FeedService.Get("https://news.google.com/rss/search?q=pix%20-frade%20-golpista%20-golpistas%20-erro%20-golpe%20-hack%20-hacker&hl=pt-BR&gl=BR&ceid=BR%3Apt-419");
+
+                CurrentFeedList = FeedFromService?.ToObservableCollection();
+
+                NotFoundVisible = !(CurrentFeedList.Count > 0);
+            }
+            catch (Exception e)
+            {
+                e.SendToLog();
+            }
+            finally
+            {
+                IsBusy = false;
+            }
+        }
+
+        public ICommand ItemTappedCommand => new Command<Feed>(async (item) =>
+        {
+            if(string.IsNullOrEmpty(item?.Link?.AbsoluteUri))
+            {
+                DialogService.Toast("Link para a notícia não encontrado.");
+                return;
+            }
+
+            try
+            {
+                SetIsLoading(true);
+
+                await Task.Delay(500);
+
+                await NavigateModalAsync(new WebViewPage(item.Link, item?.Title));
+            }
+            catch (Exception e)
+            {
+                e.SendToLog();
+            }
+            finally
+            {
+                SetEvent("Entrou em uma notícia");
+
+                SetIsLoading(false);
+            }
+        });
+
+        public ICommand ShareCommand => new Command<Feed>(async (item) =>
+        {
+            try
+            {
+
+                SetIsLoading(true);
+
+                await Task.Delay(500);
+
+                await ShareText(item.Link.AbsoluteUri);
+            }
+            catch (Exception e)
+            {
+                e.SendToLog();
+            }
+            finally
+            {
+                SetEvent("Compartilhou uma notícia: " + item?.Title);
+
+                SetIsLoading(false);
+            }
+        });
+
+        private ObservableCollection<Feed> _currentFeedList;
+        public ObservableCollection<Feed> CurrentFeedList
+        {
+            get => _currentFeedList;
+            set => SetProperty(ref _currentFeedList, value);
+        }
+
+        private bool _notFoundVisible;
+        public bool NotFoundVisible
+        {
+            get => _notFoundVisible;
+            set => SetProperty(ref _notFoundVisible, value);
+        }
+    }
+}

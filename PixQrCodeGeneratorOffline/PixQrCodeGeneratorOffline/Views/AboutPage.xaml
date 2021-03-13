@@ -1,73 +1,129 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PixQrCodeGeneratorOffline.Views.AboutPage"
-             xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels" xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
+             xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels" 
+             xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
              Title="{Binding Title}"
-             BackgroundColor="{DynamicResource primary}"
              Shell.NavBarIsVisible="False"
              >
 
     <ContentPage.Content>
-        <ScrollView Padding="15,10">
-            <StackLayout Spacing="15">
-                <StackLayout Spacing="0">
-                    <controls:CustomLabel Text="Segurança" TextColor="{DynamicResource textOnPrimary}" FontSize="Large" FontAttributes="Bold"  />
+        <controls:CustomFrame>
+            <controls:CustomFrame.Background>
+                <LinearGradientBrush EndPoint="0,1">
+                    <GradientStop Color="{DynamicResource primary}"
+                          Offset="0.1" />
+                    <GradientStop Color="{DynamicResource primaryDark}"
+                          Offset="1.0" />
+                </LinearGradientBrush>
+            </controls:CustomFrame.Background>
 
-                    <controls:CustomFrame Padding="15" BackgroundColor="{DynamicResource primaryDark}" CornerRadius="10">
-                        <controls:CustomFrame.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding OpenGithubCommand}" />
-                        </controls:CustomFrame.GestureRecognizers>
+            <ScrollView Padding="15,10">
+                <StackLayout Spacing="15">
+                    <!--<StackLayout Spacing="0">
+                        <controls:CustomLabel Text="Segurança" TextColor="{DynamicResource textOnPrimary}" FontSize="Large" FontAttributes="Bold"  />
 
-                        <StackLayout>
-                            <controls:CustomLabel Text="Somos open source! O que isso significa? Todo o código deste aplicativo é aberto, com isso é possível que quarquer pessoa no mundo possa audita-lo, evitando assim fraudes, compartilhamento de informações ou quaisquer outros tipos de praticas abusivas." TextColor="{DynamicResource textOnPrimary}" FontSize="Small" />
+                        <controls:CustomFrame Padding="15" BackgroundColor="{DynamicResource backgroundTransparent}" CornerRadius="10">
+                            <controls:CustomFrame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding OpenGithubCommand}" />
+                            </controls:CustomFrame.GestureRecognizers>
 
-                            <controls:CustomLabel Text="Toque aqui para visualizar" FontAttributes="Bold" TextColor="{DynamicResource textOnPrimary}" FontSize="Small" />
-                        </StackLayout>
-                        
-                        
-                    </controls:CustomFrame>
+                            <StackLayout>
+                                <controls:CustomLabel Text="Somos open source! O que isso significa? Todo o código deste aplicativo é aberto, com isso é possível que qualquer pessoa no mundo possa audita-lo, evitando assim fraudes, compartilhamento de informações ou quaisquer outros tipos de práticas abusivas." TextColor="{DynamicResource textOnBackgroundTransparent}" FontSize="Small" />
+                                <controls:CustomLabel Text="Toque aqui para visualizar" FontAttributes="Bold" TextColor="{DynamicResource textOnBackgroundTransparent}" FontSize="Small" />
+                            </StackLayout>
 
-                </StackLayout>
 
-                <!--<StackLayout Spacing="0">
+                        </controls:CustomFrame>
+
+                    </StackLayout>-->
+
+                    <!--<StackLayout Spacing="0">
                     <controls:CustomLabel Text="Build" TextColor="{DynamicResource textOnPrimary}" FontSize="Large" FontAttributes="Bold" />
                     <controls:CustomFrame Padding="15" BackgroundColor="{DynamicResource primaryDark}" CornerRadius="10">
                         <controls:CustomLabel x:Name="lbBuild" Text="Build" TextColor="{DynamicResource textOnPrimary}" FontSize="Small" />
                     </controls:CustomFrame>
                 </StackLayout>-->
 
-                <StackLayout Spacing="0">
-                    <controls:CustomLabel Text="Versão" TextColor="{DynamicResource textOnPrimary}" FontSize="Large" FontAttributes="Bold" />
-                    <controls:CustomFrame Padding="15" BackgroundColor="{DynamicResource primaryDark}" CornerRadius="10">
-                        <controls:CustomLabel x:Name="lbVersion" Text="versão" TextColor="{DynamicResource textOnPrimary}" FontSize="Small" />
-                    </controls:CustomFrame>
-                </StackLayout>
+                    <StackLayout Spacing="0">
+                        <controls:CustomLabel Text="Versão" TextColor="{DynamicResource textOnPrimary}" FontSize="Large" FontAttributes="Bold" />
+                        <controls:CustomFrame Padding="15" BackgroundColor="{DynamicResource backgroundTransparent}" CornerRadius="10">
+                            <controls:CustomLabel x:Name="lbVersion" Text="versão" TextColor="{DynamicResource textOnBackgroundTransparent}" FontSize="Medium" FontAttributes="Bold" />
+                        </controls:CustomFrame>
+                    </StackLayout>
 
-                <StackLayout Spacing="0">
+                    <StackLayout Spacing="0">
+                        <controls:CustomLabel Text="Avaliar" TextColor="{DynamicResource textOnPrimary}" FontSize="Large" FontAttributes="Bold"/>
+                        <controls:CustomFrame Padding="20" BackgroundColor="{DynamicResource backgroundTransparent}" CornerRadius="10">
+                            <controls:CustomFrame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding OpenStoreCommand}" />
+                            </controls:CustomFrame.GestureRecognizers>
+                            <StackLayout Orientation="Horizontal" Spacing="10">
+                                <controls:CustomIcon Glyph="{Binding CurrentStoreIcon}" IconType="brand" IconColor="{DynamicResource textOnBackgroundTransparent}" />
+                                <controls:CustomLabel Text="{Binding CurrentStore}" VerticalOptions="CenterAndExpand" TextColor="{DynamicResource textOnBackgroundTransparent}" FontAttributes="Bold" FontSize="Small" />
+                                <controls:CustomIcon Glyph="&#xf054;" IconColor="{DynamicResource textOnBackgroundTransparent}" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" IconSize="Medium" />
+                            </StackLayout>
+                        </controls:CustomFrame>
+                    </StackLayout>
+
+                    <StackLayout Spacing="0">
+                        <controls:CustomLabel Text="Redes Sociais" TextColor="{DynamicResource textOnPrimary}" FontSize="Large" FontAttributes="Bold"/>
+                        <controls:CustomFrame Padding="20" BackgroundColor="{DynamicResource backgroundTransparent}" CornerRadius="10">
+                            <controls:CustomFrame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding OpenInstagramCommand}"/>
+                            </controls:CustomFrame.GestureRecognizers>
+
+                            <StackLayout Orientation="Horizontal" Spacing="10">
+                                <controls:CustomIcon IconType="brand" Glyph="&#xf16d;" IconColor="{DynamicResource textOnBackgroundTransparent}" />
+                                <controls:CustomLabel Text="Siga-nos no Instagram" TextColor="{DynamicResource textOnBackgroundTransparent}" FontAttributes="Bold" FontSize="Small" />
+                                <controls:CustomIcon Glyph="&#xf054;" IconColor="{DynamicResource textOnBackgroundTransparent}" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" IconSize="Medium" />
+                            </StackLayout>
+
+                        </controls:CustomFrame>
+                    </StackLayout>
+
+                    
+                    
+                    <!--<StackLayout Spacing="0">
                     <controls:CustomLabel Text="Lançamento da versão" TextColor="{DynamicResource textOnPrimary}" FontSize="Large" FontAttributes="Bold" />
-                    <controls:CustomFrame Padding="15" BackgroundColor="{DynamicResource primaryDark}" CornerRadius="10">
-                        <controls:CustomLabel x:Name="lbDate" Text="lançamento" TextColor="{DynamicResource textOnPrimary}" FontSize="Small" />
+                    <controls:CustomFrame Padding="15" BackgroundColor="{DynamicResource backgroundTransparent}" CornerRadius="10">
+                        <controls:CustomLabel x:Name="lbDate" Text="lançamento" TextColor="{DynamicResource textOnBackgroundTransparent}" FontSize="Small" />
                     </controls:CustomFrame>
+                </StackLayout>-->
+
+                    <!--<StackLayout Spacing="0">
+                        <controls:CustomLabel Text="Ajude-nos a manter" TextColor="{DynamicResource textOnPrimary}" FontSize="Large" FontAttributes="Bold" />
+                        <controls:CustomFrame Padding="15" BackgroundColor="{DynamicResource backgroundTransparent}" CornerRadius="10">
+                            <controls:CustomFrame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding SupportCommand}" />
+                            </controls:CustomFrame.GestureRecognizers>
+                            <StackLayout>
+                                <controls:CustomLabel Text="Somos gratuitos e independentes, estamos sempre buscando constantes melhorias para os nossos usuários, corrigindo bugs e melhorando a sua experiência, assim pedidos encarecidamente que apoie-nos de alguma forma, são essas: compartilhando, avaliando na loja ou fazendo uma doação." TextColor="{DynamicResource textOnBackgroundTransparent}" FontSize="Small" />
+                                <controls:CustomLabel Text="Toque aqui para ver as opções" FontAttributes="Bold" TextColor="{DynamicResource textOnBackgroundTransparent}" FontSize="Small" />
+                            </StackLayout>
+
+                        </controls:CustomFrame>
+                    </StackLayout>
+
+
+                    <StackLayout Spacing="0">
+                        <controls:CustomLabel Text="Agradecimento" TextColor="{DynamicResource textOnPrimary}" FontSize="Large" FontAttributes="Bold" />
+                        <controls:CustomFrame Padding="15" BackgroundColor="{DynamicResource backgroundTransparent}" CornerRadius="10">
+                            <StackLayout Spacing="0">
+                                <controls:CustomLabel Text="- krisdhya Vitória, por revisar textos." TextColor="{DynamicResource textOnBackgroundTransparent}" FontSize="Small" />
+                                <controls:CustomLabel Text="- Canal WDEV no YouTube, por ensinamentos técnicos de implementação." TextColor="{DynamicResource textOnBackgroundTransparent}" FontSize="Small" />
+                            </StackLayout>
+                        </controls:CustomFrame>
+                    </StackLayout>-->
+
                 </StackLayout>
+            </ScrollView>
 
-                <StackLayout Spacing="0">
-                    <controls:CustomLabel Text="Ajude-nos a manter" TextColor="{DynamicResource textOnPrimary}" FontSize="Large" FontAttributes="Bold" />
-                    <controls:CustomFrame Padding="15" BackgroundColor="{DynamicResource primaryDark}" CornerRadius="10">
-                        <controls:CustomFrame.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding SupportCommand}" />
-                        </controls:CustomFrame.GestureRecognizers>
-                        <StackLayout>
-                            <controls:CustomLabel Text="Somos gratuítos e independentes, estamos sempre buscando constatantes melhorias para os nossos usuários, corrigindo bugs e melhorando a sua esperiência, assim pedidos encarecidamente que apoie-nos de alguma forma, são essas: compartilhando, avaliando na loja ou fazendo uma doação." TextColor="{DynamicResource textOnPrimary}" FontSize="Small" />
+        </controls:CustomFrame>
 
-                            <controls:CustomLabel Text="Toque aqui para ver as opções" FontAttributes="Bold" TextColor="{DynamicResource textOnPrimary}" FontSize="Small" />
-                        </StackLayout>
-                        
-                    </controls:CustomFrame>
-                </StackLayout>
 
-            </StackLayout>
-        </ScrollView>
     </ContentPage.Content>
 
 </ContentPage>
