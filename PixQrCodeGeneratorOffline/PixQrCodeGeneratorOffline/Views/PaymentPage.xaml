@@ -70,12 +70,12 @@
 
                     <controls:CustomLabel Text="Código copia e cola" FontAttributes="Bold" FontSize="Small" TextColor="{DynamicResource textOnPrimary}" />
 
-                    <controls:CustomFrame BackgroundColor="{DynamicResource backgroundTransparent}" CornerRadius="10" Padding="15">
+                    <Frame BackgroundColor="{DynamicResource backgroundTransparent}" BorderColor="{DynamicResource textOnPrimary}" CornerRadius="10" Padding="15">
                         <Grid ColumnDefinitions="*, auto">
-                            <controls:CustomLabel Grid.Column="0" Text="{Binding CurrentPixKey.Payload}" FontSize="Micro" MaxLines="2" LineBreakMode="TailTruncation" TextColor="{DynamicResource textOnBackgroundTransparent}" />
-                            <controls:CustomIcon Grid.Column="1" Glyph="{x:Static icons:FontAwesomeSolid.ShareSquare }" IconSize="Medium" IconColor="{DynamicResource textOnBackgroundTransparent}" VerticalOptions="CenterAndExpand" />
+                            <controls:CustomLabel Grid.Column="0" Text="{Binding CurrentPixKey.Payload}" FontSize="Micro" MaxLines="2" LineBreakMode="TailTruncation" TextColor="{DynamicResource textOnPrimary}" />
+                            <controls:CustomIcon Grid.Column="1" Glyph="{x:Static icons:FontAwesomeSolid.ShareSquare }" IconSize="Medium" IconColor="{DynamicResource textOnPrimary}" VerticalOptions="CenterAndExpand" />
                         </Grid>
-                    </controls:CustomFrame>
+                    </Frame>
                 </StackLayout>
 
             </Grid>

@@ -54,7 +54,7 @@
                                             </TapGestureRecognizer>
                                         </StackLayout.GestureRecognizers>
 
-                                        <Frame BackgroundColor="Transparent" BorderColor="{DynamicResource textOnPrimary}" CornerRadius="15" HeightRequest="150" Padding="15">
+                                        <Frame BackgroundColor="{DynamicResource backgroundTransparent}" BorderColor="{DynamicResource textOnPrimary}" CornerRadius="15" HeightRequest="150" Padding="15">
 
                                             <StackLayout>
                                                 <controls:CustomLabel Text="{Binding Source}" FontSize="Micro" TextColor="{DynamicResource textOnPrimary}"/>

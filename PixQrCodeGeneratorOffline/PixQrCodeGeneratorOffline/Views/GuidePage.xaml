@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls" 
              xmlns:share="clr-namespace:PixQrCodeGeneratorOffline.Views.Shared"
+             xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
              x:Class="PixQrCodeGeneratorOffline.Views.GuidePage"
              Shell.NavBarIsVisible="False"
              >
@@ -18,155 +19,23 @@
             </controls:CustomFrame.Background>
 
             <Grid RowDefinitions="*, auto">
-                <ScrollView Grid.Row="0">
-                    <StackLayout Padding="15">
-                        <StackLayout Spacing="0">
-                            <controls:CustomLabel Text="O que é o PIX?" TextColor="{DynamicResource textOnPrimary}" FontSize="Large" FontAttributes="Bold" />
-                            <controls:CustomFrame Padding="15" BackgroundColor="{DynamicResource backgroundTransparent}" CornerRadius="10">
-                                <controls:CustomLabel Text="​O Pix é a solução de pagamento instantâneo, criada e gerida pelo Banco Central do Brasil (BC), que proporciona a realização de transferências e de pagamentos. O Pix é concluído em poucos segundos, inclusive em relação à disponibilização dos recursos para o recebedor." TextColor="{DynamicResource textOnBackgroundTransparent}" />
-                            </controls:CustomFrame>
-                        </StackLayout>
-                        <StackLayout Spacing="0">
-                            <controls:CustomLabel Text="O PIX é um meio de pagamento?" TextColor="{DynamicResource textOnPrimary}" FontSize="Large" FontAttributes="Bold" />
-                            <controls:CustomFrame Padding="15" BackgroundColor="{DynamicResource backgroundTransparent}" CornerRadius="10">
-                                <controls:CustomLabel Text="​Sim. O Pix é um meio de pagamento assim como boleto, TED, DOC, transferências entre contas de uma mesma instituição e cartões de pagamento (débito, crédito e pré-pago). A diferença é que o Pix permite que qualquer tipo de transferência e de pagamento seja realizada em qualquer dia, incluindo fins de semana e feriados, e em qualquer hora. Veja na seção 2 desta FAQ as diferenças entre o Pix e os demais meios de pagamento.​" TextColor="{DynamicResource textOnBackgroundTransparent}" />
-                            </controls:CustomFrame>
-                        </StackLayout>
-                        <StackLayout Spacing="0">
-                            <controls:CustomLabel Text="Onde posso acessar o PIX?" TextColor="{DynamicResource textOnPrimary}" FontSize="Large" FontAttributes="Bold" />
-                            <controls:CustomFrame Padding="15" BackgroundColor="{DynamicResource backgroundTransparent}" CornerRadius="10">
-                                <controls:CustomLabel Text="​O acesso ao Pix ocorre exclusivamente pelos canais de atendimento das instituições financeiras e de pagamento (celular, internet banking, agências, caixas eletrônicos) ou nos correspondentes bancários, como lotéricas, por exemplo. O Pix é um meio de pagamento disponibilizado por esses prestadores de serviço. Para evitar golpes, tenha a certeza de que está acessando um dos canais autorizados pelo seu banco ou instituição. Não acesse links de sites falsos. " TextColor="{DynamicResource textOnBackgroundTransparent}" />
-                            </controls:CustomFrame>
-                        </StackLayout>
-                        <StackLayout Spacing="0">
-                            <controls:CustomLabel Text="O PIX já está em funcionamento?" TextColor="{DynamicResource textOnPrimary}" FontSize="Large" FontAttributes="Bold" />
-                            <controls:CustomFrame Padding="15" BackgroundColor="{DynamicResource backgroundTransparent}" CornerRadius="10">
-                                <controls:CustomLabel Text="Sim. O Pix está em funcionamento pleno desde 16 de novembro de 2020. Consulte se seu banco ou instituição de pagamento oferece esse meio de pagamento. Importante! O registro das chaves já podia ser realizado desde 5 de outubro de 2020. Além disso, de 3 a 15 de novembro, ocorreu a operação restrita do Pix, apenas com alguns clientes pré-selecionados pelas instituições.​" TextColor="{DynamicResource textOnBackgroundTransparent}" />
-                            </controls:CustomFrame>
-                        </StackLayout>
-                        <StackLayout Spacing="0">
-                            <controls:CustomLabel Text="O PIX usa blockchain?" TextColor="{DynamicResource textOnPrimary}" FontSize="Large" FontAttributes="Bold" />
-                            <controls:CustomFrame Padding="15" BackgroundColor="{DynamicResource backgroundTransparent}" CornerRadius="10">
-                                <controls:CustomLabel Text="​Não. O Pix usa estrutura tecnológica centralizada, na qual a comunicação entre os diversos participantes e o BC é realizada por meio de mensageria.​" TextColor="{DynamicResource textOnBackgroundTransparent}" />
-                            </controls:CustomFrame>
-                        </StackLayout>
-                        <StackLayout Spacing="0">
-                            <controls:CustomLabel Text="O PIX é seguro?" TextColor="{DynamicResource textOnPrimary}" FontSize="Large" FontAttributes="Bold" />
-                            <controls:CustomFrame Padding="15" BackgroundColor="{DynamicResource backgroundTransparent}" CornerRadius="10">
-                                <controls:CustomLabel Text="A segurança faz parte do desenho do Pix desde seu princípio, e é priorizada em todos os aspectos do ecossistema, inclusive em relação às transações, às informações pessoais e ao combate à fraude e lavagem de dinheiro. Os requisitos de disponibilidade, confidencialidade, integridade e autenticidade das informações foram cuidadosamente estudados e diversos controles foram implantados para garantir alto nível de segurança. Todas as transações ocorrerão por meio de mensagens assinadas digitalmente e que trafegam de forma criptografada, em uma rede protegida e apartada da Internet. Além disso, No Diretório de Identificadores de Contas Transacionais (DICT), componente que armazenará as informações das chaves Pix, as informações dos usuários também são criptografadas e existem mecanismos de proteção que impedem varreduras das informações pessoais, além de indicadores que auxiliam os participantes do ecossistema na prevenção contra fraudes e lavagem de dinheiro.​" TextColor="{DynamicResource textOnBackgroundTransparent}" />
-                            </controls:CustomFrame>
-                        </StackLayout>
-                        <StackLayout Spacing="0">
-                            <controls:CustomLabel Text="Como eu posso ter acesso ao regulamento do PIX?" TextColor="{DynamicResource textOnPrimary}" FontSize="Large" FontAttributes="Bold" />
-                            <controls:CustomFrame Padding="15" BackgroundColor="{DynamicResource backgroundTransparent}" CornerRadius="10">
-                                <controls:CustomLabel Text="​​O Regulamento do Pix abrange a Resolução BCB Nº 1, de 2020, que disciplina seu funcionamento. Na página do Pix no site do Banco Central, é possível encontrar a relação de manuais do Pix, no menu à direita, em 'Regulamentação relacionada ao Pix'." TextColor="{DynamicResource textOnBackgroundTransparent}" />
-                            </controls:CustomFrame>
-                        </StackLayout>
-                        <!--<StackLayout Spacing="0">
-                        <controls:CustomLabel Text="Posso pagar um boleto usando o PIX?" TextColor="{DynamicResource textOnPrimary}" FontSize="Large" FontAttributes="Bold" />
-                        <controls:CustomLabel Text="​Será possível o pagamento de contas e de faturas com o Pix. O boleto é um meio de pagamento distinto do Pix, com regras próprias. Por exemplo, a forma e o tempo de liquidação dos boletos, ou seja, de repasse dos recursos entre os usuários e as instituições envolvidas, não é em tempo real, como ocorre no Pix. Há a opção de o recebedor substituir o boleto ou complementar a cobrança com uma das formas de iniciação do Pix, como o QR Code. Dessa forma, contas e faturas poderão conter dois instrumentos de pagamento: o código de barras do boleto e o QR Code do Pix. Nesse caso, tratam-se de formas de pagamento distintas, ainda que possam estar previstas na mesma conta ou fatura, por opção do credor. Importante! Documento que contenha apenas o código de barras, e não contenha o QR Code, não pode ser pago utilizando Pix. " TextColor="{DynamicResource textOnPrimary}" />
-                    </StackLayout>
-                    <StackLayout Spacing="0">
-                        <controls:CustomLabel Text="Como faço um PIX?" TextColor="{DynamicResource textOnPrimary}" FontSize="Large" FontAttributes="Bold" />
-                        <controls:CustomLabel Text="​Para realizar um pagamento via Pix, você pode: ler um QR Code com a câmera do seu smartphone, na opção de fazer um Pix no aplicativo da sua instituição financeira ou de pagamento; ou informar uma chave Pix, que pode ser CPF/CNPJ, e-mail ou telefone celular do recebedor, ou uma chave aleatória, por meio da opção disponibilizada por sua instituição financeira ou de pagamento no aplicativo instalado em seu smartphone. Embora não seja o padrão esperado, por sua pouca praticidade e demora, há alternativamente a opção de digitar manualmente os dados da conta transacional do usuário recebedor, como ocorre hoje para iniciar uma TED ou DOC. Importante! A chave Pix é somente utilizada para facilitar o recebimento de um Pix. Assim, para pagar com Pix, não é necessário ter a Chave Pix." TextColor="{DynamicResource textOnPrimary}" />
-                    </StackLayout>
-                    <StackLayout Spacing="0">
-                        <controls:CustomLabel Text="O que eu posso comprar ou pagar com o PIX?" TextColor="{DynamicResource textOnPrimary}" FontSize="Large" FontAttributes="Bold" />
-                        <controls:CustomLabel Text="De forma geral, qualquer transação de pagamento pode ser feita por Pix, independentemente de suas características, como valor, característica do recebedor, característica do bem ou serviço comprado, horário, etc. Assim, podem ser realizadas transferências entre pessoas, pagamento de taxas e impostos, compra de bens ou serviços, inclusive no comércio eletrônico, pagamento de fornecedores e qualquer outra transação podem ser feitas por meio do Pix. A única condição para que a operação se concretize é que o recebedor aceite o Pix.​" TextColor="{DynamicResource textOnPrimary}" />
-                    </StackLayout>
-                    <StackLayout Spacing="0">
-                        <controls:CustomLabel Text="Se eu fizer um PIX em um dia não útil ou fora do horário comercial, quando o recurso é creditado na conta do recebedor?" TextColor="{DynamicResource textOnPrimary}" FontSize="Large" FontAttributes="Bold" />
-                        <controls:CustomLabel Text="​O recurso será disponibilizado para o recebedor em poucos segundos, mesmo em dia não útil ou fora de horário comercial, pois o serviço está disponível durante 24 horas, sete dias por semana e em todos os dias do ano.​" TextColor="{DynamicResource textOnPrimary}" />
-                    </StackLayout>
-                    <StackLayout Spacing="0">
-                        <controls:CustomLabel Text="É possível agendar um PIX para uma data futura?" TextColor="{DynamicResource textOnPrimary}" FontSize="Large" FontAttributes="Bold" />
-                        <controls:CustomLabel Text="​Sim. O Pix pode ser agendado para uma determinada data futura (Pix agendado). Caso não haja recursos suficientes na conta do pagador na data prevista para a realização do Pix, a iniciação da transação não será autorizada. É importante observar que a oferta do Pix Agendado pelos participantes do Pix é facultativa, então o cliente deverá verificar se a instituição da qual é cliente oferece essa opção. " TextColor="{DynamicResource textOnPrimary}" />
-                    </StackLayout>
-                    <StackLayout Spacing="0">
-                        <controls:CustomLabel Text="Se eu fizer um PIX, mas digitar o valor errado, é possível fazer o estorno ou o cancalamento da operação?" TextColor="{DynamicResource textOnPrimary}" FontSize="Large" FontAttributes="Bold" />
-                        <controls:CustomLabel Text="​​Você poderá alterar o valor a ser pago ou cancelar a transação apenas antes da confirmação do pagamento. Após a confirmação, como a liquidação do Pix ocorre em tempo real, a transação não poderá ser cancelada. No entanto, você poderá negociar com o recebedor a devolução do valor pago. A devolução é uma funcionalidade disponível no Pix e é sempre iniciada pelo próprio recebedor." TextColor="{DynamicResource textOnPrimary}" />
-                    </StackLayout>
-                    <StackLayout Spacing="0">
-                        <controls:CustomLabel Text="Terei acesso a algum histórico das minhas transações?" TextColor="{DynamicResource textOnPrimary}" FontSize="Large" FontAttributes="Bold" />
-                        <controls:CustomLabel Text="​Sim. As transações do Pix (pagamentos, recebimentos e devoluções) devem estar disponíveis no extrato da conta habilitada para fazer o Pix, de forma facilmente diferenciada das demais transações. " TextColor="{DynamicResource textOnPrimary}" />
-                    </StackLayout>
-                    <StackLayout Spacing="0">
-                        <controls:CustomLabel Text="Como pago a partir de um QR Code do PIX, quando estou fazendo uma compra usando o próprio telefone celular?" TextColor="{DynamicResource textOnPrimary}" FontSize="Large" FontAttributes="Bold" />
-                        <controls:CustomLabel Text="O Pix possuirá uma funcionalidade chamada 'Pix Copia e Cola'. A partir de um QR Code haverá a possibilidade de gerar um código com as informações apresentadas naquele QR Code.  Dessa forma, o usuário poderá copiar esse código e depois colá-lo em campo específico de pagamento de seu prestador de serviço de preferência, assim como ocorre, por exemplo, quando o usuário paga um boleto copiando e depois colando as informações do código de barras.​" TextColor="{DynamicResource textOnPrimary}" />
-                    </StackLayout>
-                    <StackLayout Spacing="0">
-                        <controls:CustomLabel Text="Ao fazer um pagamento, como se certificar de que os dados do recebedor estão corretos?" TextColor="{DynamicResource textOnPrimary}" FontSize="Large" FontAttributes="Bold" />
-                        <controls:CustomLabel Text="​​Ao incluir a chave, os dados da conta, ou fazer a leitura do QR Code, o app da sua instituição indica, na tela de confirmação da operação, as informações do recebedor (nome da instituição, nome do recebedor, parte do CPF ou o CNPJ). Confira se os dados batem com o da pessoa ou empresa a quem você quer transferir o recurso ou efetuar o pagamento. Caso os dados não batam, é importante que busque a informação correta com o destinatário, para que confirme os dados, efetue sua operação com sucesso e evite golpes ou pagamentos para o destinatário incorreto." TextColor="{DynamicResource textOnPrimary}" />
-                    </StackLayout>-->
-                        <StackLayout Spacing="0">
-                            <controls:CustomLabel Text="O que é uma chave PIX?" TextColor="{DynamicResource textOnPrimary}" FontSize="Large" FontAttributes="Bold" />
-                            <controls:CustomFrame Padding="15" BackgroundColor="{DynamicResource backgroundTransparent}" CornerRadius="10">
-                                <controls:CustomLabel Text="​A chave é um 'apelido' utilizado para identificar sua conta. Ela representa o endereço da sua conta no Pix. Os quatro tipos de chaves Pix que você pode utilizar são: CPF/CNPJ; E-mail; Número de telefone celular; ou Chave aleatória. A chave vincula uma dessas informações básicas às informações completas que identificam a conta transacional do cliente (identificação da instituição financeira ou de pagamento, número da agência, número da conta e tipo de conta)." TextColor="{DynamicResource textOnBackgroundTransparent}" />
-                            </controls:CustomFrame>
-                        </StackLayout>
-                        <StackLayout Spacing="0">
-                            <controls:CustomLabel Text="O que é uma chave aleatória?" TextColor="{DynamicResource textOnPrimary}" FontSize="Large" FontAttributes="Bold" />
-                            <controls:CustomFrame Padding="15" BackgroundColor="{DynamicResource backgroundTransparent}" CornerRadius="10">
-                                <controls:CustomLabel Text="A chave aleatória é uma forma de você receber um Pix sem precisar informar quaisquer dados pessoais ao pagador. É um código único, de 32 caracteres com letras e símbolos, gerado aleatoriamente pelo Banco Central e atrelado a uma única conta. Essa opção foi criada principalmente para ser utilizada com QR codes gerados por meio do aplicativo de sua instituição, a fim de facilitar o recebimento de recursos financeiros. Ela também pode ser copiada e enviada, por exemplo, por mensagem, não sendo a intenção que seja memorizada pelo usuário. O usuário pode cadastrar múltiplas chaves aleatórias, seja vinculada à mesma conta ou a contas diferentes, desde que dentro do limite de 5 chaves por conta, se pessoa física, e 20 chaves por conta se pessoa jurídica. Esse é o único tipo de chave que não é possível realizar a portabilidade. Assim, basta simplesmente excluir na conta origem e cadastrar uma nova chave aleatória na conta destino.​" TextColor="{DynamicResource textOnBackgroundTransparent}" />
-                            </controls:CustomFrame>
-                        </StackLayout>
-                        <StackLayout Spacing="0">
-                            <controls:CustomLabel Text="Sou obrigado a cadastrar uma chave PIX para poder utilizar o PIX?" TextColor="{DynamicResource textOnPrimary}" FontSize="Large" FontAttributes="Bold" />
-                            <controls:CustomFrame Padding="15" BackgroundColor="{DynamicResource backgroundTransparent}" CornerRadius="10">
-                                <controls:CustomLabel Text="Não é necessário cadastrar uma chave para fazer ou receber um Pix. No entanto, o cadastramento da chave é altamente recomendável para receber um Pix. Ainda que você possa receber transações apenas informando os dados da sua conta, essa forma não tem a mesma praticidade que o uso da chave possibilita e pode gerar demora na iniciação da transação, diminuindo o benefício do pagador em fazer um Pix. ​" TextColor="{DynamicResource textOnBackgroundTransparent}" />
-                            </controls:CustomFrame>
-                        </StackLayout>
-                        <StackLayout Spacing="0">
-                            <controls:CustomLabel Text="Quantas chaves eu posso ter?" TextColor="{DynamicResource textOnPrimary}" FontSize="Large" FontAttributes="Bold" />
-                            <controls:CustomFrame Padding="15" BackgroundColor="{DynamicResource backgroundTransparent}" CornerRadius="10">
-                                <controls:CustomLabel Text="​Cada conta de pessoa física pode ter até 5 chaves vinculadas à ela, independentemente da quantidade de titulares. Ou seja, se a conta for individual ou conjunta, ela poderá ter, no máximo, 5 chaves Pix. Já no caso de pessoa jurídica, o máximo é de 20 chaves por conta." TextColor="{DynamicResource textOnBackgroundTransparent}" />
-                            </controls:CustomFrame>
-                        </StackLayout>
-                        <StackLayout Spacing="0">
-                            <controls:CustomLabel Text="Como efetuar os registros das minhas chaves no PIX?" TextColor="{DynamicResource textOnPrimary}" FontSize="Large" FontAttributes="Bold" />
-                            <controls:CustomFrame Padding="15" BackgroundColor="{DynamicResource backgroundTransparent}" CornerRadius="10">
-                                <controls:CustomLabel Text="Você poderá realizar o registro das suas chaves por meio de um dos canais de acesso da instituição em que você possui conta (inclusive aplicativo instalado em seu smartphone). Para realizar o registro, você precisará confirmar a posse da chave e vinculá-la a uma conta para recebimento dos recursos. Para confirmação da posse da chave, sua instituição enviará um código por SMS para o número de telefone celular que você quer utilizar como chave (ou para o e-mail que se quer utilizar como chave, se for o caso). Esse código deverá ser inserido no canal de acesso disponibilizado por sua instituição financeira ou de pagamento, mediante autenticação digital apropriada, como solicitação de senha, biometria ou reconhecimento facial, por exemplo. Atenção! A confirmação não pode ser efetivada por contato telefônico nem por link enviado por meio de SMS ou por e-mail. ​" TextColor="{DynamicResource textOnBackgroundTransparent}" />
-                            </controls:CustomFrame>
-                        </StackLayout>
-                        <StackLayout Spacing="0">
-                            <controls:CustomLabel Text="Se eu tenho mais de uma conta, posso incluir todas no PIX?" TextColor="{DynamicResource textOnPrimary}" FontSize="Large" FontAttributes="Bold" />
-                            <controls:CustomFrame Padding="15" BackgroundColor="{DynamicResource backgroundTransparent}" CornerRadius="10">
-                                <controls:CustomLabel Text="​Você poderá realizar o registro das suas chaves por meio de um dos canais de acesso da instituição em que você possui conta (inclusive aplicativo instalado em seu smartphone). Para realizar o registro, você precisará confirmar a posse da chave e vinculá-la a uma conta para recebimento dos recursos. Para confirmação da posse da chave, sua instituição enviará um código por SMS para o número de telefone celular que você quer utilizar como chave (ou para o e-mail que se quer utilizar como chave, se for o caso). Esse código deverá ser inserido no canal de acesso disponibilizado por sua instituição financeira ou de pagamento, mediante autenticação digital apropriada, como solicitação de senha, biometria ou reconhecimento facial, por exemplo. Atenção! A confirmação não pode ser efetivada por contato telefônico nem por link enviado por meio de SMS ou por e-mail. " TextColor="{DynamicResource textOnBackgroundTransparent}" />
-                            </controls:CustomFrame>
-                        </StackLayout>
-                        <StackLayout Spacing="0">
-                            <controls:CustomLabel Text="Posso vincular todas as chaves à mesma conta?" TextColor="{DynamicResource textOnPrimary}" FontSize="Large" FontAttributes="Bold" />
-                            <controls:CustomFrame Padding="15" BackgroundColor="{DynamicResource backgroundTransparent}" CornerRadius="10">
-                                <controls:CustomLabel Text="​Sim. Você pode vincular todas as suas chaves (CPF, número de celular e e-mail) a uma mesma conta. Dessa forma, quando o pagador iniciar o pagamento a partir de qualquer uma dessas informações, os recursos serão disponibilizados nessa mesma conta. Existe, no entanto, um limite de 5 (cinco) chaves por conta para pessoas físicas e de 20 (vinte) chaves por conta para pessoas jurídicas.​" TextColor="{DynamicResource textOnBackgroundTransparent}" />
-                            </controls:CustomFrame>
-                        </StackLayout>
-                        <!--<StackLayout Spacing="0">
-                        <controls:CustomLabel Text="" TextColor="{DynamicResource textOnPrimary}" FontSize="Large" FontAttributes="Bold" />
-                        <controls:CustomLabel Text="​" TextColor="{DynamicResource textOnPrimary}" />
-                    </StackLayout>
+                <controls:CustomCollectionView ItemsSource="{Binding GuideList}" Grid.Row="0" Margin="10,0">
+                    <controls:CustomCollectionView.ItemsLayout>
+                        <GridItemsLayout Span="2" Orientation="Vertical" HorizontalItemSpacing="10" VerticalItemSpacing="10" />
+                    </controls:CustomCollectionView.ItemsLayout>
                     
-                    <StackLayout Spacing="0">
-                        <controls:CustomLabel Text="" TextColor="{DynamicResource textOnPrimary}" FontSize="Large" FontAttributes="Bold" />
-                        <controls:CustomLabel Text="​" TextColor="{DynamicResource textOnPrimary}" />
-                    </StackLayout>
-                    <StackLayout Spacing="0">
-                        <controls:CustomLabel Text="" TextColor="{DynamicResource textOnPrimary}" FontSize="Large" FontAttributes="Bold" />
-                        <controls:CustomLabel Text="​" TextColor="{DynamicResource textOnPrimary}" />
-                    </StackLayout>
-                    <StackLayout Spacing="0">
-                        <controls:CustomLabel Text="" TextColor="{DynamicResource textOnPrimary}" FontSize="Large" FontAttributes="Bold" />
-                        <controls:CustomLabel Text="​" TextColor="{DynamicResource textOnPrimary}" />
-                    </StackLayout>
-                    <StackLayout Spacing="0">
-                        <controls:CustomLabel Text="" TextColor="{DynamicResource textOnPrimary}" FontSize="Large" FontAttributes="Bold" />
-                        <controls:CustomLabel Text="​" TextColor="{DynamicResource textOnPrimary}" />
-                    </StackLayout>
-                    <StackLayout Spacing="0">
-                        <controls:CustomLabel Text="" TextColor="{DynamicResource textOnPrimary}" FontSize="Large" FontAttributes="Bold" />
-                        <controls:CustomLabel Text="​" TextColor="{DynamicResource textOnPrimary}" />
-                    </StackLayout>-->
-                    </StackLayout>
-                </ScrollView>
+                    <controls:CustomCollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame Padding="15" BackgroundColor="{DynamicResource backgroundTransparent}" BorderColor="{DynamicResource textOnPrimary}" CornerRadius="15" HeightRequest="200">
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:GuideViewModel}}, Path=OpenAnswerGuideCommand}" CommandParameter="{Binding .}" />
+                                </Frame.GestureRecognizers>
+
+                                <controls:CustomLabel Text="{Binding Question}" TextColor="{DynamicResource textOnPrimary}" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center" />
+                            </Frame>
+                        </DataTemplate>
+                    </controls:CustomCollectionView.ItemTemplate>
+                </controls:CustomCollectionView>
 
                 <share:AdsView Grid.Row="1" />
             </Grid>

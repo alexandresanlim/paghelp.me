@@ -185,7 +185,7 @@
                     </StackLayout>
 
                     <Grid  ColumnDefinitions="*,*" ColumnSpacing="15">
-                        <Frame Grid.Column="0" BackgroundColor="Transparent" BorderColor="{DynamicResource textOnPrimary}" CornerRadius="30" Padding="5,12">
+                        <Frame Grid.Column="0" BackgroundColor="{DynamicResource backgroundTransparent}" BorderColor="{DynamicResource textOnPrimary}" CornerRadius="30" Padding="5,12">
 
                             <Frame.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding SettingsCommand}" />
@@ -196,7 +196,7 @@
                             </StackLayout>
                         </Frame>
 
-                        <Frame Grid.Column="1"  BackgroundColor="Transparent" BorderColor="{DynamicResource textOnPrimary}" Padding="5,12" CornerRadius="30" HorizontalOptions="FillAndExpand">
+                        <Frame Grid.Column="1"  BackgroundColor="{DynamicResource backgroundTransparent}" BorderColor="{DynamicResource textOnPrimary}" Padding="5,12" CornerRadius="30" HorizontalOptions="FillAndExpand">
                             <Frame.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding NavigateToAddNewKeyPageCommand}" />
                             </Frame.GestureRecognizers>

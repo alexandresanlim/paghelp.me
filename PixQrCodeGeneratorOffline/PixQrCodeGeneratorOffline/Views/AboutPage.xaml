@@ -49,14 +49,14 @@
 
                     <StackLayout>
                         <controls:CustomLabel Text="Versão" TextColor="{DynamicResource textOnPrimary}" FontSize="Title" FontAttributes="Bold" Margin="15,0,0,0" />
-                        <Frame BackgroundColor="Transparent" BorderColor="{DynamicResource textOnPrimary}" Padding="30,15" CornerRadius="30">
+                        <Frame BackgroundColor="{DynamicResource backgroundTransparent}" BorderColor="{DynamicResource textOnPrimary}" Padding="30,15" CornerRadius="30">
                             <controls:CustomLabel x:Name="lbVersion" Text="versão" TextColor="{DynamicResource textOnPrimary}" FontSize="Medium" FontAttributes="Bold" />
                         </Frame>
                     </StackLayout>
 
                     <StackLayout>
                         <controls:CustomLabel Text="Gostando do PIX APP?" TextColor="{DynamicResource textOnPrimary}" FontSize="Title" FontAttributes="Bold" Margin="15,0,0,0" />
-                        <Frame BackgroundColor="Transparent" BorderColor="{DynamicResource textOnPrimary}"  Padding="30,15" CornerRadius="30">
+                        <Frame BackgroundColor="{DynamicResource backgroundTransparent}" BorderColor="{DynamicResource textOnPrimary}"  Padding="30,15" CornerRadius="30">
                             <Frame.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding OpenStoreCommand}" />
                             </Frame.GestureRecognizers>
@@ -70,7 +70,7 @@
 
                     <StackLayout>
                         <controls:CustomLabel Text="Redes Sociais" TextColor="{DynamicResource textOnPrimary}" FontSize="Title" FontAttributes="Bold" Margin="15,0,0,0" />
-                        <Frame BackgroundColor="Transparent" BorderColor="{DynamicResource textOnPrimary}" Padding="30,15" CornerRadius="30">
+                        <Frame BackgroundColor="{DynamicResource backgroundTransparent}" BorderColor="{DynamicResource textOnPrimary}" Padding="30,15" CornerRadius="30">
                             <Frame.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding OpenInstagramCommand}"/>
                             </Frame.GestureRecognizers>
