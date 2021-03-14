@@ -30,5 +30,13 @@ namespace PixQrCodeGeneratorOffline.Views
         {
             _paymentViewModel.LoadDataCommand.Execute(_pixKey);
         }
+
+        protected override void OnDisappearing()
+        {
+            _paymentViewModel.CurrentPixKey.Value = "";
+            _paymentViewModel.CurrentPixKey.RaiseCob();
+
+            base.OnDisappearing();
+        }
     }
 }

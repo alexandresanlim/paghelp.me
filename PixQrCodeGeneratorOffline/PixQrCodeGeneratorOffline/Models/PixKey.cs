@@ -97,7 +97,7 @@ namespace PixQrCodeGeneratorOffline.Models
                     }
                 };
 
-                var payload = cobranca?.ToPayload("PIXOFF" + Guid.NewGuid().ToString("N").Substring(0, 10), new Merchant(Name, City));
+                var payload = cobranca?.ToPayload("PIXAPP" + Guid.NewGuid().ToString("N").Substring(0, 10), new Merchant(Name, City));
 
                 Payload = payload?.GenerateStringToQrCode();
             });

@@ -112,6 +112,8 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 //if (success)
                 //{
 
+                CurrentPixKey.RaiseCob();
+
                 await DashboardViewModel.LoadCurrentPixKey(CurrentPixKey);
 
                 DialogService.Toast("Chave salva com sucesso");

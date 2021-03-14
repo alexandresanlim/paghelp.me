@@ -14,8 +14,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         {
             CurrentPixKey = pixKey;
             CurrentPixKey.RaiseCob();
-
-            var a = CurrentPixKey.Payload;
         });
 
         public ICommand SharePayloadCommand => new Command(async () =>
