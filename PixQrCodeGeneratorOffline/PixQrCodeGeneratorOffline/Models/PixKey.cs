@@ -84,7 +84,7 @@ namespace PixQrCodeGeneratorOffline.Models
             if (string.IsNullOrEmpty(Key))
                 return;
 
-            var value = Value.Replace(".", "").Replace(",",".");
+            var value = Value?.Replace(".", "")?.Replace(",",".") ?? "";
 
             Xamarin.Essentials.MainThread.BeginInvokeOnMainThread(() =>
             {

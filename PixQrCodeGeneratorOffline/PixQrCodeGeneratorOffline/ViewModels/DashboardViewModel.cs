@@ -24,15 +24,25 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public ICommand LoadDataCommand => new Command(async () =>
         {
-            var list = PixKeyDataBase.GetAll();
+            try
+            {
+                var list = PixKeyDataBase.GetAll();
 
-            PixKeyList = list.ToObservableCollection();
+                PixKeyList = list.ToObservableCollection();
 
-            await LoadCurrentPixKey();
+                foreach (var item in PixKeyList)
+                {
+                    item.RaiseCob();
+                }
 
-            //SetStatusFromCurrentPixColor();
+                await LoadCurrentPixKey();
 
-            ReloadShowInList();
+                ReloadShowInList();
+            }
+            catch (System.Exception e)
+            {
+                e.SendToLog();
+            }
         });
 
         public async Task LoadCurrentPixKey(PixKey pixKeySelected = null)
@@ -93,8 +103,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public ICommand ChangeSelectPixKeyCommand => new Command(async () =>
         {
-            if (!ShowInList)
-                SetStatusFromCurrentPixColor();
+            SetStatusFromCurrentPixColor();
         });
 
         public ICommand CopyKeyCommand => new Command(async () =>
@@ -224,14 +233,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                     TextOnPrimary = Color.FromHex("ffffff")
                 };
 
-                var lightColor = new Style.MaterialColor
-                {
-                    Primary = Color.FromHex("#ffffff"),
-                    PrimaryDark = Color.FromHex("#cccccc"),
-                    PrimaryLight = Color.FromHex("#ffffff"),
-                    TextOnPrimary = Color.FromHex("#000000")
-                };
-
                 App.LoadTheme(darkColor);
             }
 
@@ -241,7 +242,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public void SetStatusFromCurrentPixColor()
         {
-            if (CurrentPixKey?.Color == null)
+            if (ShowInList || CurrentPixKey?.Color == null)
                 return;
 
             App.LoadTheme(CurrentPixKey?.Color);

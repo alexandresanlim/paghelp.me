@@ -6,6 +6,7 @@ using PixQrCodeGeneratorOffline.Views.Shared;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -57,7 +58,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 FeedFromService = FeedFromService?.Count > 0 ? FeedFromService : await FeedService.Get("https://news.google.com/rss/search?q=pix%20-frade%20-golpista%20-golpistas%20-erro%20-golpe%20-hack%20-hacker&hl=pt-BR&gl=BR&ceid=BR%3Apt-419");
 
-                CurrentFeedList = FeedFromService?.ToObservableCollection();
+                CurrentFeedList = FeedFromService?.Where(x => x.PublishDate != null)?.OrderByDescending(x => x.PublishDate)?.ToObservableCollection();
 
                 NotFoundVisible = !(CurrentFeedList.Count > 0);
             }
