@@ -16,7 +16,7 @@ namespace PixQrCodeGeneratorOffline.DataBase
             {
                 if (_dataBase == null)
                 {
-                    _dataBase = new LiteDatabase(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), App.AppName.Replace(" ", "").ToLower() + ".db"));
+                    _dataBase = new LiteDatabase(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "pixoff.db"));
                 }
 
                 return _dataBase;
