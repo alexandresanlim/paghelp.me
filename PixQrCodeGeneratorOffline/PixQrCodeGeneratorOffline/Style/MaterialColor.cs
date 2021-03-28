@@ -14,6 +14,8 @@ namespace PixQrCodeGeneratorOffline.Style
             TextPrimary = Color.FromHex("#212121");
             TextSecondary = Color.FromHex("#757575");
             BackgroundPage = Color.FromHex("#ecf0f1");
+            Secondary = Color.FromHex("#50000000");
+            TextOnSecondary = Color.FromHex("#ffffff");
         }
 
         public string Name { get; set; }

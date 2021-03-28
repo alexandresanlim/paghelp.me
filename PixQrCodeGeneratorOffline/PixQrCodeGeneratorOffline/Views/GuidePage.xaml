@@ -26,12 +26,12 @@
                     
                     <controls:CustomCollectionView.ItemTemplate>
                         <DataTemplate>
-                            <Frame Padding="15" BackgroundColor="{DynamicResource backgroundTransparent}" BorderColor="{DynamicResource textOnPrimary}" CornerRadius="15" HeightRequest="200">
+                            <Frame Padding="15" BackgroundColor="{DynamicResource secondary}" CornerRadius="15" HeightRequest="200">
                                 <Frame.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:GuideViewModel}}, Path=OpenAnswerGuideCommand}" CommandParameter="{Binding .}" />
                                 </Frame.GestureRecognizers>
 
-                                <controls:CustomLabel Text="{Binding Question}" TextColor="{DynamicResource textOnPrimary}" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center" />
+                                <controls:CustomLabel Text="{Binding Question}" TextColor="{DynamicResource textOnSecondary}" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center" />
                             </Frame>
                         </DataTemplate>
                     </controls:CustomCollectionView.ItemTemplate>

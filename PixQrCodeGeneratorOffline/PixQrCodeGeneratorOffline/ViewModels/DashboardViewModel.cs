@@ -230,7 +230,9 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                     Primary = Color.FromHex("#212121"),
                     PrimaryDark = Color.FromHex("#000000"),
                     PrimaryLight = Color.FromHex("#484848"),
-                    TextOnPrimary = Color.FromHex("ffffff")
+                    Secondary = Color.FromHex("#34bcac"),
+                    TextOnPrimary = Color.FromHex("ffffff"),
+                    TextOnSecondary = Color.FromHex("000000")
                 };
 
                 App.LoadTheme(darkColor);

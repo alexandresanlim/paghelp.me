@@ -24,7 +24,7 @@ namespace PixQrCodeGeneratorOffline.Models
                 new FinancialInstitution
                 {
                     Name = "Banco do Brasil",
-                    Style = new MaterialColor
+                    Style = new MaterialColor()
                     {
                         Name = "bancodobrasil",
                         Primary = Color.FromHex("#fbf304"),
@@ -36,7 +36,7 @@ namespace PixQrCodeGeneratorOffline.Models
                 new FinancialInstitution
                 {
                     Name = "Banco Inter",
-                    Style = new MaterialColor
+                    Style = new MaterialColor()
                     {
                         Name = "bancointer",
                         Primary = Color.FromHex("#fc7c04"),
@@ -48,7 +48,7 @@ namespace PixQrCodeGeneratorOffline.Models
                 new FinancialInstitution
                 {
                     Name = "Bradesco",
-                    Style = new MaterialColor
+                    Style = new MaterialColor()
                     {
                         Name = "bradesco",
                         Primary = Color.FromHex("#cc0c2c"),
@@ -60,7 +60,7 @@ namespace PixQrCodeGeneratorOffline.Models
                 new FinancialInstitution
                 {
                     Name = "BS2",
-                    Style = new MaterialColor
+                    Style = new MaterialColor()
                     {
                         Name = "bs2",
                         Primary = Color.FromHex("#342cd4"),
@@ -72,7 +72,7 @@ namespace PixQrCodeGeneratorOffline.Models
                 new FinancialInstitution
                 {
                     Name = "C6 Bank",
-                    Style = new MaterialColor
+                    Style = new MaterialColor()
                     {
                         Name = "c6bank",
                         Primary = Color.FromHex("#050505"),
@@ -84,7 +84,7 @@ namespace PixQrCodeGeneratorOffline.Models
                 new FinancialInstitution
                 {
                     Name = "Caixa",
-                    Style = new MaterialColor
+                    Style = new MaterialColor()
                     {
                         Name = "caixa",
                         Primary = Color.FromHex("#0473bb"),
@@ -96,7 +96,7 @@ namespace PixQrCodeGeneratorOffline.Models
                 new FinancialInstitution
                 {
                     Name = "Digio",
-                    Style = new MaterialColor
+                    Style = new MaterialColor()
                     {
                         Name = "digio",
                         Primary = Color.FromHex("#042c5c"),
@@ -108,7 +108,7 @@ namespace PixQrCodeGeneratorOffline.Models
                 new FinancialInstitution
                 {
                     Name = "Gerencianet",
-                    Style = new MaterialColor
+                    Style = new MaterialColor()
                     {
                         Name = "gerencianet",
                         Primary = Color.FromHex("#f4741c"),
@@ -121,7 +121,7 @@ namespace PixQrCodeGeneratorOffline.Models
                 new FinancialInstitution
                 {
                     Name = "Itaú",
-                    Style = new MaterialColor
+                    Style = new MaterialColor()
                     {
                         Name = "itau",
                         Primary = Color.FromHex("#e97515"),
@@ -134,7 +134,7 @@ namespace PixQrCodeGeneratorOffline.Models
                 new FinancialInstitution
                 {
                     Name = "Mercado Pago",
-                    Style = new MaterialColor
+                    Style = new MaterialColor()
                     {
                         Name = "mercadopago",
                         Primary = Color.FromHex("#05abf3"),
@@ -146,7 +146,7 @@ namespace PixQrCodeGeneratorOffline.Models
                 new FinancialInstitution
                 {
                     Name = "Neon",
-                    Style = new MaterialColor
+                    Style = new MaterialColor()
                     {
                         Name = "neon",
                         Primary = Color.FromHex("#0bcbea"),
@@ -158,7 +158,7 @@ namespace PixQrCodeGeneratorOffline.Models
                 new FinancialInstitution
                 {
                     Name = "Nubank",
-                    Style = new MaterialColor
+                    Style = new MaterialColor()
                     {
                         Name = "nubank",
                         Primary = Color.FromHex("#8c04bc"),
@@ -170,7 +170,7 @@ namespace PixQrCodeGeneratorOffline.Models
                 new FinancialInstitution
                 {
                     Name = "PicPay",
-                    Style = new MaterialColor
+                    Style = new MaterialColor()
                     {
                         Name = "picpay",
                         Primary = Color.FromHex("#23c45c"),
@@ -182,7 +182,7 @@ namespace PixQrCodeGeneratorOffline.Models
                 new FinancialInstitution
                 {
                     Name = "Santander",
-                    Style = new MaterialColor
+                    Style = new MaterialColor()
                     {
                         Name = "santander",
                         Primary = Color.FromHex("#ec0404"),

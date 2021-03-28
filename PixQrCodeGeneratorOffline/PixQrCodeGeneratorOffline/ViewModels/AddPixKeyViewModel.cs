@@ -1,6 +1,7 @@
 ﻿using PixQrCodeGeneratorOffline.DataBase;
 using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models;
+using PixQrCodeGeneratorOffline.Services;
 using PixQrCodeGeneratorOffline.Style;
 using PixQrCodeGeneratorOffline.Style.Interfaces;
 using PixQrCodeGeneratorOffline.ViewModels;
@@ -221,9 +222,21 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         private void SetNewInstitution(FinancialInstitution institution)
         {
             CurrentPixKey.FinancialInstitution = institution;
-            CurrentPixKey.Color = institution.Style;
+
             CurrenSelectedFinancialInstitutionText = institution.Name;
+
+            CurrentPixKey.Color = institution.Style;
+
+            SetStatusFromCurrentPixColor(institution);
+        }
+
+        public void SetStatusFromCurrentPixColor(FinancialInstitution institution)
+        {
+            if (PreferenceService.ShowInList || CurrentPixKey?.Color == null)
+                return;
+
             App.LoadTheme(CurrentPixKey?.Color);
+
             ReloadStatusBar();
         }
 

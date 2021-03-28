@@ -48,37 +48,37 @@
                 </StackLayout>-->
 
                     <StackLayout>
-                        <controls:CustomLabel Text="Versão" TextColor="{DynamicResource textOnPrimary}" FontSize="Title" FontAttributes="Bold" Margin="15,0,0,0" />
-                        <Frame BackgroundColor="{DynamicResource backgroundTransparent}" BorderColor="{DynamicResource textOnPrimary}" Padding="30,15" CornerRadius="30">
-                            <controls:CustomLabel x:Name="lbVersion" Text="versão" TextColor="{DynamicResource textOnPrimary}" FontSize="Medium" FontAttributes="Bold" />
+                        <Label Text="Versão" Style="{StaticResource titleStyle}" />
+                        <Frame Style="{StaticResource styleFrameMenuAbout}">
+                            <controls:CustomLabel x:Name="lbVersion" Text="versão" TextColor="{DynamicResource textOnSecondary}" FontSize="Medium" FontAttributes="Bold" />
                         </Frame>
                     </StackLayout>
 
                     <StackLayout>
-                        <controls:CustomLabel Text="Gostando do PIX APP?" TextColor="{DynamicResource textOnPrimary}" FontSize="Title" FontAttributes="Bold" Margin="15,0,0,0" />
-                        <Frame BackgroundColor="{DynamicResource backgroundTransparent}" BorderColor="{DynamicResource textOnPrimary}"  Padding="30,15" CornerRadius="30">
+                        <Label Text="Gostando do PIX APP?" Style="{StaticResource titleStyle}" />
+                        <Frame Style="{StaticResource styleFrameMenuAbout}">
                             <Frame.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding OpenStoreCommand}" />
                             </Frame.GestureRecognizers>
                             <StackLayout Orientation="Horizontal" Spacing="10">
-                                <controls:CustomIcon Glyph="{Binding CurrentStoreIcon}" IconType="brand" IconColor="{DynamicResource textOnPrimary}" />
-                                <controls:CustomLabel Text="{Binding CurrentStore}" VerticalOptions="CenterAndExpand" TextColor="{DynamicResource textOnPrimary}" FontAttributes="Bold" FontSize="Medium" />
-                                <controls:CustomIcon Glyph="&#xf054;" IconColor="{DynamicResource textOnPrimary}" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" IconSize="Medium" />
+                                <controls:CustomIcon Glyph="{Binding CurrentStoreIcon}" IconType="brand" IconColor="{DynamicResource textOnSecondary}" />
+                                <controls:CustomLabel Text="{Binding CurrentStore}" VerticalOptions="CenterAndExpand" TextColor="{DynamicResource textOnSecondary}" FontAttributes="Bold" FontSize="Medium" />
+                                <controls:CustomIcon Glyph="&#xf054;" IconColor="{DynamicResource textOnSecondary}" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" IconSize="Medium" />
                             </StackLayout>
                         </Frame>
                     </StackLayout>
 
                     <StackLayout>
-                        <controls:CustomLabel Text="Redes Sociais" TextColor="{DynamicResource textOnPrimary}" FontSize="Title" FontAttributes="Bold" Margin="15,0,0,0" />
-                        <Frame BackgroundColor="{DynamicResource backgroundTransparent}" BorderColor="{DynamicResource textOnPrimary}" Padding="30,15" CornerRadius="30">
+                        <Label Text="Redes Sociais" Style="{StaticResource titleStyle}" />
+                        <Frame Style="{StaticResource styleFrameMenuAbout}">
                             <Frame.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding OpenInstagramCommand}"/>
                             </Frame.GestureRecognizers>
 
                             <StackLayout Orientation="Horizontal" Spacing="10">
-                                <controls:CustomIcon IconType="brand" Glyph="&#xf16d;" IconColor="{DynamicResource textOnPrimary}" />
-                                <controls:CustomLabel Text="Siga-nos no Instagram" TextColor="{DynamicResource textOnPrimary}" FontAttributes="Bold" FontSize="Medium" />
-                                <controls:CustomIcon Glyph="&#xf054;" IconColor="{DynamicResource textOnPrimary}" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" IconSize="Medium" />
+                                <controls:CustomIcon IconType="brand" Glyph="&#xf16d;" IconColor="{DynamicResource textOnSecondary}" />
+                                <controls:CustomLabel Text="Siga-nos no Instagram" TextColor="{DynamicResource textOnSecondary}" FontAttributes="Bold" FontSize="Medium" />
+                                <controls:CustomIcon Glyph="&#xf054;" IconColor="{DynamicResource textOnSecondary}" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" IconSize="Medium" />
                             </StackLayout>
 
                         </Frame>

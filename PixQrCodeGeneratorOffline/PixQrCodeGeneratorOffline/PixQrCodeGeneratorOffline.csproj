@@ -8,6 +8,8 @@
   <ItemGroup>
     <None Remove="Fonts\fa-brands-400.ttf" />
     <None Remove="Fonts\fa-solid-900.ttf" />
+    <None Remove="Fonts\Poppins-Bold.ttf" />
+    <None Remove="Fonts\Poppins-ExtraBold.ttf" />
     <None Remove="Fonts\Poppins-Italic.ttf" />
     <None Remove="Fonts\Poppins-Medium.ttf" />
     <None Remove="Fonts\Poppins-Regular.ttf" />
@@ -17,6 +19,8 @@
   <ItemGroup>
     <EmbeddedResource Include="Fonts\fa-brands-400.ttf" />
     <EmbeddedResource Include="Fonts\fa-solid-900.ttf" />
+    <EmbeddedResource Include="Fonts\Poppins-Bold.ttf" />
+    <EmbeddedResource Include="Fonts\Poppins-ExtraBold.ttf" />
     <EmbeddedResource Include="Fonts\Poppins-Italic.ttf" />
     <EmbeddedResource Include="Fonts\Poppins-Medium.ttf" />
     <EmbeddedResource Include="Fonts\Poppins-Regular.ttf" />

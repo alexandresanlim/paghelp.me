@@ -54,13 +54,13 @@
                                             </TapGestureRecognizer>
                                         </StackLayout.GestureRecognizers>
 
-                                        <Frame BackgroundColor="{DynamicResource backgroundTransparent}" BorderColor="{DynamicResource textOnPrimary}" CornerRadius="15" HeightRequest="150" Padding="15">
+                                        <Frame BackgroundColor="{DynamicResource secondary}" CornerRadius="15" HeightRequest="150" Padding="15">
 
                                             <StackLayout>
-                                                <controls:CustomLabel Text="{Binding Source}" FontSize="Micro" TextColor="{DynamicResource textOnPrimary}"/>
-                                                <controls:CustomLabel Text="{Binding Title}" FontSize="Small" TextColor="{DynamicResource textOnPrimary}" FontAttributes="Bold" VerticalOptions="FillAndExpand"/>
+                                                <controls:CustomLabel Text="{Binding Source}" FontSize="Micro" TextColor="{DynamicResource textOnSecondary}"/>
+                                                <controls:CustomLabel Text="{Binding Title}" FontSize="Small" TextColor="{DynamicResource textOnSecondary}" FontAttributes="Bold" VerticalOptions="FillAndExpand"/>
                                                 <StackLayout Orientation="Horizontal">
-                                                    <controls:CustomLabel Text="{Binding PublishDateDisplay}" FontSize="Micro" TextColor="{DynamicResource textOnPrimary}" HorizontalOptions="StartAndExpand" VerticalOptions="EndAndExpand" />
+                                                    <controls:CustomLabel Text="{Binding PublishDateDisplay}" FontSize="Micro" TextColor="{DynamicResource textOnSecondary}" HorizontalOptions="StartAndExpand" VerticalOptions="EndAndExpand" />
                                                     <StackLayout Padding="15,15,0,0">
                                                         <StackLayout.GestureRecognizers>
                                                             <TapGestureRecognizer 
@@ -68,7 +68,7 @@
                                                     CommandParameter="{Binding .}">
                                                             </TapGestureRecognizer>
                                                         </StackLayout.GestureRecognizers>
-                                                        <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.ShareAlt }" IconColor="{DynamicResource textOnPrimary}" HorizontalOptions="CenterAndExpand" />
+                                                        <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.ShareAlt }" IconColor="{DynamicResource textOnSecondary}" HorizontalOptions="CenterAndExpand" />
                                                     </StackLayout>
                                                 </StackLayout>
                                             </StackLayout>
