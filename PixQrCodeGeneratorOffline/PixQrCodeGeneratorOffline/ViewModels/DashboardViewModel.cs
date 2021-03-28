@@ -6,6 +6,7 @@ using PixQrCodeGeneratorOffline.Services;
 using PixQrCodeGeneratorOffline.Views;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -206,6 +207,10 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                     PreferenceService.ShowInList = !PreferenceService.ShowInList;
                     ReloadShowInList();
                 }),
+                new Acr.UserDialogs.ActionSheetOption("Campartilhar todas as chaves", () =>
+                {
+                    ShareAllKeys();
+                }),
             };
 
             DialogService.ActionSheet(new Acr.UserDialogs.ActionSheetConfig
@@ -218,6 +223,55 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 })
             });
         });
+
+        public void ShareAllKeys()
+        {
+            var info = "";
+
+            foreach (var item in PixKeyList)
+            {
+                info += item.InstitutionAndKey + "\n";
+            }
+
+            if (string.IsNullOrWhiteSpace(info))
+                return;
+
+            var options = new List<Acr.UserDialogs.ActionSheetOption>()
+            {
+                new Acr.UserDialogs.ActionSheetOption("Compartilhar", async () =>
+                {
+                    await Share.RequestAsync(new ShareTextRequest
+                    {
+                        Text = info,
+                        Title = "Compartilhar Texto"
+                    });
+                }),
+                new Acr.UserDialogs.ActionSheetOption("Salvar em txt e compartilhar", async () =>
+                {
+                   var path = string.Empty;
+                    
+                    path = Path.Combine(FileSystem.CacheDirectory, "ChavesPix.txt");
+                    
+                    File.WriteAllText(path, info);
+
+                    await Share.RequestAsync(new ShareFileRequest
+                    {
+                        Title = "Compartilhar Arquivo",
+                        File = new ShareFile(path)
+                    });
+                }),
+            };
+
+            DialogService.ActionSheet(new Acr.UserDialogs.ActionSheetConfig
+            {
+                Title = "Selecione uma opção:",
+                Options = options,
+                Cancel = new Acr.UserDialogs.ActionSheetOption("Cancelar", () =>
+                {
+                    return;
+                })
+            });
+        }
 
         private void ReloadShowInList()
         {

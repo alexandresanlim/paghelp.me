@@ -70,6 +70,9 @@ namespace PixQrCodeGeneratorOffline.Models
         [LiteDB.BsonIgnore]
         public string InstitutionPresentation => !string.IsNullOrEmpty(FinancialInstitution?.Name) ? FinancialInstitution?.Name : "";
 
+        [LiteDB.BsonIgnore]
+        public string InstitutionAndKey => "Instituição: " + (!string.IsNullOrEmpty(FinancialInstitution?.Name) ? FinancialInstitution?.Name : "Não informado") + " | Chave: " + Key;
+
         //[LiteDB.BsonIgnore]
         //public string ValueUSString => !string.IsNullOrEmpty(Value) ? Value.Replace(",", ".") : "";
 
