@@ -236,41 +236,52 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             if (string.IsNullOrWhiteSpace(info))
                 return;
 
-            var options = new List<Acr.UserDialogs.ActionSheetOption>()
+            try
             {
-                new Acr.UserDialogs.ActionSheetOption("Compartilhar", async () =>
+                var options = new List<Acr.UserDialogs.ActionSheetOption>()
                 {
-                    await Share.RequestAsync(new ShareTextRequest
+                    new Acr.UserDialogs.ActionSheetOption("Compartilhar", async () =>
                     {
-                        Text = info,
-                        Title = "Compartilhar Texto"
-                    });
-                }),
-                new Acr.UserDialogs.ActionSheetOption("Salvar em txt e compartilhar", async () =>
+                        await Share.RequestAsync(new ShareTextRequest
+                        {
+                            Text = info,
+                            Title = "Compartilhar Texto"
+                        });
+                    }),
+                    new Acr.UserDialogs.ActionSheetOption("Salvar em txt e compartilhar", async () =>
+                    {
+                       var path = string.Empty;
+
+                        path = Path.Combine(FileSystem.CacheDirectory, "ChavesPix.txt");
+
+                        File.WriteAllText(path, info);
+
+                        await Share.RequestAsync(new ShareFileRequest
+                        {
+                            Title = "Compartilhar Arquivo",
+                            File = new ShareFile(path)
+                        });
+                    }),
+                };
+
+                DialogService.ActionSheet(new Acr.UserDialogs.ActionSheetConfig
                 {
-                   var path = string.Empty;
-                    
-                    path = Path.Combine(FileSystem.CacheDirectory, "ChavesPix.txt");
-                    
-                    File.WriteAllText(path, info);
-
-                    await Share.RequestAsync(new ShareFileRequest
+                    Title = "Selecione uma opção:",
+                    Options = options,
+                    Cancel = new Acr.UserDialogs.ActionSheetOption("Cancelar", () =>
                     {
-                        Title = "Compartilhar Arquivo",
-                        File = new ShareFile(path)
-                    });
-                }),
-            };
-
-            DialogService.ActionSheet(new Acr.UserDialogs.ActionSheetConfig
+                        return;
+                    })
+                });
+            }
+            catch (System.Exception e)
             {
-                Title = "Selecione uma opção:",
-                Options = options,
-                Cancel = new Acr.UserDialogs.ActionSheetOption("Cancelar", () =>
-                {
-                    return;
-                })
-            });
+                e.SendToLog();
+            }
+            finally
+            {
+                SetEvent("Compartilhou todas as chaves");
+            }
         }
 
         private void ReloadShowInList()
