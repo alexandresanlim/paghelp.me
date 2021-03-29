@@ -1,5 +1,6 @@
 ﻿using pix_payload_generator.net.Models.CobrancaModels;
 using pix_payload_generator.net.Models.PayloadModels;
+using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models.Base;
 using PixQrCodeGeneratorOffline.Style;
 using System;
@@ -16,8 +17,6 @@ namespace PixQrCodeGeneratorOffline.Models
         [LiteDB.BsonId]
         public int Id { get; set; }
 
-        //public string Key { get; set; }
-
         private string _key;
         public string Key
         {
@@ -32,6 +31,8 @@ namespace PixQrCodeGeneratorOffline.Models
         public MaterialColor Color { get; set; }
 
         public FinancialInstitution FinancialInstitution { get; set; }
+
+        //public PixKeyType Type { get; set; }
 
         [LiteDB.BsonIgnore]
         private string _value;
@@ -73,12 +74,6 @@ namespace PixQrCodeGeneratorOffline.Models
         [LiteDB.BsonIgnore]
         public string InstitutionAndKey => "Instituição: " + (!string.IsNullOrEmpty(FinancialInstitution?.Name) ? FinancialInstitution?.Name : "Não informado") + " | Chave: " + Key;
 
-        //[LiteDB.BsonIgnore]
-        //public string ValueUSString => !string.IsNullOrEmpty(Value) ? Value.Replace(",", ".") : "";
-
-        //[LiteDB.BsonIgnore]
-        //public decimal ValueUSCulture => !string.IsNullOrEmpty(Value) ? decimal.Parse(ValueUSString) : 0;
-
         [LiteDB.BsonIgnore]
         public string ValuePresentation => "R$ " + Value;
 
@@ -87,7 +82,7 @@ namespace PixQrCodeGeneratorOffline.Models
             if (string.IsNullOrEmpty(Key))
                 return;
 
-            var value = Value?.Replace(".", "")?.Replace(",",".") ?? "";
+            var value = Value?.Replace(".", "")?.Replace(",", ".") ?? "";
 
             Xamarin.Essentials.MainThread.BeginInvokeOnMainThread(() =>
             {
@@ -105,5 +100,29 @@ namespace PixQrCodeGeneratorOffline.Models
                 Payload = payload?.GenerateStringToQrCode();
             });
         }
+
+        public PixKeyType GetKeyType()
+        {
+            if (Key.IsEmail())
+                return PixKeyType.Email;
+
+            if (Key.IsCPF())
+                return PixKeyType.CPF;
+
+            if (Key.IsCNPJ())
+                return PixKeyType.CNPJ;
+
+            return PixKeyType.NotFound;
+        }
+    }
+
+    public enum PixKeyType
+    {
+        NotFound = -1,
+        Aleatoria,
+        Celular,
+        Email,
+        CPF,
+        CNPJ
     }
 }

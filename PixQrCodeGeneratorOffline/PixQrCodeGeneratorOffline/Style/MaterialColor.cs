@@ -126,7 +126,7 @@ namespace PixQrCodeGeneratorOffline.Style
             App.Current.Resources["primaryLight"] = colors.PrimaryLight;
             App.Current.Resources["primaryDark"] = colors.PrimaryDark;
 
-            App.Current.Resources["secondary"] = colors.Secondary;
+            App.Current.Resources["secondary"] = (colors.Secondary == Color.Transparent) ? Color.FromHex("#50000000") : colors.Secondary;
             App.Current.Resources["secondaryLight"] = colors.SecondaryLight;
             App.Current.Resources["secondaryDark"] = colors.SecondaryDark;
 
