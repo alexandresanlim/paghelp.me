@@ -27,6 +27,8 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         {
             try
             {
+                ResetProps();
+
                 var list = PixKeyDataBase.GetAll();
 
                 PixKeyList = list.ToObservableCollection();
@@ -46,6 +48,17 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
         });
 
+        private void ResetProps()
+        {
+            WelcomeText = 
+                "🔐 Seguro: Guarde suas chaves localmente de maneira criptografada e sem conexão com a internet. \n\n" +
+                "🔀 Prático: Compartilhe suas chaves rapidamente.\n\n" +
+                "🤙 Customizável: Exiba em formato de carrossel ou lista, com suporte a dark mode.\n\n" +
+                "🤑 Cobranças: Gere Qr Codes para pagamento.\n\n" +
+                "💾 Backup: Local e automático.\n\n" +
+                "Mais novidades vindo aí!";
+        }
+        
         public async Task LoadCurrentPixKey(PixKey pixKeySelected = null)
         {
             if (PixKeyList == null || !(PixKeyList.Count > 0))
@@ -348,6 +361,13 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         {
             set => SetProperty(ref _showInList, value);
             get => _showInList;
+        }
+
+        private string _welcomeText;
+        public string WelcomeText
+        {
+            set => SetProperty(ref _welcomeText, value);
+            get => _welcomeText;
         }
     }
 }
