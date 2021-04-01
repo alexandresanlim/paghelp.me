@@ -105,6 +105,32 @@ namespace PixQrCodeGeneratorOffline.Style
             return NiceCombinationList.PickRandom();
         }
 
+        public static MaterialColor GetLightColors()
+        {
+            return new Style.MaterialColor
+            {
+                Primary = Color.FromHex("#ffffff"),
+                PrimaryDark = Color.FromHex("#cccccc"),
+                PrimaryLight = Color.FromHex("#ffffff"),
+                Secondary = Color.FromHex("#34bcac"),
+                TextOnPrimary = Color.FromHex("000000"),
+                TextOnSecondary = Color.FromHex("000000")
+            };
+        }
+
+        public static MaterialColor GetDarkColors()
+        {
+            return new Style.MaterialColor
+            {
+                Primary = Color.FromHex("#212121"),
+                PrimaryDark = Color.FromHex("#000000"),
+                PrimaryLight = Color.FromHex("#484848"),
+                Secondary = Color.FromHex("#34bcac"),
+                TextOnPrimary = Color.FromHex("ffffff"),
+                TextOnSecondary = Color.FromHex("000000")
+            };
+        }
+
         public static void SetOnCurrentResourceThemeColor(MaterialColor colors)
         {
             App.Current.Resources["primary"] = colors.Primary;

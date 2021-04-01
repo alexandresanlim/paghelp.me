@@ -50,7 +50,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         private void ResetProps()
         {
-            WelcomeText = 
+            WelcomeText =
                 "🔐 Seguro: Guarde suas chaves localmente de maneira criptografada e sem conexão com a internet. \n\n" +
                 "🔀 Prático: Compartilhe suas chaves rapidamente.\n\n" +
                 "🤙 Customizável: Exiba em formato de carrossel ou lista, com suporte a dark mode.\n\n" +
@@ -58,7 +58,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 "💾 Backup: Local e automático.\n\n" +
                 "Mais novidades vindo aí!";
         }
-        
+
         public async Task LoadCurrentPixKey(PixKey pixKeySelected = null)
         {
             if (PixKeyList == null || !(PixKeyList.Count > 0))
@@ -302,19 +302,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             ShowInList = PreferenceService.ShowInList;
 
             if (ShowInList)
-            {
-                var darkColor = new Style.MaterialColor
-                {
-                    Primary = Color.FromHex("#212121"),
-                    PrimaryDark = Color.FromHex("#000000"),
-                    PrimaryLight = Color.FromHex("#484848"),
-                    Secondary = Color.FromHex("#34bcac"),
-                    TextOnPrimary = Color.FromHex("ffffff"),
-                    TextOnSecondary = Color.FromHex("000000")
-                };
-
-                App.LoadTheme(darkColor);
-            }
+                ReloadAppColorIfShowInListStyle();
 
             else
                 SetStatusFromCurrentPixColor();

@@ -8,6 +8,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.ViewModels
@@ -17,6 +18,22 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         public BaseViewModel()
         {
             ShowAds = true;
+
+            Application.Current.RequestedThemeChanged += Current_RequestedThemeChanged;
+        }
+
+        private void Current_RequestedThemeChanged(object sender, AppThemeChangedEventArgs e)
+        {
+            ReloadAppColorIfShowInListStyle();
+        }
+
+        public void ReloadAppColorIfShowInListStyle()
+        {
+            if (PreferenceService.ShowInList)
+            {
+                var colorSystem = (AppInfo.RequestedTheme == AppTheme.Light || AppInfo.RequestedTheme == AppTheme.Unspecified) ? Style.MaterialColor.GetLightColors() : Style.MaterialColor.GetDarkColors();
+                App.LoadTheme(colorSystem, PreferenceService.ShowInList);
+            }
         }
 
         public IUserDialogs DialogService => UserDialogs.Instance;
