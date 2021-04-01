@@ -35,31 +35,42 @@
 
                     <StackLayout IsVisible="{Binding ShowInList}" Padding="0,15,0,0" VerticalOptions="FillAndExpand">
                         <controls:CustomLabel Text="Chaves" FontSize="Title" FontAttributes="Bold" Margin="15,0,0,0" TextColor="{DynamicResource textOnPrimary}" />
-                        <controls:CustomCollectionView ItemsSource="{Binding PixKeyList}">
+                        <controls:CustomCollectionView ItemsSource="{Binding PixKeyList}" x:Name="collectionKeysList">
                             <controls:CustomCollectionView.ItemTemplate>
                                 <DataTemplate>
-                                    <StackLayout Padding="10,5">
-                                        <controls:CustomFrame Padding="15" BackgroundColor="{Binding Color.Primary}" CornerRadius="10">
+                                    <SwipeView>
+                                        <SwipeView.LeftItems>
+                                            <SwipeItems>
+                                                <SwipeItem Text="Editar"
+                                                           BackgroundColor="LightGray"
+                                                           Command="{Binding Source={x:Reference collectionKeysList}, Path=BindingContext.EditKeyCommand}" />
+                                            </SwipeItems>
+                                        </SwipeView.LeftItems>
+                                        <StackLayout Padding="10,5">
+                                            <controls:CustomFrame Padding="15" BackgroundColor="{Binding Color.Primary}" CornerRadius="10">
 
-                                            <controls:CustomFrame.GestureRecognizers>
-                                                <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:DashboardViewModel}}, Path=OpenOptionsKeyCommand}"
+                                                <controls:CustomFrame.GestureRecognizers>
+                                                    <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:DashboardViewModel}}, Path=OpenOptionsKeyCommand}"
                                                                       CommandParameter="{Binding .}"
                                                                       />
-                                            </controls:CustomFrame.GestureRecognizers>
+                                                </controls:CustomFrame.GestureRecognizers>
 
-                                            <Grid ColumnDefinitions="*,auto">
-                                                <StackLayout Grid.Column="0" Padding="0,5" Spacing="0">
+                                                <Grid ColumnDefinitions="*,auto">
+                                                    <StackLayout Grid.Column="0" Padding="0,5" Spacing="0">
 
-                                                    <controls:CustomLabel Text="{Binding InstitutionPresentation}" TextColor="{Binding Color.TextOnPrimary}" FontAttributes="Bold" FontSize="{StaticResource FontSizeLarge}" />
-                                                    <controls:CustomLabel Text="{Binding NamePresentation, StringFormat='Nome: {0}'}" TextColor="{Binding Color.TextOnPrimary}"  />
-                                                    <controls:CustomLabel Text="{Binding KeyPresentation}" TextColor="{Binding Color.TextOnPrimary}" MaxLines="1" LineBreakMode="MiddleTruncation" />
+                                                        <controls:CustomLabel Text="{Binding InstitutionPresentation}" TextColor="{Binding Color.TextOnPrimary}" FontAttributes="Bold" FontSize="{StaticResource FontSizeLarge}" />
+                                                        <controls:CustomLabel Text="{Binding NamePresentation, StringFormat='Nome: {0}'}" TextColor="{Binding Color.TextOnPrimary}"  />
+                                                        <controls:CustomLabel Text="{Binding KeyPresentation}" TextColor="{Binding Color.TextOnPrimary}" MaxLines="1" LineBreakMode="MiddleTruncation" />
 
-                                                </StackLayout>
+                                                    </StackLayout>
 
-                                                <controls:CustomIcon Grid.Column="1" Glyph="{x:Static icons:FontAwesomeSolid.ChevronRight }" IconColor="{Binding Color.TextOnPrimary}" IconSize="Title" HorizontalOptions="Center" Margin="0,0,5,0" />
-                                            </Grid>
-                                        </controls:CustomFrame>
-                                    </StackLayout>
+                                                    <controls:CustomIcon Grid.Column="1" Glyph="{x:Static icons:FontAwesomeSolid.ChevronRight }" IconColor="{Binding Color.TextOnPrimary}" IconSize="Title" HorizontalOptions="Center" Margin="0,0,5,0" />
+                                                </Grid>
+                                            </controls:CustomFrame>
+                                        </StackLayout>
+                                    </SwipeView>
+
+                                    
                                 </DataTemplate>
                             </controls:CustomCollectionView.ItemTemplate>
                         </controls:CustomCollectionView>
