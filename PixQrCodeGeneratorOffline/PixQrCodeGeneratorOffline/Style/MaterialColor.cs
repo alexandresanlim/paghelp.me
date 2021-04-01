@@ -65,9 +65,6 @@ namespace PixQrCodeGeneratorOffline.Style
                 PrimaryLight = Color.FromHex("#2a4653"),
                 Primary = Color.FromHex("#264653"),
                 TextOnPrimary = Color.FromHex("#ffffff"),
-                SecondaryDark = Color.FromHex("#3c0006"),
-                Secondary = Color.FromHex("#6b1230"),
-                TextOnSecondary = Color.FromHex("#FFFFFF")
             },
             new MaterialColor
             {
@@ -76,9 +73,6 @@ namespace PixQrCodeGeneratorOffline.Style
                 PrimaryLight = Color.FromHex("#459d8f"),
                 Primary = Color.FromHex("#2a9d8f"),
                 TextOnPrimary = Color.FromHex("#000000"),
-                SecondaryDark = Color.FromHex("#3c0006"),
-                Secondary = Color.FromHex("#6b1230"),
-                TextOnSecondary = Color.FromHex("#FFFFFF")
             },
             new MaterialColor
             {
@@ -87,9 +81,6 @@ namespace PixQrCodeGeneratorOffline.Style
                 PrimaryLight = Color.FromHex("#e9c46a"),
                 Primary = Color.FromHex("#e9c46a"),
                 TextOnPrimary = Color.FromHex("#000000"),
-                SecondaryDark = Color.FromHex("#3c0006"),
-                Secondary = Color.FromHex("#6b1230"),
-                TextOnSecondary = Color.FromHex("#FFFFFF")
             },
             new MaterialColor
             {
@@ -98,9 +89,6 @@ namespace PixQrCodeGeneratorOffline.Style
                 PrimaryLight = Color.FromHex("#f4a261"),
                 Primary = Color.FromHex("#f4a261"),
                 TextOnPrimary = Color.FromHex("#000000"),
-                SecondaryDark = Color.FromHex("#3c0006"),
-                Secondary = Color.FromHex("#6b1230"),
-                TextOnSecondary = Color.FromHex("#FFFFFF")
             },
             new MaterialColor
             {
@@ -109,9 +97,6 @@ namespace PixQrCodeGeneratorOffline.Style
                 PrimaryLight = Color.FromHex("#e76f51"),
                 Primary = Color.FromHex("#e76f51"),
                 TextOnPrimary = Color.FromHex("#000000"),
-                SecondaryDark = Color.FromHex("#3c0006"),
-                Secondary = Color.FromHex("#6b1230"),
-                TextOnSecondary = Color.FromHex("#FFFFFF")
             }
         };
 

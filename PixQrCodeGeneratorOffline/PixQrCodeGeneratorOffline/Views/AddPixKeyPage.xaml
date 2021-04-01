@@ -57,7 +57,7 @@
                         <StackLayout Spacing="0">
                             <controls:CustomLabel Text="Chave" FontSize="Medium" FontAttributes="Bold" Margin="10,0,0,0" TextColor="{DynamicResource textOnPrimary}" />
                             <Frame BackgroundColor="{DynamicResource secondary}" Padding="10,5" CornerRadius="10">
-                                <controls:CustomEntry Placeholder="Digite sua chave pix" FontSize="Medium" Text="{Binding CurrentPixKey.Key}" ReturnType="Next" TextColor="{DynamicResource textSecondary}" PlaceholderColor="LightGray" />
+                                <controls:CustomEntry Placeholder="Digite sua chave pix" FontSize="Medium" Text="{Binding CurrentPixKey.Key}" ReturnType="Next" TextColor="{DynamicResource textOnSecondary}" PlaceholderColor="LightGray" />
                             </Frame>
                         </StackLayout>
 
