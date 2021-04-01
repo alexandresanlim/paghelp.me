@@ -226,6 +226,14 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 }),
             };
 
+            if (PixKeyList.Count > 1)
+            {
+                options.Add(new Acr.UserDialogs.ActionSheetOption($"Excluir todas as {PixKeyList.Count} chaves", async () =>
+                {
+                    await RemoveAllKeys();
+                }));
+            }
+
             DialogService.ActionSheet(new Acr.UserDialogs.ActionSheetConfig
             {
                 Title = "Preferências",
@@ -306,6 +314,41 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
             else
                 SetStatusFromCurrentPixColor();
+        }
+
+        private async Task RemoveAllKeys()
+        {
+            var confirm = await DialogService.ConfirmAsync("Tem certeza que deseja excluir todas as " + PixKeyList.Count + " chaves?", "Confirmação", "Sim, tenho certeza", "Cancelar");
+
+            if (!confirm)
+                return;
+
+            try
+            {
+                var success = PixKeyDataBase.RemoveAll();
+
+                if (success)
+                {
+                    PixKeyList.Clear();
+
+                    await LoadCurrentPixKey(null);
+
+                    DialogService.Toast("Todas as chaves foram removidas com sucesso!");
+
+                    NavigateBack();
+                }
+
+                else
+                    DialogService.Toast("Algo de errado aconteceu, tente novamente mais tarde ou atualize o app");
+            }
+            catch (System.Exception e)
+            {
+                e.SendToLog();
+            }
+            finally
+            {
+                SetEvent("Removeu todas as chaves");
+            }
         }
 
         public void SetStatusFromCurrentPixColor()
