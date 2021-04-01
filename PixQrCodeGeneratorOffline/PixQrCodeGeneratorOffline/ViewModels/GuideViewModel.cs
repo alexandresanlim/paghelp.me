@@ -113,7 +113,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
             finally
             {
-                SetEvent("Viu uma resposta do Guia Pix: " + guide.Question);
+                SetEvent("Viu uma resposta do Guia Pix");
             }
         });
 

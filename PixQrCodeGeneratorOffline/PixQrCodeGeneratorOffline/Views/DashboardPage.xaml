@@ -5,7 +5,8 @@
              xmlns:local="clr-namespace:PixQrCodeGeneratorOffline.Converters"
              xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels" 
              x:Class="PixQrCodeGeneratorOffline.Views.DashboardPage"
-             xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon" xmlns:qr="clr-namespace:Xam.Forms;assembly=Xam.Forms.QRCode"
+             xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon" 
+             xmlns:qr="clr-namespace:Xam.Forms;assembly=Xam.Forms.QRCode"
              Shell.NavBarIsVisible="False"
              >
 
@@ -56,9 +57,9 @@
                                                 </controls:CustomFrame.GestureRecognizers>
 
                                                 <Grid ColumnDefinitions="*,auto">
-                                                    <StackLayout Grid.Column="0" Padding="0,5" Spacing="0">
+                                                    <StackLayout Grid.Column="0" Spacing="0">
 
-                                                        <controls:CustomLabel Text="{Binding InstitutionPresentation}" TextColor="{Binding Color.TextOnPrimary}" FontAttributes="Bold" FontSize="{StaticResource FontSizeLarge}" />
+                                                        <controls:CustomLabel Text="{Binding InstitutionPresentation}" TextColor="{Binding Color.TextOnPrimary}" FontAttributes="Bold" FontSize="{StaticResource FontSizeMedium}" />
                                                         <controls:CustomLabel Text="{Binding NamePresentation, StringFormat='Nome: {0}'}" TextColor="{Binding Color.TextOnPrimary}"  />
                                                         <controls:CustomLabel Text="{Binding KeyPresentation}" TextColor="{Binding Color.TextOnPrimary}" MaxLines="1" LineBreakMode="MiddleTruncation" />
 

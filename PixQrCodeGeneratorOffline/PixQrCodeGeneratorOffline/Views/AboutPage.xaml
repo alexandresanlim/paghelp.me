@@ -6,6 +6,7 @@
              xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels" 
              xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
              Title="{Binding Title}"
+    xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon"
              Shell.NavBarIsVisible="False"
              >
 
@@ -50,7 +51,7 @@
                     <StackLayout>
                         <Label Text="Versão" Style="{StaticResource titleStyle}" />
                         <Frame Style="{StaticResource styleFrameMenuAbout}">
-                            <controls:CustomLabel x:Name="lbVersion" Text="versão" TextColor="{DynamicResource textOnSecondary}" FontSize="Medium" FontAttributes="Bold" />
+                            <controls:CustomLabel x:Name="lbVersion" Text="versão" TextColor="{DynamicResource textOnSecondary}" FontSize="{StaticResource FontSizeMedium}" FontAttributes="Bold" />
                         </Frame>
                     </StackLayout>
 
@@ -62,8 +63,8 @@
                             </Frame.GestureRecognizers>
                             <StackLayout Orientation="Horizontal" Spacing="10">
                                 <controls:CustomIcon Glyph="{Binding CurrentStoreIcon}" IconType="brand" IconColor="{DynamicResource textOnSecondary}" />
-                                <controls:CustomLabel Text="{Binding CurrentStore}" VerticalOptions="CenterAndExpand" TextColor="{DynamicResource textOnSecondary}" FontAttributes="Bold" FontSize="Medium" />
-                                <controls:CustomIcon Glyph="&#xf054;" IconColor="{DynamicResource textOnSecondary}" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" IconSize="Medium" />
+                                <controls:CustomLabel Text="{Binding CurrentStore}" VerticalOptions="CenterAndExpand" TextColor="{DynamicResource textOnSecondary}" FontAttributes="Bold" FontSize="{StaticResource FontSizeMedium}" />
+                                <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.ChevronRight}" IconColor="{DynamicResource textOnSecondary}" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" Size="{StaticResource FontSizeMedium}" />
                             </StackLayout>
                         </Frame>
                     </StackLayout>
@@ -76,16 +77,32 @@
                             </Frame.GestureRecognizers>
 
                             <StackLayout Orientation="Horizontal" Spacing="10">
-                                <controls:CustomIcon IconType="brand" Glyph="&#xf16d;" IconColor="{DynamicResource textOnSecondary}" />
-                                <controls:CustomLabel Text="Siga-nos no Instagram" TextColor="{DynamicResource textOnSecondary}" FontAttributes="Bold" FontSize="Medium" />
-                                <controls:CustomIcon Glyph="&#xf054;" IconColor="{DynamicResource textOnSecondary}" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" IconSize="Medium" />
+                                <controls:CustomIcon IconType="brand" Glyph="{x:Static icons:FontAwesomeBrands.Instagram}" IconColor="{DynamicResource textOnSecondary}" />
+                                <controls:CustomLabel Text="Siga-nos no Instagram" TextColor="{DynamicResource textOnSecondary}" FontAttributes="Bold" FontSize="{StaticResource FontSizeMedium}" />
+                                <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.ChevronRight}" IconColor="{DynamicResource textOnSecondary}" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" Size="{StaticResource FontSizeMedium}" />
                             </StackLayout>
 
                         </Frame>
                     </StackLayout>
 
-                    
-                    
+                    <StackLayout>
+                        <Label Text="Alguma sugestão?" Style="{StaticResource titleStyle}" />
+                        <Frame Style="{StaticResource styleFrameMenuAbout}">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding SendAMessageCommand}"/>
+                            </Frame.GestureRecognizers>
+
+                            <StackLayout Orientation="Horizontal" Spacing="10">
+                                <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.PaperPlane}" IconColor="{DynamicResource textOnSecondary}" />
+                                <controls:CustomLabel Text="Envie uma mensagem" TextColor="{DynamicResource textOnSecondary}" FontAttributes="Bold" FontSize="{StaticResource FontSizeMedium}" MaxLines="1" LineBreakMode="TailTruncation" />
+                                <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.ChevronRight}" IconColor="{DynamicResource textOnSecondary}" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" Size="{StaticResource FontSizeMedium}" />
+                            </StackLayout>
+
+                        </Frame>
+                    </StackLayout>
+
+
+
                     <!--<StackLayout Spacing="0">
                     <controls:CustomLabel Text="Lançamento da versão" TextColor="{DynamicResource textOnPrimary}" FontSize="Large" FontAttributes="Bold" />
                     <controls:CustomFrame Padding="15" BackgroundColor="{DynamicResource backgroundTransparent}" CornerRadius="10">

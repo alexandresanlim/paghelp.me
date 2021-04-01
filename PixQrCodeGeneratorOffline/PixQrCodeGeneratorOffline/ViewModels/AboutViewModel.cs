@@ -117,6 +117,28 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
         });
 
+        public ICommand SendAMessageCommand => new Command(async () =>
+        {
+            try
+            {
+                var text = await DialogService.PromptAsync("Sugestão, elogio ou critica? Fale pra nós o que você está achando...", "Feedback", "Enviar", "Cancelar");
+
+                if (text.Ok && !string.IsNullOrEmpty(text?.Text))
+                {
+                    SetEvent("Sugestão: " + text.Text);
+                    DialogService.Toast("Mensagem enviada com sucesso! Obrigado.");
+                }
+            }
+            catch (Exception e)
+            {
+                e.SendToLog();
+            }
+            finally
+            {
+                SetEvent("Tocou em ver instagram");
+            }
+        });
+
         private string _currentStore;
         public string CurrentStore
         {
