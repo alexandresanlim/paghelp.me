@@ -4,6 +4,8 @@ using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models;
 using PixQrCodeGeneratorOffline.Services;
 using PixQrCodeGeneratorOffline.Views;
+using Plugin.Fingerprint;
+using Plugin.Fingerprint.Abstractions;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
@@ -27,7 +29,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         {
             try
             {
-                ResetProps();
+                await ResetProps();
 
                 var list = PixKeyDataBase.GetAll();
 
@@ -48,8 +50,34 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
         });
 
-        private void ResetProps()
+        public ICommand AuthenticationCommand => new Command(async () =>
         {
+            try
+            {
+                var request = new AuthenticationRequestConfiguration("Autenticação", "Atentique-se para continuar...");
+
+                var result = await CrossFingerprint.Current.AuthenticateAsync(request);
+
+                if (result.Authenticated)
+                {
+                    IsVisibleFingerPrint = false;
+                    DialogService.Toast("Autenticado com sucesso!");
+                }
+                else
+                {
+                    DialogService.Toast("Não autenticado");
+                }
+            }
+            catch (System.Exception e)
+            {
+                e.SendToLog();
+            }
+        });
+
+        private async Task ResetProps()
+        {
+            IsVisibleFingerPrint = PreferenceService.FingerPrint && await CrossFingerprint.Current.IsAvailableAsync();
+
             WelcomeText =
                 "🔐 Seguro: Guarde suas chaves localmente de maneira criptografada e sem conexão com a internet. \n\n" +
                 "🔀 Prático: Compartilhe suas chaves rapidamente.\n\n" +
@@ -234,6 +262,14 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 }));
             }
 
+            if (await CrossFingerprint.Current.IsAvailableAsync())
+            {
+                options.Add(new Acr.UserDialogs.ActionSheetOption((PreferenceService.FingerPrint ? "Remover" : "Adicionar") + " autenticação biométrica", async () =>
+                {
+                    await SetFingerPrint();
+                }));
+            }
+
             DialogService.ActionSheet(new Acr.UserDialogs.ActionSheetConfig
             {
                 Title = "Preferências",
@@ -351,6 +387,20 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
         }
 
+        private async Task SetFingerPrint()
+        {
+            var confirmMsg = "Tem certeza que deseja " + (PreferenceService.FingerPrint ? "remover" : "adicionar") + " autenticação biométrica? Na próxima vez que você entrar, " + (PreferenceService.FingerPrint ? "não será" : "será") + " necessário se autenticar para realizar quaisquer ação.";
+
+            var confirm = await DialogService.ConfirmAsync(confirmMsg, "Confirmação");
+
+            if (!confirm)
+                return;
+
+            PreferenceService.FingerPrint = !PreferenceService.FingerPrint;
+
+            DialogService.Toast("Preferência de entrada, salva com sucesso!");
+        }
+
         public void SetStatusFromCurrentPixColor()
         {
             if (ShowInList || CurrentPixKey?.Color == null)
@@ -399,6 +449,13 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         {
             set => SetProperty(ref _welcomeText, value);
             get => _welcomeText;
+        }
+
+        private bool _isVisibleFingerPrint;
+        public bool IsVisibleFingerPrint
+        {
+            set => SetProperty(ref _isVisibleFingerPrint, value);
+            get => _isVisibleFingerPrint;
         }
     }
 }

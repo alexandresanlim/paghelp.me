@@ -1,7 +1,10 @@
 ﻿using Acr.UserDialogs;
 using Microsoft.AppCenter.Analytics;
+using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models;
 using PixQrCodeGeneratorOffline.Services;
+using Plugin.Fingerprint;
+using Plugin.Fingerprint.Abstractions;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

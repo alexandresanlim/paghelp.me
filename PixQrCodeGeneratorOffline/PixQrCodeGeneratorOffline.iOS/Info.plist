@@ -38,5 +38,7 @@
     <string>ca-app-pub-1328926374682196~1325825239</string>
     <key>GADIsAdManagerApp</key>
     <true/>
+  <key>NSFaceIDUsageDescription</key>
+  <string>Precisamos da sua atutenticação facial para mostrar as chaves cadastradas</string>
 </dict>
 </plist>

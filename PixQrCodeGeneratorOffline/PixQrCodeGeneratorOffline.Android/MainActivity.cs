@@ -13,6 +13,7 @@ using Microsoft.AppCenter;
 using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
 using Android.Gms.Ads;
+using Plugin.Fingerprint;
 
 namespace PixQrCodeGeneratorOffline.Droid
 {
@@ -34,6 +35,7 @@ namespace PixQrCodeGeneratorOffline.Droid
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             Acr.UserDialogs.UserDialogs.Init(this);
             MobileAds.Initialize(ApplicationContext);
+            CrossFingerprint.SetCurrentActivityResolver(() => Xamarin.Essentials.Platform.CurrentActivity);
             //ZXing.Net.Mobile.Forms.Android.Platform.Init();
             //CrossCurrentActivity.Current.Init(this, savedInstanceState);
             //PlatformGestureEffect.Init();

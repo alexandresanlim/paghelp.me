@@ -30,5 +30,17 @@ namespace PixQrCodeGeneratorOffline.Services
                 Preferences.Set(nameof(ShowInList), value);
             }
         }
+
+        public static bool FingerPrint
+        {
+            get => Preferences.Get(nameof(FingerPrint), false);
+            set
+            {
+                if (FingerPrint == value)
+                    return;
+
+                Preferences.Set(nameof(FingerPrint), value);
+            }
+        }
     }
 }
