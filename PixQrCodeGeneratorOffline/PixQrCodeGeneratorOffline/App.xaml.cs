@@ -24,7 +24,7 @@ namespace PixQrCodeGeneratorOffline
             CultureInfo.CurrentCulture = CultureInfo.CreateSpecificCulture("pt-BR");
 
             var service = DependencyService.Get<IStatusBar>();
-            service?.SetStatusBarColor(ThemeColors.Primary);
+            service?.SetStatusBarColor(!PreferenceService.ShowInList ? ThemeColors.Primary : ThemeColors.PrimaryDark);
         }
 
         protected override void OnSleep()

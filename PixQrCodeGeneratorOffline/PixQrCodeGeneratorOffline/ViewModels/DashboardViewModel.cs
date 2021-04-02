@@ -263,7 +263,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         {
             var preferences = new List<Acr.UserDialogs.ActionSheetOption>();
 
-            if (PixKeyList != null || PixKeyList.Count > 0)
+            if (PixKeyList != null && PixKeyList.Count > 0)
             {
                 preferences.Add(new Acr.UserDialogs.ActionSheetOption(PreferenceService.ShowInList ? "Exibir em carrossel" : "Exibir em lista", () =>
                 {
@@ -301,7 +301,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         {
             if (PixKeyList == null || PixKeyList.Count.Equals(0))
             {
-                await DialogService.AlertAsync("Adicione pelo menos 1(uma) chave para ver mais opções.");
+                await DialogService.AlertAsync("Adicione pelo menos 1(uma) chave para ver opções.");
                 return;
             }
 
