@@ -79,12 +79,12 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             IsVisibleFingerPrint = PreferenceService.FingerPrint && await CrossFingerprint.Current.IsAvailableAsync();
 
             WelcomeText =
-                "🔐 Seguro: Guarde suas chaves localmente de maneira criptografada e sem conexão com a internet. \n\n" +
+                "🔐 Seguro: Guarde suas chaves localmente de maneira criptografada e sem conexão com a internet, com suporte a autenticação por digital se suportado. \n\n" +
                 "🔀 Prático: Compartilhe suas chaves rapidamente.\n\n" +
-                "🤙 Customizável: Exiba em formato de carrossel ou lista, com suporte a dark mode.\n\n" +
+                "🤙 Customizável: Exiba em formato de carrossel ou lista, com suporte a dark e light mode.\n\n" +
                 "🤑 Cobranças: Gere Qr Codes para pagamento.\n\n" +
                 "💾 Backup: Local e automático.\n\n" +
-                "Mais novidades vindo aí!";
+                "E mais!";
         }
 
         public async Task LoadCurrentPixKey(PixKey pixKeySelected = null)
@@ -235,44 +235,22 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public ICommand SettingsCommand => new Command(async () =>
         {
-            if (PixKeyList == null || PixKeyList.Count.Equals(0))
+            var options = new List<Acr.UserDialogs.ActionSheetOption>
             {
-                await DialogService.AlertAsync("Adicione pelo menos 1(uma) chave para customizar suas preferências.");
-                return;
-            }
+                new Acr.UserDialogs.ActionSheetOption("Preferências", async () =>
+                {
+                   await OptionsPreferenceOpen();
+                }),
 
-            var options = new List<Acr.UserDialogs.ActionSheetOption>()
-            {
-                new Acr.UserDialogs.ActionSheetOption(PreferenceService.ShowInList ? "Exibir em carrossel" : "Exibir em lista", () =>
+                new Acr.UserDialogs.ActionSheetOption("Chaves", async () =>
                 {
-                    PreferenceService.ShowInList = !PreferenceService.ShowInList;
-                    ReloadShowInList();
-                }),
-                new Acr.UserDialogs.ActionSheetOption("Campartilhar todas as chaves", () =>
-                {
-                    ShareAllKeys();
-                }),
+                    await OptionsKeysOpen();
+                })
             };
-
-            if (PixKeyList.Count > 1)
-            {
-                options.Add(new Acr.UserDialogs.ActionSheetOption($"Excluir todas as {PixKeyList.Count} chaves", async () =>
-                {
-                    await RemoveAllKeys();
-                }));
-            }
-
-            if (await CrossFingerprint.Current.IsAvailableAsync())
-            {
-                options.Add(new Acr.UserDialogs.ActionSheetOption((PreferenceService.FingerPrint ? "Remover" : "Adicionar") + " autenticação biométrica", async () =>
-                {
-                    await SetFingerPrint();
-                }));
-            }
 
             DialogService.ActionSheet(new Acr.UserDialogs.ActionSheetConfig
             {
-                Title = "Preferências",
+                Title = "Opções",
                 Options = options,
                 Cancel = new Acr.UserDialogs.ActionSheetOption("Cancelar", () =>
                 {
@@ -280,6 +258,79 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 })
             });
         });
+
+        private async Task OptionsPreferenceOpen()
+        {
+            var preferences = new List<Acr.UserDialogs.ActionSheetOption>();
+
+            if (PixKeyList != null || PixKeyList.Count > 0)
+            {
+                preferences.Add(new Acr.UserDialogs.ActionSheetOption(PreferenceService.ShowInList ? "Exibir em carrossel" : "Exibir em lista", () =>
+                {
+                    PreferenceService.ShowInList = !PreferenceService.ShowInList;
+                    ReloadShowInList();
+                }));
+            }
+
+            if (await CrossFingerprint.Current.IsAvailableAsync())
+            {
+                preferences.Add(new Acr.UserDialogs.ActionSheetOption((PreferenceService.FingerPrint ? "Remover" : "Adicionar") + " autenticação biométrica", async () =>
+                {
+                    await SetFingerPrint();
+                }));
+            }
+
+            if (preferences.Count.Equals(0))
+            {
+                DialogService.Toast("Nenhum preferência disponível para o seu dispositivo");
+                return;
+            }
+
+            DialogService.ActionSheet(new Acr.UserDialogs.ActionSheetConfig
+            {
+                Title = "Preferências",
+                Options = preferences,
+                Cancel = new Acr.UserDialogs.ActionSheetOption("Cancelar", () =>
+                {
+                    return;
+                })
+            });
+        }
+
+        private async Task OptionsKeysOpen()
+        {
+            if (PixKeyList == null || PixKeyList.Count.Equals(0))
+            {
+                await DialogService.AlertAsync("Adicione pelo menos 1(uma) chave para ver mais opções.");
+                return;
+            }
+
+            var keys = new List<Acr.UserDialogs.ActionSheetOption>
+            {
+                new Acr.UserDialogs.ActionSheetOption("Campartilhar todas as chaves", () =>
+                {
+                    ShareAllKeys();
+                })
+            };
+
+            if (PixKeyList.Count > 1)
+            {
+                keys.Add(new Acr.UserDialogs.ActionSheetOption($"Excluir todas as {PixKeyList.Count} chaves", async () =>
+                {
+                    await RemoveAllKeys();
+                }));
+            }
+
+            DialogService.ActionSheet(new Acr.UserDialogs.ActionSheetConfig
+            {
+                Title = "Chaves",
+                Options = keys,
+                Cancel = new Acr.UserDialogs.ActionSheetOption("Cancelar", () =>
+                {
+                    return;
+                })
+            });
+        }
 
         public void ShareAllKeys()
         {
@@ -389,11 +440,9 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         private async Task SetFingerPrint()
         {
-            var confirmMsg = "Tem certeza que deseja " + (PreferenceService.FingerPrint ? "remover" : "adicionar") + " autenticação biométrica? Na próxima vez que você entrar, " + (PreferenceService.FingerPrint ? "não será" : "será") + " necessário se autenticar para realizar quaisquer ação.";
+            var confirmMsg = "Tem certeza que deseja " + (PreferenceService.FingerPrint ? "remover" : "adicionar") + " autenticação biométrica? Na próxima vez que você entrar, " + (PreferenceService.FingerPrint ? "não será" : "será") + " necessário se autenticar para realizar quaisquer ações.";
 
-            var confirm = await DialogService.ConfirmAsync(confirmMsg, "Confirmação");
-
-            if (!confirm)
+            if (!await DialogService.ConfirmAsync(confirmMsg, "Confirmação", "Confirmar", "Cancelar"))
                 return;
 
             PreferenceService.FingerPrint = !PreferenceService.FingerPrint;

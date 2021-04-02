@@ -203,12 +203,14 @@
                             </StackLayout.GestureRecognizers>
 
                             <controls:CustomFrame BackgroundColor="{DynamicResource secondary}" CornerRadius="10" Padding="10">
-                                <StackLayout Spacing="0">
-                                    <controls:CustomLabel Text="👋" FontSize="50" HorizontalOptions="Center" />
-                                    <controls:CustomLabel Text="Bem vindo ao PIX APP!" FontSize="Title" HorizontalOptions="Center" FontAttributes="Bold" TextColor="{DynamicResource textOnSecondary}" />
-                                    <controls:CustomLabel Text="{Binding WelcomeText}" FontSize="{StaticResource FontSizeSmall}" TextColor="{DynamicResource textOnSecondary}" Margin="0,15" />
-                                    <controls:CustomLabel Text="Comece adicionando sua primeira chave." FontSize="{StaticResource FontSizeSmall}" FontAttributes="Bold" TextColor="{DynamicResource textOnSecondary}" HorizontalOptions="Center" />
-                                </StackLayout>
+                                <ScrollView>
+                                    <StackLayout Spacing="0">
+                                        <controls:CustomLabel Text="👋" FontSize="50" HorizontalOptions="Center" />
+                                        <controls:CustomLabel Text="Bem vindo ao PIX APP!" FontSize="Title" HorizontalOptions="Center" FontAttributes="Bold" TextColor="{DynamicResource textOnSecondary}" />
+                                        <controls:CustomLabel Text="{Binding WelcomeText}" FontSize="{StaticResource FontSizeSmall}" TextColor="{DynamicResource textOnSecondary}" Margin="0,15" />
+                                        <controls:CustomLabel Text="Comece adicionando sua primeira chave." FontSize="{StaticResource FontSizeSmall}" FontAttributes="Bold" TextColor="{DynamicResource textOnSecondary}" HorizontalOptions="Center" />
+                                    </StackLayout>
+                                </ScrollView>
                             </controls:CustomFrame>
                             <controls:CustomFrame CornerRadius="0,0,15,15" HorizontalOptions="End" Padding="10,0,10,10" BackgroundColor="{DynamicResource secondary}" Margin="0,0,70,0">
                                 <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.ChevronDown }" IconSize="Title" IconColor="{DynamicResource textOnSecondary}" />
