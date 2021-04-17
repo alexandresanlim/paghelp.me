@@ -47,6 +47,54 @@ namespace PixQrCodeGeneratorOffline.Models
                 },
                 new FinancialInstitution
                 {
+                    Name = "Banco BMG",
+                    Style = new MaterialColor()
+                    {
+                        Name = "bancobmg",
+                        Primary = Color.FromHex("#fa7405"),
+                        PrimaryDark = Color.FromHex("#c04400"),
+                        PrimaryLight = Color.FromHex("#ffa543"),
+                        TextOnPrimary = Color.FromHex("#000000")
+                    }
+                },
+                new FinancialInstitution
+                {
+                    Name = "Banco BTG Pactual",
+                    Style = new MaterialColor()
+                    {
+                        Name = "bancobtgpactual",
+                        Primary = Color.FromHex("#2596be"),
+                        PrimaryDark = Color.FromHex("#00688e"),
+                        PrimaryLight = Color.FromHex("#66c7f1"),
+                        TextOnPrimary = Color.FromHex("#000000")
+                    }
+                },
+                new FinancialInstitution
+                {
+                    Name = "Banco Original",
+                    Style = new MaterialColor()
+                    {
+                        Name = "bancooriginal",
+                        Primary = Color.FromHex("#3ba35c"),
+                        PrimaryDark = Color.FromHex("#007331"),
+                        PrimaryLight = Color.FromHex("#6fd58a"),
+                        TextOnPrimary = Color.FromHex("#000000")
+                    }
+                },
+                 new FinancialInstitution
+                {
+                    Name = "Banco Pan",
+                    Style = new MaterialColor()
+                    {
+                        Name = "bancopan",
+                        Primary = Color.FromHex("#04acfb"),
+                        PrimaryDark = Color.FromHex("#007dc8"),
+                        PrimaryLight = Color.FromHex("#69deff"),
+                        TextOnPrimary = Color.FromHex("#000000")
+                    }
+                },
+                new FinancialInstitution
+                {
                     Name = "Bradesco",
                     Style = new MaterialColor()
                     {
@@ -167,6 +215,30 @@ namespace PixQrCodeGeneratorOffline.Models
                         TextOnPrimary = Color.FromHex("#ffffff")
                     }
                 },
+                 new FinancialInstitution
+                {
+                    Name = "Next",
+                    Style = new MaterialColor()
+                    {
+                        Name = "next",
+                        Primary = Color.FromHex("#24fb64"),
+                        PrimaryDark = Color.FromHex("#00c632"),
+                        PrimaryLight = Color.FromHex("#75ff95"),
+                        TextOnPrimary = Color.FromHex("#000000")
+                    }
+                },
+                 new FinancialInstitution
+                {
+                    Name = "PagBank (PagSeguro)",
+                    Style = new MaterialColor()
+                    {
+                        Name = "pagbank",
+                        Primary = Color.FromHex("#5cbb4c"),
+                        PrimaryDark = Color.FromHex("#238a1c"),
+                        PrimaryLight = Color.FromHex("#8fee7b"),
+                        TextOnPrimary = Color.FromHex("#000000")
+                    }
+                },
                 new FinancialInstitution
                 {
                     Name = "PicPay",
@@ -179,6 +251,18 @@ namespace PixQrCodeGeneratorOffline.Models
                         TextOnPrimary = Color.FromHex("#000000")
                     }
                 },
+                 new FinancialInstitution
+                {
+                    Name = "Safra",
+                    Style = new MaterialColor()
+                    {
+                        Name = "safra",
+                        Primary = Color.FromHex("#111925"),
+                        PrimaryDark = Color.FromHex("#000000"),
+                        PrimaryLight = Color.FromHex("#373f4d"),
+                        TextOnPrimary = Color.FromHex("#ffffff")
+                    }
+                },
                 new FinancialInstitution
                 {
                     Name = "Santander",
@@ -189,6 +273,42 @@ namespace PixQrCodeGeneratorOffline.Models
                         PrimaryDark = Color.FromHex("#b00000"),
                         PrimaryLight = Color.FromHex("#ff5736"),
                         TextOnPrimary = Color.FromHex("#ffffff")
+                    }
+                },
+                new FinancialInstitution
+                {
+                    Name = "Sicredi",
+                    Style = new MaterialColor()
+                    {
+                        Name = "sicredi",
+                        Primary = Color.FromHex("#66c434"),
+                        PrimaryDark = Color.FromHex("#2e9300"),
+                        PrimaryLight = Color.FromHex("#9af866"),
+                        TextOnPrimary = Color.FromHex("#000000")
+                    }
+                },
+                new FinancialInstitution
+                {
+                    Name = "Superdigital",
+                    Style = new MaterialColor()
+                    {
+                        Name = "superdigital",
+                        Primary = Color.FromHex("#6e0aa0"),
+                        PrimaryDark = Color.FromHex("#3b0070"),
+                        PrimaryLight = Color.FromHex("#a145d2"),
+                        TextOnPrimary = Color.FromHex("#ffffff")
+                    }
+                },
+                new FinancialInstitution
+                {
+                    Name = "Iti Itaú",
+                    Style = new MaterialColor()
+                    {
+                        Name = "itiitau",
+                        Primary = Color.FromHex("#fb5493"),
+                        PrimaryDark = Color.FromHex("#c41066"),
+                        PrimaryLight = Color.FromHex("#ff89c3"),
+                        TextOnPrimary = Color.FromHex("#000000")
                     }
                 },
             };
