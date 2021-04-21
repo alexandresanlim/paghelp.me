@@ -78,9 +78,9 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         #endregion
 
-        public void SetEvent(string text)
+        public void SetEvent(string text, IDictionary<string, string> properties = null)
         {
-            Analytics.TrackEvent(text);
+            Analytics.TrackEvent(text, properties);
         }
 
         public async Task DisplayAlert(string title, string message, string cancel)

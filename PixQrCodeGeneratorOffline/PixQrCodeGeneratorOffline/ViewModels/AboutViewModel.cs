@@ -119,23 +119,23 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public ICommand SendAMessageCommand => new Command(async () =>
         {
-            try
-            {
-                var text = await DialogService.PromptAsync("Sugestão, elogio ou critica? Fale pra nós o que você está achando...", "Feedback", "Enviar", "Cancelar");
+            var text = await DialogService.PromptAsync("Sugestão, elogio ou crítica? Fale pra nós o que você está achando...", "Feedback", "Enviar", "Cancelar");
 
-                if (text.Ok && !string.IsNullOrEmpty(text?.Text))
+            if (text.Ok && !string.IsNullOrWhiteSpace(text?.Text))
+            {
+                var dic = new Dictionary<string, string>
                 {
-                    SetEvent("Sugestão: " + text.Text);
-                    DialogService.Toast("Mensagem enviada com sucesso! Obrigado.");
-                }
-            }
-            catch (Exception e)
-            {
-                e.SendToLog();
-            }
-            finally
-            {
-                SetEvent("Tocou em ver instagram");
+                    { "Texto: ", text.Text }
+                };
+
+                var contact = await DialogService.PromptAsync("Queremos te responder :)", "Qual o seu e-mail?", "Enviar", "Não quero informar");
+
+                if (contact.Ok && string.IsNullOrWhiteSpace(contact?.Text))
+                    dic.Add("Contato", contact.Text);
+
+                SetEvent("Sugestão: ", dic);
+
+                DialogService.Toast("Mensagem enviada com sucesso! Obrigado.");
             }
         });
 
