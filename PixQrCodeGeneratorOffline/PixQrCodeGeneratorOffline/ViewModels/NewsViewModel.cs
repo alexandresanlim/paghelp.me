@@ -74,7 +74,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public ICommand ItemTappedCommand => new Command<Feed>(async (item) =>
         {
-            if(string.IsNullOrEmpty(item?.Link?.AbsoluteUri))
+            if (string.IsNullOrEmpty(item?.Link?.AbsoluteUri))
             {
                 DialogService.Toast("Link para a notícia não encontrado.");
                 return;
@@ -94,7 +94,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
             finally
             {
-                SetEvent("Entrou em uma notícia");
+                SetEvent("Entrou em uma notícia", new Dictionary<string, string> { { "Título: ", item?.Title } });
 
                 SetIsLoading(false);
             }
