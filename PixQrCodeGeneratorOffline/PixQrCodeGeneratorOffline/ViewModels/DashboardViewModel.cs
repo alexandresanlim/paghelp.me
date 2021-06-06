@@ -338,7 +338,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
             foreach (var item in PixKeyList)
             {
-                info += item.InstitutionAndKey + "\n";
+                info += item.Viewer.InstitutionAndKey + "\n";
             }
 
             if (string.IsNullOrWhiteSpace(info))

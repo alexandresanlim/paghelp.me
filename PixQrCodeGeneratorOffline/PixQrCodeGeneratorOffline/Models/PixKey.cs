@@ -2,6 +2,8 @@
 using pix_payload_generator.net.Models.PayloadModels;
 using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models.Base;
+using PixQrCodeGeneratorOffline.Models.Viewer;
+using PixQrCodeGeneratorOffline.Models.Viewer.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Style;
 using System;
 using System.Collections.Generic;
@@ -14,6 +16,13 @@ namespace PixQrCodeGeneratorOffline.Models
 {
     public class PixKey : NotifyObjectBase
     {
+        private readonly IPixKeyViewerService _pixKeyViewerService;
+
+        public PixKey()
+        {
+            _pixKeyViewerService = DependencyService.Get<IPixKeyViewerService>();
+        }
+
         [LiteDB.BsonId]
         public int Id { get; set; }
 
@@ -60,19 +69,7 @@ namespace PixQrCodeGeneratorOffline.Models
         }
 
         [LiteDB.BsonIgnore]
-        public string NameAndCity => (!string.IsNullOrEmpty(Name) && !string.IsNullOrEmpty(City)) ? Name + ", " + City : "";
-
-        [LiteDB.BsonIgnore]
-        public string NamePresentation => !string.IsNullOrEmpty(Name) ? Name : "";
-
-        [LiteDB.BsonIgnore]
-        public string KeyPresentation => !string.IsNullOrEmpty(Key) ? "Chave: " + Key : "";
-
-        [LiteDB.BsonIgnore]
-        public string InstitutionPresentation => !string.IsNullOrEmpty(FinancialInstitution?.Name) ? FinancialInstitution?.Name : "";
-
-        [LiteDB.BsonIgnore]
-        public string InstitutionAndKey => "Instituição: " + (!string.IsNullOrEmpty(FinancialInstitution?.Name) ? FinancialInstitution?.Name : "Não informado") + " | Chave: " + Key;
+        public PixKeyViewer Viewer => _pixKeyViewerService.Create(this);
 
         [LiteDB.BsonIgnore]
         public string ValuePresentation => "R$ " + Value;

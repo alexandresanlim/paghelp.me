@@ -1,6 +1,7 @@
 ﻿using PixQrCodeGeneratorOffline.Models.Services;
 using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Models.Services.Viewer;
+using PixQrCodeGeneratorOffline.Models.Viewer.Services;
 using PixQrCodeGeneratorOffline.Models.Viewer.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Services;
 using PixQrCodeGeneratorOffline.Style.Interfaces;
@@ -32,6 +33,8 @@ namespace PixQrCodeGeneratorOffline
         private void RegisterDependencyService()
         {
             DependencyService.Register<IFeedViewerService, FeedViewerService>();
+            DependencyService.Register<IPixKeyViewerService, PixKeyViewerService>();
+
             DependencyService.Register<IFinancialInstitutionService, FinancialInstitutionService>();
             DependencyService.Register<IGuideService, GuideService>();
         }
