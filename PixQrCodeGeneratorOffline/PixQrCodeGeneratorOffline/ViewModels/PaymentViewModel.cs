@@ -11,13 +11,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 {
     public class PaymentViewModel : BaseViewModel
     {
-        //private readonly IPixPayloadService _pixPayloadService;
-
-        //public PaymentViewModel()
-        //{
-        //    _pixPayloadService = DependencyService.Get<IPixPayloadService>();
-        //}
-
         public Command<PixPayload> LoadDataCommand => new Command<PixPayload>((pixPaylod) =>
         {
             CurrentPixPaylod = pixPaylod;

@@ -53,13 +53,13 @@
 
                         </StackLayout>
 
-                        <controls:CustomLabel Text="{Binding CurrentPixKey.ValuePresentation}" FontSize="35" TextColor="{DynamicResource textOnPrimary}" HorizontalOptions="Center" FontAttributes="Bold" />
+                        <controls:CustomLabel Text="{Binding CurrentPixPaylod.PixCob.ValuePresentation}" FontSize="35" TextColor="{DynamicResource textOnPrimary}" HorizontalOptions="Center" FontAttributes="Bold" />
 
-                        <controls:CustomLabel Text="{Binding CurrentPixKey.Viewer.NamePresentation, StringFormat='Para: {0}'}" TextColor="{DynamicResource textOnPrimary}" FontSize="Medium"  HorizontalOptions="Center" FontAttributes="Bold" />
+                        <controls:CustomLabel Text="{Binding CurrentPixPaylod.PixKey.Viewer.NamePresentation, StringFormat='Para: {0}'}" TextColor="{DynamicResource textOnPrimary}" FontSize="Medium"  HorizontalOptions="Center" FontAttributes="Bold" />
 
-                        <controls:CustomLabel Text="{Binding CurrentPixKey.Viewer.InstitutionPresentation, StringFormat='Instituição: {0}'}" TextColor="{DynamicResource textOnPrimary}" FontSize="Small"  HorizontalOptions="Center" />
+                        <controls:CustomLabel Text="{Binding CurrentPixPaylod.PixKey.Viewer.InstitutionPresentation, StringFormat='Instituição: {0}'}" TextColor="{DynamicResource textOnPrimary}" FontSize="Small"  HorizontalOptions="Center" />
 
-                        <controls:CustomLabel Text="{Binding CurrentPixKey.Viewer.KeyPresentation}" TextColor="{DynamicResource textOnPrimary}" FontSize="Micro"  HorizontalOptions="Center" />
+                        <controls:CustomLabel Text="{Binding CurrentPixPaylod.PixKey.Viewer.KeyPresentation}" TextColor="{DynamicResource textOnPrimary}" FontSize="Micro"  HorizontalOptions="Center" />
                     </StackLayout>
                 </ScrollView>
 

@@ -25,7 +25,10 @@ namespace PixQrCodeGeneratorOffline.Models.Services
             if (!_pixKeyService.IsValid(pixKey))
                 return new PixPayload();
 
-            var pixPaylod = new PixPayload();
+            var pixPaylod = new PixPayload
+            {
+                PixKey = pixKey
+            };
 
             Xamarin.Essentials.MainThread.BeginInvokeOnMainThread(() =>
             {
@@ -44,7 +47,11 @@ namespace PixQrCodeGeneratorOffline.Models.Services
             if (!_pixKeyService.IsValid(pixKey) || !_pixKCobService.IsValid(pixCob))
                 return new PixPayload();
 
-            var pixPaylod = new PixPayload();
+            var pixPaylod = new PixPayload
+            {
+                PixKey = pixKey,
+                PixCob = pixCob
+            };
 
             Xamarin.Essentials.MainThread.BeginInvokeOnMainThread(() =>
             {

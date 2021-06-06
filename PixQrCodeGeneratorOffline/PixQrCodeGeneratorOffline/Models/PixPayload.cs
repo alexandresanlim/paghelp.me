@@ -9,6 +9,10 @@ namespace PixQrCodeGeneratorOffline.Models
     {
         public pix_payload_generator.net.Models.PayloadModels.Payload Payload { get; set; }
 
+        public PixKey PixKey { get; set; }
+
+        public PixCob PixCob { get; set; }
+
         [LiteDB.BsonIgnore]
         private string _qrCode;
         public string QrCode
