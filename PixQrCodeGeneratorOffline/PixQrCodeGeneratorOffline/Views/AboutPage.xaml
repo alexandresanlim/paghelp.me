@@ -69,7 +69,7 @@
                         </Frame>
                     </StackLayout>
 
-                    <StackLayout>
+                    <!--<StackLayout>
                         <Label Text="Redes Sociais" Style="{StaticResource titleStyle}" />
                         <Frame Style="{StaticResource styleFrameMenuAbout}">
                             <Frame.GestureRecognizers>
@@ -83,7 +83,7 @@
                             </StackLayout>
 
                         </Frame>
-                    </StackLayout>
+                    </StackLayout>-->
 
                     <StackLayout>
                         <Label Text="Alguma sugestão?" Style="{StaticResource titleStyle}" />
