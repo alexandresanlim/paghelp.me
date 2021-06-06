@@ -118,7 +118,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 //if (success)
                 //{
 
-                CurrentPixKey.RaiseCob();
+                //CurrentPixKey.RaiseCob();
 
                 await DashboardViewModel.LoadCurrentPixKey(CurrentPixKey);
 

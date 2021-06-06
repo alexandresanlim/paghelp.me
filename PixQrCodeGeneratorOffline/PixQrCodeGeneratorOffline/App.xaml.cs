@@ -37,6 +37,9 @@ namespace PixQrCodeGeneratorOffline
 
             DependencyService.Register<IFinancialInstitutionService, FinancialInstitutionService>();
             DependencyService.Register<IGuideService, GuideService>();
+            DependencyService.Register<IPixKeyService, PixKeyService>();
+            DependencyService.Register<IPixCobService, PixCobService>();
+            DependencyService.Register<IPixPayloadService, PixPayloadService>();
         }
 
         private void RegisterDependencyRepository()

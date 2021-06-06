@@ -101,7 +101,7 @@
                                                 </StackLayout>
 
                                                 <qr:QRCode
-                                            Content="{Binding Payload}"
+                                            Content="{Binding Payload.QrCode}"
                                             BackgroundColor="White"
                                             Color="#000000" 
                                             Level="H" 

@@ -1,5 +1,6 @@
 ﻿using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models;
+using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Views;
 using System;
 using System.Collections.Generic;
@@ -14,12 +15,21 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 {
     public class CreateBillingViewModel : BaseViewModel
     {
+
+        private readonly IPixPayloadService _pixPayloadService;
+
+        public CreateBillingViewModel()
+        {
+            _pixPayloadService = DependencyService.Get<IPixPayloadService>();
+        }
+
         public string AddDescriptionValue => "Adicionar Descrição";
 
         private void ResetCurrentValue()
         {
             ValueInput = "";
             CurrentDescription = AddDescriptionValue;
+            CurrentCob = new PixCob();
             SetValueCurrencyFormat();
         }
 
@@ -82,7 +92,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
             var finalString = System.Convert.ToDecimal(d, new System.Globalization.CultureInfo("en-US")).ToString("N");
 
-            CurrentPixKey.Value = finalString;
+            CurrentCob.Value = finalString;
         }
 
         public string ValueInput { get; set; }
@@ -95,7 +105,12 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 await Task.Delay(500);
 
-                await NavigateAsync(new PaymentPage(CurrentPixKey));
+                var pixPaylod = _pixPayloadService.Create(CurrentPixKey, CurrentCob);
+
+                if (!_pixPayloadService.IsValid(pixPaylod))
+                    return;
+
+                await NavigateAsync(new PaymentPage(pixPaylod));
             }
             catch (Exception e)
             {
@@ -129,12 +144,12 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                         if (string.IsNullOrEmpty(text))
                         {
                             CurrentDescription = AddDescriptionValue;
-                            CurrentPixKey.Description = "";
+                            CurrentCob.Description = "";
                             return;
                         }
 
                         CurrentDescription = text;
-                        CurrentPixKey.Description = text;
+                        CurrentCob.Description = text;
                     })
                 };
 
@@ -151,6 +166,13 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         {
             set => SetProperty(ref _currentPixKey, value);
             get => _currentPixKey;
+        }
+
+        private PixCob _currentCob;
+        public PixCob CurrentCob
+        {
+            set => SetProperty(ref _currentCob, value);
+            get => _currentCob;
         }
 
         private string _currentDescription;

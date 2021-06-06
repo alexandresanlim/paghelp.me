@@ -35,7 +35,7 @@
                             <controls:CustomLabel Text="O pagador precisa abir o app que vai fazer a transferência PIX e escanear este QR Code ou colar o código copia e cola." FontSize="Small" TextColor="{DynamicResource textOnPrimary}" />
 
                             <qr:QRCode
-                            Content="{Binding CurrentPixKey.Payload}"
+                            Content="{Binding CurrentPixPaylod.QrCode}"
                             BackgroundColor="White"
                             Color="#000000" 
                             Level="H" 
@@ -72,7 +72,7 @@
 
                     <Frame BackgroundColor="{DynamicResource secondary}" CornerRadius="10" Padding="15">
                         <Grid ColumnDefinitions="*, auto">
-                            <controls:CustomLabel Grid.Column="0" Text="{Binding CurrentPixKey.Payload}" FontSize="Micro" MaxLines="2" LineBreakMode="TailTruncation" TextColor="{DynamicResource textOnSecondary}" />
+                            <controls:CustomLabel Grid.Column="0" Text="{Binding CurrentPixPaylod.QrCode}" FontSize="Micro" MaxLines="2" LineBreakMode="TailTruncation" TextColor="{DynamicResource textOnSecondary}" />
                             <controls:CustomIcon Grid.Column="1" Glyph="{x:Static icons:FontAwesomeSolid.ShareSquare }" IconSize="Medium" IconColor="{DynamicResource textOnSecondary}" VerticalOptions="CenterAndExpand" />
                         </Grid>
                     </Frame>

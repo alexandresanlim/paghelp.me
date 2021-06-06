@@ -1,5 +1,6 @@
 ﻿using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models;
+using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,10 +11,16 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 {
     public class PaymentViewModel : BaseViewModel
     {
-        public Command<PixKey> LoadDataCommand => new Command<PixKey>((pixKey) =>
+        //private readonly IPixPayloadService _pixPayloadService;
+
+        //public PaymentViewModel()
+        //{
+        //    _pixPayloadService = DependencyService.Get<IPixPayloadService>();
+        //}
+
+        public Command<PixPayload> LoadDataCommand => new Command<PixPayload>((pixPaylod) =>
         {
-            CurrentPixKey = pixKey;
-            CurrentPixKey.RaiseCob();
+            CurrentPixPaylod = pixPaylod;
         });
 
         public ICommand SharePayloadCommand => new Command(async () =>
@@ -24,11 +31,11 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 {
                     new Acr.UserDialogs.ActionSheetOption("Copiar Código", async () =>
                     {
-                       await CopyText(CurrentPixKey.Payload, "Código copiado com sucesso!");
+                       await CopyText(CurrentPixPaylod?.QrCode, "Código copiado com sucesso!");
                     }),
                     new Acr.UserDialogs.ActionSheetOption("Compartilhar Código", async () =>
                     {
-                        await ShareText(CurrentPixKey?.Payload);
+                        await ShareText(CurrentPixPaylod?.QrCode);
                     }),
                 };
 
@@ -53,11 +60,11 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
         });
 
-        private PixKey _currentPixKey;
-        public PixKey CurrentPixKey
+        private PixPayload _currentPixPaylod;
+        public PixPayload CurrentPixPaylod
         {
-            set => SetProperty(ref _currentPixKey, value);
-            get => _currentPixKey;
+            set => SetProperty(ref _currentPixPaylod, value);
+            get => _currentPixPaylod;
         }
     }
 }

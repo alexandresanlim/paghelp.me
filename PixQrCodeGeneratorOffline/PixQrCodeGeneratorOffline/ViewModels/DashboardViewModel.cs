@@ -35,10 +35,10 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 PixKeyList = list.ToObservableCollection();
 
-                foreach (var item in PixKeyList)
-                {
-                    item.RaiseCob();
-                }
+                //foreach (var item in PixKeyList)
+                //{
+                //    item.RaiseCob();
+                //}
 
                 await LoadCurrentPixKey();
 

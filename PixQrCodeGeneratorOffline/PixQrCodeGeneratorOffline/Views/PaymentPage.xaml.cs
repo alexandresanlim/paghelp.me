@@ -1,4 +1,5 @@
-﻿using PixQrCodeGeneratorOffline.ViewModels;
+﻿using PixQrCodeGeneratorOffline.Models;
+using PixQrCodeGeneratorOffline.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,28 +16,28 @@ namespace PixQrCodeGeneratorOffline.Views
     {
         PaymentViewModel _paymentViewModel;
 
-        Models.PixKey _pixKey;
+        PixPayload _pixPaylod;
 
-        public PaymentPage(Models.PixKey pixKey)
+        public PaymentPage(PixPayload paylod)
         {
             InitializeComponent();
 
-            _pixKey = pixKey;
+            _pixPaylod = paylod;
 
             BindingContext = _paymentViewModel = new PaymentViewModel();
         }
 
         protected override void OnAppearing()
         {
-            _paymentViewModel.LoadDataCommand.Execute(_pixKey);
+            _paymentViewModel.LoadDataCommand.Execute(_pixPaylod);
         }
 
-        protected override void OnDisappearing()
-        {
-            _paymentViewModel.CurrentPixKey.Value = "";
-            _paymentViewModel.CurrentPixKey.RaiseCob();
+        //protected override void OnDisappearing()
+        //{
+        //    _paymentViewModel.CurrentPixKey.Value = "";
+        //    _paymentViewModel.CurrentPixKey.RaiseCob();
 
-            base.OnDisappearing();
-        }
+        //    base.OnDisappearing();
+        //}
     }
 }
