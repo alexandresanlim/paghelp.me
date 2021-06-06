@@ -18,11 +18,11 @@ namespace PixQrCodeGeneratorOffline.Models
         public MaterialColor Style { get; set; }
     }
 
-    public static class FinancialInstitutionExtention
-    {
-        public static MaterialColor GetStyle(this FinancialInstitution financialInstitution)
-        {
-            return MaterialColor.GetRandom();
-        }
-    }
+    //public static class FinancialInstitutionExtention
+    //{
+    //    public static MaterialColor GetStyle(this FinancialInstitution financialInstitution)
+    //    {
+    //        return MaterialColor.GetRandom();
+    //    }
+    //}
 }
