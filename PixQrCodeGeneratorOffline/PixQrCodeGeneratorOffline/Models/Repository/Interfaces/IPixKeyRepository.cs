@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace PixQrCodeGeneratorOffline.Models.Services.Interfaces
+namespace PixQrCodeGeneratorOffline.Models.Repository.Interfaces
 {
-    public interface IPixKeyService
+    public interface IPixKeyRepository
     {
-        bool IsValid(PixKey pixKey);
-
         List<PixKey> GetAll();
 
         PixKey GetFirst();
+
+        bool UpInsert(PixKey item);
 
         bool Update(PixKey item);
 

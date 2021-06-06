@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace PixQrCodeGeneratorOffline.DataBase
+namespace PixQrCodeGeneratorOffline.Models.Repository.Base
 {
     public abstract class BaseDatabase
     {

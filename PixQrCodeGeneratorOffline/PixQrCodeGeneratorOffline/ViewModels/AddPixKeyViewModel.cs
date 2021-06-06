@@ -1,15 +1,12 @@
-﻿using PixQrCodeGeneratorOffline.DataBase;
-using PixQrCodeGeneratorOffline.Extention;
+﻿using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models;
 using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Services;
 using PixQrCodeGeneratorOffline.Style;
 using PixQrCodeGeneratorOffline.Style.Interfaces;
-using PixQrCodeGeneratorOffline.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -24,9 +21,13 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         private readonly IFinancialInstitutionService _financialInstitutionService;
 
+        private readonly IPixKeyService _pixKeyService;
+
         public AddPixKeyViewModel(DashboardViewModel dbViewModel, PixKey pixKey = null)
         {
             _financialInstitutionService = DependencyService.Get<IFinancialInstitutionService>();
+
+            _pixKeyService = DependencyService.Get<IPixKeyService>();
 
             CurrentPixKey = pixKey ?? new PixKey();
 
@@ -50,7 +51,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 if (!IsEdit)
                 {
-                    var firstKey = PixKeyDataBase.GetFirst();
+                    var firstKey = _pixKeyService.GetFirst();
 
                     if (firstKey != null && firstKey.Id > 0)
                     {
@@ -94,7 +95,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 if (IsEdit)
                 {
-                    success = PixKeyDataBase.Update(CurrentPixKey);
+                    success = _pixKeyService.Update(CurrentPixKey);
 
                     var l = DashboardViewModel.PixKeyList.FirstOrDefault(x => x.Id.Equals(CurrentPixKey.Id));
 
@@ -109,7 +110,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 else
                 {
-                    success = PixKeyDataBase.Insert(CurrentPixKey);
+                    success = _pixKeyService.Insert(CurrentPixKey);
                     DashboardViewModel.PixKeyList.Add(CurrentPixKey);
                 }
 
@@ -146,7 +147,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 if (!confirm)
                     return;
 
-                var success = PixKeyDataBase.Remove(CurrentPixKey);
+                var success = _pixKeyService.Remove(CurrentPixKey);
 
                 if (success)
                 {

@@ -1,21 +1,29 @@
 ﻿using LiteDB;
-using PixQrCodeGeneratorOffline.Models;
+using PixQrCodeGeneratorOffline.Models.Repository.Base;
+using PixQrCodeGeneratorOffline.Models.Repository.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace PixQrCodeGeneratorOffline.DataBase
+namespace PixQrCodeGeneratorOffline.Models.Repository
 {
-    public abstract class PixKeyDataBase : BaseDatabase
+    public class PixKeyRepository : BaseDatabase, IPixKeyRepository
     {
-        public static ILiteCollection<PixKey> ItemCollection => GetDatabase.GetCollection<PixKey>();
+        //public static ILiteCollection<PixKey> ItemCollection => GetDatabase.GetCollection<PixKey>();
 
-        public static List<PixKey> GetAll()
+        private readonly ILiteCollection<PixKey> _pixCollection;
+
+        public PixKeyRepository()
+        {
+            _pixCollection = GetDatabase.GetCollection<PixKey>();
+        }
+
+        public List<PixKey> GetAll()
         {
             try
             {
-                return ItemCollection.FindAll().ToList();
+                return _pixCollection.FindAll().ToList();
             }
             catch (Exception e)
             {
@@ -23,11 +31,11 @@ namespace PixQrCodeGeneratorOffline.DataBase
             }
         }
 
-        public static PixKey GetFirst()
+        public PixKey GetFirst()
         {
             try
             {
-                return ItemCollection.FindAll().FirstOrDefault();
+                return _pixCollection.FindAll().FirstOrDefault();
             }
             catch (Exception e)
             {
@@ -35,11 +43,11 @@ namespace PixQrCodeGeneratorOffline.DataBase
             }
         }
 
-        public static bool UpInsert(PixKey item)
+        public bool UpInsert(PixKey item)
         {
             try
             {
-                return ItemCollection.Upsert(item.Id, item);
+                return _pixCollection.Upsert(item.Id, item);
             }
             catch (Exception e)
             {
@@ -47,11 +55,11 @@ namespace PixQrCodeGeneratorOffline.DataBase
             }
         }
 
-        public static bool Update(PixKey item)
+        public bool Update(PixKey item)
         {
             try
             {
-                return ItemCollection.Update(item);
+                return _pixCollection.Update(item);
             }
             catch (Exception e)
             {
@@ -59,11 +67,11 @@ namespace PixQrCodeGeneratorOffline.DataBase
             }
         }
 
-        public static bool Insert(PixKey item)
+        public bool Insert(PixKey item)
         {
             try
             {
-                return ItemCollection.Insert(item);
+                return _pixCollection.Insert(item);
             }
             catch (Exception e)
             {
@@ -71,11 +79,11 @@ namespace PixQrCodeGeneratorOffline.DataBase
             }
         }
 
-        public static bool Remove(PixKey item)
+        public bool Remove(PixKey item)
         {
             try
             {
-                return ItemCollection.Delete(item.Id);
+                return _pixCollection.Delete(item.Id);
             }
             catch (Exception)
             {
@@ -83,11 +91,11 @@ namespace PixQrCodeGeneratorOffline.DataBase
             }
         }
 
-        public static bool RemoveAll()
+        public bool RemoveAll()
         {
             try
             {
-                return ItemCollection.DeleteAll() > 0;
+                return _pixCollection.DeleteAll() > 0;
             }
             catch (Exception)
             {

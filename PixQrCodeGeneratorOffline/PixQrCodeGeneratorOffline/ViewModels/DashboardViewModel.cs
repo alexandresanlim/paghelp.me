@@ -1,7 +1,8 @@
 ﻿using pix_payload_generator.net.Models.PayloadModels;
-using PixQrCodeGeneratorOffline.DataBase;
 using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models;
+using PixQrCodeGeneratorOffline.Models.Repository.Interfaces;
+using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Services;
 using PixQrCodeGeneratorOffline.Views;
 using Plugin.Fingerprint;
@@ -20,8 +21,12 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 {
     public class DashboardViewModel : BaseViewModel
     {
+        private readonly IPixKeyService _pixKeyService;
+
         public DashboardViewModel()
         {
+            _pixKeyService = DependencyService.Get<IPixKeyService>();
+
             LoadDataCommand.Execute(null);
         }
 
@@ -31,14 +36,9 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             {
                 await ResetProps();
 
-                var list = PixKeyDataBase.GetAll();
+                var list = _pixKeyService.GetAll();
 
                 PixKeyList = list.ToObservableCollection();
-
-                //foreach (var item in PixKeyList)
-                //{
-                //    item.RaiseCob();
-                //}
 
                 await LoadCurrentPixKey();
 
@@ -412,7 +412,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
             try
             {
-                var success = PixKeyDataBase.RemoveAll();
+                var success = _pixKeyService.RemoveAll();
 
                 if (success)
                 {
