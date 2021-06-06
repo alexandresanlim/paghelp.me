@@ -1,7 +1,10 @@
-﻿using System;
+﻿using PixQrCodeGeneratorOffline.Models.Viewer;
+using PixQrCodeGeneratorOffline.Models.Viewer.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
+using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.Models
 {
@@ -11,6 +14,13 @@ namespace PixQrCodeGeneratorOffline.Models
         //{
         //    Topic = new Topic();
         //}
+
+        private readonly IFeedViewer _feedViewer;
+
+        public Feed()
+        {
+            _feedViewer = DependencyService.Get<IFeedViewer>();
+        }
 
         public string Id { get; set; }
 
@@ -38,27 +48,6 @@ namespace PixQrCodeGeneratorOffline.Models
 
         public TimeSpan PublishDuration => PublishDateLocal.HasValue ? (DateTimeOffset.Now - PublishDateLocal.Value) : TimeSpan.MaxValue;
 
-        public string PublishDateDisplayFull => PublishDateLocal.HasValue ? PublishDateLocal.Value.ToString("dd MMM yyyy HH:mm") : "";
-
-        public string PublishDateDisplay
-        {
-            get
-            {
-                if (PublishDuration.TotalSeconds < 60)
-                    return "há " + (int)PublishDuration.TotalSeconds + " segundos";
-
-                else if (PublishDuration.TotalMinutes < 60)
-                    return "há " + (int)PublishDuration.TotalMinutes + " minutos";
-
-                else
-                {
-                    if (IsToday)
-                        return "Hoje ás " + PublishDateLocal.Value.ToString("HH tt");
-
-                    else
-                        return "Ontem ás " + PublishDateLocal.Value.ToString("HH tt");
-                }
-            }
-        }
+        public FeedViewer Viewer => _feedViewer.Create(this);
     }
 }

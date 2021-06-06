@@ -60,7 +60,7 @@
                                                 <controls:CustomLabel Text="{Binding Source}" FontSize="Micro" TextColor="{DynamicResource textOnSecondary}"/>
                                                 <controls:CustomLabel Text="{Binding Title}" FontSize="Small" TextColor="{DynamicResource textOnSecondary}" FontAttributes="Bold" VerticalOptions="FillAndExpand"/>
                                                 <StackLayout Orientation="Horizontal">
-                                                    <controls:CustomLabel Text="{Binding PublishDateDisplay}" FontSize="Micro" TextColor="{DynamicResource textOnSecondary}" HorizontalOptions="StartAndExpand" VerticalOptions="EndAndExpand" />
+                                                    <controls:CustomLabel Text="{Binding Viewer.PublishDateDisplay}" FontSize="Micro" TextColor="{DynamicResource textOnSecondary}" HorizontalOptions="StartAndExpand" VerticalOptions="EndAndExpand" />
                                                     <StackLayout Padding="15,15,0,0">
                                                         <StackLayout.GestureRecognizers>
                                                             <TapGestureRecognizer 

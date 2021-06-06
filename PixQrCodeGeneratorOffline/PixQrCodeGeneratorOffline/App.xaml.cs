@@ -1,4 +1,6 @@
-﻿using PixQrCodeGeneratorOffline.Services;
+﻿using PixQrCodeGeneratorOffline.Models.Viewer;
+using PixQrCodeGeneratorOffline.Models.Viewer.Interfaces;
+using PixQrCodeGeneratorOffline.Services;
 using PixQrCodeGeneratorOffline.Style.Interfaces;
 using PixQrCodeGeneratorOffline.Views;
 using System;
@@ -16,7 +18,26 @@ namespace PixQrCodeGeneratorOffline
             InitializeComponent();
 
             //DependencyService.Register<MockDataStore>();
+
+            RegisterDependency();
+
             MainPage = new AppShell();
+        }
+
+        private void RegisterDependency()
+        {
+            RegisterDependencyModel();
+            RegisterDependencyService();
+        }
+
+        private void RegisterDependencyService()
+        {
+            DependencyService.Register<IFeedViewerService, FeedViewerService>();
+        }
+
+        private void RegisterDependencyModel()
+        {
+            DependencyService.Register<IFeedViewer, FeedViewer>();
         }
 
         protected override void OnStart()
