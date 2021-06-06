@@ -1,25 +1,17 @@
 ﻿using PixQrCodeGeneratorOffline.Models.Viewer;
-using PixQrCodeGeneratorOffline.Models.Viewer.Interfaces;
+using PixQrCodeGeneratorOffline.Models.Viewer.Services.Interfaces;
 using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Text;
 using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.Models
 {
     public class Feed
     {
-        //public FeedItem()
-        //{
-        //    Topic = new Topic();
-        //}
-
-        private readonly IFeedViewer _feedViewer;
+        private readonly IFeedViewerService _feedViewerService;
 
         public Feed()
         {
-            _feedViewer = DependencyService.Get<IFeedViewer>();
+            _feedViewerService = DependencyService.Get<IFeedViewerService>();
         }
 
         public string Id { get; set; }
@@ -30,24 +22,22 @@ namespace PixQrCodeGeneratorOffline.Models
 
         public DateTimeOffset? PublishDate { get; set; }
 
-        public DateTimeOffset? PublishDateLocal => PublishDate?.ToLocalTime();
-
         public string Description { get; set; }
 
         public string Source { get; set; }
 
         public string FirstImage { get; set; }
 
-        //public Topic Topic { get; set; }
-
         public bool WasRead { get; set; }
 
         public int Index { get; set; }
+
+        public DateTimeOffset? PublishDateLocal => PublishDate?.ToLocalTime();
 
         public bool IsToday => DateTimeOffset.Now.Date.Equals(PublishDateLocal.Value.Date);
 
         public TimeSpan PublishDuration => PublishDateLocal.HasValue ? (DateTimeOffset.Now - PublishDateLocal.Value) : TimeSpan.MaxValue;
 
-        public FeedViewer Viewer => _feedViewer.Create(this);
+        public FeedViewer Viewer => _feedViewerService.Create(this);
     }
 }

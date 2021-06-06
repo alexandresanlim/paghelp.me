@@ -1,6 +1,7 @@
 ﻿using PixQrCodeGeneratorOffline.DataBase;
 using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models;
+using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Services;
 using PixQrCodeGeneratorOffline.Style;
 using PixQrCodeGeneratorOffline.Style.Interfaces;
@@ -21,8 +22,12 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public DashboardViewModel DashboardViewModel { get; set; }
 
+        private readonly IFinancialInstitutionService _financialInstitutionService;
+
         public AddPixKeyViewModel(DashboardViewModel dbViewModel, PixKey pixKey = null)
         {
+            _financialInstitutionService = DependencyService.Get<IFinancialInstitutionService>();
+
             CurrentPixKey = pixKey ?? new PixKey();
 
             DashboardViewModel = dbViewModel;
@@ -169,7 +174,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             {
                 var options = new List<Acr.UserDialogs.ActionSheetOption>();
 
-                var intitutionList = FinancialInstitution.GetList();
+                var intitutionList = _financialInstitutionService.GetList();
 
                 foreach (var item in intitutionList)
                 {

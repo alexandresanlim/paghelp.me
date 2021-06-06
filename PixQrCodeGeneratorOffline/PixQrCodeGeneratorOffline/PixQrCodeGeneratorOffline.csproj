@@ -70,8 +70,4 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Models\Services\" />
-  </ItemGroup>
 </Project>

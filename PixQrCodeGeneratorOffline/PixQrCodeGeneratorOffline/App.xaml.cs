@@ -1,12 +1,11 @@
-﻿using PixQrCodeGeneratorOffline.Models.Viewer;
-using PixQrCodeGeneratorOffline.Models.Viewer.Interfaces;
+﻿using PixQrCodeGeneratorOffline.Models.Services;
+using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
+using PixQrCodeGeneratorOffline.Models.Services.Viewer;
+using PixQrCodeGeneratorOffline.Models.Viewer.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Services;
 using PixQrCodeGeneratorOffline.Style.Interfaces;
-using PixQrCodeGeneratorOffline.Views;
-using System;
 using System.Globalization;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace PixQrCodeGeneratorOffline
 {
@@ -26,18 +25,19 @@ namespace PixQrCodeGeneratorOffline
 
         private void RegisterDependency()
         {
-            RegisterDependencyModel();
             RegisterDependencyService();
+            RegisterDependencyRepository();
         }
 
         private void RegisterDependencyService()
         {
             DependencyService.Register<IFeedViewerService, FeedViewerService>();
+            DependencyService.Register<IFinancialInstitutionService, FinancialInstitutionService>();
         }
 
-        private void RegisterDependencyModel()
+        private void RegisterDependencyRepository()
         {
-            DependencyService.Register<IFeedViewer, FeedViewer>();
+
         }
 
         protected override void OnStart()

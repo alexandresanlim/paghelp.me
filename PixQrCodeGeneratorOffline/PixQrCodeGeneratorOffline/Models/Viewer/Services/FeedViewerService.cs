@@ -1,13 +1,20 @@
-﻿using PixQrCodeGeneratorOffline.Models.Viewer.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using PixQrCodeGeneratorOffline.Models.Viewer;
+using PixQrCodeGeneratorOffline.Models.Viewer.Services.Interfaces;
 
-namespace PixQrCodeGeneratorOffline.Models.Viewer
+namespace PixQrCodeGeneratorOffline.Models.Services.Viewer
 {
     public class FeedViewerService : IFeedViewerService
     {
-        public string GetPublishDateDisplay(Feed feed)
+        public FeedViewer Create(Feed feed)
+        {
+            return new FeedViewer
+            {
+                PublishDateDisplay = GetPublishDateDisplay(feed),
+                PublishDateDisplayFull = GetPublishDateDisplayFull(feed)
+            };
+        }
+
+        private string GetPublishDateDisplay(Feed feed)
         {
             if (feed.PublishDuration.TotalSeconds < 60)
                 return "há " + (int)feed.PublishDuration.TotalSeconds + " segundos";
@@ -28,7 +35,7 @@ namespace PixQrCodeGeneratorOffline.Models.Viewer
             }
         }
 
-        public string GetPublishDateDisplayFull(Feed feed)
+        private string GetPublishDateDisplayFull(Feed feed)
         {
             return feed.PublishDateLocal.HasValue ? feed.PublishDateLocal.Value.ToString("dd MMM yyyy HH:mm") : "";
         }

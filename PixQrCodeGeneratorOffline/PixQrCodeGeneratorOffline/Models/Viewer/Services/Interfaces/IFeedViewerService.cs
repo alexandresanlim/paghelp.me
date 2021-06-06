@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace PixQrCodeGeneratorOffline.Models.Viewer.Interfaces
+namespace PixQrCodeGeneratorOffline.Models.Viewer.Services.Interfaces
 {
-    public interface IFeedViewer
+    public interface IFeedViewerService
     {
         FeedViewer Create(Feed feed);
     }
