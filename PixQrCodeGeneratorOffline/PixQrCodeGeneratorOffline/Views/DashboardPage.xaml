@@ -195,11 +195,9 @@
 
                     </StackLayout>
 
-                    <StackLayout Grid.Row="1" Padding="15,10">
+                    <Grid RowDefinitions="*, auto" Grid.Row="1" Padding="15,10">
 
-
-
-                        <StackLayout Spacing="0" IsVisible="{Binding ShowWelcome}">
+                        <StackLayout Grid.Row="0" Spacing="0" IsVisible="{Binding ShowWelcome}">
                             <StackLayout.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding NavigateToAddNewKeyPageCommand}" />
                             </StackLayout.GestureRecognizers>
@@ -219,7 +217,7 @@
                             </controls:CustomFrame>
                         </StackLayout>
 
-                        <Grid  ColumnDefinitions="*,*" ColumnSpacing="15">
+                        <Grid Grid.Row="1" ColumnDefinitions="*,*" ColumnSpacing="15">
                             <Frame Grid.Column="0" BackgroundColor="{DynamicResource secondary}" CornerRadius="30" Padding="5,12">
 
                                 <Frame.GestureRecognizers>
@@ -243,7 +241,7 @@
                                 </StackLayout>
                             </Frame>
                         </Grid>
-                    </StackLayout>
+                    </Grid>
 
                 </Grid>
 

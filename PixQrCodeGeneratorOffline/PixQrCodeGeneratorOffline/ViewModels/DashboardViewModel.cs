@@ -87,8 +87,8 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 "🤙 Customizável: Exiba em formato de carrossel ou lista, com suporte a dark e light mode.\n\n" +
                 "🤑 Cobranças: Gere Qr Codes para pagamento.\n\n" +
                 "💾 Backup: Local e automático.\n\n" +
-                "⚠ IMPORTANTE!: Não fazemos conexão direta com o seu banco, sendo assim não será possível ver saldo ou realizar transferências, para isso use o app do seu banco.\n\n" +
-                "E mais!";
+                "E mais! \n\n" +
+                "⚠ IMPORTANTE! Não fazemos conexão direta com o seu banco, sendo assim não será possível ver saldo ou realizar transferências, para isso use o app do seu banco.";
         }
 
         public async Task LoadCurrentPixKey(PixKey pixKeySelected = null)
