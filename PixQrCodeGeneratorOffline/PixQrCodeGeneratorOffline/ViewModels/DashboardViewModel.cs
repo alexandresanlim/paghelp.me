@@ -23,9 +23,12 @@ namespace PixQrCodeGeneratorOffline.ViewModels
     {
         private readonly IPixKeyService _pixKeyService;
 
+        private readonly IPixPayloadService _pixPayloadService;
+
         public DashboardViewModel()
         {
             _pixKeyService = DependencyService.Get<IPixKeyService>();
+            _pixPayloadService = DependencyService.Get<IPixPayloadService>();
 
             LoadDataCommand.Execute(null);
         }
@@ -42,7 +45,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 await LoadCurrentPixKey();
 
-                ReloadShowInList();
+                await ReloadShowInList();
             }
             catch (System.Exception e)
             {
@@ -79,11 +82,12 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             IsVisibleFingerPrint = PreferenceService.FingerPrint && await CrossFingerprint.Current.IsAvailableAsync();
 
             WelcomeText =
-                "🔐 Seguro: Guarde suas chaves localmente de maneira criptografada e sem conexão com a internet, com suporte a autenticação por digital se suportado. \n\n" +
+                "🔐 Seguro: Guarde suas chaves localmente de maneira criptografada e sem conexão com a internet, com suporte a autenticação biométrica se suportado. \n\n" +
                 "🔀 Prático: Compartilhe suas chaves rapidamente.\n\n" +
                 "🤙 Customizável: Exiba em formato de carrossel ou lista, com suporte a dark e light mode.\n\n" +
                 "🤑 Cobranças: Gere Qr Codes para pagamento.\n\n" +
                 "💾 Backup: Local e automático.\n\n" +
+                "⚠ IMPORTANTE!: Não fazemos conexão direta com o seu banco, sendo assim não será possível ver saldo ou realizar transferências, para isso use o app do seu banco.\n\n" +
                 "E mais!";
         }
 
@@ -138,6 +142,30 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             finally
             {
                 SetEvent("Navegou para adicionar nova chave");
+
+                SetIsLoading(false);
+            }
+        });
+
+        public ICommand NavigateToPaymentPageCommand => new Command(async () =>
+        {
+            try
+            {
+                SetIsLoading(true);
+
+                await Task.Delay(500);
+
+                var pixPaylod = _pixPayloadService.Create(CurrentPixKey);
+
+                await NavigateModalAsync(new PaymentPage(pixPaylod));
+            }
+            catch (System.Exception e)
+            {
+                e.SendToLog();
+            }
+            finally
+            {
+                SetEvent("Navegou para pagina de pagamento a partir da dashboard");
 
                 SetIsLoading(false);
             }
@@ -265,11 +293,11 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
             if (PixKeyList != null && PixKeyList.Count > 0)
             {
-                preferences.Add(new Acr.UserDialogs.ActionSheetOption(PreferenceService.ShowInList ? "Exibir em carrossel" : "Exibir em lista", () =>
-                {
-                    PreferenceService.ShowInList = !PreferenceService.ShowInList;
-                    ReloadShowInList();
-                }));
+                preferences.Add(new Acr.UserDialogs.ActionSheetOption(PreferenceService.ShowInList ? "Exibir em carrossel" : "Exibir em lista", async () =>
+                 {
+                     PreferenceService.ShowInList = !PreferenceService.ShowInList;
+                     await ReloadShowInList();
+                 }));
             }
 
             if (await CrossFingerprint.Current.IsAvailableAsync())
@@ -392,15 +420,32 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
         }
 
-        private void ReloadShowInList()
+        private async Task ReloadShowInList()
         {
-            ShowInList = PreferenceService.ShowInList;
+            try
+            {
+                SetIsLoading(true, "Aguarde...");
 
-            if (ShowInList)
-                ReloadAppColorIfShowInListStyle();
+                await Task.Delay(500);
 
-            else
-                SetStatusFromCurrentPixColor();
+                ShowInList = PreferenceService.ShowInList;
+
+                if (ShowInList)
+                    ReloadAppColorIfShowInListStyle();
+
+                else
+                    SetStatusFromCurrentPixColor();
+            }
+            catch (System.Exception e)
+            {
+                e.SendToLog();
+            }
+            finally
+            {
+                SetEvent("Trocou a dashboard para mostrar em lista: " + ShowInList);
+
+                SetIsLoading(false);
+            }
         }
 
         private async Task RemoveAllKeys()
