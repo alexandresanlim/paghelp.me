@@ -40,6 +40,7 @@ namespace PixQrCodeGeneratorOffline
         {
             DependencyService.Register<IFeedViewerService, FeedViewerService>();
             DependencyService.Register<IPixKeyViewerService, PixKeyViewerService>();
+            DependencyService.Register<IPixCobViewerService, PixCobViewerService>();
         }
 
         private void RegisterDependencyService()

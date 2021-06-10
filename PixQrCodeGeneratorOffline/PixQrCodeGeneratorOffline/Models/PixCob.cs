@@ -2,6 +2,8 @@
 using pix_payload_generator.net.Models.PayloadModels;
 using PixQrCodeGeneratorOffline.Models.Base;
 using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
+using PixQrCodeGeneratorOffline.Models.Viewer;
+using PixQrCodeGeneratorOffline.Models.Viewer.Services.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -11,6 +13,13 @@ namespace PixQrCodeGeneratorOffline.Models
 {
     public class PixCob : NotifyObjectBase
     {
+        private readonly IPixCobViewerService _pixCobViewerService;
+
+        public PixCob()
+        {
+            _pixCobViewerService = DependencyService.Get<IPixCobViewerService>();
+        }
+
         private string _value;
         public string Value
         {
@@ -25,8 +34,6 @@ namespace PixQrCodeGeneratorOffline.Models
             get { return _description; }
         }
 
-        public string ValueFormatter => Value?.Replace(".", "")?.Replace(",", ".") ?? "";
-
-        public string ValuePresentation => "R$ " + Value;
+        public PixCobViewer Viewer => _pixCobViewerService.Create(this);
     }
 }

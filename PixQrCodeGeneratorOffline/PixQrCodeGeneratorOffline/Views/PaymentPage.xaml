@@ -53,7 +53,7 @@
 
                         </StackLayout>
 
-                        <controls:CustomLabel Text="{Binding CurrentPixPaylod.PixCob.ValuePresentation}" FontSize="35" TextColor="{DynamicResource textOnPrimary}" HorizontalOptions="Center" FontAttributes="Bold" />
+                        <controls:CustomLabel Text="{Binding CurrentPixPaylod.PixCob.Viewer.ValuePresentation}" FontSize="35" TextColor="{DynamicResource textOnPrimary}" HorizontalOptions="Center" FontAttributes="Bold" />
 
                         <controls:CustomLabel Text="{Binding CurrentPixPaylod.PixKey.Viewer.NamePresentation, StringFormat='Para: {0}'}" TextColor="{DynamicResource textOnPrimary}" FontSize="Medium"  HorizontalOptions="Center" FontAttributes="Bold" />
 
