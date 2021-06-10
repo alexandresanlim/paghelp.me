@@ -80,13 +80,14 @@
 
                         <StackLayout IsVisible="{Binding ShowInList, Converter={StaticResource InvertedBooleanConverter}}">
                             <controls:CustomCarouselView
-                            IndicatorView="indicatorView"
-                                                 PeekAreaInsets="40,0"
-                                                 ItemsSource="{Binding PixKeyList}"
-                                                 IsScrollAnimated="True"
-                                                 Loop="False"
-                                                 CurrentItem="{Binding CurrentPixKey}"
-                                                 CurrentItemChangedCommand="{Binding ChangeSelectPixKeyCommand}">
+                                IndicatorView="indicatorView"
+                                PeekAreaInsets="40,0"
+                                ItemsSource="{Binding PixKeyList}"
+                                IsScrollAnimated="True"
+                                Loop="False"
+                                CurrentItem="{Binding CurrentPixKey}"
+                                CurrentItemChangedCommand="{Binding ChangeSelectPixKeyCommand}"
+                                >
 
                                 <controls:CustomCarouselView.ItemTemplate>
                                     <DataTemplate>

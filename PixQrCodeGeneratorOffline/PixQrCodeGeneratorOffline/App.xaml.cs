@@ -3,6 +3,8 @@ using PixQrCodeGeneratorOffline.Models.Repository.Interfaces;
 using PixQrCodeGeneratorOffline.Models.Services;
 using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Models.Services.Viewer;
+using PixQrCodeGeneratorOffline.Models.Validation.Services;
+using PixQrCodeGeneratorOffline.Models.Validation.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Models.Viewer.Services;
 using PixQrCodeGeneratorOffline.Models.Viewer.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Services;
@@ -31,6 +33,7 @@ namespace PixQrCodeGeneratorOffline
             RegisterDependencyService();
             RegisterDependencyViewer();
             RegisterDependencyRepository();
+            RegisterDependencyValidation();
         }
 
         private void RegisterDependencyViewer()
@@ -51,6 +54,11 @@ namespace PixQrCodeGeneratorOffline
         private void RegisterDependencyRepository()
         {
             DependencyService.Register<IPixKeyRepository, PixKeyRepository>();
+        }
+
+        private void RegisterDependencyValidation()
+        {
+            DependencyService.Register<IFeedValidationService, FeedValidationService>();
         }
 
         protected override void OnStart()

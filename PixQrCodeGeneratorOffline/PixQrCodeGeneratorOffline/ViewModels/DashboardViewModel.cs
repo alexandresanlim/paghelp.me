@@ -22,7 +22,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
     public class DashboardViewModel : BaseViewModel
     {
         private readonly IPixKeyService _pixKeyService;
-
         private readonly IPixPayloadService _pixPayloadService;
 
         public DashboardViewModel()

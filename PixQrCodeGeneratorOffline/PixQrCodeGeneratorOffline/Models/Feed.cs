@@ -1,4 +1,6 @@
-﻿using PixQrCodeGeneratorOffline.Models.Viewer;
+﻿using PixQrCodeGeneratorOffline.Models.Validation;
+using PixQrCodeGeneratorOffline.Models.Validation.Services.Interfaces;
+using PixQrCodeGeneratorOffline.Models.Viewer;
 using PixQrCodeGeneratorOffline.Models.Viewer.Services.Interfaces;
 using System;
 using Xamarin.Forms;
@@ -9,9 +11,12 @@ namespace PixQrCodeGeneratorOffline.Models
     {
         private readonly IFeedViewerService _feedViewerService;
 
+        private readonly IFeedValidationService _feedValidationService;
+
         public Feed()
         {
             _feedViewerService = DependencyService.Get<IFeedViewerService>();
+            _feedValidationService = DependencyService.Get<IFeedValidationService>();
         }
 
         public string Id { get; set; }
@@ -34,9 +39,9 @@ namespace PixQrCodeGeneratorOffline.Models
 
         public DateTimeOffset? PublishDateLocal => PublishDate?.ToLocalTime();
 
-        public bool IsToday => DateTimeOffset.Now.Date.Equals(PublishDateLocal.Value.Date);
-
         public TimeSpan PublishDuration => PublishDateLocal.HasValue ? (DateTimeOffset.Now - PublishDateLocal.Value) : TimeSpan.MaxValue;
+
+        public FeedValidation Validation => _feedValidationService.Create(this);
 
         public FeedViewer Viewer => _feedViewerService.Create(this);
     }

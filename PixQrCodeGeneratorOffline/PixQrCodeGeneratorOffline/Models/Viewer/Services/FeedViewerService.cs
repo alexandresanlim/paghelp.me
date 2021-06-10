@@ -16,6 +16,9 @@ namespace PixQrCodeGeneratorOffline.Models.Services.Viewer
 
         private string GetPublishDateDisplay(Feed feed)
         {
+            if (!feed.Validation.IsValid)
+                return "";
+
             if (feed.PublishDuration.TotalSeconds < 60)
                 return "há " + (int)feed.PublishDuration.TotalSeconds + " segundos";
 
@@ -27,7 +30,7 @@ namespace PixQrCodeGeneratorOffline.Models.Services.Viewer
                 if (!feed.PublishDateLocal.HasValue)
                     return "";
 
-                else if (feed.IsToday)
+                else if (feed.Validation.IsToday)
                     return "Hoje ás " + feed.PublishDateLocal.Value.ToString("HH tt");
 
                 else
@@ -37,6 +40,9 @@ namespace PixQrCodeGeneratorOffline.Models.Services.Viewer
 
         private string GetPublishDateDisplayFull(Feed feed)
         {
+            if (!feed.Validation.IsValid)
+                return "";
+
             return feed.PublishDateLocal.HasValue ? feed.PublishDateLocal.Value.ToString("dd MMM yyyy HH:mm") : "";
         }
     }
