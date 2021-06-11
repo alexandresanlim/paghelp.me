@@ -21,14 +21,8 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 {
     public class DashboardViewModel : BaseViewModel
     {
-        private readonly IPixKeyService _pixKeyService;
-        private readonly IPixPayloadService _pixPayloadService;
-
         public DashboardViewModel()
         {
-            _pixKeyService = DependencyService.Get<IPixKeyService>();
-            _pixPayloadService = DependencyService.Get<IPixPayloadService>();
-
             LoadDataCommand.Execute(null);
         }
 
@@ -38,17 +32,22 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             {
                 await ResetProps();
 
+                await ReloadShowInList();
+
                 var list = _pixKeyService.GetAll();
 
                 PixKeyList = list.ToObservableCollection();
 
                 await LoadCurrentPixKey();
 
-                await ReloadShowInList();
+                
             }
             catch (System.Exception e)
             {
                 e.SendToLog();
+            }
+            finally
+            {
             }
         });
 
@@ -79,6 +78,9 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         private async Task ResetProps()
         {
             IsVisibleFingerPrint = PreferenceService.FingerPrint && await CrossFingerprint.Current.IsAvailableAsync();
+
+            ShowInList = false;
+            ShowInCarousel = false;
 
             WelcomeText =
                 "🔐 Seguro: Guarde suas chaves localmente de maneira criptografada e sem conexão com a internet, com suporte a autenticação biométrica se suportado. \n\n" +
@@ -428,6 +430,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 await Task.Delay(500);
 
                 ShowInList = PreferenceService.ShowInList;
+                ShowInCarousel = !ShowInList;
 
                 if (ShowInList)
                     ReloadAppColorIfShowInListStyle();
@@ -441,7 +444,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
             finally
             {
-                SetEvent("Trocou a dashboard para mostrar em lista: " + ShowInList);
+                SetEvent("Estilo da dashboard: " + ShowInList);
 
                 SetIsLoading(false);
             }
@@ -535,6 +538,13 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         {
             set => SetProperty(ref _showInList, value);
             get => _showInList;
+        }
+
+        private bool _showInCarousel;
+        public bool ShowInCarousel
+        {
+            set => SetProperty(ref _showInCarousel, value);
+            get => _showInCarousel;
         }
 
         private string _welcomeText;

@@ -28,12 +28,15 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         protected readonly IMaterialColorService _materialColorService;
 
+        protected readonly IPixPayloadService _pixPayloadService;
+
         public BaseViewModel()
         {
             _financialInstitutionService = DependencyService.Get<IFinancialInstitutionService>();
             _pixKeyService = DependencyService.Get<IPixKeyService>();
             _statusBarService = DependencyService.Get<IStatusBar>();
             _materialColorService = DependencyService.Get<IMaterialColorService>();
+            _pixPayloadService = DependencyService.Get<IPixPayloadService>();
 
             ShowAds = true;
 

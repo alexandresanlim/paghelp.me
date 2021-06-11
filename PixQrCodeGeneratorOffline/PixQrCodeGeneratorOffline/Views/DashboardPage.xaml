@@ -36,8 +36,8 @@
                     <StackLayout Grid.Row="0" IsVisible="{Binding ShowWelcome, Converter={StaticResource InvertedBooleanConverter}}">
 
                         <StackLayout IsVisible="{Binding ShowInList}" VerticalOptions="FillAndExpand" Spacing="0">
-                            <StackLayout  BackgroundColor="{DynamicResource primaryDark}" Padding="15">
-                                <controls:CustomLabel Text="Chaves" FontSize="Title" FontAttributes="Bold" TextColor="{DynamicResource textOnPrimary}" />
+                            <StackLayout  BackgroundColor="{DynamicResource primaryDark}" Padding="10">
+                                <controls:CustomLabel Text="Minhas Chaves" FontSize="Title" FontAttributes="Bold" TextColor="{DynamicResource textOnPrimary}" />
                             </StackLayout>
                             <controls:CustomCollectionView ItemsSource="{Binding PixKeyList}" x:Name="collectionKeysList">
                                 <controls:CustomCollectionView.ItemTemplate>
@@ -62,12 +62,12 @@
                                                 </StackLayout.Background>-->
 
                                                 <StackLayout.GestureRecognizers>
-                                                        <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:DashboardViewModel}}, Path=OpenOptionsKeyCommand}"
+                                                    <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:DashboardViewModel}}, Path=OpenOptionsKeyCommand}"
                                                                       CommandParameter="{Binding .}"
                                                                       />
-                                                    </StackLayout.GestureRecognizers>
+                                                </StackLayout.GestureRecognizers>
 
-                                                    <Grid ColumnDefinitions="auto,*,auto" ColumnSpacing="15">
+                                                <Grid ColumnDefinitions="auto,*,auto" ColumnSpacing="15">
 
                                                     <StackLayout BackgroundColor="{Binding FinancialInstitution.Institution.MaterialColor.PrimaryDark}" Grid.Column="0" Padding="15">
                                                         <qr:QRCode
@@ -93,11 +93,11 @@
                                                         <controls:CustomLabel Text="{Binding Viewer.NamePresentation, StringFormat='Nome: {0}'}" TextColor="{Binding FinancialInstitution.Institution.MaterialColor.TextOnPrimary}"  />
                                                         <controls:CustomLabel Text="{Binding Viewer.KeyPresentation}" TextColor="{Binding FinancialInstitution.Institution.MaterialColor.TextOnPrimary}" MaxLines="1" LineBreakMode="MiddleTruncation" />
 
-                                                        </StackLayout>
+                                                    </StackLayout>
 
                                                     <controls:CustomIcon Grid.Column="2" Glyph="{x:Static icons:FontAwesomeSolid.ChevronRight }" IconColor="{Binding FinancialInstitution.Institution.MaterialColor.TextOnPrimary}" IconSize="Title" HorizontalOptions="Center" Margin="0,0,5,0" />
-                                                    </Grid>
-                                                </StackLayout>
+                                                </Grid>
+                                            </StackLayout>
                                             <!--</StackLayout>-->
                                         </SwipeView>
 
@@ -107,7 +107,7 @@
                             </controls:CustomCollectionView>
                         </StackLayout>
 
-                        <StackLayout IsVisible="{Binding ShowInList, Converter={StaticResource InvertedBooleanConverter}}">
+                        <StackLayout IsVisible="{Binding ShowInCarousel}">
                             <controls:CustomCarouselView
                                 IndicatorView="indicatorView"
                                 PeekAreaInsets="40,0"
