@@ -48,10 +48,10 @@ namespace PixQrCodeGeneratorOffline.Models
         //public PixKeyType Type { get; set; }
 
         [LiteDB.BsonIgnore]
-        public PixKeyViewer Viewer => _pixKeyViewerService.Create(this);
+        public PixKeyViewer Viewer => _pixKeyViewerService?.Create(this) ?? new PixKeyViewer();
 
         [LiteDB.BsonIgnore]
-        public PixPayload Payload => _pixPayloadService.Create(this);
+        public PixPayload Payload => _pixPayloadService?.Create(this) ?? new PixPayload();
 
 
         public PixKeyType GetKeyType()

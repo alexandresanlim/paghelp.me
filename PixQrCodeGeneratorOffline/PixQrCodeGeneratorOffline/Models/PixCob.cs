@@ -34,6 +34,6 @@ namespace PixQrCodeGeneratorOffline.Models
             get { return _description; }
         }
 
-        public PixCobViewer Viewer => _pixCobViewerService.Create(this);
+        public PixCobViewer Viewer => _pixCobViewerService?.Create(this) ?? new PixCobViewer();
     }
 }

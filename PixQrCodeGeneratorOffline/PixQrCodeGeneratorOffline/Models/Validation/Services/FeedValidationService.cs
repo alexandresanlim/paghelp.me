@@ -23,7 +23,7 @@ namespace PixQrCodeGeneratorOffline.Models.Validation.Services
 
         private bool GetIsToday(Feed feed)
         {
-            return GetIsValid(feed) && DateTimeOffset.Now.Date.Equals(feed.PublishDateLocal.Value.Date);
+            return GetIsValid(feed) && feed.PublishDateLocal.HasValue && DateTimeOffset.Now.Date.Equals(feed.PublishDateLocal.Value.Date);
         }
     }
 }

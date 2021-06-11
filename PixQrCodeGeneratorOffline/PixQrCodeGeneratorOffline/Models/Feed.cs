@@ -25,8 +25,6 @@ namespace PixQrCodeGeneratorOffline.Models
 
         public Uri Link { get; set; }
 
-        public DateTimeOffset? PublishDate { get; set; }
-
         public string Description { get; set; }
 
         public string Source { get; set; }
@@ -37,12 +35,14 @@ namespace PixQrCodeGeneratorOffline.Models
 
         public int Index { get; set; }
 
+        public DateTimeOffset? PublishDate { get; set; }
+
         public DateTimeOffset? PublishDateLocal => PublishDate?.ToLocalTime();
 
         public TimeSpan PublishDuration => PublishDateLocal.HasValue ? (DateTimeOffset.Now - PublishDateLocal.Value) : TimeSpan.MaxValue;
 
-        public FeedValidation Validation => _feedValidationService.Create(this);
+        public FeedValidation Validation => _feedValidationService?.Create(this) ?? new FeedValidation();
 
-        public FeedViewer Viewer => _feedViewerService.Create(this);
+        public FeedViewer Viewer => _feedViewerService?.Create(this) ?? new FeedViewer();
     }
 }
