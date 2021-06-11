@@ -3,6 +3,7 @@ using PixQrCodeGeneratorOffline.Models.DataStatic.Institutions.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.Models.DataStatic.Institutions
 {
@@ -12,6 +13,13 @@ namespace PixQrCodeGeneratorOffline.Models.DataStatic.Institutions
 
         public FinancialInstitutionType Type => FinancialInstitutionType.BancoBMG;
 
-        public MaterialColor Color => _materialColorService.GetColorByFinancialInstitutionType(Type);
+        public MaterialColor MaterialColor => new MaterialColor()
+        {
+            Name = "bancobmg",
+            Primary = Color.FromHex("#fa7405"),
+            PrimaryDark = Color.FromHex("#c04400"),
+            PrimaryLight = Color.FromHex("#ffa543"),
+            TextOnPrimary = Color.FromHex("#000000")
+        };
     }
 }

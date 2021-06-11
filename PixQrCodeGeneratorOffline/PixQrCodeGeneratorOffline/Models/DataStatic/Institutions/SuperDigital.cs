@@ -3,6 +3,8 @@ using PixQrCodeGeneratorOffline.Models.DataStatic.Institutions.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Xamarin.Forms;
+
 namespace PixQrCodeGeneratorOffline.Models.DataStatic.Institutions
 {
     public class SuperDigital : InstitutionBase, IInstitution
@@ -11,6 +13,13 @@ namespace PixQrCodeGeneratorOffline.Models.DataStatic.Institutions
 
         public FinancialInstitutionType Type => FinancialInstitutionType.Superdigital;
 
-        public MaterialColor Color => _materialColorService.GetColorByFinancialInstitutionType(Type);
+        public MaterialColor MaterialColor => new MaterialColor()
+        {
+            Name = "superdigital",
+            Primary = Color.FromHex("#6e0aa0"),
+            PrimaryDark = Color.FromHex("#3b0070"),
+            PrimaryLight = Color.FromHex("#a145d2"),
+            TextOnPrimary = Color.FromHex("#ffffff")
+        };
     }
 }

@@ -3,6 +3,8 @@ using PixQrCodeGeneratorOffline.Models.DataStatic.Institutions.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Xamarin.Forms;
+
 namespace PixQrCodeGeneratorOffline.Models.DataStatic.Institutions
 {
     class Caixa : InstitutionBase, IInstitution
@@ -11,6 +13,13 @@ namespace PixQrCodeGeneratorOffline.Models.DataStatic.Institutions
 
         public FinancialInstitutionType Type => FinancialInstitutionType.Caixa;
 
-        public MaterialColor Color => _materialColorService.GetColorByFinancialInstitutionType(Type);
+        public MaterialColor MaterialColor => new MaterialColor()
+        {
+            Name = "caixa",
+            Primary = Color.FromHex("#0473bb"),
+            PrimaryDark = Color.FromHex("#00488a"),
+            PrimaryLight = Color.FromHex("#58a1ee"),
+            TextOnPrimary = Color.FromHex("#ffffff")
+        };
     }
 }

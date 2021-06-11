@@ -10,8 +10,6 @@ namespace PixQrCodeGeneratorOffline.Models.Services.Interfaces
 
         MaterialColor GetRandom();
 
-        MaterialColor GetColorByFinancialInstitutionType(FinancialInstitutionType financialInstitutionType);
-
         MaterialColor GetLightColors();
 
         MaterialColor GetDarkColors();

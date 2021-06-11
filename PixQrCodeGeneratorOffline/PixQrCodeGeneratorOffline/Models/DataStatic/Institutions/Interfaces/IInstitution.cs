@@ -10,6 +10,6 @@ namespace PixQrCodeGeneratorOffline.Models.DataStatic.Institutions.Interfaces
 
         FinancialInstitutionType Type { get; }
 
-        MaterialColor Color { get; }
+        MaterialColor MaterialColor { get; }
     }
 }
