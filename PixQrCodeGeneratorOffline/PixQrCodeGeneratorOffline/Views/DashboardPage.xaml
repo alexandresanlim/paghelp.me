@@ -36,7 +36,7 @@
                     <StackLayout Grid.Row="0" IsVisible="{Binding ShowWelcome, Converter={StaticResource InvertedBooleanConverter}}">
 
                         <StackLayout IsVisible="{Binding ShowInList}" VerticalOptions="FillAndExpand" Spacing="0">
-                            <StackLayout  BackgroundColor="{DynamicResource primaryDark}" Padding="10">
+                            <StackLayout  BackgroundColor="{DynamicResource primaryDark}" Padding="10,5">
                                 <controls:CustomLabel Text="Minhas Chaves" FontSize="Title" FontAttributes="Bold" TextColor="{DynamicResource textOnPrimary}" />
                             </StackLayout>
                             <controls:CustomCollectionView ItemsSource="{Binding PixKeyList}" x:Name="collectionKeysList">
@@ -225,7 +225,7 @@
 
                     </StackLayout>
 
-                    <Grid RowDefinitions="*, auto" Grid.Row="1" Padding="15,10">
+                    <Grid RowDefinitions="*, auto" Grid.Row="1" Padding="15,0">
 
                         <StackLayout Grid.Row="0" Spacing="0" IsVisible="{Binding ShowWelcome}">
                             <StackLayout.GestureRecognizers>

@@ -81,6 +81,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
             ShowInList = false;
             ShowInCarousel = false;
+            ShowWelcome = false;
 
             WelcomeText =
                 "🔐 Seguro: Guarde suas chaves localmente de maneira criptografada e sem conexão com a internet, com suporte a autenticação biométrica se suportado. \n\n" +

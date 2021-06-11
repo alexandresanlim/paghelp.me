@@ -21,7 +21,7 @@ namespace PixQrCodeGeneratorOffline
             MaterialColorService.SetOnCurrentResourceThemeColor(themeOrRandom);
 
             var service = DependencyService.Get<IStatusBar>();
-            service?.SetStatusBarColor(!isShowInList ? themeOrRandom.Primary : themeOrRandom.PrimaryDark);
+            service?.SetStatusBarColor(!isShowInList ? themeOrRandom.Primary : themeOrRandom.Secondary);
 
             //var service = DependencyService.Get<IStatusBar>();
             //service?.SetStatusBarColor(ThemeColors.BackgroundPage);

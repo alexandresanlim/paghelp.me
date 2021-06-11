@@ -6,6 +6,7 @@ using PixQrCodeGeneratorOffline.Style;
 using PixQrCodeGeneratorOffline.Style.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -15,7 +16,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 {
     public class AddPixKeyViewModel : BaseViewModel
     {
-        
+
 
         public DashboardViewModel DashboardViewModel { get; set; }
 
@@ -31,6 +32,8 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         public ICommand LoadData => new Command(async () =>
         {
             await ResetProps();
+
+            await LoadNotices();
         });
 
         private async Task ResetProps()
@@ -40,6 +43,8 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 IsEdit = CurrentPixKey.Id > 0;
 
                 CurrenSelectedFinancialInstitutionText = !IsEdit ? "Toque para selecionar" : CurrentPixKey?.FinancialInstitution?.Name;
+
+                CurrenKeyPlaceholder = CurrenKeyPlaceholderDefaultValue;
 
                 if (!IsEdit)
                 {
@@ -58,6 +63,16 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             {
                 e.SendToLog();
             }
+        }
+
+        private async Task LoadNotices()
+        {
+            Notices = new ObservableCollection<string>
+            {
+                "Não cadastre chaves que ainda não foram registradas em alguma instituição financeira.",
+                "Para sua segurança não será possível ver saldo ou realizar transferências, use o app da própria instituição para isso.",
+                "Os chaves serão guardadas somente no device, sem a necessidade de conexão com a internet e de modo criptografado."
+            };
         }
 
         public ICommand SaveCommand => new Command(async () =>
@@ -218,6 +233,8 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
             CurrenSelectedFinancialInstitutionText = institution.Name;
 
+            CurrenKeyPlaceholder = CurrenKeyPlaceholderDefaultValue + " em " + CurrenSelectedFinancialInstitutionText;
+
             SetStatusFromCurrentPixColor();
         }
 
@@ -280,5 +297,21 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             set => SetProperty(ref _currenSelectedFinancialInstitutionText, value);
             get => _currenSelectedFinancialInstitutionText;
         }
+
+        private string _currenKeyPlaceholder;
+        public string CurrenKeyPlaceholder
+        {
+            set => SetProperty(ref _currenKeyPlaceholder, value);
+            get => _currenKeyPlaceholder;
+        }
+
+        private ObservableCollection<string> _notices;
+        public ObservableCollection<string> Notices
+        {
+            set => SetProperty(ref _notices, value);
+            get => _notices;
+        }
+
+        private string CurrenKeyPlaceholderDefaultValue => "Chave cadastrada";
     }
 }
