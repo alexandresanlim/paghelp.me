@@ -1,4 +1,5 @@
-﻿using PixQrCodeGeneratorOffline.Style;
+﻿using PixQrCodeGeneratorOffline.Models;
+using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Style.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -9,15 +10,15 @@ namespace PixQrCodeGeneratorOffline
 {
     public partial class App
     {
-        //public static MaterialColor Style { get; private set; }
+        public static IMaterialColorService MaterialColorService => DependencyService.Get<IMaterialColorService>();
 
         public static void LoadTheme(MaterialColor theme = null, bool isShowInList = false)
         {
-            var themeOrRandom = theme ?? MaterialColor.GetRandom();
+            var themeOrRandom = theme ?? MaterialColorService.GetRandom();
 
             //App.Style = themeOrRandom;
 
-            MaterialColor.SetOnCurrentResourceThemeColor(themeOrRandom);
+            MaterialColorService.SetOnCurrentResourceThemeColor(themeOrRandom);
 
             var service = DependencyService.Get<IStatusBar>();
             service?.SetStatusBarColor(!isShowInList ? themeOrRandom.Primary : themeOrRandom.PrimaryDark);
@@ -26,7 +27,7 @@ namespace PixQrCodeGeneratorOffline
             //service?.SetStatusBarColor(ThemeColors.BackgroundPage);
         }
 
-        public static MaterialColor ThemeColors => MaterialColor.GetByCurrentResourceThemeColor();
+        public static MaterialColor ThemeColors => MaterialColorService.GetByCurrentResourceThemeColor();
 
         public class DeviceInfo
         {

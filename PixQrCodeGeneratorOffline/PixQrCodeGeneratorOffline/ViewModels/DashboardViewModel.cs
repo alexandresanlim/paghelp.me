@@ -496,10 +496,10 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public void SetStatusFromCurrentPixColor()
         {
-            if (ShowInList || CurrentPixKey?.Color == null)
+            if (ShowInList || CurrentPixKey?.FinancialInstitution?.Institution?.Color == null)
                 return;
 
-            App.LoadTheme(CurrentPixKey?.Color);
+            App.LoadTheme(CurrentPixKey?.FinancialInstitution?.Institution?.Color);
         }
 
         private ObservableCollection<PixKey> _pixKeyList;

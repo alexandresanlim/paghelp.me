@@ -41,7 +41,7 @@ namespace PixQrCodeGeneratorOffline.Models
 
         public string City { get; set; }
 
-        public MaterialColor Color { get; set; }
+        //public MaterialColor Color { get; set; }
 
         public FinancialInstitution FinancialInstitution { get; set; }
 

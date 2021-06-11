@@ -2,7 +2,9 @@
 using Microsoft.AppCenter.Analytics;
 using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models;
+using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Services;
+using PixQrCodeGeneratorOffline.Style.Interfaces;
 using Plugin.Fingerprint;
 using Plugin.Fingerprint.Abstractions;
 using System;
@@ -18,8 +20,21 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
+        protected readonly IFinancialInstitutionService _financialInstitutionService;
+
+        protected readonly IPixKeyService _pixKeyService;
+
+        protected readonly IStatusBar _statusBarService;
+
+        protected readonly IMaterialColorService _materialColorService;
+
         public BaseViewModel()
         {
+            _financialInstitutionService = DependencyService.Get<IFinancialInstitutionService>();
+            _pixKeyService = DependencyService.Get<IPixKeyService>();
+            _statusBarService = DependencyService.Get<IStatusBar>();
+            _materialColorService = DependencyService.Get<IMaterialColorService>();
+
             ShowAds = true;
 
             Application.Current.RequestedThemeChanged += Current_RequestedThemeChanged;
@@ -34,7 +49,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         {
             if (PreferenceService.ShowInList)
             {
-                var colorSystem = (AppInfo.RequestedTheme == AppTheme.Light || AppInfo.RequestedTheme == AppTheme.Unspecified) ? Style.MaterialColor.GetLightColors() : Style.MaterialColor.GetDarkColors();
+                var colorSystem = (AppInfo.RequestedTheme == AppTheme.Light || AppInfo.RequestedTheme == AppTheme.Unspecified) ? _materialColorService.GetLightColors() : _materialColorService.GetDarkColors();
                 App.LoadTheme(colorSystem, PreferenceService.ShowInList);
             }
         }

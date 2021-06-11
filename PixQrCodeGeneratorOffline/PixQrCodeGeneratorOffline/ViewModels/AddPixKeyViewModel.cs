@@ -15,20 +15,12 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 {
     public class AddPixKeyViewModel : BaseViewModel
     {
-        public IStatusBar StatusBar => DependencyService.Get<IStatusBar>();
+        
 
         public DashboardViewModel DashboardViewModel { get; set; }
 
-        private readonly IFinancialInstitutionService _financialInstitutionService;
-
-        private readonly IPixKeyService _pixKeyService;
-
         public AddPixKeyViewModel(DashboardViewModel dbViewModel, PixKey pixKey = null)
         {
-            _financialInstitutionService = DependencyService.Get<IFinancialInstitutionService>();
-
-            _pixKeyService = DependencyService.Get<IPixKeyService>();
-
             CurrentPixKey = pixKey ?? new PixKey();
 
             DashboardViewModel = dbViewModel;
@@ -79,11 +71,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 if (string.IsNullOrEmpty(CurrentPixKey?.FinancialInstitution?.Name))
                 {
-                    CurrentPixKey.FinancialInstitution = new FinancialInstitution
-                    {
-                        Name = "Não informado"
-                    };
-                    CurrentPixKey.Color = MaterialColor.GetRandom();
+                    CurrentPixKey.FinancialInstitution = _financialInstitutionService.Create(FinancialInstitutionType.None);
                 }
 
                 if (string.IsNullOrEmpty(CurrentPixKey?.City))
@@ -207,8 +195,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                         var institution = new FinancialInstitution
                         {
-                            Name = newInstitution.Text,
-                            Style = MaterialColor.GetRandom()
+                            Name = newInstitution.Text
                         };
 
                         SetNewInstitution(institution);
@@ -231,24 +218,22 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
             CurrenSelectedFinancialInstitutionText = institution.Name;
 
-            CurrentPixKey.Color = institution.Style;
-
-            SetStatusFromCurrentPixColor(institution);
+            SetStatusFromCurrentPixColor();
         }
 
-        public void SetStatusFromCurrentPixColor(FinancialInstitution institution)
+        public void SetStatusFromCurrentPixColor()
         {
-            if (PreferenceService.ShowInList || CurrentPixKey?.Color == null)
+            if (PreferenceService.ShowInList || CurrentPixKey?.FinancialInstitution?.Institution?.Color == null)
                 return;
 
-            App.LoadTheme(CurrentPixKey?.Color);
+            App.LoadTheme(CurrentPixKey?.FinancialInstitution?.Institution?.Color);
 
             ReloadStatusBar();
         }
 
         private void ReloadStatusBar()
         {
-            StatusBar.SetStatusBarColor(App.ThemeColors.PrimaryDark);
+            _statusBarService.SetStatusBarColor(App.ThemeColors.PrimaryDark);
         }
 
         private async Task<bool> ValidateSave()
