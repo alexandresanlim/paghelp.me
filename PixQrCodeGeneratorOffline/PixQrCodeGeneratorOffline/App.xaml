@@ -13,7 +13,7 @@
         <Color x:Key="primaryLight">#70efde</Color>
         <Color x:Key="primaryDark">#008b7d</Color>
 
-        <Color x:Key="secondary">#34bcac</Color>
+        <Color x:Key="secondary">#50000000</Color>
         <Color x:Key="secondaryLight">#70efde</Color>
         <Color x:Key="secondaryDark">#008b7d</Color>
 
@@ -44,6 +44,37 @@
                 </Setter.Value>
             </Setter>-->
         </Style>
+
+        <x:Double x:Key="FontSizeLarge">25</x:Double>
+        <x:Double x:Key="FontSizeMedium">20</x:Double>
+        <x:Double x:Key="FontSizeSmall">15</x:Double>
+        <x:Double x:Key="FontSizeMicro">10</x:Double>
+
+        <ResourceDictionary>
+            <Style x:Key="styleKeyboardBilling" TargetType="Label">
+                <Setter Property="TextColor" Value="{DynamicResource textOnSecondary}"/>
+                <Setter Property="FontSize" Value="35" />
+                <Setter Property="FontFamily" Value="FontPoppinsSemiBold"/>
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+            </Style>
+
+            <Style x:Key="styleFrameMenuAbout" TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="{DynamicResource secondary}" />
+                <Setter Property="Padding" Value="30,15" />
+                <Setter Property="CornerRadius" Value="30" />
+            </Style>
+
+            <ResourceDictionary>
+                <Style x:Key="titleStyle" TargetType="Label">
+                    <Setter Property="Margin" Value="15,0,0,0"/>
+                    <Setter Property="FontSize" Value="{DynamicResource FontSizeLarge}" />
+                    <Setter Property="TextColor" Value="{DynamicResource textOnPrimary}"/>
+                    <Setter Property="FontFamily" Value="FontPoppinsBold"/>
+                </Style>
+            </ResourceDictionary>
+
+        </ResourceDictionary>
 
     </Application.Resources>
 </Application>

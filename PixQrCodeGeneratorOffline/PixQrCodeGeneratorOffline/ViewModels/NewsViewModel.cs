@@ -6,6 +6,7 @@ using PixQrCodeGeneratorOffline.Views.Shared;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -57,7 +58,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 FeedFromService = FeedFromService?.Count > 0 ? FeedFromService : await FeedService.Get("https://news.google.com/rss/search?q=pix%20-frade%20-golpista%20-golpistas%20-erro%20-golpe%20-hack%20-hacker&hl=pt-BR&gl=BR&ceid=BR%3Apt-419");
 
-                CurrentFeedList = FeedFromService?.ToObservableCollection();
+                CurrentFeedList = FeedFromService?.Where(x => x.PublishDate != null)?.OrderByDescending(x => x.PublishDate)?.ToObservableCollection();
 
                 NotFoundVisible = !(CurrentFeedList.Count > 0);
             }
@@ -73,7 +74,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public ICommand ItemTappedCommand => new Command<Feed>(async (item) =>
         {
-            if(string.IsNullOrEmpty(item?.Link?.AbsoluteUri))
+            if (string.IsNullOrEmpty(item?.Link?.AbsoluteUri))
             {
                 DialogService.Toast("Link para a notícia não encontrado.");
                 return;
@@ -93,7 +94,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
             finally
             {
-                SetEvent("Entrou em uma notícia");
+                SetEvent("Entrou em uma notícia", new Dictionary<string, string> { { "Título: ", item?.Title } });
 
                 SetIsLoading(false);
             }

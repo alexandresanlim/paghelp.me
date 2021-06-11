@@ -27,7 +27,7 @@ namespace PixQrCodeGeneratorOffline.Controls
 
         public CustomFrameButton()
         {
-            BackgroundColor = App.ThemeColors.Primary;
+            BackgroundColor = App.ThemeColors.Secondary;
             CornerRadius = new CornerRadius(25);
             Content = new StackLayout
             {

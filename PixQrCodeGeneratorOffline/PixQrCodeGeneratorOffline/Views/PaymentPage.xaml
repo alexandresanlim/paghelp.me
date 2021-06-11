@@ -35,7 +35,7 @@
                             <controls:CustomLabel Text="O pagador precisa abir o app que vai fazer a transferência PIX e escanear este QR Code ou colar o código copia e cola." FontSize="Small" TextColor="{DynamicResource textOnPrimary}" />
 
                             <qr:QRCode
-                            Content="{Binding CurrentPixKey.Payload}"
+                            Content="{Binding CurrentPixPaylod.QrCode}"
                             BackgroundColor="White"
                             Color="#000000" 
                             Level="H" 
@@ -53,13 +53,13 @@
 
                         </StackLayout>
 
-                        <controls:CustomLabel Text="{Binding CurrentPixKey.ValuePresentation}" FontSize="35" TextColor="{DynamicResource textOnPrimary}" HorizontalOptions="Center" FontAttributes="Bold" />
+                        <controls:CustomLabel Text="{Binding CurrentPixPaylod.PixCob.ValuePresentation}" FontSize="35" TextColor="{DynamicResource textOnPrimary}" HorizontalOptions="Center" FontAttributes="Bold" />
 
-                        <controls:CustomLabel Text="{Binding CurrentPixKey.NamePresentation, StringFormat='Para: {0}'}" TextColor="{DynamicResource textOnPrimary}" FontSize="Medium"  HorizontalOptions="Center" FontAttributes="Bold" />
+                        <controls:CustomLabel Text="{Binding CurrentPixPaylod.PixKey.Viewer.NamePresentation, StringFormat='Para: {0}'}" TextColor="{DynamicResource textOnPrimary}" FontSize="Medium"  HorizontalOptions="Center" FontAttributes="Bold" />
 
-                        <controls:CustomLabel Text="{Binding CurrentPixKey.InstitutionPresentation, StringFormat='Instituição: {0}'}" TextColor="{DynamicResource textOnPrimary}" FontSize="Small"  HorizontalOptions="Center" />
+                        <controls:CustomLabel Text="{Binding CurrentPixPaylod.PixKey.Viewer.InstitutionPresentation, StringFormat='Instituição: {0}'}" TextColor="{DynamicResource textOnPrimary}" FontSize="Small"  HorizontalOptions="Center" />
 
-                        <controls:CustomLabel Text="{Binding CurrentPixKey.KeyPresentation}" TextColor="{DynamicResource textOnPrimary}" FontSize="Micro"  HorizontalOptions="Center" />
+                        <controls:CustomLabel Text="{Binding CurrentPixPaylod.PixKey.Viewer.KeyPresentation}" TextColor="{DynamicResource textOnPrimary}" FontSize="Micro"  HorizontalOptions="Center" />
                     </StackLayout>
                 </ScrollView>
 
@@ -70,12 +70,12 @@
 
                     <controls:CustomLabel Text="Código copia e cola" FontAttributes="Bold" FontSize="Small" TextColor="{DynamicResource textOnPrimary}" />
 
-                    <controls:CustomFrame BackgroundColor="{DynamicResource backgroundTransparent}" CornerRadius="10" Padding="15">
+                    <Frame BackgroundColor="{DynamicResource secondary}" CornerRadius="10" Padding="15">
                         <Grid ColumnDefinitions="*, auto">
-                            <controls:CustomLabel Grid.Column="0" Text="{Binding CurrentPixKey.Payload}" FontSize="Micro" MaxLines="2" LineBreakMode="TailTruncation" TextColor="{DynamicResource textOnBackgroundTransparent}" />
-                            <controls:CustomIcon Grid.Column="1" Glyph="{x:Static icons:FontAwesomeSolid.ShareSquare }" IconSize="Medium" IconColor="{DynamicResource textOnBackgroundTransparent}" VerticalOptions="CenterAndExpand" />
+                            <controls:CustomLabel Grid.Column="0" Text="{Binding CurrentPixPaylod.QrCode}" FontSize="Micro" MaxLines="2" LineBreakMode="TailTruncation" TextColor="{DynamicResource textOnSecondary}" />
+                            <controls:CustomIcon Grid.Column="1" Glyph="{x:Static icons:FontAwesomeSolid.ShareSquare }" IconSize="Medium" IconColor="{DynamicResource textOnSecondary}" VerticalOptions="CenterAndExpand" />
                         </Grid>
-                    </controls:CustomFrame>
+                    </Frame>
                 </StackLayout>
 
             </Grid>

@@ -1,6 +1,10 @@
 ﻿using pix_payload_generator.net.Models.CobrancaModels;
 using pix_payload_generator.net.Models.PayloadModels;
+using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models.Base;
+using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
+using PixQrCodeGeneratorOffline.Models.Viewer;
+using PixQrCodeGeneratorOffline.Models.Viewer.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Style;
 using System;
 using System.Collections.Generic;
@@ -13,10 +17,18 @@ namespace PixQrCodeGeneratorOffline.Models
 {
     public class PixKey : NotifyObjectBase
     {
+        private readonly IPixKeyViewerService _pixKeyViewerService;
+
+        private readonly IPixPayloadService _pixPayloadService;
+
+        public PixKey()
+        {
+            _pixKeyViewerService = DependencyService.Get<IPixKeyViewerService>();
+            _pixPayloadService = DependencyService.Get<IPixPayloadService>();
+        }
+
         [LiteDB.BsonId]
         public int Id { get; set; }
-
-        //public string Key { get; set; }
 
         private string _key;
         public string Key
@@ -33,74 +45,37 @@ namespace PixQrCodeGeneratorOffline.Models
 
         public FinancialInstitution FinancialInstitution { get; set; }
 
+        //public PixKeyType Type { get; set; }
+
         [LiteDB.BsonIgnore]
-        private string _value;
-        public string Value
+        public PixKeyViewer Viewer => _pixKeyViewerService.Create(this);
+
+        [LiteDB.BsonIgnore]
+        public PixPayload Payload => _pixPayloadService.Create(this);
+
+
+        public PixKeyType GetKeyType()
         {
-            set { SetProperty(ref _value, value); }
-            get { return _value; }
+            if (Key.IsEmail())
+                return PixKeyType.Email;
+
+            if (Key.IsCPF())
+                return PixKeyType.CPF;
+
+            if (Key.IsCNPJ())
+                return PixKeyType.CNPJ;
+
+            return PixKeyType.NotFound;
         }
+    }
 
-        [LiteDB.BsonIgnore]
-        private string _description;
-        public string Description
-        {
-            set { SetProperty(ref _description, value); }
-            get { return _description; }
-        }
-
-
-        [LiteDB.BsonIgnore]
-        private string _payload;
-        public string Payload
-        {
-            set { SetProperty(ref _payload, value); }
-            get { return _payload; }
-        }
-
-        [LiteDB.BsonIgnore]
-        public string NameAndCity => (!string.IsNullOrEmpty(Name) && !string.IsNullOrEmpty(City)) ? Name + ", " + City : "";
-
-        [LiteDB.BsonIgnore]
-        public string NamePresentation => !string.IsNullOrEmpty(Name) ? Name : "";
-
-        [LiteDB.BsonIgnore]
-        public string KeyPresentation => !string.IsNullOrEmpty(Key) ? "Chave: " + Key : "";
-
-        [LiteDB.BsonIgnore]
-        public string InstitutionPresentation => !string.IsNullOrEmpty(FinancialInstitution?.Name) ? FinancialInstitution?.Name : "";
-
-        //[LiteDB.BsonIgnore]
-        //public string ValueUSString => !string.IsNullOrEmpty(Value) ? Value.Replace(",", ".") : "";
-
-        //[LiteDB.BsonIgnore]
-        //public decimal ValueUSCulture => !string.IsNullOrEmpty(Value) ? decimal.Parse(ValueUSString) : 0;
-
-        [LiteDB.BsonIgnore]
-        public string ValuePresentation => "R$ " + Value;
-
-        public void RaiseCob()
-        {
-            if (string.IsNullOrEmpty(Key))
-                return;
-
-            var value = Value.Replace(".", "").Replace(",",".");
-
-            Xamarin.Essentials.MainThread.BeginInvokeOnMainThread(() =>
-            {
-                Cobranca cobranca = new Cobranca(_chave: Key)
-                {
-                    SolicitacaoPagador = Description,
-                    Valor = new Valor
-                    {
-                        Original = value
-                    }
-                };
-
-                var payload = cobranca?.ToPayload("PIXOFF" + Guid.NewGuid().ToString("N").Substring(0, 10), new Merchant(Name, City));
-
-                Payload = payload?.GenerateStringToQrCode();
-            });
-        }
+    public enum PixKeyType
+    {
+        NotFound = -1,
+        Aleatoria,
+        Celular,
+        Email,
+        CPF,
+        CNPJ
     }
 }

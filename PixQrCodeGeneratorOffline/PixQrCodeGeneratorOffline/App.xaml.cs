@@ -1,10 +1,14 @@
-﻿using PixQrCodeGeneratorOffline.Services;
+﻿using PixQrCodeGeneratorOffline.Models.Repository;
+using PixQrCodeGeneratorOffline.Models.Repository.Interfaces;
+using PixQrCodeGeneratorOffline.Models.Services;
+using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
+using PixQrCodeGeneratorOffline.Models.Services.Viewer;
+using PixQrCodeGeneratorOffline.Models.Viewer.Services;
+using PixQrCodeGeneratorOffline.Models.Viewer.Services.Interfaces;
+using PixQrCodeGeneratorOffline.Services;
 using PixQrCodeGeneratorOffline.Style.Interfaces;
-using PixQrCodeGeneratorOffline.Views;
-using System;
 using System.Globalization;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace PixQrCodeGeneratorOffline
 {
@@ -16,15 +20,45 @@ namespace PixQrCodeGeneratorOffline
             InitializeComponent();
 
             //DependencyService.Register<MockDataStore>();
+
+            RegisterDependency();
+
             MainPage = new AppShell();
+        }
+
+        private void RegisterDependency()
+        {
+            RegisterDependencyService();
+            RegisterDependencyViewer();
+            RegisterDependencyRepository();
+        }
+
+        private void RegisterDependencyViewer()
+        {
+            DependencyService.Register<IFeedViewerService, FeedViewerService>();
+            DependencyService.Register<IPixKeyViewerService, PixKeyViewerService>();
+        }
+
+        private void RegisterDependencyService()
+        {
+            DependencyService.Register<IFinancialInstitutionService, FinancialInstitutionService>();
+            DependencyService.Register<IGuideService, GuideService>();
+            DependencyService.Register<IPixKeyService, PixKeyService>();
+            DependencyService.Register<IPixCobService, PixCobService>();
+            DependencyService.Register<IPixPayloadService, PixPayloadService>();
+        }
+
+        private void RegisterDependencyRepository()
+        {
+            DependencyService.Register<IPixKeyRepository, PixKeyRepository>();
         }
 
         protected override void OnStart()
         {
-            var service = DependencyService.Get<IStatusBar>();
-            service?.SetStatusBarColor(App.ThemeColors.Primary);
-
             CultureInfo.CurrentCulture = CultureInfo.CreateSpecificCulture("pt-BR");
+
+            var service = DependencyService.Get<IStatusBar>();
+            service?.SetStatusBarColor(!PreferenceService.ShowInList ? ThemeColors.Primary : ThemeColors.PrimaryDark);
         }
 
         protected override void OnSleep()

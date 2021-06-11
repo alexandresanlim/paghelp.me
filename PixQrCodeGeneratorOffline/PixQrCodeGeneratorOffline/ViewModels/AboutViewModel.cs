@@ -61,7 +61,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                     }),
                     new Acr.UserDialogs.ActionSheetOption("Copiar código copia e cola pix para doação", async () =>
                     {
-                        await CopyText("00020126760014br.gov.bcb.pix0136bee05743-4291-4f3c-9259-595df1307ba10214Doação PIX OFF5204000053039865802BR5909Alexandre6008Curitiba62200516PIXOFFe2d72825e26304208D", "Código copiado com sucesso!");
+                        await CopyText("00020126760014br.gov.bcb.pix0136bee05743-4291-4f3c-9259-595df1307ba10214Doação PIX APP5204000053039865802BR5909Alexandre6008Curitiba62200516PIXOFFe2d72825e26304208D", "Código copiado com sucesso!");
                     })
                 };
 
@@ -114,6 +114,28 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             finally
             {
                 SetEvent("Tocou em ver instagram");
+            }
+        });
+
+        public ICommand SendAMessageCommand => new Command(async () =>
+        {
+            var text = await DialogService.PromptAsync("Sugestão, elogio ou crítica? Fale pra nós o que você está achando...", "Feedback", "Enviar", "Cancelar");
+
+            if (text.Ok && !string.IsNullOrWhiteSpace(text?.Text))
+            {
+                var dic = new Dictionary<string, string>
+                {
+                    { "Texto: ", text.Text }
+                };
+
+                var contact = await DialogService.PromptAsync("Queremos te responder :)", "Qual o seu e-mail?", "Enviar", "Não quero informar");
+
+                if (contact.Ok && string.IsNullOrWhiteSpace(contact?.Text))
+                    dic.Add("Contato", contact.Text);
+
+                SetEvent("Sugestão: ", dic);
+
+                DialogService.Toast("Mensagem enviada com sucesso! Obrigado.");
             }
         });
 

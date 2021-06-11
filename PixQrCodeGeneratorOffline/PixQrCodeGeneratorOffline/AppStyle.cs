@@ -11,7 +11,7 @@ namespace PixQrCodeGeneratorOffline
     {
         //public static MaterialColor Style { get; private set; }
 
-        public static void LoadTheme(MaterialColor theme = null)
+        public static void LoadTheme(MaterialColor theme = null, bool isShowInList = false)
         {
             var themeOrRandom = theme ?? MaterialColor.GetRandom();
 
@@ -20,7 +20,7 @@ namespace PixQrCodeGeneratorOffline
             MaterialColor.SetOnCurrentResourceThemeColor(themeOrRandom);
 
             var service = DependencyService.Get<IStatusBar>();
-            service?.SetStatusBarColor(themeOrRandom.Primary);
+            service?.SetStatusBarColor(!isShowInList ? themeOrRandom.Primary : themeOrRandom.PrimaryDark);
 
             //var service = DependencyService.Get<IStatusBar>();
             //service?.SetStatusBarColor(ThemeColors.BackgroundPage);

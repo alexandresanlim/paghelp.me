@@ -1,13 +1,12 @@
-﻿using PixQrCodeGeneratorOffline.DataBase;
-using PixQrCodeGeneratorOffline.Extention;
+﻿using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models;
+using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
+using PixQrCodeGeneratorOffline.Services;
 using PixQrCodeGeneratorOffline.Style;
 using PixQrCodeGeneratorOffline.Style.Interfaces;
-using PixQrCodeGeneratorOffline.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -20,8 +19,16 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public DashboardViewModel DashboardViewModel { get; set; }
 
+        private readonly IFinancialInstitutionService _financialInstitutionService;
+
+        private readonly IPixKeyService _pixKeyService;
+
         public AddPixKeyViewModel(DashboardViewModel dbViewModel, PixKey pixKey = null)
         {
+            _financialInstitutionService = DependencyService.Get<IFinancialInstitutionService>();
+
+            _pixKeyService = DependencyService.Get<IPixKeyService>();
+
             CurrentPixKey = pixKey ?? new PixKey();
 
             DashboardViewModel = dbViewModel;
@@ -44,7 +51,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 if (!IsEdit)
                 {
-                    var firstKey = PixKeyDataBase.GetFirst();
+                    var firstKey = _pixKeyService.GetFirst();
 
                     if (firstKey != null && firstKey.Id > 0)
                     {
@@ -88,7 +95,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 if (IsEdit)
                 {
-                    success = PixKeyDataBase.Update(CurrentPixKey);
+                    success = _pixKeyService.Update(CurrentPixKey);
 
                     var l = DashboardViewModel.PixKeyList.FirstOrDefault(x => x.Id.Equals(CurrentPixKey.Id));
 
@@ -103,7 +110,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 else
                 {
-                    success = PixKeyDataBase.Insert(CurrentPixKey);
+                    success = _pixKeyService.Insert(CurrentPixKey);
                     DashboardViewModel.PixKeyList.Add(CurrentPixKey);
                 }
 
@@ -111,6 +118,8 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 //if (success)
                 //{
+
+                //CurrentPixKey.RaiseCob();
 
                 await DashboardViewModel.LoadCurrentPixKey(CurrentPixKey);
 
@@ -138,7 +147,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 if (!confirm)
                     return;
 
-                var success = PixKeyDataBase.Remove(CurrentPixKey);
+                var success = _pixKeyService.Remove(CurrentPixKey);
 
                 if (success)
                 {
@@ -166,7 +175,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             {
                 var options = new List<Acr.UserDialogs.ActionSheetOption>();
 
-                var intitutionList = FinancialInstitution.GetList();
+                var intitutionList = _financialInstitutionService.GetList();
 
                 foreach (var item in intitutionList)
                 {
@@ -219,9 +228,21 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         private void SetNewInstitution(FinancialInstitution institution)
         {
             CurrentPixKey.FinancialInstitution = institution;
-            CurrentPixKey.Color = institution.Style;
+
             CurrenSelectedFinancialInstitutionText = institution.Name;
+
+            CurrentPixKey.Color = institution.Style;
+
+            SetStatusFromCurrentPixColor(institution);
+        }
+
+        public void SetStatusFromCurrentPixColor(FinancialInstitution institution)
+        {
+            if (PreferenceService.ShowInList || CurrentPixKey?.Color == null)
+                return;
+
             App.LoadTheme(CurrentPixKey?.Color);
+
             ReloadStatusBar();
         }
 

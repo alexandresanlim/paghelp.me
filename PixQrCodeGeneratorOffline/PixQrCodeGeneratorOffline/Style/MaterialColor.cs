@@ -14,6 +14,8 @@ namespace PixQrCodeGeneratorOffline.Style
             TextPrimary = Color.FromHex("#212121");
             TextSecondary = Color.FromHex("#757575");
             BackgroundPage = Color.FromHex("#ecf0f1");
+            Secondary = Color.FromHex("#50000000");
+            TextOnSecondary = Color.FromHex("#ffffff");
         }
 
         public string Name { get; set; }
@@ -63,9 +65,6 @@ namespace PixQrCodeGeneratorOffline.Style
                 PrimaryLight = Color.FromHex("#2a4653"),
                 Primary = Color.FromHex("#264653"),
                 TextOnPrimary = Color.FromHex("#ffffff"),
-                SecondaryDark = Color.FromHex("#3c0006"),
-                Secondary = Color.FromHex("#6b1230"),
-                TextOnSecondary = Color.FromHex("#FFFFFF")
             },
             new MaterialColor
             {
@@ -74,9 +73,6 @@ namespace PixQrCodeGeneratorOffline.Style
                 PrimaryLight = Color.FromHex("#459d8f"),
                 Primary = Color.FromHex("#2a9d8f"),
                 TextOnPrimary = Color.FromHex("#000000"),
-                SecondaryDark = Color.FromHex("#3c0006"),
-                Secondary = Color.FromHex("#6b1230"),
-                TextOnSecondary = Color.FromHex("#FFFFFF")
             },
             new MaterialColor
             {
@@ -85,9 +81,6 @@ namespace PixQrCodeGeneratorOffline.Style
                 PrimaryLight = Color.FromHex("#e9c46a"),
                 Primary = Color.FromHex("#e9c46a"),
                 TextOnPrimary = Color.FromHex("#000000"),
-                SecondaryDark = Color.FromHex("#3c0006"),
-                Secondary = Color.FromHex("#6b1230"),
-                TextOnSecondary = Color.FromHex("#FFFFFF")
             },
             new MaterialColor
             {
@@ -96,9 +89,6 @@ namespace PixQrCodeGeneratorOffline.Style
                 PrimaryLight = Color.FromHex("#f4a261"),
                 Primary = Color.FromHex("#f4a261"),
                 TextOnPrimary = Color.FromHex("#000000"),
-                SecondaryDark = Color.FromHex("#3c0006"),
-                Secondary = Color.FromHex("#6b1230"),
-                TextOnSecondary = Color.FromHex("#FFFFFF")
             },
             new MaterialColor
             {
@@ -107,9 +97,6 @@ namespace PixQrCodeGeneratorOffline.Style
                 PrimaryLight = Color.FromHex("#e76f51"),
                 Primary = Color.FromHex("#e76f51"),
                 TextOnPrimary = Color.FromHex("#000000"),
-                SecondaryDark = Color.FromHex("#3c0006"),
-                Secondary = Color.FromHex("#6b1230"),
-                TextOnSecondary = Color.FromHex("#FFFFFF")
             }
         };
 
@@ -118,19 +105,45 @@ namespace PixQrCodeGeneratorOffline.Style
             return NiceCombinationList.PickRandom();
         }
 
+        public static MaterialColor GetLightColors()
+        {
+            return new Style.MaterialColor
+            {
+                Primary = Color.FromHex("#ffffff"),
+                PrimaryDark = Color.FromHex("#cccccc"),
+                PrimaryLight = Color.FromHex("#ffffff"),
+                Secondary = Color.FromHex("#34bcac"),
+                TextOnPrimary = Color.FromHex("000000"),
+                TextOnSecondary = Color.FromHex("000000")
+            };
+        }
+
+        public static MaterialColor GetDarkColors()
+        {
+            return new Style.MaterialColor
+            {
+                Primary = Color.FromHex("#212121"),
+                PrimaryDark = Color.FromHex("#000000"),
+                PrimaryLight = Color.FromHex("#484848"),
+                Secondary = Color.FromHex("#34bcac"),
+                TextOnPrimary = Color.FromHex("ffffff"),
+                TextOnSecondary = Color.FromHex("000000")
+            };
+        }
+
         public static void SetOnCurrentResourceThemeColor(MaterialColor colors)
         {
             App.Current.Resources["primary"] = colors.Primary;
             App.Current.Resources["primaryLight"] = colors.PrimaryLight;
             App.Current.Resources["primaryDark"] = colors.PrimaryDark;
 
-            App.Current.Resources["secondary"] = colors.Secondary;
+            App.Current.Resources["secondary"] = (colors?.Secondary == Color.FromRgba(0, 0, 0, 0)) ? Color.FromHex("#50000000") : colors.Secondary;
             App.Current.Resources["secondaryLight"] = colors.SecondaryLight;
             App.Current.Resources["secondaryDark"] = colors.SecondaryDark;
 
 
             App.Current.Resources["textOnPrimary"] = colors.TextOnPrimary;
-            App.Current.Resources["textOnSecondary"] = colors.TextOnSecondary;
+            App.Current.Resources["textOnSecondary"] = (colors?.TextOnSecondary == Color.FromRgba(0, 0, 0, 0)) ? Color.White : colors.TextOnSecondary;
             App.Current.Resources["background_page"] = colors.BackgroundPage;
 
             App.Current.Resources["textPrimary"] = colors.TextPrimary;

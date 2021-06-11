@@ -1,13 +1,17 @@
 ﻿using Acr.UserDialogs;
 using Microsoft.AppCenter.Analytics;
+using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models;
 using PixQrCodeGeneratorOffline.Services;
+using Plugin.Fingerprint;
+using Plugin.Fingerprint.Abstractions;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.ViewModels
@@ -17,6 +21,22 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         public BaseViewModel()
         {
             ShowAds = true;
+
+            Application.Current.RequestedThemeChanged += Current_RequestedThemeChanged;
+        }
+
+        private void Current_RequestedThemeChanged(object sender, AppThemeChangedEventArgs e)
+        {
+            ReloadAppColorIfShowInListStyle();
+        }
+
+        public void ReloadAppColorIfShowInListStyle()
+        {
+            if (PreferenceService.ShowInList)
+            {
+                var colorSystem = (AppInfo.RequestedTheme == AppTheme.Light || AppInfo.RequestedTheme == AppTheme.Unspecified) ? Style.MaterialColor.GetLightColors() : Style.MaterialColor.GetDarkColors();
+                App.LoadTheme(colorSystem, PreferenceService.ShowInList);
+            }
         }
 
         public IUserDialogs DialogService => UserDialogs.Instance;
@@ -58,9 +78,9 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         #endregion
 
-        public void SetEvent(string text)
+        public void SetEvent(string text, IDictionary<string, string> properties = null)
         {
-            Analytics.TrackEvent(text);
+            Analytics.TrackEvent(text, properties);
         }
 
         public async Task DisplayAlert(string title, string message, string cancel)
