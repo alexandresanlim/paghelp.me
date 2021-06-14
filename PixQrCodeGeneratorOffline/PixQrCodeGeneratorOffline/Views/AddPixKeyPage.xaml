@@ -40,7 +40,9 @@
                     </StackLayout>
                 </StackLayout>
 
-                <StackLayout Grid.Row="1" HeightRequest="75" Padding="15,0,15,15">
+                <StackLayout Grid.Row="1" HeightRequest="100" Padding="15,0,15,15">
+                    <controls:CustomLabel Text="IMPORTANTE" FontAttributes="Bold" TextColor="{DynamicResource textOnSecondary}" />
+
                     <controls:CustomCarouselView
                                 IndicatorView="indicatorView"
                                 ItemsSource="{Binding Notices}"

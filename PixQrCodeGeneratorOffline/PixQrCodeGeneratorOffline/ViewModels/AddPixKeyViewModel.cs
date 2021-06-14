@@ -69,9 +69,9 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         {
             Notices = new ObservableCollection<string>
             {
-                "Não cadastre chaves que ainda não foram registradas em alguma instituição financeira.",
                 "Para sua segurança não será possível ver saldo ou realizar transferências, use o app da própria instituição para isso.",
-                "Os chaves serão guardadas somente no device, sem a necessidade de conexão com a internet e de modo criptografado."
+                "Os chaves serão guardadas somente no device, sem a necessidade de conexão com a internet e de modo criptografado.",
+                "Não cadastre chaves que ainda não foram registradas em alguma instituição financeira."
             };
         }
 
