@@ -61,6 +61,12 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public async Task ShareText(string text)
         {
+            if(string.IsNullOrWhiteSpace(text))
+            {
+                DialogService.Toast("Texto a ser compartilhado é inválido");
+                return;
+            }
+
             await Xamarin.Essentials.Share.RequestAsync(new Xamarin.Essentials.ShareTextRequest
             {
                 Text = text,
