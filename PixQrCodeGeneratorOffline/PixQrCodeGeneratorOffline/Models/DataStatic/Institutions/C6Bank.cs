@@ -17,7 +17,7 @@ namespace PixQrCodeGeneratorOffline.Models.DataStatic.Institutions
         {
             Name = "c6bank",
             Primary = Color.FromHex("#050505"),
-            PrimaryDark = Color.FromHex("#000000"),
+            PrimaryDark = Color.FromHex("#1E1E1E"),
             PrimaryLight = Color.FromHex("#2f2f2f"),
             TextOnPrimary = Color.FromHex("#ffffff")
         };

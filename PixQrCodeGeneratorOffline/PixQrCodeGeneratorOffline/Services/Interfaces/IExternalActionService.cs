@@ -10,5 +10,9 @@ namespace PixQrCodeGeneratorOffline.Services.Interfaces
         Task ShareText(string text);
 
         Task CopyText(string text, string textSuccess = "Copiado com sucesso!");
+
+        string GenerateTxtFile(string contents, string fileName);
+
+        Task ShareFile(string path);
     }
 }

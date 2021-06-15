@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace PixQrCodeGeneratorOffline.Models.Services.Interfaces
 {
@@ -18,6 +19,8 @@ namespace PixQrCodeGeneratorOffline.Models.Services.Interfaces
 
         bool Remove(PixKey item);
 
-        bool RemoveAll();
+        void ShareAllKeys();
+
+        Task<bool> RemoveAll();
     }
 }

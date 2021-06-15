@@ -1,19 +1,15 @@
 ﻿using pix_payload_generator.net.Models.PayloadModels;
 using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models;
-using PixQrCodeGeneratorOffline.Models.Repository.Interfaces;
-using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Services;
 using PixQrCodeGeneratorOffline.Views;
 using Plugin.Fingerprint;
 using Plugin.Fingerprint.Abstractions;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using Xamarin.Essentials;
 using Xamarin.Forms;
 
 
@@ -40,7 +36,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 await LoadCurrentPixKey();
 
-                
+
             }
             catch (System.Exception e)
             {
@@ -173,16 +169,9 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
         });
 
-        public ICommand ChangeSelectPixKeyCommand => new Command(async () =>
-        {
-            SetStatusFromCurrentPixColor();
-        });
+        public ICommand ChangeSelectPixKeyCommand => new Command(() => SetStatusFromCurrentPixColor());
 
-        public ICommand CopyKeyCommand => new Command(async () =>
-        {
-            await Clipboard.SetTextAsync(CurrentPixKey?.Key);
-            DialogService.Toast("Chave copiada com sucesso!");
-        });
+        public ICommand CopyKeyCommand => new Command(async () => await _externalActionService.CopyText(CurrentPixKey?.Key, "Chave copiada com sucesso!"));
 
         public ICommand ShareKeyCommand => new Command(async () =>
         {
@@ -306,7 +295,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             {
                 preferences.Add(new Acr.UserDialogs.ActionSheetOption((Preference.FingerPrint ? "Remover" : "Adicionar") + " autenticação biométrica", async () =>
                 {
-                    await SetFingerPrint();
+                    await _preferenceService.ChangeFingerPrint();
                 }));
             }
 
@@ -339,7 +328,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             {
                 new Acr.UserDialogs.ActionSheetOption("Campartilhar todas as chaves", () =>
                 {
-                    ShareAllKeys();
+                    _pixKeyService.ShareAllKeys();
                 })
             };
 
@@ -347,7 +336,13 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             {
                 keys.Add(new Acr.UserDialogs.ActionSheetOption($"Excluir todas as {PixKeyList.Count} chaves", async () =>
                 {
-                    await RemoveAllKeys();
+                    var success = await _pixKeyService.RemoveAll();
+
+                    if (success)
+                    {
+                        PixKeyList.Clear();
+                        await LoadCurrentPixKey(null);
+                    }
                 }));
             }
 
@@ -360,66 +355,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                     return;
                 })
             });
-        }
-
-        public void ShareAllKeys()
-        {
-            var info = "";
-
-            foreach (var item in PixKeyList)
-            {
-                info += item.Viewer.InstitutionAndKey + "\n";
-            }
-
-            if (string.IsNullOrWhiteSpace(info))
-                return;
-
-            try
-            {
-                var options = new List<Acr.UserDialogs.ActionSheetOption>()
-                {
-                    new Acr.UserDialogs.ActionSheetOption("Compartilhar", async () =>
-                    {
-                        await Share.RequestAsync(new ShareTextRequest
-                        {
-                            Text = info,
-                            Title = "Compartilhar Texto"
-                        });
-                    }),
-                    new Acr.UserDialogs.ActionSheetOption("Salvar em txt e compartilhar", async () =>
-                    {
-                       var path = string.Empty;
-
-                        path = Path.Combine(FileSystem.CacheDirectory, "ChavesPix.txt");
-
-                        File.WriteAllText(path, info);
-
-                        await Share.RequestAsync(new ShareFileRequest
-                        {
-                            Title = "Compartilhar Arquivo",
-                            File = new ShareFile(path)
-                        });
-                    }),
-                };
-
-                DialogService.ActionSheet(new Acr.UserDialogs.ActionSheetConfig
-                {
-                    Title = "Selecione uma opção:",
-                    Options = options,
-                    Cancel = new Acr.UserDialogs.ActionSheetOption("Cancelar", () =>
-                    {
-                        return;
-                    })
-                });
-            }
-            catch (System.Exception e)
-            {
-                e.SendToLog();
-            }
-            finally
-            {
-                SetEvent("Compartilhou todas as chaves");
-            }
         }
 
         private async Task ReloadShowInList()
@@ -449,53 +384,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 SetIsLoading(false);
             }
-        }
-
-        private async Task RemoveAllKeys()
-        {
-            var confirm = await DialogService.ConfirmAsync("Tem certeza que deseja excluir todas as " + PixKeyList.Count + " chaves?", "Confirmação", "Sim, tenho certeza", "Cancelar");
-
-            if (!confirm)
-                return;
-
-            try
-            {
-                var success = _pixKeyService.RemoveAll();
-
-                if (success)
-                {
-                    PixKeyList.Clear();
-
-                    await LoadCurrentPixKey(null);
-
-                    DialogService.Toast("Todas as chaves foram removidas com sucesso!");
-
-                    NavigateBack();
-                }
-
-                else
-                    DialogService.Toast("Algo de errado aconteceu, tente novamente mais tarde ou atualize o app");
-            }
-            catch (System.Exception e)
-            {
-                e.SendToLog();
-            }
-            finally
-            {
-                SetEvent("Removeu todas as chaves");
-            }
-        }
-
-        private async Task SetFingerPrint()
-        {
-            var confirmMsg = "Tem certeza que deseja " + (Preference.FingerPrint ? "remover" : "adicionar") + " autenticação biométrica? Na próxima vez que você entrar, " + (Preference.FingerPrint ? "não será" : "será") + " necessário se autenticar para realizar quaisquer ações.";
-
-            if (!await DialogService.ConfirmAsync(confirmMsg, "Confirmação", "Confirmar", "Cancelar"))
-                return;
-
-            _preferenceService.ChangeFingerPrint();
-
-            DialogService.Toast("Preferência de entrada, salva com sucesso!");
         }
 
         public void SetStatusFromCurrentPixColor()

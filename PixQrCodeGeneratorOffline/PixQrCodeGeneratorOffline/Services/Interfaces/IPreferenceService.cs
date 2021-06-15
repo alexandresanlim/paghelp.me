@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace PixQrCodeGeneratorOffline.Services.Interfaces
 {
@@ -10,6 +11,6 @@ namespace PixQrCodeGeneratorOffline.Services.Interfaces
 
         void ChangeShowInList();
 
-        void ChangeFingerPrint();
+        Task ChangeFingerPrint();
     }
 }
