@@ -297,7 +297,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             {
                 preferences.Add(new Acr.UserDialogs.ActionSheetOption(Preference.ShowInList ? "Exibir em carrossel" : "Exibir em lista", async () =>
                  {
-                     Preference.ShowInList = !Preference.ShowInList;
+                     _preferenceService.ChangeShowInList();
                      await ReloadShowInList();
                  }));
             }
@@ -493,7 +493,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             if (!await DialogService.ConfirmAsync(confirmMsg, "Confirmação", "Confirmar", "Cancelar"))
                 return;
 
-            Preference.FingerPrint = !Preference.FingerPrint;
+            _preferenceService.ChangeFingerPrint();
 
             DialogService.Toast("Preferência de entrada, salva com sucesso!");
         }

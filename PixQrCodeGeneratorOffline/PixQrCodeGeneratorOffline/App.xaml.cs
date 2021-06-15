@@ -8,6 +8,7 @@ using PixQrCodeGeneratorOffline.Models.Validation.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Models.Viewer.Services;
 using PixQrCodeGeneratorOffline.Models.Viewer.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Services;
+using PixQrCodeGeneratorOffline.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Style.Interfaces;
 using System.Globalization;
 using Xamarin.Forms;
@@ -51,6 +52,7 @@ namespace PixQrCodeGeneratorOffline
             DependencyService.Register<IPixCobService, PixCobService>();
             DependencyService.Register<IPixPayloadService, PixPayloadService>();
             DependencyService.Register<IMaterialColorService, MaterialColorService>();
+            DependencyService.Register<IPreferenceService, PreferenceService>();
         }
 
         private void RegisterDependencyRepository()

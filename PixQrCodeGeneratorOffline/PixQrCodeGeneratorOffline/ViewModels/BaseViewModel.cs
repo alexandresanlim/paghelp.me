@@ -4,6 +4,7 @@ using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models;
 using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Services;
+using PixQrCodeGeneratorOffline.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Style.Interfaces;
 using Plugin.Fingerprint;
 using Plugin.Fingerprint.Abstractions;
@@ -30,6 +31,8 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         protected readonly IPixPayloadService _pixPayloadService;
 
+        protected readonly IPreferenceService _preferenceService;
+
         public BaseViewModel()
         {
             _financialInstitutionService = DependencyService.Get<IFinancialInstitutionService>();
@@ -37,6 +40,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             _statusBarService = DependencyService.Get<IStatusBar>();
             _materialColorService = DependencyService.Get<IMaterialColorService>();
             _pixPayloadService = DependencyService.Get<IPixPayloadService>();
+            _preferenceService = DependencyService.Get<IPreferenceService>();
 
             ShowAds = true;
 

@@ -6,6 +6,10 @@ namespace PixQrCodeGeneratorOffline.Services.Interfaces
 {
     public interface IPreferenceService
     {
-        
+        void ChangeHideData();
+
+        void ChangeShowInList();
+
+        void ChangeFingerPrint();
     }
 }

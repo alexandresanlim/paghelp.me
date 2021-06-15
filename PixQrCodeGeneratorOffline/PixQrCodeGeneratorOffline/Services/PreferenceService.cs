@@ -9,20 +9,17 @@ namespace PixQrCodeGeneratorOffline.Services
     {
         public void ChangeHideData()
         {
-            var newData = !Preference.HideData;
-            Preference.HideData = newData;
+            Preference.HideData = !Preference.HideData;
         }
 
         public void ChangeShowInList()
         {
-            var newData = !Preference.ShowInList;
-            Preference.ShowInList = newData;
+            Preference.ShowInList = !Preference.ShowInList;
         }
 
         public void ChangeFingerPrint()
         {
-            var newData = !Preference.FingerPrint;
-            Preference.ShowInList = newData;
+            Preference.FingerPrint = !Preference.FingerPrint;
         }
     }
 }
