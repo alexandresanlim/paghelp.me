@@ -50,18 +50,15 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public void ReloadAppColorIfShowInListStyle()
         {
-            if (PreferenceService.ShowInList)
-            {
-                var colorSystem = (AppInfo.RequestedTheme == AppTheme.Light || AppInfo.RequestedTheme == AppTheme.Unspecified) ? _materialColorService.GetLightColors() : _materialColorService.GetDarkColors();
-                App.LoadTheme(colorSystem, PreferenceService.ShowInList);
-            }
+            if (Preference.ShowInList)
+                App.LoadTheme(_materialColorService.GetByCurrentDeviceTheme(), Preference.ShowInList);
         }
 
-        public IUserDialogs DialogService => UserDialogs.Instance;
+        protected IUserDialogs DialogService => UserDialogs.Instance;
 
         public async Task ShareText(string text)
         {
-            if(string.IsNullOrWhiteSpace(text))
+            if (string.IsNullOrWhiteSpace(text))
             {
                 DialogService.Toast("Texto a ser compartilhado é inválido");
                 return;

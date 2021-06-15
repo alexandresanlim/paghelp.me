@@ -3,6 +3,7 @@ using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.Models.Services
@@ -61,7 +62,7 @@ namespace PixQrCodeGeneratorOffline.Models.Services
             return GetNiceCombinationList().PickRandom();
         }
 
-        public MaterialColor GetLightColors()
+        private MaterialColor GetLightColors()
         {
             return new MaterialColor
             {
@@ -74,7 +75,7 @@ namespace PixQrCodeGeneratorOffline.Models.Services
             };
         }
 
-        public MaterialColor GetDarkColors()
+        private MaterialColor GetDarkColors()
         {
             return new MaterialColor
             {
@@ -125,6 +126,11 @@ namespace PixQrCodeGeneratorOffline.Models.Services
                 TextPrimary = (Color)App.Current.Resources["textPrimary"],
                 TextSecondary = (Color)App.Current.Resources["textSecondary"],
             };
+        }
+
+        public MaterialColor GetByCurrentDeviceTheme()
+        {
+            return (AppInfo.RequestedTheme == AppTheme.Light || AppInfo.RequestedTheme == AppTheme.Unspecified) ? GetLightColors() : GetDarkColors();
         }
     }
 }

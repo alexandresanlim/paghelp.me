@@ -233,14 +233,14 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
             CurrenSelectedFinancialInstitutionText = institution.Name;
 
-            CurrenKeyPlaceholder = CurrenKeyPlaceholderDefaultValue + " em " + CurrenSelectedFinancialInstitutionText;
+            CurrenKeyPlaceholder = CurrenKeyPlaceholderDefaultValue + " no " + CurrenSelectedFinancialInstitutionText;
 
             SetStatusFromCurrentPixColor();
         }
 
         public void SetStatusFromCurrentPixColor()
         {
-            if (PreferenceService.ShowInList || CurrentPixKey?.FinancialInstitution?.Institution?.MaterialColor == null)
+            if (Preference.ShowInList || CurrentPixKey?.FinancialInstitution?.Institution?.MaterialColor == null)
                 return;
 
             App.LoadTheme(CurrentPixKey?.FinancialInstitution?.Institution?.MaterialColor);

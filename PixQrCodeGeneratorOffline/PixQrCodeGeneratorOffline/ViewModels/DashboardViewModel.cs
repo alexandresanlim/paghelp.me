@@ -77,7 +77,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         private async Task ResetProps()
         {
-            IsVisibleFingerPrint = PreferenceService.FingerPrint && await CrossFingerprint.Current.IsAvailableAsync();
+            IsVisibleFingerPrint = Preference.FingerPrint && await CrossFingerprint.Current.IsAvailableAsync();
 
             ShowInList = false;
             ShowInCarousel = false;
@@ -295,16 +295,16 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
             if (PixKeyList != null && PixKeyList.Count > 0)
             {
-                preferences.Add(new Acr.UserDialogs.ActionSheetOption(PreferenceService.ShowInList ? "Exibir em carrossel" : "Exibir em lista", async () =>
+                preferences.Add(new Acr.UserDialogs.ActionSheetOption(Preference.ShowInList ? "Exibir em carrossel" : "Exibir em lista", async () =>
                  {
-                     PreferenceService.ShowInList = !PreferenceService.ShowInList;
+                     Preference.ShowInList = !Preference.ShowInList;
                      await ReloadShowInList();
                  }));
             }
 
             if (await CrossFingerprint.Current.IsAvailableAsync())
             {
-                preferences.Add(new Acr.UserDialogs.ActionSheetOption((PreferenceService.FingerPrint ? "Remover" : "Adicionar") + " autenticação biométrica", async () =>
+                preferences.Add(new Acr.UserDialogs.ActionSheetOption((Preference.FingerPrint ? "Remover" : "Adicionar") + " autenticação biométrica", async () =>
                 {
                     await SetFingerPrint();
                 }));
@@ -430,7 +430,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 await Task.Delay(500);
 
-                ShowInList = PreferenceService.ShowInList;
+                ShowInList = Preference.ShowInList;
                 ShowInCarousel = !ShowInList;
 
                 if (ShowInList)
@@ -488,12 +488,12 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         private async Task SetFingerPrint()
         {
-            var confirmMsg = "Tem certeza que deseja " + (PreferenceService.FingerPrint ? "remover" : "adicionar") + " autenticação biométrica? Na próxima vez que você entrar, " + (PreferenceService.FingerPrint ? "não será" : "será") + " necessário se autenticar para realizar quaisquer ações.";
+            var confirmMsg = "Tem certeza que deseja " + (Preference.FingerPrint ? "remover" : "adicionar") + " autenticação biométrica? Na próxima vez que você entrar, " + (Preference.FingerPrint ? "não será" : "será") + " necessário se autenticar para realizar quaisquer ações.";
 
             if (!await DialogService.ConfirmAsync(confirmMsg, "Confirmação", "Confirmar", "Cancelar"))
                 return;
 
-            PreferenceService.FingerPrint = !PreferenceService.FingerPrint;
+            Preference.FingerPrint = !Preference.FingerPrint;
 
             DialogService.Toast("Preferência de entrada, salva com sucesso!");
         }

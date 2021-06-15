@@ -1,46 +1,28 @@
-﻿using System;
+﻿using PixQrCodeGeneratorOffline.Services.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Text;
-using Xamarin.Essentials;
 
 namespace PixQrCodeGeneratorOffline.Services
 {
-    public static class PreferenceService
+    public class PreferenceService : IPreferenceService
     {
-        public static bool HideData
+        public void ChangeHideData()
         {
-            get => Preferences.Get(nameof(HideData), false);
-            set
-            {
-                if (HideData == value)
-                    return;
-
-                Preferences.Set(nameof(HideData), value);
-            }
+            var newData = !Preference.HideData;
+            Preference.HideData = newData;
         }
 
-        public static bool ShowInList
+        public void ChangeShowInList()
         {
-            get => Preferences.Get(nameof(ShowInList), false);
-            set
-            {
-                if (ShowInList == value)
-                    return;
-
-                Preferences.Set(nameof(ShowInList), value);
-            }
+            var newData = !Preference.ShowInList;
+            Preference.ShowInList = newData;
         }
 
-        public static bool FingerPrint
+        public void ChangeFingerPrint()
         {
-            get => Preferences.Get(nameof(FingerPrint), false);
-            set
-            {
-                if (FingerPrint == value)
-                    return;
-
-                Preferences.Set(nameof(FingerPrint), value);
-            }
+            var newData = !Preference.FingerPrint;
+            Preference.ShowInList = newData;
         }
     }
 }

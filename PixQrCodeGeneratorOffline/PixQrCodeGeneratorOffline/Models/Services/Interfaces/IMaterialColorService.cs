@@ -10,12 +10,10 @@ namespace PixQrCodeGeneratorOffline.Models.Services.Interfaces
 
         MaterialColor GetRandom();
 
-        MaterialColor GetLightColors();
+        MaterialColor GetByCurrentResourceThemeColor();
 
-        MaterialColor GetDarkColors();
+        MaterialColor GetByCurrentDeviceTheme();
 
         void SetOnCurrentResourceThemeColor(MaterialColor colors);
-
-        MaterialColor GetByCurrentResourceThemeColor();
     }
 }
