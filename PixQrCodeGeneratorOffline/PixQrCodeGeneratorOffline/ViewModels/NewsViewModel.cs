@@ -109,7 +109,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 await Task.Delay(500);
 
-                await ShareText(item.Link.AbsoluteUri);
+                await _externalActionService.ShareText(item.Link.AbsoluteUri);
             }
             catch (Exception e)
             {

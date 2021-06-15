@@ -192,7 +192,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 await Task.Delay(500);
 
-                await ShareText(CurrentPixKey?.Key);
+                await _externalActionService.ShareText(CurrentPixKey?.Key);
             }
             catch (System.Exception e)
             {

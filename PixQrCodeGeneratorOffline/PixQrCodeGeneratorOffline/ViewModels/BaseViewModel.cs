@@ -33,6 +33,8 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         protected readonly IPreferenceService _preferenceService;
 
+        protected readonly IExternalActionService _externalActionService;
+
         public BaseViewModel()
         {
             _financialInstitutionService = DependencyService.Get<IFinancialInstitutionService>();
@@ -41,6 +43,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             _materialColorService = DependencyService.Get<IMaterialColorService>();
             _pixPayloadService = DependencyService.Get<IPixPayloadService>();
             _preferenceService = DependencyService.Get<IPreferenceService>();
+            _externalActionService = DependencyService.Get<IExternalActionService>();
 
             ShowAds = true;
 
@@ -59,27 +62,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         }
 
         protected IUserDialogs DialogService => UserDialogs.Instance;
-
-        public async Task ShareText(string text)
-        {
-            if (string.IsNullOrWhiteSpace(text))
-            {
-                DialogService.Toast("Texto a ser compartilhado é inválido");
-                return;
-            }
-
-            await Xamarin.Essentials.Share.RequestAsync(new Xamarin.Essentials.ShareTextRequest
-            {
-                Text = text,
-                Title = "Escolha uma opção"
-            });
-        }
-
-        public async Task CopyText(string text, string textSuccess = "Copiado com sucesso!")
-        {
-            await Xamarin.Essentials.Clipboard.SetTextAsync(text);
-            DialogService.Toast(textSuccess);
-        }
 
         #region Loading
 

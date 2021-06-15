@@ -57,11 +57,11 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                     }),
                     new Acr.UserDialogs.ActionSheetOption("Compartilhar", async () =>
                     {
-                        await ShareText(App.Info.StoreTextToShare);
+                        await _externalActionService.ShareText(App.Info.StoreTextToShare);
                     }),
                     new Acr.UserDialogs.ActionSheetOption("Copiar código copia e cola pix para doação", async () =>
                     {
-                        await CopyText("00020126760014br.gov.bcb.pix0136bee05743-4291-4f3c-9259-595df1307ba10214Doação PIX APP5204000053039865802BR5909Alexandre6008Curitiba62200516PIXOFFe2d72825e26304208D", "Código copiado com sucesso!");
+                        await _externalActionService.CopyText("00020126760014br.gov.bcb.pix0136bee05743-4291-4f3c-9259-595df1307ba10214Doação PIX APP5204000053039865802BR5909Alexandre6008Curitiba62200516PIXOFFe2d72825e26304208D", "Código copiado com sucesso!");
                     })
                 };
 
