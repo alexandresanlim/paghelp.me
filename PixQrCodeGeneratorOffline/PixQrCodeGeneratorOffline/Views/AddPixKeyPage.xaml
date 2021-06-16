@@ -20,26 +20,26 @@
         
         <Grid RowDefinitions="auto,*,auto" RowSpacing="0">
             <StackLayout Grid.Row="0" Spacing="0" Padding="15,0,0,0" Orientation="Horizontal">
-                <controls:CustomLabel Text="Editar Chave" FontAttributes="Bold" TextColor="{DynamicResource textOnSecondary}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" FontSize="Medium" />
+                <controls:CustomLabel Text="Editar Chave" FontAttributes="Bold" TextColor="{DynamicResource textOnPrimary}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" FontSize="Medium" />
 
                 <StackLayout Padding="10" IsVisible="{Binding IsEdit}">
                     <StackLayout.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding DeleteCommand}" />
                     </StackLayout.GestureRecognizers>
-                    <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.TrashAlt }" IconSize="Medium" IconColor="{DynamicResource textOnSecondary}" />
-                    <controls:CustomLabel Text="Excluir" TextColor="{DynamicResource textOnSecondary}" FontAttributes="Bold" />
+                    <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.TrashAlt }" IconSize="Medium" IconColor="{DynamicResource textOnPrimary}" />
+                    <controls:CustomLabel Text="Excluir" TextColor="{DynamicResource textOnPrimary}" FontAttributes="Bold" />
                 </StackLayout>
                 <StackLayout Padding="10">
                     <StackLayout.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding SaveCommand}" />
                     </StackLayout.GestureRecognizers>
-                    <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Save }" IconSize="Medium" IconColor="{DynamicResource textOnSecondary}" />
-                    <controls:CustomLabel Text="Salvar" TextColor="{DynamicResource textOnSecondary}" FontAttributes="Bold" />
+                    <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Save }" IconSize="Medium" IconColor="{DynamicResource textOnPrimary}" />
+                    <controls:CustomLabel Text="Salvar" TextColor="{DynamicResource textOnPrimary}" FontAttributes="Bold" />
                 </StackLayout>
             </StackLayout>
             
             <StackLayout Grid.Row="1" Padding="15,0,15,15">
-                <controls:CustomLabel Text="IMPORTANTE" FontAttributes="Bold" TextColor="{DynamicResource textOnSecondary}" />
+                <controls:CustomLabel Text="IMPORTANTE" FontAttributes="Bold" TextColor="{DynamicResource textOnPrimary}" />
                     
                 <controls:CustomCarouselView
                                 IndicatorView="indicatorView"
@@ -51,7 +51,7 @@
                     <controls:CustomCarouselView.ItemTemplate>
                         <DataTemplate>
                             <Frame BackgroundColor="#10000000" Padding="10" CornerRadius="5">
-                                <controls:CustomLabel Text="{Binding .}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" TextColor="{DynamicResource textOnSecondary}"/>
+                                <controls:CustomLabel Text="{Binding .}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" TextColor="{DynamicResource textOnPrimary}"/>
                             </Frame>
 
                         </DataTemplate>
