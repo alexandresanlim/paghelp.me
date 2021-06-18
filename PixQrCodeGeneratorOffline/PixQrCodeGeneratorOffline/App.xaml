@@ -9,15 +9,15 @@
     -->
     <Application.Resources>
 
-        <Color x:Key="primary">#34bcac</Color>
-        <Color x:Key="primaryLight">#70efde</Color>
-        <Color x:Key="primaryDark">#008b7d</Color>
+        <Color x:Key="primary">#00796b</Color>
+        <Color x:Key="primaryLight">#48a999</Color>
+        <Color x:Key="primaryDark">#004c40</Color>
 
         <Color x:Key="secondary">#50000000</Color>
-        <Color x:Key="secondaryLight">#70efde</Color>
-        <Color x:Key="secondaryDark">#008b7d</Color>
+        <Color x:Key="secondaryLight">#48a999</Color>
+        <Color x:Key="secondaryDark">#004c40</Color>
 
-        <Color x:Key="textOnPrimary">#000000</Color>
+        <Color x:Key="textOnPrimary">#ffffff</Color>
         <Color x:Key="textOnSecondary">#ffffff</Color>
 
         <Color x:Key="textPrimary">#212121</Color>

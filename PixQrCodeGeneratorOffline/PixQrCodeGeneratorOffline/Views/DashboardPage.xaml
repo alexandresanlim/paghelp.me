@@ -136,8 +136,8 @@
                                                         BackgroundColor="White"
                                                         Color="#000000" 
                                                         Level="H" 
-                                                        WidthRequest="150" 
-                                                        HeightRequest="150" 
+                                                        WidthRequest="125" 
+                                                        HeightRequest="125" 
                                                         HorizontalOptions="CenterAndExpand" 
                                                         >
 
@@ -236,7 +236,7 @@
                                 <ScrollView>
                                     <StackLayout Spacing="0">
                                         <controls:CustomLabel Text="👋" FontSize="50" HorizontalOptions="Center" />
-                                        <controls:CustomLabel Text="Bem vindo ao PIX APP!" FontSize="Title" HorizontalOptions="Center" FontAttributes="Bold" TextColor="{DynamicResource textOnSecondary}" />
+                                        <controls:CustomLabel Text="Bem vindo ao Paghelp.me!" FontSize="Title" HorizontalOptions="Center" FontAttributes="Bold" TextColor="{DynamicResource textOnSecondary}" />
                                         <controls:CustomLabel Text="{Binding WelcomeText}" FontSize="{StaticResource FontSizeSmall}" TextColor="{DynamicResource textOnSecondary}" Margin="0,15" />
                                         <controls:CustomLabel Text="Comece adicionando sua primeira chave." FontSize="{StaticResource FontSizeSmall}" FontAttributes="Bold" TextColor="{DynamicResource textOnSecondary}" HorizontalOptions="Center" />
                                     </StackLayout>

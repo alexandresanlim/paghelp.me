@@ -69,9 +69,9 @@ namespace PixQrCodeGeneratorOffline.Models.Services
                 Primary = Color.FromHex("#ffffff"),
                 PrimaryDark = Color.FromHex("#cccccc"),
                 PrimaryLight = Color.FromHex("#ffffff"),
-                Secondary = Color.FromHex("#34bcac"),
-                TextOnPrimary = Color.FromHex("000000"),
-                TextOnSecondary = Color.FromHex("000000")
+                Secondary = Color.FromHex("#00796b"),
+                TextOnPrimary = Color.FromHex("#000000"),
+                TextOnSecondary = Color.FromHex("#ffffff")
             };
         }
 
@@ -82,9 +82,9 @@ namespace PixQrCodeGeneratorOffline.Models.Services
                 Primary = Color.FromHex("#212121"),
                 PrimaryDark = Color.FromHex("#000000"),
                 PrimaryLight = Color.FromHex("#484848"),
-                Secondary = Color.FromHex("#34bcac"),
-                TextOnPrimary = Color.FromHex("ffffff"),
-                TextOnSecondary = Color.FromHex("000000")
+                Secondary = Color.FromHex("#00796b"),
+                TextOnPrimary = Color.FromHex("#ffffff"),
+                TextOnSecondary = Color.FromHex("#00000")
             };
         }
 

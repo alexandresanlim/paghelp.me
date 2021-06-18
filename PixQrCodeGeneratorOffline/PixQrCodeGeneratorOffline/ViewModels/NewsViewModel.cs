@@ -56,7 +56,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             {
                 IsBusy = true;
 
-                FeedFromService = FeedFromService?.Count > 0 ? FeedFromService : await FeedService.Get("https://news.google.com/rss/search?q=pix%20-frade%20-golpista%20-golpistas%20-erro%20-golpe%20-hack%20-hacker&hl=pt-BR&gl=BR&ceid=BR%3Apt-419");
+                FeedFromService = FeedFromService?.Count > 0 ? FeedFromService : await FeedService.Get("https://news.google.com/rss/search?q=pix%20-fraude%20-golpista%20-golpistas%20-erro%20-golpe%20-hack%20-hacker&hl=pt-BR&gl=BR&ceid=BR%3Apt-419");
 
                 CurrentFeedList = FeedFromService?.Where(x => x.PublishDate != null)?.OrderByDescending(x => x.PublishDate)?.ToObservableCollection();
 
