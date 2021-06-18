@@ -37,6 +37,8 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         protected readonly IEventService _eventService;
 
+        protected readonly IFeedService _feedService;
+
         public BaseViewModel()
         {
             _financialInstitutionService = DependencyService.Get<IFinancialInstitutionService>();
@@ -47,6 +49,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             _preferenceService = DependencyService.Get<IPreferenceService>();
             _externalActionService = DependencyService.Get<IExternalActionService>();
             _eventService = DependencyService.Get<IEventService>();
+            _feedService = DependencyService.Get<IFeedService>();
 
             ShowAds = true;
 

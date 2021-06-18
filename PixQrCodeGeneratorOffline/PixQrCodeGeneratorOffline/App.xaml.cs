@@ -55,6 +55,7 @@ namespace PixQrCodeGeneratorOffline
             DependencyService.Register<IPreferenceService, PreferenceService>();
             DependencyService.Register<IExternalActionService, ExternalActionService>();
             DependencyService.Register<IEventService, EventService>();
+            DependencyService.Register<IFeedService, FeedService>();
         }
 
         private void RegisterDependencyRepository()

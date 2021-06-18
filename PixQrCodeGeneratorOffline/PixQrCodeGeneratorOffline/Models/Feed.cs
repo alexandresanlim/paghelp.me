@@ -19,8 +19,6 @@ namespace PixQrCodeGeneratorOffline.Models
             _feedValidationService = DependencyService.Get<IFeedValidationService>();
         }
 
-        public string Id { get; set; }
-
         public string Title { get; set; }
 
         public Uri Link { get; set; }
@@ -29,11 +27,7 @@ namespace PixQrCodeGeneratorOffline.Models
 
         public string Source { get; set; }
 
-        public string FirstImage { get; set; }
-
-        public bool WasRead { get; set; }
-
-        public int Index { get; set; }
+        public string Image { get; set; }
 
         public DateTimeOffset? PublishDate { get; set; }
 
