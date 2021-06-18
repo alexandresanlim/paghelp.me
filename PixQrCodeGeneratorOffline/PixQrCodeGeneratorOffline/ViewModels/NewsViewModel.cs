@@ -21,15 +21,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             try
             {
                 IsBusy = true;
-
-                //await Task.Run(async () =>
-                //{
-                //    SetIsLoading(true);
-
-                //    await Task.Delay(500);
-
-                //    await LoadData();
-                //});
             }
             catch (Exception e)
             {
@@ -38,8 +29,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             finally
             {
                 _eventService.SendEvent("Viu lista de notícias", EventType.SEE);
-
-                //SetIsLoading(false);
             }
         }
 
@@ -58,12 +47,12 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 FeedFromService = FeedFromService?.Count > 0 ? FeedFromService : await _feedService.Get("https://news.google.com/rss/search?q=pix%20-fraude%20-golpista%20-golpistas%20-erro%20-golpe%20-hack%20-hacker&hl=pt-BR&gl=BR&ceid=BR%3Apt-419");
 
-                CurrentFeedList = FeedFromService?.Where(x => x.PublishDate != null)?.OrderByDescending(x => x.PublishDate)?.ToObservableCollection();
+                CurrentFeedList = FeedFromService?.ToObservableCollection();
 
-                foreach (var item in CurrentFeedList)
+                foreach (var item in CurrentFeedList.Where(x => x.Image.IsEmpty))
                 {
-                    if (item.Validation.IsValid)
-                        item.Image = await item.Link.GetImage();
+                    var uri = await item.Link.GetImage();
+                    item.Image = !string.IsNullOrEmpty(uri) ? new UriImageSource { CachingEnabled = true, Uri = new Uri(uri) } : new UriImageSource();
                 }
 
                 NotFoundVisible = !(CurrentFeedList.Count > 0);
@@ -100,7 +89,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
             finally
             {
-                 _eventService.SendEvent("Viu uma notícia", EventType.SEE, new Dictionary<string, string> { { "Título: ", feed?.Title } });
+                _eventService.SendEvent("Viu uma notícia", EventType.SEE, new Dictionary<string, string> { { "Título: ", feed?.Title } });
 
                 SetIsLoading(false);
             }
@@ -129,7 +118,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
             finally
             {
-                 _eventService.SendEvent("Compartilhou uma notícia: " + feed?.Title, EventType.SHARE, new Dictionary<string, string> { { "Título: ", feed?.Title } });
+                _eventService.SendEvent("Compartilhou uma notícia: " + feed?.Title, EventType.SHARE, new Dictionary<string, string> { { "Título: ", feed?.Title } });
 
                 SetIsLoading(false);
             }

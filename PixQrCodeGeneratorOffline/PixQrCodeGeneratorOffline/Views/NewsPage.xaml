@@ -57,9 +57,9 @@
                                         <Frame BackgroundColor="{DynamicResource secondary}" CornerRadius="15" Padding="0">
 
                                             <StackLayout>
-                                                <controls:CustomImage Source="{Binding Image}" Aspect="AspectFill" HeightRequest="200" />
+                                                <controls:CustomImage Source="{Binding Image}" Aspect="Fill" HeightRequest="200" />
                                                 <StackLayout Padding="15">
-                                                    <controls:CustomLabel Text="{Binding Source}" FontSize="Micro" TextColor="{DynamicResource textOnSecondary}"/>
+                                                    <controls:CustomLabel Text="{Binding Source}" FontSize="Small" TextColor="{DynamicResource textOnSecondary}"/>
                                                     <controls:CustomLabel Text="{Binding Title}" FontSize="Small" TextColor="{DynamicResource textOnSecondary}" FontAttributes="Bold" VerticalOptions="FillAndExpand"/>
                                                     <StackLayout Orientation="Horizontal">
                                                         <controls:CustomLabel Text="{Binding Viewer.PublishDateDisplay}" FontSize="Micro" TextColor="{DynamicResource textOnSecondary}" HorizontalOptions="StartAndExpand" VerticalOptions="EndAndExpand" />
@@ -70,7 +70,7 @@
                                                     CommandParameter="{Binding .}">
                                                                 </TapGestureRecognizer>
                                                             </StackLayout.GestureRecognizers>
-                                                            <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.ShareAlt }" IconColor="{DynamicResource textOnSecondary}" HorizontalOptions="CenterAndExpand" />
+                                                            <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.ShareAlt }" IconSize="Medium"  IconColor="{DynamicResource textOnSecondary}" HorizontalOptions="CenterAndExpand" />
                                                         </StackLayout>
                                                     </StackLayout>
                                                 </StackLayout>
