@@ -106,7 +106,7 @@ namespace PixQrCodeGeneratorOffline.Models.Services
             }
             finally
             {
-                _eventService.SendEvent("Compartilhou todas as chaves");
+                _eventService.SendEvent("Compartilhou todas as chaves", PixQrCodeGeneratorOffline.Services.EventType.SHARE);
             }
         }
 
@@ -142,7 +142,7 @@ namespace PixQrCodeGeneratorOffline.Models.Services
             }
             finally
             {
-                _eventService.SendEvent("Removeu todas as chaves");
+                _eventService.SendEvent("Removeu todas as chaves", PixQrCodeGeneratorOffline.Services.EventType.CRUD);
             }
         }
 

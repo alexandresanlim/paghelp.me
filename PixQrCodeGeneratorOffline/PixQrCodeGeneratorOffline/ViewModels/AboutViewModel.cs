@@ -39,13 +39,13 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
             finally
             {
-                SetEvent("Abriu repositório Github");
+                _eventService.SendEvent("Abriu repositório Github");
 
                 SetIsLoading(false);
             }
         });
 
-        public ICommand SupportCommand => new Command(async () =>
+        public ICommand SupportCommand => new Command(() =>
         {
             try
             {
@@ -81,7 +81,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
             finally
             {
-                SetEvent("Tocou em doação");
+                _eventService.SendEvent("Tocou em doação", Services.EventType.TAP);
             }
         });
 
@@ -97,7 +97,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
             finally
             {
-                SetEvent("Tocou em avaliar");
+                _eventService.SendEvent("Tocou em avaliar", Services.EventType.TAP);
             }
         });
 
@@ -113,7 +113,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
             finally
             {
-                SetEvent("Tocou em ver instagram");
+                _eventService.SendEvent("Tocou em ver instagram", Services.EventType.TAP);
             }
         });
 
@@ -133,7 +133,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 if (contact.Ok && string.IsNullOrWhiteSpace(contact?.Text))
                     dic.Add("Contato", contact.Text);
 
-                SetEvent("Sugestão: ", dic);
+                _eventService.SendEvent("Sugestão: ", Services.EventType.FEEDBACK, dic);
 
                 DialogService.Toast("Mensagem enviada com sucesso! Obrigado.");
             }

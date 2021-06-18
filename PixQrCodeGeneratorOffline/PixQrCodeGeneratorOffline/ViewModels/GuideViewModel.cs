@@ -67,7 +67,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
             finally
             {
-                SetEvent("Visualizou guia PIX");
+                _eventService.SendEvent("Visualizou guia PIX", Services.EventType.SEE);
             }
         });
 
@@ -83,7 +83,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
             finally
             {
-                SetEvent("Viu uma resposta do Guia Pix", new Dictionary<string, string> { { "Guia: ", guide?.Answer } });
+                _eventService.SendEvent("Viu uma resposta do Guia Pix", Services.EventType.SEE, new Dictionary<string, string> { { "Guia: ", guide?.Answer } });
             }
         });
 

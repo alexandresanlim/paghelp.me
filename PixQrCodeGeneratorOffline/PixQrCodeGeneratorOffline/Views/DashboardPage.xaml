@@ -123,8 +123,6 @@
                                         <ScrollView>
                                             <Grid RowDefinitions="auto,*" Padding="0,5">
 
-
-
                                                 <StackLayout Grid.Row="0">
                                                     <StackLayout Spacing="0">
                                                         <controls:CustomLabel Text="{Binding Viewer.InstitutionPresentation}" FontSize="{StaticResource FontSizeLarge}" HorizontalOptions="Center" FontAttributes="Bold" TextColor="{DynamicResource textOnPrimary}" />

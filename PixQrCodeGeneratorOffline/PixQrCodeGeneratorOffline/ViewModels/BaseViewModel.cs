@@ -35,6 +35,8 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         protected readonly IExternalActionService _externalActionService;
 
+        protected readonly IEventService _eventService;
+
         public BaseViewModel()
         {
             _financialInstitutionService = DependencyService.Get<IFinancialInstitutionService>();
@@ -44,6 +46,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             _pixPayloadService = DependencyService.Get<IPixPayloadService>();
             _preferenceService = DependencyService.Get<IPreferenceService>();
             _externalActionService = DependencyService.Get<IExternalActionService>();
+            _eventService = DependencyService.Get<IEventService>();
 
             ShowAds = true;
 
@@ -84,11 +87,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         }
 
         #endregion
-
-        public void SetEvent(string text, IDictionary<string, string> properties = null)
-        {
-            Analytics.TrackEvent(text, properties);
-        }
 
         public async Task DisplayAlert(string title, string message, string cancel)
         {

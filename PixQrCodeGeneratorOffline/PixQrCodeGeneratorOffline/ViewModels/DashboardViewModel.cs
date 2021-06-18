@@ -117,7 +117,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
             finally
             {
-                SetEvent("Navegou para criação de cobrança");
+                _eventService.SendEvent("Navegou para criação de cobrança", EventType.NAVIGATION);
 
                 SetIsLoading(false);
             }
@@ -139,7 +139,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
             finally
             {
-                SetEvent("Navegou para adicionar nova chave");
+                _eventService.SendEvent("Navegou para adicionar nova chave", EventType.NAVIGATION);
 
                 SetIsLoading(false);
             }
@@ -163,7 +163,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
             finally
             {
-                SetEvent("Navegou para pagina de pagamento a partir da dashboard");
+                _eventService.SendEvent("Navegou para pagina de pagamento a partir da dashboard", EventType.NAVIGATION);
 
                 SetIsLoading(false);
             }
@@ -189,7 +189,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
             finally
             {
-                SetEvent("Compartilhou chave");
+                _eventService.SendEvent("Compartilhou chave", EventType.SHARE);
 
                 SetIsLoading(false);
             }
@@ -211,7 +211,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
             finally
             {
-                SetEvent("Editou chave");
+                _eventService.SendEvent("Editou chave", EventType.CRUD);
 
                 SetIsLoading(false);
             }
@@ -380,7 +380,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
             finally
             {
-                SetEvent("Estilo da dashboard: " + ShowInList);
+                _eventService.SendEvent("Estilo da dashboard para lista: " + ShowInList, EventType.PREFERENCE);
 
                 SetIsLoading(false);
             }

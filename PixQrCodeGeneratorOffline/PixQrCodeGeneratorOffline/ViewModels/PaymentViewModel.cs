@@ -49,7 +49,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
             finally
             {
-                SetEvent("Compartilhou um payload");
+                _eventService.SendEvent("Compartilhou um payload", Services.EventType.SHARE);
             }
         });
 
