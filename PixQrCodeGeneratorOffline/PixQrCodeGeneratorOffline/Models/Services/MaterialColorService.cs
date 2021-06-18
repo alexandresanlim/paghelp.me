@@ -10,18 +10,15 @@ namespace PixQrCodeGeneratorOffline.Models.Services
 {
     public class MaterialColorService : IMaterialColorService
     {
+        public MaterialColor GetRandom()
+        {
+            return GetNiceCombinationList().PickRandom();
+        }
+
         public List<MaterialColor> GetNiceCombinationList()
         {
             return new List<MaterialColor>
             {
-                new MaterialColor
-                {
-                    Name = "wine",
-                    PrimaryDark = Color.FromHex("#001f2a"),
-                    PrimaryLight = Color.FromHex("#2a4653"),
-                    Primary = Color.FromHex("#264653"),
-                    TextOnPrimary = Color.FromHex("#ffffff"),
-                },
                 new MaterialColor
                 {
                     Name = "wine",
@@ -57,11 +54,6 @@ namespace PixQrCodeGeneratorOffline.Models.Services
             };
         }
 
-        public MaterialColor GetRandom()
-        {
-            return GetNiceCombinationList().PickRandom();
-        }
-
         private MaterialColor GetLightColors()
         {
             return new MaterialColor
@@ -88,7 +80,7 @@ namespace PixQrCodeGeneratorOffline.Models.Services
             };
         }
 
-        public void SetOnCurrentResourceThemeColor(MaterialColor colors)
+        public void SetOnCurrentResource(MaterialColor colors)
         {
             App.Current.Resources["primary"] = colors.Primary;
             App.Current.Resources["primaryLight"] = colors.PrimaryLight;
@@ -107,7 +99,7 @@ namespace PixQrCodeGeneratorOffline.Models.Services
             App.Current.Resources["textSecondary"] = colors.TextSecondary;
         }
 
-        public MaterialColor GetByCurrentResourceThemeColor()
+        public MaterialColor GetOnCurrentResource()
         {
             return new MaterialColor
             {

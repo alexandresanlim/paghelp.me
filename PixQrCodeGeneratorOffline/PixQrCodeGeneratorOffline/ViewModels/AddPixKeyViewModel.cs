@@ -250,7 +250,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         private void ReloadStatusBar()
         {
-            _statusBarService.SetStatusBarColor(App.ThemeColors.PrimaryDark);
+            _statusBarService.SetByStyleListColor();
         }
 
         private async Task<bool> ValidateSave()

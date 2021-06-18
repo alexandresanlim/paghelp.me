@@ -18,16 +18,16 @@ namespace PixQrCodeGeneratorOffline
 
             //App.Style = themeOrRandom;
 
-            MaterialColorService.SetOnCurrentResourceThemeColor(themeOrRandom);
+            MaterialColorService.SetOnCurrentResource(themeOrRandom);
 
             var service = DependencyService.Get<IStatusBar>();
-            service?.SetStatusBarColor(!isShowInList ? themeOrRandom.Primary : themeOrRandom.PrimaryDark);
+            service?.SetByStyleListColor();
 
             //var service = DependencyService.Get<IStatusBar>();
             //service?.SetStatusBarColor(ThemeColors.BackgroundPage);
         }
 
-        public static MaterialColor ThemeColors => MaterialColorService.GetByCurrentResourceThemeColor();
+        public static MaterialColor ThemeColors => MaterialColorService.GetOnCurrentResource();
 
         public class DeviceInfo
         {

@@ -14,6 +14,7 @@ using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
 using Android.Gms.Ads;
 using Plugin.Fingerprint;
+using PixQrCodeGeneratorOffline.Services;
 
 namespace PixQrCodeGeneratorOffline.Droid
 {
@@ -57,7 +58,12 @@ namespace PixQrCodeGeneratorOffline.Droid
 
         public class StatusBarChanger : IStatusBar
         {
-            public void SetStatusBarColor(System.Drawing.Color color)
+            public void SetByStyleListColor()
+            {
+                SetStatusBarColor(!Preference.ShowInList ? App.ThemeColors.Primary : App.ThemeColors.Secondary);
+            }
+
+            private void SetStatusBarColor(System.Drawing.Color color)
             {
                 if (Build.VERSION.SdkInt < Android.OS.BuildVersionCodes.Lollipop)
                     return;

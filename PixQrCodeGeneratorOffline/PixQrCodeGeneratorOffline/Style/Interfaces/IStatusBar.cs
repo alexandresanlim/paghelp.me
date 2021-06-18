@@ -6,6 +6,6 @@ namespace PixQrCodeGeneratorOffline.Style.Interfaces
 {
     public interface IStatusBar
     {
-        void SetStatusBarColor(System.Drawing.Color color);
+        void SetByStyleListColor();
     }
 }

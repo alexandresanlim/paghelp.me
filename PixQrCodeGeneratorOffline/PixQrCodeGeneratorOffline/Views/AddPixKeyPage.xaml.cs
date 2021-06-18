@@ -30,5 +30,10 @@ namespace PixQrCodeGeneratorOffline.Views
 
             return base.OnBackButtonPressed();
         }
+
+        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+            Shell.Current.SendBackButtonPressed();
+        }
     }
 }

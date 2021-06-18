@@ -36,8 +36,8 @@
                     <StackLayout Grid.Row="0" IsVisible="{Binding ShowWelcome, Converter={StaticResource InvertedBooleanConverter}}">
 
                         <StackLayout IsVisible="{Binding ShowInList}" VerticalOptions="FillAndExpand" Spacing="0">
-                            <StackLayout  BackgroundColor="{DynamicResource primaryDark}" Padding="10,5">
-                                <controls:CustomLabel Text="Minhas Chaves" FontSize="Title" FontAttributes="Bold" TextColor="{DynamicResource textOnPrimary}" />
+                            <StackLayout  BackgroundColor="{DynamicResource secondary}" Padding="10">
+                                <controls:CustomLabel Text="Minhas Chaves" FontSize="Title" FontAttributes="Bold" TextColor="{DynamicResource textOnSecondary}" />
                             </StackLayout>
                             <controls:CustomCollectionView ItemsSource="{Binding PixKeyList}" x:Name="collectionKeysList">
                                 <controls:CustomCollectionView.ItemTemplate>
