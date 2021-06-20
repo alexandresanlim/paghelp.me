@@ -22,7 +22,9 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             LoadDataCommand.Execute(null);
         }
 
-        public ICommand LoadDataCommand => new Command(async () =>
+        public ICommand LoadDataCommand => new Command(async () => LoadData());
+
+        public async Task LoadData()
         {
             try
             {
@@ -45,7 +47,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             finally
             {
             }
-        });
+        }
 
         public ICommand AuthenticationCommand => new Command(async () =>
         {
@@ -252,112 +254,15 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             });
         });
 
-        public ICommand SettingsCommand => new Command(async () =>
+        public ICommand SettingsCommand => new Command(async () => await NavigateAsync(new OptionPage()));
+
+        public ICommand ChangeStyleListCommand => new Command(async () =>
         {
-            var options = new List<Acr.UserDialogs.ActionSheetOption>
-            {
-                new Acr.UserDialogs.ActionSheetOption("Preferências", async () =>
-                {
-                   await OptionsPreferenceOpen();
-                }),
-
-                new Acr.UserDialogs.ActionSheetOption("Chaves", async () =>
-                {
-                    await OptionsKeysOpen();
-                })
-            };
-
-            DialogService.ActionSheet(new Acr.UserDialogs.ActionSheetConfig
-            {
-                Title = "Opções",
-                Options = options,
-                Cancel = new Acr.UserDialogs.ActionSheetOption("Cancelar", () =>
-                {
-                    return;
-                })
-            });
+            _preferenceService.ChangeShowInList();
+            await ReloadShowInList();
         });
 
-        private async Task OptionsPreferenceOpen()
-        {
-            var preferences = new List<Acr.UserDialogs.ActionSheetOption>();
-
-            if (PixKeyList != null && PixKeyList.Count > 0)
-            {
-                preferences.Add(new Acr.UserDialogs.ActionSheetOption(Preference.ShowInList ? "Exibir em carrossel" : "Exibir em lista", async () =>
-                 {
-                     _preferenceService.ChangeShowInList();
-                     await ReloadShowInList();
-                 }));
-            }
-
-            if (await CrossFingerprint.Current.IsAvailableAsync())
-            {
-                preferences.Add(new Acr.UserDialogs.ActionSheetOption((Preference.FingerPrint ? "Remover" : "Adicionar") + " autenticação biométrica", async () =>
-                {
-                    await _preferenceService.ChangeFingerPrint();
-                }));
-            }
-
-            if (preferences.Count.Equals(0))
-            {
-                DialogService.Toast("Nenhum preferência disponível para o seu dispositivo");
-                return;
-            }
-
-            DialogService.ActionSheet(new Acr.UserDialogs.ActionSheetConfig
-            {
-                Title = "Preferências",
-                Options = preferences,
-                Cancel = new Acr.UserDialogs.ActionSheetOption("Cancelar", () =>
-                {
-                    return;
-                })
-            });
-        }
-
-        private async Task OptionsKeysOpen()
-        {
-            if (PixKeyList == null || PixKeyList.Count.Equals(0))
-            {
-                await DialogService.AlertAsync("Adicione pelo menos 1(uma) chave para ver opções.");
-                return;
-            }
-
-            var keys = new List<Acr.UserDialogs.ActionSheetOption>
-            {
-                new Acr.UserDialogs.ActionSheetOption("Campartilhar todas as chaves", () =>
-                {
-                    _pixKeyService.ShareAllKeys();
-                })
-            };
-
-            if (PixKeyList.Count > 1)
-            {
-                keys.Add(new Acr.UserDialogs.ActionSheetOption($"Excluir todas as {PixKeyList.Count} chaves", async () =>
-                {
-                    var success = await _pixKeyService.RemoveAll();
-
-                    if (success)
-                    {
-                        PixKeyList.Clear();
-                        await LoadCurrentPixKey(null);
-                    }
-                }));
-            }
-
-            DialogService.ActionSheet(new Acr.UserDialogs.ActionSheetConfig
-            {
-                Title = "Chaves",
-                Options = keys,
-                Cancel = new Acr.UserDialogs.ActionSheetOption("Cancelar", () =>
-                {
-                    return;
-                })
-            });
-        }
-
-        private async Task ReloadShowInList()
+        public async Task ReloadShowInList()
         {
             try
             {
@@ -369,10 +274,16 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 ShowInCarousel = !ShowInList;
 
                 if (ShowInList)
+                { 
                     ReloadAppColorIfShowInListStyle();
+                    CurrentIconStyleList = FontAwesomeSolid.Th;
+                }
 
                 else
+                { 
                     SetStatusFromCurrentPixColor();
+                    CurrentIconStyleList = FontAwesomeSolid.ListAlt;
+                }
             }
             catch (System.Exception e)
             {
@@ -441,6 +352,13 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         {
             set => SetProperty(ref _welcomeText, value);
             get => _welcomeText;
+        }
+
+        private string _currentIconStyleList;
+        public string CurrentIconStyleList
+        {
+            set => SetProperty(ref _currentIconStyleList, value);
+            get => _currentIconStyleList;
         }
 
         private bool _isVisibleFingerPrint;

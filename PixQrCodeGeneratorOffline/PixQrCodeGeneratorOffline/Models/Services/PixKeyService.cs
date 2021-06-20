@@ -79,7 +79,7 @@ namespace PixQrCodeGeneratorOffline.Models.Services
             {
                 var options = new List<ActionSheetOption>()
                 {
-                    new ActionSheetOption("Compartilhar", async () =>
+                    new ActionSheetOption("Compartilhar em texto", async () =>
                     {
                         await _externalActionService.ShareText(info);
                     }),

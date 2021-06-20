@@ -30,9 +30,9 @@ namespace PixQrCodeGeneratorOffline.Views
         //    }
         //}
 
-        //protected override async void OnAppearing()
+        //protected override void OnAppearing()
         //{
-        //    await _viewModel.LoadFirstKey();
+        //    _viewModel.LoadDataCommand.Execute(null);
         //    base.OnAppearing();
         //}
 

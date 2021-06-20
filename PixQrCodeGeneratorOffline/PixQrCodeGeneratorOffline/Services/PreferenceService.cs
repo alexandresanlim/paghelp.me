@@ -1,16 +1,25 @@
 ﻿using Acr.UserDialogs;
+using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Services.Interfaces;
 using Plugin.Fingerprint;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.Services
 {
     public class PreferenceService : IPreferenceService
     {
         private IUserDialogs DialogService => UserDialogs.Instance;
+
+        protected readonly IPixKeyService _pixKeyService;
+
+        public PreferenceService()
+        {
+            _pixKeyService = DependencyService.Get<IPixKeyService>();
+        }
 
         public void ChangeHideData()
         {
@@ -19,6 +28,14 @@ namespace PixQrCodeGeneratorOffline.Services
 
         public void ChangeShowInList()
         {
+            var keys = _pixKeyService.GetAll();
+
+            if (keys == null && !(keys.Count > 0))
+            {
+                DialogService.Toast("Não é possível alterar está opção, pois nenhuma chave foi encontrada.");
+                return;
+            }
+
             Preference.ShowInList = !Preference.ShowInList;
         }
 
