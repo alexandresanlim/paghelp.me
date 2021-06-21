@@ -2,6 +2,8 @@
 using pix_payload_generator.net.Models.PayloadModels;
 using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models.Base;
+using PixQrCodeGeneratorOffline.Models.Commands;
+using PixQrCodeGeneratorOffline.Models.Commands.Interfaces;
 using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Models.Viewer;
 using PixQrCodeGeneratorOffline.Models.Viewer.Services.Interfaces;
@@ -21,10 +23,13 @@ namespace PixQrCodeGeneratorOffline.Models
 
         private readonly IPixPayloadService _pixPayloadService;
 
+        private readonly IPixKeyCommand _pixKeyCommand;
+
         public PixKey()
         {
             _pixKeyViewerService = DependencyService.Get<IPixKeyViewerService>();
             _pixPayloadService = DependencyService.Get<IPixPayloadService>();
+            _pixKeyCommand = DependencyService.Get<IPixKeyCommand>();
         }
 
         [LiteDB.BsonId]
@@ -52,6 +57,9 @@ namespace PixQrCodeGeneratorOffline.Models
 
         [LiteDB.BsonIgnore]
         public PixPayload Payload => _pixPayloadService?.Create(this) ?? new PixPayload();
+
+        [LiteDB.BsonIgnore]
+        public PixKeyCommand Command => _pixKeyCommand?.Create(this) ?? new PixKeyCommand();
 
 
         public PixKeyType GetKeyType()

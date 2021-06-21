@@ -1,4 +1,6 @@
-﻿using PixQrCodeGeneratorOffline.Models.Repository;
+﻿using PixQrCodeGeneratorOffline.Models.Commands;
+using PixQrCodeGeneratorOffline.Models.Commands.Interfaces;
+using PixQrCodeGeneratorOffline.Models.Repository;
 using PixQrCodeGeneratorOffline.Models.Repository.Interfaces;
 using PixQrCodeGeneratorOffline.Models.Services;
 using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
@@ -37,6 +39,7 @@ namespace PixQrCodeGeneratorOffline
             RegisterDependencyRepository();
             RegisterDependencyValidation();
             RegisterViewModelDependency();
+            RegisterCommandDependency();
         }
 
         private void RegisterDependencyViewer()
@@ -73,6 +76,11 @@ namespace PixQrCodeGeneratorOffline
         private void RegisterViewModelDependency()
         {
             //DependencyService.RegisterSingleton<DashboardViewModel>(new DashboardViewModel());
+        }
+
+        private void RegisterCommandDependency()
+        {
+            DependencyService.Register<IPixKeyCommand, PixKeyCommand>();
         }
 
         protected override void OnStart()

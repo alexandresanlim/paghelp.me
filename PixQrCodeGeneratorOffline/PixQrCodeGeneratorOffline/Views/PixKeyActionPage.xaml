@@ -37,7 +37,7 @@
                                                         >
 
                             <qr:QRCode.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding NavigateToPaymentPageCommand}" />
+                                <TapGestureRecognizer Command="{Binding CurrentPixKey.Command.NavigateToPaymentPageCommand}" />
                             </qr:QRCode.GestureRecognizers>
 
                         </qr:QRCode>
@@ -59,7 +59,7 @@
 
                                 <controls:CustomFrame Padding="10" CornerRadius="10" BackgroundColor="{DynamicResource secondary}" VerticalOptions="FillAndExpand">
                                     <controls:CustomFrame.GestureRecognizers>
-                                        <TapGestureRecognizer Command="{Binding NavigateToCreateBillingPageCommand}" />
+                                        <TapGestureRecognizer Command="{Binding CurrentPixKey.Command.NavigateToCreateBillingPageCommand}" />
                                     </controls:CustomFrame.GestureRecognizers>
                                     <StackLayout Spacing="15" VerticalOptions="Center">
                                         <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Qrcode }" IconColor="{DynamicResource textOnBackgroundTransparent}" IconSize="Title" HorizontalOptions="Center" />
@@ -75,7 +75,7 @@
                             <StackLayout Grid.Column="1">
                                 <controls:CustomFrame Padding="10" CornerRadius="10" BackgroundColor="{DynamicResource secondary}" VerticalOptions="FillAndExpand">
                                     <controls:CustomFrame.GestureRecognizers>
-                                        <TapGestureRecognizer Command="{Binding CopyKeyCommand}" />
+                                        <TapGestureRecognizer Command="{Binding CurrentPixKey.Command.CopyKeyCommand}" />
                                     </controls:CustomFrame.GestureRecognizers>
                                     <StackLayout Spacing="15" VerticalOptions="Center">
                                         <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Copy }" IconColor="{DynamicResource textOnBackgroundTransparent}" IconSize="Title" HorizontalOptions="Center" />
@@ -88,7 +88,7 @@
 
                                 <controls:CustomFrame Padding="10" CornerRadius="10" BackgroundColor="{DynamicResource secondary}" VerticalOptions="FillAndExpand">
                                     <controls:CustomFrame.GestureRecognizers>
-                                        <TapGestureRecognizer Command="{Binding ShareKeyCommand}" />
+                                        <TapGestureRecognizer Command="{Binding CurrentPixKey.Command.ShareKeyCommand}" />
                                     </controls:CustomFrame.GestureRecognizers>
 
                                     <StackLayout Spacing="15" VerticalOptions="Center">

@@ -174,6 +174,28 @@ namespace PixQrCodeGeneratorOffline.Models.Services
             }
         }
 
+        public async Task NavigateToAdd(DashboardViewModel dashboardVM)
+        {
+            try
+            {
+                DialogService.ShowLoading("");
+
+                await Task.Delay(500);
+
+                await Shell.Current.Navigation.PushModalAsync(new AddPixKeyPage(dashboardVM));
+            }
+            catch (System.Exception e)
+            {
+                e.SendToLog();
+            }
+            finally
+            {
+                _eventService.SendEvent("Navegou para adicionar nova chave", EventType.NAVIGATION);
+
+                DialogService.HideLoading();
+            }
+        }
+
         private bool HasKeysValidated()
         {
             var pisKeyList = GetAll();

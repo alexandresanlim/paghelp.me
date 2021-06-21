@@ -22,7 +22,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             LoadDataCommand.Execute(null);
         }
 
-        public ICommand LoadDataCommand => new Command(async () => LoadData());
+        public ICommand LoadDataCommand => new Command(async () => await LoadData());
 
         public async Task LoadData()
         {
@@ -103,140 +103,15 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
         }
 
-        public ICommand NavigateToCreateBillingPageCommand => new Command(async () =>
-        {
-            try
-            {
-                SetIsLoading(true);
-
-                await Task.Delay(500);
-
-                await NavigateModalAsync(new CreateBillingPage(CurrentPixKey));
-            }
-            catch (System.Exception e)
-            {
-                e.SendToLog();
-            }
-            finally
-            {
-                _eventService.SendEvent("Navegou para criação de cobrança", EventType.NAVIGATION);
-
-                SetIsLoading(false);
-            }
-        });
-
-        public ICommand NavigateToAddNewKeyPageCommand => new Command(async () =>
-        {
-            try
-            {
-                SetIsLoading(true);
-
-                await Task.Delay(500);
-
-                await NavigateModalAsync(new AddPixKeyPage(this));
-            }
-            catch (System.Exception e)
-            {
-                e.SendToLog();
-            }
-            finally
-            {
-                _eventService.SendEvent("Navegou para adicionar nova chave", EventType.NAVIGATION);
-
-                SetIsLoading(false);
-            }
-        });
-
-        public ICommand NavigateToPaymentPageCommand => new Command(async () =>
-        {
-            try
-            {
-                SetIsLoading(true);
-
-                await Task.Delay(500);
-
-                var pixPaylod = _pixPayloadService.Create(CurrentPixKey);
-
-                await NavigateModalAsync(new PaymentPage(pixPaylod));
-            }
-            catch (System.Exception e)
-            {
-                e.SendToLog();
-            }
-            finally
-            {
-                _eventService.SendEvent("Navegou para pagina de pagamento a partir da dashboard", EventType.NAVIGATION);
-
-                SetIsLoading(false);
-            }
-        });
+        
 
         public ICommand ChangeSelectPixKeyCommand => new Command(() => SetStatusFromCurrentPixColor());
 
-        public ICommand CopyKeyCommand => new Command(async () => await _externalActionService.CopyText(CurrentPixKey?.Key, "Chave copiada com sucesso!"));
-
-        public ICommand ShareKeyCommand => new Command(async () =>
-        {
-            try
-            {
-                SetIsLoading(true);
-
-                await Task.Delay(500);
-
-                await _externalActionService.ShareText(CurrentPixKey?.Key);
-            }
-            catch (System.Exception e)
-            {
-                e.SendToLog();
-            }
-            finally
-            {
-                _eventService.SendEvent("Compartilhou chave", EventType.SHARE);
-
-                SetIsLoading(false);
-            }
-        });
+        public ICommand NavigateToAddNewKeyPageCommand => new Command(async () => await _pixKeyService.NavigateToAdd(this));
 
         public ICommand EditKeyCommand => new Command(async () => await _pixKeyService.NavigateToEdit(this, CurrentPixKey));
 
-        public Command<PixKey> OpenOptionsKeyCommand => new Command<PixKey>(async (key) =>
-        {
-            await NavigateAsync(new PixKeyActionPage(this, key));
-
-            return;
-
-            CurrentPixKey = key;
-
-            var options = new List<Acr.UserDialogs.ActionSheetOption>()
-            {
-                //new Acr.UserDialogs.ActionSheetOption("Editar", () =>
-                //{
-                //    EditKeyCommand.Execute(null);
-                //}),
-                new Acr.UserDialogs.ActionSheetOption("Copiar", () =>
-                {
-                    CopyKeyCommand.Execute(null);
-                }),
-                new Acr.UserDialogs.ActionSheetOption("Compartilhar", () =>
-                {
-                    ShareKeyCommand.Execute(null);
-                }),
-                new Acr.UserDialogs.ActionSheetOption("Criar Cobrança", () =>
-                {
-                    NavigateToCreateBillingPageCommand.Execute(null);
-                })
-            };
-
-            DialogService.ActionSheet(new Acr.UserDialogs.ActionSheetConfig
-            {
-                Title = $"O que deseja fazer com a chave {CurrentPixKey.Key} ?",
-                Options = options,
-                Cancel = new Acr.UserDialogs.ActionSheetOption("Cancelar", () =>
-                {
-                    return;
-                })
-            });
-        });
+        public Command<PixKey> OpenOptionsKeyCommand => new Command<PixKey>(async (key) => await NavigateAsync(new PixKeyActionPage(this, key)));
 
         public ICommand SettingsCommand => new Command(async () => await NavigateAsync(new OptionPage()));
 
