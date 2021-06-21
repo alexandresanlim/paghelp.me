@@ -41,13 +41,13 @@ namespace PixQrCodeGeneratorOffline.Models.Commands
 
         public PixKeyCommand Create(PixKey pixKey)
         {
-            return new PixKeyCommand
+            return pixKey.Validation.IsValid ? new PixKeyCommand
             {
                 CopyKeyCommand = GetCopyKeyCommand(pixKey),
                 ShareKeyCommand = GetShareKeyCommand(pixKey),
                 NavigateToCreateBillingPageCommand = GetNavigateToCreateBillingCommand(pixKey),
                 NavigateToPaymentPageCommand = GetNavigateToPaymentPageCommand(pixKey)
-            };
+            } : new PixKeyCommand();
         }
 
         private Command GetCopyKeyCommand(PixKey pixKey)

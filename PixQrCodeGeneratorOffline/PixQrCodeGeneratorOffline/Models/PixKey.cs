@@ -5,6 +5,8 @@ using PixQrCodeGeneratorOffline.Models.Base;
 using PixQrCodeGeneratorOffline.Models.Commands;
 using PixQrCodeGeneratorOffline.Models.Commands.Interfaces;
 using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
+using PixQrCodeGeneratorOffline.Models.Validation;
+using PixQrCodeGeneratorOffline.Models.Validation.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Models.Viewer;
 using PixQrCodeGeneratorOffline.Models.Viewer.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Style;
@@ -25,11 +27,14 @@ namespace PixQrCodeGeneratorOffline.Models
 
         private readonly IPixKeyCommand _pixKeyCommand;
 
+        private readonly IPixKeyValidationService _pixKeyValidationService;
+
         public PixKey()
         {
             _pixKeyViewerService = DependencyService.Get<IPixKeyViewerService>();
             _pixPayloadService = DependencyService.Get<IPixPayloadService>();
             _pixKeyCommand = DependencyService.Get<IPixKeyCommand>();
+            _pixKeyValidationService = DependencyService.Get<IPixKeyValidationService>();
         }
 
         [LiteDB.BsonId]
@@ -46,8 +51,6 @@ namespace PixQrCodeGeneratorOffline.Models
 
         public string City { get; set; }
 
-        //public MaterialColor Color { get; set; }
-
         public FinancialInstitution FinancialInstitution { get; set; }
 
         //public PixKeyType Type { get; set; }
@@ -56,11 +59,13 @@ namespace PixQrCodeGeneratorOffline.Models
         public PixKeyViewer Viewer => _pixKeyViewerService?.Create(this) ?? new PixKeyViewer();
 
         [LiteDB.BsonIgnore]
+        public PixKeyValidation Validation => _pixKeyValidationService?.Create(this) ?? new PixKeyValidation();
+
+        [LiteDB.BsonIgnore]
         public PixPayload Payload => _pixPayloadService?.Create(this) ?? new PixPayload();
 
         [LiteDB.BsonIgnore]
         public PixKeyCommand Command => _pixKeyCommand?.Create(this) ?? new PixKeyCommand();
-
 
         public PixKeyType GetKeyType()
         {

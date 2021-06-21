@@ -5,8 +5,7 @@ using System.Text;
 
 namespace PixQrCodeGeneratorOffline.Models.Validation
 {
-    public class FeedValidation : ValidationBase
+    public class PixKeyValidation : ValidationBase
     {
-        public bool IsToday { get; set; }
     }
 }
