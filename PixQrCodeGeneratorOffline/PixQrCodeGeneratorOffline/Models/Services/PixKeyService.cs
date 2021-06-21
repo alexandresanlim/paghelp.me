@@ -151,6 +151,9 @@ namespace PixQrCodeGeneratorOffline.Models.Services
 
         public async Task NavigateToEdit(DashboardViewModel dashboardVM, PixKey pixKey)
         {
+            if (!pixKey.Validation.IsValid)
+                return;
+
             try
             {
                 DialogService.ShowLoading("");
@@ -195,6 +198,9 @@ namespace PixQrCodeGeneratorOffline.Models.Services
 
         public async Task NavigateToAction(DashboardViewModel dashboardVM, PixKey pixKey)
         {
+            if (!pixKey.Validation.IsValid)
+                return;
+
             try
             {
                 DialogService.ShowLoading("");

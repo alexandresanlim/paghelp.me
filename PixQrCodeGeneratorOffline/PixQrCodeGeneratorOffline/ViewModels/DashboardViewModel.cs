@@ -103,7 +103,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
         });
 
-        #region DashboardDependency
+        #region DashboardVMDependency
 
         public ICommand NavigateToAddNewKeyPageCommand => new Command(async () => await _pixKeyService.NavigateToAdd(this));
 
