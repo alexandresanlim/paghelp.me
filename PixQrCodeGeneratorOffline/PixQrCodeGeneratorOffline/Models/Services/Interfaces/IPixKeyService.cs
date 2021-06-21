@@ -27,5 +27,7 @@ namespace PixQrCodeGeneratorOffline.Models.Services.Interfaces
         Task NavigateToEdit(DashboardViewModel dashboardVM, PixKey pixKey);
 
         Task NavigateToAdd(DashboardViewModel dashboardVM);
+
+        Task NavigateToAction(DashboardViewModel dashboardVM, PixKey pixKey);
     }
 }

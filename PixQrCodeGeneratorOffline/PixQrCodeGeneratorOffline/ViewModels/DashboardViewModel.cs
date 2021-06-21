@@ -109,7 +109,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public ICommand EditKeyCommand => new Command(async () => await _pixKeyService.NavigateToEdit(this, CurrentPixKey));
 
-        public Command<PixKey> OpenOptionsKeyCommand => new Command<PixKey>(async (key) => await NavigateAsync(new PixKeyActionPage(this, key)));
+        public Command<PixKey> OpenOptionsKeyCommand => new Command<PixKey>(async (key) => await _pixKeyService.NavigateToAction(this, key));
 
         #endregion
 
@@ -178,13 +178,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         {
             set => SetProperty(ref _currentPixKey, value);
             get => _currentPixKey;
-        }
-
-        private Payload _currentPayload;
-        public Payload CurrentPayload
-        {
-            set => SetProperty(ref _currentPayload, value);
-            get => _currentPayload;
         }
 
         private bool _showWelcome;
