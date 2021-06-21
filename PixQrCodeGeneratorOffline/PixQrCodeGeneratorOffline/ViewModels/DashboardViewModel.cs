@@ -49,30 +49,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
         }
 
-        public ICommand AuthenticationCommand => new Command(async () =>
-        {
-            try
-            {
-                var request = new AuthenticationRequestConfiguration("Autenticação", "Atentique-se para continuar...");
-
-                var result = await CrossFingerprint.Current.AuthenticateAsync(request);
-
-                if (result.Authenticated)
-                {
-                    IsVisibleFingerPrint = false;
-                    DialogService.Toast("Autenticado com sucesso!");
-                }
-                else
-                {
-                    DialogService.Toast("Não autenticado");
-                }
-            }
-            catch (System.Exception e)
-            {
-                e.SendToLog();
-            }
-        });
-
         private async Task ResetProps()
         {
             IsVisibleFingerPrint = Preference.FingerPrint && await CrossFingerprint.Current.IsAvailableAsync();
@@ -103,15 +79,41 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
         }
 
-        
+        public ICommand AuthenticationCommand => new Command(async () =>
+        {
+            try
+            {
+                var request = new AuthenticationRequestConfiguration("Autenticação", "Atentique-se para continuar...");
 
-        public ICommand ChangeSelectPixKeyCommand => new Command(() => SetStatusFromCurrentPixColor());
+                var result = await CrossFingerprint.Current.AuthenticateAsync(request);
+
+                if (result.Authenticated)
+                {
+                    IsVisibleFingerPrint = false;
+                    DialogService.Toast("Autenticado com sucesso!");
+                }
+                else
+                {
+                    DialogService.Toast("Não autenticado");
+                }
+            }
+            catch (System.Exception e)
+            {
+                e.SendToLog();
+            }
+        });
+
+        #region DashboardDependency
 
         public ICommand NavigateToAddNewKeyPageCommand => new Command(async () => await _pixKeyService.NavigateToAdd(this));
 
         public ICommand EditKeyCommand => new Command(async () => await _pixKeyService.NavigateToEdit(this, CurrentPixKey));
 
         public Command<PixKey> OpenOptionsKeyCommand => new Command<PixKey>(async (key) => await NavigateAsync(new PixKeyActionPage(this, key)));
+
+        #endregion
+
+        public ICommand ChangeSelectPixKeyCommand => new Command(() => SetStatusFromCurrentPixColor());
 
         public ICommand SettingsCommand => new Command(async () => await NavigateAsync(new OptionPage()));
 
