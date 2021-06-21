@@ -261,7 +261,7 @@
                                 <StackLayout.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding ChangeStyleListCommand}" />
                                 </StackLayout.GestureRecognizers>
-                                <controls:CustomIcon Glyph="{Binding CurrentIconStyleList}" IconSize="Large" IconColor="{DynamicResource textOnSecondary}" VerticalOptions="CenterAndExpand" />
+                                <controls:CustomIcon Glyph="{Binding CurrentIconStyleList}" IconSize="Large" IconColor="{DynamicResource secondary}" VerticalOptions="CenterAndExpand" />
                             </StackLayout>
 
                             <Frame Grid.Column="2"  BackgroundColor="{DynamicResource secondary}" Padding="5,12" CornerRadius="30" HorizontalOptions="FillAndExpand">

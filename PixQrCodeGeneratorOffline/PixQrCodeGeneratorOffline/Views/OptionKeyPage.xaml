@@ -30,7 +30,7 @@
                         <StackLayout.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding RemoveAllCommand}"/>
                         </StackLayout.GestureRecognizers>
-                        <Label Text="Remover todas" Style="{DynamicResource subOptionTitle}" />
+                        <Label Text="Apagar todas" Style="{DynamicResource subOptionTitle}" />
                     </StackLayout>
                 </StackLayout>
             </StackLayout>
