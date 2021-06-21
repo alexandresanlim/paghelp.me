@@ -7,6 +7,31 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 {
     public class OptionPreferenceViewModel : BaseViewModel
     {
+        private DashboardViewModel DashboardViewModel => DependencyService.Get<DashboardViewModel>();
+
+        public ICommand OptionStyleListCommand => new Command(() =>
+        {
+            var options = new List<Acr.UserDialogs.ActionSheetOption>
+            {
+                new Acr.UserDialogs.ActionSheetOption(Preference.ShowInList ? "Exibir em carrossel" : "Exibir em lista", async () =>
+                {
+                    _preferenceService.ChangeShowInList();
+                    await DashboardViewModel.ReloadShowInList();
+                })
+            };
+
+            DialogService.ActionSheet(new Acr.UserDialogs.ActionSheetConfig
+            {
+                Title = "Dashboard",
+                Options = options,
+                Cancel = new Acr.UserDialogs.ActionSheetOption("Cancelar", () =>
+                {
+                    return;
+                })
+            });
+
+        });
+
         public ICommand OptionFingerPrintCommand => new Command(() =>
         {
             var options = new List<Acr.UserDialogs.ActionSheetOption>

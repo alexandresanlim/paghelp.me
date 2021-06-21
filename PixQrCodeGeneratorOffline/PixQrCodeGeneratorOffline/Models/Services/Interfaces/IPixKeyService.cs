@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PixQrCodeGeneratorOffline.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,5 +23,9 @@ namespace PixQrCodeGeneratorOffline.Models.Services.Interfaces
         void ShareAllKeys();
 
         Task<bool> RemoveAll();
+
+        Task NavigateToEdit(DashboardViewModel dashboardVM, PixKey pixKey);
+
+        //Task NavigateToEdit(DashboardViewModel dashboardVM, PixKey pixKey);
     }
 }

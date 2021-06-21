@@ -16,15 +16,13 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 {
     public class AddPixKeyViewModel : BaseViewModel
     {
-
-
         public DashboardViewModel DashboardViewModel { get; set; }
 
-        public AddPixKeyViewModel(DashboardViewModel dbViewModel, PixKey pixKey = null)
+        public AddPixKeyViewModel(DashboardViewModel dashboardVM, PixKey pixKey = null)
         {
-            CurrentPixKey = pixKey ?? new PixKey();
+            DashboardViewModel = dashboardVM;
 
-            DashboardViewModel = dbViewModel;
+            CurrentPixKey = pixKey ?? new PixKey();
 
             LoadData.Execute(null);
         }
@@ -128,7 +126,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 DialogService.Toast("Chave salva com sucesso");
 
-                NavigateBack();
+                await NavigateToRootAsync();
 
                 //}
 

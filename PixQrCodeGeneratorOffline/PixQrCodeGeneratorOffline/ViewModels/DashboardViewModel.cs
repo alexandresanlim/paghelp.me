@@ -197,38 +197,22 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
         });
 
-        public ICommand EditKeyCommand => new Command(async () =>
-        {
-            try
-            {
-                SetIsLoading(true);
-
-                await Task.Delay(500);
-
-                await NavigateModalAsync(new AddPixKeyPage(this, CurrentPixKey));
-            }
-            catch (System.Exception e)
-            {
-                e.SendToLog();
-            }
-            finally
-            {
-                _eventService.SendEvent("Editou chave", EventType.CRUD);
-
-                SetIsLoading(false);
-            }
-        });
+        public ICommand EditKeyCommand => new Command(async () => await _pixKeyService.NavigateToEdit(this, CurrentPixKey));
 
         public Command<PixKey> OpenOptionsKeyCommand => new Command<PixKey>(async (key) =>
         {
+            await NavigateAsync(new PixKeyActionPage(this, key));
+
+            return;
+
             CurrentPixKey = key;
 
             var options = new List<Acr.UserDialogs.ActionSheetOption>()
             {
-                new Acr.UserDialogs.ActionSheetOption("Editar", () =>
-                {
-                    EditKeyCommand.Execute(null);
-                }),
+                //new Acr.UserDialogs.ActionSheetOption("Editar", () =>
+                //{
+                //    EditKeyCommand.Execute(null);
+                //}),
                 new Acr.UserDialogs.ActionSheetOption("Copiar", () =>
                 {
                     CopyKeyCommand.Execute(null);
@@ -274,13 +258,13 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 ShowInCarousel = !ShowInList;
 
                 if (ShowInList)
-                { 
+                {
                     ReloadAppColorIfShowInListStyle();
                     CurrentIconStyleList = FontAwesomeSolid.Th;
                 }
 
                 else
-                { 
+                {
                     SetStatusFromCurrentPixColor();
                     CurrentIconStyleList = FontAwesomeSolid.ListAlt;
                 }

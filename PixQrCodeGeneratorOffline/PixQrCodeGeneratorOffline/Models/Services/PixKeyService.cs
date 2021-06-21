@@ -2,7 +2,10 @@
 using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models.Repository.Interfaces;
 using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
+using PixQrCodeGeneratorOffline.Services;
 using PixQrCodeGeneratorOffline.Services.Interfaces;
+using PixQrCodeGeneratorOffline.ViewModels;
+using PixQrCodeGeneratorOffline.Views;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -21,11 +24,14 @@ namespace PixQrCodeGeneratorOffline.Models.Services
 
         private readonly IEventService _eventService;
 
+        private readonly INavigation _navigation;
+
         public PixKeyService()
         {
             _pixKeyRepository = DependencyService.Get<IPixKeyRepository>();
             _externalActionService = DependencyService.Get<IExternalActionService>();
             _eventService = DependencyService.Get<IEventService>();
+            _navigation = DependencyService.Get<INavigation>();
         }
 
         public bool IsValid(PixKey pixKey)
@@ -143,6 +149,28 @@ namespace PixQrCodeGeneratorOffline.Models.Services
             finally
             {
                 _eventService.SendEvent("Removeu todas as chaves", PixQrCodeGeneratorOffline.Services.EventType.CRUD);
+            }
+        }
+
+        public async Task NavigateToEdit(DashboardViewModel dashboardVM, PixKey pixKey)
+        {
+            try
+            {
+                DialogService.ShowLoading("");
+
+                await Task.Delay(500);
+
+                await Shell.Current.Navigation.PushModalAsync(new AddPixKeyPage(dashboardVM, pixKey));
+            }
+            catch (System.Exception e)
+            {
+                e.SendToLog();
+            }
+            finally
+            {
+                _eventService.SendEvent("Editou chave", EventType.CRUD);
+
+                DialogService.HideLoading();
             }
         }
 

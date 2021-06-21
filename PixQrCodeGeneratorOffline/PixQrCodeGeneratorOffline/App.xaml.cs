@@ -36,6 +36,7 @@ namespace PixQrCodeGeneratorOffline
             RegisterDependencyViewer();
             RegisterDependencyRepository();
             RegisterDependencyValidation();
+            RegisterViewModelDependency();
         }
 
         private void RegisterDependencyViewer()
@@ -67,6 +68,11 @@ namespace PixQrCodeGeneratorOffline
         private void RegisterDependencyValidation()
         {
             DependencyService.Register<IFeedValidationService, FeedValidationService>();
+        }
+
+        private void RegisterViewModelDependency()
+        {
+            //DependencyService.RegisterSingleton<DashboardViewModel>(new DashboardViewModel());
         }
 
         protected override void OnStart()
