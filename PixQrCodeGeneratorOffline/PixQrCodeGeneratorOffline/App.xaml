@@ -50,14 +50,25 @@
         <x:Double x:Key="FontSizeSmall">15</x:Double>
         <x:Double x:Key="FontSizeMicro">10</x:Double>
 
+        <Style TargetType="Label">
+            <Setter Property="FontFamily" Value="FontPoppinsRegular"/>
+            <Setter Property="TextColor" Value="{DynamicResource textPrimary}" />
+        </Style>
+
+        <Style TargetType="Entry">
+            <Setter Property="FontFamily" Value="FontPoppinsRegular"/>
+            <Setter Property="ClearButtonVisibility" Value="WhileEditing"/>
+            <Setter Property="PlaceholderColor" Value="{DynamicResource textSecondary}" />
+            <Setter Property="TextColor" Value="{DynamicResource textPrimary}" />
+        </Style>
+
+        <Style TargetType="Frame">
+            <Setter Property="HasShadow" Value="False"/>
+        </Style>
+
+
         <ResourceDictionary>
-            <Style x:Key="styleKeyboardBilling" TargetType="Label">
-                <Setter Property="TextColor" Value="{DynamicResource textOnSecondary}"/>
-                <Setter Property="FontSize" Value="35" />
-                <Setter Property="FontFamily" Value="FontPoppinsSemiBold"/>
-                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
-                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
-            </Style>
+            
 
             <Style x:Key="styleFrameMenuAbout" TargetType="Frame">
                 <Setter Property="BackgroundColor" Value="{DynamicResource secondary}" />

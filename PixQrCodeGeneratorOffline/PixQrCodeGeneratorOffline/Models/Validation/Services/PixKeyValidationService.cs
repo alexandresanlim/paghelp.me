@@ -11,13 +11,25 @@ namespace PixQrCodeGeneratorOffline.Models.Validation.Services
         {
             return new PixKeyValidation
             {
-                IsValid = GetIsValid(pixKey)
+                IsValid = GetIsValid(pixKey),
+                HasKey = GetHasKey(pixKey),
+                HasName = GetHasName(pixKey)
             };
         }
 
         private bool GetIsValid(PixKey pixKey)
         {
             return pixKey != null && !string.IsNullOrWhiteSpace(pixKey?.Key);
+        }
+
+        private bool GetHasKey(PixKey pixKey)
+        {
+            return !string.IsNullOrWhiteSpace(pixKey?.Key);
+        }
+
+        private bool GetHasName(PixKey pixKey)
+        {
+            return !string.IsNullOrWhiteSpace(pixKey?.Name);
         }
     }
 }

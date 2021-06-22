@@ -255,10 +255,10 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         {
             string msg = "";
 
-            if (string.IsNullOrEmpty(CurrentPixKey?.Key))
+            if (!CurrentPixKey.Validation.HasKey)
                 msg += "- Chave não informada\n";
 
-            if (string.IsNullOrEmpty(CurrentPixKey?.Name))
+            if (!CurrentPixKey.Validation.HasName)
                 msg += "- Nome não informado\n";
 
             //if (string.IsNullOrEmpty(CurrentPixKey?.City))

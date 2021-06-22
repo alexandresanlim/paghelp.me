@@ -15,5 +15,7 @@ namespace PixQrCodeGeneratorOffline.Models.Viewer
         public string InstitutionPresentation { get; set; }
 
         public string InstitutionAndKey { get; set; }
+
+        public string BankAndKey { get; set; }
     }
 }
