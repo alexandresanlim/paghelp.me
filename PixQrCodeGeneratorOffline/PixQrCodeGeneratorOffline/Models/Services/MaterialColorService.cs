@@ -58,12 +58,17 @@ namespace PixQrCodeGeneratorOffline.Models.Services
         {
             return new MaterialColor
             {
-                Primary = Color.FromHex("#ffffff"),
-                PrimaryDark = Color.FromHex("#cccccc"),
-                PrimaryLight = Color.FromHex("#ffffff"),
-                Secondary = Color.FromHex("#00796b"),
-                TextOnPrimary = Color.FromHex("#000000"),
-                TextOnSecondary = Color.FromHex("#ffffff")
+                Primary = Color.FromHex("#00796b"),
+                PrimaryDark = Color.FromHex("#004c40"),
+                PrimaryLight = Color.FromHex("#48a999"),
+                //Secondary = Color.FromHex("#00796b"),
+                TextOnPrimary = Color.FromHex("#ffffff"),
+                //TextOnSecondary = Color.FromHex("#ffffff"),
+                BackgroundPage = Color.FromHex("#ffffff"),
+                ForegroundPage = Color.FromHex("#ecf0f1"),
+
+                TextPrimary = Color.FromHex("#212121"),
+                TextSecondary = Color.FromHex("#757575")
             };
         }
 
@@ -71,12 +76,17 @@ namespace PixQrCodeGeneratorOffline.Models.Services
         {
             return new MaterialColor
             {
-                Primary = Color.FromHex("#212121"),
-                PrimaryDark = Color.FromHex("#000000"),
-                PrimaryLight = Color.FromHex("#484848"),
-                Secondary = Color.FromHex("#00796b"),
+                Primary = Color.FromHex("#00796b"),
+                PrimaryDark = Color.FromHex("#004c40"),
+                PrimaryLight = Color.FromHex("#48a999"),
+                //Secondary = Color.FromHex("#00796b"),
                 TextOnPrimary = Color.FromHex("#ffffff"),
-                TextOnSecondary = Color.FromHex("#00000")
+                //TextOnSecondary = Color.FromHex("#00000"),
+                BackgroundPage = Color.FromHex("#000000"),
+                ForegroundPage = Color.FromHex("#121212"),
+
+                TextPrimary = Color.FromHex("#ffffff"),
+                TextSecondary = Color.WhiteSmoke
             };
         }
 
@@ -94,6 +104,7 @@ namespace PixQrCodeGeneratorOffline.Models.Services
             App.Current.Resources["textOnPrimary"] = colors.TextOnPrimary;
             App.Current.Resources["textOnSecondary"] = (colors?.TextOnSecondary == Color.FromRgba(0, 0, 0, 0)) ? Color.White : colors.TextOnSecondary;
             App.Current.Resources["background_page"] = colors.BackgroundPage;
+            App.Current.Resources["foreground_page"] = colors.ForegroundPage;
 
             App.Current.Resources["textPrimary"] = colors.TextPrimary;
             App.Current.Resources["textSecondary"] = colors.TextSecondary;
@@ -114,6 +125,7 @@ namespace PixQrCodeGeneratorOffline.Models.Services
                 TextOnPrimary = (Color)App.Current.Resources["textOnPrimary"],
                 TextOnSecondary = (Color)App.Current.Resources["textOnSecondary"],
                 BackgroundPage = (Color)App.Current.Resources["background_page"],
+                ForegroundPage = (Color)App.Current.Resources["foreground_page"],
 
                 TextPrimary = (Color)App.Current.Resources["textPrimary"],
                 TextSecondary = (Color)App.Current.Resources["textSecondary"],

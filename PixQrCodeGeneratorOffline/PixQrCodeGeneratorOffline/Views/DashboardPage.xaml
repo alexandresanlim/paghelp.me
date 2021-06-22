@@ -35,8 +35,8 @@
                 <StackLayout Grid.Row="0" IsVisible="{Binding ShowWelcome, Converter={StaticResource InvertedBooleanConverter}}">
 
                     <StackLayout IsVisible="{Binding ShowInList}" VerticalOptions="FillAndExpand" Spacing="0">
-                        <StackLayout  BackgroundColor="{DynamicResource secondary}" Padding="10">
-                            <controls:CustomLabel Text="Minhas Chaves" FontSize="Title" FontAttributes="Bold" TextColor="{DynamicResource textOnSecondary}" />
+                        <StackLayout Padding="10">
+                            <controls:CustomLabel Text="Minhas Chaves" FontSize="Title" FontAttributes="Bold" TextColor="{DynamicResource textOnPrimary}" />
                         </StackLayout>
                         <controls:CustomCollectionView ItemsSource="{Binding PixKeyList}" x:Name="collectionKeysList">
                             <controls:CustomCollectionView.ItemTemplate>
@@ -260,7 +260,7 @@
                             <StackLayout.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding ChangeStyleListCommand}" />
                             </StackLayout.GestureRecognizers>
-                            <controls:CustomIcon Glyph="{Binding CurrentIconStyleList}" IconSize="Large" IconColor="{DynamicResource secondary}" VerticalOptions="CenterAndExpand" />
+                            <controls:CustomIcon Glyph="{Binding CurrentIconStyleList}" IconSize="Large" IconColor="{DynamicResource textOnPrimary}" VerticalOptions="CenterAndExpand" />
                         </StackLayout>
 
                         <Frame Grid.Column="2"  BackgroundColor="{DynamicResource secondary}" Padding="5,12" CornerRadius="30" HorizontalOptions="FillAndExpand">

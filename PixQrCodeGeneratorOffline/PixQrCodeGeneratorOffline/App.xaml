@@ -31,6 +31,7 @@
         <!--<Color x:Key="background_page">#0c143c</Color>-->
         
         <Color x:Key="background_page">#ecf0f1</Color>
+        <Color x:Key="foreground_page">#ecf0f1</Color>
 
         <Style TargetType="adscontrols:MTAdView">
             <Setter Property="HeightRequest">
@@ -84,11 +85,9 @@
                 <Setter Property="FontFamily" Value="FontPoppinsBold"/>
             </Style>
 
-
-
             <Style x:Key="optionTitle" TargetType="Label">
                 <Setter Property="FontSize" Value="50" />
-                <Setter Property="TextColor" Value="{DynamicResource textOnPrimary}"/>
+                <Setter Property="TextColor" Value="{DynamicResource primaryLight}"/>
                 <Setter Property="FontFamily" Value="FontPoppinsBold"/>
             </Style>
 

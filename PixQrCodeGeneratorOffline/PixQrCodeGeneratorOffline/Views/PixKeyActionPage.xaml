@@ -6,7 +6,6 @@
                                xmlns:qr="clr-namespace:Xam.Forms;assembly=Xam.Forms.QRCode"
                                xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon" 
                                x:Class="PixQrCodeGeneratorOffline.Views.PixKeyActionPage"
-                               Title="Ações para chave"
                                >
     <ContentPage.Content>
 
@@ -59,7 +58,7 @@
                                 <controls:CustomLabel Text="Editar" TextColor="{DynamicResource textOnSecondary}" HorizontalOptions="Center" FontAttributes="Bold"/>
                             </Frame>
 
-                            <Frame Padding="10" CornerRadius="10" BackgroundColor="{DynamicResource secondary}" VerticalOptions="FillAndExpand">
+                            <Frame Padding="10" CornerRadius="10" BackgroundColor="{DynamicResource backgroundTransparentDashboard}" VerticalOptions="FillAndExpand">
                                 <Frame.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding CurrentPixKey.Command.NavigateToCreateBillingPageCommand}" />
                                 </Frame.GestureRecognizers>
@@ -67,28 +66,28 @@
                                     <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Qrcode }" IconColor="{DynamicResource textOnBackgroundTransparent}" IconSize="Title" HorizontalOptions="Center" />
 
                                     <StackLayout Spacing="0">
-                                        <controls:CustomLabel Text="Criar" TextColor="{DynamicResource textOnSecondary}" HorizontalOptions="Center" FontAttributes="Bold"/>
-                                        <controls:CustomLabel Text="Qr Code" TextColor="{DynamicResource textOnSecondary}" HorizontalOptions="Center" FontAttributes="Bold"/>
+                                        <controls:CustomLabel Text="Criar" TextColor="{DynamicResource textOnBackgroundTransparent}" HorizontalOptions="Center" FontAttributes="Bold"/>
+                                        <controls:CustomLabel Text="Qr Code" TextColor="{DynamicResource textOnBackgroundTransparent}" HorizontalOptions="Center" FontAttributes="Bold"/>
                                     </StackLayout>
                                 </StackLayout>
                             </Frame>
                         </StackLayout>
 
                         <StackLayout Grid.Column="1">
-                            <Frame Padding="10" CornerRadius="10" BackgroundColor="{DynamicResource secondary}" VerticalOptions="FillAndExpand">
+                            <Frame Padding="10" CornerRadius="10" BackgroundColor="{DynamicResource backgroundTransparentDashboard}" VerticalOptions="FillAndExpand">
                                 <Frame.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding CurrentPixKey.Command.CopyKeyCommand}" />
                                 </Frame.GestureRecognizers>
                                 <StackLayout Spacing="15" VerticalOptions="Center">
                                     <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Copy }" IconColor="{DynamicResource textOnBackgroundTransparent}" IconSize="Title" HorizontalOptions="Center" />
                                     <StackLayout Spacing="0">
-                                        <controls:CustomLabel Text="Copiar" TextColor="{DynamicResource textOnSecondary}" HorizontalOptions="Center" FontAttributes="Bold"/>
-                                        <controls:CustomLabel Text="Chave" TextColor="{DynamicResource textOnSecondary}" HorizontalOptions="Center" FontAttributes="Bold"/>
+                                        <controls:CustomLabel Text="Copiar" TextColor="{DynamicResource textOnBackgroundTransparent}" HorizontalOptions="Center" FontAttributes="Bold"/>
+                                        <controls:CustomLabel Text="Chave" TextColor="{DynamicResource textOnBackgroundTransparent}" HorizontalOptions="Center" FontAttributes="Bold"/>
                                     </StackLayout>
                                 </StackLayout>
                             </Frame>
 
-                            <Frame Padding="10" CornerRadius="10" BackgroundColor="{DynamicResource secondary}" VerticalOptions="FillAndExpand">
+                            <Frame Padding="10" CornerRadius="10" BackgroundColor="{DynamicResource backgroundTransparentDashboard}" VerticalOptions="FillAndExpand">
                                 <Frame.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding CurrentPixKey.Command.ShareKeyCommand}" />
                                 </Frame.GestureRecognizers>
@@ -96,8 +95,8 @@
                                 <StackLayout Spacing="15" VerticalOptions="Center">
                                     <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.ShareAlt }" IconColor="{DynamicResource textOnBackgroundTransparent}" IconSize="Title" HorizontalOptions="Center" />
                                     <StackLayout Spacing="0">
-                                        <controls:CustomLabel Text="Compartilhar" TextColor="{DynamicResource textOnSecondary}" HorizontalOptions="Center" FontAttributes="Bold"/>
-                                        <controls:CustomLabel Text="Chave" TextColor="{DynamicResource textOnSecondary}" HorizontalOptions="Center" FontAttributes="Bold"/>
+                                        <controls:CustomLabel Text="Compartilhar" TextColor="{DynamicResource textOnBackgroundTransparent}" HorizontalOptions="Center" FontAttributes="Bold"/>
+                                        <controls:CustomLabel Text="Chave" TextColor="{DynamicResource textOnBackgroundTransparent}" HorizontalOptions="Center" FontAttributes="Bold"/>
                                     </StackLayout>
                                 </StackLayout>
                             </Frame>

@@ -60,7 +60,7 @@ namespace PixQrCodeGeneratorOffline.Droid
         {
             public void SetByStyleListColor()
             {
-                SetStatusBarColor(!Preference.ShowInList ? App.ThemeColors.Primary : App.ThemeColors.Secondary);
+                SetStatusBarColor(App.ThemeColors.Primary);
             }
 
             private void SetStatusBarColor(System.Drawing.Color color)

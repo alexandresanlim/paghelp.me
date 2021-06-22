@@ -55,7 +55,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                     }
                 }
 
-                ReloadStatusBar();
+                SetStatusFromCurrentPixColor();
             }
             catch (Exception e)
             {
@@ -243,11 +243,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
             App.LoadTheme(CurrentPixKey?.FinancialInstitution?.Institution?.MaterialColor);
 
-            ReloadStatusBar();
-        }
-
-        private void ReloadStatusBar()
-        {
             _statusBarService.SetByStyleListColor();
         }
 

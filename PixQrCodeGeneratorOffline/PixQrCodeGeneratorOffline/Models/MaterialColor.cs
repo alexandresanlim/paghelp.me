@@ -39,6 +39,8 @@ namespace PixQrCodeGeneratorOffline.Models
 
         public Color BackgroundPage { get; set; }
 
+        public Color ForegroundPage { get; set; }
+
         public Color White => Color.White;
 
         public Color Black => Color.Black;
