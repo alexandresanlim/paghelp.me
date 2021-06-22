@@ -64,6 +64,7 @@
 
         <Style TargetType="Frame">
             <Setter Property="HasShadow" Value="False"/>
+            <Setter Property="Padding" Value="0"/>
         </Style>
 
 
