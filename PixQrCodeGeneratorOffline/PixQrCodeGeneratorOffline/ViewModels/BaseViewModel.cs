@@ -51,7 +51,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             _eventService = DependencyService.Get<IEventService>();
             _feedService = DependencyService.Get<IFeedService>();
 
-            ShowAds = true;
+            ShowAds = false;
 
             Application.Current.RequestedThemeChanged += Current_RequestedThemeChanged;
         }
@@ -63,8 +63,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public void ReloadAppColorIfShowInListStyle()
         {
-            if (Preference.ShowInList)
-                App.LoadTheme(_materialColorService.GetByCurrentDeviceTheme(), Preference.ShowInList);
+            App.LoadTheme(_materialColorService.GetByCurrentDeviceTheme(), Preference.ShowInList);
         }
 
         protected IUserDialogs DialogService => UserDialogs.Instance;

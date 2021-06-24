@@ -45,15 +45,9 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             {
                 IsBusy = true;
 
-                FeedFromService = FeedFromService?.Count > 0 ? FeedFromService : await _feedService.Get("https://news.google.com/rss/search?q=pix%20-fraude%20-golpista%20-golpistas%20-erro%20-golpe%20-hack%20-hacker&hl=pt-BR&gl=BR&ceid=BR%3Apt-419");
+                FeedFromService = FeedFromService?.Count > 0 ? FeedFromService : await _feedService.Get("https://news.google.com/rss/search?q=pix%20-fraude%20-golpista%20-golpistas%20-erro%20-golpe%20-hack%20-hacker%20-assalto%20-assaltado%20-droga%20-drogas%20-maconha%20-%20cannabis%20-violencia&hl=pt-BR&gl=BR&ceid=BR%3Apt-419");
 
                 CurrentFeedList = FeedFromService?.ToObservableCollection();
-
-                foreach (var item in CurrentFeedList.Where(x => x.Image.IsEmpty))
-                {
-                    var uri = await item.Link.GetImage();
-                    item.Image = !string.IsNullOrEmpty(uri) ? new UriImageSource { CachingEnabled = true, Uri = new Uri(uri) } : new UriImageSource();
-                }
 
                 NotFoundVisible = !(CurrentFeedList.Count > 0);
             }
@@ -64,6 +58,14 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             finally
             {
                 IsBusy = false;
+
+                foreach (var item in CurrentFeedList)
+                {
+                    var uri = await item.Link.GetImage();
+
+                    if (!string.IsNullOrEmpty(uri))
+                        item.Image = new UriImageSource { CachingEnabled = true, Uri = new Uri(uri) };
+                }
             }
         }
 

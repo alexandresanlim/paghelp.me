@@ -80,7 +80,7 @@
                                                         >
 
                                                         <qr:QRCode.GestureRecognizers>
-                                                            <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:DashboardViewModel}}, Path=NavigateToPaymentPageCommand}" />
+                                                            <TapGestureRecognizer Command="{Binding Command.NavigateToPaymentPageCommand}" />
                                                         </qr:QRCode.GestureRecognizers>
 
                                                     </qr:QRCode>
@@ -229,13 +229,18 @@
                             <TapGestureRecognizer Command="{Binding NavigateToAddNewKeyPageCommand}" />
                         </StackLayout.GestureRecognizers>
 
-                        <controls:CustomFrame BackgroundColor="{DynamicResource secondary}" CornerRadius="10" Padding="10">
+                        <StackLayout Padding="0,0,0,15" Spacing="0">
+                            <controls:CustomLabel Text="👋" FontSize="50" HorizontalOptions="Center" />
+                            <controls:CustomLabel Text="Paghelp.me!" FontSize="Title" HorizontalOptions="Center" FontAttributes="Bold" TextColor="{DynamicResource textOnSecondary}" />
+                            <controls:CustomLabel Text="Seja Bem vindo(a)!" FontSize="Subtitle" HorizontalOptions="Center" FontAttributes="Bold" TextColor="{DynamicResource textOnSecondary}" />
+                        </StackLayout>
+
+                        <controls:CustomFrame BackgroundColor="{DynamicResource secondary}" CornerRadius="10" Padding="15">
                             <ScrollView>
                                 <StackLayout Spacing="0">
-                                    <controls:CustomLabel Text="👋" FontSize="50" HorizontalOptions="Center" />
-                                    <controls:CustomLabel Text="Bem vindo ao Paghelp.me!" FontSize="Title" HorizontalOptions="Center" FontAttributes="Bold" TextColor="{DynamicResource textOnSecondary}" />
+                                    
                                     <controls:CustomLabel Text="{Binding WelcomeText}" FontSize="{StaticResource FontSizeSmall}" TextColor="{DynamicResource textOnSecondary}" Margin="0,15" />
-                                    <controls:CustomLabel Text="Comece adicionando sua primeira chave." FontSize="{StaticResource FontSizeSmall}" FontAttributes="Bold" TextColor="{DynamicResource textOnSecondary}" HorizontalOptions="Center" />
+                                    <controls:CustomLabel Text="Comece adicionando sua primeira chave" FontSize="{StaticResource FontSizeSmall}" FontAttributes="Bold" TextColor="{DynamicResource textOnSecondary}" HorizontalOptions="End" />
                                 </StackLayout>
                             </ScrollView>
                         </controls:CustomFrame>
