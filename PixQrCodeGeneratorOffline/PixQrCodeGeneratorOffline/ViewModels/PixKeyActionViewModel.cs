@@ -29,8 +29,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public ICommand EditKeyCommand => new Command(async () =>
         {
-            var pixKey = CurrentPixKey;
-            await _pixKeyService.NavigateToEdit(DashboardVM, pixKey);
+            await _pixKeyService.NavigateToEdit(DashboardVM, CurrentPixKey);
         });
 
         private PixKey _currentPixKey;
