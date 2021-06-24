@@ -63,7 +63,7 @@ namespace PixQrCodeGeneratorOffline.Droid
                 SetStatusBarColor(App.ThemeColors.Primary);
             }
 
-            private void SetStatusBarColor(System.Drawing.Color color)
+            public void SetStatusBarColor(System.Drawing.Color color)
             {
                 if (Build.VERSION.SdkInt < Android.OS.BuildVersionCodes.Lollipop)
                     return;

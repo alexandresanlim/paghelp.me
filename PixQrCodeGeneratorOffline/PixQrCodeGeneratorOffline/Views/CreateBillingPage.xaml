@@ -10,6 +10,7 @@
              xmlns:local="clr-namespace:PixQrCodeGeneratorOffline.Converters" 
              xmlns:shared="clr-namespace:PixQrCodeGeneratorOffline.Views.Shared"
     xmlns:share="clr-namespace:PixQrCodeGeneratorOffline.Views.Shared"
+    BackgroundColor="{Binding CurrentPixKey.FinancialInstitution.Institution.MaterialColor.Primary}"
              Title="Nova Cobrança"
              >
 
@@ -48,16 +49,16 @@
     </ContentPage.Resources>
 
     <ContentPage.Content>
-        <controls:CustomFrame>
+        <!--<controls:CustomFrame>-->
 
-            <controls:CustomFrame.Background>
+            <!--<controls:CustomFrame.Background>
                 <LinearGradientBrush EndPoint="0,1">
                     <GradientStop Color="{DynamicResource primary}"
                           Offset="0.1" />
                     <GradientStop Color="{DynamicResource primaryDark}"
                           Offset="1.0" />
                 </LinearGradientBrush>
-            </controls:CustomFrame.Background>
+            </controls:CustomFrame.Background>-->
 
 
             <ScrollView>
@@ -223,6 +224,6 @@
                 </Grid>
             </ScrollView>
 
-        </controls:CustomFrame>
+        <!--</controls:CustomFrame>-->
     </ContentPage.Content>
 </share:ContentPageWithNavBar>

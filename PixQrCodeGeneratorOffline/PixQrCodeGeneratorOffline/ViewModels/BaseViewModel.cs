@@ -25,7 +25,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         protected readonly IPixKeyService _pixKeyService;
 
-        protected readonly IStatusBar _statusBarService;
+        public readonly IStatusBar _statusBarService;
 
         protected readonly IMaterialColorService _materialColorService;
 

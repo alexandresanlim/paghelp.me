@@ -19,6 +19,8 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         {
             DashboardVM = dashboardVM;
             CurrentPixKey = pixKey;
+
+            _statusBarService.SetStatusBarColor(CurrentPixKey.FinancialInstitution.Institution.MaterialColor.Primary);
         }
 
         public ICommand EditKeyCommand => new Command(async () => await _pixKeyService.NavigateToEdit(DashboardVM, CurrentPixKey));

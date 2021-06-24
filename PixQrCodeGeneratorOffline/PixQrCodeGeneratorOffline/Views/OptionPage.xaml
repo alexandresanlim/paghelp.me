@@ -1,41 +1,40 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <shared:ContentPageWithNavBar  xmlns:shared="clr-namespace:PixQrCodeGeneratorOffline.Views.Shared"
                                xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
-                               x:Class="PixQrCodeGeneratorOffline.Views.OptionPage">
+                               xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+                               xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
+                               x:Class="PixQrCodeGeneratorOffline.Views.OptionPage"
+                               BackgroundColor="{DynamicResource primary}">
     <ContentPage.Content>
 
-        <controls:CustomFrame BackgroundGradientStartPoint="0,0" BackgroundGradientEndPoint="0,1">
+        <StackLayout Padding="25,0" Spacing="15">
 
-            <controls:CustomFrame.Background>
+            <StackLayout.Background>
                 <LinearGradientBrush EndPoint="0,1">
                     <GradientStop Color="{DynamicResource primary}"
                           Offset="0.1" />
                     <GradientStop Color="{DynamicResource primaryDark}"
                           Offset="1.0" />
                 </LinearGradientBrush>
-            </controls:CustomFrame.Background>
+            </StackLayout.Background>
 
-            <StackLayout Padding="25,0" Spacing="15">
-                <Label Text="Opções" Style="{DynamicResource optionTitle}" />
+            <Label Text="Opções" Style="{DynamicResource optionTitle}" />
 
-                <StackLayout Spacing="0">
-                    <StackLayout Padding="0,15">
-                        <StackLayout.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding OpenPreferencesOptionsCommand}"/>
-                        </StackLayout.GestureRecognizers>
-                        <Label Text="Preferências" Style="{DynamicResource subOptionTitle}" />
-                    </StackLayout>
+            <StackLayout Spacing="0">
+                <StackLayout Padding="0,15">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding OpenPreferencesOptionsCommand}"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label Text="Preferências" Style="{DynamicResource subOptionTitle}" />
+                </StackLayout>
 
-                    <StackLayout Padding="0,15">
-                        <StackLayout.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding OpenKeysOptionsCommand}"/>
-                        </StackLayout.GestureRecognizers>
-                        <Label Text="Chaves" Style="{DynamicResource subOptionTitle}" />
-                    </StackLayout>
+                <StackLayout Padding="0,15">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding OpenKeysOptionsCommand}"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label Text="Chaves" Style="{DynamicResource subOptionTitle}" />
                 </StackLayout>
             </StackLayout>
-
-        </controls:CustomFrame>
+        </StackLayout>
     </ContentPage.Content>
 </shared:ContentPageWithNavBar>
