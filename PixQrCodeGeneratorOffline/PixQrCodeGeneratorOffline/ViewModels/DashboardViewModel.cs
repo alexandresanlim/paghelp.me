@@ -38,7 +38,8 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 await LoadCurrentPixKey();
 
-
+                if (!(PixKeyList.Count > 0))
+                    await LoadDashboardWelcome();
             }
             catch (System.Exception e)
             {
@@ -56,15 +57,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             ShowInList = false;
             ShowInCarousel = false;
             ShowWelcome = false;
-
-            WelcomeText =
-                "🔐 Seguro: Guarde suas chaves localmente de maneira criptografada e sem conexão com a internet, com suporte a autenticação biométrica se suportado. \n\n" +
-                "🔀 Prático: Compartilhe suas chaves rapidamente.\n\n" +
-                "🤙 Customizável: Exiba em formato de carrossel ou lista, com suporte a dark e light mode.\n\n" +
-                "🤑 Cobranças: Gere Qr Codes para pagamento.\n\n" +
-                "💾 Backup: Local e automático.\n\n" +
-                "E mais! \n\n" +
-                "⚠ IMPORTANTE! Não fazemos conexão direta com o seu banco, sendo assim não será possível ver saldo ou realizar transferências, para isso use o app do seu banco.";
         }
 
         public async Task LoadCurrentPixKey(PixKey pixKeySelected = null)
@@ -77,6 +69,55 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 CurrentPixKey = pixKeySelected ?? PixKeyList.FirstOrDefault();
                 ShowWelcome = false;
             }
+        }
+
+        private async Task LoadDashboardWelcome()
+        {
+            DashboardWelcomenList = new ObservableCollection<DashboardWelcome>
+            {
+                new DashboardWelcome
+                {
+                    Emoji = FontAwesomeSolid.Lock,
+                    Title = "Seguro",
+                    Description = "Guarde suas chaves localmente e de maneira criptografada, com suporte a autenticação biométrica se disponível",
+                    Unconnection = true
+                },
+                new DashboardWelcome
+                {
+                    Emoji = FontAwesomeSolid.HandHoldingUsd,
+                    Title = "Cobranças",
+                    Description = "Gere Qr Codes para pagamento.",
+                    Unconnection = true
+                },
+                new DashboardWelcome
+                {
+                    Emoji = FontAwesomeSolid.ThumbsUp,
+                    Title = "Prático",
+                    Description = "Carpartilhe suas chaves rapidamente",
+                    Unconnection = true
+                },
+                new DashboardWelcome
+                {
+                    Emoji = FontAwesomeSolid.Cogs,
+                    Title = "Customizável",
+                    Description = "Exiba em formato de carrossel ou lista, com suporte a dark e light mode.",
+                    Unconnection = true
+                },
+                
+                new DashboardWelcome
+                {
+                    Emoji = FontAwesomeSolid.Save,
+                    Title = "Backup",
+                    Description = "Local e automático.",
+                    Unconnection = true
+                },
+                new DashboardWelcome
+                {
+                    Emoji = FontAwesomeSolid.ExclamationTriangle,
+                    Title = "IMPORTANTE!",
+                    Description = "Não fazemos conexão direta com o seu banco, sendo assim não será possível ver saldo ou realizar transferências, para isso use o app do seu banco."
+                }
+            };
         }
 
         public ICommand AuthenticationCommand => new Command(async () =>
@@ -115,13 +156,47 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public ICommand ChangeSelectPixKeyCommand => new Command(() => SetStatusFromCurrentPixColor());
 
-        public ICommand SettingsCommand => new Command(async () => await NavigateAsync(new OptionPage()));
+        public ICommand SettingsCommand => new Command(async () => await NavigateModalAsync(new OptionPage()));
 
         public ICommand ChangeStyleListCommand => new Command(async () =>
         {
             _preferenceService.ChangeShowInList();
             await ReloadShowInList();
         });
+
+        public ICommand WelcomeNextCommand => new Command(async () =>
+        {
+            try
+            {
+                if (ShowAddkeyOnWelcome)
+                    return;
+
+                ActualWelcomeNextPosition = ActualWelcomeNextPosition++;
+            }
+            catch (System.Exception e)
+            {
+                e.SendToLog();
+            }
+        });
+
+        public ICommand SkipWelcomeCommand => new Command(async () =>
+        {
+            try
+            {
+                CurrentDashboardWelcome = LastWelcomeItem;
+            }
+            catch (System.Exception e)
+            {
+                e.SendToLog();
+            }
+        });
+
+        public ICommand CurrentWelcomeItemChangedCommand => new Command(() => CheckIsLastItemOnWelcome());
+
+        private void CheckIsLastItemOnWelcome()
+        {
+            ShowAddkeyOnWelcome = CurrentDashboardWelcome == LastWelcomeItem;
+        }
 
         public async Task ReloadShowInList()
         {
@@ -221,5 +296,46 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             set => SetProperty(ref _isVisibleFingerPrint, value);
             get => _isVisibleFingerPrint;
         }
+
+        private int _actualWelcomeNextPosition;
+        public int ActualWelcomeNextPosition
+        {
+            set => SetProperty(ref _actualWelcomeNextPosition, value);
+            get => _actualWelcomeNextPosition;
+        }
+
+        private DashboardWelcome _currentDashboardWelcome;
+        public DashboardWelcome CurrentDashboardWelcome
+        {
+            set => SetProperty(ref _currentDashboardWelcome, value);
+            get => _currentDashboardWelcome;
+        }
+
+        private ObservableCollection<DashboardWelcome> _dashboardWelcomenList;
+        public ObservableCollection<DashboardWelcome> DashboardWelcomenList
+        {
+            set => SetProperty(ref _dashboardWelcomenList, value);
+            get => _dashboardWelcomenList;
+        }
+
+        private DashboardWelcome LastWelcomeItem => DashboardWelcomenList?.LastOrDefault() ?? new DashboardWelcome();
+
+        private bool _showAddkeyOnWelcome;
+        public bool ShowAddkeyOnWelcome
+        {
+            set => SetProperty(ref _showAddkeyOnWelcome, value);
+            get => _showAddkeyOnWelcome;
+        }
+    }
+
+    public class DashboardWelcome
+    {
+        public string Emoji { get; set; }
+
+        public string Title { get; set; }
+
+        public string Description { get; set; }
+
+        public bool Unconnection { get; set; }
     }
 }

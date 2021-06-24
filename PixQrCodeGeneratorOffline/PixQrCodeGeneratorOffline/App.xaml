@@ -51,6 +51,9 @@
         <x:Double x:Key="FontSizeSmall">15</x:Double>
         <x:Double x:Key="FontSizeMicro">10</x:Double>
 
+        <x:String x:Key="FontBold">FontPoppinsBold</x:String>
+        <x:String x:Key="FontSemiBold">FontPoppinsSemiBold</x:String>
+
         <Style TargetType="Label">
             <Setter Property="FontFamily" Value="FontPoppinsRegular"/>
             <Setter Property="TextColor" Value="{DynamicResource textPrimary}" />
