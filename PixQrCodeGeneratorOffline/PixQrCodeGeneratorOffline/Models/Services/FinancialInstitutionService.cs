@@ -47,14 +47,14 @@ namespace PixQrCodeGeneratorOffline.Models.Services
                 Create(GetType(new MercadoPago())),
                 Create(GetType(new Neon())),
                 Create(GetType(new Next())),
-                //Create(FinancialInstitutionType.None),
                 Create(GetType(new Nubank())),
                 Create(GetType(new PagBank())),
                 Create(GetType(new PicPay())),
                 Create(GetType(new Safra())),
                 Create(GetType(new Santander())),
                 Create(GetType(new Sicredi())),
-                Create(GetType(new SuperDigital()))
+                Create(GetType(new SuperDigital())),
+                Create(GetType(new NaoInformado()))
             };
         }
 

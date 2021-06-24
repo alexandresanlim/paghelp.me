@@ -1,5 +1,6 @@
 ﻿using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models;
+using PixQrCodeGeneratorOffline.Models.DataStatic.Institutions;
 using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Services;
 using PixQrCodeGeneratorOffline.Style;
@@ -40,7 +41,9 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             {
                 IsEdit = CurrentPixKey.Id > 0;
 
-                CurrenSelectedFinancialInstitutionText = !IsEdit ? "Toque para selecionar" : CurrentPixKey?.FinancialInstitution?.Name;
+                SelectedFinancialInstitution = !IsEdit ? _financialInstitutionService.Create(FinancialInstitutionType.None) : CurrentPixKey.FinancialInstitution;
+
+                //CurrenSelectedFinancialInstitutionText = !IsEdit ? "Toque para selecionar" : CurrentPixKey?.FinancialInstitution?.Name;
 
                 CurrenKeyPlaceholder = CurrenKeyPlaceholderDefaultValue;
 
@@ -82,10 +85,8 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 //CurrentPixKey.Color = MaterialColor.GetRandom();
 
-                if (string.IsNullOrEmpty(CurrentPixKey?.FinancialInstitution?.Name))
-                {
-                    CurrentPixKey.FinancialInstitution = _financialInstitutionService.Create(FinancialInstitutionType.None);
-                }
+
+                CurrentPixKey.FinancialInstitution = SelectedFinancialInstitution;
 
                 if (string.IsNullOrEmpty(CurrentPixKey?.City))
                     CurrentPixKey.City = "Cidade";
@@ -227,23 +228,27 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         private void SetNewInstitution(FinancialInstitution institution)
         {
-            CurrentPixKey.FinancialInstitution = institution;
+            SelectedFinancialInstitution = institution;
 
-            CurrenSelectedFinancialInstitutionText = institution.Name;
+            //CurrentPixKey.FinancialInstitution = institution;
 
-            CurrenKeyPlaceholder = CurrenKeyPlaceholderDefaultValue + " no " + CurrenSelectedFinancialInstitutionText;
+            //CurrenSelectedFinancialInstitutionText = institution.Name;
+
+            CurrenKeyPlaceholder = CurrenKeyPlaceholderDefaultValue + " no " + SelectedFinancialInstitution?.Name;
 
             SetStatusFromCurrentPixColor();
         }
 
         public void SetStatusFromCurrentPixColor()
         {
-            if (Preference.ShowInList || CurrentPixKey?.FinancialInstitution?.Institution?.MaterialColor == null)
+            if (SelectedFinancialInstitution?.Institution?.MaterialColor == null)
                 return;
 
-            App.LoadTheme(CurrentPixKey?.FinancialInstitution?.Institution?.MaterialColor);
+            CurrenStyle = SelectedFinancialInstitution?.Institution?.MaterialColor;
 
-            _statusBarService.SetByStyleListColor();
+            //App.LoadTheme(CurrentPixKey?.FinancialInstitution?.Institution?.MaterialColor);
+
+            _statusBarService.SetStatusBarColor(SelectedFinancialInstitution.Institution.MaterialColor.Primary);
         }
 
         private async Task<bool> ValidateSave()
@@ -284,12 +289,12 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         //public static PixKey OriginPixKey { get; set; }
 
-        private string _currenSelectedFinancialInstitutionText;
-        public string CurrenSelectedFinancialInstitutionText
-        {
-            set => SetProperty(ref _currenSelectedFinancialInstitutionText, value);
-            get => _currenSelectedFinancialInstitutionText;
-        }
+        //private string _currenSelectedFinancialInstitutionText;
+        //public string CurrenSelectedFinancialInstitutionText
+        //{
+        //    set => SetProperty(ref _currenSelectedFinancialInstitutionText, value);
+        //    get => _currenSelectedFinancialInstitutionText;
+        //}
 
         private string _currenKeyPlaceholder;
         public string CurrenKeyPlaceholder
@@ -303,6 +308,20 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         {
             set => SetProperty(ref _notices, value);
             get => _notices;
+        }
+
+        private MaterialColor _currenStyle;
+        public MaterialColor CurrenStyle
+        {
+            set => SetProperty(ref _currenStyle, value);
+            get => _currenStyle;
+        }
+
+        private FinancialInstitution _selectedFinancialInstitution;
+        public FinancialInstitution SelectedFinancialInstitution
+        {
+            set => SetProperty(ref _selectedFinancialInstitution, value);
+            get => _selectedFinancialInstitution;
         }
 
         private string CurrenKeyPlaceholderDefaultValue => "Chave cadastrada";

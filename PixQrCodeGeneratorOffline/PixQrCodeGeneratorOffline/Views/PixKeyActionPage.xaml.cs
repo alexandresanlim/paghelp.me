@@ -23,5 +23,12 @@ namespace PixQrCodeGeneratorOffline.Views
 
             BindingContext = _pixKeyActionViewModel = new PixKeyActionViewModel(dashboardVM, pixKey);
         }
+
+        protected override void OnAppearing()
+        {
+            _pixKeyActionViewModel.SetStatusBarByCurrentPixKey();
+
+            base.OnAppearing();
+        }
     }
 }
