@@ -26,7 +26,7 @@ namespace PixQrCodeGeneratorOffline.Views
 
         protected override void OnAppearing()
         {
-            _pixKeyActionViewModel.SetStatusBarByCurrentPixKey();
+            _pixKeyActionViewModel.LoadData();
 
             base.OnAppearing();
         }

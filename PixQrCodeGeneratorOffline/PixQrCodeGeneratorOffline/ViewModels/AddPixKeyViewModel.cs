@@ -99,15 +99,15 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 {
                     success = _pixKeyService.Update(CurrentPixKey);
 
-                    var l = DashboardViewModel.PixKeyList.FirstOrDefault(x => x.Id.Equals(CurrentPixKey.Id));
+                    //var l = DashboardViewModel.PixKeyList.FirstOrDefault(x => x.Id.Equals(CurrentPixKey.Id));
 
-                    if (l != null)
-                    {
-                        int index = DashboardViewModel.PixKeyList.IndexOf(l);
+                    //if (l != null)
+                    //{
+                    //    int index = DashboardViewModel.PixKeyList.IndexOf(l);
 
-                        if (index != -1)
-                            DashboardViewModel.PixKeyList[index] = CurrentPixKey;
-                    }
+                    //    if (index != -1)
+                    //        DashboardViewModel.PixKeyList[index] = CurrentPixKey;
+                    //}
                 }
 
                 else
@@ -127,7 +127,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 DialogService.Toast("Chave salva com sucesso");
 
-                await NavigateToRootAsync();
+                NavigateBack();
 
                 //}
 

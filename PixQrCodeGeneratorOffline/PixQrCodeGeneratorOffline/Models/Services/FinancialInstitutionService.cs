@@ -144,7 +144,7 @@ namespace PixQrCodeGeneratorOffline.Models.Services
         {
             return string.IsNullOrWhiteSpace(financialInstitution?.Name)
                 ? new NaoInformado()
-                : GetInstitutionList()?.FirstOrDefault(x => x.Name.ToLower().Equals(financialInstitution.Name.ToLower())) ?? new NaoInformado();
+                : GetInstitutionList()?.FirstOrDefault(x => x.Name.ToLower().Equals(financialInstitution?.Name?.ToLower())) ?? new NaoInformado();
         }
 
         public string GetName(IInstitution institution)

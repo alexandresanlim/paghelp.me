@@ -27,7 +27,7 @@ namespace PixQrCodeGeneratorOffline.Models
         //public bool AvailablePremium { get; set; }
 
         [LiteDB.BsonIgnore]
-        public IInstitution Institution => _financialInstitutionService.GetInstitution(this);
+        public IInstitution Institution => _financialInstitutionService?.GetInstitution(this) ?? new DataStatic.Institutions.NaoInformado();
 
         //[LiteDB.BsonIgnore]
         //public MaterialColor Color => _materialColorService.GetColorByFinancialInstitution(this);

@@ -46,6 +46,11 @@ namespace PixQrCodeGeneratorOffline.Models.Services
             return _pixKeyRepository.GetFirst();
         }
 
+        public PixKey GetById(int id)
+        {
+            return _pixKeyRepository.FindById(id);
+        }
+
         public bool Update(PixKey item)
         {
             return _pixKeyRepository.Update(item);
