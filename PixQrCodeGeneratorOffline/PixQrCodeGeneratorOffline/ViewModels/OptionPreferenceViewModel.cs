@@ -15,6 +15,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 {
                     _preferenceService.ChangeShowInList();
                     await DashboardVM.ReloadShowInList();
+                    await NavigateToRootAsync();
                 })
             };
 
