@@ -26,10 +26,10 @@ namespace PixQrCodeGeneratorOffline.Models.Services.Interfaces
 
         Task<bool> RemoveAll();
 
-        Task NavigateToEdit(DashboardViewModel dashboardVM, PixKey pixKey);
+        Task NavigateToEdit(PixKey pixKey);
 
-        Task NavigateToAdd(DashboardViewModel dashboardVM);
+        Task NavigateToAdd();
 
-        Task NavigateToAction(DashboardViewModel dashboardVM, PixKey pixKey);
+        Task NavigateToAction(PixKey pixKey);
     }
 }

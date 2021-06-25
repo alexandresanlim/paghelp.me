@@ -154,7 +154,7 @@ namespace PixQrCodeGeneratorOffline.Models.Services
             }
         }
 
-        public async Task NavigateToEdit(DashboardViewModel dashboardVM, PixKey pixKey)
+        public async Task NavigateToEdit(PixKey pixKey)
         {
             if (!pixKey.Validation.IsValid)
                 return;
@@ -165,7 +165,7 @@ namespace PixQrCodeGeneratorOffline.Models.Services
 
                 await Task.Delay(500);
 
-                await Shell.Current.Navigation.PushModalAsync(new AddPixKeyPage(dashboardVM, pixKey));
+                await Shell.Current.Navigation.PushModalAsync(new AddPixKeyPage(pixKey));
             }
             catch (System.Exception e)
             {
@@ -179,7 +179,7 @@ namespace PixQrCodeGeneratorOffline.Models.Services
             }
         }
 
-        public async Task NavigateToAdd(DashboardViewModel dashboardVM)
+        public async Task NavigateToAdd()
         {
             try
             {
@@ -187,7 +187,7 @@ namespace PixQrCodeGeneratorOffline.Models.Services
 
                 await Task.Delay(500);
 
-                await Shell.Current.Navigation.PushModalAsync(new AddPixKeyPage(dashboardVM));
+                await Shell.Current.Navigation.PushModalAsync(new AddPixKeyPage());
             }
             catch (System.Exception e)
             {
@@ -201,7 +201,7 @@ namespace PixQrCodeGeneratorOffline.Models.Services
             }
         }
 
-        public async Task NavigateToAction(DashboardViewModel dashboardVM, PixKey pixKey)
+        public async Task NavigateToAction(PixKey pixKey)
         {
             if (!pixKey.Validation.IsValid)
                 return;
@@ -212,7 +212,7 @@ namespace PixQrCodeGeneratorOffline.Models.Services
 
                 await Task.Delay(500);
 
-                await Shell.Current.Navigation.PushModalAsync(new PixKeyActionPage(dashboardVM, pixKey));
+                await Shell.Current.Navigation.PushModalAsync(new PixKeyActionPage(pixKey));
             }
             catch (System.Exception e)
             {

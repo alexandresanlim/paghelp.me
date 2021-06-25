@@ -17,12 +17,8 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 {
     public class AddPixKeyViewModel : BaseViewModel
     {
-        public DashboardViewModel DashboardViewModel { get; set; }
-
-        public AddPixKeyViewModel(DashboardViewModel dashboardVM, PixKey pixKey = null)
+        public AddPixKeyViewModel(PixKey pixKey = null)
         {
-            DashboardViewModel = dashboardVM;
-
             CurrentPixKey = pixKey ?? new PixKey();
 
             LoadData.Execute(null);
@@ -99,21 +95,21 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 {
                     success = _pixKeyService.Update(CurrentPixKey);
 
-                    var l = DashboardViewModel.PixKeyList.FirstOrDefault(x => x.Id.Equals(CurrentPixKey.Id));
+                    var l = DashboardVM.PixKeyList.FirstOrDefault(x => x.Id.Equals(CurrentPixKey.Id));
 
                     if (l != null)
                     {
-                        int index = DashboardViewModel.PixKeyList.IndexOf(l);
+                        int index = DashboardVM.PixKeyList.IndexOf(l);
 
                         if (index != -1)
-                            DashboardViewModel.PixKeyList[index] = CurrentPixKey;
+                            DashboardVM.PixKeyList[index] = CurrentPixKey;
                     }
                 }
 
                 else
                 {
                     success = _pixKeyService.Insert(CurrentPixKey);
-                    DashboardViewModel.PixKeyList.Add(CurrentPixKey);
+                    DashboardVM.PixKeyList.Add(CurrentPixKey);
                 }
 
                 //DashboardViewModel.LoadDataCommand.Execute(null);
@@ -123,7 +119,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 //CurrentPixKey.RaiseCob();
 
-                await DashboardViewModel.LoadCurrentPixKey(CurrentPixKey);
+                await DashboardVM.LoadCurrentPixKey(CurrentPixKey);
 
                 DialogService.Toast("Chave salva com sucesso");
 
@@ -153,14 +149,14 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 if (success)
                 {
-                    int index = DashboardViewModel.PixKeyList.IndexOf(DashboardViewModel.PixKeyList.FirstOrDefault(x => x.Id == CurrentPixKey.Id));
+                    int index = DashboardVM.PixKeyList.IndexOf(DashboardVM.PixKeyList.FirstOrDefault(x => x.Id == CurrentPixKey.Id));
 
                     if (index != -1)
-                        DashboardViewModel.PixKeyList.RemoveAt(index);
+                        DashboardVM.PixKeyList.RemoveAt(index);
 
                     //DashboardViewModel.PixKeyList.Remove(CurrentPixKey);
 
-                    await DashboardViewModel.LoadCurrentPixKey(null);
+                    await DashboardVM.LoadCurrentPixKey(null);
 
                     DialogService.Toast("Chave removida com sucesso");
 
@@ -277,6 +273,11 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
 
             return true;
+        }
+
+        public void BackButtonPressed()
+        {
+            DashboardVM.SetStatusFromCurrentPixColor();
         }
 
         private bool _isEdit;

@@ -17,11 +17,11 @@ namespace PixQrCodeGeneratorOffline.Views
     {
         private PixKeyActionViewModel _pixKeyActionViewModel;
 
-        public PixKeyActionPage(DashboardViewModel dashboardVM, PixKey pixKey)
+        public PixKeyActionPage(PixKey pixKey)
         {
             InitializeComponent();
 
-            BindingContext = _pixKeyActionViewModel = new PixKeyActionViewModel(dashboardVM, pixKey);
+            BindingContext = _pixKeyActionViewModel = new PixKeyActionViewModel(pixKey);
         }
 
         protected override void OnAppearing()

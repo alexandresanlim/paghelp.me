@@ -16,17 +16,17 @@ namespace PixQrCodeGeneratorOffline.Views
         AddPixKeyViewModel _viewModel;
         //DashboardViewModel _dashboardViewModel;
 
-        public AddPixKeyPage(DashboardViewModel dashboardVM, Models.PixKey pixKey = null)
+        public AddPixKeyPage(Models.PixKey pixKey = null)
         {
             InitializeComponent();
 
             //_dashboardViewModel = dbViewModel;
-            BindingContext = _viewModel = new AddPixKeyViewModel(dashboardVM, pixKey);
+            BindingContext = _viewModel = new AddPixKeyViewModel(pixKey);
         }
 
         protected override bool OnBackButtonPressed()
         {
-            _viewModel.DashboardViewModel.SetStatusFromCurrentPixColor();
+            _viewModel.BackButtonPressed();
 
             return base.OnBackButtonPressed();
         }

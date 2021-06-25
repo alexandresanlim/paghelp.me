@@ -13,11 +13,8 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 {
     public class PixKeyActionViewModel : BaseViewModel
     {
-        public DashboardViewModel DashboardVM { get; set; }
-
-        public PixKeyActionViewModel(DashboardViewModel dashboardVM, PixKey pixKey)
+        public PixKeyActionViewModel(PixKey pixKey)
         {
-            DashboardVM = dashboardVM;
             CurrentPixKey = pixKey;
         }
 
@@ -36,7 +33,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public ICommand EditKeyCommand => new Command(async () =>
         {
-            await _pixKeyService.NavigateToEdit(DashboardVM, CurrentPixKey);
+            await _pixKeyService.NavigateToEdit(CurrentPixKey);
         });
 
         private PixKey _currentPixKey;
