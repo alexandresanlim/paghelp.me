@@ -2,7 +2,10 @@
 using Microsoft.AppCenter.Analytics;
 using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models;
+using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Services;
+using PixQrCodeGeneratorOffline.Services.Interfaces;
+using PixQrCodeGeneratorOffline.Style.Interfaces;
 using Plugin.Fingerprint;
 using Plugin.Fingerprint.Abstractions;
 using System;
@@ -18,12 +21,42 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
+        protected readonly IFinancialInstitutionService _financialInstitutionService;
+
+        protected readonly IPixKeyService _pixKeyService;
+
+        public readonly IStatusBar _statusBarService;
+
+        protected readonly IMaterialColorService _materialColorService;
+
+        protected readonly IPixPayloadService _pixPayloadService;
+
+        protected readonly IPreferenceService _preferenceService;
+
+        protected readonly IExternalActionService _externalActionService;
+
+        protected readonly IEventService _eventService;
+
+        protected readonly IFeedService _feedService;
+
         public BaseViewModel()
         {
-            ShowAds = true;
+            _financialInstitutionService = DependencyService.Get<IFinancialInstitutionService>();
+            _pixKeyService = DependencyService.Get<IPixKeyService>();
+            _statusBarService = DependencyService.Get<IStatusBar>();
+            _materialColorService = DependencyService.Get<IMaterialColorService>();
+            _pixPayloadService = DependencyService.Get<IPixPayloadService>();
+            _preferenceService = DependencyService.Get<IPreferenceService>();
+            _externalActionService = DependencyService.Get<IExternalActionService>();
+            _eventService = DependencyService.Get<IEventService>();
+            _feedService = DependencyService.Get<IFeedService>();
+
+            ShowAds = false;
 
             Application.Current.RequestedThemeChanged += Current_RequestedThemeChanged;
         }
+
+        public static DashboardViewModel DashboardVM { get; set; }
 
         private void Current_RequestedThemeChanged(object sender, AppThemeChangedEventArgs e)
         {
@@ -32,29 +65,10 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public void ReloadAppColorIfShowInListStyle()
         {
-            if (PreferenceService.ShowInList)
-            {
-                var colorSystem = (AppInfo.RequestedTheme == AppTheme.Light || AppInfo.RequestedTheme == AppTheme.Unspecified) ? Style.MaterialColor.GetLightColors() : Style.MaterialColor.GetDarkColors();
-                App.LoadTheme(colorSystem, PreferenceService.ShowInList);
-            }
+            App.LoadTheme(_materialColorService.GetByCurrentDeviceTheme());
         }
 
-        public IUserDialogs DialogService => UserDialogs.Instance;
-
-        public async Task ShareText(string text)
-        {
-            await Xamarin.Essentials.Share.RequestAsync(new Xamarin.Essentials.ShareTextRequest
-            {
-                Text = text,
-                Title = "Escolha uma opção"
-            });
-        }
-
-        public async Task CopyText(string text, string textSuccess = "Copiado com sucesso!")
-        {
-            await Xamarin.Essentials.Clipboard.SetTextAsync(text);
-            DialogService.Toast(textSuccess);
-        }
+        protected IUserDialogs DialogService => UserDialogs.Instance;
 
         #region Loading
 
@@ -77,11 +91,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         }
 
         #endregion
-
-        public void SetEvent(string text, IDictionary<string, string> properties = null)
-        {
-            Analytics.TrackEvent(text, properties);
-        }
 
         public async Task DisplayAlert(string title, string message, string cancel)
         {

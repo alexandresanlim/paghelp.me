@@ -21,15 +21,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             try
             {
                 IsBusy = true;
-
-                //await Task.Run(async () =>
-                //{
-                //    SetIsLoading(true);
-
-                //    await Task.Delay(500);
-
-                //    await LoadData();
-                //});
             }
             catch (Exception e)
             {
@@ -37,9 +28,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
             finally
             {
-                SetEvent("Viu lista de notícias");
-
-                //SetIsLoading(false);
+                _eventService.SendEvent("Viu lista de notícias", EventType.SEE);
             }
         }
 
@@ -56,9 +45,9 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             {
                 IsBusy = true;
 
-                FeedFromService = FeedFromService?.Count > 0 ? FeedFromService : await FeedService.Get("https://news.google.com/rss/search?q=pix%20-frade%20-golpista%20-golpistas%20-erro%20-golpe%20-hack%20-hacker&hl=pt-BR&gl=BR&ceid=BR%3Apt-419");
+                FeedFromService = FeedFromService?.Count > 0 ? FeedFromService : await _feedService.Get("https://news.google.com/rss/search?q=pix%20-fraude%20-golpista%20-golpistas%20-erro%20-golpe%20-hack%20-hacker%20-assalto%20-assaltado%20-droga%20-drogas%20-maconha%20-%20cannabis%20-violencia&hl=pt-BR&gl=BR&ceid=BR%3Apt-419");
 
-                CurrentFeedList = FeedFromService?.Where(x => x.PublishDate != null)?.OrderByDescending(x => x.PublishDate)?.ToObservableCollection();
+                CurrentFeedList = FeedFromService?.ToObservableCollection();
 
                 NotFoundVisible = !(CurrentFeedList.Count > 0);
             }
@@ -69,14 +58,22 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             finally
             {
                 IsBusy = false;
+
+                foreach (var item in CurrentFeedList)
+                {
+                    var uri = await item.Link.GetImage();
+
+                    if (!string.IsNullOrEmpty(uri))
+                        item.Image = new UriImageSource { CachingEnabled = true, Uri = new Uri(uri) };
+                }
             }
         }
 
-        public ICommand ItemTappedCommand => new Command<Feed>(async (item) =>
+        public ICommand ItemTappedCommand => new Command<Feed>(async (feed) =>
         {
-            if (string.IsNullOrEmpty(item?.Link?.AbsoluteUri))
+            if (!feed.Validation.IsValid)
             {
-                DialogService.Toast("Link para a notícia não encontrado.");
+                DialogService.Toast("Link para notícia não encontrado.");
                 return;
             }
 
@@ -86,7 +83,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 await Task.Delay(500);
 
-                await NavigateModalAsync(new WebViewPage(item.Link, item?.Title));
+                await NavigateModalAsync(new WebViewPage(feed.Link, feed?.Title));
             }
             catch (Exception e)
             {
@@ -94,14 +91,20 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
             finally
             {
-                SetEvent("Entrou em uma notícia", new Dictionary<string, string> { { "Título: ", item?.Title } });
+                _eventService.SendEvent("Viu uma notícia", EventType.SEE, new Dictionary<string, string> { { "Título: ", feed?.Title } });
 
                 SetIsLoading(false);
             }
         });
 
-        public ICommand ShareCommand => new Command<Feed>(async (item) =>
+        public ICommand ShareCommand => new Command<Feed>(async (feed) =>
         {
+            if (!feed.Validation.IsValid)
+            {
+                DialogService.Toast("Link para notícia não encontrado.");
+                return;
+            }
+
             try
             {
 
@@ -109,7 +112,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 await Task.Delay(500);
 
-                await ShareText(item.Link.AbsoluteUri);
+                await _externalActionService.ShareText(feed.Link.AbsoluteUri);
             }
             catch (Exception e)
             {
@@ -117,7 +120,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
             finally
             {
-                SetEvent("Compartilhou uma notícia: " + item?.Title);
+                _eventService.SendEvent("Compartilhou uma notícia: " + feed?.Title, EventType.SHARE, new Dictionary<string, string> { { "Título: ", feed?.Title } });
 
                 SetIsLoading(false);
             }

@@ -1,6 +1,8 @@
-﻿using System;
+﻿using PixQrCodeGeneratorOffline.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace PixQrCodeGeneratorOffline.Models.Services.Interfaces
 {
@@ -12,12 +14,22 @@ namespace PixQrCodeGeneratorOffline.Models.Services.Interfaces
 
         PixKey GetFirst();
 
+        PixKey GetById(int id);
+
         bool Update(PixKey item);
 
         bool Insert(PixKey item);
 
         bool Remove(PixKey item);
 
-        bool RemoveAll();
+        void ShareAllKeys();
+
+        Task<bool> RemoveAll();
+
+        Task NavigateToEdit(PixKey pixKey);
+
+        Task NavigateToAdd();
+
+        Task NavigateToAction(PixKey pixKey);
     }
 }

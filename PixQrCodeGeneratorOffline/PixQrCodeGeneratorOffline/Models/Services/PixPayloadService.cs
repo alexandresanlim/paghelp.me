@@ -60,7 +60,7 @@ namespace PixQrCodeGeneratorOffline.Models.Services
                     SolicitacaoPagador = pixCob?.Description,
                     Valor = new Valor
                     {
-                        Original = pixCob.ValueFormatter
+                        Original = pixCob.Viewer.ValueFormatter
                     }
                 };
 

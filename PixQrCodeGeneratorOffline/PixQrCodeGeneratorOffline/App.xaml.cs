@@ -1,12 +1,18 @@
-﻿using PixQrCodeGeneratorOffline.Models.Repository;
+﻿using PixQrCodeGeneratorOffline.Models.Commands;
+using PixQrCodeGeneratorOffline.Models.Commands.Interfaces;
+using PixQrCodeGeneratorOffline.Models.Repository;
 using PixQrCodeGeneratorOffline.Models.Repository.Interfaces;
 using PixQrCodeGeneratorOffline.Models.Services;
 using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Models.Services.Viewer;
+using PixQrCodeGeneratorOffline.Models.Validation.Services;
+using PixQrCodeGeneratorOffline.Models.Validation.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Models.Viewer.Services;
 using PixQrCodeGeneratorOffline.Models.Viewer.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Services;
+using PixQrCodeGeneratorOffline.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Style.Interfaces;
+using PixQrCodeGeneratorOffline.ViewModels;
 using System.Globalization;
 using Xamarin.Forms;
 
@@ -31,12 +37,16 @@ namespace PixQrCodeGeneratorOffline
             RegisterDependencyService();
             RegisterDependencyViewer();
             RegisterDependencyRepository();
+            RegisterDependencyValidation();
+            RegisterViewModelDependency();
+            RegisterCommandDependency();
         }
 
         private void RegisterDependencyViewer()
         {
             DependencyService.Register<IFeedViewerService, FeedViewerService>();
             DependencyService.Register<IPixKeyViewerService, PixKeyViewerService>();
+            DependencyService.Register<IPixCobViewerService, PixCobViewerService>();
         }
 
         private void RegisterDependencyService()
@@ -46,6 +56,11 @@ namespace PixQrCodeGeneratorOffline
             DependencyService.Register<IPixKeyService, PixKeyService>();
             DependencyService.Register<IPixCobService, PixCobService>();
             DependencyService.Register<IPixPayloadService, PixPayloadService>();
+            DependencyService.Register<IMaterialColorService, MaterialColorService>();
+            DependencyService.Register<IPreferenceService, PreferenceService>();
+            DependencyService.Register<IExternalActionService, ExternalActionService>();
+            DependencyService.Register<IEventService, EventService>();
+            DependencyService.Register<IFeedService, FeedService>();
         }
 
         private void RegisterDependencyRepository()
@@ -53,12 +68,28 @@ namespace PixQrCodeGeneratorOffline
             DependencyService.Register<IPixKeyRepository, PixKeyRepository>();
         }
 
+        private void RegisterDependencyValidation()
+        {
+            DependencyService.Register<IFeedValidationService, FeedValidationService>();
+            DependencyService.Register<IPixKeyValidationService, PixKeyValidationService>();
+        }
+
+        private void RegisterViewModelDependency()
+        {
+            //DependencyService.RegisterSingleton<DashboardViewModel>(new DashboardViewModel());
+        }
+
+        private void RegisterCommandDependency()
+        {
+            DependencyService.Register<IPixKeyCommand, PixKeyCommand>();
+        }
+
         protected override void OnStart()
         {
             CultureInfo.CurrentCulture = CultureInfo.CreateSpecificCulture("pt-BR");
 
             var service = DependencyService.Get<IStatusBar>();
-            service?.SetStatusBarColor(!PreferenceService.ShowInList ? ThemeColors.Primary : ThemeColors.PrimaryDark);
+            service?.SetByStyleListColor();
         }
 
         protected override void OnSleep()

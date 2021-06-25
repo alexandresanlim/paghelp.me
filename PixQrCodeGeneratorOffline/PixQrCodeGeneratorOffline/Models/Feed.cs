@@ -1,4 +1,6 @@
-﻿using PixQrCodeGeneratorOffline.Models.Viewer;
+﻿using PixQrCodeGeneratorOffline.Models.Validation;
+using PixQrCodeGeneratorOffline.Models.Validation.Services.Interfaces;
+using PixQrCodeGeneratorOffline.Models.Viewer;
 using PixQrCodeGeneratorOffline.Models.Viewer.Services.Interfaces;
 using System;
 using Xamarin.Forms;
@@ -9,35 +11,34 @@ namespace PixQrCodeGeneratorOffline.Models
     {
         private readonly IFeedViewerService _feedViewerService;
 
+        private readonly IFeedValidationService _feedValidationService;
+
         public Feed()
         {
             _feedViewerService = DependencyService.Get<IFeedViewerService>();
-        }
+            _feedValidationService = DependencyService.Get<IFeedValidationService>();
 
-        public string Id { get; set; }
+            Image = new UriImageSource { CachingEnabled = true, Uri = new Uri("https://img.olhardigital.com.br/wp-content/uploads/2021/04/PIX-2.jpg") };
+        }
 
         public string Title { get; set; }
 
         public Uri Link { get; set; }
 
-        public DateTimeOffset? PublishDate { get; set; }
-
         public string Description { get; set; }
 
         public string Source { get; set; }
 
-        public string FirstImage { get; set; }
+        public ImageSource Image { get; set; } 
 
-        public bool WasRead { get; set; }
-
-        public int Index { get; set; }
+        public DateTimeOffset? PublishDate { get; set; }
 
         public DateTimeOffset? PublishDateLocal => PublishDate?.ToLocalTime();
 
-        public bool IsToday => DateTimeOffset.Now.Date.Equals(PublishDateLocal.Value.Date);
-
         public TimeSpan PublishDuration => PublishDateLocal.HasValue ? (DateTimeOffset.Now - PublishDateLocal.Value) : TimeSpan.MaxValue;
 
-        public FeedViewer Viewer => _feedViewerService.Create(this);
+        public FeedValidation Validation => _feedValidationService?.Create(this) ?? new FeedValidation();
+
+        public FeedViewer Viewer => _feedViewerService?.Create(this) ?? new FeedViewer();
     }
 }

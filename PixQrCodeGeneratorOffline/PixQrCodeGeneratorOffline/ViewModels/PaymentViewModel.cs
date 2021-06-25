@@ -24,11 +24,11 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 {
                     new Acr.UserDialogs.ActionSheetOption("Copiar Código", async () =>
                     {
-                       await CopyText(CurrentPixPaylod?.QrCode, "Código copiado com sucesso!");
+                       await _externalActionService.CopyText(CurrentPixPaylod?.QrCode, "Código copiado com sucesso!");
                     }),
                     new Acr.UserDialogs.ActionSheetOption("Compartilhar Código", async () =>
                     {
-                        await ShareText(CurrentPixPaylod?.QrCode);
+                        await _externalActionService.ShareText(CurrentPixPaylod?.QrCode);
                     }),
                 };
 
@@ -49,7 +49,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
             finally
             {
-                SetEvent("Compartilhou um payload");
+                _eventService.SendEvent("Compartilhou um payload", Services.EventType.SHARE);
             }
         });
 

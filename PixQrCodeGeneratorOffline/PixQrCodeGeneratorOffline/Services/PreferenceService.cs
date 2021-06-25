@@ -1,46 +1,60 @@
-﻿using System;
+﻿using Acr.UserDialogs;
+using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
+using PixQrCodeGeneratorOffline.Services.Interfaces;
+using Plugin.Fingerprint;
+using System;
 using System.Collections.Generic;
 using System.Text;
-using Xamarin.Essentials;
+using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.Services
 {
-    public static class PreferenceService
+    public class PreferenceService : IPreferenceService
     {
-        public static bool HideData
-        {
-            get => Preferences.Get(nameof(HideData), false);
-            set
-            {
-                if (HideData == value)
-                    return;
+        private IUserDialogs DialogService => UserDialogs.Instance;
 
-                Preferences.Set(nameof(HideData), value);
-            }
+        protected readonly IPixKeyService _pixKeyService;
+
+        public PreferenceService()
+        {
+            _pixKeyService = DependencyService.Get<IPixKeyService>();
         }
 
-        public static bool ShowInList
+        public void ChangeHideData()
         {
-            get => Preferences.Get(nameof(ShowInList), false);
-            set
-            {
-                if (ShowInList == value)
-                    return;
-
-                Preferences.Set(nameof(ShowInList), value);
-            }
+            Preference.HideData = !Preference.HideData;
         }
 
-        public static bool FingerPrint
+        public void ChangeShowInList()
         {
-            get => Preferences.Get(nameof(FingerPrint), false);
-            set
-            {
-                if (FingerPrint == value)
-                    return;
+            var keys = _pixKeyService.GetAll();
 
-                Preferences.Set(nameof(FingerPrint), value);
+            if (keys == null && !(keys.Count > 0))
+            {
+                DialogService.Toast("Não é possível alterar está opção, pois nenhuma chave foi encontrada.");
+                return;
             }
+
+            Preference.ShowInList = !Preference.ShowInList;
+        }
+
+        public async Task ChangeFingerPrint()
+        {
+            if (!await CrossFingerprint.Current.IsAvailableAsync())
+            {
+                DialogService.Toast("Está função esta desativa ou não disponível para o seu dispositivo");
+                return;
+            }
+
+            var confirmMsg = "Tem certeza que deseja " + (Preference.FingerPrint ? "remover" : "adicionar") + " autenticação biométrica? Na próxima vez que você entrar, " + (Preference.FingerPrint ? "não será" : "será") + " necessário se autenticar para realizar quaisquer ações.";
+
+            if (!await DialogService.ConfirmAsync(confirmMsg, "Confirmação", "Confirmar", "Cancelar"))
+                return;
+
+            Preference.FingerPrint = !Preference.FingerPrint;
+
+            DialogService.Toast("Preferência de entrada, salva com sucesso!");
         }
     }
 }

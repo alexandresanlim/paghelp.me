@@ -20,7 +20,7 @@
                 <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
                 <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
                 <Setter Property="Shell.TabBarBackgroundColor" Value="{DynamicResource primaryDark}" />
-                <Setter Property="Shell.TabBarForegroundColor" Value="White"/>
+                <Setter Property="Shell.TabBarForegroundColor" Value="{DynamicResource textOnPrimary}"/>
                 <Setter Property="Shell.TabBarUnselectedColor" Value="{DynamicResource primaryLight}"/>
                 <Setter Property="Shell.TabBarTitleColor" Value="{DynamicResource textOnPrimary}"/>
             </Style>

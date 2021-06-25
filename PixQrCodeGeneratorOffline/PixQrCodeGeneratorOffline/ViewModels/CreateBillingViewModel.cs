@@ -4,6 +4,7 @@ using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Views;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -45,6 +46,17 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 e.SendToLog();
             }
         });
+
+        private void LoadRecentPixCobMockup()
+        {
+            RecentPixCobList = new ObservableCollection<PixCob>
+            {
+                new PixCob{ Value = "10.00", Description = "teste"},
+                new PixCob{ Value = "15.00", Description = "teste"},
+                new PixCob{ Value = "20.00", Description = "teste"},
+
+            };
+        }
 
         public Command<string> InputTextCommand => new Command<string>(async (text) =>
         {
@@ -180,6 +192,13 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         {
             set => SetProperty(ref _currentDescription, value);
             get => _currentDescription;
+        }
+
+        private ObservableCollection<PixCob> _recentPixCobList;
+        public ObservableCollection<PixCob> RecentPixCobList
+        {
+            set => SetProperty(ref _recentPixCobList, value);
+            get => _recentPixCobList;
         }
     }
 }

@@ -1,19 +1,15 @@
 ﻿using pix_payload_generator.net.Models.PayloadModels;
 using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models;
-using PixQrCodeGeneratorOffline.Models.Repository.Interfaces;
-using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Services;
 using PixQrCodeGeneratorOffline.Views;
 using Plugin.Fingerprint;
 using Plugin.Fingerprint.Abstractions;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using Xamarin.Essentials;
 using Xamarin.Forms;
 
 
@@ -21,23 +17,22 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 {
     public class DashboardViewModel : BaseViewModel
     {
-        private readonly IPixKeyService _pixKeyService;
-
-        private readonly IPixPayloadService _pixPayloadService;
-
         public DashboardViewModel()
         {
-            _pixKeyService = DependencyService.Get<IPixKeyService>();
-            _pixPayloadService = DependencyService.Get<IPixPayloadService>();
-
             LoadDataCommand.Execute(null);
+
+            DashboardVM = this;
         }
 
-        public ICommand LoadDataCommand => new Command(async () =>
+        public ICommand LoadDataCommand => new Command(async () => await LoadData());
+
+        public async Task LoadData()
         {
             try
             {
                 await ResetProps();
+
+                await ReloadShowInList();
 
                 var list = _pixKeyService.GetAll();
 
@@ -45,13 +40,87 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 await LoadCurrentPixKey();
 
-                await ReloadShowInList();
+                if (!(PixKeyList.Count > 0))
+                    await LoadDashboardWelcome();
             }
             catch (System.Exception e)
             {
                 e.SendToLog();
             }
-        });
+            finally
+            {
+            }
+        }
+
+        private async Task ResetProps()
+        {
+            IsVisibleFingerPrint = Preference.FingerPrint && await CrossFingerprint.Current.IsAvailableAsync();
+
+            ShowInList = false;
+            ShowInCarousel = false;
+            ShowWelcome = false;
+        }
+
+        public async Task LoadCurrentPixKey(PixKey pixKeySelected = null)
+        {
+            if (PixKeyList == null || !(PixKeyList.Count > 0))
+                ShowWelcome = true;
+
+            else
+            {
+                CurrentPixKey = pixKeySelected ?? PixKeyList.FirstOrDefault();
+                ShowWelcome = false;
+            }
+        }
+
+        private async Task LoadDashboardWelcome()
+        {
+            DashboardWelcomenList = new ObservableCollection<DashboardWelcome>
+            {
+                new DashboardWelcome
+                {
+                    Emoji = FontAwesomeSolid.Lock,
+                    Title = "Seguro",
+                    Description = "Guarde suas chaves localmente de maneira criptografada e sem conexão com a internet, com suporte a autenticação biométrica se disponível pelo seu aparelho.",
+                    Unconnection = true
+                },
+                new DashboardWelcome
+                {
+                    Emoji = FontAwesomeSolid.HandHoldingUsd,
+                    Title = "Cobranças",
+                    Description = "Gere Qr Codes para pagamento.",
+                    Unconnection = true
+                },
+                new DashboardWelcome
+                {
+                    Emoji = FontAwesomeSolid.ThumbsUp,
+                    Title = "Prático",
+                    Description = "Compartilhe uma única ou todas suas chaves rapidamente, incluindo com geração de txt",
+                    Unconnection = true
+                },
+                new DashboardWelcome
+                {
+                    Emoji = FontAwesomeSolid.Cogs,
+                    Title = "Customizável",
+                    Description = "Exiba em formato de carrossel ou lista, com suporte a dark e light mode,",
+                    Unconnection = true
+                },
+
+                new DashboardWelcome
+                {
+                    Emoji = FontAwesomeSolid.Save,
+                    Title = "Backup",
+                    Description = "Local, automático e criptografado.",
+                    Unconnection = true
+                },
+                new DashboardWelcome
+                {
+                    Emoji = FontAwesomeSolid.ExclamationTriangle,
+                    Title = "IMPORTANTE!",
+                    Description = "- Para sua segurança, não fazemos conexão direta com o seu banco, sendo assim não será possível ver saldo ou realizar transferências, para isso use o app oficial do mesmo e jamais forneça esse tipo de acesso para terceiros. \n\n - Não temos quaisquer relação com o governo federal do Brasil, porém seguimos a risca, todos manuais e recomendações de padronização e segurança disponibilizados pela instituição."
+                }
+            };
+        }
 
         public ICommand AuthenticationCommand => new Command(async () =>
         {
@@ -77,350 +146,61 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
         });
 
-        private async Task ResetProps()
+        #region DashboardVMDependency
+
+        public ICommand NavigateToAddNewKeyPageCommand => new Command(async () => await _pixKeyService.NavigateToAdd());
+
+        public ICommand EditKeyCommand => new Command(async () => await _pixKeyService.NavigateToEdit(CurrentPixKey));
+
+        public Command<PixKey> OpenOptionsKeyCommand => new Command<PixKey>(async (key) => await _pixKeyService.NavigateToAction(key));
+
+        #endregion
+
+        public ICommand ChangeSelectPixKeyCommand => new Command(() => SetStatusFromCurrentPixColor());
+
+        public ICommand SettingsCommand => new Command(async () => await NavigateModalAsync(new OptionPage()));
+
+        public ICommand ChangeStyleListCommand => new Command(async () =>
         {
-            IsVisibleFingerPrint = PreferenceService.FingerPrint && await CrossFingerprint.Current.IsAvailableAsync();
+            _preferenceService.ChangeShowInList();
+            await ReloadShowInList();
+        });
 
-            WelcomeText =
-                "🔐 Seguro: Guarde suas chaves localmente de maneira criptografada e sem conexão com a internet, com suporte a autenticação biométrica se suportado. \n\n" +
-                "🔀 Prático: Compartilhe suas chaves rapidamente.\n\n" +
-                "🤙 Customizável: Exiba em formato de carrossel ou lista, com suporte a dark e light mode.\n\n" +
-                "🤑 Cobranças: Gere Qr Codes para pagamento.\n\n" +
-                "💾 Backup: Local e automático.\n\n" +
-                "E mais! \n\n" +
-                "⚠ IMPORTANTE! Não fazemos conexão direta com o seu banco, sendo assim não será possível ver saldo ou realizar transferências, para isso use o app do seu banco.";
-        }
-
-        public async Task LoadCurrentPixKey(PixKey pixKeySelected = null)
-        {
-            if (PixKeyList == null || !(PixKeyList.Count > 0))
-                ShowWelcome = true;
-
-            else
-            {
-                CurrentPixKey = pixKeySelected ?? PixKeyList.FirstOrDefault();
-                ShowWelcome = false;
-            }
-        }
-
-        public ICommand NavigateToCreateBillingPageCommand => new Command(async () =>
+        public ICommand WelcomeNextCommand => new Command(async () =>
         {
             try
             {
-                SetIsLoading(true);
-
-                await Task.Delay(500);
-
-                await NavigateModalAsync(new CreateBillingPage(CurrentPixKey));
-            }
-            catch (System.Exception e)
-            {
-                e.SendToLog();
-            }
-            finally
-            {
-                SetEvent("Navegou para criação de cobrança");
-
-                SetIsLoading(false);
-            }
-        });
-
-        public ICommand NavigateToAddNewKeyPageCommand => new Command(async () =>
-        {
-            try
-            {
-                SetIsLoading(true);
-
-                await Task.Delay(500);
-
-                await NavigateModalAsync(new AddPixKeyPage(this));
-            }
-            catch (System.Exception e)
-            {
-                e.SendToLog();
-            }
-            finally
-            {
-                SetEvent("Navegou para adicionar nova chave");
-
-                SetIsLoading(false);
-            }
-        });
-
-        public ICommand NavigateToPaymentPageCommand => new Command(async () =>
-        {
-            try
-            {
-                SetIsLoading(true);
-
-                await Task.Delay(500);
-
-                var pixPaylod = _pixPayloadService.Create(CurrentPixKey);
-
-                await NavigateModalAsync(new PaymentPage(pixPaylod));
-            }
-            catch (System.Exception e)
-            {
-                e.SendToLog();
-            }
-            finally
-            {
-                SetEvent("Navegou para pagina de pagamento a partir da dashboard");
-
-                SetIsLoading(false);
-            }
-        });
-
-        public ICommand ChangeSelectPixKeyCommand => new Command(async () =>
-        {
-            SetStatusFromCurrentPixColor();
-        });
-
-        public ICommand CopyKeyCommand => new Command(async () =>
-        {
-            await Clipboard.SetTextAsync(CurrentPixKey?.Key);
-            DialogService.Toast("Chave copiada com sucesso!");
-        });
-
-        public ICommand ShareKeyCommand => new Command(async () =>
-        {
-            try
-            {
-                SetIsLoading(true);
-
-                await Task.Delay(500);
-
-                await ShareText(CurrentPixKey?.Key);
-            }
-            catch (System.Exception e)
-            {
-                e.SendToLog();
-            }
-            finally
-            {
-                SetEvent("Compartilhou chave");
-
-                SetIsLoading(false);
-            }
-        });
-
-        public ICommand EditKeyCommand => new Command(async () =>
-        {
-            try
-            {
-                SetIsLoading(true);
-
-                await Task.Delay(500);
-
-                await NavigateModalAsync(new AddPixKeyPage(this, CurrentPixKey));
-            }
-            catch (System.Exception e)
-            {
-                e.SendToLog();
-            }
-            finally
-            {
-                SetEvent("Editou chave");
-
-                SetIsLoading(false);
-            }
-        });
-
-        public Command<PixKey> OpenOptionsKeyCommand => new Command<PixKey>(async (key) =>
-        {
-            CurrentPixKey = key;
-
-            var options = new List<Acr.UserDialogs.ActionSheetOption>()
-            {
-                new Acr.UserDialogs.ActionSheetOption("Editar", () =>
-                {
-                    EditKeyCommand.Execute(null);
-                }),
-                new Acr.UserDialogs.ActionSheetOption("Copiar", () =>
-                {
-                    CopyKeyCommand.Execute(null);
-                }),
-                new Acr.UserDialogs.ActionSheetOption("Compartilhar", () =>
-                {
-                    ShareKeyCommand.Execute(null);
-                }),
-                new Acr.UserDialogs.ActionSheetOption("Criar Cobrança", () =>
-                {
-                    NavigateToCreateBillingPageCommand.Execute(null);
-                })
-            };
-
-            DialogService.ActionSheet(new Acr.UserDialogs.ActionSheetConfig
-            {
-                Title = $"O que deseja fazer com a chave {CurrentPixKey.Key} ?",
-                Options = options,
-                Cancel = new Acr.UserDialogs.ActionSheetOption("Cancelar", () =>
-                {
+                if (ShowAddkeyOnWelcome)
                     return;
-                })
-            });
-        });
 
-        public ICommand SettingsCommand => new Command(async () =>
-        {
-            var options = new List<Acr.UserDialogs.ActionSheetOption>
-            {
-                new Acr.UserDialogs.ActionSheetOption("Preferências", async () =>
-                {
-                   await OptionsPreferenceOpen();
-                }),
-
-                new Acr.UserDialogs.ActionSheetOption("Chaves", async () =>
-                {
-                    await OptionsKeysOpen();
-                })
-            };
-
-            DialogService.ActionSheet(new Acr.UserDialogs.ActionSheetConfig
-            {
-                Title = "Opções",
-                Options = options,
-                Cancel = new Acr.UserDialogs.ActionSheetOption("Cancelar", () =>
-                {
-                    return;
-                })
-            });
-        });
-
-        private async Task OptionsPreferenceOpen()
-        {
-            var preferences = new List<Acr.UserDialogs.ActionSheetOption>();
-
-            if (PixKeyList != null && PixKeyList.Count > 0)
-            {
-                preferences.Add(new Acr.UserDialogs.ActionSheetOption(PreferenceService.ShowInList ? "Exibir em carrossel" : "Exibir em lista", async () =>
-                 {
-                     PreferenceService.ShowInList = !PreferenceService.ShowInList;
-                     await ReloadShowInList();
-                 }));
-            }
-
-            if (await CrossFingerprint.Current.IsAvailableAsync())
-            {
-                preferences.Add(new Acr.UserDialogs.ActionSheetOption((PreferenceService.FingerPrint ? "Remover" : "Adicionar") + " autenticação biométrica", async () =>
-                {
-                    await SetFingerPrint();
-                }));
-            }
-
-            if (preferences.Count.Equals(0))
-            {
-                DialogService.Toast("Nenhum preferência disponível para o seu dispositivo");
-                return;
-            }
-
-            DialogService.ActionSheet(new Acr.UserDialogs.ActionSheetConfig
-            {
-                Title = "Preferências",
-                Options = preferences,
-                Cancel = new Acr.UserDialogs.ActionSheetOption("Cancelar", () =>
-                {
-                    return;
-                })
-            });
-        }
-
-        private async Task OptionsKeysOpen()
-        {
-            if (PixKeyList == null || PixKeyList.Count.Equals(0))
-            {
-                await DialogService.AlertAsync("Adicione pelo menos 1(uma) chave para ver opções.");
-                return;
-            }
-
-            var keys = new List<Acr.UserDialogs.ActionSheetOption>
-            {
-                new Acr.UserDialogs.ActionSheetOption("Campartilhar todas as chaves", () =>
-                {
-                    ShareAllKeys();
-                })
-            };
-
-            if (PixKeyList.Count > 1)
-            {
-                keys.Add(new Acr.UserDialogs.ActionSheetOption($"Excluir todas as {PixKeyList.Count} chaves", async () =>
-                {
-                    await RemoveAllKeys();
-                }));
-            }
-
-            DialogService.ActionSheet(new Acr.UserDialogs.ActionSheetConfig
-            {
-                Title = "Chaves",
-                Options = keys,
-                Cancel = new Acr.UserDialogs.ActionSheetOption("Cancelar", () =>
-                {
-                    return;
-                })
-            });
-        }
-
-        public void ShareAllKeys()
-        {
-            var info = "";
-
-            foreach (var item in PixKeyList)
-            {
-                info += item.Viewer.InstitutionAndKey + "\n";
-            }
-
-            if (string.IsNullOrWhiteSpace(info))
-                return;
-
-            try
-            {
-                var options = new List<Acr.UserDialogs.ActionSheetOption>()
-                {
-                    new Acr.UserDialogs.ActionSheetOption("Compartilhar", async () =>
-                    {
-                        await Share.RequestAsync(new ShareTextRequest
-                        {
-                            Text = info,
-                            Title = "Compartilhar Texto"
-                        });
-                    }),
-                    new Acr.UserDialogs.ActionSheetOption("Salvar em txt e compartilhar", async () =>
-                    {
-                       var path = string.Empty;
-
-                        path = Path.Combine(FileSystem.CacheDirectory, "ChavesPix.txt");
-
-                        File.WriteAllText(path, info);
-
-                        await Share.RequestAsync(new ShareFileRequest
-                        {
-                            Title = "Compartilhar Arquivo",
-                            File = new ShareFile(path)
-                        });
-                    }),
-                };
-
-                DialogService.ActionSheet(new Acr.UserDialogs.ActionSheetConfig
-                {
-                    Title = "Selecione uma opção:",
-                    Options = options,
-                    Cancel = new Acr.UserDialogs.ActionSheetOption("Cancelar", () =>
-                    {
-                        return;
-                    })
-                });
+                ActualWelcomeNextPosition = ActualWelcomeNextPosition++;
             }
             catch (System.Exception e)
             {
                 e.SendToLog();
             }
-            finally
+        });
+
+        public ICommand SkipWelcomeCommand => new Command(async () =>
+        {
+            try
             {
-                SetEvent("Compartilhou todas as chaves");
+                CurrentDashboardWelcome = LastWelcomeItem;
             }
+            catch (System.Exception e)
+            {
+                e.SendToLog();
+            }
+        });
+
+        public ICommand CurrentWelcomeItemChangedCommand => new Command(() => CheckIsLastItemOnWelcome());
+
+        private void CheckIsLastItemOnWelcome()
+        {
+            ShowAddkeyOnWelcome = CurrentDashboardWelcome == LastWelcomeItem;
         }
 
-        private async Task ReloadShowInList()
+        public async Task ReloadShowInList()
         {
             try
             {
@@ -428,13 +208,22 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 await Task.Delay(500);
 
-                ShowInList = PreferenceService.ShowInList;
+                ShowInList = Preference.ShowInList;
+                ShowInCarousel = !ShowInList;
+
+                ReloadAppColorIfShowInListStyle();
 
                 if (ShowInList)
-                    ReloadAppColorIfShowInListStyle();
+                {
+
+                    CurrentIconStyleList = FontAwesomeSolid.Th;
+                }
 
                 else
+                {
                     SetStatusFromCurrentPixColor();
+                    CurrentIconStyleList = FontAwesomeSolid.ListAlt;
+                }
             }
             catch (System.Exception e)
             {
@@ -442,65 +231,18 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
             finally
             {
-                SetEvent("Trocou a dashboard para mostrar em lista: " + ShowInList);
+                _eventService.SendEvent("Estilo da dashboard para lista: " + ShowInList, EventType.PREFERENCE);
 
                 SetIsLoading(false);
             }
         }
 
-        private async Task RemoveAllKeys()
-        {
-            var confirm = await DialogService.ConfirmAsync("Tem certeza que deseja excluir todas as " + PixKeyList.Count + " chaves?", "Confirmação", "Sim, tenho certeza", "Cancelar");
-
-            if (!confirm)
-                return;
-
-            try
-            {
-                var success = _pixKeyService.RemoveAll();
-
-                if (success)
-                {
-                    PixKeyList.Clear();
-
-                    await LoadCurrentPixKey(null);
-
-                    DialogService.Toast("Todas as chaves foram removidas com sucesso!");
-
-                    NavigateBack();
-                }
-
-                else
-                    DialogService.Toast("Algo de errado aconteceu, tente novamente mais tarde ou atualize o app");
-            }
-            catch (System.Exception e)
-            {
-                e.SendToLog();
-            }
-            finally
-            {
-                SetEvent("Removeu todas as chaves");
-            }
-        }
-
-        private async Task SetFingerPrint()
-        {
-            var confirmMsg = "Tem certeza que deseja " + (PreferenceService.FingerPrint ? "remover" : "adicionar") + " autenticação biométrica? Na próxima vez que você entrar, " + (PreferenceService.FingerPrint ? "não será" : "será") + " necessário se autenticar para realizar quaisquer ações.";
-
-            if (!await DialogService.ConfirmAsync(confirmMsg, "Confirmação", "Confirmar", "Cancelar"))
-                return;
-
-            PreferenceService.FingerPrint = !PreferenceService.FingerPrint;
-
-            DialogService.Toast("Preferência de entrada, salva com sucesso!");
-        }
-
         public void SetStatusFromCurrentPixColor()
         {
-            if (ShowInList || CurrentPixKey?.Color == null)
+            if (ShowInList || CurrentPixKey?.FinancialInstitution?.Institution?.MaterialColor == null)
                 return;
 
-            App.LoadTheme(CurrentPixKey?.Color);
+            App.LoadTheme(CurrentPixKey?.FinancialInstitution?.Institution?.MaterialColor);
         }
 
         private ObservableCollection<PixKey> _pixKeyList;
@@ -517,13 +259,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             get => _currentPixKey;
         }
 
-        private Payload _currentPayload;
-        public Payload CurrentPayload
-        {
-            set => SetProperty(ref _currentPayload, value);
-            get => _currentPayload;
-        }
-
         private bool _showWelcome;
         public bool ShowWelcome
         {
@@ -538,11 +273,25 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             get => _showInList;
         }
 
+        private bool _showInCarousel;
+        public bool ShowInCarousel
+        {
+            set => SetProperty(ref _showInCarousel, value);
+            get => _showInCarousel;
+        }
+
         private string _welcomeText;
         public string WelcomeText
         {
             set => SetProperty(ref _welcomeText, value);
             get => _welcomeText;
+        }
+
+        private string _currentIconStyleList;
+        public string CurrentIconStyleList
+        {
+            set => SetProperty(ref _currentIconStyleList, value);
+            get => _currentIconStyleList;
         }
 
         private bool _isVisibleFingerPrint;
@@ -551,5 +300,46 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             set => SetProperty(ref _isVisibleFingerPrint, value);
             get => _isVisibleFingerPrint;
         }
+
+        private int _actualWelcomeNextPosition;
+        public int ActualWelcomeNextPosition
+        {
+            set => SetProperty(ref _actualWelcomeNextPosition, value);
+            get => _actualWelcomeNextPosition;
+        }
+
+        private DashboardWelcome _currentDashboardWelcome;
+        public DashboardWelcome CurrentDashboardWelcome
+        {
+            set => SetProperty(ref _currentDashboardWelcome, value);
+            get => _currentDashboardWelcome;
+        }
+
+        private ObservableCollection<DashboardWelcome> _dashboardWelcomenList;
+        public ObservableCollection<DashboardWelcome> DashboardWelcomenList
+        {
+            set => SetProperty(ref _dashboardWelcomenList, value);
+            get => _dashboardWelcomenList;
+        }
+
+        private DashboardWelcome LastWelcomeItem => DashboardWelcomenList?.LastOrDefault() ?? new DashboardWelcome();
+
+        private bool _showAddkeyOnWelcome;
+        public bool ShowAddkeyOnWelcome
+        {
+            set => SetProperty(ref _showAddkeyOnWelcome, value);
+            get => _showAddkeyOnWelcome;
+        }
+    }
+
+    public class DashboardWelcome
+    {
+        public string Emoji { get; set; }
+
+        public string Title { get; set; }
+
+        public string Description { get; set; }
+
+        public bool Unconnection { get; set; }
     }
 }

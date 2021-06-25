@@ -1,11 +1,13 @@
 ﻿using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models;
+using PixQrCodeGeneratorOffline.Models.DataStatic.Institutions;
 using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Services;
 using PixQrCodeGeneratorOffline.Style;
 using PixQrCodeGeneratorOffline.Style.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -15,23 +17,9 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 {
     public class AddPixKeyViewModel : BaseViewModel
     {
-        public IStatusBar StatusBar => DependencyService.Get<IStatusBar>();
-
-        public DashboardViewModel DashboardViewModel { get; set; }
-
-        private readonly IFinancialInstitutionService _financialInstitutionService;
-
-        private readonly IPixKeyService _pixKeyService;
-
-        public AddPixKeyViewModel(DashboardViewModel dbViewModel, PixKey pixKey = null)
+        public AddPixKeyViewModel(PixKey pixKey = null)
         {
-            _financialInstitutionService = DependencyService.Get<IFinancialInstitutionService>();
-
-            _pixKeyService = DependencyService.Get<IPixKeyService>();
-
             CurrentPixKey = pixKey ?? new PixKey();
-
-            DashboardViewModel = dbViewModel;
 
             LoadData.Execute(null);
         }
@@ -39,6 +27,8 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         public ICommand LoadData => new Command(async () =>
         {
             await ResetProps();
+
+            await LoadNotices();
         });
 
         private async Task ResetProps()
@@ -47,7 +37,11 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             {
                 IsEdit = CurrentPixKey.Id > 0;
 
-                CurrenSelectedFinancialInstitutionText = !IsEdit ? "Toque para selecionar" : CurrentPixKey?.FinancialInstitution?.Name;
+                SelectedFinancialInstitution = !IsEdit ? _financialInstitutionService.Create(FinancialInstitutionType.None) : CurrentPixKey.FinancialInstitution;
+
+                //CurrenSelectedFinancialInstitutionText = !IsEdit ? "Toque para selecionar" : CurrentPixKey?.FinancialInstitution?.Name;
+
+                CurrenKeyPlaceholder = CurrenKeyPlaceholderDefaultValue;
 
                 if (!IsEdit)
                 {
@@ -60,12 +54,22 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                     }
                 }
 
-                ReloadStatusBar();
+                SetStatusFromCurrentPixColor();
             }
             catch (Exception e)
             {
                 e.SendToLog();
             }
+        }
+
+        private async Task LoadNotices()
+        {
+            Notices = new ObservableCollection<string>
+            {
+                "Para sua segurança não será possível ver saldo ou realizar transferências, use o app da própria instituição para isso.",
+                "Os chaves serão guardadas somente no device, sem a necessidade de conexão com a internet e de modo criptografado.",
+                "Não cadastre chaves que ainda não foram registradas em alguma instituição financeira."
+            };
         }
 
         public ICommand SaveCommand => new Command(async () =>
@@ -77,14 +81,8 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 //CurrentPixKey.Color = MaterialColor.GetRandom();
 
-                if (string.IsNullOrEmpty(CurrentPixKey?.FinancialInstitution?.Name))
-                {
-                    CurrentPixKey.FinancialInstitution = new FinancialInstitution
-                    {
-                        Name = "Não informado"
-                    };
-                    CurrentPixKey.Color = MaterialColor.GetRandom();
-                }
+
+                CurrentPixKey.FinancialInstitution = SelectedFinancialInstitution;
 
                 if (string.IsNullOrEmpty(CurrentPixKey?.City))
                     CurrentPixKey.City = "Cidade";
@@ -97,21 +95,21 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 {
                     success = _pixKeyService.Update(CurrentPixKey);
 
-                    var l = DashboardViewModel.PixKeyList.FirstOrDefault(x => x.Id.Equals(CurrentPixKey.Id));
+                    var l = DashboardVM.PixKeyList.FirstOrDefault(x => x.Id.Equals(CurrentPixKey.Id));
 
                     if (l != null)
                     {
-                        int index = DashboardViewModel.PixKeyList.IndexOf(l);
+                        int index = DashboardVM.PixKeyList.IndexOf(l);
 
                         if (index != -1)
-                            DashboardViewModel.PixKeyList[index] = CurrentPixKey;
+                            DashboardVM.PixKeyList[index] = CurrentPixKey;
                     }
                 }
 
                 else
                 {
                     success = _pixKeyService.Insert(CurrentPixKey);
-                    DashboardViewModel.PixKeyList.Add(CurrentPixKey);
+                    DashboardVM.PixKeyList.Add(CurrentPixKey);
                 }
 
                 //DashboardViewModel.LoadDataCommand.Execute(null);
@@ -121,7 +119,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 //CurrentPixKey.RaiseCob();
 
-                await DashboardViewModel.LoadCurrentPixKey(CurrentPixKey);
+                await DashboardVM.LoadCurrentPixKey(CurrentPixKey);
 
                 DialogService.Toast("Chave salva com sucesso");
 
@@ -151,9 +149,14 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 if (success)
                 {
-                    DashboardViewModel.PixKeyList.Remove(CurrentPixKey);
+                    int index = DashboardVM.PixKeyList.IndexOf(DashboardVM.PixKeyList.FirstOrDefault(x => x.Id == CurrentPixKey.Id));
 
-                    await DashboardViewModel.LoadCurrentPixKey(null);
+                    if (index != -1)
+                        DashboardVM.PixKeyList.RemoveAt(index);
+
+                    //DashboardViewModel.PixKeyList.Remove(CurrentPixKey);
+
+                    await DashboardVM.LoadCurrentPixKey(null);
 
                     DialogService.Toast("Chave removida com sucesso");
 
@@ -208,7 +211,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                         var institution = new FinancialInstitution
                         {
                             Name = newInstitution.Text,
-                            Style = MaterialColor.GetRandom()
+                            Type = FinancialInstitutionType.None
                         };
 
                         SetNewInstitution(institution);
@@ -227,38 +230,37 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         private void SetNewInstitution(FinancialInstitution institution)
         {
-            CurrentPixKey.FinancialInstitution = institution;
+            SelectedFinancialInstitution = institution;
 
-            CurrenSelectedFinancialInstitutionText = institution.Name;
+            //CurrentPixKey.FinancialInstitution = institution;
 
-            CurrentPixKey.Color = institution.Style;
+            //CurrenSelectedFinancialInstitutionText = institution.Name;
 
-            SetStatusFromCurrentPixColor(institution);
+            CurrenKeyPlaceholder = CurrenKeyPlaceholderDefaultValue + " no " + SelectedFinancialInstitution?.Name;
+
+            SetStatusFromCurrentPixColor();
         }
 
-        public void SetStatusFromCurrentPixColor(FinancialInstitution institution)
+        public void SetStatusFromCurrentPixColor()
         {
-            if (PreferenceService.ShowInList || CurrentPixKey?.Color == null)
+            if (SelectedFinancialInstitution?.Institution?.MaterialColor == null)
                 return;
 
-            App.LoadTheme(CurrentPixKey?.Color);
+            CurrenStyle = SelectedFinancialInstitution?.Institution?.MaterialColor;
 
-            ReloadStatusBar();
-        }
+            //App.LoadTheme(CurrentPixKey?.FinancialInstitution?.Institution?.MaterialColor);
 
-        private void ReloadStatusBar()
-        {
-            StatusBar.SetStatusBarColor(App.ThemeColors.PrimaryDark);
+            _statusBarService.SetStatusBarColor(SelectedFinancialInstitution.Institution.MaterialColor.Primary);
         }
 
         private async Task<bool> ValidateSave()
         {
             string msg = "";
 
-            if (string.IsNullOrEmpty(CurrentPixKey?.Key))
+            if (!CurrentPixKey.Validation.HasKey)
                 msg += "- Chave não informada\n";
 
-            if (string.IsNullOrEmpty(CurrentPixKey?.Name))
+            if (!CurrentPixKey.Validation.HasName)
                 msg += "- Nome não informado\n";
 
             //if (string.IsNullOrEmpty(CurrentPixKey?.City))
@@ -271,6 +273,11 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
 
             return true;
+        }
+
+        public void BackButtonPressed()
+        {
+            DashboardVM.SetStatusFromCurrentPixColor();
         }
 
         private bool _isEdit;
@@ -289,11 +296,41 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         //public static PixKey OriginPixKey { get; set; }
 
-        private string _currenSelectedFinancialInstitutionText;
-        public string CurrenSelectedFinancialInstitutionText
+        //private string _currenSelectedFinancialInstitutionText;
+        //public string CurrenSelectedFinancialInstitutionText
+        //{
+        //    set => SetProperty(ref _currenSelectedFinancialInstitutionText, value);
+        //    get => _currenSelectedFinancialInstitutionText;
+        //}
+
+        private string _currenKeyPlaceholder;
+        public string CurrenKeyPlaceholder
         {
-            set => SetProperty(ref _currenSelectedFinancialInstitutionText, value);
-            get => _currenSelectedFinancialInstitutionText;
+            set => SetProperty(ref _currenKeyPlaceholder, value);
+            get => _currenKeyPlaceholder;
         }
+
+        private ObservableCollection<string> _notices;
+        public ObservableCollection<string> Notices
+        {
+            set => SetProperty(ref _notices, value);
+            get => _notices;
+        }
+
+        private MaterialColor _currenStyle;
+        public MaterialColor CurrenStyle
+        {
+            set => SetProperty(ref _currenStyle, value);
+            get => _currenStyle;
+        }
+
+        private FinancialInstitution _selectedFinancialInstitution;
+        public FinancialInstitution SelectedFinancialInstitution
+        {
+            set => SetProperty(ref _selectedFinancialInstitution, value);
+            get => _selectedFinancialInstitution;
+        }
+
+        private string CurrenKeyPlaceholderDefaultValue => "Chave cadastrada";
     }
 }

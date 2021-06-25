@@ -14,21 +14,26 @@ namespace PixQrCodeGeneratorOffline.Views
     public partial class AddPixKeyPage : ContentPage
     {
         AddPixKeyViewModel _viewModel;
-        DashboardViewModel _dashboardViewModel;
+        //DashboardViewModel _dashboardViewModel;
 
-        public AddPixKeyPage(DashboardViewModel dbViewModel, Models.PixKey pixKey = null)
+        public AddPixKeyPage(Models.PixKey pixKey = null)
         {
             InitializeComponent();
 
-            _dashboardViewModel = dbViewModel;
-            BindingContext = _viewModel = new AddPixKeyViewModel(dbViewModel, pixKey);
+            //_dashboardViewModel = dbViewModel;
+            BindingContext = _viewModel = new AddPixKeyViewModel(pixKey);
         }
 
         protected override bool OnBackButtonPressed()
         {
-            _dashboardViewModel.SetStatusFromCurrentPixColor();
+            _viewModel.BackButtonPressed();
 
             return base.OnBackButtonPressed();
+        }
+
+        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+            Shell.Current.SendBackButtonPressed();
         }
     }
 }

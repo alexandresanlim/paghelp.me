@@ -10,6 +10,8 @@ namespace PixQrCodeGeneratorOffline.Models.Repository.Interfaces
 
         PixKey GetFirst();
 
+        PixKey FindById(int id);
+
         bool UpInsert(PixKey item);
 
         bool Update(PixKey item);
