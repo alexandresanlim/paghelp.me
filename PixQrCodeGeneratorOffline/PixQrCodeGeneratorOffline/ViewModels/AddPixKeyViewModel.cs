@@ -214,7 +214,8 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                         var institution = new FinancialInstitution
                         {
-                            Name = newInstitution.Text
+                            Name = newInstitution.Text,
+                            Type = FinancialInstitutionType.None
                         };
 
                         SetNewInstitution(institution);

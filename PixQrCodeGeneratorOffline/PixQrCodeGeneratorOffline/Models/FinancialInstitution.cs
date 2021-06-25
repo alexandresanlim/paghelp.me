@@ -11,19 +11,19 @@ namespace PixQrCodeGeneratorOffline.Models
 {
     public class FinancialInstitution
     {
-        private readonly IMaterialColorService _materialColorService;
+        //private readonly IMaterialColorService _materialColorService;
 
         private readonly IFinancialInstitutionService _financialInstitutionService;
 
         public FinancialInstitution()
         {
-            _materialColorService = DependencyService.Get<IMaterialColorService>();
+            //_materialColorService = DependencyService.Get<IMaterialColorService>();
             _financialInstitutionService = DependencyService.Get<IFinancialInstitutionService>();
         }
 
         public string Name { get; set; }
 
-        //public FinancialInstitutionType Type { get; set; }
+        public FinancialInstitutionType Type { get; set; }
 
         //public string LogoUri { get; set; }
 

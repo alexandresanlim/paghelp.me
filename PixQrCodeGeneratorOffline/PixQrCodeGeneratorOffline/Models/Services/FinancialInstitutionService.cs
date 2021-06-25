@@ -23,6 +23,7 @@ namespace PixQrCodeGeneratorOffline.Models.Services
             return new FinancialInstitution
             {
                 Name = GetNameByType(financialInstitutionType),
+                Type = financialInstitutionType,
                 //AvailablePremium = availablePremium
             };
         }
@@ -141,16 +142,16 @@ namespace PixQrCodeGeneratorOffline.Models.Services
             }
         }
 
-        public IInstitution GetInstitution(FinancialInstitution financialInstitution)
-        {
-            return string.IsNullOrWhiteSpace(financialInstitution?.Name)
-                ? new NaoInformado()
-                : GetInstitutionList()?.FirstOrDefault(x => x.Name.ToLower().Equals(financialInstitution?.Name?.ToLower())) ?? new NaoInformado();
-        }
+        //public IInstitution GetInstitution(FinancialInstitution financialInstitution)
+        //{
+        //    return string.IsNullOrWhiteSpace(financialInstitution?.Name)
+        //        ? new NaoInformado()
+        //        : GetInstitutionList()?.FirstOrDefault(x => x.Name.ToLower().Equals(financialInstitution?.Name?.ToLower())) ?? new NaoInformado();
+        //}
 
         public Institution GetInstitutionInstance(FinancialInstitution financialInstitution)
         {
-            var i = GetInstitution(financialInstitution);
+            var i = GetInstitutionList()?.FirstOrDefault(x => x.Type == financialInstitution.Type || x.Name.ToLower().Equals(financialInstitution?.Name?.ToLower())) ?? new NaoInformado();
 
             return ToInstitution(i);
         }

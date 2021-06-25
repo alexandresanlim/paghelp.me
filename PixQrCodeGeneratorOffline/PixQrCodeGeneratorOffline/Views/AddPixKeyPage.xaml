@@ -110,7 +110,7 @@
                                             <TapGestureRecognizer Command="{Binding SelectedInstitutionCommand}" />
                                         </Frame.GestureRecognizers>
                                         <StackLayout Orientation="Horizontal">
-                                            <controls:CustomLabel Text="{Binding SelectedFinancialInstitution.Institution.Name}" FontAttributes="Bold" FontSize="Medium" TextColor="{DynamicResource textPrimary}" HorizontalOptions="FillAndExpand" />
+                                            <controls:CustomLabel Text="{Binding SelectedFinancialInstitution.Name}" FontAttributes="Bold" FontSize="Medium" TextColor="{DynamicResource textPrimary}" HorizontalOptions="FillAndExpand" />
                                             <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.ChevronDown }" IconSize="Medium" IconColor="{DynamicResource textPrimary}" />
                                         </StackLayout>
 
