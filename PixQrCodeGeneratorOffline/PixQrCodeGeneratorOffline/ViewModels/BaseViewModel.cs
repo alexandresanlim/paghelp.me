@@ -56,6 +56,8 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             Application.Current.RequestedThemeChanged += Current_RequestedThemeChanged;
         }
 
+        public static DashboardViewModel DashboardVM { get; set; }
+
         private void Current_RequestedThemeChanged(object sender, AppThemeChangedEventArgs e)
         {
             ReloadAppColorIfShowInListStyle();

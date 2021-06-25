@@ -7,8 +7,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 {
     public class OptionPreferenceViewModel : BaseViewModel
     {
-        private DashboardViewModel DashboardViewModel => DependencyService.Get<DashboardViewModel>();
-
         public ICommand OptionStyleListCommand => new Command(() =>
         {
             var options = new List<Acr.UserDialogs.ActionSheetOption>
@@ -16,7 +14,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 new Acr.UserDialogs.ActionSheetOption(Preference.ShowInList ? "Exibir em carrossel" : "Exibir em lista", async () =>
                 {
                     _preferenceService.ChangeShowInList();
-                    await DashboardViewModel.ReloadShowInList();
+                    await DashboardVM.ReloadShowInList();
                 })
             };
 

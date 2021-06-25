@@ -20,6 +20,8 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         public DashboardViewModel()
         {
             LoadDataCommand.Execute(null);
+
+            DashboardVM = this;
         }
 
         public ICommand LoadDataCommand => new Command(async () => await LoadData());
@@ -79,7 +81,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 {
                     Emoji = FontAwesomeSolid.Lock,
                     Title = "Seguro",
-                    Description = "Guarde suas chaves localmente e de maneira criptografada, com suporte a autenticação biométrica se disponível",
+                    Description = "Guarde suas chaves localmente de maneira criptografada e sem conexão com a internet, com suporte a autenticação biométrica se disponível pelo seu aparelho.",
                     Unconnection = true
                 },
                 new DashboardWelcome
@@ -93,14 +95,14 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 {
                     Emoji = FontAwesomeSolid.ThumbsUp,
                     Title = "Prático",
-                    Description = "Carpartilhe suas chaves rapidamente",
+                    Description = "Compartilhe uma única ou todas suas chaves rapidamente, incluindo com geração de txt",
                     Unconnection = true
                 },
                 new DashboardWelcome
                 {
                     Emoji = FontAwesomeSolid.Cogs,
                     Title = "Customizável",
-                    Description = "Exiba em formato de carrossel ou lista, com suporte a dark e light mode.",
+                    Description = "Exiba em formato de carrossel ou lista, com suporte a dark e light mode,",
                     Unconnection = true
                 },
                 
@@ -108,14 +110,14 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 {
                     Emoji = FontAwesomeSolid.Save,
                     Title = "Backup",
-                    Description = "Local e automático.",
+                    Description = "Local, automático e criptografado.",
                     Unconnection = true
                 },
                 new DashboardWelcome
                 {
                     Emoji = FontAwesomeSolid.ExclamationTriangle,
                     Title = "IMPORTANTE!",
-                    Description = "Não fazemos conexão direta com o seu banco, sendo assim não será possível ver saldo ou realizar transferências, para isso use o app do seu banco."
+                    Description = "- Para sua segurança, não fazemos conexão direta com o seu banco, sendo assim não será possível ver saldo ou realizar transferências, para isso use o app oficial do mesmo e jamais forneça esse tipo de acesso para terceiros. \n\n - Não temos quaisquer relação com o governo federal do Brasil, porém seguimos a risca, todos manuais e recomendações de padronização e segurança disponibilizados pela instituição."
                 }
             };
         }

@@ -22,12 +22,12 @@
             <Label Text="Preferências" Style="{DynamicResource optionTitle}" />
 
             <StackLayout Spacing="0">
-                <!--<StackLayout Padding="0,15">
+                <StackLayout Padding="0,15">
                         <StackLayout.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding OptionStyleListCommand}"/>
                         </StackLayout.GestureRecognizers>
                         <Label Text="Tela inicial" Style="{DynamicResource subOptionTitle}" />
-                    </StackLayout>-->
+                    </StackLayout>
 
                 <StackLayout Padding="0,15">
                     <StackLayout.GestureRecognizers>

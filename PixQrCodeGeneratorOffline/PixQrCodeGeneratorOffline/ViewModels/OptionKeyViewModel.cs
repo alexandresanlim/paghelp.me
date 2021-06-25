@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -23,9 +24,16 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             _pixKeyService.ShareAllKeys();
         });
 
-        public ICommand RemoveAllCommand => new Command(() =>
+        public ICommand RemoveAllCommand => new Command(async () =>
         {
-            _pixKeyService.RemoveAll();
+            var success = await _pixKeyService.RemoveAll();
+
+            if (success)
+            {
+                DashboardVM.PixKeyList.Clear();
+                await DashboardVM.LoadCurrentPixKey(null);
+                await NavigateToRootAsync();
+            }
         });
 
         //private async Task OptionsKeysOpen()
