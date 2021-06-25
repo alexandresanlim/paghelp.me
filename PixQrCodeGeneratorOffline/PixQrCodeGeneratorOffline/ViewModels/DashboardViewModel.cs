@@ -209,9 +209,11 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 ShowInList = Preference.ShowInList;
                 ShowInCarousel = !ShowInList;
 
+                ReloadAppColorIfShowInListStyle();
+
                 if (ShowInList)
                 {
-                    ReloadAppColorIfShowInListStyle();
+                    
                     CurrentIconStyleList = FontAwesomeSolid.Th;
                 }
 

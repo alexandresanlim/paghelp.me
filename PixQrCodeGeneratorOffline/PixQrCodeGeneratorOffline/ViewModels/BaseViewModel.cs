@@ -63,7 +63,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public void ReloadAppColorIfShowInListStyle()
         {
-            App.LoadTheme(_materialColorService.GetByCurrentDeviceTheme(), Preference.ShowInList);
+            App.LoadTheme(_materialColorService.GetByCurrentDeviceTheme());
         }
 
         protected IUserDialogs DialogService => UserDialogs.Instance;

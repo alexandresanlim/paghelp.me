@@ -68,7 +68,9 @@ namespace PixQrCodeGeneratorOffline.Models.Services
                 ForegroundPage = Color.FromHex("#ecf0f1"),
 
                 TextPrimary = Color.FromHex("#212121"),
-                TextSecondary = Color.FromHex("#757575")
+                TextSecondary = Color.FromHex("#757575"),
+
+                IsDarkOrLightTheme = true
             };
         }
 
@@ -86,7 +88,9 @@ namespace PixQrCodeGeneratorOffline.Models.Services
                 ForegroundPage = Color.FromHex("#121212"),
 
                 TextPrimary = Color.FromHex("#ffffff"),
-                TextSecondary = Color.WhiteSmoke
+                TextSecondary = Color.WhiteSmoke,
+
+                IsDarkOrLightTheme = true
             };
         }
 
@@ -103,11 +107,14 @@ namespace PixQrCodeGeneratorOffline.Models.Services
 
             App.Current.Resources["textOnPrimary"] = colors.TextOnPrimary;
             App.Current.Resources["textOnSecondary"] = (colors?.TextOnSecondary == Color.FromRgba(0, 0, 0, 0)) ? Color.White : colors.TextOnSecondary;
-            App.Current.Resources["background_page"] = colors.BackgroundPage;
-            App.Current.Resources["foreground_page"] = colors.ForegroundPage;
 
-            App.Current.Resources["textPrimary"] = colors.TextPrimary;
-            App.Current.Resources["textSecondary"] = colors.TextSecondary;
+            if (colors.IsDarkOrLightTheme)
+            {
+                App.Current.Resources["background_page"] = colors.BackgroundPage;
+                App.Current.Resources["foreground_page"] = colors.ForegroundPage;
+                App.Current.Resources["textPrimary"] = colors.TextPrimary;
+                App.Current.Resources["textSecondary"] = colors.TextSecondary;
+            }
         }
 
         public MaterialColor GetOnCurrentResource()

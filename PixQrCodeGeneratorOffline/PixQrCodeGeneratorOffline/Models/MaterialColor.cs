@@ -1,4 +1,5 @@
 ﻿using PixQrCodeGeneratorOffline.Extention;
+using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,13 +9,19 @@ namespace PixQrCodeGeneratorOffline.Models
 {
     public class MaterialColor
     {
+        private readonly IMaterialColorService _materialColorService;
+
         public MaterialColor()
         {
-            TextPrimary = Color.FromHex("#212121");
-            TextSecondary = Color.FromHex("#757575");
-            BackgroundPage = Color.FromHex("#ecf0f1");
+            _materialColorService = DependencyService.Get<IMaterialColorService>();
+
+            //TextPrimary = _materialColorService.GetByCurrentDeviceTheme().TextPrimary;
+            //TextSecondary = _materialColorService.GetByCurrentDeviceTheme().TextSecondary;
+            //BackgroundPage = _materialColorService.GetByCurrentDeviceTheme().BackgroundPage;
+            //ForegroundPage = _materialColorService.GetByCurrentDeviceTheme().ForegroundPage;
             Secondary = Color.FromHex("#50000000");
             TextOnSecondary = Color.FromHex("#ffffff");
+            IsDarkOrLightTheme = false;
         }
 
         public string Name { get; set; }
@@ -48,5 +55,7 @@ namespace PixQrCodeGeneratorOffline.Models
         public Color TextPrimary { get; set; }
 
         public Color TextSecondary { get; set; }
+
+        public bool IsDarkOrLightTheme { get; set; }
     }
 }
