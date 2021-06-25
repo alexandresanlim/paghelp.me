@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using Xamarin.Forms;
 using PixQrCodeGeneratorOffline.Models.DataStatic.Institutions.Interfaces;
 using System.Linq;
+using PixQrCodeGeneratorOffline.Models.DataStatic.Institutions.Base;
 
 namespace PixQrCodeGeneratorOffline.Models.Services
 {
@@ -147,9 +148,31 @@ namespace PixQrCodeGeneratorOffline.Models.Services
                 : GetInstitutionList()?.FirstOrDefault(x => x.Name.ToLower().Equals(financialInstitution?.Name?.ToLower())) ?? new NaoInformado();
         }
 
+        public Institution GetInstitutionInstance(FinancialInstitution financialInstitution)
+        {
+            var i = GetInstitution(financialInstitution);
+
+            return ToInstitution(i);
+        }
+
+        private Institution ToInstitution(IInstitution institution)
+        {
+            return new Institution
+            {
+                Name = GetName(institution),
+                Type = GetType(institution),
+                MaterialColor = GetMaterialColor(institution)
+            };
+        }
+
         public string GetName(IInstitution institution)
         {
             return institution.Name;
+        }
+
+        public MaterialColor GetMaterialColor(IInstitution institution)
+        {
+            return institution.MaterialColor;
         }
 
         public FinancialInstitutionType GetType(IInstitution institution)

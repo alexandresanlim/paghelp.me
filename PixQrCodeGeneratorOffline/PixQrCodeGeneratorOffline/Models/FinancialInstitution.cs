@@ -1,4 +1,5 @@
-﻿using PixQrCodeGeneratorOffline.Models.DataStatic.Institutions.Interfaces;
+﻿using PixQrCodeGeneratorOffline.Models.DataStatic.Institutions.Base;
+using PixQrCodeGeneratorOffline.Models.DataStatic.Institutions.Interfaces;
 using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Style;
 using System;
@@ -22,12 +23,17 @@ namespace PixQrCodeGeneratorOffline.Models
 
         public string Name { get; set; }
 
+        //public FinancialInstitutionType Type { get; set; }
+
         //public string LogoUri { get; set; }
 
         //public bool AvailablePremium { get; set; }
 
         [LiteDB.BsonIgnore]
-        public IInstitution Institution => _financialInstitutionService?.GetInstitution(this) ?? new DataStatic.Institutions.NaoInformado();
+        public Institution Institution => _financialInstitutionService.GetInstitutionInstance(this) ?? new Institution();
+
+        //[LiteDB.BsonIgnore]
+        //public IInstitution Institution => _financialInstitutionService?.GetInstitution(this) ?? new DataStatic.Institutions.NaoInformado();
 
         //[LiteDB.BsonIgnore]
         //public MaterialColor Color => _materialColorService.GetColorByFinancialInstitution(this);

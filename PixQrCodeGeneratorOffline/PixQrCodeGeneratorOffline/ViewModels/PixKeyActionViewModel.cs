@@ -24,6 +24,13 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         public void LoadData()
         {
             CurrentPixKey = _pixKeyService.GetById(CurrentPixKey.Id);
+
+            if(CurrentPixKey == null || !CurrentPixKey.Validation.IsValid)
+            {
+                NavigateBack();
+                return;
+            }
+
             _statusBarService.SetStatusBarColor(CurrentPixKey.FinancialInstitution.Institution.MaterialColor.Primary);
         }
 
