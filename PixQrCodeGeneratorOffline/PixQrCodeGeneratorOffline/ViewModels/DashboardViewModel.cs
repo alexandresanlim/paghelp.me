@@ -105,7 +105,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                     Description = "Exiba em formato de carrossel ou lista, com suporte a dark e light mode,",
                     Unconnection = true
                 },
-                
+
                 new DashboardWelcome
                 {
                     Emoji = FontAwesomeSolid.Save,
@@ -215,7 +215,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 if (ShowInList)
                 {
-                    
+
                     CurrentIconStyleList = FontAwesomeSolid.Th;
                 }
 

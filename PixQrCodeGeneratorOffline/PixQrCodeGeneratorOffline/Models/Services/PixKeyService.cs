@@ -195,7 +195,7 @@ namespace PixQrCodeGeneratorOffline.Models.Services
             }
             finally
             {
-                _eventService.SendEvent("Navegou para adicionar nova chave", EventType.NAVIGATION);
+                _eventService.SendEvent("Navegou para adicionar nova chave", EventType.CRUD);
 
                 DialogService.HideLoading();
             }

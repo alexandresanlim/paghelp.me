@@ -5,7 +5,7 @@
              x:Class="PixQrCodeGeneratorOffline.Views.AddPixKeyPage"
              xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon"
              Shell.NavBarIsVisible="False"
-             BackgroundColor="{Binding CurrenStyle.PrimaryLight}"
+             BackgroundColor="{Binding CurrenStyle.PrimaryDark}"
              >
 
     <ContentPage.Resources>
@@ -91,8 +91,8 @@
 
                 <IndicatorView x:Name="indicatorView"
                                        IndicatorsShape="Circle"
-                                       IndicatorColor="{Binding CurrenStyle.Primary}"
-                                       SelectedIndicatorColor="{Binding CurrenStyle.PrimaryDark}" />
+                                       IndicatorColor="{Binding CurrenStyle.PrimaryLight}"
+                                       SelectedIndicatorColor="{Binding CurrenStyle.Primary}" />
             </StackLayout>
 
             <!--<ScrollView Grid.Row="2">-->

@@ -13,7 +13,8 @@ namespace PixQrCodeGeneratorOffline.Models.Validation.Services
             {
                 IsValid = GetIsValid(pixKey),
                 HasKey = GetHasKey(pixKey),
-                HasName = GetHasName(pixKey)
+                HasName = GetHasName(pixKey),
+                IsEdit = GetIsEdit(pixKey)
             };
         }
 
@@ -30,6 +31,11 @@ namespace PixQrCodeGeneratorOffline.Models.Validation.Services
         private bool GetHasName(PixKey pixKey)
         {
             return !string.IsNullOrWhiteSpace(pixKey?.Name);
+        }
+
+        private bool GetIsEdit(PixKey pixKey)
+        {
+            return !string.IsNullOrEmpty(pixKey?.Key);
         }
     }
 }

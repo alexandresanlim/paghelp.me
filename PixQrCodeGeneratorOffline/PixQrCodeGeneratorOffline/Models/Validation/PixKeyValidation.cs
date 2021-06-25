@@ -10,5 +10,7 @@ namespace PixQrCodeGeneratorOffline.Models.Validation
         public bool HasKey { get; set; }
 
         public bool HasName { get; set; }
+
+        public bool IsEdit { get; set; }
     }
 }
