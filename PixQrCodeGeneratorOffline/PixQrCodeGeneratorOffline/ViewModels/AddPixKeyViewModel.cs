@@ -31,7 +31,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
             await ResetProps();
 
-            await LoadNotices();
+            //await LoadNotices();
         });
 
         private async Task ResetProps()
@@ -73,15 +73,15 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
         }
 
-        private async Task LoadNotices()
-        {
-            Notices = new ObservableCollection<string>
-            {
-                "Para sua segurança não será possível ver saldo ou realizar transferências, use o app da própria instituição para isso.",
-                "Os chaves serão guardadas somente no device, sem a necessidade de conexão com a internet e de modo criptografado.",
-                "Não cadastre chaves que ainda não foram registradas em alguma instituição financeira."
-            };
-        }
+        //private async Task LoadNotices()
+        //{
+        //    Notices = new ObservableCollection<string>
+        //    {
+        //        "Para sua segurança não será possível ver saldo ou realizar transferências, use o app da própria instituição para isso.",
+        //        "Os chaves serão guardadas somente no device, sem a necessidade de conexão com a internet e de modo criptografado.",
+        //        "Não cadastre chaves que ainda não foram registradas em alguma instituição financeira."
+        //    };
+        //}
 
         private async Task LoadInputList()
         {
@@ -312,17 +312,18 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         private async Task<bool> ValidateSave()
         {
-            string msg = "";
 
             if (!CurrentPixKey.Validation.HasKey)
-                msg += "- Chave não informada\n";
+            { 
+                DialogService.Toast("Ops! Chave não informada");
+                ActualInputNextPosition = CurrentInputValues.Key.Index;
+                return false;
+            }
 
             if (!CurrentPixKey.Validation.HasName)
-                msg += "- Nome não informado\n";
-
-            if (!string.IsNullOrEmpty(msg))
             {
-                await DialogService.AlertAsync(msg, "Ops! Parece que faltou algo");
+                ActualInputNextPosition = CurrentInputValues.Name.Index;
+                DialogService.Toast("Ops! Nome não informado");
                 return false;
             }
 
@@ -441,7 +442,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 new AddPixInput
                 {
                     Type = AddPixInputType.Institution,
-                    Title = "Instituição",
+                    Title = "Instituição / Banco",
                     Icon = FontAwesomeSolid.University,
                     Placeholder = "Selecione a Instituição",
                     ReturnType = ReturnType.Next,
