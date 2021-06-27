@@ -252,7 +252,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 if (ShowSaveButton)
                     return;
 
-                ActualInputNextPosition = ActualInputNextPosition == 0 ? 1 : ActualInputNextPosition++;
+                ActualInputNextPosition++;
             }
             catch (System.Exception e)
             {
@@ -412,13 +412,9 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public string Icon { get; set; }
 
-        public string Notice { get; set; }
-
         public AddPixInputType Type { get; set; }
 
         public ReturnType ReturnType { get; set; }
-
-        public FinancialInstitution FinancialInstitutions { get; set; }
 
         public bool IsInstitution => Type == AddPixInputType.Institution;
 
