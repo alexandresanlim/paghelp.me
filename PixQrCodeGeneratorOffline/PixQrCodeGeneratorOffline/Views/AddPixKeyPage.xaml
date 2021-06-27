@@ -123,8 +123,6 @@
 
                 <CarouselView
                     ItemsSource="{Binding InputList}"
-                    IsScrollAnimated="True"
-                    Loop="False"
                     PeekAreaInsets="25"
                     CurrentItemChangedCommand="{Binding CurrentInputChangedCommand}"
                     Position="{Binding ActualInputNextPosition}" 
@@ -135,8 +133,8 @@
                         <DataTemplate>
                             <StackLayout Padding="5,15,5,0">
                                 <StackLayout Spacing="15">
-                                    <controls:CustomIcon Glyph="{Binding Icon}" Size="{DynamicResource FontSizeLarge}" IconColor="{Binding CurrenStyle.PrimaryLight}" />
-                                    <Label Text="{Binding Title}" TextColor="{Binding CurrenStyle.PrimaryLight}" FontSize="{DynamicResource FontSizeLarge}" HorizontalTextAlignment="Center" FontFamily="{DynamicResource FontPoppinsSemiBold}" />
+                                    <controls:CustomIcon Glyph="{Binding Icon}" Size="{DynamicResource FontSizeLarge}" IconColor="White" />
+                                    <Label Text="{Binding Title}" TextColor="White" FontSize="{DynamicResource FontSizeLarge}" HorizontalTextAlignment="Center" FontFamily="{StaticResource FontBold}" />
                                 </StackLayout>
                                 <Frame BackgroundColor="#15000000" Padding="15,30" CornerRadius="10" IsVisible="{Binding IsInstitution, Converter={StaticResource InvertedBooleanConverter}}">
                                     <StackLayout>
@@ -149,8 +147,8 @@
                                         <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:AddPixKeyViewModel}}, Path=SelectedInstitutionCommand}" />
                                     </Frame.GestureRecognizers>
                                     <StackLayout Orientation="Horizontal">
-                                        <controls:CustomLabel Text="{Binding Placeholder}" FontAttributes="Bold" FontSize="{DynamicResource FontSizeMedium}" TextColor="{DynamicResource textPrimary}" HorizontalOptions="FillAndExpand" />
-                                        <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.ChevronDown }" IconSize="Large" IconColor="{DynamicResource textPrimary}" />
+                                        <controls:CustomLabel Text="{Binding Placeholder}" FontAttributes="Bold" FontSize="{DynamicResource FontSizeMedium}" TextColor="White" HorizontalOptions="FillAndExpand" />
+                                        <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.ChevronDown }" IconSize="Large" IconColor="White" />
                                     </StackLayout>
 
                                 </Frame>
@@ -172,82 +170,13 @@
                     <Frame BackgroundColor="{DynamicResource secondary}" Padding="15" CornerRadius="30" Margin="15,0" IsVisible="{Binding ShowSaveButton}">
                         <Frame.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding SaveCommand}" />
-                    </Frame.GestureRecognizers>
+                        </Frame.GestureRecognizers>
                         <controls:CustomLabel Text="Salvar" FontSize="{DynamicResource FontSizeMedium}" TextColor="{DynamicResource textOnSecondary}" HorizontalOptions="Center" />
                     </Frame>
                 </StackLayout>
 
 
             </StackLayout>
-
-            <!--<StackLayout Grid.Row="2">
-
-                <Frame BackgroundColor="{DynamicResource secondary}" Padding="15" CornerRadius="30" Margin="15,30" IsVisible="{Binding ShowSaveButton, Converter={StaticResource InvertedBooleanConverter}}">
-                    <Frame.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding InputNextCommand}" />
-                    </Frame.GestureRecognizers>
-                    <controls:CustomLabel Text="Próximo" FontSize="{DynamicResource FontSizeMedium}" TextColor="{DynamicResource textOnSecondary}" HorizontalOptions="Center" />
-                </Frame>
-
-                <Frame BackgroundColor="{DynamicResource secondary}" Padding="15" CornerRadius="30" Margin="15,30" IsVisible="{Binding ShowSaveButton}">
-                    --><!--<Frame.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding InputNextCommand}" />
-                    </Frame.GestureRecognizers>--><!--
-                    <controls:CustomLabel Text="Salvar" FontSize="{DynamicResource FontSizeMedium}" TextColor="{DynamicResource textOnSecondary}" HorizontalOptions="Center" />
-                </Frame>
-            </StackLayout>-->
-
-            <!--<ScrollView Grid.Row="2">-->
-
-
-            <!--<controls:CustomFrame Grid.Row="2" CornerRadius="35,35,0,0" BackgroundColor="{DynamicResource background_page}" VerticalOptions="FillAndExpand">-->
-
-
-
-            <!--<ScrollView>
-                            <StackLayout Padding="15,30">
-
-                                <StackLayout Spacing="0">
-                                    <Label Text="Instituição Financeira" Style="{DynamicResource styleInputTitle}" />
-                                    <Frame Style="{DynamicResource styleInputFrame}" Padding="15">
-                                        <Frame.GestureRecognizers>
-                                            <TapGestureRecognizer Command="{Binding SelectedInstitutionCommand}" />
-                                        </Frame.GestureRecognizers>
-                                        <StackLayout Orientation="Horizontal">
-                                            <controls:CustomLabel Text="{Binding SelectedFinancialInstitution.Name}" FontAttributes="Bold" FontSize="Medium" TextColor="{DynamicResource textPrimary}" HorizontalOptions="FillAndExpand" />
-                                            <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.ChevronDown }" IconSize="Medium" IconColor="{DynamicResource textPrimary}" />
-                                        </StackLayout>
-
-                                    </Frame>
-                                </StackLayout>
-
-                                <StackLayout Spacing="0">
-                                    <Label Text="Chave" Style="{DynamicResource styleInputTitle}" />
-                                    <Frame Style="{DynamicResource styleInputFrame}">
-                                        <controls:CustomEntry Placeholder="{Binding CurrenKeyPlaceholder}" FontSize="Medium" Text="{Binding CurrentPixKey.Key}" ReturnType="Next" />
-                                    </Frame>
-                                </StackLayout>
-
-                                <StackLayout Spacing="0">
-                                    <Label Text="Nome" Style="{DynamicResource styleInputTitle}" />
-                                    <Frame Style="{DynamicResource styleInputFrame}">
-                                        <controls:CustomEntry Placeholder="Digite o nome" Text="{Binding CurrentPixKey.Name}" ReturnType="Next"/>
-                                    </Frame>
-                                </StackLayout>
-
-                                <StackLayout Spacing="0">
-                                    <Label Text="Cidade (opcional)" Style="{DynamicResource styleInputTitle}" />
-                                    <Frame Style="{DynamicResource styleInputFrame}">
-                                        <controls:CustomEntry Placeholder="Digite a cidade" Text="{Binding CurrentPixKey.City}" ReturnType="Done" />
-                                    </Frame>
-                                </StackLayout>
-
-                            </StackLayout>
-                        </ScrollView>-->
-
-            <!--</controls:CustomFrame>-->
-
-            <!--</ScrollView>-->
         </Grid>
 
 

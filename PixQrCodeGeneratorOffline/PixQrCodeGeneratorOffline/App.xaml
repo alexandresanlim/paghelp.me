@@ -71,6 +71,11 @@
             <Setter Property="Padding" Value="0"/>
         </Style>
 
+        <Style TargetType="CarouselView">
+            <Setter Property="Loop" Value="False"/>
+            <Setter Property="IsScrollAnimated" Value="True"/>
+        </Style>
+
 
         <ResourceDictionary>
 

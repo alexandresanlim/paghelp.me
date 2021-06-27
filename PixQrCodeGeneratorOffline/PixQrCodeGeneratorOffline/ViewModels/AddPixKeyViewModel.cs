@@ -452,7 +452,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                     Title = "Cidade",
                     Icon = FontAwesomeSolid.MapMarkedAlt,
                     Placeholder = "Digite a cidade",
-                    ReturnType = ReturnType.Next,
+                    ReturnType = ReturnType.Done,
                 }
             };
         }
