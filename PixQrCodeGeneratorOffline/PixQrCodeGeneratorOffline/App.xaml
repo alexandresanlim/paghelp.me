@@ -2,8 +2,8 @@
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PixQrCodeGeneratorOffline.App"
-             xmlns:adscontrols="clr-namespace:MarcTron.Plugin.Controls;assembly=Plugin.MtAdmob"
-             >
+             xmlns:adscontrols="clr-namespace:MarcTron.Plugin.Controls;assembly=Plugin.MtAdmob" 
+             xmlns:converters="clr-namespace:PixQrCodeGeneratorOffline.Converters">
     <!--
         Define global resources and styles here, that apply to all pages in your app.
     -->
@@ -73,7 +73,10 @@
 
 
         <ResourceDictionary>
-            
+
+            <converters:HasDataConverter x:Key="HasDataConverter" />
+            <converters:HasDataConverterInverted x:Key="HasDataConverterInverted" />
+            <converters:InvertedBooleanConverter x:Key="InvertedBooleanConverter" />
 
             <Style x:Key="styleFrameMenuAbout" TargetType="Frame">
                 <Setter Property="BackgroundColor" Value="{DynamicResource secondary}" />

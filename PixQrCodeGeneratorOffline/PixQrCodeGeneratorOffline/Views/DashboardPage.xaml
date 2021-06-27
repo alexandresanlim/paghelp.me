@@ -11,13 +11,13 @@
              BackgroundColor="{DynamicResource background_page}"
              >
 
-    <ContentPage.Resources>
+    <!--<ContentPage.Resources>
         <ResourceDictionary>
             <local:HasDataConverter x:Key="HasDataConverter" />
             <local:HasDataConverterInverted x:Key="HasDataConverterInverted" />
             <local:InvertedBooleanConverter x:Key="InvertedBooleanConverter" />
         </ResourceDictionary>
-    </ContentPage.Resources>
+    </ContentPage.Resources>-->
 
     <ContentPage.Content>
         <Grid>

@@ -32,6 +32,7 @@ namespace PixQrCodeGeneratorOffline.Models.Services
         {
             return new List<FinancialInstitution>
             {
+                Create(GetType(new NaoInformado())),
                 Create(GetType(new BancoBMG())),
                 Create(GetType(new BancoBTGPactual())),
                 Create(GetType(new BancoDoBrasil())),
@@ -55,8 +56,7 @@ namespace PixQrCodeGeneratorOffline.Models.Services
                 Create(GetType(new Safra())),
                 Create(GetType(new Santander())),
                 Create(GetType(new Sicredi())),
-                Create(GetType(new SuperDigital())),
-                Create(GetType(new NaoInformado()))
+                Create(GetType(new SuperDigital()))
             };
         }
 
