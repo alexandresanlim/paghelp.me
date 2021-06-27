@@ -130,7 +130,7 @@
 
                                 <Frame BackgroundColor="#15000000" Padding="15,30" IsVisible="{Binding IsInstitution}" CornerRadius="10">
                                     <Frame.GestureRecognizers>
-                                        <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:AddPixKeyViewModel}}, Path=SelectedInstitutionCommand}" CommandParameter="{Binding .}" />
+                                        <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:AddPixKeyViewModel}}, Path=SelectedInstitutionCommand}" />
                                     </Frame.GestureRecognizers>
                                     <StackLayout Orientation="Horizontal">
                                         <controls:CustomLabel Text="{Binding Placeholder}" FontAttributes="Bold" FontSize="{DynamicResource FontSizeMedium}" TextColor="{DynamicResource textPrimary}" HorizontalOptions="FillAndExpand" />

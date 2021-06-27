@@ -43,6 +43,8 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 //CurrenSelectedFinancialInstitutionText = !IsEdit ? "Toque para selecionar" : CurrentPixKey?.FinancialInstitution?.Name;
 
+                SetNewInstitution(SelectedFinancialInstitution);
+
                 CurrenKeyPlaceholder = CurrenKeyPlaceholderDefaultValue;
 
                 var indexName = InputList.IndexOf(InputList.FirstOrDefault(x => x.Type == AddPixInputType.Name));
@@ -199,7 +201,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
         });
 
-        public Command<AddPixInput> SelectedInstitutionCommand => new Command<AddPixInput>((input) =>
+        public ICommand SelectedInstitutionCommand => new Command(() =>
         {
             try
             {
@@ -211,7 +213,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 {
                     options.Add(new Acr.UserDialogs.ActionSheetOption(item.Name, () =>
                     {
-                        SetNewInstitution(item, input);
+                        SetNewInstitution(item);
                     }));
                 }
 
@@ -241,9 +243,9 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                             Type = FinancialInstitutionType.None
                         };
 
-                        input.Title = institution?.Name;
+                        //input.Title = institution?.Name;
 
-                        SetNewInstitution(institution, input);
+                        SetNewInstitution(institution);
                     }),
                     Cancel = new Acr.UserDialogs.ActionSheetOption("Cancelar", () =>
                     {
@@ -287,13 +289,15 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             ShowSaveButton = CurrentInput == LastInput;
         }
 
-        private void SetNewInstitution(FinancialInstitution institution, AddPixInput input)
+        private void SetNewInstitution(FinancialInstitution institution)
         {
 
-            input.Placeholder = institution.Name;
-            input.Value = institution.Name;
-            var index = InputList.IndexOf(InputList.FirstOrDefault(x => x.IsInstitution));
-            InputList[index] = input;
+            //input.Placeholder = institution.Name;
+            //input.Value = institution.Name;
+            var indexInstitution = InputList.IndexOf(InputList.FirstOrDefault(x => x.Type == AddPixInputType.Institution));
+            InputList[indexInstitution].Placeholder = institution.Name;
+            InputList[indexInstitution].Value = institution.Name;
+            InputList[indexInstitution].Title = institution.Name;
 
             SelectedFinancialInstitution = institution;
 
@@ -302,6 +306,9 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             //CurrenSelectedFinancialInstitutionText = institution.Name;
 
             CurrenKeyPlaceholder = CurrenKeyPlaceholderDefaultValue + " no " + SelectedFinancialInstitution?.Name;
+
+            var indexInstitutionKey = InputList.IndexOf(InputList.FirstOrDefault(x => x.Type == AddPixInputType.Key));
+            InputList[indexInstitutionKey].Placeholder = CurrenKeyPlaceholder;
 
             //ActualInputNextPosition = ActualInputNextPosition;
 
