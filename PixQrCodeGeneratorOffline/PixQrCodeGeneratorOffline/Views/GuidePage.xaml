@@ -21,12 +21,12 @@
             <Grid RowDefinitions="*, auto">
                 <controls:CustomCollectionView ItemsSource="{Binding GuideList}" Grid.Row="0" Margin="10,0">
                     <controls:CustomCollectionView.ItemsLayout>
-                        <GridItemsLayout Span="2" Orientation="Vertical" HorizontalItemSpacing="10" VerticalItemSpacing="10" />
+                        <LinearItemsLayout ItemSpacing="10" Orientation="Vertical"/>
                     </controls:CustomCollectionView.ItemsLayout>
                     
                     <controls:CustomCollectionView.ItemTemplate>
                         <DataTemplate>
-                            <Frame Padding="15" BackgroundColor="{DynamicResource secondary}" CornerRadius="15" HeightRequest="200">
+                            <Frame Padding="15,30" BackgroundColor="{DynamicResource secondary}" CornerRadius="15">
                                 <Frame.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:GuideViewModel}}, Path=OpenAnswerGuideCommand}" CommandParameter="{Binding .}" />
                                 </Frame.GestureRecognizers>

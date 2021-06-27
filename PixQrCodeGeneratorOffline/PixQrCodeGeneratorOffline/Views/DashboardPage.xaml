@@ -33,14 +33,14 @@
                         <controls:CustomCollectionView ItemsSource="{Binding PixKeyList}" x:Name="collectionKeysList">
                             <controls:CustomCollectionView.ItemTemplate>
                                 <DataTemplate>
-                                    <SwipeView>
+                                    <!--<SwipeView>
                                         <SwipeView.LeftItems>
                                             <SwipeItems>
                                                 <SwipeItem Text="Editar"
                                                            BackgroundColor="LightGray"
                                                            Command="{Binding Source={x:Reference collectionKeysList}, Path=BindingContext.EditKeyCommand}" />
                                             </SwipeItems>
-                                        </SwipeView.LeftItems>
+                                        </SwipeView.LeftItems>-->
                                         <!--<StackLayout Padding="10,5">-->
                                         <StackLayout Padding="0,0,15,0" BackgroundColor="{Binding FinancialInstitution.Institution.MaterialColor.Primary}">
 
@@ -90,7 +90,7 @@
                                             </Grid>
                                         </StackLayout>
                                         <!--</StackLayout>-->
-                                    </SwipeView>
+                                    <!--</SwipeView>-->
 
 
                                 </DataTemplate>

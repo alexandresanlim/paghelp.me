@@ -48,7 +48,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 {
                     InputList[CurrentInputValues.Institution.Index].Placeholder = "Toque para selecionar";
 
-                    var firstKey = _pixKeyService.GetFirst();
+                    var firstKey = _pixKeyService.GetAll().LastOrDefault();
 
                     if (firstKey != null && firstKey.Id > 0)
                     {
@@ -91,15 +91,19 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public ICommand SaveCommand => new Command(async () =>
         {
+            CurrentPixKey.City = CurrentInputValues?.City.Value;
+            CurrentPixKey.Key = CurrentInputValues?.Key?.Value;
+            CurrentPixKey.Name = CurrentInputValues?.Name?.Value;
+            CurrentPixKey.FinancialInstitution = SelectedFinancialInstitution;
+
+            if (!await ValidateSave())
+                return;
+
             try
             {
-                CurrentPixKey.City = CurrentInputValues?.City.Value;
-                CurrentPixKey.Key = CurrentInputValues?.Key?.Value;
-                CurrentPixKey.Name = CurrentInputValues?.Name?.Value;
-                CurrentPixKey.FinancialInstitution = SelectedFinancialInstitution;
+                SetIsLoading(true);
 
-                if (!await ValidateSave())
-                    return;
+                await Task.Delay(500);
 
                 //CurrentPixKey.Color = MaterialColor.GetRandom();
 
@@ -151,16 +155,24 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             {
                 e.SendToLog();
             }
+            finally
+            {
+                SetIsLoading(false);
+            }
         });
 
         public ICommand DeleteCommand => new Command(async () =>
         {
+            var confirm = await DialogService.ConfirmAsync("Tem certeza que deseja excluir a chave " + CurrentPixKey.Key + "?", "Confirmação", "Sim", "Cancelar");
+
+            if (!confirm)
+                return;
+
             try
             {
-                var confirm = await DialogService.ConfirmAsync("Tem certeza que deseja excluir a chave " + CurrentPixKey.Key + "?", "Confirmação", "Sim", "Cancelar");
+                SetIsLoading(true);
 
-                if (!confirm)
-                    return;
+                await Task.Delay(500);
 
                 var success = _pixKeyService.Remove(CurrentPixKey);
 
@@ -186,6 +198,10 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             catch (Exception e)
             {
                 e.SendToLog();
+            }
+            finally
+            {
+                SetIsLoading(false);
             }
         });
 

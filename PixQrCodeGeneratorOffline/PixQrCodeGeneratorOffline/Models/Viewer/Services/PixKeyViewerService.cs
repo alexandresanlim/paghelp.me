@@ -30,6 +30,6 @@ namespace PixQrCodeGeneratorOffline.Models.Viewer.Services
 
         private string GetInstitutionAndKey(PixKey pixKey) => "Instituição: " + (!string.IsNullOrEmpty(pixKey?.FinancialInstitution?.Name) ? pixKey?.FinancialInstitution?.Name : "Não informado") + " | Chave: " + pixKey?.Key;
 
-        private string GetBankAndKey(PixKey pixKey) => (!string.IsNullOrEmpty(pixKey?.FinancialInstitution?.Name) ? pixKey?.FinancialInstitution?.Name : "Não informado") + " | Chave: " + pixKey?.Key;
+        private string GetBankAndKey(PixKey pixKey) => (!string.IsNullOrEmpty(pixKey?.FinancialInstitution?.Name) ? pixKey?.FinancialInstitution?.Name : "Não informado") + " | " + pixKey?.Key;
     }
 }

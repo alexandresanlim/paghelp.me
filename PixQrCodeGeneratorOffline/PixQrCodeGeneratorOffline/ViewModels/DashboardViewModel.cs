@@ -36,7 +36,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 var list = _pixKeyService.GetAll();
 
-                PixKeyList = list.ToObservableCollection();
+                PixKeyList = list?.OrderBy(x => x?.FinancialInstitution?.Name).ToObservableCollection();
 
                 await LoadCurrentPixKey();
 
