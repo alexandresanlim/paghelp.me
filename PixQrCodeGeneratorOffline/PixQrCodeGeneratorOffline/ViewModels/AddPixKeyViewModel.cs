@@ -1,5 +1,6 @@
 ﻿using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models;
+using PixQrCodeGeneratorOffline.Models.Base;
 using PixQrCodeGeneratorOffline.Models.DataStatic.Institutions;
 using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Services;
@@ -41,35 +42,27 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 SelectedFinancialInstitution = !IsEdit ? _financialInstitutionService.Create(FinancialInstitutionType.None) : CurrentPixKey.FinancialInstitution;
 
-                //CurrenSelectedFinancialInstitutionText = !IsEdit ? "Toque para selecionar" : CurrentPixKey?.FinancialInstitution?.Name;
-
-                SetNewInstitution(SelectedFinancialInstitution);
-
                 CurrenKeyPlaceholder = CurrenKeyPlaceholderDefaultValue;
-
-                var indexName = InputList.IndexOf(InputList.FirstOrDefault(x => x.Type == AddPixInputType.Name));
-                var indexCity = InputList.IndexOf(InputList.FirstOrDefault(x => x.Type == AddPixInputType.City));
-                var indexKey = InputList.IndexOf(InputList.FirstOrDefault(x => x.Type == AddPixInputType.Key));
 
                 if (!IsEdit)
                 {
+                    InputList[CurrentInputValues.Institution.Index].Placeholder = "Toque para selecionar";
+
                     var firstKey = _pixKeyService.GetFirst();
 
                     if (firstKey != null && firstKey.Id > 0)
                     {
-                        InputList[indexName].Value = firstKey.Name;
-                        InputList[indexCity].Value = firstKey.City;
-
-                        //CurrentPixKey.Name = firstKey?.Name;
-                        //CurrentPixKey.City = firstKey?.City;
+                        InputList[CurrentInputValues.Name.Index].Value = firstKey.Name;
+                        InputList[CurrentInputValues.City.Index].Value = firstKey.City;
                     }
                 }
 
                 else
                 {
-                    InputList[indexName].Value = CurrentPixKey.Name;
-                    InputList[indexCity].Value = CurrentPixKey.City;
-                    InputList[indexKey].Value = CurrentPixKey.Key;
+                    InputList[CurrentInputValues.Institution.Index].Placeholder = SelectedFinancialInstitution.Name;
+                    InputList[CurrentInputValues.Name.Index].Value = CurrentPixKey.Name;
+                    InputList[CurrentInputValues.City.Index].Value = CurrentPixKey.City;
+                    InputList[CurrentInputValues.Key.Index].Value = CurrentPixKey.Key;
                 }
 
                 SetStatusFromCurrentPixColor();
@@ -100,25 +93,20 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         {
             try
             {
-
-                CurrentPixKey.City = CurrentInputValues?.City;
-                CurrentPixKey.Key = CurrentInputValues?.Key;
-                CurrentPixKey.Name = CurrentInputValues?.Name;
+                CurrentPixKey.City = CurrentInputValues?.City.Value;
+                CurrentPixKey.Key = CurrentInputValues?.Key?.Value;
+                CurrentPixKey.Name = CurrentInputValues?.Name?.Value;
+                CurrentPixKey.FinancialInstitution = SelectedFinancialInstitution;
 
                 if (!await ValidateSave())
                     return;
 
                 //CurrentPixKey.Color = MaterialColor.GetRandom();
 
-
-                CurrentPixKey.FinancialInstitution = SelectedFinancialInstitution;
-
                 if (string.IsNullOrEmpty(CurrentPixKey?.City))
                     CurrentPixKey.City = "Cidade";
 
                 var success = false;
-
-                //CurrentPixKey.RaisePresentation();
 
                 if (IsEdit)
                 {
@@ -243,8 +231,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                             Type = FinancialInstitutionType.None
                         };
 
-                        //input.Title = institution?.Name;
-
                         SetNewInstitution(institution);
                     }),
                     Cancel = new Acr.UserDialogs.ActionSheetOption("Cancelar", () =>
@@ -267,7 +253,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                     return;
 
                 ActualInputNextPosition = ActualInputNextPosition == 0 ? 1 : ActualInputNextPosition++;
-                //CurrentPhase = ActualInputNextPosition + 1;
             }
             catch (System.Exception e)
             {
@@ -279,38 +264,20 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         private void CurrentInputChanged()
         {
-            var textKey = InputList?.FirstOrDefault(x => x.Type == AddPixInputType.Key)?.Value;
-
-            if (CurrentInput.Type == AddPixInputType.Name && string.IsNullOrEmpty(textKey))
-            {
-                //ActualInputNextPosition = ActualInputNextPosition--;
-            }
-
             ShowSaveButton = CurrentInput == LastInput;
         }
 
         private void SetNewInstitution(FinancialInstitution institution)
         {
 
-            //input.Placeholder = institution.Name;
-            //input.Value = institution.Name;
-            var indexInstitution = InputList.IndexOf(InputList.FirstOrDefault(x => x.Type == AddPixInputType.Institution));
-            InputList[indexInstitution].Placeholder = institution.Name;
-            InputList[indexInstitution].Value = institution.Name;
-            InputList[indexInstitution].Title = institution.Name;
-
             SelectedFinancialInstitution = institution;
 
-            //CurrentPixKey.FinancialInstitution = institution;
+            InputList[CurrentInputValues.Institution.Index].Placeholder = institution.Name;
+            InputList[CurrentInputValues.Institution.Index].Value = institution.Name;
+            InputList[CurrentInputValues.Institution.Index].Title = institution.Name;
 
-            //CurrenSelectedFinancialInstitutionText = institution.Name;
-
-            CurrenKeyPlaceholder = CurrenKeyPlaceholderDefaultValue + " no " + SelectedFinancialInstitution?.Name;
-
-            var indexInstitutionKey = InputList.IndexOf(InputList.FirstOrDefault(x => x.Type == AddPixInputType.Key));
-            InputList[indexInstitutionKey].Placeholder = CurrenKeyPlaceholder;
-
-            //ActualInputNextPosition = ActualInputNextPosition;
+            if (SelectedFinancialInstitution.Type != FinancialInstitutionType.None)
+                InputList[CurrentInputValues.Key.Index].Placeholder = CurrenKeyPlaceholderDefaultValue + " no(a) " + SelectedFinancialInstitution?.Name;
 
             ActualInputNextPosition = 1;
 
@@ -324,8 +291,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
             CurrenStyle = SelectedFinancialInstitution?.Institution?.MaterialColor;
 
-            //App.LoadTheme(CurrentPixKey?.FinancialInstitution?.Institution?.MaterialColor);
-
             _statusBarService.SetStatusBarColor(SelectedFinancialInstitution.Institution.MaterialColor.Primary);
         }
 
@@ -338,9 +303,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
             if (!CurrentPixKey.Validation.HasName)
                 msg += "- Nome não informado\n";
-
-            //if (string.IsNullOrEmpty(CurrentPixKey?.City))
-            //    msg += "- Cidade não informada\n";
 
             if (!string.IsNullOrEmpty(msg))
             {
@@ -370,15 +332,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             get => _currentPixKey;
         }
 
-        //public static PixKey OriginPixKey { get; set; }
-
-        //private string _currenSelectedFinancialInstitutionText;
-        //public string CurrenSelectedFinancialInstitutionText
-        //{
-        //    set => SetProperty(ref _currenSelectedFinancialInstitutionText, value);
-        //    get => _currenSelectedFinancialInstitutionText;
-        //}
-
         private string _currenKeyPlaceholder;
         public string CurrenKeyPlaceholder
         {
@@ -398,13 +351,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         {
             set => SetProperty(ref _currenStyle, value);
             get => _currenStyle;
-        }
-
-        private FinancialInstitution _selectedFinancialInstitution;
-        public FinancialInstitution SelectedFinancialInstitution
-        {
-            set => SetProperty(ref _selectedFinancialInstitution, value);
-            get => _selectedFinancialInstitution;
         }
 
         private ObservableCollection<AddPixInput> _inputList;
@@ -447,15 +393,22 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         private InputValues CurrentInputValues => new InputValues(InputList);
 
         private string CurrenKeyPlaceholderDefaultValue => "Chave cadastrada";
+
+        public FinancialInstitution SelectedFinancialInstitution { get; set; }
     }
 
-    public class AddPixInput
+    public class AddPixInput : NotifyObjectBase
     {
         public string Title { get; set; }
 
         public string Value { get; set; }
 
-        public string Placeholder { get; set; }
+        private string _placeholder;
+        public string Placeholder
+        {
+            set => SetProperty(ref _placeholder, value);
+            get => _placeholder;
+        }
 
         public string Icon { get; set; }
 
@@ -464,6 +417,8 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         public AddPixInputType Type { get; set; }
 
         public ReturnType ReturnType { get; set; }
+
+        public FinancialInstitution FinancialInstitutions { get; set; }
 
         public bool IsInstitution => Type == AddPixInputType.Institution;
 
@@ -505,57 +460,61 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 }
             };
         }
-
-        //public AddPixInput Create(AddPixInputType type)
-        //{
-        //    switch (type)
-        //    {
-        //        case AddPixInputType.Institution:
-        //            return new AddPixInput
-        //            {
-        //                Type = type,
-        //                Title = "Nome"
-        //            };
-        //        case AddPixInputType.Key:
-        //            return new AddPixInput
-        //            {
-        //                Type = type,
-        //                Title = "Nome"
-        //            };
-        //        case AddPixInputType.Name:
-        //            return new AddPixInput
-        //            {
-        //                Type = type,
-        //                Title = "Nome"
-        //            };
-        //        case AddPixInputType.City:
-        //            return new AddPixInput
-        //            {
-        //                Type = type,
-        //                Title = "Nome"
-        //            };
-        //        default:
-        //            return new AddPixInput();
-        //    }
-        //}
     }
 
     public class InputValues
     {
         public InputValues(ObservableCollection<AddPixInput> inputList)
         {
-            InputList = inputList;
+            Institution = new InputValueInstitution(inputList, inputList?.FirstOrDefault(x => x.Type == AddPixInputType.Institution));
+            Key = new InputValueKey(inputList, inputList?.FirstOrDefault(x => x.Type == AddPixInputType.Key));
+            Name = new InputValueName(inputList, inputList?.FirstOrDefault(x => x.Type == AddPixInputType.Name));
+            City = new InputValueCity(inputList, inputList?.FirstOrDefault(x => x.Type == AddPixInputType.City));
         }
 
-        public ObservableCollection<AddPixInput> InputList { get; set; }
+        public InputValueInstitution Institution { get; }
 
-        public string Institution => InputList?.FirstOrDefault(x => x.Type == AddPixInputType.Institution)?.Value;
+        public InputValueKey Key { get; }
 
-        public string Key => InputList?.FirstOrDefault(x => x.Type == AddPixInputType.Key)?.Value;
+        public InputValueName Name { get; }
 
-        public string Name => InputList?.FirstOrDefault(x => x.Type == AddPixInputType.Name)?.Value;
+        public InputValueCity City { get; }
+    }
 
-        public string City => InputList?.FirstOrDefault(x => x.Type == AddPixInputType.City)?.Value;
+    public class InputValueBase
+    {
+        public InputValueBase(ObservableCollection<AddPixInput> inputList, AddPixInput input)
+        {
+            Input = input;
+            Value = input?.Value;
+            Index = inputList?.IndexOf(Input) ?? -1;
+        }
+
+        public AddPixInput Input { get; set; }
+
+        public string Value { get; set; }
+
+        public int Index { get; set; }
+    }
+
+    public class InputValueName : InputValueBase
+    {
+        public InputValueName(ObservableCollection<AddPixInput> inputList, AddPixInput input) : base(inputList, input) { }
+    }
+
+    public class InputValueCity : InputValueBase
+    {
+        public InputValueCity(ObservableCollection<AddPixInput> inputList, AddPixInput input) : base(inputList, input) { }
+    }
+
+    public class InputValueKey : InputValueBase
+    {
+        public InputValueKey(ObservableCollection<AddPixInput> inputList, AddPixInput input) : base(inputList, input) { }
+    }
+
+    public class InputValueInstitution : InputValueBase
+    {
+        public InputValueInstitution(ObservableCollection<AddPixInput> inputList, AddPixInput input) : base(inputList, input) { }
     }
 
     public enum AddPixInputType
