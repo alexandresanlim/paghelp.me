@@ -42,8 +42,86 @@
                 </LinearGradientBrush>
             </controls:CustomFrame.Background>-->
 
-        <Grid RowDefinitions="auto,*,auto" RowSpacing="0">
-            <!--<StackLayout Grid.Row="0" Spacing="0" Padding="15,0,0,0" Orientation="Horizontal" BackgroundColor="{Binding CurrenStyle.Primary}">
+        <StackLayout Spacing="0">
+
+            <controls:CustomProgress CurrentPhase="{Binding ActualInputNextPosition}" ColorMore="{DynamicResource secondary }" ColorLess="{Binding CurrenStyle.PrimaryLight}" Phases="{Binding InputPhasesCount}" Margin="20,15,20,0"/>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="End" IsVisible="{Binding IsEdit}">
+                <StackLayout Padding="20,15,10,0">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding DeleteCommand}" />
+                    </StackLayout.GestureRecognizers>
+                    <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.TrashAlt }" IconSize="Medium" IconColor="{Binding CurrenStyle.TextOnPrimary}" />
+                    <controls:CustomLabel Text="Excluir" TextColor="{Binding CurrenStyle.TextOnPrimary}" FontAttributes="Bold" />
+                </StackLayout>
+                <StackLayout Padding="10,15,10,0">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding SaveCommand}" />
+                    </StackLayout.GestureRecognizers>
+                    <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Save }" IconSize="Medium" IconColor="{Binding CurrenStyle.TextOnPrimary}" />
+                    <controls:CustomLabel Text="Salvar" TextColor="{Binding CurrenStyle.TextOnPrimary}" FontAttributes="Bold" />
+                </StackLayout>
+            </StackLayout>
+
+            <CarouselView
+                    ItemsSource="{Binding InputList}"
+                    PeekAreaInsets="25"
+                    CurrentItemChangedCommand="{Binding CurrentInputChangedCommand}"
+                    Position="{Binding ActualInputNextPosition}" 
+                    CurrentItem="{Binding CurrentInput}"
+                    HeightRequest="250">
+
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Padding="5,15,5,0">
+                            <StackLayout Spacing="15">
+                                <controls:CustomIcon Glyph="{Binding Icon}" Size="{DynamicResource FontSizeLarge}" IconColor="White" />
+                                <Label Text="{Binding Title}" TextColor="White" FontSize="{DynamicResource FontSizeLarge}" HorizontalTextAlignment="Center" FontFamily="{StaticResource FontBold}" />
+                            </StackLayout>
+                            <Frame BackgroundColor="#15000000" Padding="15,30" CornerRadius="10" IsVisible="{Binding IsInstitution, Converter={StaticResource InvertedBooleanConverter}}">
+                                <StackLayout>
+                                    <Entry Text="{Binding Value}" Placeholder="{Binding Placeholder}" ReturnCommand="{Binding Source={RelativeSource AncestorType={x:Type vm:AddPixKeyViewModel}}, Path=InputNextCommand}" />
+                                </StackLayout>
+                            </Frame>
+
+                            <Frame BackgroundColor="#15000000" Padding="15,30" IsVisible="{Binding IsInstitution}" CornerRadius="10">
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:AddPixKeyViewModel}}, Path=SelectedInstitutionCommand}" />
+                                </Frame.GestureRecognizers>
+                                <StackLayout Orientation="Horizontal">
+                                    <controls:CustomLabel Text="{Binding Placeholder}" FontAttributes="Bold" FontSize="{DynamicResource FontSizeMedium}" TextColor="White" HorizontalOptions="FillAndExpand" />
+                                    <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.ChevronDown }" IconSize="Large" IconColor="White" />
+                                </StackLayout>
+
+                            </Frame>
+                        </StackLayout>
+
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+
+            <StackLayout>
+
+                <Frame BackgroundColor="{DynamicResource secondary}" Padding="15" CornerRadius="30" Margin="15,0" IsVisible="{Binding ShowSaveButton, Converter={StaticResource InvertedBooleanConverter}}">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding InputNextCommand}" />
+                    </Frame.GestureRecognizers>
+                    <controls:CustomLabel Text="Próximo" FontSize="{DynamicResource FontSizeMedium}" TextColor="{DynamicResource textOnSecondary}" HorizontalOptions="Center" />
+                </Frame>
+
+                <Frame BackgroundColor="{DynamicResource secondary}" Padding="15" CornerRadius="30" Margin="15,0" IsVisible="{Binding ShowSaveButton}">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding SaveCommand}" />
+                    </Frame.GestureRecognizers>
+                    <controls:CustomLabel Text="Salvar" FontSize="{DynamicResource FontSizeMedium}" TextColor="{DynamicResource textOnSecondary}" HorizontalOptions="Center" />
+                </Frame>
+            </StackLayout>
+
+
+        </StackLayout>
+
+        <!--<Grid RowDefinitions="auto,*,auto" RowSpacing="0">
+            --><!--<StackLayout Grid.Row="0" Spacing="0" Padding="15,0,0,0" Orientation="Horizontal" BackgroundColor="{Binding CurrenStyle.Primary}">
 
                 <StackLayout Padding="0,0,30,0">
                     <StackLayout.GestureRecognizers>
@@ -97,87 +175,11 @@
                                        IndicatorsShape="Circle"
                                        IndicatorColor="{Binding CurrenStyle.PrimaryLight}"
                                        SelectedIndicatorColor="{Binding CurrenStyle.Primary}" />
-            </StackLayout>-->
+            </StackLayout>--><!--
 
 
-            <StackLayout Grid.Row="1" Spacing="0">
-
-                <controls:CustomProgress CurrentPhase="{Binding ActualInputNextPosition}" ColorMore="{DynamicResource secondary }" ColorLess="{Binding CurrenStyle.PrimaryLight}" Phases="{Binding InputPhasesCount}" Margin="20,15,20,0"/>
-
-                <StackLayout Orientation="Horizontal" HorizontalOptions="End" IsVisible="{Binding IsEdit}">
-                    <StackLayout Padding="20,15,10,0">
-                        <StackLayout.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding DeleteCommand}" />
-                        </StackLayout.GestureRecognizers>
-                        <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.TrashAlt }" IconSize="Medium" IconColor="{Binding CurrenStyle.TextOnPrimary}" />
-                        <controls:CustomLabel Text="Excluir" TextColor="{Binding CurrenStyle.TextOnPrimary}" FontAttributes="Bold" />
-                    </StackLayout>
-                    <StackLayout Padding="10,15,10,0">
-                        <StackLayout.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding SaveCommand}" />
-                        </StackLayout.GestureRecognizers>
-                        <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Save }" IconSize="Medium" IconColor="{Binding CurrenStyle.TextOnPrimary}" />
-                        <controls:CustomLabel Text="Salvar" TextColor="{Binding CurrenStyle.TextOnPrimary}" FontAttributes="Bold" />
-                    </StackLayout>
-                </StackLayout>
-
-                <CarouselView
-                    ItemsSource="{Binding InputList}"
-                    PeekAreaInsets="25"
-                    CurrentItemChangedCommand="{Binding CurrentInputChangedCommand}"
-                    Position="{Binding ActualInputNextPosition}" 
-                    CurrentItem="{Binding CurrentInput}"
-                    HeightRequest="250">
-
-                    <CarouselView.ItemTemplate>
-                        <DataTemplate>
-                            <StackLayout Padding="5,15,5,0">
-                                <StackLayout Spacing="15">
-                                    <controls:CustomIcon Glyph="{Binding Icon}" Size="{DynamicResource FontSizeLarge}" IconColor="White" />
-                                    <Label Text="{Binding Title}" TextColor="White" FontSize="{DynamicResource FontSizeLarge}" HorizontalTextAlignment="Center" FontFamily="{StaticResource FontBold}" />
-                                </StackLayout>
-                                <Frame BackgroundColor="#15000000" Padding="15,30" CornerRadius="10" IsVisible="{Binding IsInstitution, Converter={StaticResource InvertedBooleanConverter}}">
-                                    <StackLayout>
-                                        <Entry Text="{Binding Value}" Placeholder="{Binding Placeholder}" ReturnCommand="{Binding Source={RelativeSource AncestorType={x:Type vm:AddPixKeyViewModel}}, Path=InputNextCommand}" />
-                                    </StackLayout>
-                                </Frame>
-
-                                <Frame BackgroundColor="#15000000" Padding="15,30" IsVisible="{Binding IsInstitution}" CornerRadius="10">
-                                    <Frame.GestureRecognizers>
-                                        <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:AddPixKeyViewModel}}, Path=SelectedInstitutionCommand}" />
-                                    </Frame.GestureRecognizers>
-                                    <StackLayout Orientation="Horizontal">
-                                        <controls:CustomLabel Text="{Binding Placeholder}" FontAttributes="Bold" FontSize="{DynamicResource FontSizeMedium}" TextColor="White" HorizontalOptions="FillAndExpand" />
-                                        <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.ChevronDown }" IconSize="Large" IconColor="White" />
-                                    </StackLayout>
-
-                                </Frame>
-                            </StackLayout>
-
-                        </DataTemplate>
-                    </CarouselView.ItemTemplate>
-                </CarouselView>
-
-                <StackLayout>
-
-                    <Frame BackgroundColor="{DynamicResource secondary}" Padding="15" CornerRadius="30" Margin="15,0" IsVisible="{Binding ShowSaveButton, Converter={StaticResource InvertedBooleanConverter}}">
-                        <Frame.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding InputNextCommand}" />
-                        </Frame.GestureRecognizers>
-                        <controls:CustomLabel Text="Próximo" FontSize="{DynamicResource FontSizeMedium}" TextColor="{DynamicResource textOnSecondary}" HorizontalOptions="Center" />
-                    </Frame>
-
-                    <Frame BackgroundColor="{DynamicResource secondary}" Padding="15" CornerRadius="30" Margin="15,0" IsVisible="{Binding ShowSaveButton}">
-                        <Frame.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding SaveCommand}" />
-                        </Frame.GestureRecognizers>
-                        <controls:CustomLabel Text="Salvar" FontSize="{DynamicResource FontSizeMedium}" TextColor="{DynamicResource textOnSecondary}" HorizontalOptions="Center" />
-                    </Frame>
-                </StackLayout>
-
-
-            </StackLayout>
-        </Grid>
+            
+        </Grid>-->
 
 
     </ContentPage.Content>
