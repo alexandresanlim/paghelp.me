@@ -56,7 +56,7 @@
                     </StackLayout>
 
                     <StackLayout>
-                        <Label Text="Gostando do Paghelp.me?" Style="{StaticResource titleStyle}" />
+                        <Label Text="Gostando do Paghelp?" Style="{StaticResource titleStyle}" />
                         <Frame Style="{StaticResource styleFrameMenuAbout}">
                             <Frame.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding OpenStoreCommand}" />

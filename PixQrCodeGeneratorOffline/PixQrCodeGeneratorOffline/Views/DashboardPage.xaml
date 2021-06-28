@@ -11,14 +11,6 @@
              BackgroundColor="{DynamicResource background_page}"
              >
 
-    <!--<ContentPage.Resources>
-        <ResourceDictionary>
-            <local:HasDataConverter x:Key="HasDataConverter" />
-            <local:HasDataConverterInverted x:Key="HasDataConverterInverted" />
-            <local:InvertedBooleanConverter x:Key="InvertedBooleanConverter" />
-        </ResourceDictionary>
-    </ContentPage.Resources>-->
-
     <ContentPage.Content>
         <Grid>
 
@@ -27,7 +19,7 @@
                 <StackLayout Grid.Row="0">
 
                     <StackLayout IsVisible="{Binding ShowInList}" VerticalOptions="FillAndExpand" Spacing="0">
-                        <StackLayout Padding="10" BackgroundColor="{DynamicResource primary}">
+                        <StackLayout Padding="15" BackgroundColor="{DynamicResource primary}">
                             <controls:CustomLabel Text="Minhas Chaves" FontSize="Title" FontAttributes="Bold" TextColor="{DynamicResource textOnPrimary}" />
                         </StackLayout>
                         <controls:CustomCollectionView ItemsSource="{Binding PixKeyList}" x:Name="collectionKeysList">
@@ -98,7 +90,7 @@
                         </controls:CustomCollectionView>
                     </StackLayout>
 
-                    <StackLayout IsVisible="{Binding ShowInCarousel}">
+                    <StackLayout IsVisible="{Binding ShowInList, Converter={StaticResource InvertedBooleanConverter}}">
 
                         <StackLayout.Background>
                             <LinearGradientBrush EndPoint="0,1">

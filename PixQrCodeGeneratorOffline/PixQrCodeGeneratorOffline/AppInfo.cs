@@ -10,7 +10,7 @@ namespace PixQrCodeGeneratorOffline
 {
     public partial class App
     {
-        public const string AppName = "Pag help.me";
+        public const string AppName = "Paghelp";
 
         public const string IconName = "pixoff";
 
@@ -19,7 +19,7 @@ namespace PixQrCodeGeneratorOffline
             //Fundação do paghelpe.me
             //public static string Date => new DateTime(2020, 12, 28).ToString("dd MMM yyyy");
 
-            public static string Date => new DateTime(2021, 06, 25).ToString("dd MMM yyyy");
+            public static string Date => new DateTime(2021, 06, 27).ToString("dd MMM yyyy");
 
             public static string AppName => AppInfo.Name;
 
