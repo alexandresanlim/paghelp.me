@@ -51,6 +51,10 @@ namespace PixQrCodeGeneratorOffline.Models
 
         public string City { get; set; }
 
+        public bool IsFavorite { get; set; }
+
+        public bool IsFromContact { get; set; }
+
         public FinancialInstitution FinancialInstitution { get; set; }
 
         //public PixKeyType Type { get; set; }

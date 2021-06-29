@@ -4,9 +4,10 @@
             xmlns:local="clr-namespace:PixQrCodeGeneratorOffline.Views"
             x:Class="PixQrCodeGeneratorOffline.Views.DashboardTabbedPage"
             Shell.NavBarIsVisible="False" 
-            BarBackgroundColor="{DynamicResource primary}"
-            SelectedTabColor="{DynamicResource textOnPrimary}"
-            UnselectedTabColor="{DynamicResource primaryLight}"
+            BarBackgroundColor="{DynamicResource secondary}"
+            SelectedTabColor="{DynamicResource textOnSecondary}"
+            UnselectedTabColor="#95a5a6"
+            BackgroundColor="{DynamicResource primary}"
             >
   <!--Pages can be added as references or inline-->
   <!--<ContentPage Title="Tab 1" />

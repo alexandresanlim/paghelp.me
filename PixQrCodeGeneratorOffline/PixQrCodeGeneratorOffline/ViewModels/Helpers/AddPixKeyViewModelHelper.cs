@@ -67,7 +67,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels.Helpers
                     Type = AddPixInputType.City,
                     Title = "Cidade",
                     Icon = FontAwesomeSolid.MapMarkedAlt,
-                    Placeholder = "Digite a cidade",
+                    Placeholder = "Digite a cidade (não obrigatório)",
                     ReturnType = ReturnType.Done,
                 }
             };
