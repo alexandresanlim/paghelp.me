@@ -80,7 +80,7 @@
                             </StackLayout>
                             <Frame BackgroundColor="#15000000" Padding="15,30" CornerRadius="10" IsVisible="{Binding IsInstitution, Converter={StaticResource InvertedBooleanConverter}}">
                                 <StackLayout>
-                                    <Entry Text="{Binding Value}" Placeholder="{Binding Placeholder}" ReturnCommand="{Binding Source={RelativeSource AncestorType={x:Type vm:AddPixKeyViewModel}}, Path=InputNextCommand}" />
+                                    <Entry Text="{Binding Value}" Placeholder="{Binding Placeholder}" ReturnCommand="{Binding Source={RelativeSource AncestorType={x:Type vm:AddPixKeyViewModel}}, Path=InputNextCommand}" TextColor="White" PlaceholderColor="#95a5a6" />
                                 </StackLayout>
                             </Frame>
 
