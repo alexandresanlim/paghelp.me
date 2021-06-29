@@ -103,7 +103,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public ICommand EditKeyCommand => new Command(async () => await _pixKeyService.NavigateToEdit(CurrentPixKey));
 
-        public Command<PixKey> OpenOptionsKeyCommand => new Command<PixKey>(async (key) => await _pixKeyService.NavigateToAction(key));
+        //public Command<PixKey> OpenOptionsKeyCommand => new Command<PixKey>(async (key) => await _pixKeyService.NavigateToAction(key));
 
         #endregion
 

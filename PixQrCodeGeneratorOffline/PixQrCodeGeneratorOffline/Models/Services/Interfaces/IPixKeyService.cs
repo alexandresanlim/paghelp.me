@@ -28,6 +28,6 @@ namespace PixQrCodeGeneratorOffline.Models.Services.Interfaces
 
         Task NavigateToAdd();
 
-        Task NavigateToAction(PixKey pixKey);
+        //Task NavigateToAction(PixKey pixKey);
     }
 }

@@ -196,30 +196,30 @@ namespace PixQrCodeGeneratorOffline.Models.Services
             }
         }
 
-        public async Task NavigateToAction(PixKey pixKey)
-        {
-            if (!pixKey.Validation.IsValid)
-                return;
+        //public async Task NavigateToAction(PixKey pixKey)
+        //{
+        //    if (!pixKey.Validation.IsValid)
+        //        return;
 
-            try
-            {
-                DialogService.ShowLoading("");
+        //    try
+        //    {
+        //        DialogService.ShowLoading("");
 
-                await Task.Delay(500);
+        //        await Task.Delay(500);
 
-                await Shell.Current.Navigation.PushModalAsync(new PixKeyActionPage(pixKey));
-            }
-            catch (System.Exception e)
-            {
-                e.SendToLog();
-            }
-            finally
-            {
-                _eventService.SendEvent("Navegou para ação", EventType.NAVIGATION);
+        //        await Shell.Current.Navigation.PushModalAsync(new PixKeyActionPage(pixKey));
+        //    }
+        //    catch (System.Exception e)
+        //    {
+        //        e.SendToLog();
+        //    }
+        //    finally
+        //    {
+        //        _eventService.SendEvent("Navegou para ação", EventType.NAVIGATION);
 
-                DialogService.HideLoading();
-            }
-        }
+        //        DialogService.HideLoading();
+        //    }
+        //}
 
         private bool HasKeysValidated()
         {

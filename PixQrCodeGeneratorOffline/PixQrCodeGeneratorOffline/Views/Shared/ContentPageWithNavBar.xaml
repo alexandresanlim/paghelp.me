@@ -5,6 +5,7 @@
              xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon" 
              xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
              Shell.NavBarIsVisible="False"
+             Shell.BackgroundColor="{DynamicResource primary}"
              >
     
     <ContentPage.ControlTemplate>

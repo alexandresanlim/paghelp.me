@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+            xmlns:local="clr-namespace:PixQrCodeGeneratorOffline.Views"
+            x:Class="PixQrCodeGeneratorOffline.Views.DashboardTabbedPage"
+            Shell.NavBarIsVisible="False" 
+            BarBackgroundColor="{DynamicResource primary}"
+            SelectedTabColor="{DynamicResource textOnPrimary}"
+            UnselectedTabColor="{DynamicResource primaryLight}"
+            >
+  <!--Pages can be added as references or inline-->
+  <!--<ContentPage Title="Tab 1" />
+  <ContentPage Title="Tab 2" />
+  <ContentPage Title="Tab 3" />-->
+
+    <!--<NavigationPage Title="Minhas">
+        <x:Arguments>
+            <local:DashboardPage />
+        </x:Arguments>
+    </NavigationPage>-->
+
+    <local:DashboardPage Title="Minhas Chaves" />
+    <local:DashboardContactPage Title="Chaves de Contatos" />
+</TabbedPage>

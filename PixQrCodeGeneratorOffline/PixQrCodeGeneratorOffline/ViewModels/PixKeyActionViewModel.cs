@@ -1,46 +1,46 @@
-﻿using PixQrCodeGeneratorOffline.Extention;
-using PixQrCodeGeneratorOffline.Models;
-using PixQrCodeGeneratorOffline.Services;
-using PixQrCodeGeneratorOffline.Views;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
-using Xamarin.Forms;
+﻿//using PixQrCodeGeneratorOffline.Extention;
+//using PixQrCodeGeneratorOffline.Models;
+//using PixQrCodeGeneratorOffline.Services;
+//using PixQrCodeGeneratorOffline.Views;
+//using System;
+//using System.Collections.Generic;
+//using System.Text;
+//using System.Threading.Tasks;
+//using System.Windows.Input;
+//using Xamarin.Forms;
 
-namespace PixQrCodeGeneratorOffline.ViewModels
-{
-    public class PixKeyActionViewModel : BaseViewModel
-    {
-        public PixKeyActionViewModel(PixKey pixKey)
-        {
-            CurrentPixKey = pixKey;
-        }
+//namespace PixQrCodeGeneratorOffline.ViewModels
+//{
+//    public class PixKeyActionViewModel : BaseViewModel
+//    {
+//        public PixKeyActionViewModel(PixKey pixKey)
+//        {
+//            CurrentPixKey = pixKey;
+//        }
 
-        public void LoadData()
-        {
-            CurrentPixKey = _pixKeyService.GetById(CurrentPixKey.Id);
+//        public void LoadData()
+//        {
+//            CurrentPixKey = _pixKeyService.GetById(CurrentPixKey.Id);
 
-            if(CurrentPixKey == null || !CurrentPixKey.Validation.IsValid)
-            {
-                NavigateBack();
-                return;
-            }
+//            if(CurrentPixKey == null || !CurrentPixKey.Validation.IsValid)
+//            {
+//                NavigateBack();
+//                return;
+//            }
 
-            _statusBarService.SetStatusBarColor(CurrentPixKey.FinancialInstitution.Institution.MaterialColor.Primary);
-        }
+//            _statusBarService.SetStatusBarColor(CurrentPixKey.FinancialInstitution.Institution.MaterialColor.Primary);
+//        }
 
-        public ICommand EditKeyCommand => new Command(async () =>
-        {
-            await _pixKeyService.NavigateToEdit(CurrentPixKey);
-        });
+//        public ICommand EditKeyCommand => new Command(async () =>
+//        {
+//            await _pixKeyService.NavigateToEdit(CurrentPixKey);
+//        });
 
-        private PixKey _currentPixKey;
-        public PixKey CurrentPixKey
-        {
-            set => SetProperty(ref _currentPixKey, value);
-            get => _currentPixKey;
-        }
-    }
-}
+//        private PixKey _currentPixKey;
+//        public PixKey CurrentPixKey
+//        {
+//            set => SetProperty(ref _currentPixKey, value);
+//            get => _currentPixKey;
+//        }
+//    }
+//}
