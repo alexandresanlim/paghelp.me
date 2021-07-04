@@ -22,7 +22,7 @@ namespace PixQrCodeGeneratorOffline.Models.Services.Interfaces
 
         void ShareAllKeys();
 
-        Task<bool> RemoveAll();
+        Task<bool> RemoveAll(bool isContact = false);
 
         Task NavigateToEdit(PixKey pixKey, bool isContact = false);
 

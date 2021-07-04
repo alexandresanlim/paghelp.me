@@ -1,6 +1,7 @@
 ﻿using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models;
 using PixQrCodeGeneratorOffline.ViewModels.Base;
+using PixQrCodeGeneratorOffline.Views;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -24,6 +25,8 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public ICommand LoadDataCommand => new Command(async () => await LoadData());
 
+        public ICommand SettingsCommand => new Command(async () => await NavigateModalAsync(new OptionContactPage()));
+
         public async Task LoadData()
         {
             try
@@ -36,7 +39,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 PixKeyList = list?.OrderBy(x => x?.FinancialInstitution?.Name)?.ToObservableCollection() ?? new ObservableCollection<PixKey>();
 
-                //await LoadCurrentPixKey();
+                await LoadCurrentPixKey();
 
                 //if (!(PixKeyList.Count > 0))
                 //    DashboardWelcomenList = DashboardWelcome.GetList();

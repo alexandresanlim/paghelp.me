@@ -50,9 +50,10 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 CurrenKeyPlaceholder = CurrenKeyPlaceholderDefaultValue;
 
-                if (!IsEdit)
+                if (!IsEdit && !CurrentPixKey.IsContact)
                 {
-                    InputList[CurrentInputValues.Institution.Index].Placeholder = "Toque para selecionar";
+                    if (CurrentInputValues.Institution.Index > -1)
+                        InputList[CurrentInputValues.Institution.Index].Placeholder = "Toque para selecionar";
 
                     var firstKey = _pixKeyService.GetAll().LastOrDefault();
 
@@ -65,7 +66,9 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 else
                 {
-                    InputList[CurrentInputValues.Institution.Index].Placeholder = SelectedFinancialInstitution.Name;
+                    if (CurrentInputValues.Institution.Index > -1)
+                        InputList[CurrentInputValues.Institution.Index].Placeholder = SelectedFinancialInstitution.Name;
+
                     InputList[CurrentInputValues.Name.Index].Value = CurrentPixKey.Name;
                     InputList[CurrentInputValues.City.Index].Value = CurrentPixKey.City;
                     InputList[CurrentInputValues.Key.Index].Value = CurrentPixKey.Key;
@@ -91,7 +94,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         private async Task LoadInputList()
         {
-            InputList = AddPixInput.GetList();
+            InputList = AddPixInput.GetList(CurrentPixKey.IsContact);
             InputPhasesCount = InputList?.Count - 1 ?? 0;
         }
 
@@ -147,6 +150,9 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 //CurrentPixKey.RaiseCob();
 
                 await CurrentDashboard.LoadCurrentPixKey(CurrentPixKey);
+
+                if (CurrentPixKey.IsContact)
+                    App.LoadTheme();
 
                 DialogService.Toast("Chave salva com sucesso");
 

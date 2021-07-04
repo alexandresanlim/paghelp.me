@@ -4,6 +4,7 @@ using PixQrCodeGeneratorOffline.Models.Repository.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 
 namespace PixQrCodeGeneratorOffline.Models.Repository
@@ -24,6 +25,18 @@ namespace PixQrCodeGeneratorOffline.Models.Repository
             try
             {
                 return _pixCollection.FindAll().ToList();
+            }
+            catch (Exception e)
+            {
+                return new List<PixKey>();
+            }
+        }
+
+        public List<PixKey> GetAll(Expression<Func<PixKey, bool>> predicate)
+        {
+            try
+            {
+                return _pixCollection.Find(predicate).ToList();
             }
             catch (Exception e)
             {
@@ -84,6 +97,18 @@ namespace PixQrCodeGeneratorOffline.Models.Repository
             try
             {
                 return _pixCollection.Delete(item.Id);
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public bool RemoveAll(Expression<Func<PixKey, bool>> predicate)
+        {
+            try
+            {
+                return _pixCollection.DeleteMany(predicate) > 0;
             }
             catch (Exception)
             {

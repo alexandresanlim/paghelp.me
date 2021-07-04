@@ -34,43 +34,50 @@ namespace PixQrCodeGeneratorOffline.ViewModels.Helpers
 
         public bool IsInstitution => Type == AddPixInputType.Institution;
 
-        public static ObservableCollection<AddPixInput> GetList()
+        public static ObservableCollection<AddPixInput> GetList(bool isContact = false)
         {
-            return new ObservableCollection<AddPixInput>
+            var listReturn = new ObservableCollection<AddPixInput>();
+
+            if (!isContact)
             {
-                new AddPixInput
+                listReturn.Add(new AddPixInput
                 {
                     Type = AddPixInputType.Institution,
                     Title = "Instituição / Banco",
                     Icon = FontAwesomeSolid.University,
                     Placeholder = "Selecione a Instituição",
                     ReturnType = ReturnType.Next,
-                },
-                new AddPixInput
-                {
-                    Type = AddPixInputType.Key,
-                    Title = "Chave",
-                    Icon = FontAwesomeSolid.Key,
-                    Placeholder = "Digite a chave",
-                    ReturnType = ReturnType.Next,
-                },
-                new AddPixInput
-                {
-                    Type = AddPixInputType.Name,
-                    Title = "Nome",
-                    Icon = FontAwesomeSolid.User,
-                    Placeholder = "Digite o nome",
-                    ReturnType = ReturnType.Next,
-                },
-                new AddPixInput
-                {
-                    Type = AddPixInputType.City,
-                    Title = "Cidade",
-                    Icon = FontAwesomeSolid.MapMarkedAlt,
-                    Placeholder = "Digite a cidade (não obrigatório)",
-                    ReturnType = ReturnType.Done,
-                }
-            };
+                });
+            }
+
+            listReturn.Add(new AddPixInput
+            {
+                Type = AddPixInputType.Key,
+                Title = "Chave",
+                Icon = FontAwesomeSolid.Key,
+                Placeholder = "Digite a chave",
+                ReturnType = ReturnType.Next,
+            });
+
+            listReturn.Add(new AddPixInput
+            {
+                Type = AddPixInputType.Name,
+                Title = "Nome",
+                Icon = FontAwesomeSolid.User,
+                Placeholder = "Digite o nome",
+                ReturnType = ReturnType.Next,
+            });
+
+            listReturn.Add(new AddPixInput
+            {
+                Type = AddPixInputType.City,
+                Title = "Cidade",
+                Icon = FontAwesomeSolid.MapMarkedAlt,
+                Placeholder = "Digite a cidade (não obrigatório)",
+                ReturnType = ReturnType.Done,
+            });
+
+            return listReturn;
         }
     }
 

@@ -63,14 +63,14 @@ namespace PixQrCodeGeneratorOffline.Models.Services
 
         public void ShareAllKeys()
         {
-            var pisKeyList = GetAll();
+            var pixKeyList = _pixKeyRepository.GetAll(x => !x.IsContact);
 
-            if (!HasKeysValidated())
+            if (!HasKeysValidated(pixKeyList))
                 return;
 
             var info = "";
 
-            foreach (var item in pisKeyList)
+            foreach (var item in pixKeyList)
             {
                 info += item.Viewer.InstitutionAndKey + "\n";
             }
@@ -113,11 +113,11 @@ namespace PixQrCodeGeneratorOffline.Models.Services
             }
         }
 
-        public async Task<bool> RemoveAll()
+        public async Task<bool> RemoveAll(bool isContact = false)
         {
-            var pisKeyList = GetAll();
+            var pisKeyList = _pixKeyRepository.GetAll(x => x.IsContact == isContact);
 
-            if (!HasKeysValidated())
+            if (!HasKeysValidated(pisKeyList))
                 return false;
 
             var confirm = await DialogService.ConfirmAsync("Tem certeza que deseja excluir todas as " + pisKeyList.Count + " chaves?", "Confirmação", "Sim, tenho certeza", "Cancelar");
@@ -127,7 +127,7 @@ namespace PixQrCodeGeneratorOffline.Models.Services
 
             try
             {
-                var success = _pixKeyRepository.RemoveAll();
+                var success = _pixKeyRepository.RemoveAll(x => x.IsContact == isContact);
 
                 if (success)
                     DialogService.Toast("Todas as chaves foram removidas com sucesso!");
@@ -221,10 +221,8 @@ namespace PixQrCodeGeneratorOffline.Models.Services
         //    }
         //}
 
-        private bool HasKeysValidated()
+        private bool HasKeysValidated(List<PixKey> pisKeyList)
         {
-            var pisKeyList = GetAll();
-
             if (!(pisKeyList.Count > 0))
             {
                 DialogService.Toast("Nenhuma chave encontrada");

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Text;
 
 namespace PixQrCodeGeneratorOffline.Models.Repository.Interfaces
@@ -7,6 +8,8 @@ namespace PixQrCodeGeneratorOffline.Models.Repository.Interfaces
     public interface IPixKeyRepository
     {
         List<PixKey> GetAll();
+
+        List<PixKey> GetAll(Expression<Func<PixKey, bool>> predicate);
 
         PixKey FindById(int id);
 
@@ -19,5 +22,7 @@ namespace PixQrCodeGeneratorOffline.Models.Repository.Interfaces
         bool Remove(PixKey item);
 
         bool RemoveAll();
+
+        bool RemoveAll(Expression<Func<PixKey, bool>> predicate);
     }
 }
