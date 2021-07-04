@@ -40,9 +40,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 PixKeyList = list?.OrderBy(x => x?.FinancialInstitution?.Name).ToObservableCollection();
 
                 await LoadCurrentPixKey();
-
-                if (!(PixKeyList.Count > 0))
-                    DashboardWelcomenList = DashboardWelcome.GetList();
             }
             catch (System.Exception e)
             {
@@ -64,8 +61,11 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         public async Task LoadCurrentPixKey(PixKey pixKeySelected = null)
         {
             if (PixKeyList == null || !(PixKeyList.Count > 0))
+            {
+                DashboardWelcomenList = DashboardWelcome.GetList();
                 ShowWelcome = true;
-
+            }
+                
             else
             {
                 CurrentPixKey = pixKeySelected ?? PixKeyList.FirstOrDefault();

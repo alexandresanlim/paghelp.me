@@ -373,7 +373,7 @@
 
                                 <StackLayout VerticalOptions="CenterAndExpand" Spacing="30">
                                     <StackLayout VerticalOptions="Center" Spacing="15">
-                                        <controls:CustomIcon Glyph="{Binding Emoji}" Size="100" IconColor="{DynamicResource textOnSecondary}" />
+                                        <controls:CustomIcon Glyph="{Binding Emoji}" Size="100" IconColor="{DynamicResource textOnPrimary}" />
                                         <Label Text="{Binding Title}" HorizontalOptions="Center" FontSize="{DynamicResource FontSizeLarge}" FontFamily="{DynamicResource FontSemiBold}" TextColor="{DynamicResource textOnPrimary}"/>
 
                                     </StackLayout>
