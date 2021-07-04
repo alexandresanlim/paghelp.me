@@ -16,7 +16,7 @@ namespace PixQrCodeGeneratorOffline
 
         public static void LoadTheme(MaterialColor theme = null)
         {
-            var themeOrRandom = theme ?? MaterialColorService.GetRandom();
+            var themeOrRandom = theme ?? MaterialColorService.GetByCurrentDeviceTheme();
 
             MaterialColorService.SetOnCurrentResource(themeOrRandom);
 

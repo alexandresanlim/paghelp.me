@@ -1,4 +1,5 @@
-﻿using PixQrCodeGeneratorOffline.Extention;
+﻿using PixQrCodeGeneratorOffline.Base.ViewModels;
+using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.ViewModels.Helpers;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,7 @@ using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.ViewModels
 {
-    public class WelcomeViewModel : BaseViewModel
+    public class WelcomeViewModel : ViewModelBase
     {
         public WelcomeViewModel()
         {

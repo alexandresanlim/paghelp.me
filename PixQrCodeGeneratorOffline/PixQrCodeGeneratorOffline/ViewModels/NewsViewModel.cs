@@ -1,4 +1,5 @@
-﻿using PixQrCodeGeneratorOffline.Controls;
+﻿using PixQrCodeGeneratorOffline.Base.ViewModels;
+using PixQrCodeGeneratorOffline.Controls;
 using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models;
 using PixQrCodeGeneratorOffline.Services;
@@ -14,7 +15,7 @@ using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.ViewModels
 {
-    public class NewsViewModel : BaseViewModel
+    public class NewsViewModel : ViewModelBase
     {
         public async Task Navigating()
         {

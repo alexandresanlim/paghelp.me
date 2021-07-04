@@ -2,6 +2,7 @@
 using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models;
 using PixQrCodeGeneratorOffline.Services;
+using PixQrCodeGeneratorOffline.ViewModels.Base;
 using PixQrCodeGeneratorOffline.ViewModels.Helpers;
 using PixQrCodeGeneratorOffline.Views;
 using Plugin.Fingerprint;
@@ -16,7 +17,7 @@ using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.ViewModels
 {
-    public class DashboardViewModel : BaseViewModel
+    public class DashboardViewModel : DashboardViewModelBase
     {
         public DashboardViewModel()
         {
@@ -35,7 +36,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 await ReloadShowInList();
 
-                var list = _pixKeyService.GetAll();
+                var list = _pixKeyService.GetAll().Where(x => !x.IsContact);
 
                 PixKeyList = list?.OrderBy(x => x?.FinancialInstitution?.Name).ToObservableCollection();
 
@@ -56,21 +57,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
             ShowInList = false;
             ShowWelcome = false;
-        }
-
-        public async Task LoadCurrentPixKey(PixKey pixKeySelected = null)
-        {
-            if (PixKeyList == null || !(PixKeyList.Count > 0))
-            {
-                DashboardWelcomenList = DashboardWelcome.GetList();
-                ShowWelcome = true;
-            }
-                
-            else
-            {
-                CurrentPixKey = pixKeySelected ?? PixKeyList.FirstOrDefault();
-                ShowWelcome = false;
-            }
         }
 
         public ICommand AuthenticationCommand => new Command(async () =>
@@ -165,7 +151,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 if (ShowInList)
                 {
-
                     CurrentIconStyleList = FontAwesomeSolid.Th;
                 }
 
@@ -196,27 +181,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         }
 
         #region Props
-
-        private ObservableCollection<PixKey> _pixKeyList;
-        public ObservableCollection<PixKey> PixKeyList
-        {
-            set => SetProperty(ref _pixKeyList, value);
-            get => _pixKeyList;
-        }
-
-        private PixKey _currentPixKey;
-        public PixKey CurrentPixKey
-        {
-            set => SetProperty(ref _currentPixKey, value);
-            get => _currentPixKey;
-        }
-
-        private bool _showWelcome;
-        public bool ShowWelcome
-        {
-            set => SetProperty(ref _showWelcome, value);
-            get => _showWelcome;
-        }
 
         private bool _showInList;
         public bool ShowInList
@@ -251,13 +215,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         {
             set => SetProperty(ref _currentDashboardWelcome, value);
             get => _currentDashboardWelcome;
-        }
-
-        private ObservableCollection<DashboardWelcome> _dashboardWelcomenList;
-        public ObservableCollection<DashboardWelcome> DashboardWelcomenList
-        {
-            set => SetProperty(ref _dashboardWelcomenList, value);
-            get => _dashboardWelcomenList;
         }
 
         private DashboardWelcome LastWelcomeItem => DashboardWelcomenList?.LastOrDefault() ?? new DashboardWelcome();

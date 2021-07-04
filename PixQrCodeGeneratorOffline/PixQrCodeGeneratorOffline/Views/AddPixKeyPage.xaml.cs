@@ -15,14 +15,12 @@ namespace PixQrCodeGeneratorOffline.Views
     public partial class AddPixKeyPage : ContentPageWithNavBar
     {
         AddPixKeyViewModel _viewModel;
-        //DashboardViewModel _dashboardViewModel;
 
-        public AddPixKeyPage(Models.PixKey pixKey = null)
+        public AddPixKeyPage(Models.PixKey pixKey = null, bool isContact = false)
         {
             InitializeComponent();
 
-            //_dashboardViewModel = dbViewModel;
-            BindingContext = _viewModel = new AddPixKeyViewModel(pixKey);
+            BindingContext = _viewModel = new AddPixKeyViewModel(pixKey, isContact);
         }
 
         protected override bool OnBackButtonPressed()

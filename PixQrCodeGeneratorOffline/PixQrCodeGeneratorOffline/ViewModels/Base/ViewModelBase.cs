@@ -6,6 +6,7 @@ using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Services;
 using PixQrCodeGeneratorOffline.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Style.Interfaces;
+using PixQrCodeGeneratorOffline.ViewModels;
 using Plugin.Fingerprint;
 using Plugin.Fingerprint.Abstractions;
 using System;
@@ -17,9 +18,9 @@ using System.Windows.Input;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
-namespace PixQrCodeGeneratorOffline.ViewModels
+namespace PixQrCodeGeneratorOffline.Base.ViewModels
 {
-    public class BaseViewModel : INotifyPropertyChanged
+    public class ViewModelBase : INotifyPropertyChanged
     {
         protected readonly IFinancialInstitutionService _financialInstitutionService;
 
@@ -39,7 +40,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         protected readonly IFeedService _feedService;
 
-        public BaseViewModel()
+        public ViewModelBase()
         {
             _financialInstitutionService = DependencyService.Get<IFinancialInstitutionService>();
             _pixKeyService = DependencyService.Get<IPixKeyService>();
@@ -58,6 +59,8 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public static DashboardViewModel DashboardVM { get; set; }
 
+        public static DashboardContactViewModel DashboardContactVM { get; set; }
+
         private void Current_RequestedThemeChanged(object sender, AppThemeChangedEventArgs e)
         {
             ReloadAppColorIfShowInListStyle();
@@ -65,7 +68,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public void ReloadAppColorIfShowInListStyle()
         {
-            App.LoadTheme(_materialColorService.GetByCurrentDeviceTheme());
+            App.LoadTheme();
         }
 
         protected IUserDialogs DialogService => UserDialogs.Instance;

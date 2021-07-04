@@ -1,4 +1,5 @@
-﻿using PixQrCodeGeneratorOffline.Services;
+﻿using PixQrCodeGeneratorOffline.Base.ViewModels;
+using PixQrCodeGeneratorOffline.Services;
 using PixQrCodeGeneratorOffline.Views;
 using Plugin.Fingerprint;
 using System;
@@ -10,7 +11,7 @@ using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.ViewModels
 {
-    public class OptionViewModel : BaseViewModel
+    public class OptionViewModel : ViewModelBase
     {
         public ICommand OpenPreferencesOptionsCommand => new Command(async () => await NavigateAsync(new OptionPreferencePage()));
 

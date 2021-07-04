@@ -24,9 +24,9 @@ namespace PixQrCodeGeneratorOffline.Models.Services.Interfaces
 
         Task<bool> RemoveAll();
 
-        Task NavigateToEdit(PixKey pixKey);
+        Task NavigateToEdit(PixKey pixKey, bool isContact = false);
 
-        Task NavigateToAdd();
+        Task NavigateToAdd(bool isContact = false);
 
         //Task NavigateToAction(PixKey pixKey);
     }

@@ -1,5 +1,6 @@
 ﻿using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models;
+using PixQrCodeGeneratorOffline.ViewModels.Base;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -11,12 +12,14 @@ using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.ViewModels
 {
-    public class DashboardContactViewModel : BaseViewModel
+    public class DashboardContactViewModel : DashboardViewModelBase
     {
 
         public DashboardContactViewModel()
         {
             LoadDataCommand.Execute(null);
+
+            DashboardContactVM = this;
         }
 
         public ICommand LoadDataCommand => new Command(async () => await LoadData());
@@ -29,9 +32,9 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 //await ReloadShowInList();
 
-                var list = _pixKeyService.GetAll();
+                var list = _pixKeyService?.GetAll()?.Where(x => x.IsContact);
 
-                PixKeyList = list?.OrderBy(x => x?.FinancialInstitution?.Name).ToObservableCollection();
+                PixKeyList = list?.OrderBy(x => x?.FinancialInstitution?.Name)?.ToObservableCollection() ?? new ObservableCollection<PixKey>();
 
                 //await LoadCurrentPixKey();
 
@@ -49,26 +52,26 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         #region DashboardVMDependency
 
-        public ICommand NavigateToAddNewKeyPageCommand => new Command(async () => await _pixKeyService.NavigateToAdd());
+        public ICommand NavigateToAddNewKeyPageCommand => new Command(async () => await _pixKeyService.NavigateToAdd(isContact: true));
 
-        public ICommand EditKeyCommand => new Command(async () => await _pixKeyService.NavigateToEdit(CurrentPixKey));
+        public Command<PixKey> EditKeyCommand => new Command<PixKey>(async (key) => await _pixKeyService.NavigateToEdit(key, isContact: true));
 
         //public Command<PixKey> OpenOptionsKeyCommand => new Command<PixKey>(async (key) => await _pixKeyService.NavigateToAction(key));
 
         #endregion
 
-        private ObservableCollection<PixKey> _pixKeyList;
-        public ObservableCollection<PixKey> PixKeyList
-        {
-            set => SetProperty(ref _pixKeyList, value);
-            get => _pixKeyList;
-        }
+        //private ObservableCollection<PixKey> _pixKeyList;
+        //public ObservableCollection<PixKey> PixKeyList
+        //{
+        //    set => SetProperty(ref _pixKeyList, value);
+        //    get => _pixKeyList;
+        //}
 
-        private PixKey _currentPixKey;
-        public PixKey CurrentPixKey
-        {
-            set => SetProperty(ref _currentPixKey, value);
-            get => _currentPixKey;
-        }
+        //private PixKey _currentPixKey;
+        //public PixKey CurrentPixKey
+        //{
+        //    set => SetProperty(ref _currentPixKey, value);
+        //    get => _currentPixKey;
+        //}
     }
 }

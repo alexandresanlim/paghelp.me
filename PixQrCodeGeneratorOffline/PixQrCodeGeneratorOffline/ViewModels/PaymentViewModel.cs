@@ -1,4 +1,5 @@
-﻿using PixQrCodeGeneratorOffline.Extention;
+﻿using PixQrCodeGeneratorOffline.Base.ViewModels;
+using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models;
 using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
 using System;
@@ -9,7 +10,7 @@ using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.ViewModels
 {
-    public class PaymentViewModel : BaseViewModel
+    public class PaymentViewModel : ViewModelBase
     {
         public Command<PixPayload> LoadDataCommand => new Command<PixPayload>((pixPaylod) =>
         {

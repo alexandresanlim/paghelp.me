@@ -149,7 +149,7 @@ namespace PixQrCodeGeneratorOffline.Models.Services
             }
         }
 
-        public async Task NavigateToEdit(PixKey pixKey)
+        public async Task NavigateToEdit(PixKey pixKey, bool isContact = false)
         {
             if (!pixKey.Validation.IsValid)
                 return;
@@ -160,7 +160,7 @@ namespace PixQrCodeGeneratorOffline.Models.Services
 
                 await Task.Delay(500);
 
-                await Shell.Current.Navigation.PushModalAsync(new AddPixKeyPage(pixKey));
+                await Shell.Current.Navigation.PushModalAsync(new AddPixKeyPage(pixKey, isContact));
             }
             catch (System.Exception e)
             {
@@ -174,7 +174,7 @@ namespace PixQrCodeGeneratorOffline.Models.Services
             }
         }
 
-        public async Task NavigateToAdd()
+        public async Task NavigateToAdd(bool isContact = false)
         {
             try
             {
@@ -182,7 +182,7 @@ namespace PixQrCodeGeneratorOffline.Models.Services
 
                 await Task.Delay(500);
 
-                await Shell.Current.Navigation.PushModalAsync(new AddPixKeyPage());
+                await Shell.Current.Navigation.PushModalAsync(new AddPixKeyPage(null, isContact));
             }
             catch (System.Exception e)
             {

@@ -1,11 +1,12 @@
-﻿using PixQrCodeGeneratorOffline.Services;
+﻿using PixQrCodeGeneratorOffline.Base.ViewModels;
+using PixQrCodeGeneratorOffline.Services;
 using System.Collections.Generic;
 using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.ViewModels
 {
-    public class OptionPreferenceViewModel : BaseViewModel
+    public class OptionPreferenceViewModel : ViewModelBase
     {
         public ICommand OptionStyleListCommand => new Command(() =>
         {

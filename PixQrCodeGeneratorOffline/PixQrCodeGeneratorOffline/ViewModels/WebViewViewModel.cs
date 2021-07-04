@@ -1,10 +1,11 @@
-﻿using System;
+﻿using PixQrCodeGeneratorOffline.Base.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace PixQrCodeGeneratorOffline.ViewModels
 {
-    public class WebViewViewModel : BaseViewModel
+    public class WebViewViewModel : ViewModelBase
     {
         public WebViewViewModel(Uri uri)
         {

@@ -94,12 +94,10 @@
                                         <!--</StackLayout>-->
 
                                         <StackLayout Grid.Column="1" Spacing="0" VerticalOptions="Center">
-
-                                            <controls:CustomLabel Text="{Binding Viewer.InstitutionPresentation}" TextColor="{Binding FinancialInstitution.Institution.MaterialColor.TextOnPrimary}" FontAttributes="Bold" FontSize="{StaticResource FontSizeMedium}" />
-                                            <controls:CustomLabel Text="{Binding Viewer.NamePresentation, StringFormat='Nome: {0}'}" TextColor="{Binding FinancialInstitution.Institution.MaterialColor.TextOnPrimary}"  />
-                                            <controls:CustomLabel Text="{Binding Viewer.KeyPresentation}" TextColor="{Binding FinancialInstitution.Institution.MaterialColor.TextOnPrimary}" MaxLines="1" LineBreakMode="MiddleTruncation" />
-
-                                        </StackLayout>
+                                            <controls:CustomLabel Text="{Binding Viewer.NamePresentation}" TextColor="{Binding FinancialInstitution.Institution.MaterialColor.TextOnPrimary}" FontAttributes="Bold" FontSize="{StaticResource FontSizeMedium}"  />
+                                            <controls:CustomLabel Text="{Binding Viewer.InstitutionPresentation}" TextColor="{Binding FinancialInstitution.Institution.MaterialColor.TextOnPrimary}" />
+                                        <controls:CustomLabel Text="{Binding Viewer.KeyPresentation}" TextColor="{Binding FinancialInstitution.Institution.MaterialColor.TextOnPrimary}" MaxLines="1" LineBreakMode="MiddleTruncation" />
+                                    </StackLayout>
 
                                         <!--<controls:CustomIcon Grid.Column="2" Glyph="{x:Static icons:FontAwesomeSolid.ChevronRight }" IconColor="{Binding FinancialInstitution.Institution.MaterialColor.TextOnPrimary}" IconSize="Title" HorizontalOptions="Center" Margin="0,0,10,0" />-->
                                     </Grid>
@@ -107,7 +105,7 @@
                                     <Grid ColumnDefinitions="*,*,*">
                                     <Frame Grid.Column="0" Style="{DynamicResource styleButtonActionList}">
                                         <Frame.GestureRecognizers>
-                                            <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:DashboardViewModel}}, Path=EditKeyCommand}" />
+                                            <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:DashboardContactViewModel}}, Path=EditKeyCommand}" CommandParameter="{Binding .}" />
                                         </Frame.GestureRecognizers>
                                         <StackLayout>
                                             <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Edit }" Style="{DynamicResource styleIconActionList}" />

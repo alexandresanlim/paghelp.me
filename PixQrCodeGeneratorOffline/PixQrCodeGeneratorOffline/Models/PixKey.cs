@@ -53,7 +53,7 @@ namespace PixQrCodeGeneratorOffline.Models
 
         public bool IsFavorite { get; set; }
 
-        public bool IsFromContact { get; set; }
+        public bool IsContact { get; set; }
 
         public FinancialInstitution FinancialInstitution { get; set; }
 
