@@ -344,6 +344,9 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         {
             if (!CurrentPixKey.IsContact)
                 DashboardVM.SetStatusFromCurrentPixColor();
+
+            else
+                App.LoadTheme();
         }
 
         private bool _isEdit;
