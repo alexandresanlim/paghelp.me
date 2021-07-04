@@ -36,9 +36,9 @@ namespace PixQrCodeGeneratorOffline.Models.Services
             return !string.IsNullOrWhiteSpace(pixKey?.Key);
         }
 
-        public List<PixKey> GetAll()
+        public List<PixKey> GetAll(bool isContact = false)
         {
-            return _pixKeyRepository.GetAll();
+            return _pixKeyRepository.GetAll(x => x.IsContact == isContact);
         }
 
         public PixKey GetById(int id)

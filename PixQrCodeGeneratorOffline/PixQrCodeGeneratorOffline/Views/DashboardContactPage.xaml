@@ -6,7 +6,9 @@
              xmlns:qr="clr-namespace:Xam.Forms;assembly=Xam.Forms.QRCode"
              xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels" 
              Shell.NavBarIsVisible="False"
-             x:Class="PixQrCodeGeneratorOffline.Views.DashboardContactPage">
+             x:Class="PixQrCodeGeneratorOffline.Views.DashboardContactPage"
+             BackgroundColor="{DynamicResource background_page}"
+             >
 
     <ContentPage.Resources>
         <Style x:Key="styleTextOnButtonActionList" TargetType="Label">
@@ -40,24 +42,24 @@
             <Grid RowDefinitions="*, auto" RowSpacing="0" IsVisible="{Binding ShowWelcome, Converter={StaticResource InvertedBooleanConverter}}">
 
 
-                <StackLayout Grid.Row="0" VerticalOptions="FillAndExpand" Spacing="0">
-                    <!--<StackLayout Padding="15" BackgroundColor="{DynamicResource primary}">
-                            <controls:CustomLabel Text="Minhas Chaves" FontSize="Title" FontAttributes="Bold" TextColor="{DynamicResource textOnPrimary}" />
-                        </StackLayout>-->
-                    <controls:CustomCollectionView ItemsSource="{Binding PixKeyList}" x:Name="collectionKeysList">
-                        <controls:CustomCollectionView.ItemTemplate>
-                            <DataTemplate>
+                <controls:CustomCollectionView Grid.Row="0" ItemsSource="{Binding PixKeyList}" x:Name="collectionKeysList">
+                    <controls:CustomCollectionView.ItemsLayout>
+                        <LinearItemsLayout Orientation="Vertical" ItemSpacing="10"/>
+                    </controls:CustomCollectionView.ItemsLayout>
+                    
+                    <controls:CustomCollectionView.ItemTemplate>
+                        <DataTemplate>
 
-                                <StackLayout BackgroundColor="{Binding FinancialInstitution.Institution.MaterialColor.Primary}" Padding="10,15,10,10" Spacing="15">
-
-
-                                    <Grid ColumnDefinitions="auto,*,auto" ColumnSpacing="15">
+                            <StackLayout BackgroundColor="{DynamicResource foreground_page}" Padding="10,15,10,10" Spacing="15">
 
 
-                                        <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.UserCircle }" Grid.Column="0" Size="50" IconColor="{DynamicResource textOnSecondary}" VerticalOptions="Start" />
+                                <Grid ColumnDefinitions="auto,*,auto" ColumnSpacing="15">
 
-                                        <!--<StackLayout BackgroundColor="{Binding FinancialInstitution.Institution.MaterialColor.PrimaryDark}" Grid.Column="0" Padding="15">-->
-                                        <!--<qr:QRCode
+
+                                    <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.UserCircle }" Grid.Column="0" Size="50" IconColor="{DynamicResource textOnSecondary}" VerticalOptions="Start" />
+
+                                    <!--<StackLayout BackgroundColor="{Binding FinancialInstitution.Institution.MaterialColor.PrimaryDark}" Grid.Column="0" Padding="15">-->
+                                    <!--<qr:QRCode
                                                         Grid.Column="0"
                                                         Content="{Binding Payload.QrCode}"
                                                         BackgroundColor="White"
@@ -73,44 +75,44 @@
                                             </qr:QRCode.GestureRecognizers>
 
                                         </qr:QRCode>-->
-                                        <!--</StackLayout>-->
+                                    <!--</StackLayout>-->
 
-                                        <StackLayout Grid.Column="1" Spacing="0" VerticalOptions="Center">
-                                            <controls:CustomLabel Text="{Binding Viewer.NamePresentation}" TextColor="{Binding FinancialInstitution.Institution.MaterialColor.TextOnPrimary}" FontAttributes="Bold" FontSize="{StaticResource FontSizeMedium}"  />
-                                            <controls:CustomLabel Text="{Binding Viewer.KeyPresentation}" TextColor="{Binding FinancialInstitution.Institution.MaterialColor.TextOnPrimary}" MaxLines="1" LineBreakMode="MiddleTruncation" />
+                                    <StackLayout Grid.Column="1" Spacing="0" VerticalOptions="Center">
+                                        <controls:CustomLabel Text="{Binding Viewer.NamePresentation}" TextColor="{Binding FinancialInstitution.Institution.MaterialColor.TextOnPrimary}" FontAttributes="Bold" FontSize="{StaticResource FontSizeMedium}"  />
+                                        <controls:CustomLabel Text="{Binding Viewer.KeyPresentation}" TextColor="{Binding FinancialInstitution.Institution.MaterialColor.TextOnPrimary}" MaxLines="1" LineBreakMode="MiddleTruncation" />
+                                    </StackLayout>
+
+                                    <StackLayout Grid.Column="2" Padding="30,5,0,15" VerticalOptions="Start">
+                                        <StackLayout.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:DashboardContactViewModel}}, Path=EditKeyCommand}" CommandParameter="{Binding .}" />
+                                        </StackLayout.GestureRecognizers>
+                                        <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Edit }" IconColor="{Binding FinancialInstitution.Institution.MaterialColor.TextOnPrimary}"/>
+                                        <Label Text="Editar" Style="{DynamicResource styleTextOnButtonActionList}" TextColor="{Binding FinancialInstitution.Institution.MaterialColor.TextOnPrimary}"/>
+                                    </StackLayout>
+
+                                    <!--<controls:CustomIcon Grid.Column="2" Glyph="{x:Static icons:FontAwesomeSolid.ChevronRight }" IconColor="{Binding FinancialInstitution.Institution.MaterialColor.TextOnPrimary}" IconSize="Title" HorizontalOptions="Center" Margin="0,0,10,0" />-->
+                                </Grid>
+
+                                <Grid ColumnDefinitions="*,*">
+                                    <Frame Grid.Column="0" Style="{DynamicResource styleButtonActionList}">
+                                        <Frame.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding Command.NavigateToPaymentPageCommand}" />
+                                        </Frame.GestureRecognizers>
+                                        <StackLayout>
+                                            <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Qrcode }" Style="{DynamicResource styleIconActionList}" />
+                                            <Label Text="Qr Code" Style="{DynamicResource styleTextOnButtonActionList}"/>
                                         </StackLayout>
-
-                                        <StackLayout Grid.Column="2" Padding="30,5,0,15" VerticalOptions="Start">
-                                            <StackLayout.GestureRecognizers>
-                                                <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:DashboardContactViewModel}}, Path=EditKeyCommand}" CommandParameter="{Binding .}" />
-                                            </StackLayout.GestureRecognizers>
-                                            <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Edit }" IconColor="{Binding FinancialInstitution.Institution.MaterialColor.TextOnPrimary}"/>
-                                            <Label Text="Editar" Style="{DynamicResource styleTextOnButtonActionList}" TextColor="{Binding FinancialInstitution.Institution.MaterialColor.TextOnPrimary}"/>
+                                    </Frame>
+                                    <Frame Grid.Column="1" Style="{DynamicResource styleButtonActionList}">
+                                        <Frame.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding Command.CopyKeyCommand}" />
+                                        </Frame.GestureRecognizers>
+                                        <StackLayout>
+                                            <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Copy }" Style="{DynamicResource styleIconActionList}" />
+                                            <Label Text="Copiar" Style="{DynamicResource styleTextOnButtonActionList}"/>
                                         </StackLayout>
-
-                                        <!--<controls:CustomIcon Grid.Column="2" Glyph="{x:Static icons:FontAwesomeSolid.ChevronRight }" IconColor="{Binding FinancialInstitution.Institution.MaterialColor.TextOnPrimary}" IconSize="Title" HorizontalOptions="Center" Margin="0,0,10,0" />-->
-                                    </Grid>
-
-                                    <Grid ColumnDefinitions="*,*">
-                                        <Frame Grid.Column="0" Style="{DynamicResource styleButtonActionList}">
-                                            <Frame.GestureRecognizers>
-                                                <TapGestureRecognizer Command="{Binding Command.NavigateToPaymentPageCommand}" />
-                                            </Frame.GestureRecognizers>
-                                            <StackLayout>
-                                                <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Qrcode }" Style="{DynamicResource styleIconActionList}" />
-                                                <Label Text="Qr Code" Style="{DynamicResource styleTextOnButtonActionList}"/>
-                                            </StackLayout>
-                                        </Frame>
-                                        <Frame Grid.Column="1" Style="{DynamicResource styleButtonActionList}">
-                                            <Frame.GestureRecognizers>
-                                                <TapGestureRecognizer Command="{Binding Command.CopyKeyCommand}" />
-                                            </Frame.GestureRecognizers>
-                                            <StackLayout>
-                                                <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Copy }" Style="{DynamicResource styleIconActionList}" />
-                                                <Label Text="Copiar" Style="{DynamicResource styleTextOnButtonActionList}"/>
-                                            </StackLayout>
-                                        </Frame>
-                                        <!--<Frame Grid.Column="2" Style="{DynamicResource styleButtonActionList}">
+                                    </Frame>
+                                    <!--<Frame Grid.Column="2" Style="{DynamicResource styleButtonActionList}">
                                             <Frame.GestureRecognizers>
                                                 <TapGestureRecognizer Command="{Binding Command.ShareKeyCommand}" />
                                             </Frame.GestureRecognizers>
@@ -119,16 +121,15 @@
                                                 <Label Text="Compartilhar" Style="{DynamicResource styleTextOnButtonActionList}"/>
                                             </StackLayout>
                                         </Frame>-->
-                                    </Grid>
-                                </StackLayout>
-                                <!--</StackLayout>-->
-                                <!--</SwipeView>-->
+                                </Grid>
+                            </StackLayout>
+                            <!--</StackLayout>-->
+                            <!--</SwipeView>-->
 
 
-                            </DataTemplate>
-                        </controls:CustomCollectionView.ItemTemplate>
-                    </controls:CustomCollectionView>
-                </StackLayout>
+                        </DataTemplate>
+                    </controls:CustomCollectionView.ItemTemplate>
+                </controls:CustomCollectionView>
 
 
 

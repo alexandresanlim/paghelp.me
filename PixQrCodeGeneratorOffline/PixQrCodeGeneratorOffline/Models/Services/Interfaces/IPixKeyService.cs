@@ -10,7 +10,7 @@ namespace PixQrCodeGeneratorOffline.Models.Services.Interfaces
     {
         bool IsValid(PixKey pixKey);
 
-        List<PixKey> GetAll();
+        List<PixKey> GetAll(bool isContact = false);
 
         PixKey GetById(int id);
 

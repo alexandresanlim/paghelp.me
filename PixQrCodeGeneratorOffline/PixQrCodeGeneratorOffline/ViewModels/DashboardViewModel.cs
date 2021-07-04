@@ -36,7 +36,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 await ReloadShowInList();
 
-                var list = _pixKeyService.GetAll().Where(x => !x.IsContact);
+                var list = _pixKeyService.GetAll();
 
                 PixKeyList = list?.OrderBy(x => x?.FinancialInstitution?.Name).ToObservableCollection();
 
