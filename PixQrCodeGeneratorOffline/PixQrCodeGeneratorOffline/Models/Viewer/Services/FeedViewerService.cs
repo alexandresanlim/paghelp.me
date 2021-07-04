@@ -33,8 +33,11 @@ namespace PixQrCodeGeneratorOffline.Models.Services.Viewer
                 else if (feed.Validation.IsToday)
                     return "Hoje ás " + feed.PublishDateLocal.Value.ToString("HH tt");
 
-                else
+                else if (feed.Validation.IsYesterday)
                     return "Ontem ás " + feed.PublishDateLocal.Value.ToString("HH tt");
+
+                else
+                    return feed.PublishDateLocal.Value.ToString("dd/MMM") + " " + feed.PublishDateLocal.Value.ToString("HH tt");
             }
         }
 

@@ -96,15 +96,6 @@
                                 <Grid ColumnDefinitions="*,*">
                                     <Frame Grid.Column="0" Style="{DynamicResource styleButtonActionList}">
                                         <Frame.GestureRecognizers>
-                                            <TapGestureRecognizer Command="{Binding Command.NavigateToPaymentPageCommand}" />
-                                        </Frame.GestureRecognizers>
-                                        <StackLayout>
-                                            <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Qrcode }" Style="{DynamicResource styleIconActionList}" />
-                                            <Label Text="Qr Code" Style="{DynamicResource styleTextOnButtonActionList}"/>
-                                        </StackLayout>
-                                    </Frame>
-                                    <Frame Grid.Column="1" Style="{DynamicResource styleButtonActionList}">
-                                        <Frame.GestureRecognizers>
                                             <TapGestureRecognizer Command="{Binding Command.CopyKeyCommand}" />
                                         </Frame.GestureRecognizers>
                                         <StackLayout>
@@ -112,6 +103,17 @@
                                             <Label Text="Copiar" Style="{DynamicResource styleTextOnButtonActionList}"/>
                                         </StackLayout>
                                     </Frame>
+                                    
+                                    <Frame Grid.Column="1" Style="{DynamicResource styleButtonActionList}">
+                                        <Frame.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding Command.NavigateToPaymentPageCommand}" />
+                                        </Frame.GestureRecognizers>
+                                        <StackLayout>
+                                            <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Qrcode }" Style="{DynamicResource styleIconActionList}" />
+                                            <Label Text="Qr Code" Style="{DynamicResource styleTextOnButtonActionList}"/>
+                                        </StackLayout>
+                                    </Frame>
+                                    
                                     <!--<Frame Grid.Column="2" Style="{DynamicResource styleButtonActionList}">
                                             <Frame.GestureRecognizers>
                                                 <TapGestureRecognizer Command="{Binding Command.ShareKeyCommand}" />

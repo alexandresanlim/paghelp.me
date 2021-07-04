@@ -8,7 +8,7 @@
             SelectedTabColor="{DynamicResource textOnSecondary}"
             UnselectedTabColor="#95a5a6"
             BackgroundColor="{DynamicResource primary}"
-             CurrentPageChanged="TabbedPage_CurrentPageChanged"
+            CurrentPageChanged="TabbedPage_CurrentPageChanged"
             >
   <!--Pages can be added as references or inline-->
   <!--<ContentPage Title="Tab 1" />

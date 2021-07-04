@@ -12,7 +12,8 @@ namespace PixQrCodeGeneratorOffline.Models.Validation.Services
             return new FeedValidation
             {
                 IsValid = GetIsValid(feed),
-                IsToday = GetIsToday(feed)
+                IsToday = GetIsToday(feed),
+                IsYesterday = GetIsYesterday(feed)
             };
         }
 
@@ -24,6 +25,11 @@ namespace PixQrCodeGeneratorOffline.Models.Validation.Services
         private bool GetIsToday(Feed feed)
         {
             return GetIsValid(feed) && feed.PublishDateLocal.HasValue && DateTimeOffset.Now.Date.Equals(feed.PublishDateLocal.Value.Date);
+        }
+
+        private bool GetIsYesterday(Feed feed)
+        {
+            return GetIsValid(feed) && feed.PublishDateLocal.HasValue && DateTimeOffset.Now.Date.AddDays(-1).Equals(feed.PublishDateLocal.Value.Date);
         }
     }
 }
