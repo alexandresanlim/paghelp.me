@@ -161,7 +161,7 @@ namespace PixQrCodeGeneratorOffline.Base.ViewModels
             set => SetProperty(ref _showAds, value);
         }
 
-        bool isBusy = false;
+        bool isBusy = true;
         public bool IsBusy
         {
             get { return isBusy; }

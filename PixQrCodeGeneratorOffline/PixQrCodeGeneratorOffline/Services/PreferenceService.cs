@@ -43,8 +43,6 @@ namespace PixQrCodeGeneratorOffline.Services
             {
                 Preference.ShowInList = !Preference.ShowInList;
 
-                DialogService.Toast("Preferência de exibição, salva com sucesso!");
-
                 _eventService.SendEvent($"Mudou estilo da exibição da lista, {nameof(Preference.ShowInList)} : {Preference.ShowInList}", EventType.PREFERENCE);
             }
             catch (Exception e)
