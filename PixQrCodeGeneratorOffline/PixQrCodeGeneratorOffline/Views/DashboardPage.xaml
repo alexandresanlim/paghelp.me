@@ -340,17 +340,16 @@
 
             </Grid>
 
-            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="{DynamicResource primary}" IsVisible="{Binding IsVisibleFingerPrint}">
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="{DynamicResource background_page}" IsVisible="{Binding IsVisibleFingerPrint}">
                 <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Padding="10,0">
-                    <controls:CustomIcon Grid.Column="1" Glyph="{x:Static icons:FontAwesomeSolid.EyeSlash }" IconColor="{DynamicResource textOnPrimary}" Size="50" HorizontalOptions="Center"/>
+                    <controls:CustomIcon Grid.Column="1" Glyph="{x:Static icons:FontAwesomeSolid.EyeSlash }" IconColor="{DynamicResource textPrimary}" Size="50" HorizontalOptions="Center"/>
 
-                    <controls:CustomLabel Text="Autenticar para continuar" TextColor="{DynamicResource textOnPrimary}" FontSize="{StaticResource FontSizeMedium}" FontAttributes="Bold" HorizontalOptions="Center"/>
-                    <controls:CustomLabel Text="é preciso autenticar para ver suas chaves" TextColor="{DynamicResource textOnPrimary}" FontSize="{StaticResource FontSizeSmall}" HorizontalOptions="Center"/>
+                    <controls:CustomLabel Text="Autenticar para continuar" TextColor="{DynamicResource textPrimary}" FontSize="{StaticResource FontSizeMedium}" FontAttributes="Bold" HorizontalOptions="Center"/>
+                    <controls:CustomLabel Text="é preciso autenticar para ver suas chaves" TextColor="{DynamicResource textPrimary}" FontSize="{StaticResource FontSizeSmall}" HorizontalOptions="Center"/>
 
                     <controls:CustomFrameButton TextButton="Autenticar Agora" TapButtonCommand="{Binding AuthenticationCommand}" Margin="0,15,0,0"/>
                 </StackLayout>
             </StackLayout>
-
 
             <Grid RowDefinitions="*,auto" IsVisible="{Binding ShowWelcome}">
 
@@ -434,6 +433,10 @@
                     </Grid>
                 </StackLayout>
             </Grid>
+
+            <StackLayout BackgroundColor="{DynamicResource background_page}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" IsVisible="{Binding IsBusy}">
+                <ActivityIndicator Color="{DynamicResource staticAccentPrimary}" VerticalOptions="CenterAndExpand" IsRunning="True"/>
+            </StackLayout>
 
         </Grid>
 

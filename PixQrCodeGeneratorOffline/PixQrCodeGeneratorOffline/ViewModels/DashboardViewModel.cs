@@ -32,6 +32,10 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         {
             try
             {
+                IsBusy = true;
+
+                await Task.Delay(1000);
+
                 await ResetProps();
 
                 await ReloadShowInList();
@@ -48,6 +52,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
             finally
             {
+                IsBusy = false;
             }
         }
 
@@ -141,7 +146,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         {
             try
             {
-                SetIsLoading(true, "Aguarde...");
+                IsBusy = true;
 
                 await Task.Delay(500);
 
@@ -168,7 +173,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             {
                 _eventService.SendEvent("Estilo da dashboard para lista: " + ShowInList, EventType.PREFERENCE);
 
-                SetIsLoading(false);
+                IsBusy = false;
             }
         }
 

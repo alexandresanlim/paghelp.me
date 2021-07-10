@@ -81,6 +81,10 @@
             <Setter Property="IsScrollAnimated" Value="True"/>
         </Style>
 
+        <Style TargetType="ActivityIndicator">
+            <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+            <Setter Property="IsRunning" Value="True"/>
+        </Style>
 
         <ResourceDictionary>
 
