@@ -32,27 +32,9 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         });
 
-        public ICommand OptionFingerPrintCommand => new Command(() =>
-        {
-            var options = new List<Acr.UserDialogs.ActionSheetOption>
-            {
-                new Acr.UserDialogs.ActionSheetOption((Preference.FingerPrint ? "Remover" : "Adicionar") + " autenticação biométrica", async () =>
-                {
-                    await _preferenceService.ChangeFingerPrint();
-                })
-            };
+        public ICommand OptionFingerPrintCommand => new Command(async () => await _preferenceService.ChangeFingerPrint());
 
-            DialogService.ActionSheet(new Acr.UserDialogs.ActionSheetConfig
-            {
-                Title = "Proteção por biometria",
-                Options = options,
-                Cancel = new Acr.UserDialogs.ActionSheetOption("Cancelar", () =>
-                {
-                    return;
-                })
-            });
-
-        });
+        public ICommand OptionPDVCommand => new Command(async () => await _preferenceService.ChangePDVMode());
 
         //private List<PixKey> CurrentPixKeyList { get; set; }
     }

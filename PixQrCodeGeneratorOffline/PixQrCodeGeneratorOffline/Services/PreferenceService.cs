@@ -47,14 +47,60 @@ namespace PixQrCodeGeneratorOffline.Services
                 return;
             }
 
-            var confirmMsg = "Tem certeza que deseja " + (Preference.FingerPrint ? "remover" : "adicionar") + " autenticação biométrica? Na próxima vez que você entrar, " + (Preference.FingerPrint ? "não será" : "será") + " necessário se autenticar para realizar quaisquer ações.";
+            var options = new List<ActionSheetOption>
+            {
+                new ActionSheetOption((Preference.FingerPrint ? "Remover" : "Adicionar") + " autenticação biométrica", async () =>
+                {
+                     var confirmMsg = "Tem certeza que deseja " + (Preference.FingerPrint ? "remover" : "adicionar") + " autenticação biométrica? Na próxima vez que você entrar, " + (Preference.FingerPrint ? "não será" : "será") + " necessário se autenticar para realizar quaisquer ações.";
 
-            if (!await DialogService.ConfirmAsync(confirmMsg, "Confirmação", "Confirmar", "Cancelar"))
-                return;
+                    if (!await DialogService.ConfirmAsync(confirmMsg, "Confirmação", "Confirmar", "Cancelar"))
+                        return;
 
-            Preference.FingerPrint = !Preference.FingerPrint;
+                    Preference.FingerPrint = !Preference.FingerPrint;
 
-            DialogService.Toast("Preferência de entrada, salva com sucesso!");
+                    DialogService.Toast("Preferência de entrada, salva com sucesso!");
+
+                })
+            };
+
+            DialogService.ActionSheet(new ActionSheetConfig
+            {
+                Title = "Proteção por biometria",
+                Options = options,
+                Cancel = new ActionSheetOption("Cancelar", () =>
+                {
+                    return;
+                })
+            });
+        }
+
+        public async Task ChangePDVMode()
+        {
+            var options = new List<ActionSheetOption>
+            {
+                new ActionSheetOption((Preference.IsPDVMode ? "Desativar" : "Ativar") + " modo PDV", async () =>
+                {
+                     var confirmMsg = "Tem certeza que deseja " + (Preference.IsPDVMode ? "desativar" : "ativar") + " o modo PDV? Na próxima vez que você entrar, o app " + (Preference.IsPDVMode ? "não será" : "será") + " aberto em tela cheia e se manterá ligada.";
+
+                    if (!await DialogService.ConfirmAsync(confirmMsg, "Confirmação", "Sim", "Cancelar"))
+                        return;
+
+                    Preference.IsPDVMode = !Preference.IsPDVMode;
+
+                    DialogService.Toast("Preferência do modo PDV, salvo com sucesso!");
+
+                })
+            };
+
+            DialogService.ActionSheet(new ActionSheetConfig
+            {
+                Title = "Modo PDV",
+                Options = options,
+                Cancel = new ActionSheetOption("Cancelar", () =>
+                {
+                    return;
+                })
+            });
         }
     }
 }

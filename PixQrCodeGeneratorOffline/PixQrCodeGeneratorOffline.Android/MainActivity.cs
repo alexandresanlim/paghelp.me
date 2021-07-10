@@ -23,7 +23,7 @@ namespace PixQrCodeGeneratorOffline.Droid
     [Activity]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
-        public static Window CurrentWindow { get; set; }
+        private static Window CurrentWindow { get; set; }
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -32,6 +32,17 @@ namespace PixQrCodeGeneratorOffline.Droid
 
             base.OnCreate(savedInstanceState);
 
+            StartPackages(savedInstanceState);
+
+            CurrentWindow = (this).Window;
+
+            StartAndroidDependency();
+
+            LoadApplication(new App());
+        }
+
+        private void StartPackages(Bundle savedInstanceState)
+        {
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             Acr.UserDialogs.UserDialogs.Init(this);
@@ -42,11 +53,12 @@ namespace PixQrCodeGeneratorOffline.Droid
             //PlatformGestureEffect.Init();
             //Lottie.Forms.Droid.AnimationViewRenderer.Init();
             AppCenter.Start("18439db5-b775-4a96-bb6f-6c4612d3daab", typeof(Analytics), typeof(Crashes));
+        }
 
-            CurrentWindow = (this).Window;
+        private void StartAndroidDependency()
+        {
             DependencyService.Register<IStatusBar, StatusBarChanger>();
-
-            LoadApplication(new App());
+            DependencyService.Register<IPDVMode, PDVMode>();
         }
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
@@ -68,12 +80,21 @@ namespace PixQrCodeGeneratorOffline.Droid
                 if (Build.VERSION.SdkInt < Android.OS.BuildVersionCodes.Lollipop)
                     return;
 
-                var window = CurrentWindow; //((MainActivity)Forms.Context).Window;
-                window.AddFlags(Android.Views.WindowManagerFlags.DrawsSystemBarBackgrounds);
-                window.ClearFlags(Android.Views.WindowManagerFlags.TranslucentStatus);
-                var androidColor = color.ToPlatformColor();
+                CurrentWindow.AddFlags(Android.Views.WindowManagerFlags.DrawsSystemBarBackgrounds);
+                CurrentWindow.ClearFlags(Android.Views.WindowManagerFlags.TranslucentStatus);
+                CurrentWindow.SetStatusBarColor(color.ToPlatformColor());
+            }
+        }
 
-                window.SetStatusBarColor(androidColor);
+        public class PDVMode : IPDVMode
+        {
+            public void SetPDVMode()
+            {
+                if (Preference.IsPDVMode)
+                {
+                    CurrentWindow.AddFlags(WindowManagerFlags.Fullscreen);
+                    CurrentWindow.AddFlags(WindowManagerFlags.KeepScreenOn);
+                }
             }
         }
     }

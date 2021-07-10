@@ -35,6 +35,13 @@
                     </StackLayout.GestureRecognizers>
                     <Label Text="Biometria" Style="{DynamicResource subOptionTitle}" />
                 </StackLayout>
+
+                <StackLayout Padding="0,15">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding OptionPDVCommand}"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label Text="Modo PDV" Style="{DynamicResource subOptionTitle}" />
+                </StackLayout>
             </StackLayout>
         </StackLayout>
 

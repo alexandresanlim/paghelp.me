@@ -86,10 +86,31 @@ namespace PixQrCodeGeneratorOffline
 
         protected override void OnStart()
         {
-            CultureInfo.CurrentCulture = CultureInfo.CreateSpecificCulture("pt-BR");
+            LoadConfig();
+        }
 
+        private void LoadConfig()
+        {
+            LoadPtBrCultureInfo();
+            LoadStatusBar();
+            LoadPDVMode();
+        }
+
+        private void LoadPtBrCultureInfo()
+        {
+            CultureInfo.CurrentCulture = CultureInfo.CreateSpecificCulture("pt-BR");
+        }
+
+        private void LoadStatusBar()
+        {
             var service = DependencyService.Get<IStatusBar>();
             service?.SetByStyleListColor();
+        }
+
+        private void LoadPDVMode()
+        {
+            var service = DependencyService.Get<IPDVMode>();
+            service?.SetPDVMode();
         }
 
         protected override void OnSleep()

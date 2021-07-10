@@ -42,5 +42,17 @@ namespace PixQrCodeGeneratorOffline.Services
                 Preferences.Set(nameof(FingerPrint), value);
             }
         }
+
+        public static bool IsPDVMode
+        {
+            get => Preferences.Get(nameof(IsPDVMode), false);
+            set
+            {
+                if (IsPDVMode == value)
+                    return;
+
+                Preferences.Set(nameof(IsPDVMode), value);
+            }
+        }
     }
 }
