@@ -17,14 +17,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 {
     public class CreateBillingViewModel : ViewModelBase
     {
-
-        private readonly IPixPayloadService _pixPayloadService;
-
-        public CreateBillingViewModel()
-        {
-            _pixPayloadService = DependencyService.Get<IPixPayloadService>();
-        }
-
         public string AddDescriptionValue => "Adicionar Descrição";
 
         private void ResetCurrentValue()
@@ -41,6 +33,8 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             {
                 CurrentPixKey = pixKey;
                 ResetCurrentValue();
+
+                //LoadRecentPixCobMockup();
             }
             catch (Exception e)
             {
@@ -52,6 +46,15 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         {
             RecentPixCobList = new ObservableCollection<PixCob>
             {
+                new PixCob{ Value = "10.00", Description = "teste"},
+                new PixCob{ Value = "15.00", Description = "teste"},
+                new PixCob{ Value = "20.00", Description = "teste"},
+                new PixCob{ Value = "10.00", Description = "teste"},
+                new PixCob{ Value = "15.00", Description = "teste"},
+                new PixCob{ Value = "20.00", Description = "teste"},
+                new PixCob{ Value = "10.00", Description = "teste"},
+                new PixCob{ Value = "15.00", Description = "teste"},
+                new PixCob{ Value = "20.00", Description = "teste"},
                 new PixCob{ Value = "10.00", Description = "teste"},
                 new PixCob{ Value = "15.00", Description = "teste"},
                 new PixCob{ Value = "20.00", Description = "teste"},

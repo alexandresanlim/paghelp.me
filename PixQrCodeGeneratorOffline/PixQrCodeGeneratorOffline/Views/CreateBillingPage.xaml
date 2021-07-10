@@ -62,7 +62,7 @@
 
 
             <ScrollView>
-                <Grid RowDefinitions="auto,*, auto" Padding="15,0,15,15" RowSpacing="15">
+                <Grid RowDefinitions="auto,*" Padding="15,0,15,15" RowSpacing="15">
 
                     <StackLayout Grid.Row="0" Spacing="15">
 
@@ -86,7 +86,8 @@
                         </controls:CustomFrame>
                     </StackLayout>
 
-                    <Grid Grid.Row="1" VerticalOptions="FillAndExpand" RowDefinitions="0.5*,0.5*,0.5*,*" ColumnDefinitions="*,*,*">
+                <Grid Grid.Row="1">
+                    <Grid VerticalOptions="FillAndExpand" RowDefinitions="0.5*,0.5*,0.5*,*" ColumnDefinitions="*,*,*">
 
                         <Frame Grid.Row="0" Grid.Column="0" Style="{DynamicResource styleButtonKeyboard}">
                             <Frame.GestureRecognizers>
@@ -199,27 +200,32 @@
 
                     </Grid>
 
-                    <!--<StackLayout Grid.Row="2">
+                    <StackLayout IsVisible="false">
 
-                        <Label Text="Recentes:"/>
-                        <controls:CustomCollectionView ItemsSource="{Binding RecentPixCobList}" HeightRequest="70">
+                        <Label Text="Cobranças salvas" FontFamily="{DynamicResource FontBold}" FontSize="{DynamicResource FontSizeLarge}" TextColor="{DynamicResource textOnPrimary}" />
+                        <controls:CustomCollectionView ItemsSource="{Binding RecentPixCobList}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" HeightRequest="200">
                             <controls:CustomCollectionView.ItemsLayout>
-                                <LinearItemsLayout Orientation="Horizontal" ItemSpacing="10"/>
+                                <GridItemsLayout Orientation="Vertical" VerticalItemSpacing="10" HorizontalItemSpacing="10" Span="2"/>
                             </controls:CustomCollectionView.ItemsLayout>
 
                             <controls:CustomCollectionView.ItemTemplate>
                                 <DataTemplate>
-                                    <Frame BackgroundColor="{DynamicResource secondary}" WidthRequest="50" Padding="10" CornerRadius="10">
-                                        <StackLayout>
-                                            <Label Text="{Binding Value}" TextColor="{DynamicResource textOnSecondary}" HorizontalOptions="Center"/>
-                                            <Label Text="{Binding Description}" TextColor="{DynamicResource textOnSecondary}" HorizontalOptions="Center"/>
-                                        </StackLayout>
-                                    </Frame>
+                                    <StackLayout HorizontalOptions="FillAndExpand">
+                                        <Frame BackgroundColor="{DynamicResource secondary}" Padding="30" CornerRadius="10">
+                                            <StackLayout>
+                                                <Label Text="{Binding Description}" TextColor="{DynamicResource textOnSecondary}" HorizontalOptions="Center"/>
+                                                <Label Text="{Binding Viewer.ValuePresentation}" TextColor="{DynamicResource textOnSecondary}" HorizontalOptions="Center" FontAttributes="Bold" FontFamily="{DynamicResource FontBold}" FontSize="{DynamicResource FontSizeLarge}" />
+                                            </StackLayout>
+                                        </Frame>
+                                    </StackLayout>
                                 </DataTemplate>
                             </controls:CustomCollectionView.ItemTemplate>
 
                         </controls:CustomCollectionView>
-                    </StackLayout>-->
+                    </StackLayout>
+                </Grid>
+
+                    
 
                 </Grid>
             </ScrollView>
