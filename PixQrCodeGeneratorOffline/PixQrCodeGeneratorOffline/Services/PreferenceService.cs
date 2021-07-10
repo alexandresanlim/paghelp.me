@@ -104,7 +104,7 @@ namespace PixQrCodeGeneratorOffline.Services
                 {
                     new ActionSheetOption((Preference.IsPDVMode ? "Desativar" : "Ativar") + " modo PDV", async () =>
                     {
-                         var confirmMsg = "Tem certeza que deseja " + (Preference.IsPDVMode ? "desativar" : "ativar") + " o modo PDV? Na próxima vez que você entrar, o app " + (Preference.IsPDVMode ? "não será" : "será") + " aberto em tela cheia e se manterá ligado. Ideal para locais com auto recorrência de vendas.";
+                         var confirmMsg = "Tem certeza que deseja " + (Preference.IsPDVMode ? "desativar" : "ativar") + " o modo PDV? Na próxima vez que você entrar, o app " + (Preference.IsPDVMode ? "não será" : "será") + " aberto em tela cheia e se manterá ligado. Ideal para locais com alto recorrência de vendas.";
 
                         if (!await DialogService.ConfirmAsync(confirmMsg, "Confirmação", "Sim", "Cancelar"))
                             return;

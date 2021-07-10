@@ -22,6 +22,8 @@ namespace PixQrCodeGeneratorOffline.Models.Commands
 
         private readonly IPixPayloadService _pixPayloadService;
 
+        private readonly IPixKeyService _pixKeyService;
+
         private IUserDialogs DialogService => UserDialogs.Instance;
 
         public PixKeyCommand()
@@ -29,15 +31,18 @@ namespace PixQrCodeGeneratorOffline.Models.Commands
             _externalActionService = DependencyService.Get<IExternalActionService>();
             _eventService = DependencyService.Get<IEventService>();
             _pixPayloadService = DependencyService.Get<IPixPayloadService>();
+            _pixKeyService = DependencyService.Get<IPixKeyService>();
         }
 
-        public ICommand CopyKeyCommand { get; set; }
+        public ICommand CopyKeyCommand { get; private set; }
 
-        public ICommand ShareKeyCommand { get; set; }
+        public ICommand ShareKeyCommand { get; private set; }
 
-        public ICommand NavigateToCreateBillingPageCommand { get; set; }
+        public ICommand NavigateToCreateBillingPageCommand { get; private set; }
 
-        public ICommand NavigateToPaymentPageCommand { get; set; }
+        public ICommand NavigateToPaymentPageCommand { get; private set; }
+
+        public ICommand EditKeyCommand { get; private set; }
 
         public PixKeyCommand Create(PixKey pixKey)
         {
@@ -46,7 +51,8 @@ namespace PixQrCodeGeneratorOffline.Models.Commands
                 CopyKeyCommand = GetCopyKeyCommand(pixKey),
                 ShareKeyCommand = GetShareKeyCommand(pixKey),
                 NavigateToCreateBillingPageCommand = GetNavigateToCreateBillingCommand(pixKey),
-                NavigateToPaymentPageCommand = GetNavigateToPaymentPageCommand(pixKey)
+                NavigateToPaymentPageCommand = GetNavigateToPaymentPageCommand(pixKey),
+                EditKeyCommand = GetEdityKeyCommand(pixKey)
             } : new PixKeyCommand();
         }
 
@@ -130,6 +136,11 @@ namespace PixQrCodeGeneratorOffline.Models.Commands
                     DialogService.HideLoading();
                 }
             });
+        }
+
+        private Command GetEdityKeyCommand(PixKey pixKey)
+        {
+            return new Command(async () => await _pixKeyService.NavigateToEdit(pixKey, isContact: pixKey.IsContact));
         }
     }
 }

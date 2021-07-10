@@ -84,7 +84,7 @@
 
                                     <StackLayout Grid.Column="2" Padding="30,5,0,15" VerticalOptions="Start">
                                         <StackLayout.GestureRecognizers>
-                                            <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:DashboardContactViewModel}}, Path=EditKeyCommand}" CommandParameter="{Binding .}" />
+                                            <TapGestureRecognizer Command="{Binding Command.EditKeyCommand}" />
                                         </StackLayout.GestureRecognizers>
                                         <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Edit }" IconColor="{Binding FinancialInstitution.Institution.MaterialColor.TextOnPrimary}"/>
                                         <Label Text="Editar" Style="{DynamicResource styleTextOnButtonActionList}" TextColor="{Binding FinancialInstitution.Institution.MaterialColor.TextOnPrimary}"/>
