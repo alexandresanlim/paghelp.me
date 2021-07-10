@@ -31,50 +31,30 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         {
             try
             {
-                //await ResetProps();
-
-                //await ReloadShowInList();
-
                 var list = _pixKeyService?.GetAll(isContact: true);
 
-                PixKeyList = list?.OrderBy(x => x?.FinancialInstitution?.Name)?.ToObservableCollection() ?? new ObservableCollection<PixKey>();
+                PixKeyList = list?.OrderBy(x => x?.Name)?.ToObservableCollection() ?? new ObservableCollection<PixKey>();
 
                 await LoadCurrentPixKey();
-
-                //if (!(PixKeyList.Count > 0))
-                //    DashboardWelcomenList = DashboardWelcome.GetList();
             }
             catch (System.Exception e)
             {
                 e.SendToLog();
             }
-            finally
-            {
-            }
         }
 
-        #region DashboardVMDependency
-
         public ICommand NavigateToAddNewKeyPageCommand => new Command(async () => await _pixKeyService.NavigateToAdd(isContact: true));
-
-        //public Command<PixKey> EditKeyCommand => new Command<PixKey>(async (key) => await _pixKeyService.NavigateToEdit(key, isContact: true));
-
-        //public Command<PixKey> OpenOptionsKeyCommand => new Command<PixKey>(async (key) => await _pixKeyService.NavigateToAction(key));
-
-        #endregion
-
-        //private ObservableCollection<PixKey> _pixKeyList;
-        //public ObservableCollection<PixKey> PixKeyList
-        //{
-        //    set => SetProperty(ref _pixKeyList, value);
-        //    get => _pixKeyList;
-        //}
-
-        //private PixKey _currentPixKey;
-        //public PixKey CurrentPixKey
-        //{
-        //    set => SetProperty(ref _currentPixKey, value);
-        //    get => _currentPixKey;
-        //}
     }
+
+    //public static class DashboardContactViewModelExtention
+    //{
+    //    private static async Task LoadDataContact(this DashboardContactViewModel dashboardViewModelBase)
+    //    {
+    //        //var list = _pixKeyService?.GetAll(isContact: true);
+
+    //        //dashboardViewModelBase.PixKeyList = list?.OrderBy(x => x?.FinancialInstitution?.Name)?.ToObservableCollection() ?? new ObservableCollection<PixKey>();
+
+    //        //await dashboardViewModelBase.LoadCurrentPixKey();
+    //    }
+    //}
 }
