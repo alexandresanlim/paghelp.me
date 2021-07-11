@@ -66,6 +66,7 @@ namespace PixQrCodeGeneratorOffline
         private void RegisterDependencyRepository()
         {
             DependencyService.Register<IPixKeyRepository, PixKeyRepository>();
+            DependencyService.Register<IPixPayloadRepository, PixPayloadRepository>();
         }
 
         private void RegisterDependencyValidation()

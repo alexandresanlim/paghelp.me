@@ -9,56 +9,44 @@ using System.Text;
 
 namespace PixQrCodeGeneratorOffline.Models.Repository
 {
-    public class PixKeyRepository : BaseDatabase, IPixKeyRepository
+    public class PixPayloadRepository : BaseDatabase, IPixPayloadRepository
     {
-        private readonly ILiteCollection<PixKey> _pixCollection;
+        private readonly ILiteCollection<PixPayload> _collection;
 
-        public PixKeyRepository()
+        public PixPayloadRepository()
         {
-            _pixCollection = GetDatabase.GetCollection<PixKey>();
+            _collection = GetDatabase.GetCollection<PixPayload>();
         }
 
-        public List<PixKey> GetAll(Expression<Func<PixKey, bool>> predicate)
+        public PixPayload FindById(int id)
         {
             try
             {
-                return _pixCollection.Find(predicate).ToList();
+                return _collection.FindById(id);
             }
             catch (Exception e)
             {
-                return new List<PixKey>();
+                return new PixPayload();
             }
         }
 
-        public PixKey FindById(int id)
+        public List<PixPayload> GetAll(Expression<Func<PixPayload, bool>> predicate = null)
         {
             try
             {
-                return _pixCollection.FindById(id);
+                return predicate == null ? _collection.FindAll().ToList() : _collection.Find(predicate).ToList();
             }
             catch (Exception e)
             {
-                return new PixKey();
+                return new List<PixPayload>();
             }
         }
 
-        public bool Update(PixKey item)
+        public bool Insert(PixPayload item)
         {
             try
             {
-                return _pixCollection.Update(item);
-            }
-            catch (Exception e)
-            {
-                return false;
-            }
-        }
-
-        public bool Insert(PixKey item)
-        {
-            try
-            {
-                return _pixCollection.Insert(item);
+                return _collection.Insert(item);
             }
             catch (Exception e)
             {
@@ -66,11 +54,11 @@ namespace PixQrCodeGeneratorOffline.Models.Repository
             }
         }
 
-        public bool Remove(PixKey item)
+        public bool Remove(PixPayload item)
         {
             try
             {
-                return _pixCollection.Delete(item.Id);
+                return _collection.Delete(item.Id);
             }
             catch (Exception)
             {
@@ -78,13 +66,25 @@ namespace PixQrCodeGeneratorOffline.Models.Repository
             }
         }
 
-        public bool RemoveAll(Expression<Func<PixKey, bool>> predicate)
+        public bool RemoveAll(Expression<Func<PixPayload, bool>> predicate)
         {
             try
             {
-                return _pixCollection.DeleteMany(predicate) > 0;
+                return _collection.DeleteMany(predicate) > 0;
             }
             catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public bool Update(PixPayload item)
+        {
+            try
+            {
+                return _collection.Update(item);
+            }
+            catch (Exception e)
             {
                 return false;
             }

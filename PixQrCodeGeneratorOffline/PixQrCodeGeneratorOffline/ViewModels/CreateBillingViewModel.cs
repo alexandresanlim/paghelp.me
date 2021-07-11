@@ -32,9 +32,10 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             try
             {
                 CurrentPixKey = pixKey;
+
                 ResetCurrentValue();
 
-                //LoadRecentPixCobMockup();
+                LoadPixPayloadSave();
             }
             catch (Exception e)
             {
@@ -42,24 +43,24 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
         });
 
-        private void LoadRecentPixCobMockup()
+        public Command<PixPayload> SetValueFromBillingSaveCommand => new Command<PixPayload>(async (pixPayload) =>
         {
-            RecentPixCobList = new ObservableCollection<PixCob>
+            try
             {
-                new PixCob{ Value = "10.00", Description = "teste"},
-                new PixCob{ Value = "15.00", Description = "teste"},
-                new PixCob{ Value = "20.00", Description = "teste"},
-                new PixCob{ Value = "10.00", Description = "teste"},
-                new PixCob{ Value = "15.00", Description = "teste"},
-                new PixCob{ Value = "20.00", Description = "teste"},
-                new PixCob{ Value = "10.00", Description = "teste"},
-                new PixCob{ Value = "15.00", Description = "teste"},
-                new PixCob{ Value = "20.00", Description = "teste"},
-                new PixCob{ Value = "10.00", Description = "teste"},
-                new PixCob{ Value = "15.00", Description = "teste"},
-                new PixCob{ Value = "20.00", Description = "teste"},
+                //CurrentCob = pixPayload.PixCob;
+                await NavigateAsync(new PaymentPage(pixPayload));
+            }
+            catch (Exception e)
+            {
+                e.SendToLog();
+            }
+        });
 
-            };
+        public ICommand IsBillingVisibleCommand => new Command(() => IsBillingSaveVisible = !IsBillingSaveVisible);
+
+        private void LoadPixPayloadSave()
+        {
+            RecentPixCobList = _pixPayloadService?.GetAll(x => x.PixKey.Id == CurrentPixKey.Id)?.ToObservableCollection() ?? new ObservableCollection<PixPayload>();
         }
 
         public Command<string> InputTextCommand => new Command<string>(async (text) =>
@@ -198,11 +199,18 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             get => _currentDescription;
         }
 
-        private ObservableCollection<PixCob> _recentPixCobList;
-        public ObservableCollection<PixCob> RecentPixCobList
+        private ObservableCollection<PixPayload> _recentPixCobList;
+        public ObservableCollection<PixPayload> RecentPixCobList
         {
             set => SetProperty(ref _recentPixCobList, value);
             get => _recentPixCobList;
+        }
+
+        private bool _isBillingSaveVisible;
+        public bool IsBillingSaveVisible
+        {
+            set => SetProperty(ref _isBillingSaveVisible, value);
+            get => _isBillingSaveVisible;
         }
     }
 }

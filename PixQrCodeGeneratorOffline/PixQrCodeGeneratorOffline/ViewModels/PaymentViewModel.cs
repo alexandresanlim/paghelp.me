@@ -54,6 +54,30 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
         });
 
+        public ICommand SaveCommand => new Command(async () =>
+        {
+            var identity = await DialogService.PromptAsync(new Acr.UserDialogs.PromptConfig
+            {
+                Title = "Identificador",
+                Message = "Digite um texto para identificar esta cobrança",
+                CancelText = "Cancelar",
+                OkText = "Salvar"
+            });
+
+            if (!identity.Ok)
+                return;
+
+            if(string.IsNullOrEmpty(identity?.Text))
+            {
+                DialogService.Toast("Ops! É preciso digitar um identificador para salvar");
+                return;
+            }
+
+            CurrentPixPaylod.Identity = identity.Text;
+
+            _pixPayloadService.Save(CurrentPixPaylod);
+        });
+
         private PixPayload _currentPixPaylod;
         public PixPayload CurrentPixPaylod
         {

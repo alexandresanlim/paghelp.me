@@ -93,7 +93,7 @@
                                     <!--<controls:CustomIcon Grid.Column="2" Glyph="{x:Static icons:FontAwesomeSolid.ChevronRight }" IconColor="{Binding FinancialInstitution.Institution.MaterialColor.TextOnPrimary}" IconSize="Title" HorizontalOptions="Center" Margin="0,0,10,0" />-->
                                 </Grid>
 
-                                <Grid ColumnDefinitions="*,*">
+                                <Grid ColumnDefinitions="*">
                                     <Frame Grid.Column="0" Style="{DynamicResource styleButtonActionList}">
                                         <Frame.GestureRecognizers>
                                             <TapGestureRecognizer Command="{Binding Command.CopyKeyCommand}" />
@@ -104,7 +104,7 @@
                                         </StackLayout>
                                     </Frame>
                                     
-                                    <Frame Grid.Column="1" Style="{DynamicResource styleButtonActionList}">
+                                    <!--<Frame Grid.Column="1" Style="{DynamicResource styleButtonActionList}">
                                         <Frame.GestureRecognizers>
                                             <TapGestureRecognizer Command="{Binding Command.NavigateToPaymentPageCommand}" />
                                         </Frame.GestureRecognizers>
@@ -112,7 +112,7 @@
                                             <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Qrcode }" Style="{DynamicResource styleIconActionList}" />
                                             <Label Text="Qr Code" Style="{DynamicResource styleTextOnButtonActionList}"/>
                                         </StackLayout>
-                                    </Frame>
+                                    </Frame>-->
                                     
                                     <!--<Frame Grid.Column="2" Style="{DynamicResource styleButtonActionList}">
                                             <Frame.GestureRecognizers>

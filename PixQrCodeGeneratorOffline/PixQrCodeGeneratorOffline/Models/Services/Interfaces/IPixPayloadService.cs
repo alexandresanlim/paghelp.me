@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Text;
 
 namespace PixQrCodeGeneratorOffline.Models.Services.Interfaces
@@ -11,5 +12,9 @@ namespace PixQrCodeGeneratorOffline.Models.Services.Interfaces
         PixPayload Create(PixKey pixKey, PixCob pixCob);
 
         bool IsValid(PixPayload pixPayload);
+
+        bool Save(PixPayload pixPaylod);
+
+        List<PixPayload> GetAll(Expression<Func<PixPayload, bool>> predicate = null);
     }
 }

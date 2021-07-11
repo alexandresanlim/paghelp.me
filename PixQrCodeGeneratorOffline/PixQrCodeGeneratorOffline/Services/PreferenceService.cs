@@ -11,10 +11,8 @@ using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.Services
 {
-    public class PreferenceService : IPreferenceService
+    public class PreferenceService : ServiceBase, IPreferenceService
     {
-        private IUserDialogs DialogService => UserDialogs.Instance;
-
         protected readonly IPixKeyService _pixKeyService;
         protected readonly IEventService _eventService;
 

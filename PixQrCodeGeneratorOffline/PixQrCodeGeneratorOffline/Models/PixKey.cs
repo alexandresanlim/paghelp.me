@@ -71,6 +71,7 @@ namespace PixQrCodeGeneratorOffline.Models
         [LiteDB.BsonIgnore]
         public PixKeyCommand Command => _pixKeyCommand?.Create(this) ?? new PixKeyCommand();
 
+        [LiteDB.BsonIgnore]
         public PixKeyType GetKeyType()
         {
             if (Key.IsEmail())
