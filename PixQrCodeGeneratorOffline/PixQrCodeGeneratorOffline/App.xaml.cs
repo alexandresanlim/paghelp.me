@@ -83,6 +83,7 @@ namespace PixQrCodeGeneratorOffline
         private void RegisterCommandDependency()
         {
             DependencyService.Register<IPixKeyCommand, PixKeyCommand>();
+            DependencyService.Register<IPixPayloadCommand, PixPayloadCommand>();
         }
 
         protected override void OnStart()

@@ -43,19 +43,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
         });
 
-        public Command<PixPayload> SetValueFromBillingSaveCommand => new Command<PixPayload>(async (pixPayload) =>
-        {
-            try
-            {
-                //CurrentCob = pixPayload.PixCob;
-                await NavigateAsync(new PaymentPage(pixPayload));
-            }
-            catch (Exception e)
-            {
-                e.SendToLog();
-            }
-        });
-
         public ICommand IsBillingVisibleCommand => new Command(() => IsBillingSaveVisible = !IsBillingSaveVisible);
 
         private void LoadPixPayloadSave()

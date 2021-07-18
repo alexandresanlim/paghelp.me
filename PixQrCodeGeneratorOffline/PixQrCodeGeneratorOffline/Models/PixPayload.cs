@@ -1,12 +1,22 @@
 ﻿using PixQrCodeGeneratorOffline.Models.Base;
+using PixQrCodeGeneratorOffline.Models.Commands;
+using PixQrCodeGeneratorOffline.Models.Commands.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.Models
 {
     public class PixPayload : NotifyObjectBase
     {
+        private readonly IPixPayloadCommand _pixPayloadCommand;
+
+        public PixPayload()
+        {
+            _pixPayloadCommand = DependencyService.Get<IPixPayloadCommand>();
+        }
+
         [LiteDB.BsonId]
         public int Id { get; set; }
 
@@ -26,5 +36,8 @@ namespace PixQrCodeGeneratorOffline.Models
             set { SetProperty(ref _qrCode, value); }
             get { return _qrCode; }
         }
+
+        [LiteDB.BsonIgnore]
+        public PixPayloadCommand Commands => _pixPayloadCommand?.Create(this) ?? new PixPayloadCommand();
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Acr.UserDialogs;
 using PixQrCodeGeneratorOffline.Extention;
+using PixQrCodeGeneratorOffline.Models.Commands.Base;
 using PixQrCodeGeneratorOffline.Models.Commands.Interfaces;
 using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Services;
@@ -14,22 +15,17 @@ using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.Models.Commands
 {
-    public class PixKeyCommand : IPixKeyCommand
+    public class PixKeyCommand : CommandBase, IPixKeyCommand
     {
         private readonly IExternalActionService _externalActionService;
-
-        private readonly IEventService _eventService;
 
         private readonly IPixPayloadService _pixPayloadService;
 
         private readonly IPixKeyService _pixKeyService;
 
-        private IUserDialogs DialogService => UserDialogs.Instance;
-
         public PixKeyCommand()
         {
             _externalActionService = DependencyService.Get<IExternalActionService>();
-            _eventService = DependencyService.Get<IEventService>();
             _pixPayloadService = DependencyService.Get<IPixPayloadService>();
             _pixKeyService = DependencyService.Get<IPixKeyService>();
         }

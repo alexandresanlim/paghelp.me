@@ -224,7 +224,7 @@
                         </StackLayout>
                     </StackLayout>
                     <controls:CustomCollectionView ItemsSource="{Binding RecentPixCobList}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" HeightRequest="200">
-                        
+
                         <controls:CustomCollectionView.ItemsLayout>
                             <GridItemsLayout Orientation="Vertical" VerticalItemSpacing="10" HorizontalItemSpacing="10" Span="2"/>
                         </controls:CustomCollectionView.ItemsLayout>
@@ -245,12 +245,14 @@
                                 <StackLayout HorizontalOptions="FillAndExpand">
                                     <Frame BackgroundColor="{DynamicResource secondary}" Padding="30" CornerRadius="10">
                                         <Frame.GestureRecognizers>
-                                            <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:CreateBillingViewModel}}, Path=SetValueFromBillingSaveCommand}" CommandParameter="{Binding .}" />
+                                            <TapGestureRecognizer Command="{Binding Commands.NavigateToPaymentPageCommand}" />
                                         </Frame.GestureRecognizers>
 
                                         <StackLayout>
-                                            <Label Text="{Binding Identity}" TextColor="{DynamicResource textOnSecondary}" HorizontalOptions="Center" MaxLines="2" LineBreakMode="TailTruncation"/>
-                                            <Label Text="{Binding PixCob.Viewer.ValuePresentation}" TextColor="{DynamicResource textOnSecondary}" HorizontalOptions="Center" FontAttributes="Bold" FontFamily="{DynamicResource FontBold}" FontSize="{DynamicResource FontSizeLarge}" />
+                                            <Label Text="{Binding Identity, StringFormat='Id: {0}'}" TextColor="{DynamicResource textOnSecondary}" MaxLines="2" FontFamily="{DynamicResource FontSemiBold}" LineBreakMode="TailTruncation"/>
+                                            <Label Text="{Binding PixKey.Viewer.NamePresentation}" TextColor="{DynamicResource textOnSecondary}" />
+                                            <Label Text="{Binding PixKey.Viewer.KeyPresentation}" TextColor="{DynamicResource textOnSecondary}" />
+                                            <Label Text="{Binding PixCob.Viewer.ValuePresentation}" TextColor="{DynamicResource textOnSecondary}" FontAttributes="Bold" FontFamily="{DynamicResource FontBold}" FontSize="{DynamicResource FontSizeLarge}" />
                                         </StackLayout>
                                     </Frame>
                                 </StackLayout>
