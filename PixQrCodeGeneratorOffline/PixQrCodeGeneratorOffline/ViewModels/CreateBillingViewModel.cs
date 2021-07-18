@@ -114,7 +114,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 if (!_pixPayloadService.IsValid(pixPaylod))
                     return;
 
-                await NavigateAsync(new PaymentPage(pixPaylod));
+                pixPaylod.Commands.NavigateToPaymentPageCommand.Execute(null);
             }
             catch (Exception e)
             {

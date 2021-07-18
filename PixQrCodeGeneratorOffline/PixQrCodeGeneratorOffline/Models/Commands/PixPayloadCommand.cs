@@ -42,7 +42,7 @@ namespace PixQrCodeGeneratorOffline.Models.Commands
                 }
                 finally
                 {
-                    _eventService.SendEvent("Navegou para pagina de pagamento a partir do PixPaylod", EventType.NAVIGATION);
+                    _eventService.SendEvent("Navegou para página de pagamento a partir do PixPaylodCommand", EventType.NAVIGATION);
 
                     DialogService.HideLoading();
                 }
