@@ -15,6 +15,11 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         public Command<PixPayload> LoadDataCommand => new Command<PixPayload>((pixPaylod) =>
         {
             CurrentPixPaylod = pixPaylod;
+
+            var styleKey = CurrentPixPaylod?.PixKey?.FinancialInstitution?.Institution?.MaterialColor;
+
+            if (styleKey != null)
+                App.LoadTheme(styleKey);
         });
 
         public ICommand SharePayloadCommand => new Command(async () =>
@@ -67,7 +72,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             if (!identity.Ok)
                 return;
 
-            if(string.IsNullOrEmpty(identity?.Text))
+            if (string.IsNullOrEmpty(identity?.Text))
             {
                 DialogService.Toast("Ops! É preciso digitar um identificador para salvar");
                 return;

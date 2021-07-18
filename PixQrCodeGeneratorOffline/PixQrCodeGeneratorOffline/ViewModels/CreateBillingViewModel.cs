@@ -36,12 +36,22 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 ResetCurrentValue();
 
                 LoadPixPayloadSave();
+
+                LoadStyle();
             }
             catch (Exception e)
             {
                 e.SendToLog();
             }
         });
+
+        private void LoadStyle()
+        {
+            var styleKey = CurrentPixKey?.FinancialInstitution?.Institution?.MaterialColor;
+
+            if (styleKey != null)
+                App.LoadTheme(styleKey);
+        }
 
         public ICommand IsBillingVisibleCommand => new Command(() => IsBillingSaveVisible = !IsBillingSaveVisible);
 

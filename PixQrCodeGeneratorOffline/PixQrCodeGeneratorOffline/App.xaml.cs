@@ -96,6 +96,7 @@ namespace PixQrCodeGeneratorOffline
             LoadPtBrCultureInfo();
             LoadStatusBar();
             LoadPDVMode();
+            LoadStyle();
         }
 
         private void LoadPtBrCultureInfo()
@@ -113,6 +114,11 @@ namespace PixQrCodeGeneratorOffline
         {
             var service = DependencyService.Get<IPDVMode>();
             service?.SetPDVMode();
+        }
+
+        private void LoadStyle()
+        {
+            App.LoadTheme();
         }
 
         protected override void OnSleep()
