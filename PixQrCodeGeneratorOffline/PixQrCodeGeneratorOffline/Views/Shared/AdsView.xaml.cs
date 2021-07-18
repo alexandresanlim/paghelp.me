@@ -16,7 +16,7 @@ namespace PixQrCodeGeneratorOffline.Views.Shared
         {
             InitializeComponent();
 
-            myAds.AdsId = App.Ads.AdsId;
+            myAds.AdsId = App.Ids.GoogleAds;
         }
     }
 }

@@ -53,13 +53,7 @@ namespace PixQrCodeGeneratorOffline.Droid
             //PlatformGestureEffect.Init();
             //Lottie.Forms.Droid.AnimationViewRenderer.Init();
 
-            var appCenterId =
-#if DEBUG
-                "18439db5-b775-4a96-bb6f-6c4612d3daab";
-#else
-                "b0e08456-a911-48da-b391-33daf270896c";
-#endif
-            AppCenter.Start(appCenterId, typeof(Analytics), typeof(Crashes));
+            AppCenter.Start(App.Ids.AppCenter, typeof(Analytics), typeof(Crashes));
         }
 
         private void StartAndroidDependency()
