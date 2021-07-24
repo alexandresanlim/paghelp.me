@@ -16,10 +16,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         {
             CurrentPixPaylod = pixPaylod;
 
-            //var styleKey = CurrentPixPaylod?.PixKey?.FinancialInstitution?.Institution?.MaterialColor;
-
-            //if (styleKey != null)
-            //    App.LoadTheme(styleKey);
+            SaveButtonVisible = !(CurrentPixPaylod.Id > 0) && !string.IsNullOrEmpty(CurrentPixPaylod?.PixCob?.Value);
         });
 
         public ICommand SharePayloadCommand => new Command(async () =>
@@ -88,6 +85,13 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         {
             set => SetProperty(ref _currentPixPaylod, value);
             get => _currentPixPaylod;
+        }
+
+        private bool _saveButtonVisible;
+        public bool SaveButtonVisible
+        {
+            set => SetProperty(ref _saveButtonVisible, value);
+            get => _saveButtonVisible;
         }
     }
 }

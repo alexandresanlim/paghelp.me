@@ -18,5 +18,13 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         public ICommand OpenKeysOptionsCommand => new Command(async () => await NavigateAsync(new OptionKeyPage()));
 
         public ICommand OpenOptionBillingPageCommand => new Command(async () => await NavigateAsync(new OptionBillingPage()));
+
+        public OptionViewModel()
+        {
+            SaveCommand = new Command(() =>
+            {
+
+            });
+        }
     }
 }

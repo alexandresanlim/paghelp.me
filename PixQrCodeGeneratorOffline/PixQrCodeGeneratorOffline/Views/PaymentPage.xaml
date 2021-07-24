@@ -11,7 +11,7 @@
     
     <ContentPage.Content>
 
-        <Grid RowDefinitions="*,auto">
+        <Grid RowDefinitions="*,auto" Style="{StaticResource paddingPageStackLayout}">
 
             <!--<Grid.Background>
                 <LinearGradientBrush EndPoint="0,1">
@@ -27,7 +27,7 @@
                     
                     <StackLayout Orientation="Horizontal">
 
-                        <StackLayout Padding="0,0,30,0">
+                        <StackLayout Padding="0,15,30,10">
                             <StackLayout.GestureRecognizers>
                                 <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
                             </StackLayout.GestureRecognizers>
@@ -35,8 +35,8 @@
                             <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.ChevronLeft }" IconSize="Title" IconColor="{DynamicResource textOnPrimary}" VerticalOptions="CenterAndExpand" />
                         </StackLayout>
 
-               
-                        <StackLayout Padding="30,15,0,10" HorizontalOptions="EndAndExpand" Spacing="0">
+
+                        <StackLayout Padding="30,15,0,10" HorizontalOptions="EndAndExpand" Spacing="0" IsVisible="{Binding SaveButtonVisible}">
                             <StackLayout.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding SaveCommand}" />
                             </StackLayout.GestureRecognizers>
@@ -70,7 +70,7 @@
 
                     </StackLayout>
 
-                    <controls:CustomLabel Text="{Binding CurrentPixPaylod.PixCob.Viewer.ValuePresentation}" FontSize="35" TextColor="{DynamicResource textOnPrimary}" HorizontalOptions="Center" FontAttributes="Bold" />
+                    <controls:CustomLabel Text="{Binding CurrentPixPaylod.PixCob.Viewer.ValuePresentation}" IsVisible="{Binding CurrentPixPaylod.PixCob.Viewer.ValuePresentation,Converter={StaticResource HasDataConverter}}" FontSize="35" TextColor="{DynamicResource textOnPrimary}" HorizontalOptions="Center" FontAttributes="Bold" />
 
                     <controls:CustomLabel Text="{Binding CurrentPixPaylod.PixKey.Viewer.NamePresentation, StringFormat='Para: {0}'}" TextColor="{DynamicResource textOnPrimary}" FontSize="Medium"  HorizontalOptions="Center" FontAttributes="Bold" />
 

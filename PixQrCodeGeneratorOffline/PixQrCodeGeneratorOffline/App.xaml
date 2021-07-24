@@ -117,6 +117,14 @@
                 <Setter Property="FontFamily" Value="FontPoppinsSemiBold"/>
             </Style>
 
+            <Style x:Key="paddingPageGrid" TargetType="Grid">
+                <Setter Property="Padding" Value="0,25,0,50" />
+            </Style>
+
+            <Style x:Key="paddingPageStackLayout" TargetType="StackLayout">
+                <Setter Property="Padding" Value="0,25,0,50" />
+            </Style>
+
             <!--<Style x:Key="iconMenuStyle" TargetType="controls:CustomIcon">
                 <Setter Property="IconSize" Value="Medium" />
                 <Setter Property="IconColor" Value="{DynamicResource textOnSecondary}"/>
