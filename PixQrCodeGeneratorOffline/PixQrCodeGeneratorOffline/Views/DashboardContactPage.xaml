@@ -46,7 +46,7 @@
                     <controls:CustomCollectionView.ItemsLayout>
                         <LinearItemsLayout Orientation="Vertical" ItemSpacing="10"/>
                     </controls:CustomCollectionView.ItemsLayout>
-                    
+
                     <controls:CustomCollectionView.ItemTemplate>
                         <DataTemplate>
 
@@ -56,7 +56,7 @@
                                 <Grid ColumnDefinitions="auto,*,auto" ColumnSpacing="15">
 
 
-                                    <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.UserCircle }" Grid.Column="0" Size="50" IconColor="{DynamicResource textPrimary}" VerticalOptions="Start" />
+                                    <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.UserCircle }" Grid.Column="0" Size="50" IconColor="{DynamicResource textSecondary}" VerticalOptions="Center" />
 
                                     <!--<StackLayout BackgroundColor="{Binding FinancialInstitution.Institution.MaterialColor.PrimaryDark}" Grid.Column="0" Padding="15">-->
                                     <!--<qr:QRCode
@@ -77,17 +77,17 @@
                                         </qr:QRCode>-->
                                     <!--</StackLayout>-->
 
-                                    <StackLayout Grid.Column="1" Spacing="0" VerticalOptions="Center">
-                                        <controls:CustomLabel Text="{Binding Viewer.NamePresentation}" TextColor="{DynamicResource textPrimary}" FontAttributes="Bold" FontSize="{StaticResource FontSizeMedium}"  />
-                                        <controls:CustomLabel Text="{Binding Viewer.KeyPresentation}" TextColor="{DynamicResource textPrimary}" MaxLines="1" LineBreakMode="MiddleTruncation" />
+                                    <StackLayout Grid.Column="1" Spacing="0">
+                                        <Label Text="{Binding Viewer.NamePresentation}" TextColor="{DynamicResource textPrimary}" FontFamily="{DynamicResource FontBold}" FontSize="{StaticResource FontSizeMedium}"  />
+                                        <Label Text="{Binding Viewer.KeyPresentation}" TextColor="{DynamicResource textSecondary}" MaxLines="1" LineBreakMode="MiddleTruncation" />
                                     </StackLayout>
 
                                     <StackLayout Grid.Column="2" Padding="30,5,0,15" VerticalOptions="Start">
                                         <StackLayout.GestureRecognizers>
                                             <TapGestureRecognizer Command="{Binding Command.EditKeyCommand}" />
                                         </StackLayout.GestureRecognizers>
-                                        <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Edit }" IconColor="{DynamicResource textPrimary}"/>
-                                        <Label Text="Editar" Style="{DynamicResource styleTextOnButtonActionList}" TextColor="{DynamicResource textPrimary}"/>
+                                        <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Edit }" IconColor="{DynamicResource textSecondary}"/>
+                                        <Label Text="Editar" Style="{DynamicResource styleTextOnButtonActionList}" TextColor="{DynamicResource textSecondary}"/>
                                     </StackLayout>
 
                                     <!--<controls:CustomIcon Grid.Column="2" Glyph="{x:Static icons:FontAwesomeSolid.ChevronRight }" IconColor="{Binding FinancialInstitution.Institution.MaterialColor.TextOnPrimary}" IconSize="Title" HorizontalOptions="Center" Margin="0,0,10,0" />-->
@@ -103,7 +103,7 @@
                                             <Label Text="Copiar" Style="{DynamicResource styleTextOnButtonActionList}"/>
                                         </StackLayout>
                                     </Frame>
-                                    
+
                                     <!--<Frame Grid.Column="1" Style="{DynamicResource styleButtonActionList}">
                                         <Frame.GestureRecognizers>
                                             <TapGestureRecognizer Command="{Binding Command.NavigateToPaymentPageCommand}" />
@@ -113,7 +113,7 @@
                                             <Label Text="Qr Code" Style="{DynamicResource styleTextOnButtonActionList}"/>
                                         </StackLayout>
                                     </Frame>-->
-                                    
+
                                     <!--<Frame Grid.Column="2" Style="{DynamicResource styleButtonActionList}">
                                             <Frame.GestureRecognizers>
                                                 <TapGestureRecognizer Command="{Binding Command.ShareKeyCommand}" />
@@ -137,25 +137,26 @@
 
                 <Grid Grid.Row="1" ColumnDefinitions="*,*" BackgroundColor="{DynamicResource primaryDark}" ColumnSpacing="15" Padding="10"  HorizontalOptions="FillAndExpand">
                     <Frame Grid.Column="0" BackgroundColor="{DynamicResource secondary}" CornerRadius="30" Padding="5,12">
-
+                        
                         <Frame.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding SettingsCommand}" />
                         </Frame.GestureRecognizers>
+                        
                         <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                            <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Cog }" IconSize="Small" IconColor="{DynamicResource textOnSecondary}" />
-                            <controls:CustomLabel Text="Opções" FontSize="{StaticResource FontSizeSmall}" FontAttributes="Bold" TextColor="{DynamicResource textOnSecondary}" />
+                            <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Cog }" Size="{DynamicResource FontSizeSmall}" IconColor="{DynamicResource textOnSecondary}" />
+                            <Label Text="Opções" FontSize="{StaticResource FontSizeSmall}" FontFamily="{DynamicResource FontBold}" TextColor="{DynamicResource textOnSecondary}" />
                         </StackLayout>
                     </Frame>
 
                     <Frame Grid.Column="1"  BackgroundColor="{DynamicResource secondary}" Padding="5,12" CornerRadius="30" HorizontalOptions="FillAndExpand">
+                        
                         <Frame.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding NavigateToAddNewKeyPageCommand}" />
                         </Frame.GestureRecognizers>
-
+                        
                         <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-
-                            <controls:CustomLabel Text="Adicionar" FontSize="{StaticResource FontSizeSmall}" FontAttributes="Bold" TextColor="{DynamicResource textOnSecondary}" />
-                            <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.PlusCircle }" IconSize="Small" IconColor="{DynamicResource textOnSecondary}" />
+                            <Label Text="Adicionar" FontSize="{StaticResource FontSizeSmall}" FontFamily="{DynamicResource FontBold}" TextColor="{DynamicResource textOnSecondary}" />
+                            <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.PlusCircle }" Size="{DynamicResource FontSizeSmall}" IconColor="{DynamicResource textOnSecondary}" />
                         </StackLayout>
                     </Frame>
                 </Grid>
@@ -191,8 +192,8 @@
 
                         <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
 
-                            <controls:CustomLabel Text="Adicionar chave de contato" FontSize="{StaticResource FontSizeSmall}" FontAttributes="Bold" TextColor="{DynamicResource textOnSecondary}" />
-                            <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.PlusCircle }" IconSize="Small" IconColor="{DynamicResource textOnSecondary}" />
+                            <Label Text="Adicionar chave de contato" FontSize="{StaticResource FontSizeSmall}" FontFamily="{DynamicResource FontBold}" TextColor="{DynamicResource textOnSecondary}" />
+                            <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.PlusCircle }" Size="{DynamicResource FontSizeSmall}" IconColor="{DynamicResource textOnSecondary}" />
                         </StackLayout>
                     </Frame>
 

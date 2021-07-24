@@ -325,7 +325,7 @@
                         </Frame.GestureRecognizers>
                         <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                             <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Cog }" IconSize="Small" IconColor="{DynamicResource textOnSecondary}" />
-                            <controls:CustomLabel Text="Opções" FontSize="{StaticResource FontSizeSmall}" FontAttributes="Bold" TextColor="{DynamicResource textOnSecondary}" />
+                            <Label Text="Opções" FontSize="{StaticResource FontSizeSmall}" FontFamily="{DynamicResource FontBold}" TextColor="{DynamicResource textOnSecondary}" />
                         </StackLayout>
                     </Frame>
 
@@ -342,8 +342,7 @@
                         </Frame.GestureRecognizers>
 
                         <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-
-                            <controls:CustomLabel Text="Adicionar" FontSize="{StaticResource FontSizeSmall}" FontAttributes="Bold" TextColor="{DynamicResource textOnSecondary}" />
+                            <Label Text="Adicionar" FontSize="{StaticResource FontSizeSmall}" FontFamily="{DynamicResource FontBold}" TextColor="{DynamicResource textOnSecondary}" />
                             <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.PlusCircle }" Size="{DynamicResource FontSizeSmall}" IconColor="{DynamicResource textOnSecondary}" />
                         </StackLayout>
                     </Frame>
