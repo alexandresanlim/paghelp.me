@@ -73,6 +73,7 @@ namespace PixQrCodeGeneratorOffline
         {
             DependencyService.Register<IFeedValidationService, FeedValidationService>();
             DependencyService.Register<IPixKeyValidationService, PixKeyValidationService>();
+            DependencyService.Register<IPixCobValidationService, PixCobValidationService>();
         }
 
         private void RegisterViewModelDependency()
