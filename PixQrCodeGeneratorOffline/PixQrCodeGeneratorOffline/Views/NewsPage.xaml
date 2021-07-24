@@ -5,28 +5,29 @@
              xmlns:cv="clr-namespace:PixQrCodeGeneratorOffline.Converters"
              xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
              x:Class="PixQrCodeGeneratorOffline.Views.NewsPage"
-             xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon" xmlns:share="clr-namespace:PixQrCodeGeneratorOffline.Views.Shared"
-             Shell.NavBarIsVisible="False"
-             BackgroundColor="{DynamicResource primary}"
+             xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon" 
+             xmlns:share="clr-namespace:PixQrCodeGeneratorOffline.Views.Shared"
+             Title="Notícias"
+             BackgroundColor="{DynamicResource background_page}"
              >
 
-    <ContentPage.Resources>
+    <!--<ContentPage.Resources>
         <ResourceDictionary>
             <cv:HasDataConverter x:Key="HasDataConverter" />
             <cv:HasDataConverterInverted x:Key="HasDataConverterInverted" />
         </ResourceDictionary>
-    </ContentPage.Resources>
+    </ContentPage.Resources>-->
 
     <ContentPage.Content>
-        <controls:CustomFrame>
+        <!--<controls:CustomFrame>
             <controls:CustomFrame.Background>
                 <LinearGradientBrush EndPoint="0,1">
-                    <GradientStop Color="{DynamicResource primary}"
+                    <GradientStop Color="{DynamicResource staticAccentPrimary}"
                           Offset="0.1" />
-                    <GradientStop Color="{DynamicResource primaryDark}"
+                    <GradientStop Color="{DynamicResource staticAccentPrimaryDark}"
                           Offset="1.0" />
                 </LinearGradientBrush>
-            </controls:CustomFrame.Background>
+            </controls:CustomFrame.Background>-->
 
 
 
@@ -54,15 +55,15 @@
                                             </TapGestureRecognizer>
                                         </StackLayout.GestureRecognizers>
 
-                                        <Frame BackgroundColor="{DynamicResource secondary}" CornerRadius="15" Padding="0">
+                                        <Frame BackgroundColor="{StaticResource foreground_page}" CornerRadius="15" Padding="0">
 
                                             <StackLayout>
                                                 <controls:CustomImage Source="{Binding Image}" Aspect="Fill" HeightRequest="200" />
                                                 <StackLayout Padding="15">
-                                                    <controls:CustomLabel Text="{Binding Source}" FontSize="Small" TextColor="{DynamicResource textOnSecondary}"/>
-                                                    <controls:CustomLabel Text="{Binding Title}" FontSize="Small" TextColor="{DynamicResource textOnSecondary}" FontAttributes="Bold" VerticalOptions="FillAndExpand"/>
+                                                    <controls:CustomLabel Text="{Binding Source}" FontSize="Small" TextColor="{DynamicResource textPrimary}"/>
+                                                <controls:CustomLabel Text="{Binding Title}" FontSize="Small" TextColor="{DynamicResource textPrimary}" FontAttributes="Bold" VerticalOptions="FillAndExpand"/>
                                                     <StackLayout Orientation="Horizontal">
-                                                        <controls:CustomLabel Text="{Binding Viewer.PublishDateDisplay}" FontSize="Micro" TextColor="{DynamicResource textOnSecondary}" HorizontalOptions="StartAndExpand" VerticalOptions="EndAndExpand" />
+                                                    <controls:CustomLabel Text="{Binding Viewer.PublishDateDisplay}" FontSize="Micro" TextColor="{DynamicResource textPrimary}" HorizontalOptions="StartAndExpand" VerticalOptions="EndAndExpand" />
                                                         <StackLayout Padding="15,15,0,0">
                                                             <StackLayout.GestureRecognizers>
                                                                 <TapGestureRecognizer 
@@ -70,7 +71,7 @@
                                                     CommandParameter="{Binding .}">
                                                                 </TapGestureRecognizer>
                                                             </StackLayout.GestureRecognizers>
-                                                            <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.ShareAlt }" IconSize="Medium"  IconColor="{DynamicResource textOnSecondary}" HorizontalOptions="CenterAndExpand" />
+                                                        <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.ShareAlt }" IconSize="Medium"  IconColor="{DynamicResource textPrimary}" HorizontalOptions="CenterAndExpand" />
                                                         </StackLayout>
                                                     </StackLayout>
                                                 </StackLayout>
@@ -91,7 +92,7 @@
             </Grid>
 
 
-        </controls:CustomFrame>
+        <!--</controls:CustomFrame>-->
 
     </ContentPage.Content>
 </ContentPage>

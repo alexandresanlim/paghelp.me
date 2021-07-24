@@ -93,7 +93,7 @@
             <converters:InvertedBooleanConverter x:Key="InvertedBooleanConverter" />
 
             <Style x:Key="styleFrameMenuAbout" TargetType="Frame">
-                <Setter Property="BackgroundColor" Value="{DynamicResource secondary}" />
+                <Setter Property="BackgroundColor" Value="{DynamicResource foreground_page}" />
                 <Setter Property="Padding" Value="30,15" />
                 <Setter Property="CornerRadius" Value="30" />
             </Style>
@@ -101,7 +101,7 @@
             <Style x:Key="titleStyle" TargetType="Label">
                 <Setter Property="Margin" Value="15,0,0,0"/>
                 <Setter Property="FontSize" Value="{DynamicResource FontSizeLarge}" />
-                <Setter Property="TextColor" Value="{DynamicResource textOnPrimary}"/>
+                <Setter Property="TextColor" Value="{DynamicResource textPrimary}"/>
                 <Setter Property="FontFamily" Value="FontPoppinsBold"/>
             </Style>
 

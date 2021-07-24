@@ -8,10 +8,11 @@
              Title="{Binding Title}"
     xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon"
              Shell.NavBarIsVisible="False"
+    BackgroundColor="{StaticResource background_page}"
              >
 
     <ContentPage.Content>
-        <controls:CustomFrame>
+        <!--<controls:CustomFrame>
             <controls:CustomFrame.Background>
                 <LinearGradientBrush EndPoint="0,1">
                     <GradientStop Color="{DynamicResource primary}"
@@ -19,7 +20,7 @@
                     <GradientStop Color="{DynamicResource primaryDark}"
                           Offset="1.0" />
                 </LinearGradientBrush>
-            </controls:CustomFrame.Background>
+            </controls:CustomFrame.Background>-->
 
             <ScrollView Padding="15,10">
                 <StackLayout Spacing="30">
@@ -51,7 +52,7 @@
                     <StackLayout>
                         <Label Text="Versão" Style="{StaticResource titleStyle}" />
                         <Frame Style="{StaticResource styleFrameMenuAbout}">
-                            <controls:CustomLabel x:Name="lbVersion" Text="versão" TextColor="{DynamicResource textOnSecondary}" FontSize="{StaticResource FontSizeMedium}" FontAttributes="Bold" />
+                            <controls:CustomLabel x:Name="lbVersion" Text="versão" TextColor="{DynamicResource textPrimary}" FontSize="{StaticResource FontSizeMedium}" FontAttributes="Bold" />
                         </Frame>
                     </StackLayout>
 
@@ -62,9 +63,9 @@
                                 <TapGestureRecognizer Command="{Binding OpenStoreCommand}" />
                             </Frame.GestureRecognizers>
                             <StackLayout Orientation="Horizontal" Spacing="10">
-                                <controls:CustomIcon Glyph="{Binding CurrentStoreIcon}" IconType="brand" IconColor="{DynamicResource textOnSecondary}" />
-                                <controls:CustomLabel Text="{Binding CurrentStore}" VerticalOptions="CenterAndExpand" TextColor="{DynamicResource textOnSecondary}" FontAttributes="Bold" FontSize="{StaticResource FontSizeMedium}" />
-                                <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.ChevronRight}" IconColor="{DynamicResource textOnSecondary}" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" Size="{StaticResource FontSizeMedium}" />
+                            <controls:CustomIcon Glyph="{Binding CurrentStoreIcon}" IconType="brand" IconColor="{DynamicResource textPrimary}" />
+                            <controls:CustomLabel Text="{Binding CurrentStore}" VerticalOptions="CenterAndExpand" TextColor="{DynamicResource textPrimary}" FontAttributes="Bold" FontSize="{StaticResource FontSizeMedium}" />
+                            <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.ChevronRight}" IconColor="{DynamicResource textPrimary}" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" Size="{StaticResource FontSizeMedium}" />
                             </StackLayout>
                         </Frame>
                     </StackLayout>
@@ -93,9 +94,9 @@
                             </Frame.GestureRecognizers>
 
                             <StackLayout Orientation="Horizontal" Spacing="10">
-                                <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.PaperPlane}" IconColor="{DynamicResource textOnSecondary}" />
-                                <controls:CustomLabel Text="Envie uma mensagem" TextColor="{DynamicResource textOnSecondary}" FontAttributes="Bold" FontSize="{StaticResource FontSizeMedium}" MaxLines="1" LineBreakMode="TailTruncation" />
-                                <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.ChevronRight}" IconColor="{DynamicResource textOnSecondary}" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" Size="{StaticResource FontSizeMedium}" />
+                            <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.PaperPlane}" IconColor="{DynamicResource textPrimary}" />
+                            <controls:CustomLabel Text="Envie uma mensagem" TextColor="{DynamicResource textPrimary}" FontAttributes="Bold" FontSize="{StaticResource FontSizeMedium}" MaxLines="1" LineBreakMode="TailTruncation" />
+                            <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.ChevronRight}" IconColor="{DynamicResource textPrimary}" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" Size="{StaticResource FontSizeMedium}" />
                             </StackLayout>
 
                         </Frame>
@@ -138,7 +139,7 @@
                 </StackLayout>
             </ScrollView>
 
-        </controls:CustomFrame>
+        <!--</controls:CustomFrame>-->
 
 
     </ContentPage.Content>
