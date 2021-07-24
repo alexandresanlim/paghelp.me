@@ -132,16 +132,6 @@ namespace PixQrCodeGeneratorOffline.Base.ViewModels
             Shell.Current.SendBackButtonPressed();
         }
 
-        //public async Task NavigateBackModalAsync()
-        //{
-        //    await Shell.Current.Navigation.PopModalAsync();
-        //}
-
-        //public async Task NavigateBackAsync()
-        //{
-        //    await Shell.Current.Navigation.PopAsync();
-        //}
-
         public async Task NavigateToRootAsync()
         {
             await Shell.Current.Navigation.PopToRootAsync(true);

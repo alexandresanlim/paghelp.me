@@ -35,7 +35,14 @@
                     <Label Text="Chaves" Style="{DynamicResource subOptionTitle}" />
                 </StackLayout>
 
-                
+                <StackLayout Padding="0,15">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding OpenOptionBillingPageCommand}"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label Text="Cobranças Salvas" Style="{DynamicResource subOptionTitle}" />
+                </StackLayout>
+
+
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

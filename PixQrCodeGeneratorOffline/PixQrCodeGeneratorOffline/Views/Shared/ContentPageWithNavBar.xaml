@@ -12,7 +12,7 @@
         <ControlTemplate>
             <Grid RowDefinitions="Auto,*" RowSpacing="0">
                 <Grid Grid.Row="0" ColumnDefinitions="auto,*" BackgroundColor="{TemplateBinding BackgroundColor}">
-                    <StackLayout Grid.Column="0" Padding="15,20">
+                    <StackLayout Grid.Column="0" Padding="15,35,25,15">
                         <StackLayout.GestureRecognizers>
                             <TapGestureRecognizer Tapped="TapGestureRecognizerBackButtonPressed_Tapped"/>
                         </StackLayout.GestureRecognizers>
@@ -28,6 +28,7 @@
                         TextColor="{DynamicResource textOnPrimary}"
                         MaxLines="1"
                         LineBreakMode="TailTruncation"
+                           Margin="0,25,0,0"
                         />
                 </Grid>
                 <ContentPresenter Grid.Row="1" />

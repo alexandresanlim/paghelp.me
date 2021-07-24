@@ -22,7 +22,10 @@ namespace PixQrCodeGeneratorOffline.Services
         NAVIGATION,
         SEE,
         FEEDBACK,
-        CRUD,
+        CREATE,
+        READ,
+        UPDATE,
+        DELETE,
         TAP
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace PixQrCodeGeneratorOffline.Models.Services.Interfaces
 {
@@ -16,5 +17,7 @@ namespace PixQrCodeGeneratorOffline.Models.Services.Interfaces
         bool Save(PixPayload pixPaylod);
 
         List<PixPayload> GetAll(Expression<Func<PixPayload, bool>> predicate = null);
+
+        Task RemoveAll(Expression<Func<PixPayload, bool>> predicate = null);
     }
 }

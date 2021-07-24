@@ -35,6 +35,8 @@ namespace PixQrCodeGeneratorOffline.Droid
             StartPackages(savedInstanceState);
 
             CurrentWindow = (this).Window;
+            CurrentWindow.AddFlags(Android.Views.WindowManagerFlags.TranslucentStatus);
+            CurrentWindow.AddFlags(Android.Views.WindowManagerFlags.TranslucentNavigation);
 
             StartAndroidDependency();
 
@@ -81,9 +83,10 @@ namespace PixQrCodeGeneratorOffline.Droid
                 if (Build.VERSION.SdkInt < Android.OS.BuildVersionCodes.Lollipop)
                     return;
 
-                CurrentWindow.AddFlags(Android.Views.WindowManagerFlags.DrawsSystemBarBackgrounds);
-                CurrentWindow.ClearFlags(Android.Views.WindowManagerFlags.TranslucentStatus);
-                CurrentWindow.SetStatusBarColor(color.ToPlatformColor());
+                CurrentWindow.AddFlags(Android.Views.WindowManagerFlags.TranslucentStatus);
+                CurrentWindow.AddFlags(Android.Views.WindowManagerFlags.TranslucentNavigation);
+                //CurrentWindow.ClearFlags(Android.Views.WindowManagerFlags.TranslucentStatus);
+                //CurrentWindow.SetStatusBarColor(color.ToPlatformColor());
             }
         }
 

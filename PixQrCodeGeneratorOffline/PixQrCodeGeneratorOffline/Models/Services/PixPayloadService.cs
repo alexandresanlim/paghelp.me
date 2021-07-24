@@ -1,5 +1,6 @@
 ﻿using pix_payload_generator.net.Models.CobrancaModels;
 using pix_payload_generator.net.Models.PayloadModels;
+using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models.Repository.Interfaces;
 using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Services;
@@ -7,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Text;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.Models.Services
@@ -90,6 +92,47 @@ namespace PixQrCodeGeneratorOffline.Models.Services
         public List<PixPayload> GetAll(Expression<Func<PixPayload, bool>> predicate = null)
         {
             return _pixPayloadRepository.GetAll(predicate);
+        }
+
+        public async Task RemoveAll(Expression<Func<PixPayload, bool>> predicate = null)
+        {
+            var all = GetAll() ?? new List<PixPayload>();
+
+            var count = all.Count;
+
+            if (count == 0)
+            {
+                DialogService.Toast("Nenhuma cobrança salva foi encontrada.");
+                return;
+            }
+
+            var multiple = count > 1 ? "cobranças salvas" : "cobrança salva";
+
+            var confirm = await DialogService.ConfirmAsync($"Tem certeza que deseja remover {count} {multiple} ?", "Confirmação", "Sim", "Cancelar");
+
+            if (!confirm)
+                return;
+
+            try
+            {
+                DialogService.ShowLoading("Aguarde...");
+
+                await Task.Delay(500);
+
+                _pixPayloadRepository.RemoveAll(predicate);
+
+                DialogService.Toast("Todas as cobranças salvas foram removidas");
+            }
+            catch (Exception e)
+            {
+                e.SendToLog();
+            }
+            finally
+            {
+                _eventService.SendEvent("Removeu todas as cobranças salvar", EventType.DELETE);
+
+                DialogService.HideLoading();
+            }
         }
 
         public bool IsValid(PixPayload pixPayload)

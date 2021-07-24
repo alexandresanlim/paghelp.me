@@ -66,11 +66,15 @@ namespace PixQrCodeGeneratorOffline.Models.Repository
             }
         }
 
-        public bool RemoveAll(Expression<Func<PixPayload, bool>> predicate)
+        public bool RemoveAll(Expression<Func<PixPayload, bool>> predicate = null)
         {
             try
             {
-                return _collection.DeleteMany(predicate) > 0;
+                if (predicate != null)
+                    return _collection.DeleteMany(predicate) > 0;
+
+                else
+                    return _collection.DeleteAll() > 0;
             }
             catch (Exception)
             {

@@ -14,21 +14,16 @@ using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.Models.Services
 {
-    public class PixKeyService : IPixKeyService
+    public class PixKeyService : ServiceBase, IPixKeyService
     {
-        private IUserDialogs DialogService => UserDialogs.Instance;
-
         private readonly IPixKeyRepository _pixKeyRepository;
 
         private readonly IExternalActionService _externalActionService;
-
-        private readonly IEventService _eventService;
 
         public PixKeyService()
         {
             _pixKeyRepository = DependencyService.Get<IPixKeyRepository>();
             _externalActionService = DependencyService.Get<IExternalActionService>();
-            _eventService = DependencyService.Get<IEventService>();
         }
 
         public bool IsValid(PixKey pixKey)
@@ -145,7 +140,7 @@ namespace PixQrCodeGeneratorOffline.Models.Services
             }
             finally
             {
-                _eventService.SendEvent("Removeu todas as chaves", PixQrCodeGeneratorOffline.Services.EventType.CRUD);
+                _eventService.SendEvent("Removeu todas as chaves", PixQrCodeGeneratorOffline.Services.EventType.DELETE);
             }
         }
 
@@ -168,7 +163,7 @@ namespace PixQrCodeGeneratorOffline.Models.Services
             }
             finally
             {
-                _eventService.SendEvent("Editou chave", EventType.CRUD);
+                _eventService.SendEvent("Editou chave", EventType.UPDATE);
 
                 DialogService.HideLoading();
             }
@@ -190,7 +185,7 @@ namespace PixQrCodeGeneratorOffline.Models.Services
             }
             finally
             {
-                _eventService.SendEvent("Navegou para adicionar nova chave", EventType.CRUD);
+                _eventService.SendEvent("Navegou para adicionar nova chave", EventType.NAVIGATION);
 
                 DialogService.HideLoading();
             }

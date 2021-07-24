@@ -94,7 +94,7 @@ namespace PixQrCodeGeneratorOffline
         private void LoadConfig()
         {
             LoadPtBrCultureInfo();
-            LoadStatusBar();
+            //LoadStatusBar();
             LoadPDVMode();
             LoadStyle();
         }

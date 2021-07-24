@@ -317,7 +317,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
             CurrenStyle = SelectedFinancialInstitution?.Institution?.MaterialColor;
 
-            _statusBarService.SetStatusBarColor(SelectedFinancialInstitution.Institution.MaterialColor.Primary);
+            //_statusBarService.SetStatusBarColor(SelectedFinancialInstitution.Institution.MaterialColor.Primary);
         }
 
         private async Task<bool> ValidateSave()

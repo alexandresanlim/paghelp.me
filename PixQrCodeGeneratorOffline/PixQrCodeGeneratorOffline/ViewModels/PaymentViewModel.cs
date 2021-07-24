@@ -16,10 +16,10 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         {
             CurrentPixPaylod = pixPaylod;
 
-            var styleKey = CurrentPixPaylod?.PixKey?.FinancialInstitution?.Institution?.MaterialColor;
+            //var styleKey = CurrentPixPaylod?.PixKey?.FinancialInstitution?.Institution?.MaterialColor;
 
-            if (styleKey != null)
-                App.LoadTheme(styleKey);
+            //if (styleKey != null)
+            //    App.LoadTheme(styleKey);
         });
 
         public ICommand SharePayloadCommand => new Command(async () =>

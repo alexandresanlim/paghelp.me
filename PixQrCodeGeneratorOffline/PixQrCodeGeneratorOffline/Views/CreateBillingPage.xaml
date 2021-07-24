@@ -9,7 +9,7 @@
              xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon" 
              xmlns:local="clr-namespace:PixQrCodeGeneratorOffline.Converters" 
              xmlns:shared="clr-namespace:PixQrCodeGeneratorOffline.Views.Shared"
-    xmlns:share="clr-namespace:PixQrCodeGeneratorOffline.Views.Shared"
+    xmlns:share="clr-namespace:PixQrCodeGeneratorOffline.Views.Shared" xmlns:content="clr-namespace:PixQrCodeGeneratorOffline.Views.Content"
     BackgroundColor="{Binding CurrentPixKey.FinancialInstitution.Institution.MaterialColor.Primary}"
              Title="Nova Cobrança"
              >
@@ -223,7 +223,10 @@
                             <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Times }" IconSize="Large" IconColor="{DynamicResource textOnPrimary}" VerticalOptions="CenterAndExpand" />
                         </StackLayout>
                     </StackLayout>
-                    <controls:CustomCollectionView ItemsSource="{Binding RecentPixCobList}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" HeightRequest="200">
+
+                    <content:BillingSaveListView/>
+
+                    <!--<controls:CustomCollectionView ItemsSource="{Binding RecentPixCobList}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" HeightRequest="200">
 
                         <controls:CustomCollectionView.ItemsLayout>
                             <GridItemsLayout Orientation="Vertical" VerticalItemSpacing="10" HorizontalItemSpacing="10" Span="2"/>
@@ -267,7 +270,7 @@
                             </DataTemplate>
                         </controls:CustomCollectionView.ItemTemplate>
 
-                    </controls:CustomCollectionView>
+                    </controls:CustomCollectionView>-->
                 </StackLayout>
             </Grid>
         </ScrollView>
