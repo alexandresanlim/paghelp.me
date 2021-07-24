@@ -239,8 +239,10 @@
 
                                                 </qr:QRCode>
 
-
-                                                <controls:CustomLabel Text="{Binding Viewer.KeyPresentation}" FontSize="{StaticResource FontSizeMicro}" HorizontalOptions="Center" FontAttributes="Bold" TextColor="{DynamicResource textOnPrimary}" Margin="0,10,0,0" />
+                                                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                                                    <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Key }" IconColor="{Binding FinancialInstitution.Institution.MaterialColor.TextOnPrimary}" Size="{DynamicResource FontSizeSmall}" />
+                                                    <controls:CustomLabel Text="{Binding Viewer.KeyPresentation}" FontSize="{StaticResource FontSizeSmall}" FontFamily="{DynamicResource FontBold}" TextColor="{DynamicResource textOnPrimary}" />
+                                                </StackLayout>
                                             </StackLayout>
 
                                             <ScrollView Grid.Row="1">
