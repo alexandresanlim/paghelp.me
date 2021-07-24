@@ -75,16 +75,16 @@
 
                         <Label Text="{Binding CurrentPixKey.Viewer.BankAndKey}" TextColor="{DynamicResource textOnPrimary}" HorizontalOptions="Center" LineBreakMode="TailTruncation" MaxLines="1" />
 
-                        <controls:CustomFrame BackgroundColor="{DynamicResource secondary}" Padding="10" CornerRadius="10">
-                            <controls:CustomFrame.GestureRecognizers>
+                        <Frame BackgroundColor="{DynamicResource secondary}" Padding="10" CornerRadius="10">
+                            <Frame.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding SetDescriptionCommand}"/>
-                            </controls:CustomFrame.GestureRecognizers>
+                            </Frame.GestureRecognizers>
 
                             <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                                 <controls:CustomLabel Text="{Binding CurrentDescription}" FontSize="Small" TextColor="{DynamicResource textOnSecondary}" FontAttributes="Bold"/>
                                 <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Edit }" IconSize="Micro" IconColor="{DynamicResource textOnSecondary}" />
                             </StackLayout>
-                        </controls:CustomFrame>
+                        </Frame>
                     </StackLayout>
 
                     <StackLayout Grid.Row="1">

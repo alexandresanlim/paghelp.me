@@ -7,7 +7,7 @@ using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.Controls
 {
-    public class CustomFrameButton : CustomFrame
+    public class CustomFrameButton : Frame
     {
         private CustomLabel TexButtonValue { get; set; } = new CustomLabel
         {
@@ -28,7 +28,7 @@ namespace PixQrCodeGeneratorOffline.Controls
         public CustomFrameButton()
         {
             BackgroundColor = App.ThemeColors.Secondary;
-            CornerRadius = new CornerRadius(25);
+            CornerRadius = 25;
             Content = new StackLayout
             {
                 Orientation = StackOrientation.Horizontal,
@@ -132,12 +132,12 @@ namespace PixQrCodeGeneratorOffline.Controls
                switch (value)
                {
                    case CustomFrameButtonStyle.Round:
-                       control.CornerRadius = new CornerRadius(25);
+                       control.CornerRadius = 25;
                        break;
 
                    case CustomFrameButtonStyle.Modern:
                    default:
-                       control.CornerRadius = new CornerRadius(25, 0, 25, 25);
+                       control.CornerRadius = 25;
                        break;
                }
            });

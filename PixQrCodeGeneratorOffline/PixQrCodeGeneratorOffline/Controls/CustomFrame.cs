@@ -1,19 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Xamarin.Forms;
-using Xamarin.Forms.PancakeView;
+﻿//using System;
+//using System.Collections.Generic;
+//using System.Text;
+//using Xamarin.Forms;
 
-namespace PixQrCodeGeneratorOffline.Controls
-{
-    public class CustomFrame : PancakeView
-    {
-        public CustomFrame()
-        {
-            //var isdark = Application.Current.UserAppTheme == OSAppTheme.Dark;
-            //BackgroundColor = isdark ? Color.Black : Color.White;
+//namespace PixQrCodeGeneratorOffline.Controls
+//{
+//    public class CustomFrame : Frame
+//    {
+//        public CustomFrame()
+//        {
+//            //var isdark = Application.Current.UserAppTheme == OSAppTheme.Dark;
+//            //BackgroundColor = isdark ? Color.Black : Color.White;
 
-            //BackgroundColor = Color.White;
-        }
-    }
-}
+//            //BackgroundColor = Color.White;
+//        }
+//    }
+//}
