@@ -56,7 +56,7 @@
                                 <Grid ColumnDefinitions="auto,*,auto" ColumnSpacing="15">
 
 
-                                    <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.UserCircle }" Grid.Column="0" Size="50" IconColor="{DynamicResource textOnSecondary}" VerticalOptions="Start" />
+                                    <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.UserCircle }" Grid.Column="0" Size="50" IconColor="{DynamicResource textPrimary}" VerticalOptions="Start" />
 
                                     <!--<StackLayout BackgroundColor="{Binding FinancialInstitution.Institution.MaterialColor.PrimaryDark}" Grid.Column="0" Padding="15">-->
                                     <!--<qr:QRCode
@@ -78,16 +78,16 @@
                                     <!--</StackLayout>-->
 
                                     <StackLayout Grid.Column="1" Spacing="0" VerticalOptions="Center">
-                                        <controls:CustomLabel Text="{Binding Viewer.NamePresentation}" TextColor="{Binding FinancialInstitution.Institution.MaterialColor.TextOnPrimary}" FontAttributes="Bold" FontSize="{StaticResource FontSizeMedium}"  />
-                                        <controls:CustomLabel Text="{Binding Viewer.KeyPresentation}" TextColor="{Binding FinancialInstitution.Institution.MaterialColor.TextOnPrimary}" MaxLines="1" LineBreakMode="MiddleTruncation" />
+                                        <controls:CustomLabel Text="{Binding Viewer.NamePresentation}" TextColor="{DynamicResource textPrimary}" FontAttributes="Bold" FontSize="{StaticResource FontSizeMedium}"  />
+                                        <controls:CustomLabel Text="{Binding Viewer.KeyPresentation}" TextColor="{DynamicResource textPrimary}" MaxLines="1" LineBreakMode="MiddleTruncation" />
                                     </StackLayout>
 
                                     <StackLayout Grid.Column="2" Padding="30,5,0,15" VerticalOptions="Start">
                                         <StackLayout.GestureRecognizers>
                                             <TapGestureRecognizer Command="{Binding Command.EditKeyCommand}" />
                                         </StackLayout.GestureRecognizers>
-                                        <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Edit }" IconColor="{Binding FinancialInstitution.Institution.MaterialColor.TextOnPrimary}"/>
-                                        <Label Text="Editar" Style="{DynamicResource styleTextOnButtonActionList}" TextColor="{Binding FinancialInstitution.Institution.MaterialColor.TextOnPrimary}"/>
+                                        <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Edit }" IconColor="{DynamicResource textPrimary}"/>
+                                        <Label Text="Editar" Style="{DynamicResource styleTextOnButtonActionList}" TextColor="{DynamicResource textPrimary}"/>
                                     </StackLayout>
 
                                     <!--<controls:CustomIcon Grid.Column="2" Glyph="{x:Static icons:FontAwesomeSolid.ChevronRight }" IconColor="{Binding FinancialInstitution.Institution.MaterialColor.TextOnPrimary}" IconSize="Title" HorizontalOptions="Center" Margin="0,0,10,0" />-->
