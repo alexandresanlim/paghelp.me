@@ -26,7 +26,7 @@ namespace PixQrCodeGeneratorOffline.Base.ViewModels
 
         protected readonly IPixKeyService _pixKeyService;
 
-        public readonly IStatusBar _statusBarService;
+        //public readonly IStatusBar _statusBarService;
 
         protected readonly IMaterialColorService _materialColorService;
 
@@ -44,7 +44,7 @@ namespace PixQrCodeGeneratorOffline.Base.ViewModels
         {
             _financialInstitutionService = DependencyService.Get<IFinancialInstitutionService>();
             _pixKeyService = DependencyService.Get<IPixKeyService>();
-            _statusBarService = DependencyService.Get<IStatusBar>();
+            //_statusBarService = DependencyService.Get<IStatusBar>();
             _materialColorService = DependencyService.Get<IMaterialColorService>();
             _pixPayloadService = DependencyService.Get<IPixPayloadService>();
             _preferenceService = DependencyService.Get<IPreferenceService>();

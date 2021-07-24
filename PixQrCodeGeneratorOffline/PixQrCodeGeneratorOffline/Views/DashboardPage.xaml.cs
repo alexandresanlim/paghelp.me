@@ -30,11 +30,11 @@ namespace PixQrCodeGeneratorOffline.Views
         //    }
         //}
 
-        protected override void OnAppearing()
-        {
-            _viewModel._statusBarService.SetByStyleListColor();
-            base.OnAppearing();
-        }
+        //protected override void OnAppearing()
+        //{
+        //    _viewModel._statusBarService.SetByStyleListColor();
+        //    base.OnAppearing();
+        //}
 
         //private void CustomEntry_Unfocused(object sender, FocusEventArgs e)
         //{

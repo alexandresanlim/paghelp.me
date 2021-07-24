@@ -107,13 +107,13 @@
 
             <Style x:Key="optionTitle" TargetType="Label">
                 <Setter Property="FontSize" Value="50" />
-                <Setter Property="TextColor" Value="{DynamicResource primaryLight}"/>
+                <Setter Property="TextColor" Value="{DynamicResource staticAccentPrimaryLight}"/>
                 <Setter Property="FontFamily" Value="FontPoppinsBold"/>
             </Style>
 
             <Style x:Key="subOptionTitle" TargetType="Label">
                 <Setter Property="FontSize" Value="30" />
-                <Setter Property="TextColor" Value="{DynamicResource textOnPrimary}"/>
+                <Setter Property="TextColor" Value="{DynamicResource staticAccentTextOnPrimary}"/>
                 <Setter Property="FontFamily" Value="FontPoppinsSemiBold"/>
             </Style>
 

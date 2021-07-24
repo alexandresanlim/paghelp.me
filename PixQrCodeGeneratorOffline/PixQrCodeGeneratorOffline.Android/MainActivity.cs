@@ -60,7 +60,7 @@ namespace PixQrCodeGeneratorOffline.Droid
 
         private void StartAndroidDependency()
         {
-            DependencyService.Register<IStatusBar, StatusBarChanger>();
+            //DependencyService.Register<IStatusBar, StatusBarChanger>();
             DependencyService.Register<IPDVMode, PDVMode>();
         }
 
@@ -71,24 +71,24 @@ namespace PixQrCodeGeneratorOffline.Droid
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
 
-        public class StatusBarChanger : IStatusBar
-        {
-            public void SetByStyleListColor()
-            {
-                SetStatusBarColor(App.ThemeColors.Primary);
-            }
+        //public class StatusBarChanger : IStatusBar
+        //{
+        //    public void SetByStyleListColor()
+        //    {
+        //        SetStatusBarColor(App.ThemeColors.Primary);
+        //    }
 
-            public void SetStatusBarColor(System.Drawing.Color color)
-            {
-                if (Build.VERSION.SdkInt < Android.OS.BuildVersionCodes.Lollipop)
-                    return;
+        //    public void SetStatusBarColor(System.Drawing.Color color)
+        //    {
+        //        if (Build.VERSION.SdkInt < Android.OS.BuildVersionCodes.Lollipop)
+        //            return;
 
-                CurrentWindow.AddFlags(Android.Views.WindowManagerFlags.TranslucentStatus);
-                CurrentWindow.AddFlags(Android.Views.WindowManagerFlags.TranslucentNavigation);
-                //CurrentWindow.ClearFlags(Android.Views.WindowManagerFlags.TranslucentStatus);
-                //CurrentWindow.SetStatusBarColor(color.ToPlatformColor());
-            }
-        }
+        //        CurrentWindow.AddFlags(Android.Views.WindowManagerFlags.TranslucentStatus);
+        //        CurrentWindow.AddFlags(Android.Views.WindowManagerFlags.TranslucentNavigation);
+        //        //CurrentWindow.ClearFlags(Android.Views.WindowManagerFlags.TranslucentStatus);
+        //        //CurrentWindow.SetStatusBarColor(color.ToPlatformColor());
+        //    }
+        //}
 
         public class PDVMode : IPDVMode
         {

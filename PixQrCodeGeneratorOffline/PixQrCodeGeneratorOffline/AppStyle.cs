@@ -12,7 +12,7 @@ namespace PixQrCodeGeneratorOffline
     {
         public static IMaterialColorService MaterialColorService => DependencyService.Get<IMaterialColorService>();
 
-        public static IStatusBar StatusBarService => DependencyService.Get<IStatusBar>();
+        //public static IStatusBar StatusBarService => DependencyService.Get<IStatusBar>();
 
         public static void LoadTheme(MaterialColor theme = null)
         {
@@ -20,7 +20,7 @@ namespace PixQrCodeGeneratorOffline
 
             MaterialColorService.SetOnCurrentResource(themeOrRandom);
 
-            StatusBarService?.SetByStyleListColor();
+            //StatusBarService?.SetByStyleListColor();
         }
 
         public static MaterialColor ThemeColors => MaterialColorService.GetOnCurrentResource();

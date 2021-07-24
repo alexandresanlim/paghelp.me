@@ -104,11 +104,11 @@ namespace PixQrCodeGeneratorOffline
             CultureInfo.CurrentCulture = CultureInfo.CreateSpecificCulture("pt-BR");
         }
 
-        private void LoadStatusBar()
-        {
-            var service = DependencyService.Get<IStatusBar>();
-            service?.SetByStyleListColor();
-        }
+        //private void LoadStatusBar()
+        //{
+        //    var service = DependencyService.Get<IStatusBar>();
+        //    service?.SetByStyleListColor();
+        //}
 
         private void LoadPDVMode()
         {

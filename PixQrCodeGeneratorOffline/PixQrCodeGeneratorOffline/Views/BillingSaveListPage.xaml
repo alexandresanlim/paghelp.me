@@ -5,19 +5,19 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:content="clr-namespace:PixQrCodeGeneratorOffline.Views.Content"
              x:Class="PixQrCodeGeneratorOffline.Views.BillingSaveListPage"
-    BackgroundColor="{DynamicResource primary}"
+    BackgroundColor="{DynamicResource staticAccentPrimary}"
     Title="Cobranças salvas">
     
     <ContentPage.Content>
         <StackLayout Padding="10,0">
-            <StackLayout.Background>
+            <!--<StackLayout.Background>
                 <LinearGradientBrush EndPoint="0,1">
                     <GradientStop Color="{DynamicResource primary}"
                           Offset="0.1" />
                     <GradientStop Color="{DynamicResource primaryDark}"
                           Offset="1.0" />
                 </LinearGradientBrush>
-            </StackLayout.Background>
+            </StackLayout.Background>-->
             
             <content:BillingSaveListView />
         </StackLayout>

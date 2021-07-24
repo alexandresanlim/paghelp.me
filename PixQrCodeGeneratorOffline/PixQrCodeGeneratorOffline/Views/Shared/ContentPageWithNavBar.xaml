@@ -10,14 +10,14 @@
     
     <ContentPage.ControlTemplate>
         <ControlTemplate>
-            <Grid RowDefinitions="Auto,*" RowSpacing="0">
-                <Grid Grid.Row="0" ColumnDefinitions="auto,*" BackgroundColor="{TemplateBinding BackgroundColor}">
-                    <StackLayout Grid.Column="0" Padding="15,35,25,15">
+            <Grid RowDefinitions="Auto,*" RowSpacing="0" Padding="0,25,0,50">
+                <Grid Grid.Row="0" ColumnDefinitions="auto,*">
+                    <StackLayout Grid.Column="0" Padding="15,15,25,15">
                         <StackLayout.GestureRecognizers>
                             <TapGestureRecognizer Tapped="TapGestureRecognizerBackButtonPressed_Tapped"/>
                         </StackLayout.GestureRecognizers>
 
-                        <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.ChevronLeft }" IconSize="Title" IconColor="{DynamicResource textOnPrimary}" />
+                        <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.ChevronLeft }" IconSize="Title" IconColor="{DynamicResource staticAccentTextOnPrimary}" />
                     </StackLayout>
 
                     <Label Grid.Column="1"
@@ -25,10 +25,9 @@
                         Text="{TemplateBinding Title}"
                         VerticalOptions="CenterAndExpand" 
                         FontFamily="FontPoppinsSemiBold"
-                        TextColor="{DynamicResource textOnPrimary}"
+                        TextColor="{DynamicResource staticAccentTextOnPrimary}"
                         MaxLines="1"
                         LineBreakMode="TailTruncation"
-                           Margin="0,25,0,0"
                         />
                 </Grid>
                 <ContentPresenter Grid.Row="1" />
