@@ -22,14 +22,12 @@
         </Style>
 
         <Style x:Key="styleButtonActionList" TargetType="Frame">
-            <Setter Property="BackgroundColor" Value="{DynamicResource secondary}"/>
             <Setter Property="CornerRadius" Value="10"/>
             <Setter Property="Padding" Value="10,15"/>
 
         </Style>
 
         <Style x:Key="styleIconActionList" TargetType="controls:CustomIcon">
-            <Setter Property="IconColor" Value="{DynamicResource textOnSecondary}"/>
             <Setter Property="IconSize" Value="Large"/>
             <Setter Property="HorizontalOptions" Value="Center"/>
         </Style>
@@ -150,34 +148,34 @@
                                         </Grid>
 
                                         <Grid ColumnDefinitions="*,*,*">
-                                            
-                                            <Frame Grid.Column="0" Style="{DynamicResource styleButtonActionList}">
+
+                                            <Frame Grid.Column="0" Style="{DynamicResource styleButtonActionList}" BackgroundColor="{Binding FinancialInstitution.Institution.MaterialColor.PrimaryDark}">
                                                 <Frame.GestureRecognizers>
                                                     <TapGestureRecognizer Command="{Binding Command.NavigateToCreateBillingPageCommand}" />
                                                 </Frame.GestureRecognizers>
                                                 <StackLayout>
-                                                    <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Qrcode }" Style="{DynamicResource styleIconActionList}" />
-                                                    <Label Text="Criar Qr Code" Style="{DynamicResource styleTextOnButtonActionList}"/>
+                                                    <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Qrcode }" Style="{DynamicResource styleIconActionList}" IconColor="{Binding FinancialInstitution.Institution.MaterialColor.TextOnPrimary}" />
+                                                    <Label Text="Criar Qr Code" Style="{DynamicResource styleTextOnButtonActionList}" TextColor="{Binding FinancialInstitution.Institution.MaterialColor.TextOnPrimary}" />
                                                 </StackLayout>
 
 
                                             </Frame>
-                                            <Frame Grid.Column="1" Style="{DynamicResource styleButtonActionList}">
+                                            <Frame Grid.Column="1" Style="{DynamicResource styleButtonActionList}" BackgroundColor="{Binding FinancialInstitution.Institution.MaterialColor.PrimaryDark}">
                                                 <Frame.GestureRecognizers>
                                                     <TapGestureRecognizer Command="{Binding Command.CopyKeyCommand}" />
                                                 </Frame.GestureRecognizers>
                                                 <StackLayout>
-                                                    <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Copy }" Style="{DynamicResource styleIconActionList}" />
-                                                    <Label Text="Copiar" Style="{DynamicResource styleTextOnButtonActionList}"/>
+                                                    <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Copy }" Style="{DynamicResource styleIconActionList}" IconColor="{Binding FinancialInstitution.Institution.MaterialColor.TextOnPrimary}" />
+                                                    <Label Text="Copiar" Style="{DynamicResource styleTextOnButtonActionList}" TextColor="{Binding FinancialInstitution.Institution.MaterialColor.TextOnPrimary}" />
                                                 </StackLayout>
                                             </Frame>
-                                            <Frame Grid.Column="2" Style="{DynamicResource styleButtonActionList}">
+                                            <Frame Grid.Column="2" Style="{DynamicResource styleButtonActionList}" BackgroundColor="{Binding FinancialInstitution.Institution.MaterialColor.PrimaryDark}">
                                                 <Frame.GestureRecognizers>
                                                     <TapGestureRecognizer Command="{Binding Command.ShareKeyCommand}" />
                                                 </Frame.GestureRecognizers>
                                                 <StackLayout>
-                                                    <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.ShareAlt }" Style="{DynamicResource styleIconActionList}" />
-                                                    <Label Text="Compartilhar" Style="{DynamicResource styleTextOnButtonActionList}"/>
+                                                    <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.ShareAlt }" Style="{DynamicResource styleIconActionList}" IconColor="{Binding FinancialInstitution.Institution.MaterialColor.TextOnPrimary}" />
+                                                    <Label Text="Compartilhar" Style="{DynamicResource styleTextOnButtonActionList}" TextColor="{Binding FinancialInstitution.Institution.MaterialColor.TextOnPrimary}"/>
                                                 </StackLayout>
                                             </Frame>
                                         </Grid>

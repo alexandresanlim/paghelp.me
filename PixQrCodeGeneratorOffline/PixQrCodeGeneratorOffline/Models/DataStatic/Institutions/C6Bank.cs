@@ -19,7 +19,7 @@ namespace PixQrCodeGeneratorOffline.Models.DataStatic.Institutions
             Primary = Color.FromHex("#7a7a7a"),
             PrimaryDark = Color.FromHex("#4e4e4e"),
             PrimaryLight = Color.FromHex("#a9a9a9"),
-            TextOnPrimary = Color.FromHex("#000000")
+            TextOnPrimary = Color.FromHex("#ffffff")
         };
     }
 }
