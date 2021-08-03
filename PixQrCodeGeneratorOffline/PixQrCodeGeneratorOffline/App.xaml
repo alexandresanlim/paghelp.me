@@ -27,9 +27,9 @@
         <Color x:Key="textOnBackgroundTransparent">#ffffff</Color>
 
         <Color x:Key="backgroundTransparentDashboard">#99000000</Color>
-        
+
         <!--<Color x:Key="background_page">#0c143c</Color>-->
-        
+
         <Color x:Key="background_page">#ecf0f1</Color>
         <Color x:Key="foreground_page">#ecf0f1</Color>
 
@@ -118,11 +118,13 @@
             </Style>
 
             <Style x:Key="paddingPageGrid" TargetType="Grid">
-                <Setter Property="Padding" Value="0,25,0,50" />
+                <Setter Property="Padding" Value="0,25,0,0" />
+                <!--<Setter Property="Padding" Value="0,25,0,50" />-->
             </Style>
 
             <Style x:Key="paddingPageStackLayout" TargetType="StackLayout">
-                <Setter Property="Padding" Value="0,25,0,50" />
+                <Setter Property="Padding" Value="0,25,0,0" />
+                <!--<Setter Property="Padding" Value="0,25,0,50" />-->
             </Style>
 
             <!--<Style x:Key="iconMenuStyle" TargetType="controls:CustomIcon">

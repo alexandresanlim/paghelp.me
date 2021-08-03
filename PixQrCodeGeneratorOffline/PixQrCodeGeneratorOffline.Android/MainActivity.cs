@@ -36,7 +36,7 @@ namespace PixQrCodeGeneratorOffline.Droid
 
             CurrentWindow = (this).Window;
             CurrentWindow.AddFlags(Android.Views.WindowManagerFlags.TranslucentStatus);
-            CurrentWindow.AddFlags(Android.Views.WindowManagerFlags.TranslucentNavigation);
+            //CurrentWindow.AddFlags(Android.Views.WindowManagerFlags.TranslucentNavigation);
 
             StartAndroidDependency();
 

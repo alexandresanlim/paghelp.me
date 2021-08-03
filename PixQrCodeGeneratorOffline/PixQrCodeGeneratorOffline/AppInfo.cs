@@ -68,16 +68,16 @@ namespace PixQrCodeGeneratorOffline
                 get
                 {
 #if DEBUG
-                    return EviromentType.Production;
+                    return EviromentType.Development;
 #else
                     return EviromentType.Production;
 #endif
                 }
             }
 
-            public static bool IsProduction => (Current == EviromentType.Production);
+            public static bool IsProduction => Current == EviromentType.Production;
 
-            public static bool IsDevelopment => (Current == EviromentType.Development);
+            public static bool IsDevelopment => Current == EviromentType.Development;
         }
 
         public static class Ids

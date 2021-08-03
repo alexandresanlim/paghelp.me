@@ -16,7 +16,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         {
             CurrentPixPaylod = pixPaylod;
 
-            SaveButtonVisible = !(CurrentPixPaylod.Id > 0) && CurrentPixPaylod.PixCob.Validation.HasValue;
+            SaveButtonVisible = !(CurrentPixPaylod.Id > 0) && CurrentPixPaylod?.PixCob != null && CurrentPixPaylod.PixCob.Validation.HasValue;
         });
 
         public ICommand SharePayloadCommand => new Command(async () =>
