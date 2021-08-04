@@ -26,7 +26,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             CurrentPixKey = pixKey ?? new PixKey();
             CurrentPixKey.IsContact = isContact;
 
-            CurrentDashboard = CurrentPixKey.IsContact ? (DashboardViewModelBase)DashboardContactVM : (DashboardViewModelBase)DashboardVM;
+            CurrentDashboard = CurrentPixKey.IsContact ? DashboardContactVM : (DashboardViewModelBase)DashboardVM;
 
             LoadData.Execute(null);
         }
@@ -53,7 +53,9 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 if (!IsEdit && !CurrentPixKey.IsContact)
                 {
                     if (CurrentInputValues.Institution.Index > -1)
+                    {
                         InputList[CurrentInputValues.Institution.Index].Placeholder = "Toque para selecionar";
+                    }
 
                     var firstKey = _pixKeyService.GetAll().LastOrDefault();
 
@@ -312,6 +314,8 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public void SetStatusFromCurrentPixColor()
         {
+            return;
+
             if (SelectedFinancialInstitution?.Institution?.MaterialColor == null)
                 return;
 

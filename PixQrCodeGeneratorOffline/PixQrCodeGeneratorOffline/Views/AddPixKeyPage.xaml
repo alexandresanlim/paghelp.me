@@ -7,7 +7,6 @@
              x:Class="PixQrCodeGeneratorOffline.Views.AddPixKeyPage"
              xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon"
              Shell.NavBarIsVisible="False"
-             BackgroundColor="{Binding CurrenStyle.Primary}"
              xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
                        Title="Editar Chave"
              >
@@ -23,7 +22,7 @@
 
             <Style x:Key="styleInputTitle" TargetType="Label">
                 <Setter Property="FontSize" Value="{DynamicResource FontSizeMedium}"/>
-                <Setter Property="FontFamily" Value="FontPoppinsSemiBold"/>
+                <Setter Property="FontFamily" Value="{DynamicResource FontSemiBold}"/>
                 <Setter Property="Margin" Value="10,0,0,0"/>
                 <Setter Property="TextColor" Value="{DynamicResource textPrimary}"/>
             </Style>
@@ -32,34 +31,25 @@
     </ContentPage.Resources>
 
     <ContentPage.Content>
-        <!--<StackLayout>-->
-        <!--<controls:CustomFrame.Background>
-                <LinearGradientBrush EndPoint="0,1">
-                    <GradientStop Color="{DynamicResource primary}"
-                          Offset="0.1" />
-                    <GradientStop Color="{DynamicResource primaryDark}"
-                          Offset="1.0" />
-                </LinearGradientBrush>
-            </controls:CustomFrame.Background>-->
 
-        <StackLayout Spacing="0">
+        <StackLayout Spacing="0" Padding="0,15,0,0">
 
-            <controls:CustomProgress CurrentPhase="{Binding ActualInputNextPosition}" ColorMore="{DynamicResource secondary }" ColorLess="{Binding CurrenStyle.PrimaryLight}" Phases="{Binding InputPhasesCount}" Margin="20,15,20,0"/>
+            <controls:CustomProgress CurrentPhase="{Binding ActualInputNextPosition}" ColorMore="{DynamicResource staticAccentPrimaryDark }" ColorLess="{DynamicResource staticAccentPrimaryLight}" Phases="{Binding InputPhasesCount}" Margin="20,15,20,0"/>
 
             <StackLayout Orientation="Horizontal" HorizontalOptions="End" IsVisible="{Binding IsEdit}">
                 <StackLayout Padding="20,15,10,0">
                     <StackLayout.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding DeleteCommand}" />
                     </StackLayout.GestureRecognizers>
-                    <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.TrashAlt }" IconSize="Medium" IconColor="{Binding CurrenStyle.TextOnPrimary}" />
-                    <controls:CustomLabel Text="Excluir" TextColor="{Binding CurrenStyle.TextOnPrimary}" FontAttributes="Bold" />
+                    <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.TrashAlt }" IconSize="Medium" IconColor="{DynamicResource textPrimary}" />
+                    <Label Text="Excluir" TextColor="{DynamicResource textPrimary}" FontFamily="{DynamicResource FontBold}" />
                 </StackLayout>
                 <StackLayout Padding="10,15,10,0">
                     <StackLayout.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding SaveCommand}" />
                     </StackLayout.GestureRecognizers>
-                    <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Save }" IconSize="Medium" IconColor="{Binding CurrenStyle.TextOnPrimary}" />
-                    <controls:CustomLabel Text="Salvar" TextColor="{Binding CurrenStyle.TextOnPrimary}" FontAttributes="Bold" />
+                    <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Save }" IconSize="Medium" IconColor="{DynamicResource textPrimary}" />
+                    <Label Text="Salvar" TextColor="{DynamicResource textPrimary}" FontFamily="{DynamicResource FontBold}" />
                 </StackLayout>
             </StackLayout>
 
@@ -75,22 +65,22 @@
                     <DataTemplate>
                         <StackLayout Padding="5,15,5,0">
                             <StackLayout Spacing="15">
-                                <controls:CustomIcon Glyph="{Binding Icon}" Size="{DynamicResource FontSizeLarge}" IconColor="White" />
-                                <Label Text="{Binding Title}" TextColor="White" FontSize="{DynamicResource FontSizeLarge}" HorizontalTextAlignment="Center" FontFamily="{StaticResource FontBold}" />
+                                <controls:CustomIcon Glyph="{Binding Icon}" Size="{DynamicResource FontSizeLarge}" IconColor="{DynamicResource textSecondary}" />
+                                <Label Text="{Binding Title}" TextColor="{DynamicResource textSecondary}" FontSize="{DynamicResource FontSizeLarge}" HorizontalTextAlignment="Center" FontFamily="{StaticResource FontBold}" />
                             </StackLayout>
-                            <Frame BackgroundColor="#15000000" Padding="15,30" CornerRadius="10" IsVisible="{Binding IsInstitution, Converter={StaticResource InvertedBooleanConverter}}">
+                            <Frame BackgroundColor="{DynamicResource foreground_page}" Padding="15,30" CornerRadius="10" IsVisible="{Binding IsInstitution, Converter={StaticResource InvertedBooleanConverter}}">
                                 <StackLayout>
-                                    <Entry Text="{Binding Value}" Placeholder="{Binding Placeholder}" ReturnCommand="{Binding Source={RelativeSource AncestorType={x:Type vm:AddPixKeyViewModel}}, Path=InputNextCommand}" TextColor="White" PlaceholderColor="#95a5a6" />
+                                    <Entry Text="{Binding Value}" Placeholder="{Binding Placeholder}" ReturnCommand="{Binding Source={RelativeSource AncestorType={x:Type vm:AddPixKeyViewModel}}, Path=InputNextCommand}" TextColor="{DynamicResource textPrimary}" PlaceholderColor="{DynamicResource textSecondary}" />
                                 </StackLayout>
                             </Frame>
 
-                            <Frame BackgroundColor="#15000000" Padding="15,30" IsVisible="{Binding IsInstitution}" CornerRadius="10">
+                            <Frame BackgroundColor="{DynamicResource foreground_page}" Padding="15,30" IsVisible="{Binding IsInstitution}" CornerRadius="10">
                                 <Frame.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:AddPixKeyViewModel}}, Path=SelectedInstitutionCommand}" />
                                 </Frame.GestureRecognizers>
                                 <StackLayout Orientation="Horizontal">
-                                    <controls:CustomLabel Text="{Binding Placeholder}" FontAttributes="Bold" FontSize="{DynamicResource FontSizeMedium}" TextColor="White" HorizontalOptions="FillAndExpand" />
-                                    <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.ChevronDown }" IconSize="Large" IconColor="White" />
+                                    <Label Text="{Binding Placeholder}" FontFamily="{DynamicResource FontBold}" FontSize="{DynamicResource FontSizeMedium}" TextColor="{DynamicResource textSecondary}" HorizontalOptions="FillAndExpand" />
+                                    <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.ChevronDown }" Size="{DynamicResource FontSizeLarge}" IconColor="{DynamicResource textSecondary}" />
                                 </StackLayout>
 
                             </Frame>
@@ -102,18 +92,18 @@
 
             <StackLayout>
 
-                <Frame BackgroundColor="{DynamicResource secondary}" Padding="15" CornerRadius="30" Margin="15,0" IsVisible="{Binding ShowSaveButton, Converter={StaticResource InvertedBooleanConverter}}">
+                <Frame BackgroundColor="{DynamicResource staticAccentPrimary}" Padding="15" CornerRadius="30" Margin="15,0" IsVisible="{Binding ShowSaveButton, Converter={StaticResource InvertedBooleanConverter}}">
                     <Frame.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding InputNextCommand}" />
                     </Frame.GestureRecognizers>
-                    <controls:CustomLabel Text="Próximo" FontSize="{DynamicResource FontSizeMedium}" TextColor="{DynamicResource textOnSecondary}" HorizontalOptions="Center" />
+                    <Label FontFamily="{DynamicResource FontBold}" Text="Próximo" FontSize="{DynamicResource FontSizeMedium}" TextColor="{DynamicResource staticAccentTextOnPrimary}" HorizontalOptions="Center" />
                 </Frame>
 
-                <Frame BackgroundColor="{DynamicResource secondary}" Padding="15" CornerRadius="30" Margin="15,0" IsVisible="{Binding ShowSaveButton}">
+                <Frame BackgroundColor="{DynamicResource staticAccentPrimary}" Padding="15" CornerRadius="30" Margin="15,0" IsVisible="{Binding ShowSaveButton}">
                     <Frame.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding SaveCommand}" />
                     </Frame.GestureRecognizers>
-                    <controls:CustomLabel Text="Salvar" FontSize="{DynamicResource FontSizeMedium}" TextColor="{DynamicResource textOnSecondary}" HorizontalOptions="Center" />
+                    <Label FontFamily="{DynamicResource FontBold}" Text="Salvar" FontSize="{DynamicResource FontSizeMedium}" TextColor="{DynamicResource staticAccentTextOnPrimary}" HorizontalOptions="Center" />
                 </Frame>
             </StackLayout>
 

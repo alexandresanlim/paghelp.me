@@ -5,26 +5,25 @@
              xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon" 
              xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
              Shell.NavBarIsVisible="False"
-             Shell.BackgroundColor="{DynamicResource primary}"
              >
     
     <ContentPage.ControlTemplate>
         <ControlTemplate>
-            <Grid RowDefinitions="Auto,*" RowSpacing="0" Style="{StaticResource paddingPageGrid}">
-                <Grid Grid.Row="0" ColumnDefinitions="auto,*">
+            <Grid RowDefinitions="Auto,*" RowSpacing="0">
+                <Grid Grid.Row="0" ColumnDefinitions="auto,*" BackgroundColor="{DynamicResource primary}" Style="{StaticResource paddingPageGrid}">
                     <StackLayout Grid.Column="0" Padding="15,15,25,15">
                         <StackLayout.GestureRecognizers>
                             <TapGestureRecognizer Tapped="TapGestureRecognizerBackButtonPressed_Tapped"/>
                         </StackLayout.GestureRecognizers>
 
-                        <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.ChevronLeft }" IconSize="Title" IconColor="{DynamicResource staticAccentTextOnPrimary}" />
+                        <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.ChevronLeft }" Size="{DynamicResource FontSizeLarge}" IconColor="{DynamicResource staticAccentTextOnPrimary}" />
                     </StackLayout>
 
                     <Label Grid.Column="1"
                         FontSize="{StaticResource FontSizeMedium}"
                         Text="{TemplateBinding Title}"
                         VerticalOptions="CenterAndExpand" 
-                        FontFamily="FontPoppinsSemiBold"
+                        FontFamily="{DynamicResource FontSemiBold}"
                         TextColor="{DynamicResource staticAccentTextOnPrimary}"
                         MaxLines="1"
                         LineBreakMode="TailTruncation"
