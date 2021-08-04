@@ -64,7 +64,7 @@
                 <CarouselView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout Padding="5,15,5,0">
-                            <StackLayout Spacing="15">
+                            <StackLayout Spacing="15" Padding="0,15,0,0">
                                 <controls:CustomIcon Glyph="{Binding Icon}" Size="{DynamicResource FontSizeLarge}" IconColor="{DynamicResource textSecondary}" />
                                 <Label Text="{Binding Title}" TextColor="{DynamicResource textSecondary}" FontSize="{DynamicResource FontSizeLarge}" HorizontalTextAlignment="Center" FontFamily="{StaticResource FontBold}" />
                             </StackLayout>
