@@ -64,6 +64,8 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         {
             try
             {
+                Xamarin.Essentials.HapticFeedback.Perform(Xamarin.Essentials.HapticFeedbackType.Click);
+
                 if (string.IsNullOrEmpty(text))
                     ValueInput = ValueInput.RemoveLastChar();
 
