@@ -126,7 +126,7 @@
                                                 <Label Grid.Row="1" Grid.Column="1" Text="{Binding Viewer.NamePresentation}" TextColor="{Binding FinancialInstitution.Institution.MaterialColor.TextOnPrimary}" VerticalOptions="CenterAndExpand" />
 
                                                 <controls:CustomIcon Grid.Row="2" Grid.Column="0" Glyph="{x:Static icons:FontAwesomeSolid.Key }" IconColor="{Binding FinancialInstitution.Institution.MaterialColor.TextOnPrimary}" />
-                                                <Label Grid.Row="2" Grid.Column="1" Text="{Binding Viewer.KeyPresentation}" TextColor="{Binding FinancialInstitution.Institution.MaterialColor.TextOnPrimary}" VerticalOptions="CenterAndExpand" />
+                                                <Label Grid.Row="2" Grid.Column="1" MaxLines="1" LineBreakMode="MiddleTruncation" Text="{Binding Viewer.KeyPresentation}" TextColor="{Binding FinancialInstitution.Institution.MaterialColor.TextOnPrimary}" VerticalOptions="CenterAndExpand" />
                                             
                                             </Grid>
 
@@ -239,9 +239,9 @@
 
                                                 </qr:QRCode>
 
-                                                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                                                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Padding="40,0">
                                                     <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Key }" IconColor="{Binding FinancialInstitution.Institution.MaterialColor.TextOnPrimary}" Size="{DynamicResource FontSizeSmall}" />
-                                                    <controls:CustomLabel Text="{Binding Viewer.KeyPresentation}" FontSize="{StaticResource FontSizeSmall}" FontFamily="{DynamicResource FontBold}" TextColor="{DynamicResource textOnPrimary}" />
+                                                    <controls:CustomLabel Text="{Binding Viewer.KeyPresentation}" MaxLines="1" LineBreakMode="MiddleTruncation" FontSize="{StaticResource FontSizeSmall}" FontFamily="{DynamicResource FontBold}" TextColor="{DynamicResource textOnPrimary}" />
                                                 </StackLayout>
                                             </StackLayout>
 
