@@ -15,6 +15,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.ViewModels
@@ -50,19 +51,32 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 CurrenKeyPlaceholder = CurrenKeyPlaceholderDefaultValue;
 
-                if (!IsEdit && !CurrentPixKey.IsContact)
+                if (!IsEdit)
                 {
-                    if (CurrentInputValues.Institution.Index > -1)
+                    if (!CurrentPixKey.IsContact)
                     {
-                        InputList[CurrentInputValues.Institution.Index].Placeholder = "Toque para selecionar";
+                        if (CurrentInputValues.Institution.Index > -1)
+                        {
+                            InputList[CurrentInputValues.Institution.Index].Placeholder = "Toque para selecionar";
+                        }
+
+                        var firstKey = _pixKeyService.GetAll().LastOrDefault();
+
+                        if (firstKey != null && firstKey.Id > 0)
+                        {
+                            InputList[CurrentInputValues.Name.Index].Value = firstKey.Name;
+                            InputList[CurrentInputValues.City.Index].Value = firstKey.City;
+                        }
                     }
 
-                    var firstKey = _pixKeyService.GetAll().LastOrDefault();
-
-                    if (firstKey != null && firstKey.Id > 0)
+                    if (Clipboard.HasText)
                     {
-                        InputList[CurrentInputValues.Name.Index].Value = firstKey.Name;
-                        InputList[CurrentInputValues.City.Index].Value = firstKey.City;
+                        var text = await Clipboard.GetTextAsync();
+
+                        if(text.IsAKey())
+                        {
+                            InputList[CurrentInputValues.Key.Index].Value = text;
+                        }
                     }
                 }
 
