@@ -12,25 +12,25 @@ using Xamarin.Forms.Xaml;
 namespace PixQrCodeGeneratorOffline.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class CreateBillingPage : ContentPageWithNavBar
+    public partial class CreateBillingPage : ContentPage
     {
         CreateBillingViewModel _createBillingViewModel;
 
-        Models.PixKey _pixKey;
+        //Models.PixKey _pixKey;
 
-        public CreateBillingPage(Models.PixKey pixKey)
+        public CreateBillingPage()
         { 
             InitializeComponent();
 
-            _pixKey = pixKey;
+            //_pixKey = pixKey;
 
             BindingContext = _createBillingViewModel = new CreateBillingViewModel();
         }
 
-        protected override void OnAppearing()
-        {
-            _createBillingViewModel.LoadDataCommand.Execute(_pixKey);
-        }
+        //protected override void OnAppearing()
+        //{
+        //    _createBillingViewModel.LoadDataCommand.Execute(_pixKey);
+        //}
 
         //private void CustomEntry_Unfocused(object sender, FocusEventArgs e)
         //{

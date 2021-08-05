@@ -35,8 +35,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 ResetCurrentValue();
 
-                LoadPixPayloadSave();
-
                 LoadStyle();
             }
             catch (Exception e)
@@ -47,17 +45,12 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         private void LoadStyle()
         {
-            var styleKey = CurrentPixKey?.FinancialInstitution?.Institution?.MaterialColor;
+            CurrentStyleFromKey = CurrentPixKey?.FinancialInstitution?.Institution?.MaterialColor;
 
-            if (styleKey != null)
-                App.LoadTheme(styleKey);
-        }
+            return;
 
-        public ICommand IsBillingVisibleCommand => new Command(() => IsBillingSaveVisible = !IsBillingSaveVisible);
-
-        private void LoadPixPayloadSave()
-        {
-            BillingSaveList = _pixPayloadService?.GetAll(x => x.PixKey.Id == CurrentPixKey.Id)?.ToObservableCollection() ?? new ObservableCollection<PixPayload>();
+            if (CurrentStyleFromKey != null)
+                App.LoadTheme(CurrentStyleFromKey);
         }
 
         public Command<string> InputTextCommand => new Command<string>(async (text) =>
@@ -196,20 +189,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         {
             set => SetProperty(ref _currentDescription, value);
             get => _currentDescription;
-        }
-
-        private ObservableCollection<PixPayload> _billingSaveList;
-        public ObservableCollection<PixPayload> BillingSaveList
-        {
-            set => SetProperty(ref _billingSaveList, value);
-            get => _billingSaveList;
-        }
-
-        private bool _isBillingSaveVisible;
-        public bool IsBillingSaveVisible
-        {
-            set => SetProperty(ref _isBillingSaveVisible, value);
-            get => _isBillingSaveVisible;
         }
     }
 }

@@ -167,6 +167,13 @@ namespace PixQrCodeGeneratorOffline.Base.ViewModels
             set { SetProperty(ref title, value); }
         }
 
+        private MaterialColor _currentStyleFromKey;
+        public MaterialColor CurrentStyleFromKey
+        {
+            set => SetProperty(ref _currentStyleFromKey, value);
+            get => _currentStyleFromKey;
+        }
+
         protected bool SetProperty<T>(ref T backingStore, T value,
             [CallerMemberName] string propertyName = "",
             Action onChanged = null)

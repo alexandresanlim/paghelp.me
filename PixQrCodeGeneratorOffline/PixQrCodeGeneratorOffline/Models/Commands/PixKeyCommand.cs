@@ -92,7 +92,7 @@ namespace PixQrCodeGeneratorOffline.Models.Commands
 
                     await Task.Delay(500);
 
-                    await Shell.Current.Navigation.PushModalAsync(new CreateBillingPage(pixKey));
+                    await Shell.Current.Navigation.PushModalAsync(new CreateBillingTabbedPage(pixKey));
                 }
                 catch (System.Exception e)
                 {

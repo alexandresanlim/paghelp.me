@@ -35,8 +35,8 @@ namespace PixQrCodeGeneratorOffline.Droid
             StartPackages(savedInstanceState);
 
             CurrentWindow = (this).Window;
-            CurrentWindow.AddFlags(Android.Views.WindowManagerFlags.TranslucentStatus);
-            //CurrentWindow.AddFlags(Android.Views.WindowManagerFlags.TranslucentNavigation);
+            LoadWindowColors();
+            
 
             StartAndroidDependency();
 
@@ -62,6 +62,20 @@ namespace PixQrCodeGeneratorOffline.Droid
         {
             //DependencyService.Register<IStatusBar, StatusBarChanger>();
             DependencyService.Register<IPDVMode, PDVMode>();
+        }
+
+        private void LoadWindowColors()
+        {
+            //var color = (System.Drawing.Color)App.ThemeColors.Primary;
+
+            //CurrentWindow.AddFlags(Android.Views.WindowManagerFlags.TranslucentStatus);
+            //CurrentWindow.AddFlags(Android.Views.WindowManagerFlags.TranslucentNavigation);
+
+            if (Build.VERSION.SdkInt < BuildVersionCodes.Lollipop)
+                return;
+
+                CurrentWindow.SetStatusBarColor(Android.Graphics.Color.Black);
+            CurrentWindow.SetNavigationBarColor(Android.Graphics.Color.Black);
         }
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
