@@ -179,6 +179,8 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public void SetStatusFromCurrentPixColor()
         {
+            //return;
+
             if (ShowInList || CurrentPixKey?.FinancialInstitution?.Institution?.MaterialColor == null)
                 return;
 
