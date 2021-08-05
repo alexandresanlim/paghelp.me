@@ -5,10 +5,9 @@
              x:Class="PixQrCodeGeneratorOffline.Views.AboutPage"
              xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels" 
              xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
-             Title="{Binding Title}"
     xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon"
-             Shell.NavBarIsVisible="False"
     BackgroundColor="{StaticResource background_page}"
+    Title="Sobre o App"
              >
 
     <ContentPage.Content>

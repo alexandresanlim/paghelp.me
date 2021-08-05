@@ -5,7 +5,7 @@
              xmlns:share="clr-namespace:PixQrCodeGeneratorOffline.Views.Shared"
              xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
              x:Class="PixQrCodeGeneratorOffline.Views.GuidePage"
-             Shell.NavBarIsVisible="False"
+             Title="Guia Pix"
              BackgroundColor="{StaticResource background_page}"
              >
     <ContentPage.Content>
@@ -19,8 +19,8 @@
                 </LinearGradientBrush>
             </controls:CustomFrame.Background>-->
 
-            <Grid RowDefinitions="*, auto">
-                <controls:CustomCollectionView ItemsSource="{Binding GuideList}" Grid.Row="0" Margin="10,0">
+            <Grid RowDefinitions="*, auto" Padding="10,10,10,0" RowSpacing="0">
+                <controls:CustomCollectionView ItemsSource="{Binding GuideList}" Grid.Row="0">
                     <controls:CustomCollectionView.ItemsLayout>
                         <LinearItemsLayout ItemSpacing="10" Orientation="Vertical"/>
                     </controls:CustomCollectionView.ItemsLayout>
