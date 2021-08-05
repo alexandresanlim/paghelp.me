@@ -1,11 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<shared:ContentPageWithNavBar  
+    xmlns:shared="clr-namespace:PixQrCodeGeneratorOffline.Views.Shared"
+    xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
              x:Class="PixQrCodeGeneratorOffline.Views.AddPixKeyPage"
              xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon"
              Shell.NavBarIsVisible="False"
-             BackgroundColor="{Binding CurrenStyle.PrimaryDark}"
+             xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
+                       Title="Editar Chave"
              >
 
     <ContentPage.Resources>
@@ -19,27 +22,96 @@
 
             <Style x:Key="styleInputTitle" TargetType="Label">
                 <Setter Property="FontSize" Value="{DynamicResource FontSizeMedium}"/>
-                <Setter Property="FontFamily" Value="FontPoppinsSemiBold"/>
+                <Setter Property="FontFamily" Value="{DynamicResource FontSemiBold}"/>
                 <Setter Property="Margin" Value="10,0,0,0"/>
                 <Setter Property="TextColor" Value="{DynamicResource textPrimary}"/>
             </Style>
 
         </ResourceDictionary>
     </ContentPage.Resources>
-    
-    <ContentPage.Content>
-        <!--<StackLayout>-->
-            <!--<controls:CustomFrame.Background>
-                <LinearGradientBrush EndPoint="0,1">
-                    <GradientStop Color="{DynamicResource primary}"
-                          Offset="0.1" />
-                    <GradientStop Color="{DynamicResource primaryDark}"
-                          Offset="1.0" />
-                </LinearGradientBrush>
-            </controls:CustomFrame.Background>-->
 
-        <Grid RowDefinitions="auto, 0.4*,*" RowSpacing="0">
-            <StackLayout Grid.Row="0" Spacing="0" Padding="15,0,0,0" Orientation="Horizontal" BackgroundColor="{Binding CurrenStyle.Primary}">
+    <ContentPage.Content>
+
+        <StackLayout Spacing="0" Padding="0,15,0,0">
+
+            <controls:CustomProgress CurrentPhase="{Binding ActualInputNextPosition}" ColorMore="{DynamicResource staticAccentPrimaryDark }" ColorLess="{DynamicResource staticAccentPrimaryLight}" Phases="{Binding InputPhasesCount}" Margin="20,15,20,0"/>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="End" IsVisible="{Binding IsEdit}">
+                <StackLayout Padding="20,15,10,0">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding DeleteCommand}" />
+                    </StackLayout.GestureRecognizers>
+                    <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.TrashAlt }" IconSize="Medium" IconColor="{DynamicResource textPrimary}" />
+                    <Label Text="Excluir" TextColor="{DynamicResource textPrimary}" FontFamily="{DynamicResource FontBold}" />
+                </StackLayout>
+                <StackLayout Padding="10,15,10,0">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding SaveCommand}" />
+                    </StackLayout.GestureRecognizers>
+                    <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Save }" IconSize="Medium" IconColor="{DynamicResource textPrimary}" />
+                    <Label Text="Salvar" TextColor="{DynamicResource textPrimary}" FontFamily="{DynamicResource FontBold}" />
+                </StackLayout>
+            </StackLayout>
+
+            <CarouselView
+                    ItemsSource="{Binding InputList}"
+                    PeekAreaInsets="25"
+                    CurrentItemChangedCommand="{Binding CurrentInputChangedCommand}"
+                    Position="{Binding ActualInputNextPosition}" 
+                    CurrentItem="{Binding CurrentInput}"
+                    HeightRequest="250">
+
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Padding="5,15,5,0">
+                            <StackLayout Spacing="15">
+                                <controls:CustomIcon Glyph="{Binding Icon}" Size="{DynamicResource FontSizeLarge}" IconColor="{DynamicResource textSecondary}" />
+                                <Label Text="{Binding Title}" TextColor="{DynamicResource textSecondary}" FontSize="{DynamicResource FontSizeLarge}" HorizontalTextAlignment="Center" FontFamily="{StaticResource FontBold}" />
+                            </StackLayout>
+                            <Frame BackgroundColor="{DynamicResource foreground_page}" Padding="15,30" CornerRadius="10" IsVisible="{Binding IsInstitution, Converter={StaticResource InvertedBooleanConverter}}">
+                                <StackLayout>
+                                    <Entry Text="{Binding Value}" Placeholder="{Binding Placeholder}" ReturnCommand="{Binding Source={RelativeSource AncestorType={x:Type vm:AddPixKeyViewModel}}, Path=InputNextCommand}" TextColor="{DynamicResource textPrimary}" PlaceholderColor="{DynamicResource textSecondary}" />
+                                </StackLayout>
+                            </Frame>
+
+                            <Frame BackgroundColor="{DynamicResource foreground_page}" Padding="15,30" IsVisible="{Binding IsInstitution}" CornerRadius="10">
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:AddPixKeyViewModel}}, Path=SelectedInstitutionCommand}" />
+                                </Frame.GestureRecognizers>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding Placeholder}" FontFamily="{DynamicResource FontBold}" FontSize="{DynamicResource FontSizeMedium}" TextColor="{DynamicResource textSecondary}" HorizontalOptions="FillAndExpand" />
+                                    <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.ChevronDown }" Size="{DynamicResource FontSizeLarge}" IconColor="{DynamicResource textSecondary}" />
+                                </StackLayout>
+
+                            </Frame>
+                        </StackLayout>
+
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+
+            <StackLayout>
+
+                <Frame BackgroundColor="{DynamicResource staticAccentPrimary}" Padding="15" CornerRadius="30" Margin="15,0" IsVisible="{Binding ShowSaveButton, Converter={StaticResource InvertedBooleanConverter}}">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding InputNextCommand}" />
+                    </Frame.GestureRecognizers>
+                    <Label FontFamily="{DynamicResource FontBold}" Text="Próximo" FontSize="{DynamicResource FontSizeMedium}" TextColor="{DynamicResource staticAccentTextOnPrimary}" HorizontalOptions="Center" />
+                </Frame>
+
+                <Frame BackgroundColor="{DynamicResource staticAccentPrimary}" Padding="15" CornerRadius="30" Margin="15,0" IsVisible="{Binding ShowSaveButton}">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding SaveCommand}" />
+                    </Frame.GestureRecognizers>
+                    <Label FontFamily="{DynamicResource FontBold}" Text="Salvar" FontSize="{DynamicResource FontSizeMedium}" TextColor="{DynamicResource staticAccentTextOnPrimary}" HorizontalOptions="Center" />
+                </Frame>
+            </StackLayout>
+
+
+        </StackLayout>
+
+        <!--<Grid RowDefinitions="auto,*,auto" RowSpacing="0">
+            --><!--<StackLayout Grid.Row="0" Spacing="0" Padding="15,0,0,0" Orientation="Horizontal" BackgroundColor="{Binding CurrenStyle.Primary}">
 
                 <StackLayout Padding="0,0,30,0">
                     <StackLayout.GestureRecognizers>
@@ -65,9 +137,9 @@
                     <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Save }" IconSize="Medium" IconColor="{Binding CurrenStyle.TextOnPrimary}" />
                     <controls:CustomLabel Text="Salvar" TextColor="{Binding CurrenStyle.TextOnPrimary}" FontAttributes="Bold" />
                 </StackLayout>
-            </StackLayout>
+            </StackLayout>-->
 
-            <StackLayout Grid.Row="1" Padding="15">
+            <!--<StackLayout Grid.Row="1" Padding="15">
                 <controls:CustomLabel Text="IMPORTANTE" FontAttributes="Bold" TextColor="{Binding CurrenStyle.TextOnPrimary}" />
 
                 <controls:CustomCarouselView
@@ -93,59 +165,12 @@
                                        IndicatorsShape="Circle"
                                        IndicatorColor="{Binding CurrenStyle.PrimaryLight}"
                                        SelectedIndicatorColor="{Binding CurrenStyle.Primary}" />
-            </StackLayout>
-
-            <!--<ScrollView Grid.Row="2">-->
+            </StackLayout>--><!--
 
 
-                    <controls:CustomFrame Grid.Row="2" CornerRadius="35,35,0,0" BackgroundColor="{DynamicResource background_page}" VerticalOptions="FillAndExpand">
-
-                        <ScrollView>
-                            <StackLayout Padding="15,30">
-
-                                <StackLayout Spacing="0">
-                                    <Label Text="Instituição Financeira" Style="{DynamicResource styleInputTitle}" />
-                                    <Frame Style="{DynamicResource styleInputFrame}" Padding="15">
-                                        <Frame.GestureRecognizers>
-                                            <TapGestureRecognizer Command="{Binding SelectedInstitutionCommand}" />
-                                        </Frame.GestureRecognizers>
-                                        <StackLayout Orientation="Horizontal">
-                                            <controls:CustomLabel Text="{Binding SelectedFinancialInstitution.Name}" FontAttributes="Bold" FontSize="Medium" TextColor="{DynamicResource textPrimary}" HorizontalOptions="FillAndExpand" />
-                                            <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.ChevronDown }" IconSize="Medium" IconColor="{DynamicResource textPrimary}" />
-                                        </StackLayout>
-
-                                    </Frame>
-                                </StackLayout>
-
-                                <StackLayout Spacing="0">
-                                    <Label Text="Chave" Style="{DynamicResource styleInputTitle}" />
-                                    <Frame Style="{DynamicResource styleInputFrame}">
-                                        <controls:CustomEntry Placeholder="{Binding CurrenKeyPlaceholder}" FontSize="Medium" Text="{Binding CurrentPixKey.Key}" ReturnType="Next" />
-                                    </Frame>
-                                </StackLayout>
-
-                                <StackLayout Spacing="0">
-                                    <Label Text="Nome" Style="{DynamicResource styleInputTitle}" />
-                                    <Frame Style="{DynamicResource styleInputFrame}">
-                                        <controls:CustomEntry Placeholder="Digite o nome" Text="{Binding CurrentPixKey.Name}" ReturnType="Next"/>
-                                    </Frame>
-                                </StackLayout>
-
-                                <StackLayout Spacing="0">
-                                    <Label Text="Cidade (opcional)" Style="{DynamicResource styleInputTitle}" />
-                                    <Frame Style="{DynamicResource styleInputFrame}">
-                                        <controls:CustomEntry Placeholder="Digite a cidade" Text="{Binding CurrentPixKey.City}" ReturnType="Done" />
-                                    </Frame>
-                                </StackLayout>
-
-                            </StackLayout>
-                        </ScrollView>
-
-                    </controls:CustomFrame>
-
-            <!--</ScrollView>-->
-        </Grid>
+            
+        </Grid>-->
 
 
     </ContentPage.Content>
-</ContentPage>
+</shared:ContentPageWithNavBar>

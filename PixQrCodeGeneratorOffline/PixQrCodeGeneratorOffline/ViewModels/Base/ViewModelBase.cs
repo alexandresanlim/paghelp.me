@@ -6,6 +6,7 @@ using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Services;
 using PixQrCodeGeneratorOffline.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Style.Interfaces;
+using PixQrCodeGeneratorOffline.ViewModels;
 using Plugin.Fingerprint;
 using Plugin.Fingerprint.Abstractions;
 using System;
@@ -17,15 +18,15 @@ using System.Windows.Input;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
-namespace PixQrCodeGeneratorOffline.ViewModels
+namespace PixQrCodeGeneratorOffline.Base.ViewModels
 {
-    public class BaseViewModel : INotifyPropertyChanged
+    public class ViewModelBase : INotifyPropertyChanged
     {
         protected readonly IFinancialInstitutionService _financialInstitutionService;
 
         protected readonly IPixKeyService _pixKeyService;
 
-        public readonly IStatusBar _statusBarService;
+        //public readonly IStatusBar _statusBarService;
 
         protected readonly IMaterialColorService _materialColorService;
 
@@ -39,11 +40,11 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         protected readonly IFeedService _feedService;
 
-        public BaseViewModel()
+        public ViewModelBase()
         {
             _financialInstitutionService = DependencyService.Get<IFinancialInstitutionService>();
             _pixKeyService = DependencyService.Get<IPixKeyService>();
-            _statusBarService = DependencyService.Get<IStatusBar>();
+            //_statusBarService = DependencyService.Get<IStatusBar>();
             _materialColorService = DependencyService.Get<IMaterialColorService>();
             _pixPayloadService = DependencyService.Get<IPixPayloadService>();
             _preferenceService = DependencyService.Get<IPreferenceService>();
@@ -56,7 +57,11 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             Application.Current.RequestedThemeChanged += Current_RequestedThemeChanged;
         }
 
+        public ICommand SaveCommand { get; set; }
+
         public static DashboardViewModel DashboardVM { get; set; }
+
+        public static DashboardContactViewModel DashboardContactVM { get; set; }
 
         private void Current_RequestedThemeChanged(object sender, AppThemeChangedEventArgs e)
         {
@@ -65,7 +70,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public void ReloadAppColorIfShowInListStyle()
         {
-            App.LoadTheme(_materialColorService.GetByCurrentDeviceTheme());
+            App.LoadTheme();
         }
 
         protected IUserDialogs DialogService => UserDialogs.Instance;
@@ -129,16 +134,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             Shell.Current.SendBackButtonPressed();
         }
 
-        //public async Task NavigateBackModalAsync()
-        //{
-        //    await Shell.Current.Navigation.PopModalAsync();
-        //}
-
-        //public async Task NavigateBackAsync()
-        //{
-        //    await Shell.Current.Navigation.PopAsync();
-        //}
-
         public async Task NavigateToRootAsync()
         {
             await Shell.Current.Navigation.PopToRootAsync(true);
@@ -158,7 +153,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             set => SetProperty(ref _showAds, value);
         }
 
-        bool isBusy = false;
+        bool isBusy = true;
         public bool IsBusy
         {
             get { return isBusy; }

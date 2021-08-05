@@ -182,12 +182,26 @@ namespace PixQrCodeGeneratorOffline.Extention
         public static bool IsEmail(this string email)
         {
             if (string.IsNullOrEmpty(email))
-                return true;
+                return false;
 
             string emailRegex = @"^(?("")("".+?(?<!\\)""@)|(([0-9a-z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-z])@))" +
          @"(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-z][-\w]*[0-9a-z]*\.)+[a-z0-9][\-a-z0-9]{0,22}[a-z0-9]))$";
 
             return (Regex.IsMatch(email, emailRegex, RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds(250)));
+        }
+
+        public static bool IsGuid(this string guid)
+        {
+            return Guid.TryParse(guid, out _);
+        }
+
+        public static bool CpfCnpjValidator(string cpfCnpj)
+        {
+            if (string.IsNullOrEmpty(cpfCnpj))
+                return false;
+
+            string cpfCnpjRegex = @"([0-9]{2}[\.]?[0-9]{3}[\.]?[0-9]{3}[\/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2})";
+            return Regex.IsMatch(cpfCnpj, cpfCnpjRegex);
         }
 
     }

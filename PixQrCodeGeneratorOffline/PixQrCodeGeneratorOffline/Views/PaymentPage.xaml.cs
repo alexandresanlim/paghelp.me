@@ -12,7 +12,7 @@ using Xamarin.Forms.Xaml;
 namespace PixQrCodeGeneratorOffline.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class PaymentPage : Shared.ContentPageWithNavBar
+    public partial class PaymentPage : ContentPage
     {
         PaymentViewModel _paymentViewModel;
 
@@ -30,6 +30,11 @@ namespace PixQrCodeGeneratorOffline.Views
         protected override void OnAppearing()
         {
             _paymentViewModel.LoadDataCommand.Execute(_pixPaylod);
+        }
+
+        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+            Shell.Current.SendBackButtonPressed();
         }
 
         //protected override void OnDisappearing()

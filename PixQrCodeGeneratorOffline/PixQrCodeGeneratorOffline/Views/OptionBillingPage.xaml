@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<shared:ContentPageWithNavBar  
+    xmlns:shared="clr-namespace:PixQrCodeGeneratorOffline.Views.Shared"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="PixQrCodeGeneratorOffline.Views.OptionBillingPage"
+    BackgroundColor="{DynamicResource staticAccentPrimary}"
+    >
+    
+    <ContentPage.Content>
+        <StackLayout Padding="25,0" Spacing="15">
+
+            <!--<StackLayout.Background>
+                <LinearGradientBrush EndPoint="0,1">
+                    <GradientStop Color="{DynamicResource staticAccentPrimary}"
+                          Offset="0.1" />
+                    <GradientStop Color="{DynamicResource staticAccentPrimaryDark}"
+                          Offset="1.0" />
+                </LinearGradientBrush>
+            </StackLayout.Background>-->
+
+            <Label Text="Cobranças Salvas"  Style="{DynamicResource optionTitle}" />
+
+            <StackLayout Spacing="0">
+                <StackLayout Padding="0,15">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ShowAllCommand}"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label Text="Ver todas" Style="{DynamicResource subOptionTitle}" />
+                </StackLayout>
+
+                <StackLayout Padding="0,15">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding RemoveAllCommand}"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label Text="Apagar todas" Style="{DynamicResource subOptionTitle}" />
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</shared:ContentPageWithNavBar>

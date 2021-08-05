@@ -1,4 +1,5 @@
-﻿using PixQrCodeGeneratorOffline.Extention;
+﻿using PixQrCodeGeneratorOffline.Base.ViewModels;
+using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models;
 using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
 using System;
@@ -9,11 +10,13 @@ using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.ViewModels
 {
-    public class PaymentViewModel : BaseViewModel
+    public class PaymentViewModel : ViewModelBase
     {
         public Command<PixPayload> LoadDataCommand => new Command<PixPayload>((pixPaylod) =>
         {
             CurrentPixPaylod = pixPaylod;
+
+            SaveButtonVisible = !(CurrentPixPaylod.Id > 0) && CurrentPixPaylod?.PixCob != null && CurrentPixPaylod.PixCob.Validation.HasValue;
         });
 
         public ICommand SharePayloadCommand => new Command(async () =>
@@ -53,11 +56,42 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
         });
 
+        public ICommand SaveCommand => new Command(async () =>
+        {
+            var identity = await DialogService.PromptAsync(new Acr.UserDialogs.PromptConfig
+            {
+                Title = "Identificador",
+                Message = "Digite um texto para identificar esta cobrança",
+                CancelText = "Cancelar",
+                OkText = "Salvar"
+            });
+
+            if (!identity.Ok)
+                return;
+
+            if (string.IsNullOrEmpty(identity?.Text))
+            {
+                DialogService.Toast("Ops! É preciso digitar um identificador para salvar");
+                return;
+            }
+
+            CurrentPixPaylod.Identity = identity.Text;
+
+            _pixPayloadService.Save(CurrentPixPaylod);
+        });
+
         private PixPayload _currentPixPaylod;
         public PixPayload CurrentPixPaylod
         {
             set => SetProperty(ref _currentPixPaylod, value);
             get => _currentPixPaylod;
+        }
+
+        private bool _saveButtonVisible;
+        public bool SaveButtonVisible
+        {
+            set => SetProperty(ref _saveButtonVisible, value);
+            get => _saveButtonVisible;
         }
     }
 }

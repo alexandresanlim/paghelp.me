@@ -16,9 +16,9 @@ namespace PixQrCodeGeneratorOffline.Models.DataStatic.Institutions
         public MaterialColor MaterialColor => new MaterialColor()
         {
             Name = "c6bank",
-            Primary = Color.FromHex("#050505"),
-            PrimaryDark = Color.FromHex("#1E1E1E"),
-            PrimaryLight = Color.FromHex("#2f2f2f"),
+            Primary = Color.FromHex("#7a7a7a"),
+            PrimaryDark = Color.FromHex("#4e4e4e"),
+            PrimaryLight = Color.FromHex("#a9a9a9"),
             TextOnPrimary = Color.FromHex("#ffffff")
         };
     }

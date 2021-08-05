@@ -1,14 +1,10 @@
-﻿using pix_payload_generator.net.Models.CobrancaModels;
-using pix_payload_generator.net.Models.PayloadModels;
-using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
+using PixQrCodeGeneratorOffline.Services;
 using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.Models.Services
 {
-    public class PixCobService : IPixCobService
+    public class PixCobService : ServiceBase, IPixCobService
     {
         private readonly IPixKeyService _pixKeyService;
 

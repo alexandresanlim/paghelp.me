@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PixQrCodeGeneratorOffline.Base.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,7 +8,7 @@ using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.ViewModels
 {
-    public class OptionKeyViewModel : BaseViewModel
+    public class OptionKeyViewModel : ViewModelBase
     {
         public OptionKeyViewModel()
         {

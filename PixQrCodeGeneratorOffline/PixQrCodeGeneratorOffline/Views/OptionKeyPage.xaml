@@ -4,19 +4,19 @@
                                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
                                xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
                                x:Class="PixQrCodeGeneratorOffline.Views.OptionKeyPage"
-                               BackgroundColor="{DynamicResource primary}">
+                               BackgroundColor="{DynamicResource staticAccentPrimary}">
     <ContentPage.Content>
 
         <StackLayout Padding="25,0" Spacing="15">
 
-            <StackLayout.Background>
+            <!--<StackLayout.Background>
                 <LinearGradientBrush EndPoint="0,1">
-                    <GradientStop Color="{DynamicResource primary}"
+                    <GradientStop Color="{DynamicResource staticAccentPrimary}"
                           Offset="0.1" />
-                    <GradientStop Color="{DynamicResource primaryDark}"
+                    <GradientStop Color="{DynamicResource staticAccentPrimaryDark}"
                           Offset="1.0" />
                 </LinearGradientBrush>
-            </StackLayout.Background>
+            </StackLayout.Background>-->
 
             <Label Text="Chaves"  Style="{DynamicResource optionTitle}" />
 

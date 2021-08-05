@@ -6,9 +6,10 @@
              xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
              x:Class="PixQrCodeGeneratorOffline.Views.GuidePage"
              Shell.NavBarIsVisible="False"
+             BackgroundColor="{StaticResource background_page}"
              >
     <ContentPage.Content>
-        <controls:CustomFrame>
+        <!--<controls:CustomFrame>
             <controls:CustomFrame.Background>
                 <LinearGradientBrush EndPoint="0,1">
                     <GradientStop Color="{DynamicResource primary}"
@@ -16,22 +17,22 @@
                     <GradientStop Color="{DynamicResource primaryDark}"
                           Offset="1.0" />
                 </LinearGradientBrush>
-            </controls:CustomFrame.Background>
+            </controls:CustomFrame.Background>-->
 
             <Grid RowDefinitions="*, auto">
                 <controls:CustomCollectionView ItemsSource="{Binding GuideList}" Grid.Row="0" Margin="10,0">
                     <controls:CustomCollectionView.ItemsLayout>
-                        <GridItemsLayout Span="2" Orientation="Vertical" HorizontalItemSpacing="10" VerticalItemSpacing="10" />
+                        <LinearItemsLayout ItemSpacing="10" Orientation="Vertical"/>
                     </controls:CustomCollectionView.ItemsLayout>
                     
                     <controls:CustomCollectionView.ItemTemplate>
                         <DataTemplate>
-                            <Frame Padding="15" BackgroundColor="{DynamicResource secondary}" CornerRadius="15" HeightRequest="200">
+                            <Frame Padding="15,30" BackgroundColor="{StaticResource foreground_page}" CornerRadius="15">
                                 <Frame.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:GuideViewModel}}, Path=OpenAnswerGuideCommand}" CommandParameter="{Binding .}" />
                                 </Frame.GestureRecognizers>
 
-                                <controls:CustomLabel Text="{Binding Question}" TextColor="{DynamicResource textOnSecondary}" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center" />
+                                <controls:CustomLabel Text="{Binding Question}" TextColor="{DynamicResource textPrimary}" FontSize="Medium" FontAttributes="Bold" VerticalOptions="Center" />
                             </Frame>
                         </DataTemplate>
                     </controls:CustomCollectionView.ItemTemplate>
@@ -40,7 +41,7 @@
                 <share:AdsView Grid.Row="1" />
             </Grid>
 
-        </controls:CustomFrame>
+        <!--</controls:CustomFrame>-->
 
 
     </ContentPage.Content>

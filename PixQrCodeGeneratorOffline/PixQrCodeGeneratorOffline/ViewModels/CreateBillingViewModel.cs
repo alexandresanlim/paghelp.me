@@ -1,4 +1,5 @@
-﻿using PixQrCodeGeneratorOffline.Extention;
+﻿using PixQrCodeGeneratorOffline.Base.ViewModels;
+using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models;
 using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Views;
@@ -14,16 +15,8 @@ using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.ViewModels
 {
-    public class CreateBillingViewModel : BaseViewModel
+    public class CreateBillingViewModel : ViewModelBase
     {
-
-        private readonly IPixPayloadService _pixPayloadService;
-
-        public CreateBillingViewModel()
-        {
-            _pixPayloadService = DependencyService.Get<IPixPayloadService>();
-        }
-
         public string AddDescriptionValue => "Adicionar Descrição";
 
         private void ResetCurrentValue()
@@ -39,7 +32,12 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             try
             {
                 CurrentPixKey = pixKey;
+
                 ResetCurrentValue();
+
+                LoadPixPayloadSave();
+
+                LoadStyle();
             }
             catch (Exception e)
             {
@@ -47,21 +45,27 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
         });
 
-        private void LoadRecentPixCobMockup()
+        private void LoadStyle()
         {
-            RecentPixCobList = new ObservableCollection<PixCob>
-            {
-                new PixCob{ Value = "10.00", Description = "teste"},
-                new PixCob{ Value = "15.00", Description = "teste"},
-                new PixCob{ Value = "20.00", Description = "teste"},
+            var styleKey = CurrentPixKey?.FinancialInstitution?.Institution?.MaterialColor;
 
-            };
+            if (styleKey != null)
+                App.LoadTheme(styleKey);
+        }
+
+        public ICommand IsBillingVisibleCommand => new Command(() => IsBillingSaveVisible = !IsBillingSaveVisible);
+
+        private void LoadPixPayloadSave()
+        {
+            BillingSaveList = _pixPayloadService?.GetAll(x => x.PixKey.Id == CurrentPixKey.Id)?.ToObservableCollection() ?? new ObservableCollection<PixPayload>();
         }
 
         public Command<string> InputTextCommand => new Command<string>(async (text) =>
         {
             try
             {
+                try { Xamarin.Essentials.HapticFeedback.Perform(Xamarin.Essentials.HapticFeedbackType.Click); } catch (Exception) { }
+
                 if (string.IsNullOrEmpty(text))
                     ValueInput = ValueInput.RemoveLastChar();
 
@@ -122,7 +126,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 if (!_pixPayloadService.IsValid(pixPaylod))
                     return;
 
-                await NavigateAsync(new PaymentPage(pixPaylod));
+                pixPaylod.Commands.NavigateToPaymentPageCommand.Execute(null);
             }
             catch (Exception e)
             {
@@ -194,11 +198,18 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             get => _currentDescription;
         }
 
-        private ObservableCollection<PixCob> _recentPixCobList;
-        public ObservableCollection<PixCob> RecentPixCobList
+        private ObservableCollection<PixPayload> _billingSaveList;
+        public ObservableCollection<PixPayload> BillingSaveList
         {
-            set => SetProperty(ref _recentPixCobList, value);
-            get => _recentPixCobList;
+            set => SetProperty(ref _billingSaveList, value);
+            get => _billingSaveList;
+        }
+
+        private bool _isBillingSaveVisible;
+        public bool IsBillingSaveVisible
+        {
+            set => SetProperty(ref _isBillingSaveVisible, value);
+            get => _isBillingSaveVisible;
         }
     }
 }

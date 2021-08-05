@@ -1,20 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<share:ContentPageWithNavBar 
-    xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls" 
              xmlns:qr="clr-namespace:Xam.Forms;assembly=Xam.Forms.QRCode"
              xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
              xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon" 
-             xmlns:shared="clr-namespace:PixQrCodeGeneratorOffline.Views.Shared"
-    xmlns:share="clr-namespace:PixQrCodeGeneratorOffline.Views.Shared"
              x:Class="PixQrCodeGeneratorOffline.Views.PaymentPage"
-    BackgroundColor="{Binding CurrentPixPaylod.PixKey.FinancialInstitution.Institution.MaterialColor.Primary}"
+             BackgroundColor="{Binding CurrentPixPaylod.PixKey.FinancialInstitution.Institution.MaterialColor.Primary}"
              >
     
     <ContentPage.Content>
 
-        <Grid RowDefinitions="*,auto">
+        <Grid RowDefinitions="*,auto" Style="{StaticResource paddingPageStackLayout}">
 
             <!--<Grid.Background>
                 <LinearGradientBrush EndPoint="0,1">
@@ -27,6 +24,27 @@
 
             <ScrollView Grid.Row="0" Padding="15,0">
                 <StackLayout>
+                    
+                    <StackLayout Orientation="Horizontal">
+
+                        <StackLayout Padding="0,15,30,10">
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                            </StackLayout.GestureRecognizers>
+
+                            <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.ChevronLeft }" IconSize="Title" IconColor="{DynamicResource textOnPrimary}" VerticalOptions="CenterAndExpand" />
+                        </StackLayout>
+
+
+                        <StackLayout Padding="30,15,0,10" HorizontalOptions="EndAndExpand" Spacing="0" IsVisible="{Binding SaveButtonVisible}">
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding SaveCommand}" />
+                            </StackLayout.GestureRecognizers>
+                            <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Save }" IconSize="Large" IconColor="{DynamicResource textOnPrimary}" />
+                            <controls:CustomLabel Text="Salvar" TextColor="{DynamicResource textOnPrimary}" FontAttributes="Bold" />
+                        </StackLayout>
+                    </StackLayout>
+                    
                     <controls:CustomLabel Text="Mostre o QR Code ou campartilhe o código copia e cola" FontAttributes="Bold" FontSize="Large" TextColor="{DynamicResource textOnPrimary}" />
 
 
@@ -52,7 +70,7 @@
 
                     </StackLayout>
 
-                    <controls:CustomLabel Text="{Binding CurrentPixPaylod.PixCob.Viewer.ValuePresentation}" FontSize="35" TextColor="{DynamicResource textOnPrimary}" HorizontalOptions="Center" FontAttributes="Bold" />
+                    <controls:CustomLabel Text="{Binding CurrentPixPaylod.PixCob.Viewer.ValuePresentation}" IsVisible="{Binding CurrentPixPaylod.PixCob.Viewer.ValuePresentation,Converter={StaticResource HasDataConverter}}" FontSize="35" TextColor="{DynamicResource textOnPrimary}" HorizontalOptions="Center" FontAttributes="Bold" />
 
                     <controls:CustomLabel Text="{Binding CurrentPixPaylod.PixKey.Viewer.NamePresentation, StringFormat='Para: {0}'}" TextColor="{DynamicResource textOnPrimary}" FontSize="Medium"  HorizontalOptions="Center" FontAttributes="Bold" />
 
@@ -80,4 +98,4 @@
         </Grid>
 
     </ContentPage.Content>
-</share:ContentPageWithNavBar>
+</ContentPage>

@@ -1,4 +1,5 @@
-﻿using PixQrCodeGeneratorOffline.Controls;
+﻿using PixQrCodeGeneratorOffline.Base.ViewModels;
+using PixQrCodeGeneratorOffline.Controls;
 using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models;
 using PixQrCodeGeneratorOffline.Services;
@@ -14,7 +15,7 @@ using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.ViewModels
 {
-    public class NewsViewModel : BaseViewModel
+    public class NewsViewModel : ViewModelBase
     {
         public async Task Navigating()
         {
@@ -45,7 +46,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             {
                 IsBusy = true;
 
-                FeedFromService = FeedFromService?.Count > 0 ? FeedFromService : await _feedService.Get("https://news.google.com/rss/search?q=pix%20-fraude%20-golpista%20-golpistas%20-erro%20-golpe%20-hack%20-hacker%20-assalto%20-assaltado%20-droga%20-drogas%20-maconha%20-%20cannabis%20-violencia&hl=pt-BR&gl=BR&ceid=BR%3Apt-419");
+                FeedFromService = FeedFromService?.Count > 0 ? FeedFromService : await _feedService.Get("https://news.google.com/rss/search?q=pix%20-fraude%20-golpista%20-golpistas%20-erro&hl=pt-BR&gl=BR&ceid=BR%3Apt-419");
 
                 CurrentFeedList = FeedFromService?.ToObservableCollection();
 

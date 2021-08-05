@@ -1,23 +1,31 @@
 ﻿using pix_payload_generator.net.Models.CobrancaModels;
 using pix_payload_generator.net.Models.PayloadModels;
+using PixQrCodeGeneratorOffline.Extention;
+using PixQrCodeGeneratorOffline.Models.Repository.Interfaces;
 using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
+using PixQrCodeGeneratorOffline.Services;
 using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Text;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.Models.Services
 {
-    public class PixPayloadService : IPixPayloadService
+    public class PixPayloadService : ServiceBase, IPixPayloadService
     {
         private readonly IPixKeyService _pixKeyService;
 
         private readonly IPixCobService _pixKCobService;
 
+        private readonly IPixPayloadRepository _pixPayloadRepository;
+
         public PixPayloadService()
         {
             _pixKeyService = DependencyService.Get<IPixKeyService>();
             _pixKCobService = DependencyService.Get<IPixCobService>();
+            _pixPayloadRepository = DependencyService.Get<IPixPayloadRepository>();
         }
 
         public PixPayload Create(PixKey pixKey)
@@ -34,7 +42,7 @@ namespace PixQrCodeGeneratorOffline.Models.Services
             {
                 Cobranca cobranca = new Cobranca(_chave: pixKey.Key);
 
-                pixPaylod.Payload = cobranca?.ToPayload("PIXAPP" + Guid.NewGuid().ToString("N").Substring(0, 10), new Merchant(pixKey?.Name, pixKey?.City));
+                pixPaylod.Payload = cobranca?.ToPayload("PAGHELPME" + Guid.NewGuid().ToString("N").Substring(0, 10), new Merchant(pixKey?.Name, pixKey?.City));
 
                 pixPaylod.QrCode = pixPaylod.Payload?.GenerateStringToQrCode();
             });
@@ -64,12 +72,67 @@ namespace PixQrCodeGeneratorOffline.Models.Services
                     }
                 };
 
-                pixPaylod.Payload = cobranca?.ToPayload("PIXAPP" + Guid.NewGuid().ToString("N").Substring(0, 10), new Merchant(pixKey?.Name, pixKey?.City));
+                pixPaylod.Payload = cobranca?.ToPayload("PAGHELPME" + Guid.NewGuid().ToString("N").Substring(0, 10), new Merchant(pixKey?.Name, pixKey?.City));
 
                 pixPaylod.QrCode = pixPaylod.Payload?.GenerateStringToQrCode();
             });
 
             return pixPaylod;
+        }
+
+        public bool Save(PixPayload pixPaylod)
+        {
+            var success = _pixPayloadRepository.Insert(pixPaylod);
+
+            DialogService.Toast("Cobrança salva com sucesso!");
+
+            return success;
+        }
+
+        public List<PixPayload> GetAll(Expression<Func<PixPayload, bool>> predicate = null)
+        {
+            return _pixPayloadRepository.GetAll(predicate);
+        }
+
+        public async Task RemoveAll(Expression<Func<PixPayload, bool>> predicate = null)
+        {
+            var all = GetAll() ?? new List<PixPayload>();
+
+            var count = all.Count;
+
+            if (count == 0)
+            {
+                DialogService.Toast("Nenhuma cobrança salva foi encontrada.");
+                return;
+            }
+
+            var multiple = count > 1 ? "cobranças salvas" : "cobrança salva";
+
+            var confirm = await DialogService.ConfirmAsync($"Tem certeza que deseja remover {count} {multiple} ?", "Confirmação", "Sim", "Cancelar");
+
+            if (!confirm)
+                return;
+
+            try
+            {
+                DialogService.ShowLoading("Aguarde...");
+
+                await Task.Delay(500);
+
+                _pixPayloadRepository.RemoveAll(predicate);
+
+                DialogService.Toast("Todas as cobranças salvas foram removidas");
+            }
+            catch (Exception e)
+            {
+                e.SendToLog();
+            }
+            finally
+            {
+                _eventService.SendEvent("Removeu todas as cobranças salvar", EventType.DELETE);
+
+                DialogService.HideLoading();
+            }
         }
 
         public bool IsValid(PixPayload pixPayload)

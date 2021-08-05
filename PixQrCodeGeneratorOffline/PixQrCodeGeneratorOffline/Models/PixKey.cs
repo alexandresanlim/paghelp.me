@@ -51,6 +51,10 @@ namespace PixQrCodeGeneratorOffline.Models
 
         public string City { get; set; }
 
+        public bool IsFavorite { get; set; }
+
+        public bool IsContact { get; set; }
+
         public FinancialInstitution FinancialInstitution { get; set; }
 
         //public PixKeyType Type { get; set; }
@@ -66,21 +70,33 @@ namespace PixQrCodeGeneratorOffline.Models
 
         [LiteDB.BsonIgnore]
         public PixKeyCommand Command => _pixKeyCommand?.Create(this) ?? new PixKeyCommand();
+    }
 
-        public PixKeyType GetKeyType()
+    public static class PixKeyExtention
+    {
+        public static bool IsAKey(this string key)
         {
-            if (Key.IsEmail())
+            return GetKeyType(key) != PixKeyType.NotFound;
+        }
+
+        public static PixKeyType GetKeyType(this string key)
+        {
+            if (key.IsEmail())
                 return PixKeyType.Email;
 
-            if (Key.IsCPF())
+            if (key.IsCPF())
                 return PixKeyType.CPF;
 
-            if (Key.IsCNPJ())
+            if (key.IsCNPJ())
                 return PixKeyType.CNPJ;
+
+            if (key.IsGuid())
+                return PixKeyType.Aleatoria;
 
             return PixKeyType.NotFound;
         }
     }
+
 
     public enum PixKeyType
     {

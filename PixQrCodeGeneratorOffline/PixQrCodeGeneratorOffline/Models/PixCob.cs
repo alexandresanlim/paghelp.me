@@ -2,6 +2,9 @@
 using pix_payload_generator.net.Models.PayloadModels;
 using PixQrCodeGeneratorOffline.Models.Base;
 using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
+using PixQrCodeGeneratorOffline.Models.Validation;
+using PixQrCodeGeneratorOffline.Models.Validation.Services;
+using PixQrCodeGeneratorOffline.Models.Validation.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Models.Viewer;
 using PixQrCodeGeneratorOffline.Models.Viewer.Services.Interfaces;
 using System;
@@ -15,9 +18,12 @@ namespace PixQrCodeGeneratorOffline.Models
     {
         private readonly IPixCobViewerService _pixCobViewerService;
 
+        private readonly IPixCobValidationService _pixCobValidationService;
+
         public PixCob()
         {
             _pixCobViewerService = DependencyService.Get<IPixCobViewerService>();
+            _pixCobValidationService = DependencyService.Get<IPixCobValidationService>();
         }
 
         private string _value;
@@ -35,5 +41,7 @@ namespace PixQrCodeGeneratorOffline.Models
         }
 
         public PixCobViewer Viewer => _pixCobViewerService?.Create(this) ?? new PixCobViewer();
+
+        public PixCobValidation Validation => _pixCobValidationService?.Create(this) ?? new PixCobValidation();
     }
 }

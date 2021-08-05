@@ -66,12 +66,14 @@ namespace PixQrCodeGeneratorOffline
         private void RegisterDependencyRepository()
         {
             DependencyService.Register<IPixKeyRepository, PixKeyRepository>();
+            DependencyService.Register<IPixPayloadRepository, PixPayloadRepository>();
         }
 
         private void RegisterDependencyValidation()
         {
             DependencyService.Register<IFeedValidationService, FeedValidationService>();
             DependencyService.Register<IPixKeyValidationService, PixKeyValidationService>();
+            DependencyService.Register<IPixCobValidationService, PixCobValidationService>();
         }
 
         private void RegisterViewModelDependency()
@@ -82,14 +84,42 @@ namespace PixQrCodeGeneratorOffline
         private void RegisterCommandDependency()
         {
             DependencyService.Register<IPixKeyCommand, PixKeyCommand>();
+            DependencyService.Register<IPixPayloadCommand, PixPayloadCommand>();
         }
 
         protected override void OnStart()
         {
-            CultureInfo.CurrentCulture = CultureInfo.CreateSpecificCulture("pt-BR");
+            LoadConfig();
+        }
 
-            var service = DependencyService.Get<IStatusBar>();
-            service?.SetByStyleListColor();
+        private void LoadConfig()
+        {
+            LoadPtBrCultureInfo();
+            //LoadStatusBar();
+            LoadPDVMode();
+            LoadStyle();
+        }
+
+        private void LoadPtBrCultureInfo()
+        {
+            CultureInfo.CurrentCulture = CultureInfo.CreateSpecificCulture("pt-BR");
+        }
+
+        //private void LoadStatusBar()
+        //{
+        //    var service = DependencyService.Get<IStatusBar>();
+        //    service?.SetByStyleListColor();
+        //}
+
+        private void LoadPDVMode()
+        {
+            var service = DependencyService.Get<IPDVMode>();
+            service?.SetPDVMode();
+        }
+
+        private void LoadStyle()
+        {
+            App.LoadTheme();
         }
 
         protected override void OnSleep()

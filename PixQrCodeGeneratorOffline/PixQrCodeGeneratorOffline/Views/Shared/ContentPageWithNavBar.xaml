@@ -10,25 +10,32 @@
     <ContentPage.ControlTemplate>
         <ControlTemplate>
             <Grid RowDefinitions="Auto,*" RowSpacing="0">
-                <Grid Grid.Row="0" ColumnDefinitions="auto,*" BackgroundColor="{TemplateBinding BackgroundColor}">
-                    <StackLayout Grid.Column="0" Padding="15,20">
+                <Grid Grid.Row="0" ColumnDefinitions="auto,*" BackgroundColor="{DynamicResource primary}" Style="{StaticResource paddingPageGrid}">
+                    <StackLayout Grid.Column="0" Padding="15,15,25,15">
                         <StackLayout.GestureRecognizers>
                             <TapGestureRecognizer Tapped="TapGestureRecognizerBackButtonPressed_Tapped"/>
                         </StackLayout.GestureRecognizers>
 
-                        <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.ChevronLeft }" IconSize="Title" IconColor="{DynamicResource textOnPrimary}" />
+                        <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.ChevronLeft }" Size="{DynamicResource FontSizeLarge}" IconColor="{DynamicResource staticAccentTextOnPrimary}" />
                     </StackLayout>
 
                     <Label Grid.Column="1"
                         FontSize="{StaticResource FontSizeMedium}"
-                        TextTransform="Uppercase"
                         Text="{TemplateBinding Title}"
                         VerticalOptions="CenterAndExpand" 
-                        FontFamily="FontPoppinsSemiBold"
-                        TextColor="{DynamicResource textOnPrimary}"
+                        FontFamily="{DynamicResource FontSemiBold}"
+                        TextColor="{DynamicResource staticAccentTextOnPrimary}"
                         MaxLines="1"
                         LineBreakMode="TailTruncation"
                         />
+
+                    <!--<StackLayout Grid.Column="2" Padding="25,15,15,15" Spacing="0" IsVisible="{Binding SaveCommand, Converter={StaticResource HasDataConverter}}">
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding SaveCommand}" />
+                        </StackLayout.GestureRecognizers>
+                        <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Save }" IconSize="Large" IconColor="{DynamicResource textOnPrimary}" />
+                        <controls:CustomLabel Text="Salvar" TextColor="{DynamicResource textOnPrimary}" FontAttributes="Bold" />
+                    </StackLayout>-->
                 </Grid>
                 <ContentPresenter Grid.Row="1" />
             </Grid>

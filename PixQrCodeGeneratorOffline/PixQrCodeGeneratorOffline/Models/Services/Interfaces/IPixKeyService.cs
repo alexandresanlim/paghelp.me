@@ -10,9 +10,7 @@ namespace PixQrCodeGeneratorOffline.Models.Services.Interfaces
     {
         bool IsValid(PixKey pixKey);
 
-        List<PixKey> GetAll();
-
-        PixKey GetFirst();
+        List<PixKey> GetAll(bool isContact = false);
 
         PixKey GetById(int id);
 
@@ -24,12 +22,12 @@ namespace PixQrCodeGeneratorOffline.Models.Services.Interfaces
 
         void ShareAllKeys();
 
-        Task<bool> RemoveAll();
+        Task<bool> RemoveAll(bool isContact = false);
 
-        Task NavigateToEdit(PixKey pixKey);
+        Task NavigateToEdit(PixKey pixKey, bool isContact = false);
 
-        Task NavigateToAdd();
+        Task NavigateToAdd(bool isContact = false);
 
-        Task NavigateToAction(PixKey pixKey);
+        //Task NavigateToAction(PixKey pixKey);
     }
 }

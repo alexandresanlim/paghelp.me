@@ -10,7 +10,7 @@ namespace PixQrCodeGeneratorOffline
 {
     public partial class App
     {
-        public const string AppName = "Pag help.me";
+        public const string AppName = "Paghelp";
 
         public const string IconName = "pixoff";
 
@@ -19,7 +19,7 @@ namespace PixQrCodeGeneratorOffline
             //Fundação do paghelpe.me
             //public static string Date => new DateTime(2020, 12, 28).ToString("dd MMM yyyy");
 
-            public static string Date => new DateTime(2021, 06, 25).ToString("dd MMM yyyy");
+            public static string Date => new DateTime(2021, 06, 27).ToString("dd MMM yyyy");
 
             public static string AppName => AppInfo.Name;
 
@@ -50,19 +50,9 @@ namespace PixQrCodeGeneratorOffline
 
             public static string StoreNameByDeviceInfo => DeviceInfo.IsAndroid ? "Google Play" : "App Store";
 
-            public static string InstagramUsername => "pixoff.app";
+            public static string InstagramUsername => "paghelp.me";
 
             public static string InstagramLink => "https://www.instagram.com/" + InstagramUsername;
-        }
-
-        public static class Ads
-        {
-            public static string AdsId => DeviceInfo.IsAndroid ?
-#if DEBUG
-                "ca-app-pub-3940256099942544/6300978111" : "ca-app-pub-3940256099942544/2934735716";
-#else
-                "ca-app-pub-1328926374682196/6888131347" : "";
-#endif
         }
 
         public static class Evironment
@@ -78,16 +68,28 @@ namespace PixQrCodeGeneratorOffline
                 get
                 {
 #if DEBUG
-                    return EviromentType.Production;
+                    return EviromentType.Development;
 #else
                     return EviromentType.Production;
 #endif
                 }
             }
 
-            public static bool IsProduction => (Current == EviromentType.Production);
+            public static bool IsProduction => Current == EviromentType.Production;
 
-            public static bool IsDevelopment => (Current == EviromentType.Development);
+            public static bool IsDevelopment => Current == EviromentType.Development;
+        }
+
+        public static class Ids
+        {
+            public static string AppCenter => Evironment.IsDevelopment ? "18439db5-b775-4a96-bb6f-6c4612d3daab" : "b0e08456-a911-48da-b391-33daf270896c";
+
+            public static string GoogleAds => DeviceInfo.IsAndroid ?
+#if DEBUG
+                "ca-app-pub-3940256099942544/6300978111" : "ca-app-pub-3940256099942544/2934735716";
+#else
+                "ca-app-pub-1328926374682196/6888131347" : "";
+#endif
         }
 
         public static async Task OpenAppInStore()
@@ -112,9 +114,7 @@ namespace PixQrCodeGeneratorOffline
                 await Launcher.OpenAsync(new Uri("instagram://user?username=" + Info.InstagramUsername));
 
             else
-            {
                 await Launcher.OpenAsync(new Uri(Info.InstagramLink));
-            }
         }
     }
 }

@@ -4,14 +4,13 @@ using PixQrCodeGeneratorOffline.Models.Repository.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 
 namespace PixQrCodeGeneratorOffline.Models.Repository
 {
     public class PixKeyRepository : BaseDatabase, IPixKeyRepository
     {
-        //public static ILiteCollection<PixKey> ItemCollection => GetDatabase.GetCollection<PixKey>();
-
         private readonly ILiteCollection<PixKey> _pixCollection;
 
         public PixKeyRepository()
@@ -19,27 +18,15 @@ namespace PixQrCodeGeneratorOffline.Models.Repository
             _pixCollection = GetDatabase.GetCollection<PixKey>();
         }
 
-        public List<PixKey> GetAll()
+        public List<PixKey> GetAll(Expression<Func<PixKey, bool>> predicate)
         {
             try
             {
-                return _pixCollection.FindAll().ToList();
+                return _pixCollection.Find(predicate).ToList();
             }
             catch (Exception e)
             {
                 return new List<PixKey>();
-            }
-        }
-
-        public PixKey GetFirst()
-        {
-            try
-            {
-                return _pixCollection.FindAll().FirstOrDefault();
-            }
-            catch (Exception e)
-            {
-                return new PixKey();
             }
         }
 
@@ -52,18 +39,6 @@ namespace PixQrCodeGeneratorOffline.Models.Repository
             catch (Exception e)
             {
                 return new PixKey();
-            }
-        }
-
-        public bool UpInsert(PixKey item)
-        {
-            try
-            {
-                return _pixCollection.Upsert(item.Id, item);
-            }
-            catch (Exception e)
-            {
-                return false;
             }
         }
 
@@ -103,11 +78,11 @@ namespace PixQrCodeGeneratorOffline.Models.Repository
             }
         }
 
-        public bool RemoveAll()
+        public bool RemoveAll(Expression<Func<PixKey, bool>> predicate)
         {
             try
             {
-                return _pixCollection.DeleteAll() > 0;
+                return _pixCollection.DeleteMany(predicate) > 0;
             }
             catch (Exception)
             {

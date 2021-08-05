@@ -2,6 +2,8 @@
 using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models;
 using PixQrCodeGeneratorOffline.Services;
+using PixQrCodeGeneratorOffline.ViewModels.Base;
+using PixQrCodeGeneratorOffline.ViewModels.Helpers;
 using PixQrCodeGeneratorOffline.Views;
 using Plugin.Fingerprint;
 using Plugin.Fingerprint.Abstractions;
@@ -15,7 +17,7 @@ using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.ViewModels
 {
-    public class DashboardViewModel : BaseViewModel
+    public class DashboardViewModel : DashboardViewModelBase
     {
         public DashboardViewModel()
         {
@@ -30,18 +32,19 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         {
             try
             {
+                IsBusy = true;
+
+                await Task.Delay(1000);
+
                 await ResetProps();
 
                 await ReloadShowInList();
 
                 var list = _pixKeyService.GetAll();
 
-                PixKeyList = list.ToObservableCollection();
+                PixKeyList = list?.OrderBy(x => x?.FinancialInstitution?.Name).ToObservableCollection();
 
                 await LoadCurrentPixKey();
-
-                if (!(PixKeyList.Count > 0))
-                    await LoadDashboardWelcome();
             }
             catch (System.Exception e)
             {
@@ -49,6 +52,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
             finally
             {
+                IsBusy = false;
             }
         }
 
@@ -57,69 +61,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             IsVisibleFingerPrint = Preference.FingerPrint && await CrossFingerprint.Current.IsAvailableAsync();
 
             ShowInList = false;
-            ShowInCarousel = false;
             ShowWelcome = false;
-        }
-
-        public async Task LoadCurrentPixKey(PixKey pixKeySelected = null)
-        {
-            if (PixKeyList == null || !(PixKeyList.Count > 0))
-                ShowWelcome = true;
-
-            else
-            {
-                CurrentPixKey = pixKeySelected ?? PixKeyList.FirstOrDefault();
-                ShowWelcome = false;
-            }
-        }
-
-        private async Task LoadDashboardWelcome()
-        {
-            DashboardWelcomenList = new ObservableCollection<DashboardWelcome>
-            {
-                new DashboardWelcome
-                {
-                    Emoji = FontAwesomeSolid.Lock,
-                    Title = "Seguro",
-                    Description = "Guarde suas chaves localmente de maneira criptografada e sem conexão com a internet, com suporte a autenticação biométrica se disponível pelo seu aparelho.",
-                    Unconnection = true
-                },
-                new DashboardWelcome
-                {
-                    Emoji = FontAwesomeSolid.HandHoldingUsd,
-                    Title = "Cobranças",
-                    Description = "Gere Qr Codes para pagamento.",
-                    Unconnection = true
-                },
-                new DashboardWelcome
-                {
-                    Emoji = FontAwesomeSolid.ThumbsUp,
-                    Title = "Prático",
-                    Description = "Compartilhe uma única ou todas suas chaves rapidamente, incluindo com geração de txt",
-                    Unconnection = true
-                },
-                new DashboardWelcome
-                {
-                    Emoji = FontAwesomeSolid.Cogs,
-                    Title = "Customizável",
-                    Description = "Exiba em formato de carrossel ou lista, com suporte a dark e light mode,",
-                    Unconnection = true
-                },
-
-                new DashboardWelcome
-                {
-                    Emoji = FontAwesomeSolid.Save,
-                    Title = "Backup",
-                    Description = "Local, automático e criptografado.",
-                    Unconnection = true
-                },
-                new DashboardWelcome
-                {
-                    Emoji = FontAwesomeSolid.ExclamationTriangle,
-                    Title = "IMPORTANTE!",
-                    Description = "- Para sua segurança, não fazemos conexão direta com o seu banco, sendo assim não será possível ver saldo ou realizar transferências, para isso use o app oficial do mesmo e jamais forneça esse tipo de acesso para terceiros. \n\n - Não temos quaisquer relação com o governo federal do Brasil, porém seguimos a risca, todos manuais e recomendações de padronização e segurança disponibilizados pela instituição."
-                }
-            };
         }
 
         public ICommand AuthenticationCommand => new Command(async () =>
@@ -150,9 +92,9 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public ICommand NavigateToAddNewKeyPageCommand => new Command(async () => await _pixKeyService.NavigateToAdd());
 
-        public ICommand EditKeyCommand => new Command(async () => await _pixKeyService.NavigateToEdit(CurrentPixKey));
+        //public Command<PixKey> EditKeyCommand => new Command<PixKey>(async (key) => await _pixKeyService.NavigateToEdit(key));
 
-        public Command<PixKey> OpenOptionsKeyCommand => new Command<PixKey>(async (key) => await _pixKeyService.NavigateToAction(key));
+        //public Command<PixKey> OpenOptionsKeyCommand => new Command<PixKey>(async (key) => await _pixKeyService.NavigateToAction(key));
 
         #endregion
 
@@ -204,18 +146,16 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         {
             try
             {
-                SetIsLoading(true, "Aguarde...");
+                IsBusy = true;
 
                 await Task.Delay(500);
 
                 ShowInList = Preference.ShowInList;
-                ShowInCarousel = !ShowInList;
 
                 ReloadAppColorIfShowInListStyle();
 
                 if (ShowInList)
                 {
-
                     CurrentIconStyleList = FontAwesomeSolid.Th;
                 }
 
@@ -233,7 +173,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             {
                 _eventService.SendEvent("Estilo da dashboard para lista: " + ShowInList, EventType.PREFERENCE);
 
-                SetIsLoading(false);
+                IsBusy = false;
             }
         }
 
@@ -245,46 +185,13 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             App.LoadTheme(CurrentPixKey?.FinancialInstitution?.Institution?.MaterialColor);
         }
 
-        private ObservableCollection<PixKey> _pixKeyList;
-        public ObservableCollection<PixKey> PixKeyList
-        {
-            set => SetProperty(ref _pixKeyList, value);
-            get => _pixKeyList;
-        }
-
-        private PixKey _currentPixKey;
-        public PixKey CurrentPixKey
-        {
-            set => SetProperty(ref _currentPixKey, value);
-            get => _currentPixKey;
-        }
-
-        private bool _showWelcome;
-        public bool ShowWelcome
-        {
-            set => SetProperty(ref _showWelcome, value);
-            get => _showWelcome;
-        }
+        #region Props
 
         private bool _showInList;
         public bool ShowInList
         {
             set => SetProperty(ref _showInList, value);
             get => _showInList;
-        }
-
-        private bool _showInCarousel;
-        public bool ShowInCarousel
-        {
-            set => SetProperty(ref _showInCarousel, value);
-            get => _showInCarousel;
-        }
-
-        private string _welcomeText;
-        public string WelcomeText
-        {
-            set => SetProperty(ref _welcomeText, value);
-            get => _welcomeText;
         }
 
         private string _currentIconStyleList;
@@ -315,13 +222,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             get => _currentDashboardWelcome;
         }
 
-        private ObservableCollection<DashboardWelcome> _dashboardWelcomenList;
-        public ObservableCollection<DashboardWelcome> DashboardWelcomenList
-        {
-            set => SetProperty(ref _dashboardWelcomenList, value);
-            get => _dashboardWelcomenList;
-        }
-
         private DashboardWelcome LastWelcomeItem => DashboardWelcomenList?.LastOrDefault() ?? new DashboardWelcome();
 
         private bool _showAddkeyOnWelcome;
@@ -330,16 +230,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             set => SetProperty(ref _showAddkeyOnWelcome, value);
             get => _showAddkeyOnWelcome;
         }
-    }
 
-    public class DashboardWelcome
-    {
-        public string Emoji { get; set; }
-
-        public string Title { get; set; }
-
-        public string Description { get; set; }
-
-        public bool Unconnection { get; set; }
+        #endregion
     }
 }
