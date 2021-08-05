@@ -36,7 +36,7 @@ namespace PixQrCodeGeneratorOffline.Droid
 
             CurrentWindow = (this).Window;
             LoadWindowColors();
-            
+
 
             StartAndroidDependency();
 
@@ -74,7 +74,7 @@ namespace PixQrCodeGeneratorOffline.Droid
             if (Build.VERSION.SdkInt < BuildVersionCodes.Lollipop)
                 return;
 
-                CurrentWindow.SetStatusBarColor(Android.Graphics.Color.Black);
+            CurrentWindow.SetStatusBarColor(Android.Graphics.Color.Black);
             CurrentWindow.SetNavigationBarColor(Android.Graphics.Color.Black);
         }
 

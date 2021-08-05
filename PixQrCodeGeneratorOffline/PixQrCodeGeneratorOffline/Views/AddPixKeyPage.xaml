@@ -8,7 +8,7 @@
              xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon"
              Shell.NavBarIsVisible="False"
              xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
-                       Title="Editar Chave"
+    Title="Editar Chave"
              >
 
     <ContentPage.Resources>

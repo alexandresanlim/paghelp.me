@@ -4,7 +4,7 @@
                                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
                                xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
                                x:Class="PixQrCodeGeneratorOffline.Views.OptionKeyPage"
-                               BackgroundColor="{DynamicResource staticAccentPrimary}">
+                               BackgroundColor="{DynamicResource foreground_page}">
     <ContentPage.Content>
 
         <StackLayout Padding="25,0" Spacing="15">

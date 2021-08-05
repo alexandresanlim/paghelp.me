@@ -4,7 +4,7 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PixQrCodeGeneratorOffline.Views.OptionContactPage"
-    BackgroundColor="{DynamicResource staticAccentPrimary}"
+    BackgroundColor="{DynamicResource foreground_page}"
     >
     <ContentPage.Content>
         <StackLayout Padding="25,0" Spacing="15">

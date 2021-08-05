@@ -101,29 +101,29 @@
             <Style x:Key="titleStyle" TargetType="Label">
                 <Setter Property="Margin" Value="15,0,0,0"/>
                 <Setter Property="FontSize" Value="{DynamicResource FontSizeLarge}" />
-                <Setter Property="TextColor" Value="{DynamicResource textPrimary}"/>
-                <Setter Property="FontFamily" Value="FontPoppinsBold"/>
+                <Setter Property="TextColor" Value="{DynamicResource textSecondary}"/>
+                <Setter Property="FontFamily" Value="{DynamicResource FontBold}"/>
             </Style>
 
             <Style x:Key="optionTitle" TargetType="Label">
                 <Setter Property="FontSize" Value="50" />
-                <Setter Property="TextColor" Value="{DynamicResource staticAccentPrimaryLight}"/>
-                <Setter Property="FontFamily" Value="FontPoppinsBold"/>
+                <Setter Property="TextColor" Value="{DynamicResource textSecondary}"/>
+                <Setter Property="FontFamily" Value="{DynamicResource FontBold}"/>
             </Style>
 
             <Style x:Key="subOptionTitle" TargetType="Label">
                 <Setter Property="FontSize" Value="30" />
-                <Setter Property="TextColor" Value="{DynamicResource staticAccentTextOnPrimary}"/>
-                <Setter Property="FontFamily" Value="FontPoppinsSemiBold"/>
+                <Setter Property="TextColor" Value="{DynamicResource textPrimary}"/>
+                <Setter Property="FontFamily" Value="{DynamicResource FontSemiBold}"/>
             </Style>
 
             <Style x:Key="paddingPageGrid" TargetType="Grid">
-                <Setter Property="Padding" Value="0,25,0,0" />
+                <!--<Setter Property="Padding" Value="0,25,0,0" />-->
                 <!--<Setter Property="Padding" Value="0,25,0,50" />-->
             </Style>
 
             <Style x:Key="paddingPageStackLayout" TargetType="StackLayout">
-                <Setter Property="Padding" Value="0,25,0,0" />
+                <!--<Setter Property="Padding" Value="0,25,0,0" />-->
                 <!--<Setter Property="Padding" Value="0,25,0,50" />-->
             </Style>
 
