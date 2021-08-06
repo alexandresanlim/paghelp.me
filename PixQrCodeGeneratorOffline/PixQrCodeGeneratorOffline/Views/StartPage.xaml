@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:qr="clr-namespace:Xam.Forms;assembly=Xam.Forms.QRCode" 
+             xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
+             xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon" 
+             x:Class="PixQrCodeGeneratorOffline.Views.StartPage"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="{DynamicResource background_page}"
+             >
+
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+
+            <Style x:Key="styleActionText" TargetType="Label">
+                <Setter Property="FontSize" Value="{DynamicResource FontSizeSmall}"/>
+                <Setter Property="TextColor" Value="{DynamicResource textSecondary}"/>
+                <Setter Property="FontFamily" Value="{DynamicResource FontSemiBold}" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+            </Style>
+
+            <Style x:Key="styleActionIcon" TargetType="controls:CustomIcon">
+                <Setter Property="Size" Value="{DynamicResource FontSizeSmall}"/>
+                <Setter Property="IconColor" Value="{DynamicResource textSecondary}" />
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+
+
+
+        <ScrollView>
+            <StackLayout>
+                <StackLayout Padding="15" BackgroundColor="{DynamicResource primary}">
+                    <Label Text="Olá, Boa Tarde!" FontSize="{DynamicResource FontSizeLarge}" FontFamily="{DynamicResource FontBold}" TextColor="{DynamicResource textOnPrimary}" />
+                </StackLayout>
+
+                <StackLayout Padding="10">
+                    <Label Text="Minhas Chaves" FontSize="{DynamicResource FontSizeLarge}" FontFamily="{DynamicResource FontBold}" TextColor="{DynamicResource textSecondary}" />
+                </StackLayout>
+
+                <CarouselView ItemsSource="{Binding PixKeyList}"
+                              PeekAreaInsets="25,0"
+                              CurrentItem="{Binding CurrentPixKey}"
+                              CurrentItemChangedCommand="{Binding ChangeSelectPixKeyCommand}"
+                              HeightRequest="150"
+                              IndicatorView="indicatorView"
+                              >
+
+                    <!--<CollectionView.ItemsLayout>
+                        <LinearItemsLayout Orientation="Horizontal"/>
+                    </CollectionView.ItemsLayout>-->
+
+                    <CarouselView.ItemTemplate>
+                        <DataTemplate>
+
+
+                            <StackLayout Padding="0,0,10,0">
+                                <Frame CornerRadius="10" BackgroundColor="{DynamicResource foreground_page}" Padding="10">
+                                    <StackLayout>
+
+
+
+                                        <Grid ColumnDefinitions="auto,*">
+
+                                            <StackLayout Grid.Column="0" WidthRequest="8" BackgroundColor="{Binding FinancialInstitution.Institution.MaterialColor.Primary}" />
+
+                                            <StackLayout Grid.Column="1" Padding="10,15" Spacing="15">
+
+
+                                                <Grid ColumnDefinitions="auto,*" ColumnSpacing="15">
+
+                                                    <qr:QRCode
+                                                    Grid.Column="0"
+                                                    Content="{Binding Payload.QrCode}"
+                                                    BackgroundColor="White"
+                                                    Color="#000000" 
+                                                    Level="H" 
+                                                        WidthRequest="80"
+                                                        HeightRequest="80"
+                                                    VerticalOptions="Center" 
+                                                    >
+
+                                                        <qr:QRCode.GestureRecognizers>
+                                                            <TapGestureRecognizer Command="{Binding Command.NavigateToPaymentPageCommand}" />
+                                                        </qr:QRCode.GestureRecognizers>
+
+                                                    </qr:QRCode>
+
+
+                                                    <Grid Grid.Column="1" ColumnDefinitions="auto, *" RowDefinitions="auto, auto, auto">
+
+                                                        <controls:CustomIcon Grid.Row="0" Grid.Column="0" Glyph="{x:Static icons:FontAwesomeSolid.University }" Style="{DynamicResource styleActionIcon}" />
+                                                        <Label Grid.Row="0" Grid.Column="1" Text="{Binding Viewer.InstitutionPresentation}" Style="{DynamicResource styleActionText}" />
+
+                                                        <controls:CustomIcon Grid.Row="1" Grid.Column="0" Glyph="{x:Static icons:FontAwesomeSolid.UserAlt }" Style="{DynamicResource styleActionIcon}" />
+                                                        <Label Grid.Row="1" Grid.Column="1" Text="{Binding Viewer.NamePresentation}" Style="{DynamicResource styleActionText}" />
+
+                                                        <controls:CustomIcon Grid.Row="2" Grid.Column="0" Glyph="{x:Static icons:FontAwesomeSolid.Key }" Style="{DynamicResource styleActionIcon}" />
+                                                        <Label Grid.Row="2" Grid.Column="1" MaxLines="1" LineBreakMode="MiddleTruncation" Text="{Binding Viewer.KeyPresentation}" Style="{DynamicResource styleActionText}" />
+
+                                                    </Grid>
+
+                                                    <!--<StackLayout Grid.Column="2" Padding="30,5,0,15" VerticalOptions="Start">
+                                                        <StackLayout.GestureRecognizers>
+                                                            <TapGestureRecognizer Command="{Binding Command.EditKeyCommand}" />
+                                                        </StackLayout.GestureRecognizers>
+
+                                                        <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Edit }" IconColor="{DynamicResource textSecondary}"/>
+
+                                                        <Label Text="Editar" Style="{DynamicResource styleTextOnButtonActionList}" TextColor="{DynamicResource textSecondary}"/>
+                                                    </StackLayout>-->
+
+                                                </Grid>
+
+
+                                            </StackLayout>
+                                        </Grid>
+
+
+
+                                    </StackLayout>
+                                </Frame>
+                            </StackLayout>
+                  
+
+                        </DataTemplate>
+                    </CarouselView.ItemTemplate>
+                </CarouselView>
+
+                <IndicatorView x:Name="indicatorView"
+                                       IndicatorsShape="Circle"
+                                       IndicatorColor="LightGray"
+                                       SelectedIndicatorColor="DarkGray" />
+
+
+                <CollectionView ItemsSource="{Binding CurrentPixKeyActions}" HeightRequest="150" Margin="0,10,0,0">
+
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout Orientation="Horizontal"/>
+                    </CollectionView.ItemsLayout>
+                    
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Padding="5">
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding Command}" />
+                                </StackLayout.GestureRecognizers>
+                                
+                                <Frame
+                                    BackgroundColor="{DynamicResource foreground_page}"
+                                    CornerRadius="40"
+                                    HeightRequest="50"
+                                    WidthRequest="50"
+                                    IsClippedToBounds="True"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    Padding="15"
+                                    >
+                                    <StackLayout VerticalOptions="Center">
+                                        <controls:CustomIcon Glyph="{Binding Icon}" IconColor="{Binding Colors.Primary}" Size="25" />
+                                    </StackLayout>
+                                </Frame>
+
+                                <Label Text="{Binding Title}" FontFamily="{DynamicResource FontSemiBold}" TextColor="{Binding textSecondary}" HorizontalOptions="Center" FontSize="{DynamicResource FontSizeMicro}" />
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                    
+                </CollectionView>
+
+
+                <StackLayout Padding="10">
+                    <Label Text="Chaves de Contatos" FontSize="{DynamicResource FontSizeLarge}" FontFamily="{DynamicResource FontBold}" TextColor="{DynamicResource textSecondary}" />
+                </StackLayout>
+
+
+                <CollectionView Grid.Row="0" ItemsSource="{Binding PixKeyListContact}">
+                    <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Horizontal" Span="2"/>
+                </CollectionView.ItemsLayout>
+
+                    <CollectionView.ItemTemplate>
+                    <DataTemplate>
+
+                            <Frame CornerRadius="10" Margin="10">
+                                <StackLayout BackgroundColor="{DynamicResource foreground_page}" Padding="15" Spacing="15" HorizontalOptions="FillAndExpand">
+
+
+                                    <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.UserCircle }" Grid.Column="0" Size="50" IconColor="{DynamicResource textSecondary}" VerticalOptions="Center" />
+
+                                    <StackLayout Grid.Column="1" Spacing="0">
+                                        <Label Text="{Binding Viewer.NamePresentation}" TextColor="{DynamicResource textPrimary}" FontFamily="{DynamicResource FontBold}" FontSize="{StaticResource FontSizeMedium}"  />
+                                        <Label Text="{Binding Viewer.KeyPresentation}" TextColor="{DynamicResource textSecondary}" MaxLines="1" LineBreakMode="MiddleTruncation" />
+                                    </StackLayout>
+
+                                    <Frame Grid.Column="0" Style="{DynamicResource styleButtonActionList}">
+                                        <Frame.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding Command.CopyKeyCommand}" />
+                                        </Frame.GestureRecognizers>
+                                        <StackLayout>
+                                            <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Copy }" Style="{DynamicResource styleIconActionList}" />
+                                            <Label Text="Copiar" Style="{DynamicResource styleTextOnButtonActionList}"/>
+                                        </StackLayout>
+                                    </Frame>
+
+                                    <Frame Grid.Column="0" Style="{DynamicResource styleButtonActionList}">
+                                        <Frame.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding Command.EditKeyCommand}" />
+                                        </Frame.GestureRecognizers>
+                                        <StackLayout>
+                                            <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Copy }" Style="{DynamicResource styleIconActionList}" />
+                                            <Label Text="Editar" Style="{DynamicResource styleTextOnButtonActionList}"/>
+                                        </StackLayout>
+                                    </Frame>
+
+                                </StackLayout>
+                            </Frame>
+
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+                </CollectionView>
+
+            </StackLayout>
+        </ScrollView>
+        
+        
+    </ContentPage.Content>
+</ContentPage>

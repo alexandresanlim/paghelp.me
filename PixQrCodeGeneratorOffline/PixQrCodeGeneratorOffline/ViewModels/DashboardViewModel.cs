@@ -44,6 +44,8 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 PixKeyList = list?.OrderBy(x => x?.FinancialInstitution?.Name).ToObservableCollection();
 
+                PixKeyListContact = _pixKeyService.GetAll(isContact: true).ToObservableCollection();
+
                 await LoadCurrentPixKey();
             }
             catch (System.Exception e)
@@ -179,7 +181,12 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public void SetStatusFromCurrentPixColor()
         {
-            //return;
+            if (CurrentPixKey == null)
+                return;
+
+            CurrentPixKeyActions = CurrentPixKey.Actions.ToObservableCollection();
+
+            return;
 
             if (ShowInList || CurrentPixKey?.FinancialInstitution?.Institution?.MaterialColor == null)
                 return;
@@ -234,5 +241,26 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         }
 
         #endregion
+
+
+
+        #region Nova Dash
+
+        private ObservableCollection<PixKeyAction> _currentPixKeyActions;
+        public ObservableCollection<PixKeyAction> CurrentPixKeyActions
+        {
+            set => SetProperty(ref _currentPixKeyActions, value);
+            get => _currentPixKeyActions;
+        }
+
+        private ObservableCollection<PixKey> _pixKeyListContact;
+        public ObservableCollection<PixKey> PixKeyListContact
+        {
+            set => SetProperty(ref _pixKeyListContact, value);
+            get => _pixKeyListContact;
+        }
+
+        #endregion
+
     }
 }

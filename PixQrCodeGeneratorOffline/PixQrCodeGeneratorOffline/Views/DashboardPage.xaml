@@ -204,7 +204,7 @@
 
                         <controls:CustomCarouselView
                                 IndicatorView="indicatorView"
-                                PeekAreaInsets="40,0"
+                                PeekAreaInsets="40"
                                 ItemsSource="{Binding PixKeyList}"
                                 Loop="False"
                                 CurrentItem="{Binding CurrentPixKey}"

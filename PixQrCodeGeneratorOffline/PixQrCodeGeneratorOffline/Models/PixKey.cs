@@ -70,6 +70,62 @@ namespace PixQrCodeGeneratorOffline.Models
 
         [LiteDB.BsonIgnore]
         public PixKeyCommand Command => _pixKeyCommand?.Create(this) ?? new PixKeyCommand();
+
+        [LiteDB.BsonIgnore]
+        public List<PixKeyAction> Actions => PixKeyAction.GetList(this);
+    }
+
+    public class PixKeyAction
+    {
+        public string Icon { get; set; }
+
+        public string Title { get; set; }
+
+        public System.Windows.Input.ICommand Command { get; set; }
+
+        public MaterialColor Colors { get; set; }
+
+        public static List<PixKeyAction> GetList(PixKey pixKey)
+        {
+            return new List<PixKeyAction>
+            {
+                new PixKeyAction
+                {
+                    Title = "Criar Qr Code",
+                    Icon = FontAwesomeSolid.Qrcode,
+                    Command = pixKey?.Command?.NavigateToCreateBillingPageCommand,
+                    Colors = pixKey?.FinancialInstitution?.Institution?.MaterialColor
+                },
+                new PixKeyAction
+                {
+                    Title = "Copiar",
+                    Icon = FontAwesomeSolid.Copy,
+                    Command = pixKey?.Command?.CopyKeyCommand,
+                    Colors = pixKey?.FinancialInstitution?.Institution?.MaterialColor
+                },
+                new PixKeyAction
+                {
+                    Title = "Compartilhar",
+                    Icon = FontAwesomeSolid.ShareAlt,
+                    Command = pixKey?.Command?.ShareKeyCommand,
+                    Colors = pixKey?.FinancialInstitution?.Institution?.MaterialColor
+                },
+                new PixKeyAction
+                {
+                    Title = "Editar",
+                    Icon = FontAwesomeSolid.Pen,
+                    Command = pixKey?.Command?.EditKeyCommand,
+                    Colors = pixKey?.FinancialInstitution?.Institution?.MaterialColor
+                },
+                new PixKeyAction
+                {
+                    Title = "Excluir",
+                    Icon = FontAwesomeSolid.TrashAlt,
+                    Command = pixKey?.Command?.EditKeyCommand,
+                    Colors = pixKey?.FinancialInstitution?.Institution?.MaterialColor
+                }
+            };
+        }
     }
 
     public static class PixKeyExtention
