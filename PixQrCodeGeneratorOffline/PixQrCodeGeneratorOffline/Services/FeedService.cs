@@ -34,7 +34,7 @@ namespace PixQrCodeGeneratorOffline.Services
                                        Source = ((string)x.Element("source"))
                                    });
 
-                return RSSFeedData?.Where(x => x.Validation.IsValid)?.OrderByDescending(x => x.PublishDate)?.ToList();
+                return RSSFeedData?.Where(x => x.Validation.IsValid)?.Take(5)?.OrderByDescending(x => x.PublishDate)?.ToList();
             }
             catch (Exception)
             {

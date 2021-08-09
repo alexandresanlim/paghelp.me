@@ -70,63 +70,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
         }
 
-        public ICommand ItemTappedCommand => new Command<Feed>(async (feed) =>
-        {
-            if (!feed.Validation.IsValid)
-            {
-                DialogService.Toast("Link para notícia não encontrado.");
-                return;
-            }
-
-            try
-            {
-                SetIsLoading(true);
-
-                await Task.Delay(500);
-
-                await NavigateModalAsync(new WebViewPage(feed.Link, feed?.Title));
-            }
-            catch (Exception e)
-            {
-                e.SendToLog();
-            }
-            finally
-            {
-                _eventService.SendEvent("Viu uma notícia", EventType.SEE, new Dictionary<string, string> { { "Título: ", feed?.Title } });
-
-                SetIsLoading(false);
-            }
-        });
-
-        public ICommand ShareCommand => new Command<Feed>(async (feed) =>
-        {
-            if (!feed.Validation.IsValid)
-            {
-                DialogService.Toast("Link para notícia não encontrado.");
-                return;
-            }
-
-            try
-            {
-
-                SetIsLoading(true);
-
-                await Task.Delay(500);
-
-                await _externalActionService.ShareText(feed.Link.AbsoluteUri);
-            }
-            catch (Exception e)
-            {
-                e.SendToLog();
-            }
-            finally
-            {
-                _eventService.SendEvent("Compartilhou uma notícia: " + feed?.Title, EventType.SHARE, new Dictionary<string, string> { { "Título: ", feed?.Title } });
-
-                SetIsLoading(false);
-            }
-        });
-
         private ObservableCollection<Feed> _currentFeedList;
         public ObservableCollection<Feed> CurrentFeedList
         {

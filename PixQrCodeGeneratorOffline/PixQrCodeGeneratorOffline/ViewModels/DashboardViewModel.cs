@@ -46,7 +46,11 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 PixKeyListContact = _pixKeyService.GetAll(isContact: true).ToObservableCollection();
 
+                BillingSaveList = _pixPayloadService?.GetAll()?.ToObservableCollection() ?? new ObservableCollection<PixPayload>();
+
                 await LoadCurrentPixKey();
+
+                await LoadNews();
             }
             catch (System.Exception e)
             {
@@ -55,6 +59,34 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             finally
             {
                 IsBusy = false;
+            }
+        }
+
+        public async Task LoadNews()
+        {
+            try
+            {
+                IsBusy = true;
+
+                FeedFromService = FeedFromService?.Count > 0 ? FeedFromService : await _feedService.Get("https://news.google.com/rss/search?q=pix%20-fraude%20-golpista%20-golpistas%20-erro&hl=pt-BR&gl=BR&ceid=BR%3Apt-419");
+
+                CurrentFeedList = FeedFromService?.ToObservableCollection();
+            }
+            catch (System.Exception e)
+            {
+                e.SendToLog();
+            }
+            finally
+            {
+                IsBusy = false;
+
+                foreach (var item in CurrentFeedList)
+                {
+                    var uri = await item.Link.GetImage();
+
+                    if (!string.IsNullOrEmpty(uri))
+                        item.Image = new UriImageSource { CachingEnabled = true, Uri = new System.Uri(uri) };
+                }
             }
         }
 
@@ -93,6 +125,8 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         #region DashboardVMDependency
 
         public ICommand NavigateToAddNewKeyPageCommand => new Command(async () => await _pixKeyService.NavigateToAdd());
+
+        public ICommand NavigateToAddNewKeyPageContactCommand => new Command(async () => await _pixKeyService.NavigateToAdd(isContact: true));
 
         //public Command<PixKey> EditKeyCommand => new Command<PixKey>(async (key) => await _pixKeyService.NavigateToEdit(key));
 
@@ -258,6 +292,22 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         {
             set => SetProperty(ref _pixKeyListContact, value);
             get => _pixKeyListContact;
+        }
+
+        private ObservableCollection<PixPayload> _billingSaveList;
+        public ObservableCollection<PixPayload> BillingSaveList
+        {
+            set => SetProperty(ref _billingSaveList, value);
+            get => _billingSaveList;
+        }
+
+        public List<Feed> FeedFromService { get; set; }
+
+        private ObservableCollection<Feed> _currentFeedList;
+        public ObservableCollection<Feed> CurrentFeedList
+        {
+            get => _currentFeedList;
+            set => SetProperty(ref _currentFeedList, value);
         }
 
         #endregion
