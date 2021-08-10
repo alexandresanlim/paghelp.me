@@ -128,5 +128,42 @@ namespace PixQrCodeGeneratorOffline.Services
                 e.SendToLog();
             }
         }
+
+        public async Task ChangeShowNewsMode()
+        {
+            try
+            {
+                var options = new List<ActionSheetOption>
+                {
+                    new ActionSheetOption((Preference.ShowNews ? "Desativar" : "Ativar") + " exibir notícias", async () =>
+                    {
+                         var confirmMsg = "Tem certeza que deseja " + (Preference.ShowNews ? "desativar" : "ativar") + " o exibir notícias? Na próxima vez que você entrar, o app " + (Preference.ShowNews ? "não mostrará" : "mostrará") + " notícias na dashboard";
+
+                        if (!await DialogService.ConfirmAsync(confirmMsg, "Confirmação", "Sim", "Cancelar"))
+                            return;
+
+                        Preference.ShowNews = !Preference.ShowNews;
+
+                        DialogService.Toast("Preferência de exibir notícias, salvo com sucesso!");
+
+                        _eventService.SendEvent($"Mudou exibir notícias, {nameof(Preference.ShowNews)} : {Preference.ShowNews}", EventType.PREFERENCE);
+                    })
+                };
+
+                DialogService.ActionSheet(new ActionSheetConfig
+                {
+                    Title = "Exibir notícias na dashboard",
+                    Options = options,
+                    Cancel = new ActionSheetOption("Cancelar", () =>
+                    {
+                        return;
+                    })
+                });
+            }
+            catch (Exception e)
+            {
+                e.SendToLog();
+            }
+        }
     }
 }

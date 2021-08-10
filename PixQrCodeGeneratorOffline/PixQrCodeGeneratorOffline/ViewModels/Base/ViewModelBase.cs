@@ -54,7 +54,7 @@ namespace PixQrCodeGeneratorOffline.Base.ViewModels
 
             ShowAds = false;
 
-            Application.Current.RequestedThemeChanged += Current_RequestedThemeChanged;
+            //Application.Current.RequestedThemeChanged += Current_RequestedThemeChanged;
         }
 
         public ICommand SaveCommand { get; set; }
@@ -63,15 +63,15 @@ namespace PixQrCodeGeneratorOffline.Base.ViewModels
 
         public static DashboardContactViewModel DashboardContactVM { get; set; }
 
-        private void Current_RequestedThemeChanged(object sender, AppThemeChangedEventArgs e)
-        {
-            ReloadAppColorIfShowInListStyle();
-        }
+        //private void Current_RequestedThemeChanged(object sender, AppThemeChangedEventArgs e)
+        //{
+        //    ReloadAppColorIfShowInListStyle();
+        //}
 
-        public void ReloadAppColorIfShowInListStyle()
-        {
-            App.LoadTheme();
-        }
+        //public void ReloadAppColorIfShowInListStyle()
+        //{
+        //    App.LoadTheme();
+        //}
 
         protected IUserDialogs DialogService => UserDialogs.Instance;
 
@@ -153,18 +153,18 @@ namespace PixQrCodeGeneratorOffline.Base.ViewModels
             set => SetProperty(ref _showAds, value);
         }
 
-        bool isBusy = true;
+        private bool isBusy = true;
         public bool IsBusy
         {
-            get { return isBusy; }
-            set { SetProperty(ref isBusy, value); }
+            get => isBusy;
+            set => SetProperty(ref isBusy, value);
         }
 
         string title = string.Empty;
         public string Title
         {
-            get { return title; }
-            set { SetProperty(ref title, value); }
+            get => title;
+            set => SetProperty(ref title, value);
         }
 
         private MaterialColor _currentStyleFromKey;

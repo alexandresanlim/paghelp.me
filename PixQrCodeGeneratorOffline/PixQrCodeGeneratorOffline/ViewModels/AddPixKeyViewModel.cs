@@ -27,7 +27,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             CurrentPixKey = pixKey ?? new PixKey();
             CurrentPixKey.IsContact = isContact;
 
-            CurrentDashboard = CurrentPixKey.IsContact ? DashboardContactVM : (DashboardViewModelBase)DashboardVM;
+            CurrentDashboard = DashboardVM; //CurrentPixKey.IsContact ? DashboardContactVM : (DashboardViewModelBase)DashboardVM;
 
             LoadData.Execute(null);
         }
@@ -73,7 +73,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                     {
                         var text = await Clipboard.GetTextAsync();
 
-                        if(text.IsAKey())
+                        if (text.IsAKey())
                         {
                             InputList[CurrentInputValues.Key.Index].Value = text;
                         }
@@ -133,30 +133,36 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 //CurrentPixKey.Color = MaterialColor.GetRandom();
 
                 if (string.IsNullOrEmpty(CurrentPixKey?.City))
+                {
                     CurrentPixKey.City = "Cidade";
-
-                var success = false;
-
-                if (IsEdit)
-                {
-                    success = _pixKeyService.Update(CurrentPixKey);
-
-                    var l = CurrentDashboard.PixKeyList.FirstOrDefault(x => x.Id.Equals(CurrentPixKey.Id));
-
-                    if (l != null)
-                    {
-                        int index = CurrentDashboard.PixKeyList.IndexOf(l);
-
-                        if (index != -1)
-                            CurrentDashboard.PixKeyList[index] = CurrentPixKey;
-                    }
                 }
 
-                else
-                {
-                    success = _pixKeyService.Insert(CurrentPixKey);
-                    CurrentDashboard.PixKeyList.Add(CurrentPixKey);
-                }
+                //var success = false;
+
+                //if (IsEdit)
+                //{
+                //    success = _pixKeyService.Update(CurrentPixKey);
+
+                //    //var l = CurrentDashboard.PixKeyList.FirstOrDefault(x => x.Id.Equals(CurrentPixKey.Id));
+
+                //    //if (l != null)
+                //    //{
+                //    //    int index = CurrentDashboard.PixKeyList.IndexOf(l);
+
+                //    //    if (index != -1)
+                //    //        CurrentDashboard.PixKeyList[index] = CurrentPixKey;
+                //    //}
+                //}
+
+                //else
+                //{
+                //    success = _pixKeyService.Insert(CurrentPixKey);
+                //    //await CurrentDashboard.LoadPixKey();
+
+                //    //CurrentDashboard.PixKeyList.Add(CurrentPixKey);
+                //}
+
+                var success = IsEdit ? _pixKeyService.Update(CurrentPixKey) : _pixKeyService.Insert(CurrentPixKey);
 
                 //DashboardViewModel.LoadDataCommand.Execute(null);
 
@@ -165,19 +171,28 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 //CurrentPixKey.RaiseCob();
 
-                await CurrentDashboard.LoadCurrentPixKey(CurrentPixKey);
+                //await CurrentDashboard.LoadCurrentPixKey(CurrentPixKey);
 
-                if (CurrentPixKey.IsContact)
-                    App.LoadTheme();
+                //if (CurrentPixKey.IsContact)
+                //    App.LoadTheme();
 
-                DialogService.Toast("Chave salva com sucesso");
+                if (success)
+                {
+                    if (CurrentPixKey.IsContact)
+                        await CurrentDashboard.LoadPixKeyContact();
 
-                NavigateBack();
+                    else
+                        await CurrentDashboard.LoadPixKey();
 
-                //}
+                    DialogService.Toast("Chave salva com sucesso");
 
-                //else
-                //    DialogService.Toast("Algo de errado aconteceu, tente novamente mais tarde ou atualize o app");
+                    NavigateBack();
+                }
+
+                else
+                {
+                    DialogService.Toast("Algo de errado aconteceu, tente novamente mais tarde ou atualize o app");
+                }
             }
             catch (Exception e)
             {
@@ -358,14 +373,14 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             return true;
         }
 
-        public void BackButtonPressed()
-        {
-            if (!CurrentPixKey.IsContact)
-                DashboardVM.SetStatusFromCurrentPixColor();
+        //public void BackButtonPressed()
+        //{
+        //    if (!CurrentPixKey.IsContact)
+        //        DashboardVM.SetStatusFromCurrentPixColor();
 
-            else
-                App.LoadTheme();
-        }
+        //    else
+        //        App.LoadTheme();
+        //}
 
         private bool _isEdit;
         public bool IsEdit
@@ -445,6 +460,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public FinancialInstitution SelectedFinancialInstitution { get; set; }
 
-        public DashboardViewModelBase CurrentDashboard { get; set; }
+        public DashboardViewModel CurrentDashboard { get; set; }
     }
 }

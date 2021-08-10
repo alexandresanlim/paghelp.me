@@ -18,6 +18,6 @@ namespace PixQrCodeGeneratorOffline.Models.Services.Interfaces
 
         List<PixPayload> GetAll(Expression<Func<PixPayload, bool>> predicate = null);
 
-        Task RemoveAll(Expression<Func<PixPayload, bool>> predicate = null);
+        Task<bool> RemoveAll(Expression<Func<PixPayload, bool>> predicate = null);
     }
 }

@@ -141,7 +141,9 @@ namespace PixQrCodeGeneratorOffline.Models.Services
 
         public MaterialColor GetByCurrentDeviceTheme()
         {
-            return (AppInfo.RequestedTheme == AppTheme.Light || AppInfo.RequestedTheme == AppTheme.Unspecified) ? GetLightColors() : GetDarkColors();
+            //return (AppInfo.RequestedTheme == AppTheme.Light || AppInfo.RequestedTheme == AppTheme.Unspecified) ? GetLightColors() : GetDarkColors();
+
+            return PixQrCodeGeneratorOffline.Services.Preference.ThemeIsDark ? GetDarkColors() : GetLightColors();
         }
     }
 }

@@ -12,15 +12,15 @@ namespace PixQrCodeGeneratorOffline
     {
         public static IMaterialColorService MaterialColorService => DependencyService.Get<IMaterialColorService>();
 
-        //public static IStatusBar StatusBarService => DependencyService.Get<IStatusBar>();
+        public static IStatusBar StatusBarService => DependencyService.Get<IStatusBar>();
 
-        public static void LoadTheme(MaterialColor theme = null)
+        public static void LoadTheme()
         {
-            var themeOrRandom = theme ?? MaterialColorService.GetByCurrentDeviceTheme();
+            var theme = MaterialColorService.GetByCurrentDeviceTheme();
 
-            MaterialColorService.SetOnCurrentResource(themeOrRandom);
+            MaterialColorService.SetOnCurrentResource(theme);
 
-            //StatusBarService?.SetByStyleListColor();
+            StatusBarService?.SetColor();
         }
 
         public static MaterialColor ThemeColors => MaterialColorService.GetOnCurrentResource();

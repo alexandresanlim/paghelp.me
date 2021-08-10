@@ -12,6 +12,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 
@@ -23,7 +24,14 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         {
             LoadDataCommand.Execute(null);
 
+            Connectivity.ConnectivityChanged += Connectivity_ConnectivityChanged;
+
             DashboardVM = this;
+        }
+
+        private void Connectivity_ConnectivityChanged(object sender, ConnectivityChangedEventArgs e)
+        {
+            LoadConnectionIcon();
         }
 
         public ICommand LoadDataCommand => new Command(async () => await LoadData());
@@ -38,15 +46,15 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 await ResetProps();
 
+                await LoadDashboardCustomInfo();
+
                 await ReloadShowInList();
 
-                var list = _pixKeyService.GetAll();
+                await LoadPixKey();
 
-                PixKeyList = list?.OrderBy(x => x?.FinancialInstitution?.Name).ToObservableCollection();
+                await LoadPixKeyContact();
 
-                PixKeyListContact = _pixKeyService.GetAll(isContact: true).ToObservableCollection();
-
-                BillingSaveList = _pixPayloadService?.GetAll()?.ToObservableCollection() ?? new ObservableCollection<PixPayload>();
+                await LoadBilling();
 
                 await LoadCurrentPixKey();
 
@@ -62,11 +70,80 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
         }
 
-        public async Task LoadNews()
+        public async Task LoadPixKey()
         {
             try
             {
-                IsBusy = true;
+                CurrentDashboardLoadInfo.IsLoadMyKeys = true;
+
+                await Task.Delay(500);
+
+                var list = _pixKeyService.GetAll();
+
+                PixKeyList = list?.OrderBy(x => x?.FinancialInstitution?.Name)?.ToObservableCollection() ?? new ObservableCollection<PixKey>();
+            }
+            catch (System.Exception e)
+            {
+                e.SendToLog();
+            }
+            finally
+            {
+                CurrentDashboardLoadInfo.IsLoadMyKeys = false;
+            }
+        }
+
+        public async Task LoadPixKeyContact()
+        {
+            try
+            {
+                CurrentDashboardLoadInfo.IsLoadContactKeys = true;
+
+                await Task.Delay(500);
+
+                PixKeyListContact = _pixKeyService.GetAll(isContact: true).ToObservableCollection();
+            }
+            catch (System.Exception e)
+            {
+                e.SendToLog();
+            }
+            finally
+            {
+                CurrentDashboardLoadInfo.IsLoadContactKeys = false;
+            }
+        }
+
+        public async Task LoadBilling()
+        {
+            try
+            {
+                CurrentDashboardLoadInfo.IsLoadBilling = true;
+
+                BillingSaveList = _pixPayloadService?.GetAll()?.ToObservableCollection() ?? new ObservableCollection<PixPayload>();
+
+                await Task.Delay(500);
+            }
+            catch (System.Exception e)
+            {
+                e.SendToLog();
+            }
+            finally
+            {
+                CurrentDashboardLoadInfo.IsLoadBilling = false;
+            }
+        }
+
+        public async Task LoadNews()
+        {
+            if (!Preference.ShowNews || Connectivity.NetworkAccess != NetworkAccess.Internet)
+            {
+                CurrentDashboardLoadInfo.IsLoadNews = false;
+                CurrentFeedList = new ObservableCollection<Feed>();
+                return;
+            }
+
+            try
+            {
+                CurrentDashboardLoadInfo.IsLoadNews = true;
 
                 FeedFromService = FeedFromService?.Count > 0 ? FeedFromService : await _feedService.Get("https://news.google.com/rss/search?q=pix%20-fraude%20-golpista%20-golpistas%20-erro&hl=pt-BR&gl=BR&ceid=BR%3Apt-419");
 
@@ -78,7 +155,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
             finally
             {
-                IsBusy = false;
+                CurrentDashboardLoadInfo.IsLoadNews = false;
 
                 foreach (var item in CurrentFeedList)
                 {
@@ -90,12 +167,44 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
         }
 
+        private async Task LoadDashboardCustomInfo()
+        {
+            CurrentDashboardCustomInfo = new DashboardCustomInfo
+            {
+                IsVisibleFingerPrint = Preference.FingerPrint && await CrossFingerprint.Current.IsAvailableAsync(),
+                WelcomeText = DateTimeExtention.GetDashboardTitleFromPeriod(),
+                WelcomeSubtitleText = DateTimeExtention.GetDashboardSubtitleFromDayOfWeed(),
+            };
+
+            LoadShowWelcome();
+            LoadConnectionIcon();
+            LoadThemeIcon();
+        }
+
+        private void LoadShowWelcome()
+        {
+            CurrentDashboardCustomInfo.ShowWelcome = !Preference.HaveSeenWelcome;
+
+            if (CurrentDashboardCustomInfo.ShowWelcome)
+                DashboardWelcomenList = DashboardWelcome.GetList();
+        }
+
+        private void LoadConnectionIcon()
+        {
+            CurrentDashboardCustomInfo.ConnectionIcon = Connectivity.NetworkAccess == NetworkAccess.Internet ? FontAwesomeSolid.Wifi : FontAwesomeSolid.Plane;
+        }
+
+        private void LoadThemeIcon()
+        {
+            CurrentDashboardCustomInfo.ThemeIcon = Preference.ThemeIsDark ? FontAwesomeSolid.Moon : FontAwesomeSolid.Sun;
+        }
+
         private async Task ResetProps()
         {
-            IsVisibleFingerPrint = Preference.FingerPrint && await CrossFingerprint.Current.IsAvailableAsync();
-
             ShowInList = false;
-            ShowWelcome = false;
+            //ShowWelcome = false;
+
+            CurrentDashboardLoadInfo = new DashboardLoadInfo();
         }
 
         public ICommand AuthenticationCommand => new Command(async () =>
@@ -108,7 +217,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 if (result.Authenticated)
                 {
-                    IsVisibleFingerPrint = false;
+                    CurrentDashboardCustomInfo.IsVisibleFingerPrint = false;
                     DialogService.Toast("Autenticado com sucesso!");
                 }
                 else
@@ -136,7 +245,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public ICommand ChangeSelectPixKeyCommand => new Command(() => SetStatusFromCurrentPixColor());
 
-        public ICommand SettingsCommand => new Command(async () => await NavigateModalAsync(new OptionPage()));
+        public ICommand SettingsCommand => new Command(async () => await NavigateModalAsync(new OptionPreferencePage()));
 
         public ICommand ChangeStyleListCommand => new Command(async () =>
         {
@@ -171,6 +280,19 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
         });
 
+        public ICommand CloseWelcomeCommand => new Command(() =>
+        {
+            try
+            {
+                Preference.HaveSeenWelcome = true;
+                LoadShowWelcome();
+            }
+            catch (System.Exception e)
+            {
+                e.SendToLog();
+            }
+        });
+
         public ICommand CurrentWelcomeItemChangedCommand => new Command(() => CheckIsLastItemOnWelcome());
 
         private void CheckIsLastItemOnWelcome()
@@ -188,7 +310,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 ShowInList = Preference.ShowInList;
 
-                ReloadAppColorIfShowInListStyle();
+                //ReloadAppColorIfShowInListStyle();
 
                 if (ShowInList)
                 {
@@ -220,12 +342,12 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
             CurrentPixKeyActions = CurrentPixKey.Actions.ToObservableCollection();
 
-            return;
+            //return;
 
-            if (ShowInList || CurrentPixKey?.FinancialInstitution?.Institution?.MaterialColor == null)
-                return;
+            //if (ShowInList || CurrentPixKey?.FinancialInstitution?.Institution?.MaterialColor == null)
+            //    return;
 
-            App.LoadTheme(CurrentPixKey?.FinancialInstitution?.Institution?.MaterialColor);
+            //App.LoadTheme(CurrentPixKey?.FinancialInstitution?.Institution?.MaterialColor);
         }
 
         #region Props
@@ -244,12 +366,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             get => _currentIconStyleList;
         }
 
-        private bool _isVisibleFingerPrint;
-        public bool IsVisibleFingerPrint
-        {
-            set => SetProperty(ref _isVisibleFingerPrint, value);
-            get => _isVisibleFingerPrint;
-        }
+
 
         private int _actualWelcomeNextPosition;
         public int ActualWelcomeNextPosition
@@ -279,6 +396,52 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
 
         #region Nova Dash
+
+        public ICommand ShareAllCommand => new Command(() =>
+        {
+            _pixKeyService.ShareAllKeys();
+        });
+
+        public ICommand RemoveAllCommand => new Command(async () =>
+        {
+            var success = await _pixKeyService.RemoveAll();
+
+            if (success)
+            {
+                await LoadPixKey();
+                //PixKeyList.Clear();
+                //PixKeyList = new ObservableCollection<PixKey>();
+                //await LoadCurrentPixKey(null);
+            }
+        });
+
+        public ICommand RemoveAllKeyContactCommand => new Command(async () =>
+        {
+            var success = await _pixKeyService.RemoveAll(isContact: true);
+
+            if (success)
+            {
+                await LoadPixKeyContact();
+            }
+        });
+
+        public ICommand RemoveAllBillingCommand => new Command(async () =>
+        {
+            var success = await _pixPayloadService.RemoveAll();
+
+            if (success)
+            {
+                await LoadBilling();
+            }
+
+        });
+
+        public ICommand ChengeThemeCommand => new Command(async () =>
+        {
+            Preference.ThemeIsDark = !Preference.ThemeIsDark;
+            LoadThemeIcon();
+            App.LoadTheme();
+        });
 
         private ObservableCollection<PixKeyAction> _currentPixKeyActions;
         public ObservableCollection<PixKeyAction> CurrentPixKeyActions
@@ -310,7 +473,97 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             set => SetProperty(ref _currentFeedList, value);
         }
 
+        private DashboardLoadInfo _currentDashboardLoadInfo;
+        public DashboardLoadInfo CurrentDashboardLoadInfo
+        {
+            get => _currentDashboardLoadInfo;
+            set => SetProperty(ref _currentDashboardLoadInfo, value);
+        }
+
+        private DashboardCustomInfo _currentDashboardCustomInfo;
+        public DashboardCustomInfo CurrentDashboardCustomInfo
+        {
+            get => _currentDashboardCustomInfo;
+            set => SetProperty(ref _currentDashboardCustomInfo, value);
+        }
+
         #endregion
 
+    }
+
+    public class DashboardLoadInfo : Models.Base.NotifyObjectBase
+    {
+        private bool _isLoadMyKeys = true;
+        public bool IsLoadMyKeys
+        {
+            get => _isLoadMyKeys;
+            set => SetProperty(ref _isLoadMyKeys, value);
+        }
+
+        private bool _isLoadContactKeys = true;
+        public bool IsLoadContactKeys
+        {
+            get => _isLoadContactKeys;
+            set => SetProperty(ref _isLoadContactKeys, value);
+        }
+
+        private bool _isLoadBilling = true;
+        public bool IsLoadBilling
+        {
+            get => _isLoadBilling;
+            set => SetProperty(ref _isLoadBilling, value);
+        }
+
+        private bool _isLoadNews = true;
+        public bool IsLoadNews
+        {
+            get => _isLoadNews;
+            set => SetProperty(ref _isLoadNews, value);
+        }
+    }
+
+    public class DashboardCustomInfo : Models.Base.NotifyObjectBase
+    {
+        private bool _isVisibleFingerPrint = true;
+        public bool IsVisibleFingerPrint
+        {
+            set => SetProperty(ref _isVisibleFingerPrint, value);
+            get => _isVisibleFingerPrint;
+        }
+
+        private bool _showWelcome = true;
+        public bool ShowWelcome
+        {
+            set => SetProperty(ref _showWelcome, value);
+            get => _showWelcome;
+        }
+
+        private string _connectionIcon;
+        public string ConnectionIcon
+        {
+            set => SetProperty(ref _connectionIcon, value);
+            get => _connectionIcon;
+        }
+
+        private string _themeIcon;
+        public string ThemeIcon
+        {
+            set => SetProperty(ref _themeIcon, value);
+            get => _themeIcon;
+        }
+
+        private string _welcomeText;
+        public string WelcomeText
+        {
+            set => SetProperty(ref _welcomeText, value);
+            get => _welcomeText;
+        }
+
+        private string _welcomeSubtitleText;
+        public string WelcomeSubtitleText
+        {
+            set => SetProperty(ref _welcomeSubtitleText, value);
+            get => _welcomeSubtitleText;
+        }
     }
 }

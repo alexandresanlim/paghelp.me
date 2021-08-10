@@ -10,7 +10,7 @@
 
 
     <ContentView.Content>
-        <controls:CustomCollectionView ItemsSource="{Binding BillingSaveList}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" HeightRequest="230">
+        <controls:CustomCollectionView ItemsSource="{Binding BillingSaveList}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" HeightRequest="210">
 
             <controls:CustomCollectionView.ItemsLayout>
                 <LinearItemsLayout Orientation="Horizontal"/>
@@ -29,7 +29,7 @@
 
             <controls:CustomCollectionView.ItemTemplate>
                 <DataTemplate>
-                    <StackLayout Padding="2,0">
+                    <StackLayout Padding="5,0,0,0">
                         <Frame BackgroundColor="{DynamicResource foreground_page}" CornerRadius="10" WidthRequest="225" Padding="10">
                             <Frame.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding Commands.NavigateToPaymentPageCommand}" />

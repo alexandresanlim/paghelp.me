@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:collections="clr-namespace:PixQrCodeGeneratorOffline.Views.Collections" 
+             xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls" 
+             xmlns:content="clr-namespace:PixQrCodeGeneratorOffline.Views.Content"
+             xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon" 
+             x:Class="PixQrCodeGeneratorOffline.Views.Content.StartPageContents.StartPageBillingSaveView">
+    
+  <ContentView.Content>
+        <Grid>
+            <StackLayout Style="{DynamicResource styleSession}">
+
+                <collections:BillingSaveHorizontalCollectionView />
+
+                <Grid Style="{DynamicResource styleGridActionChevronRight}" IsVisible="{Binding BillingSaveList, Converter={StaticResource HasDataConverter}}">
+
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding RemoveAllBillingCommand}" />
+                    </Grid.GestureRecognizers>
+
+                    <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Trash }" Style="{DynamicResource styleGridActionChevronIcon}" />
+                    <Label Text="Apagar Todas" Style="{DynamicResource styleGridActionTitle}" />
+                    <content:ChevronRightView Grid.Column="2" />
+
+                </Grid>
+
+            </StackLayout>
+
+            <content:PanelLoadView IsVisible="{Binding CurrentDashboardLoadInfo.IsLoadBilling}" />
+        </Grid>
+    </ContentView.Content>
+</ContentView>

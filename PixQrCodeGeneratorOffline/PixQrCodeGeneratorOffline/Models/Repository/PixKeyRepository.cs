@@ -58,7 +58,7 @@ namespace PixQrCodeGeneratorOffline.Models.Repository
         {
             try
             {
-                return _pixCollection.Insert(item);
+                return _pixCollection.Insert(item) > 0;
             }
             catch (Exception e)
             {

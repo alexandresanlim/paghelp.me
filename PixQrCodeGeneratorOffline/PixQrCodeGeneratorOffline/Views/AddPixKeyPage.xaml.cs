@@ -23,12 +23,12 @@ namespace PixQrCodeGeneratorOffline.Views
             BindingContext = _viewModel = new AddPixKeyViewModel(pixKey, isContact);
         }
 
-        protected override bool OnBackButtonPressed()
-        {
-            _viewModel.BackButtonPressed();
+        //protected override bool OnBackButtonPressed()
+        //{
+        //    _viewModel.BackButtonPressed();
 
-            return base.OnBackButtonPressed();
-        }
+        //    return base.OnBackButtonPressed();
+        //}
 
         private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {

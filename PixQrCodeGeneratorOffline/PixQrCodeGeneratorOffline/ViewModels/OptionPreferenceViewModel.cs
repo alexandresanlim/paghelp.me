@@ -36,6 +36,8 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public ICommand OptionPDVCommand => new Command(async () => await _preferenceService.ChangePDVMode());
 
+        public ICommand OptionShowNewsCommand => new Command(async () => await _preferenceService.ChangeShowNewsMode());
+
         //private List<PixKey> CurrentPixKeyList { get; set; }
     }
 }

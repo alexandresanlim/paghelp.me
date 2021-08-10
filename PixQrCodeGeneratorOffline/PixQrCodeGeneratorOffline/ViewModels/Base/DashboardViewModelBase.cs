@@ -14,17 +14,19 @@ namespace PixQrCodeGeneratorOffline.ViewModels.Base
     {
         public async Task LoadCurrentPixKey(PixKey pixKeySelected = null)
         {
-            if (PixKeyList == null || !(PixKeyList.Count > 0))
-            {
-                DashboardWelcomenList = DashboardWelcome.GetList();
-                ShowWelcome = true;
-            }
+            CurrentPixKey = pixKeySelected ?? PixKeyList.FirstOrDefault();
 
-            else
-            {
-                CurrentPixKey = pixKeySelected ?? PixKeyList.FirstOrDefault();
-                ShowWelcome = false;
-            }
+            //if (PixKeyList == null || !(PixKeyList.Count > 0))
+            //{
+            //    DashboardWelcomenList = DashboardWelcome.GetList();
+            //    ShowWelcome = true;
+            //}
+
+            //else
+            //{
+            //    CurrentPixKey = pixKeySelected ?? PixKeyList.FirstOrDefault();
+            //    ShowWelcome = false;
+            //}
         }
 
         #region props
@@ -41,13 +43,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels.Base
         {
             set => SetProperty(ref _currentPixKey, value);
             get => _currentPixKey;
-        }
-
-        private bool _showWelcome;
-        public bool ShowWelcome
-        {
-            set => SetProperty(ref _showWelcome, value);
-            get => _showWelcome;
         }
 
         private ObservableCollection<DashboardWelcome> _dashboardWelcomenList;

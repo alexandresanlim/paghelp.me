@@ -12,7 +12,7 @@ namespace PixQrCodeGeneratorOffline.Controls
         private CustomLabel TexButtonValue { get; set; } = new CustomLabel
         {
             FontAttributes = FontAttributes.Bold,
-            TextColor = App.ThemeColors.TextOnSecondary,
+            TextColor = App.ThemeColors.TextOnPrimary,
             IsVisible = false
         };
 
@@ -27,7 +27,7 @@ namespace PixQrCodeGeneratorOffline.Controls
 
         public CustomFrameButton()
         {
-            BackgroundColor = App.ThemeColors.Secondary;
+            BackgroundColor = App.ThemeColors.Primary;
             CornerRadius = 25;
             Content = new StackLayout
             {
@@ -42,6 +42,7 @@ namespace PixQrCodeGeneratorOffline.Controls
                 }
             };
             Behaviors.Add(TapButtonValue);
+            Padding = new Thickness(0);
         }
 
         public static readonly BindableProperty TextButtonProperty =

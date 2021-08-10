@@ -47,10 +47,10 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         {
             CurrentStyleFromKey = CurrentPixKey?.FinancialInstitution?.Institution?.MaterialColor;
 
-            return;
+            //return;
 
-            if (CurrentStyleFromKey != null)
-                App.LoadTheme(CurrentStyleFromKey);
+            //if (CurrentStyleFromKey != null)
+            //    App.LoadTheme(CurrentStyleFromKey);
         }
 
         public Command<string> InputTextCommand => new Command<string>(async (text) =>

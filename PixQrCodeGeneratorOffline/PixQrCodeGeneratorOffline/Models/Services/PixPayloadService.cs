@@ -94,7 +94,7 @@ namespace PixQrCodeGeneratorOffline.Models.Services
             return _pixPayloadRepository.GetAll(predicate);
         }
 
-        public async Task RemoveAll(Expression<Func<PixPayload, bool>> predicate = null)
+        public async Task<bool> RemoveAll(Expression<Func<PixPayload, bool>> predicate = null)
         {
             var all = GetAll() ?? new List<PixPayload>();
 
@@ -103,7 +103,7 @@ namespace PixQrCodeGeneratorOffline.Models.Services
             if (count == 0)
             {
                 DialogService.Toast("Nenhuma cobrança salva foi encontrada.");
-                return;
+                return false;
             }
 
             var multiple = count > 1 ? "cobranças salvas" : "cobrança salva";
@@ -111,7 +111,7 @@ namespace PixQrCodeGeneratorOffline.Models.Services
             var confirm = await DialogService.ConfirmAsync($"Tem certeza que deseja remover {count} {multiple} ?", "Confirmação", "Sim", "Cancelar");
 
             if (!confirm)
-                return;
+                return false;
 
             try
             {
@@ -119,13 +119,20 @@ namespace PixQrCodeGeneratorOffline.Models.Services
 
                 await Task.Delay(500);
 
-                _pixPayloadRepository.RemoveAll(predicate);
+                var success = _pixPayloadRepository.RemoveAll(predicate);
 
-                DialogService.Toast("Todas as cobranças salvas foram removidas");
+                if (success)
+                    DialogService.Toast("Todas as cobranças salvas foram removidas");
+
+                else
+                    DialogService.Toast("Algo de errado aconteceu, tente novamente mais tarde ou atualize o app");
+
+                return success;
             }
             catch (Exception e)
             {
                 e.SendToLog();
+                return false;
             }
             finally
             {

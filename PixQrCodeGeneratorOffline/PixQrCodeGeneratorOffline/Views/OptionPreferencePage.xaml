@@ -22,12 +22,12 @@
             <Label Text="Preferências" Style="{DynamicResource optionTitle}" />
 
             <StackLayout Spacing="0">
-                <StackLayout Padding="0,15">
+                <!--<StackLayout Padding="0,15">
                         <StackLayout.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding OptionStyleListCommand}"/>
                         </StackLayout.GestureRecognizers>
                         <Label Text="Tela inicial" Style="{DynamicResource subOptionTitle}" />
-                    </StackLayout>
+                    </StackLayout>-->
 
                 <StackLayout Padding="0,15">
                     <StackLayout.GestureRecognizers>
@@ -41,6 +41,13 @@
                         <TapGestureRecognizer Command="{Binding OptionPDVCommand}"/>
                     </StackLayout.GestureRecognizers>
                     <Label Text="Modo PDV" Style="{DynamicResource subOptionTitle}" />
+                </StackLayout>
+
+                <StackLayout Padding="0,15">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding OptionShowNewsCommand}"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label Text="Exibir Notícias" Style="{DynamicResource subOptionTitle}" />
                 </StackLayout>
             </StackLayout>
         </StackLayout>

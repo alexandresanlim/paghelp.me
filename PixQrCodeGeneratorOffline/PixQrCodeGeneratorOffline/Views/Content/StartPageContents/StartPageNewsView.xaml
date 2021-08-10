@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
+             xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon" 
+             xmlns:content="clr-namespace:PixQrCodeGeneratorOffline.Views.Content"
+             x:Class="PixQrCodeGeneratorOffline.Views.Content.StartPageContents.StartPageNewsView">
+
+    <ContentView.Content>
+
+        <Grid>
+            <CollectionView ItemsSource="{Binding CurrentFeedList}" 
+                        SelectionMode="None" IsVisible="{Binding CurrentFeedList, Converter={StaticResource HasDataConverter}}" 
+                        HeightRequest="1000">
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Padding="5,0,5,5">
+
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Command.NavigateToWebViewCommand }"/>
+                            </StackLayout.GestureRecognizers>
+
+                            <Frame BackgroundColor="{StaticResource foreground_page}" CornerRadius="10" Padding="0">
+
+                                <StackLayout>
+                                    <!--<controls:CustomImage Source="{Binding Image}" Aspect="Fill" HeightRequest="200" />-->
+                                    <StackLayout Padding="15">
+                                        <Label Text="{Binding Source}" FontSize="{DynamicResource FontSizeSmall}" TextColor="{DynamicResource textPrimary}" FontFamily="{DynamicResource FontSemiBold}" />
+
+                                        <Grid ColumnDefinitions="auto,*" ColumnSpacing="15">
+
+                                            <StackLayout Grid.Column="0">
+                                                <controls:CustomImage Source="{Binding Image}" Aspect="Fill" HeightRequest="80" WidthRequest="80" />
+                                            </StackLayout>
+
+                                            <Label Grid.Column="1" Text="{Binding Title}" MaxLines="4" LineBreakMode="TailTruncation" FontSize="{DynamicResource FontSizeSmall}" TextColor="{DynamicResource textSecondary}" VerticalOptions="FillAndExpand"/>
+                                        </Grid>
+
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="{Binding Viewer.PublishDateDisplay}" FontSize="{DynamicResource FontSizeMicro}" TextColor="{DynamicResource textSecondary}" HorizontalOptions="StartAndExpand" VerticalOptions="EndAndExpand" />
+                                            <StackLayout Padding="15,15,0,0">
+                                                <StackLayout.GestureRecognizers>
+                                                    <TapGestureRecognizer Command="{Binding Command.ShareCommand }"/>
+                                                </StackLayout.GestureRecognizers>
+                                                <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.ShareAlt }" Size="{DynamicResource FontSizeMedium}"  IconColor="{DynamicResource textSecondary}" HorizontalOptions="CenterAndExpand" />
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </StackLayout>
+
+                            </Frame>
+
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <content:PanelLoadView IsVisible="{Binding CurrentDashboardLoadInfo.IsLoadNews}" />
+        </Grid>
+
+    </ContentView.Content>
+</ContentView>

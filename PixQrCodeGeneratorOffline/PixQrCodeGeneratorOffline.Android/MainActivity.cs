@@ -35,7 +35,7 @@ namespace PixQrCodeGeneratorOffline.Droid
             StartPackages(savedInstanceState);
 
             CurrentWindow = (this).Window;
-            LoadWindowColors();
+            //LoadWindowColors();
 
 
             StartAndroidDependency();
@@ -60,23 +60,23 @@ namespace PixQrCodeGeneratorOffline.Droid
 
         private void StartAndroidDependency()
         {
-            //DependencyService.Register<IStatusBar, StatusBarChanger>();
+            DependencyService.Register<IStatusBar, StatusBarChanger>();
             DependencyService.Register<IPDVMode, PDVMode>();
         }
 
-        private void LoadWindowColors()
-        {
-            //var color = (System.Drawing.Color)App.ThemeColors.Primary;
+        //private void LoadWindowColors()
+        //{
+        //    //var color = (System.Drawing.Color)App.ThemeColors.Primary;
 
-            //CurrentWindow.AddFlags(Android.Views.WindowManagerFlags.TranslucentStatus);
-            //CurrentWindow.AddFlags(Android.Views.WindowManagerFlags.TranslucentNavigation);
+        //    //CurrentWindow.AddFlags(Android.Views.WindowManagerFlags.TranslucentStatus);
+        //    //CurrentWindow.AddFlags(Android.Views.WindowManagerFlags.TranslucentNavigation);
 
-            if (Build.VERSION.SdkInt < BuildVersionCodes.Lollipop)
-                return;
+        //    if (Build.VERSION.SdkInt < BuildVersionCodes.Lollipop)
+        //        return;
 
-            CurrentWindow.SetStatusBarColor(Android.Graphics.Color.Black);
-            CurrentWindow.SetNavigationBarColor(Android.Graphics.Color.Black);
-        }
+        //    CurrentWindow.SetStatusBarColor(Android.Graphics.Color.Black);
+        //    CurrentWindow.SetNavigationBarColor(Android.Graphics.Color.Black);
+        //}
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
@@ -85,24 +85,25 @@ namespace PixQrCodeGeneratorOffline.Droid
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
 
-        //public class StatusBarChanger : IStatusBar
-        //{
-        //    public void SetByStyleListColor()
-        //    {
-        //        SetStatusBarColor(App.ThemeColors.Primary);
-        //    }
+        public class StatusBarChanger : IStatusBar
+        {
+            public void SetColor()
+            {
+                SetStatusBarColor(App.ThemeColors.PrimaryDark, App.ThemeColors.BackgroundPage);
+            }
 
-        //    public void SetStatusBarColor(System.Drawing.Color color)
-        //    {
-        //        if (Build.VERSION.SdkInt < Android.OS.BuildVersionCodes.Lollipop)
-        //            return;
+            public void SetStatusBarColor(System.Drawing.Color statusBar, System.Drawing.Color navigationBar)
+            {
+                if (Build.VERSION.SdkInt < Android.OS.BuildVersionCodes.Lollipop)
+                    return;
 
-        //        CurrentWindow.AddFlags(Android.Views.WindowManagerFlags.TranslucentStatus);
-        //        CurrentWindow.AddFlags(Android.Views.WindowManagerFlags.TranslucentNavigation);
-        //        //CurrentWindow.ClearFlags(Android.Views.WindowManagerFlags.TranslucentStatus);
-        //        //CurrentWindow.SetStatusBarColor(color.ToPlatformColor());
-        //    }
-        //}
+                //CurrentWindow.AddFlags(Android.Views.WindowManagerFlags.TranslucentStatus);
+                //CurrentWindow.AddFlags(Android.Views.WindowManagerFlags.TranslucentNavigation);
+                //CurrentWindow.ClearFlags(Android.Views.WindowManagerFlags.TranslucentStatus);
+                CurrentWindow.SetStatusBarColor(statusBar.ToPlatformColor());
+                //CurrentWindow.SetNavigationBarColor(navigationBar.ToPlatformColor());
+            }
+        }
 
         public class PDVMode : IPDVMode
         {
