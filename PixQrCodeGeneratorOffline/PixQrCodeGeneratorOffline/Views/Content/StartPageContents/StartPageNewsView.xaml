@@ -21,7 +21,7 @@
                                 <TapGestureRecognizer Command="{Binding Command.NavigateToWebViewCommand }"/>
                             </StackLayout.GestureRecognizers>
 
-                            <Frame BackgroundColor="{StaticResource foreground_page}" CornerRadius="10" Padding="0">
+                            <Frame BackgroundColor="{DynamicResource foreground_page}" CornerRadius="10" Padding="0">
 
                                 <StackLayout>
                                     <!--<controls:CustomImage Source="{Binding Image}" Aspect="Fill" HeightRequest="200" />-->

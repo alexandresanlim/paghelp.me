@@ -137,32 +137,71 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                     CurrentPixKey.City = "Cidade";
                 }
 
-                //var success = false;
+                var success = false;
 
-                //if (IsEdit)
-                //{
-                //    success = _pixKeyService.Update(CurrentPixKey);
+                if (IsEdit)
+                {
+                    success = _pixKeyService.Update(CurrentPixKey);
 
-                //    //var l = CurrentDashboard.PixKeyList.FirstOrDefault(x => x.Id.Equals(CurrentPixKey.Id));
+                    var l = CurrentPixKey.IsContact ? CurrentDashboard.PixKeyListContact.FirstOrDefault(x => x.Id.Equals(CurrentPixKey.Id)) : CurrentDashboard.PixKeyList.FirstOrDefault(x => x.Id.Equals(CurrentPixKey.Id));
 
-                //    //if (l != null)
-                //    //{
-                //    //    int index = CurrentDashboard.PixKeyList.IndexOf(l);
+                    if (l != null)
+                    {
+                        int index = CurrentPixKey.IsContact ? CurrentDashboard.PixKeyListContact.IndexOf(l) : CurrentDashboard.PixKeyList.IndexOf(l);
 
-                //    //    if (index != -1)
-                //    //        CurrentDashboard.PixKeyList[index] = CurrentPixKey;
-                //    //}
-                //}
+                        if (index != -1)
+                        {
+                            if (CurrentPixKey.IsContact)
+                                CurrentDashboard.PixKeyListContact[index] = CurrentPixKey;
 
-                //else
-                //{
-                //    success = _pixKeyService.Insert(CurrentPixKey);
-                //    //await CurrentDashboard.LoadPixKey();
+                            else
+                                CurrentDashboard.PixKeyList[index] = CurrentPixKey;
+                        }
+                    }
+                }
 
-                //    //CurrentDashboard.PixKeyList.Add(CurrentPixKey);
-                //}
+                else
+                {
+                    success = _pixKeyService.Insert(CurrentPixKey);
+                    //await CurrentDashboard.LoadPixKey();
 
-                var success = IsEdit ? _pixKeyService.Update(CurrentPixKey) : _pixKeyService.Insert(CurrentPixKey);
+                    if (CurrentPixKey.IsContact)
+                    {
+                        if (CurrentDashboard.PixKeyListContact.Count == 0)
+                        {
+                            CurrentDashboard.PixKeyListContact = new ObservableCollection<PixKey>
+                            {
+                                CurrentPixKey
+                            };
+                        }
+
+                        else
+                            CurrentDashboard.PixKeyListContact.Add(CurrentPixKey);
+                    }
+
+                    else
+                    {
+                        if (CurrentDashboard.PixKeyList.Count == 0)
+                        {
+                            CurrentDashboard.PixKeyList = new ObservableCollection<PixKey>
+                            {
+                                CurrentPixKey
+                            };
+                        }
+
+                        else
+                        {
+                            CurrentDashboard.PixKeyList.Add(CurrentPixKey);
+                        }
+
+                        //CurrentDashboard.ChangeSelectPixKeyCommand.Execute(CurrentPixKey);
+
+                        CurrentDashboard.CurrentPixKey = CurrentPixKey;
+                    }
+                }
+
+                //var success = IsEdit ? _pixKeyService.Update(CurrentPixKey) : _pixKeyService.Insert(CurrentPixKey);
+
 
                 //DashboardViewModel.LoadDataCommand.Execute(null);
 
@@ -178,11 +217,17 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 if (success)
                 {
-                    if (CurrentPixKey.IsContact)
-                        await CurrentDashboard.LoadPixKeyContact();
+                    //if (CurrentPixKey.IsContact)
+                    //    await CurrentDashboard.LoadPixKeyContact();
 
-                    else
-                        await CurrentDashboard.LoadPixKey();
+                    //else
+                    //{
+                    //    CurrentDashboard.PixKeyList.Add(CurrentPixKey);
+
+                    //    //await CurrentDashboard.LoadPixKey();
+                    //    //await CurrentDashboard.LoadCurrentPixKey(CurrentPixKey);
+                    //    //CurrentDashboard.CurrentPixKey = CurrentPixKey;
+                    //}
 
                     DialogService.Toast("Chave salva com sucesso");
 

@@ -78,9 +78,13 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 await Task.Delay(500);
 
-                var list = _pixKeyService.GetAll();
+                //var list = ;
 
-                PixKeyList = list?.OrderBy(x => x?.FinancialInstitution?.Name)?.ToObservableCollection() ?? new ObservableCollection<PixKey>();
+                //PixKeyList = new ObservableCollection<PixKey>();
+
+                PixKeyList = _pixKeyService.GetAll()?.OrderBy(x => x?.FinancialInstitution?.Name)?.ToObservableCollection() ?? new ObservableCollection<PixKey>();
+
+                //CurrentPixKey = PixKeyList?.FirstOrDefault() ?? new PixKey();
             }
             catch (System.Exception e)
             {
@@ -100,7 +104,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 await Task.Delay(500);
 
-                PixKeyListContact = _pixKeyService.GetAll(isContact: true).ToObservableCollection();
+                PixKeyListContact = _pixKeyService?.GetAll(isContact: true)?.OrderBy(x => x?.Name)?.ToObservableCollection() ?? new ObservableCollection<PixKey>();
             }
             catch (System.Exception e)
             {
@@ -205,6 +209,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             //ShowWelcome = false;
 
             CurrentDashboardLoadInfo = new DashboardLoadInfo();
+            //CurrentPixKey = new PixKey();
         }
 
         public ICommand AuthenticationCommand => new Command(async () =>
@@ -243,9 +248,17 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         #endregion
 
-        public ICommand ChangeSelectPixKeyCommand => new Command(() => SetStatusFromCurrentPixColor());
+        public ICommand ChangeSelectPixKeyCommand => new Command<PixKey>((pixkey) =>
+        {
+            CurrentPixKey = pixkey;
+            CurrentPixKeyActions = pixkey?.Actions?.ToObservableCollection() ?? new ObservableCollection<PixKeyAction>();
+        });
 
-        public ICommand SettingsCommand => new Command(async () => await NavigateModalAsync(new OptionPreferencePage()));
+        public ICommand NavigateToPreferencesCommand => new Command(async () => await NavigateAsync(new OptionPreferencePage()));
+
+        public ICommand NavigateToGuidCommand => new Command(async () => await NavigateAsync(new GuidePage()));
+
+        public ICommand NavigateToAboutCommand => new Command(async () => await NavigateAsync(new AboutPage()));
 
         public ICommand ChangeStyleListCommand => new Command(async () =>
         {
@@ -408,9 +421,11 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
             if (success)
             {
-                await LoadPixKey();
+                //await LoadPixKey();
                 //PixKeyList.Clear();
-                //PixKeyList = new ObservableCollection<PixKey>();
+                //CurrentPixKey = new PixKey();
+                PixKeyList = new ObservableCollection<PixKey>();
+                
                 //await LoadCurrentPixKey(null);
             }
         });
@@ -421,7 +436,8 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
             if (success)
             {
-                await LoadPixKeyContact();
+                PixKeyListContact = new ObservableCollection<PixKey>();
+                //await LoadPixKeyContact();
             }
         });
 

@@ -117,13 +117,13 @@ namespace PixQrCodeGeneratorOffline.Models
                     Command = pixKey?.Command?.EditKeyCommand,
                     Colors = pixKey?.FinancialInstitution?.Institution?.MaterialColor
                 },
-                new PixKeyAction
-                {
-                    Title = "Excluir",
-                    Icon = FontAwesomeSolid.TrashAlt,
-                    Command = pixKey?.Command?.EditKeyCommand,
-                    Colors = pixKey?.FinancialInstitution?.Institution?.MaterialColor
-                }
+                //new PixKeyAction
+                //{
+                //    Title = "Excluir",
+                //    Icon = FontAwesomeSolid.TrashAlt,
+                //    Command = pixKey?.Command?.EditKeyCommand,
+                //    Colors = pixKey?.FinancialInstitution?.Institution?.MaterialColor
+                //}
             };
         }
     }

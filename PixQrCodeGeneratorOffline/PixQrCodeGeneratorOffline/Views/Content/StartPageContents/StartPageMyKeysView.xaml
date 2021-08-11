@@ -13,8 +13,9 @@
 
                 <CarouselView ItemsSource="{Binding PixKeyList}"
                               PeekAreaInsets="20,0"
-                              CurrentItem="{Binding CurrentPixKey}"
                               CurrentItemChangedCommand="{Binding ChangeSelectPixKeyCommand}"
+                              CurrentItemChangedCommandParameter="{Binding Source={RelativeSource Self}, Path=CurrentItem}"
+                              CurrentItem="{Binding CurrentPixKey}"
                               HeightRequest="150"
                               IndicatorView="indicatorView"
                           IsVisible="{Binding PixKeyList, Converter={StaticResource HasDataConverter}}"
@@ -163,7 +164,7 @@
 
                 </Grid>
 
-                <Grid Style="{DynamicResource styleGridActionChevronRight}" IsVisible="{Binding PixKeyList, Converter={StaticResource HasDataConverter}}">
+                <!--<Grid Style="{DynamicResource styleGridActionChevronRight}" IsVisible="{Binding PixKeyList, Converter={StaticResource HasDataConverter}}">
 
                     <Grid.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding RemoveAllCommand}" />
@@ -173,7 +174,7 @@
                     <Label Text="Excluir Todas" Style="{DynamicResource styleGridActionTitle}" />
                     <content:ChevronRightView Grid.Column="2" />
 
-                </Grid>
+                </Grid>-->
             </StackLayout>
 
             <content:PanelLoadView IsVisible="{Binding CurrentDashboardLoadInfo.IsLoadMyKeys}" />

@@ -209,12 +209,48 @@
                     <Grid ColumnDefinitions="*, auto" Padding="0,0,10,0">
 
                         <Grid.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding SettingsCommand}" />
+                            <TapGestureRecognizer Command="{Binding NavigateToPreferencesCommand}" />
                         </Grid.GestureRecognizers>
 
                         <StackLayout Grid.Column="0" Style="{DynamicResource styleTitlePanel}">
                             <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.UserCog }" Style="{DynamicResource styleTitleIcon}" />
                             <Label Text="Preferências" Style="{DynamicResource styleTitleBottomIcon}" />
+                        </StackLayout>
+
+                        <content:ChevronRightView Grid.Column="1" />
+                    </Grid>
+
+                    <content:DivisionView/>
+
+                    <!--//////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+                    <Grid ColumnDefinitions="*, auto" Padding="0,0,10,0">
+
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding NavigateToGuidCommand}" />
+                        </Grid.GestureRecognizers>
+
+                        <StackLayout Grid.Column="0" Style="{DynamicResource styleTitlePanel}">
+                            <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Lightbulb }" Style="{DynamicResource styleTitleIcon}" />
+                            <Label Text="Guia Pix" Style="{DynamicResource styleTitleBottomIcon}" />
+                        </StackLayout>
+
+                        <content:ChevronRightView Grid.Column="1" />
+                    </Grid>
+
+                    <content:DivisionView/>
+
+                    <!--//////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+                    <Grid ColumnDefinitions="*, auto" Padding="0,0,10,0">
+
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding NavigateToAboutCommand}" />
+                        </Grid.GestureRecognizers>
+
+                        <StackLayout Grid.Column="0" Style="{DynamicResource styleTitlePanel}">
+                            <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.MobileAlt }" Style="{DynamicResource styleTitleIcon}" />
+                            <Label Text="Sobre o App" Style="{DynamicResource styleTitleBottomIcon}" />
                         </StackLayout>
 
                         <content:ChevronRightView Grid.Column="1" />

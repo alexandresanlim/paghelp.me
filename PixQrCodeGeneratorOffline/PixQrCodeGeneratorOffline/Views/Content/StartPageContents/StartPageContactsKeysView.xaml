@@ -9,7 +9,11 @@
   <ContentView.Content>
         <Grid>
             <StackLayout Style="{DynamicResource styleSession}">
-                <CollectionView Grid.Row="0" ItemsSource="{Binding PixKeyListContact}" HeightRequest="240" IsVisible="{Binding PixKeyListContact, Converter={StaticResource HasDataConverter}}">
+                
+                <CollectionView ItemsSource="{Binding PixKeyListContact}" 
+                                HeightRequest="240" 
+                                IsVisible="{Binding PixKeyListContact, Converter={StaticResource HasDataConverter}}">
+                    
                     <CollectionView.ItemsLayout>
                         <LinearItemsLayout Orientation="Horizontal" />
                     </CollectionView.ItemsLayout>
@@ -54,7 +58,6 @@
                             </StackLayout>
 
                         </DataTemplate>
-
                     </CollectionView.ItemTemplate>
 
                 </CollectionView>

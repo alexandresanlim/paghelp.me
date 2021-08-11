@@ -3,6 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PixQrCodeGeneratorOffline.Views.Content.DivisionView">
     <ContentView.Content>
-        <BoxView HeightRequest="1" BackgroundColor="{DynamicResource foreground_page}" HorizontalOptions="FillAndExpand" />
+        <BoxView HeightRequest="2" BackgroundColor="{DynamicResource foreground_page}" HorizontalOptions="FillAndExpand" />
     </ContentView.Content>
 </ContentView>
