@@ -40,6 +40,8 @@ namespace PixQrCodeGeneratorOffline.Models.Commands
 
         public ICommand EditKeyCommand { get; private set; }
 
+        public ICommand NavigateToBillingCommand { get; private set; }
+
         public PixKeyCommand Create(PixKey pixKey)
         {
             return pixKey.Validation.IsValid ? new PixKeyCommand
@@ -48,7 +50,8 @@ namespace PixQrCodeGeneratorOffline.Models.Commands
                 ShareKeyCommand = GetShareKeyCommand(pixKey),
                 NavigateToCreateBillingPageCommand = GetNavigateToCreateBillingCommand(pixKey),
                 NavigateToPaymentPageCommand = GetNavigateToPaymentPageCommand(pixKey),
-                EditKeyCommand = GetEdityKeyCommand(pixKey)
+                EditKeyCommand = GetEdityKeyCommand(pixKey),
+                NavigateToBillingCommand = GetNavigateToBillingCommand(pixKey)
             } : new PixKeyCommand();
         }
 
@@ -128,6 +131,31 @@ namespace PixQrCodeGeneratorOffline.Models.Commands
                 finally
                 {
                     _eventService.SendEvent("Navegou para pagina de pagamento a partir da dashboard", EventType.NAVIGATION);
+
+                    DialogService.HideLoading();
+                }
+            });
+        }
+
+        private Command GetNavigateToBillingCommand(PixKey pixKey)
+        {
+            return new Command(async () =>
+            {
+                try
+                {
+                    DialogService.ShowLoading("");
+
+                    await Task.Delay(500);
+
+                    await Shell.Current.Navigation.PushModalAsync(new BillingSaveListPage(pixKey));
+                }
+                catch (System.Exception e)
+                {
+                    e.SendToLog();
+                }
+                finally
+                {
+                    _eventService.SendEvent("Navegou para pagina de cobranças salvas a partir da dashboard", EventType.NAVIGATION);
 
                     DialogService.HideLoading();
                 }

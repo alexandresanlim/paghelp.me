@@ -14,10 +14,10 @@ namespace PixQrCodeGeneratorOffline.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class BillingSaveListPage : ContentPageWithNavBar
     {
-        public BillingSaveListPage()
+        public BillingSaveListPage(Models.PixKey pixKey = null)
         {
             InitializeComponent();
-            BindingContext = new BillingSaveListViewModel();
+            BindingContext = new BillingSaveListViewModel(pixKey);
         }
     }
 }

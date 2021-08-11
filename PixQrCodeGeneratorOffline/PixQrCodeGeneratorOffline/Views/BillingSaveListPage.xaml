@@ -5,7 +5,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:content="clr-namespace:PixQrCodeGeneratorOffline.Views.Content"
              x:Class="PixQrCodeGeneratorOffline.Views.BillingSaveListPage"
-    BackgroundColor="{DynamicResource staticAccentPrimary}"
+    BackgroundColor="{DynamicResource background_page}"
     Title="Cobranças salvas">
     
     <ContentPage.Content>

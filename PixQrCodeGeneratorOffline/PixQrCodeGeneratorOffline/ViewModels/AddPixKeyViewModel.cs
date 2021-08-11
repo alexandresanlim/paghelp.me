@@ -130,8 +130,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 await Task.Delay(500);
 
-                //CurrentPixKey.Color = MaterialColor.GetRandom();
-
                 if (string.IsNullOrEmpty(CurrentPixKey?.City))
                 {
                     CurrentPixKey.City = "Cidade";
@@ -163,7 +161,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 else
                 {
                     success = _pixKeyService.Insert(CurrentPixKey);
-                    //await CurrentDashboard.LoadPixKey();
 
                     if (CurrentPixKey.IsContact)
                     {
@@ -194,43 +191,13 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                             CurrentDashboard.PixKeyList.Add(CurrentPixKey);
                         }
 
-                        //CurrentDashboard.ChangeSelectPixKeyCommand.Execute(CurrentPixKey);
-
                         CurrentDashboard.CurrentPixKey = CurrentPixKey;
                     }
                 }
 
-                //var success = IsEdit ? _pixKeyService.Update(CurrentPixKey) : _pixKeyService.Insert(CurrentPixKey);
-
-
-                //DashboardViewModel.LoadDataCommand.Execute(null);
-
-                //if (success)
-                //{
-
-                //CurrentPixKey.RaiseCob();
-
-                //await CurrentDashboard.LoadCurrentPixKey(CurrentPixKey);
-
-                //if (CurrentPixKey.IsContact)
-                //    App.LoadTheme();
-
                 if (success)
                 {
-                    //if (CurrentPixKey.IsContact)
-                    //    await CurrentDashboard.LoadPixKeyContact();
-
-                    //else
-                    //{
-                    //    CurrentDashboard.PixKeyList.Add(CurrentPixKey);
-
-                    //    //await CurrentDashboard.LoadPixKey();
-                    //    //await CurrentDashboard.LoadCurrentPixKey(CurrentPixKey);
-                    //    //CurrentDashboard.CurrentPixKey = CurrentPixKey;
-                    //}
-
                     DialogService.Toast("Chave salva com sucesso");
-
                     NavigateBack();
                 }
 
@@ -266,12 +233,33 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 if (success)
                 {
-                    int index = CurrentDashboard.PixKeyList.IndexOf(CurrentDashboard.PixKeyList.FirstOrDefault(x => x.Id == CurrentPixKey.Id));
+                    int index = CurrentPixKey.IsContact ?
+                    CurrentDashboard.PixKeyListContact.IndexOf(CurrentDashboard.PixKeyListContact.FirstOrDefault(x => x.Id == CurrentPixKey.Id)) :
+                    CurrentDashboard.PixKeyList.IndexOf(CurrentDashboard.PixKeyList.FirstOrDefault(x => x.Id == CurrentPixKey.Id));
 
                     if (index != -1)
-                        CurrentDashboard.PixKeyList.RemoveAt(index);
+                    {
+                        if (CurrentPixKey.IsContact)
+                        {
+                            CurrentDashboard.PixKeyListContact.RemoveAt(index);
+                        }
 
-                    await CurrentDashboard.LoadCurrentPixKey(null);
+                        else
+                        {
+                            CurrentDashboard.PixKeyList.RemoveAt(index);
+                            CurrentDashboard.CurrentPixKey = CurrentDashboard?.PixKeyList?.FirstOrDefault() ?? new PixKey();
+                        }
+                    }
+
+                    if(CurrentDashboard.PixKeyList.Count == 0)
+                    {
+                        CurrentDashboard.PixKeyList = new ObservableCollection<PixKey>();
+                    }
+
+                    if (CurrentDashboard.PixKeyListContact.Count == 0)
+                    {
+                        CurrentDashboard.PixKeyListContact = new ObservableCollection<PixKey>();
+                    }
 
                     DialogService.Toast("Chave removida com sucesso");
 
@@ -279,7 +267,9 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 }
 
                 else
+                {
                     DialogService.Toast("Algo de errado aconteceu, tente novamente mais tarde ou atualize o app");
+                }
             }
             catch (Exception e)
             {

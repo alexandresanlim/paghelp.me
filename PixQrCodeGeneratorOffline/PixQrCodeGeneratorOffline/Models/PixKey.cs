@@ -112,11 +112,19 @@ namespace PixQrCodeGeneratorOffline.Models
                 },
                 new PixKeyAction
                 {
+                    Title = "Cobranças Salvas",
+                    Icon = FontAwesomeSolid.HandHoldingUsd,
+                    Command = pixKey?.Command?.NavigateToBillingCommand,
+                    Colors = pixKey?.FinancialInstitution?.Institution?.MaterialColor
+                },
+                new PixKeyAction
+                {
                     Title = "Editar",
                     Icon = FontAwesomeSolid.Pen,
                     Command = pixKey?.Command?.EditKeyCommand,
                     Colors = pixKey?.FinancialInstitution?.Institution?.MaterialColor
                 },
+                
                 //new PixKeyAction
                 //{
                 //    Title = "Excluir",
