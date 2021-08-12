@@ -9,30 +9,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 {
     public class OptionPreferenceViewModel : ViewModelBase
     {
-        //public ICommand OptionStyleListCommand => new Command(() =>
-        //{
-        //    var options = new List<Acr.UserDialogs.ActionSheetOption>
-        //    {
-        //        new Acr.UserDialogs.ActionSheetOption(Preference.ShowInList ? "Exibir em carrossel" : "Exibir em lista", async () =>
-        //        {
-        //            _preferenceService.ChangeShowInList();
-        //            await DashboardVM.ReloadShowInList();
-        //            await NavigateToRootAsync();
-        //        })
-        //    };
-
-        //    DialogService.ActionSheet(new Acr.UserDialogs.ActionSheetConfig
-        //    {
-        //        Title = "Dashboard",
-        //        Options = options,
-        //        Cancel = new Acr.UserDialogs.ActionSheetOption("Cancelar", () =>
-        //        {
-        //            return;
-        //        })
-        //    });
-
-        //});
-
         public void LoadData()
         {
             IsPreferenceFingerPrint = Preference.FingerPrint;
@@ -60,6 +36,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         {
             await _preferenceService.ChangeShowNewsMode();
             LoadData();
+            await DashboardVM.LoadNews();
         }
 
 
@@ -83,7 +60,5 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             set => SetProperty(ref _isPreferncePdvMode, value);
             get => _isPreferncePdvMode;
         }
-
-        //private List<PixKey> CurrentPixKeyList { get; set; }
     }
 }
