@@ -155,7 +155,7 @@ namespace PixQrCodeGeneratorOffline.Models.Services
 
                 await Task.Delay(500);
 
-                await Shell.Current.Navigation.PushModalAsync(new AddPixKeyPage(pixKey, isContact));
+                await Shell.Current.Navigation.PushAsync(new AddPixKeyPage(pixKey, isContact));
             }
             catch (System.Exception e)
             {
@@ -177,7 +177,7 @@ namespace PixQrCodeGeneratorOffline.Models.Services
 
                 await Task.Delay(500);
 
-                await Shell.Current.Navigation.PushModalAsync(new AddPixKeyPage(null, isContact));
+                await Shell.Current.Navigation.PushAsync(new AddPixKeyPage(null, isContact));
             }
             catch (System.Exception e)
             {

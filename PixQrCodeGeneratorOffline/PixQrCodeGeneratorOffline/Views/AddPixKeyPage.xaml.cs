@@ -12,7 +12,7 @@ using Xamarin.Forms.Xaml;
 namespace PixQrCodeGeneratorOffline.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class AddPixKeyPage : ContentPageWithNavBar
+    public partial class AddPixKeyPage : ContentPage
     {
         AddPixKeyViewModel _viewModel;
 

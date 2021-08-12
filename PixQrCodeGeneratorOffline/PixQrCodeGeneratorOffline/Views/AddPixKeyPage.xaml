@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<shared:ContentPageWithNavBar  
+<ContentPage 
     xmlns:shared="clr-namespace:PixQrCodeGeneratorOffline.Views.Shared"
     xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
              x:Class="PixQrCodeGeneratorOffline.Views.AddPixKeyPage"
              xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon"
-             Shell.NavBarIsVisible="False"
              xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
     Title="Editar Chave"
+    BackgroundColor="{DynamicResource background_page}"
              >
 
     <ContentPage.Resources>
@@ -173,4 +173,4 @@
 
 
     </ContentPage.Content>
-</shared:ContentPageWithNavBar>
+</ContentPage>
