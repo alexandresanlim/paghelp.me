@@ -11,7 +11,7 @@ namespace PixQrCodeGeneratorOffline.Services.Interfaces
 
         void ChangeShowInList();
 
-        Task ChangeFingerPrint();
+        Task<bool> ChangeFingerPrint();
 
         Task ChangePDVMode();
 

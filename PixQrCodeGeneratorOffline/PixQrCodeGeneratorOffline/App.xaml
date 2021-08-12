@@ -30,8 +30,8 @@
 
         <!--<Color x:Key="background_page">#0c143c</Color>-->
 
-        <Color x:Key="background_page">#ecf0f1</Color>
-        <Color x:Key="foreground_page">#ecf0f1</Color>
+        <Color x:Key="background_page">#ffffff</Color>
+        <Color x:Key="foreground_page">#f0f1f5</Color>
 
         <Color x:Key="staticAccentPrimary">#00796b</Color>
         <Color x:Key="staticAccentPrimaryLight">#48a999</Color>
@@ -84,6 +84,10 @@
         <Style TargetType="ActivityIndicator">
             <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
             <Setter Property="IsRunning" Value="True"/>
+        </Style>
+
+        <Style TargetType="ContentPage">
+            <Setter Property="BackgroundColor" Value="{DynamicResource background_page}"/>
         </Style>
 
         <ResourceDictionary>

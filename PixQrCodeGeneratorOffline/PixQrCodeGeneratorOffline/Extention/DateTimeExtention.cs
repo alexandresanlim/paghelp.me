@@ -44,7 +44,7 @@ namespace PixQrCodeGeneratorOffline.Extention
                     break;
 
                 case DayOfWeek.Saturday:
-                    msg += "e ótimo fim de semana";
+                    msg += "e ótimo sábado";
                     break;
                 case DayOfWeek.Sunday:
                     msg += "e ótimo domingo";
@@ -59,10 +59,10 @@ namespace PixQrCodeGeneratorOffline.Extention
                     break;
 
                 case DayOfWeek.Thursday:
-                    msg += "excelente quinta-feira";
+                    msg += "e excelente quinta-feira";
                     break;
                 case DayOfWeek.Wednesday:
-                    msg += "boa quarta-feira";
+                    msg += "e boa quarta-feira";
                     break;
             }
 

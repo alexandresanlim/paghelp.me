@@ -121,15 +121,15 @@
                                 <Frame
                                     BackgroundColor="{DynamicResource foreground_page}"
                                     CornerRadius="15"
-                                    HeightRequest="70"
-                                    WidthRequest="70"
+                                    HeightRequest="90"
+                                    WidthRequest="90"
                                     IsClippedToBounds="True"
                                     HorizontalOptions="Center"
                                     VerticalOptions="Center"
-                                    Padding="10"
+                                    Padding="5"
                                     >
                                     <StackLayout VerticalOptions="Center">
-                                        <controls:CustomIcon Glyph="{Binding Icon}" IconColor="{Binding Colors.Primary}" Size="25" />
+                                        <controls:CustomIcon Glyph="{Binding Icon}" IconColor="{Binding Colors.Primary}" Size="{DynamicResource FontSizeLarge}" />
 
                                         <Label Text="{Binding Title}" FontFamily="{DynamicResource FontSemiBold}" TextColor="{Binding Colors.Primary}" HorizontalOptions="Center" FontSize="{DynamicResource FontSizeMicro}" LineBreakMode="MiddleTruncation" />
                                     </StackLayout>

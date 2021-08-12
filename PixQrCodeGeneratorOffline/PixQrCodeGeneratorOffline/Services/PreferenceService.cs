@@ -14,12 +14,10 @@ namespace PixQrCodeGeneratorOffline.Services
     public class PreferenceService : ServiceBase, IPreferenceService
     {
         protected readonly IPixKeyService _pixKeyService;
-        protected readonly IEventService _eventService;
 
         public PreferenceService()
         {
             _pixKeyService = DependencyService.Get<IPixKeyService>();
-            _eventService = DependencyService.Get<IEventService>();
         }
 
         public void ChangeHideData()
@@ -49,46 +47,55 @@ namespace PixQrCodeGeneratorOffline.Services
             }
         }
 
-        public async Task ChangeFingerPrint()
+        public async Task<bool> ChangeFingerPrint()
         {
             if (!await CrossFingerprint.Current.IsAvailableAsync())
             {
                 DialogService.Toast("Está função esta desativa ou não disponível para o seu dispositivo");
-                return;
+                return false;
             }
 
             try
             {
-                var options = new List<ActionSheetOption>
-                {
-                    new ActionSheetOption((Preference.FingerPrint ? "Remover" : "Adicionar") + " autenticação biométrica", async () =>
-                    {
-                         var confirmMsg = "Tem certeza que deseja " + (Preference.FingerPrint ? "remover" : "adicionar") + " autenticação biométrica? Na próxima vez que você entrar, " + (Preference.FingerPrint ? "não será" : "será") + " necessário se autenticar para realizar quaisquer ações.";
+                Preference.FingerPrint = !Preference.FingerPrint;
 
-                        if (!await DialogService.ConfirmAsync(confirmMsg, "Confirmação", "Confirmar", "Cancelar"))
-                            return;
+                DialogService.Toast("Preferência de entrada, salva com sucesso!");
 
-                        Preference.FingerPrint = !Preference.FingerPrint;
+                _eventService.SendEvent($"Mudou entrada por fingerprint, {nameof(Preference.FingerPrint)} : {Preference.FingerPrint}", EventType.PREFERENCE);
 
-                        DialogService.Toast("Preferência de entrada, salva com sucesso!");
+                return true;
 
-                        _eventService.SendEvent($"Mudou entrada por fingerprint, {nameof(Preference.FingerPrint)} : {Preference.FingerPrint}", EventType.PREFERENCE);
-                    })
-                };
+                //var options = new List<ActionSheetOption>
+                //{
+                //    new ActionSheetOption((Preference.FingerPrint ? "Remover" : "Adicionar") + " autenticação biométrica", async () =>
+                //    {
+                //         var confirmMsg = "Tem certeza que deseja " + (Preference.FingerPrint ? "remover" : "adicionar") + " autenticação biométrica? Na próxima vez que você entrar, " + (Preference.FingerPrint ? "não será" : "será") + " necessário se autenticar para realizar quaisquer ações.";
 
-                DialogService.ActionSheet(new ActionSheetConfig
-                {
-                    Title = "Proteção por biometria",
-                    Options = options,
-                    Cancel = new ActionSheetOption("Cancelar", () =>
-                    {
-                        return;
-                    })
-                });
+                //        if (!await DialogService.ConfirmAsync(confirmMsg, "Confirmação", "Confirmar", "Cancelar"))
+                //            return;
+
+                //        Preference.FingerPrint = !Preference.FingerPrint;
+
+                //        DialogService.Toast("Preferência de entrada, salva com sucesso!");
+
+                //        _eventService.SendEvent($"Mudou entrada por fingerprint, {nameof(Preference.FingerPrint)} : {Preference.FingerPrint}", EventType.PREFERENCE);
+                //    })
+                //};
+
+                //DialogService.ActionSheet(new ActionSheetConfig
+                //{
+                //    Title = "Proteção por biometria",
+                //    Options = options,
+                //    Cancel = new ActionSheetOption("Cancelar", () =>
+                //    {
+                //        return;
+                //    })
+                //});
             }
             catch (Exception e)
             {
                 e.SendToLog();
+                return false;
             }
         }
 
@@ -96,32 +103,38 @@ namespace PixQrCodeGeneratorOffline.Services
         {
             try
             {
-                var options = new List<ActionSheetOption>
-                {
-                    new ActionSheetOption((Preference.IsPDVMode ? "Desativar" : "Ativar") + " modo PDV", async () =>
-                    {
-                         var confirmMsg = "Tem certeza que deseja " + (Preference.IsPDVMode ? "desativar" : "ativar") + " o modo PDV? Na próxima vez que você entrar, o app " + (Preference.IsPDVMode ? "não será" : "será") + " aberto em tela cheia e se manterá ligado. Ideal para locais com alto recorrência de vendas.";
+                Preference.IsPDVMode = !Preference.IsPDVMode;
 
-                        if (!await DialogService.ConfirmAsync(confirmMsg, "Confirmação", "Sim", "Cancelar"))
-                            return;
+                DialogService.Toast("Preferência do modo PDV, salvo com sucesso!");
 
-                        Preference.IsPDVMode = !Preference.IsPDVMode;
+                _eventService.SendEvent($"Mudou modo PDV, {nameof(Preference.IsPDVMode)} : {Preference.IsPDVMode}", EventType.PREFERENCE);
 
-                        DialogService.Toast("Preferência do modo PDV, salvo com sucesso!");
+                //var options = new List<ActionSheetOption>
+                //{
+                //    new ActionSheetOption((Preference.IsPDVMode ? "Desativar" : "Ativar") + " modo PDV", async () =>
+                //    {
+                //         var confirmMsg = "Tem certeza que deseja " + (Preference.IsPDVMode ? "desativar" : "ativar") + " o modo PDV? Na próxima vez que você entrar, o app " + (Preference.IsPDVMode ? "não será" : "será") + " aberto em tela cheia e se manterá ligado. Ideal para locais com alta recorrência de vendas.";
 
-                        _eventService.SendEvent($"Mudou modo PDV, {nameof(Preference.IsPDVMode)} : {Preference.IsPDVMode}", EventType.PREFERENCE);
-                    })
-                };
+                //        if (!await DialogService.ConfirmAsync(confirmMsg, "Confirmação", "Sim", "Cancelar"))
+                //            return;
 
-                DialogService.ActionSheet(new ActionSheetConfig
-                {
-                    Title = "Modo PDV",
-                    Options = options,
-                    Cancel = new ActionSheetOption("Cancelar", () =>
-                    {
-                        return;
-                    })
-                });
+                //        Preference.IsPDVMode = !Preference.IsPDVMode;
+
+                //        DialogService.Toast("Preferência do modo PDV, salvo com sucesso!");
+
+                //        _eventService.SendEvent($"Mudou modo PDV, {nameof(Preference.IsPDVMode)} : {Preference.IsPDVMode}", EventType.PREFERENCE);
+                //    })
+                //};
+
+                //DialogService.ActionSheet(new ActionSheetConfig
+                //{
+                //    Title = "Modo PDV",
+                //    Options = options,
+                //    Cancel = new ActionSheetOption("Cancelar", () =>
+                //    {
+                //        return;
+                //    })
+                //});
             }
             catch (Exception e)
             {
@@ -133,32 +146,38 @@ namespace PixQrCodeGeneratorOffline.Services
         {
             try
             {
-                var options = new List<ActionSheetOption>
-                {
-                    new ActionSheetOption((Preference.ShowNews ? "Desativar" : "Ativar") + " exibir notícias", async () =>
-                    {
-                         var confirmMsg = "Tem certeza que deseja " + (Preference.ShowNews ? "desativar" : "ativar") + " o exibir notícias? Na próxima vez que você entrar, o app " + (Preference.ShowNews ? "não mostrará" : "mostrará") + " notícias na dashboard";
+                Preference.ShowNews = !Preference.ShowNews;
 
-                        if (!await DialogService.ConfirmAsync(confirmMsg, "Confirmação", "Sim", "Cancelar"))
-                            return;
+                DialogService.Toast("Preferência de exibir notícias, salvo com sucesso!" + Preference.ShowNews.ToString());
 
-                        Preference.ShowNews = !Preference.ShowNews;
+                _eventService.SendEvent($"Mudou exibir notícias, {nameof(Preference.ShowNews)} : {Preference.ShowNews}", EventType.PREFERENCE);
 
-                        DialogService.Toast("Preferência de exibir notícias, salvo com sucesso!");
+                //var options = new List<ActionSheetOption>
+                //{
+                //    new ActionSheetOption((Preference.ShowNews ? "Desativar" : "Ativar") + " exibir notícias", async () =>
+                //    {
+                //        // var confirmMsg = "Tem certeza que deseja " + (Preference.ShowNews ? "desativar" : "ativar") + " o exibir notícias? Na próxima vez que você entrar, o app " + (Preference.ShowNews ? "não mostrará" : "mostrará") + " notícias na dashboard";
 
-                        _eventService.SendEvent($"Mudou exibir notícias, {nameof(Preference.ShowNews)} : {Preference.ShowNews}", EventType.PREFERENCE);
-                    })
-                };
+                //        //if (!await DialogService.ConfirmAsync(confirmMsg, "Confirmação", "Sim", "Cancelar"))
+                //        //    return;
 
-                DialogService.ActionSheet(new ActionSheetConfig
-                {
-                    Title = "Exibir notícias na dashboard",
-                    Options = options,
-                    Cancel = new ActionSheetOption("Cancelar", () =>
-                    {
-                        return;
-                    })
-                });
+                //        Preference.ShowNews = !Preference.ShowNews;
+
+                //        DialogService.Toast("Preferência de exibir notícias, salvo com sucesso!");
+
+                //        _eventService.SendEvent($"Mudou exibir notícias, {nameof(Preference.ShowNews)} : {Preference.ShowNews}", EventType.PREFERENCE);
+                //    })
+                //};
+
+                //DialogService.ActionSheet(new ActionSheetConfig
+                //{
+                //    Title = "Exibir notícias na dashboard",
+                //    Options = options,
+                //    Cancel = new ActionSheetOption("Cancelar", () =>
+                //    {
+                //        return;
+                //    })
+                //});
             }
             catch (Exception e)
             {

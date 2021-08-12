@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls" 
              xmlns:share="clr-namespace:PixQrCodeGeneratorOffline.Views.Shared"
-             xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
+             xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels" xmlns:content="clr-namespace:PixQrCodeGeneratorOffline.Views.Content"
              x:Class="PixQrCodeGeneratorOffline.Views.GuidePage"
              Title="Guia Pix"
              BackgroundColor="{StaticResource background_page}"
@@ -20,21 +20,31 @@
             </controls:CustomFrame.Background>-->
 
             <Grid RowDefinitions="*, auto" Padding="10,10,10,0" RowSpacing="0">
+                
                 <controls:CustomCollectionView ItemsSource="{Binding GuideList}" Grid.Row="0">
-                    <controls:CustomCollectionView.ItemsLayout>
-                        <LinearItemsLayout ItemSpacing="10" Orientation="Vertical"/>
-                    </controls:CustomCollectionView.ItemsLayout>
                     
                     <controls:CustomCollectionView.ItemTemplate>
                         <DataTemplate>
-                            <Frame Padding="15,30" BackgroundColor="{StaticResource foreground_page}" CornerRadius="15">
-                                <Frame.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:GuideViewModel}}, Path=OpenAnswerGuideCommand}" CommandParameter="{Binding .}" />
-                                </Frame.GestureRecognizers>
 
-                                <controls:CustomLabel Text="{Binding Question}" TextColor="{DynamicResource textPrimary}" FontSize="Medium" FontAttributes="Bold" VerticalOptions="Center" />
-                            </Frame>
-                        </DataTemplate>
+                        <StackLayout HeightRequest="100" Spacing="0">
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:GuideViewModel}}, Path=OpenAnswerGuideCommand}" CommandParameter="{Binding .}" />
+                            </StackLayout.GestureRecognizers>
+
+                            <Grid ColumnDefinitions="*, auto" VerticalOptions="CenterAndExpand" Padding="10,0" ColumnSpacing="15">
+
+                                <Label Grid.Column="0" Text="{Binding Question}" TextColor="{DynamicResource textPrimary}" FontSize="{DynamicResource FontSizeSmall}" FontFamily="{DynamicResource FontSemiBold}" />
+                                <content:ChevronRightView Grid.Column="1" />
+
+                            </Grid>
+
+                            <content:DivisionView />
+
+                        </StackLayout>
+
+
+
+                    </DataTemplate>
                     </controls:CustomCollectionView.ItemTemplate>
                 </controls:CustomCollectionView>
 

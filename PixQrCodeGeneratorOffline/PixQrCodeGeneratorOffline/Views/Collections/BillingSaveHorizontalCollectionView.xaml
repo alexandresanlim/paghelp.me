@@ -10,7 +10,7 @@
 
 
     <ContentView.Content>
-        <controls:CustomCollectionView ItemsSource="{Binding BillingSaveList}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" HeightRequest="210">
+        <controls:CustomCollectionView ItemsSource="{Binding BillingSaveList}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" HeightRequest="250">
 
             <controls:CustomCollectionView.ItemsLayout>
                 <LinearItemsLayout Orientation="Horizontal"/>
@@ -41,12 +41,16 @@
                                 <StackLayout Grid.Column="1" Spacing="15" Padding="15">
                                     <Label Grid.Row="0" Text="{Binding Identity, StringFormat='ID: {0}'}" TextColor="{DynamicResource textSecondary}" MaxLines="2" FontFamily="{DynamicResource FontSemiBold}" LineBreakMode="TailTruncation"/>
 
-                                    <Grid ColumnDefinitions="auto, *" RowDefinitions="auto, auto">
-                                        <controls:CustomIcon Grid.Row="0" Grid.Column="0" Glyph="{x:Static icons:FontAwesomeSolid.UserAlt }" IconColor="{DynamicResource textSecondary}" />
-                                        <Label Grid.Row="0" Grid.Column="1" Text="{Binding PixKey.Viewer.NamePresentation}" TextColor="{DynamicResource textSecondary}" VerticalOptions="CenterAndExpand" />
+                                    <Grid ColumnDefinitions="auto, *" RowDefinitions="auto, auto, auto">
+                                        
+                                        <controls:CustomIcon Grid.Row="0" Grid.Column="0" Glyph="{x:Static icons:FontAwesomeSolid.University }" Style="{DynamicResource styleActionIcon}" />
+                                        <Label Grid.Row="0" Grid.Column="1" Text="{Binding PixKey.Viewer.InstitutionPresentation}" Style="{DynamicResource styleActionText}" />
 
-                                        <controls:CustomIcon Grid.Row="1" Grid.Column="0" Glyph="{x:Static icons:FontAwesomeSolid.Key }" IconColor="{DynamicResource textSecondary}" />
-                                        <Label Grid.Row="1" Grid.Column="1" Text="{Binding PixKey.Viewer.KeyPresentation}" TextColor="{DynamicResource textSecondary}" VerticalOptions="CenterAndExpand" />
+                                        <controls:CustomIcon Grid.Row="1" Grid.Column="0" Glyph="{x:Static icons:FontAwesomeSolid.UserAlt }" IconColor="{DynamicResource textSecondary}" />
+                                        <Label Grid.Row="1" Grid.Column="1" Text="{Binding PixKey.Viewer.NamePresentation}" TextColor="{DynamicResource textSecondary}" VerticalOptions="CenterAndExpand" />
+
+                                        <controls:CustomIcon Grid.Row="2" Grid.Column="0" Glyph="{x:Static icons:FontAwesomeSolid.Key }" IconColor="{DynamicResource textSecondary}" />
+                                        <Label Grid.Row="2" Grid.Column="1" Text="{Binding PixKey.Viewer.KeyPresentation}" TextColor="{DynamicResource textSecondary}" VerticalOptions="CenterAndExpand" />
                                     </Grid>
 
                                     <Label Grid.Row="2" Grid.Column="1" Text="{Binding PixCob.Viewer.ValuePresentation}" TextColor="{Binding PixKey.FinancialInstitution.Institution.MaterialColor.Primary}" FontAttributes="Bold" FontFamily="{DynamicResource FontBold}" FontSize="{DynamicResource FontSizeLarge}" />

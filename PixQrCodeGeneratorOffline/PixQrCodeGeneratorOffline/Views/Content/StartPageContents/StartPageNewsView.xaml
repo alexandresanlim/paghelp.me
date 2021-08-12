@@ -11,7 +11,7 @@
         <Grid>
             <CollectionView ItemsSource="{Binding CurrentFeedList}" 
                         SelectionMode="None" IsVisible="{Binding CurrentFeedList, Converter={StaticResource HasDataConverter}}" 
-                        HeightRequest="1000">
+                        HeightRequest="960">
 
                 <CollectionView.ItemTemplate>
                     <DataTemplate>

@@ -1,56 +1,101 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<shared:ContentPageWithNavBar  xmlns:shared="clr-namespace:PixQrCodeGeneratorOffline.Views.Shared"
+<ContentPage  xmlns:shared="clr-namespace:PixQrCodeGeneratorOffline.Views.Shared"
                                xmlns="http://xamarin.com/schemas/2014/forms"
                                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
                                xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
                                x:Class="PixQrCodeGeneratorOffline.Views.OptionPreferencePage"
-                               BackgroundColor="{DynamicResource foreground_page}">
-    
+                               xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon" 
+                               xmlns:content="clr-namespace:PixQrCodeGeneratorOffline.Views.Content"
+              BackgroundColor="{DynamicResource background_page}"
+              Title="Preferências">
+
+
+    <ContentPage.Resources>
+
+        <ResourceDictionary>
+
+            <Style x:Key="styleTitleBottomIcon" TargetType="Label">
+                <Setter Property="FontSize" Value="{DynamicResource FontSizeMedium}" />
+                <Setter Property="FontFamily" Value="{DynamicResource FontBold}" />
+                <Setter Property="TextColor" Value="{DynamicResource textSecondary}" />
+            </Style>
+
+            <Style x:Key="styleTitleIcon" TargetType="controls:CustomIcon">
+                <Setter Property="HorizontalOptions" Value="Start"/>
+                <Setter Property="Size" Value="{DynamicResource FontSizeMedium}" />
+                <Setter Property="IconColor" Value="{DynamicResource textSecondary}" />
+            </Style>
+
+            <Style x:Key="styleTitlePanel" TargetType="StackLayout">
+                <Setter Property="Padding" Value="15"/>
+                <Setter Property="Spacing" Value="15" />
+            </Style>
+
+        </ResourceDictionary>
+
+
+
+    </ContentPage.Resources>
+
     <ContentPage.Content>
 
-        <StackLayout Padding="25,0" Spacing="15">
+        <StackLayout>
 
-            <!--<StackLayout.Background>
-                <LinearGradientBrush EndPoint="0,1">
-                    <GradientStop Color="{DynamicResource staticAccentPrimary}"
-                          Offset="0.1" />
-                    <GradientStop Color="{DynamicResource staticAccentPrimaryDark}"
-                          Offset="1.0" />
-                </LinearGradientBrush>
-            </StackLayout.Background>-->
+            <content:DivisionView />
 
-            <Label Text="Preferências" Style="{DynamicResource optionTitle}" />
+            <StackLayout Style="{DynamicResource styleTitlePanel}">
+                <Grid ColumnDefinitions="*, auto">
 
-            <StackLayout Spacing="0">
-                <!--<StackLayout Padding="0,15">
-                        <StackLayout.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding OptionStyleListCommand}"/>
-                        </StackLayout.GestureRecognizers>
-                        <Label Text="Tela inicial" Style="{DynamicResource subOptionTitle}" />
-                    </StackLayout>-->
+                    <StackLayout Grid.Column="0">
+                        <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.CashRegister }" Style="{DynamicResource styleTitleIcon}" />
+                        <Label Text="Exibir Notícias" Style="{DynamicResource styleTitleBottomIcon}" />
+                    </StackLayout>
 
-                <StackLayout Padding="0,15">
-                    <StackLayout.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding OptionFingerPrintCommand}"/>
-                    </StackLayout.GestureRecognizers>
-                    <Label Text="Biometria" Style="{DynamicResource subOptionTitle}" />
-                </StackLayout>
+                    <Switch Grid.Column="1" IsToggled="{Binding IsPreferenceNews}" Toggled="Switch_News" />
 
-                <StackLayout Padding="0,15">
-                    <StackLayout.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding OptionPDVCommand}"/>
-                    </StackLayout.GestureRecognizers>
-                    <Label Text="Modo PDV" Style="{DynamicResource subOptionTitle}" />
-                </StackLayout>
+                </Grid>
 
-                <StackLayout Padding="0,15">
-                    <StackLayout.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding OptionShowNewsCommand}"/>
-                    </StackLayout.GestureRecognizers>
-                    <Label Text="Exibir Notícias" Style="{DynamicResource subOptionTitle}" />
-                </StackLayout>
+                <Label Text="Veja notícias do Pix direto na dashboard" />
             </StackLayout>
+
+            <content:DivisionView />
+
+            <StackLayout Style="{DynamicResource styleTitlePanel}">
+                <Grid ColumnDefinitions="*, auto">
+
+                    <StackLayout Grid.Column="0">
+                        <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Fingerprint }" Style="{DynamicResource styleTitleIcon}" />
+                        <Label Text="Biometria" Style="{DynamicResource styleTitleBottomIcon}" />
+
+                    </StackLayout>
+
+                    <Switch IsToggled="{Binding IsPreferenceFingerPrint}" Toggled="Switch_FingerPrint" />
+
+                </Grid>
+
+                <Label Text="Na próxima vez que você entrar no app, será preciso autenticar para ver suas chaves." />
+            </StackLayout>
+
+            <content:DivisionView />
+
+            <StackLayout Style="{DynamicResource styleTitlePanel}">
+                <Grid ColumnDefinitions="*, auto">
+
+                    <StackLayout Grid.Column="0">
+                        <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.CashRegister }" Style="{DynamicResource styleTitleIcon}" />
+                        <Label Text="Modo PDV" Style="{DynamicResource styleTitleBottomIcon}" />
+                    </StackLayout>
+
+                    <Switch Grid.Column="1" IsToggled="{Binding IsPreferncePdvMode}" Toggled="Switch_PdvMode" />
+
+                </Grid>
+
+                <Label Text="O app abrirá em tela cheia e se manterá ligada. Ideal para locais com alta recorrência de vendas." />
+            </StackLayout>
+
+            <content:DivisionView />
+
         </StackLayout>
 
     </ContentPage.Content>
-</shared:ContentPageWithNavBar>
+</ContentPage>

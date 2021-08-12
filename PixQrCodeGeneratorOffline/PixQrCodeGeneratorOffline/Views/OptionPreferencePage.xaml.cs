@@ -12,7 +12,7 @@ using Xamarin.Forms.Xaml;
 namespace PixQrCodeGeneratorOffline.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class OptionPreferencePage : ContentPageWithNavBar
+    public partial class OptionPreferencePage : ContentPage
     {
         OptionPreferenceViewModel _optionPreferenceViewModel;
 
@@ -21,6 +21,50 @@ namespace PixQrCodeGeneratorOffline.Views
             InitializeComponent();
 
             BindingContext = _optionPreferenceViewModel = new OptionPreferenceViewModel();
+        }
+
+        private bool IsOppearing { get; set; }
+
+        protected override void OnAppearing()
+        {
+            try
+            {
+                IsOppearing = true;
+
+                _optionPreferenceViewModel.LoadData();
+                base.OnAppearing();
+            }
+            catch (Exception)
+            {
+            }
+            finally
+            {
+                IsOppearing = false;
+            }
+        }
+
+        private async void Switch_News(object sender, ToggledEventArgs e)
+        {
+            if (IsOppearing)
+                return;
+
+            await _optionPreferenceViewModel.OptionShowNews();
+        }
+
+        private async void Switch_FingerPrint(object sender, ToggledEventArgs e)
+        {
+            if (IsOppearing)
+                return;
+
+            await _optionPreferenceViewModel.OptionFingerPrint();
+        }
+
+        private async void Switch_PdvMode(object sender, ToggledEventArgs e)
+        {
+            if (IsOppearing)
+                return;
+
+            await _optionPreferenceViewModel.OptionPDV();
         }
     }
 }
