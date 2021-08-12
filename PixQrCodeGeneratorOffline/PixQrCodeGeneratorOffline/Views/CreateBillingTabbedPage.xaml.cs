@@ -19,6 +19,8 @@ namespace PixQrCodeGeneratorOffline.Views
         {
             PixKey = pixKey;
 
+            App.StatusBarService.SetStatusBarColor(pixKey.FinancialInstitution.Institution.MaterialColor.Primary);
+
             InitializeComponent();
 
             tb.BarBackgroundColor = PixKey?.FinancialInstitution?.Institution?.MaterialColor?.Primary ?? App.ThemeColors.Primary;
@@ -48,6 +50,17 @@ namespace PixQrCodeGeneratorOffline.Views
 
                 vm.LoadDataCommand.Execute(PixKey);
             }
+        }
+
+        protected override bool OnBackButtonPressed()
+        {
+            ReloadStatusBar();
+            return base.OnBackButtonPressed();
+        }
+
+        private void ReloadStatusBar()
+        {
+            App.StatusBarService.SetStatusBarColor(App.ThemeColors.Primary);
         }
     }
 }

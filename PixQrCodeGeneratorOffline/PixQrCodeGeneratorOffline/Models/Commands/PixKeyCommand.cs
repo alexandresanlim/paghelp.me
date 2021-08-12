@@ -122,7 +122,7 @@ namespace PixQrCodeGeneratorOffline.Models.Commands
 
                     var pixPaylod = _pixPayloadService.Create(pixKey);
 
-                    await Shell.Current.Navigation.PushModalAsync(new PaymentPage(pixPaylod));
+                    await Shell.Current.Navigation.PushAsync(new PaymentPage(pixPaylod));
                 }
                 catch (System.Exception e)
                 {

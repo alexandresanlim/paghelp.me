@@ -24,6 +24,8 @@ namespace PixQrCodeGeneratorOffline.Views
 
             _pixPaylod = paylod;
 
+            App.StatusBarService.SetStatusBarColor(paylod.PixKey.FinancialInstitution.Institution.MaterialColor.Primary);
+
             BindingContext = _paymentViewModel = new PaymentViewModel();
         }
 
@@ -34,7 +36,19 @@ namespace PixQrCodeGeneratorOffline.Views
 
         private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
+            ReloadStatusBar();
             Shell.Current.SendBackButtonPressed();
+        }
+
+        protected override bool OnBackButtonPressed()
+        {
+            ReloadStatusBar();
+            return base.OnBackButtonPressed();
+        }
+
+        private void ReloadStatusBar()
+        {
+            App.StatusBarService.SetStatusBarColor(App.ThemeColors.Primary);
         }
 
         //protected override void OnDisappearing()

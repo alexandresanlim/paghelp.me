@@ -7,6 +7,7 @@
              xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon" 
              x:Class="PixQrCodeGeneratorOffline.Views.PaymentPage"
              BackgroundColor="{DynamicResource background_page}"
+             Shell.NavBarIsVisible="False"
              >
     
     <ContentPage.Content>

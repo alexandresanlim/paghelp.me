@@ -491,7 +491,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         private InputValues CurrentInputValues => new InputValues(InputList);
 
-        private string CurrenKeyPlaceholderDefaultValue => "Chave cadastrada";
+        private string CurrenKeyPlaceholderDefaultValue => "Chave ";
 
         public FinancialInstitution SelectedFinancialInstitution { get; set; }
 
