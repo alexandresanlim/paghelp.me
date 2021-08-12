@@ -148,7 +148,7 @@ namespace PixQrCodeGeneratorOffline.Services
             {
                 Preference.ShowNews = !Preference.ShowNews;
 
-                DialogService.Toast("Preferência de exibir notícias, salvo com sucesso!" + Preference.ShowNews.ToString());
+                DialogService.Toast("Preferência de exibir notícias, salvo com sucesso!");
 
                 _eventService.SendEvent($"Mudou exibir notícias, {nameof(Preference.ShowNews)} : {Preference.ShowNews}", EventType.PREFERENCE);
 
