@@ -77,7 +77,17 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
             CurrentPixPaylod.Identity = identity.Text;
 
-            _pixPayloadService.Save(CurrentPixPaylod);
+            var success = _pixPayloadService.Save(CurrentPixPaylod);
+
+            if (success)
+            {
+                await DashboardVM.LoadBilling();
+            }
+
+            else
+            {
+                DialogService.Toast("Algo de errado aconteceu, tente novamente mais tarde ou atualize o app.");
+            }
         });
 
         private PixPayload _currentPixPaylod;

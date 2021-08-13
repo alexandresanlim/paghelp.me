@@ -46,7 +46,7 @@ namespace PixQrCodeGeneratorOffline.Models.Repository
         {
             try
             {
-                return _collection.Insert(item);
+                return _collection.Insert(item) > 0;
             }
             catch (Exception e)
             {

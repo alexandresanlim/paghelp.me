@@ -24,6 +24,12 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             {
                 LoadData();
             }
+
+            else
+            {
+                IsPreferenceFingerPrint = false;
+            }
+
         }
 
         public async Task OptionPDV()
