@@ -38,7 +38,7 @@
             <Style x:Key="styleGridActionChevronRight" TargetType="Grid">
                 <Setter Property="ColumnDefinitions" Value="auto,*, auto"/>
                 <Setter Property="Padding" Value="10" />
-                <Setter Property="ColumnSpacing" Value="10" />
+                <Setter Property="ColumnSpacing" Value="15" />
             </Style>
 
             <Style x:Key="styleGridActionChevronIcon" TargetType="controls:CustomIcon">
@@ -49,9 +49,22 @@
             </Style>
 
             <Style x:Key="styleGridActionTitle" TargetType="Label">
-                <Setter Property="FontSize" Value="{DynamicResource FontSizeMedium}" />
+                <Setter Property="FontSize" Value="{DynamicResource FontSizeSmall}" />
                 <Setter Property="TextColor" Value="{DynamicResource textSecondary}" />
                 <Setter Property="Grid.Column" Value="1" />
+                <Setter Property="FontFamily" Value="{DynamicResource FontSemiBold}"/>
+            </Style>
+
+            <Style x:Key="styleFrameAction" TargetType="Frame">
+                <Setter Property="Margin" Value="5,0" />
+                <Setter Property="CornerRadius" Value="10" />
+                <Setter Property="Padding" Value="10,5" />
+                <Setter Property="BackgroundColor" Value="{DynamicResource foreground_page}"/>
+            </Style>
+
+            <Style x:Key="styleStakLatyoutMultipleAction" TargetType="StackLayout">
+                <Setter Property="Spacing" Value="5" />
+                <Setter Property="Padding" Value="0,15,0,0" />
             </Style>
 
 

@@ -27,7 +27,7 @@
             <controls:CustomCollectionView.ItemTemplate>
                 <DataTemplate>
                     <StackLayout HorizontalOptions="FillAndExpand">
-                        <Frame BackgroundColor="{DynamicResource foreground_page}" CornerRadius="10">
+                        <Frame VerticalOptions="FillAndExpand" BackgroundColor="{DynamicResource foreground_page}" CornerRadius="10">
                             <Frame.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding Commands.NavigateToPaymentPageCommand}" />
                             </Frame.GestureRecognizers>

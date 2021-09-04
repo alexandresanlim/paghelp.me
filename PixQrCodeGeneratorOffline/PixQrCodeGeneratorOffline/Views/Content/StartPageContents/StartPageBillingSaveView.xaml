@@ -9,23 +9,31 @@
     
   <ContentView.Content>
         <Grid>
-            <StackLayout Style="{DynamicResource styleSession}">
+            
+                <StackLayout Style="{DynamicResource styleSession}">
 
-                <collections:BillingSaveHorizontalCollectionView />
+                    <collections:BillingSaveHorizontalCollectionView />
 
-                <Grid Style="{DynamicResource styleGridActionChevronRight}" IsVisible="{Binding BillingSaveList, Converter={StaticResource HasDataConverter}}">
+                <Frame Margin="0,15,0,0" BackgroundColor="{DynamicResource foreground_page}" Style="{DynamicResource styleFrameAction}">
 
-                    <Grid.GestureRecognizers>
+                    <Frame.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding RemoveAllBillingCommand}" />
-                    </Grid.GestureRecognizers>
+                    </Frame.GestureRecognizers>
 
-                    <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Trash }" Style="{DynamicResource styleGridActionChevronIcon}" />
-                    <Label Text="Apagar Todas" Style="{DynamicResource styleGridActionTitle}" />
-                    <content:ChevronRightView Grid.Column="2" />
+                    <Grid Style="{DynamicResource styleGridActionChevronRight}" IsVisible="{Binding BillingSaveList, Converter={StaticResource HasDataConverter}}">
 
-                </Grid>
+                        
+
+                        <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Trash }" Style="{DynamicResource styleGridActionChevronIcon}" />
+                        <Label Text="Apagar Todas" Style="{DynamicResource styleGridActionTitle}" />
+                        <content:ChevronRightView Grid.Column="2" />
+
+                    </Grid>
+
+                </Frame>
 
             </StackLayout>
+            
 
             <content:PanelLoadView IsVisible="{Binding CurrentDashboardLoadInfo.IsLoadBilling}" />
         </Grid>
