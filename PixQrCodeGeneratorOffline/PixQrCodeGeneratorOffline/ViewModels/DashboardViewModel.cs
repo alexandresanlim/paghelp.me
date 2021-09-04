@@ -48,7 +48,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 await LoadDashboardCustomInfo();
 
-                await ReloadShowInList();
+                //await ReloadShowInList();
 
                 await LoadPixKey();
 
@@ -205,7 +205,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         private async Task ResetProps()
         {
-            ShowInList = false;
+            //ShowInList = false;
             //ShowWelcome = false;
 
             CurrentDashboardLoadInfo = new DashboardLoadInfo();
@@ -269,11 +269,11 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public ICommand NavigateToAboutCommand => new Command(async () => await NavigateAsync(new AboutPage()));
 
-        public ICommand ChangeStyleListCommand => new Command(async () =>
-        {
-            _preferenceService.ChangeShowInList();
-            await ReloadShowInList();
-        });
+        //public ICommand ChangeStyleListCommand => new Command(async () =>
+        //{
+        //    _preferenceService.ChangeShowInList();
+        //    await ReloadShowInList();
+        //});
 
         public ICommand WelcomeNextCommand => new Command(async () =>
         {
@@ -322,40 +322,40 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             ShowAddkeyOnWelcome = CurrentDashboardWelcome == LastWelcomeItem;
         }
 
-        public async Task ReloadShowInList()
-        {
-            try
-            {
-                IsBusy = true;
+        //public async Task ReloadShowInList()
+        //{
+        //    try
+        //    {
+        //        IsBusy = true;
 
-                await Task.Delay(500);
+        //        await Task.Delay(500);
 
-                ShowInList = Preference.ShowInList;
+        //        ShowInList = Preference.ShowInList;
 
-                //ReloadAppColorIfShowInListStyle();
+        //        //ReloadAppColorIfShowInListStyle();
 
-                if (ShowInList)
-                {
-                    CurrentIconStyleList = FontAwesomeSolid.Th;
-                }
+        //        if (ShowInList)
+        //        {
+        //            CurrentIconStyleList = FontAwesomeSolid.Th;
+        //        }
 
-                else
-                {
-                    SetStatusFromCurrentPixColor();
-                    CurrentIconStyleList = FontAwesomeSolid.ListAlt;
-                }
-            }
-            catch (System.Exception e)
-            {
-                e.SendToLog();
-            }
-            finally
-            {
-                _eventService.SendEvent("Estilo da dashboard para lista: " + ShowInList, EventType.PREFERENCE);
+        //        else
+        //        {
+        //            SetStatusFromCurrentPixColor();
+        //            CurrentIconStyleList = FontAwesomeSolid.ListAlt;
+        //        }
+        //    }
+        //    catch (System.Exception e)
+        //    {
+        //        e.SendToLog();
+        //    }
+        //    finally
+        //    {
+        //        _eventService.SendEvent("Estilo da dashboard para lista: " + ShowInList, EventType.PREFERENCE);
 
-                IsBusy = false;
-            }
-        }
+        //        IsBusy = false;
+        //    }
+        //}
 
         public void SetStatusFromCurrentPixColor()
         {
@@ -374,19 +374,19 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         #region Props
 
-        private bool _showInList;
-        public bool ShowInList
-        {
-            set => SetProperty(ref _showInList, value);
-            get => _showInList;
-        }
+        //private bool _showInList;
+        //public bool ShowInList
+        //{
+        //    set => SetProperty(ref _showInList, value);
+        //    get => _showInList;
+        //}
 
-        private string _currentIconStyleList;
-        public string CurrentIconStyleList
-        {
-            set => SetProperty(ref _currentIconStyleList, value);
-            get => _currentIconStyleList;
-        }
+        //private string _currentIconStyleList;
+        //public string CurrentIconStyleList
+        //{
+        //    set => SetProperty(ref _currentIconStyleList, value);
+        //    get => _currentIconStyleList;
+        //}
 
 
 
