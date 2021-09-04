@@ -1,25 +1,22 @@
-﻿using System;
-
+﻿
 using Android.App;
-using Android.Content.PM;
+using Android.Gms.Ads;
+using Android.OS;
 using Android.Runtime;
 using Android.Views;
-using Android.Widget;
-using Android.OS;
-using PixQrCodeGeneratorOffline.Style.Interfaces;
-using Xamarin.Essentials;
-using Xamarin.Forms;
 using Microsoft.AppCenter;
 using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
-using Android.Gms.Ads;
-using Plugin.Fingerprint;
 using PixQrCodeGeneratorOffline.Services;
+using PixQrCodeGeneratorOffline.Style.Interfaces;
+using Plugin.Fingerprint;
+using Xamarin.Essentials;
+using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.Droid
 {
     //[Activity(Label = "PixQrCodeGeneratorOffline", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize )]
-    //[IntentFilter(new[] { Xamarin.Essentials.Platform.Intent.ActionAppAction }, Categories = new[] { Intent.CategoryDefault })]
+    //[IntentFilter(new[] { Xamarin.Essentials.Platform.Intent.ActionAppAction }, Categories = new[] { Intent.Categories.Add })]
     [Activity]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
