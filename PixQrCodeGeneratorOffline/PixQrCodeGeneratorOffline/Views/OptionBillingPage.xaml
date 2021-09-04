@@ -5,6 +5,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="PixQrCodeGeneratorOffline.Views.OptionBillingPage"
     BackgroundColor="{DynamicResource foreground_page}"
+    xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
+     x:DataType="vm:OptionBillingViewModel"
     >
     
     <ContentPage.Content>

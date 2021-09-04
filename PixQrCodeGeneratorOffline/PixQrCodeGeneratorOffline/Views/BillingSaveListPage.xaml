@@ -6,7 +6,10 @@
              xmlns:content="clr-namespace:PixQrCodeGeneratorOffline.Views.Content"
              x:Class="PixQrCodeGeneratorOffline.Views.BillingSaveListPage"
     BackgroundColor="{DynamicResource background_page}"
-    Title="Cobranças salvas">
+    Title="Cobranças salvas"
+    xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
+    x:DataType="vm:BillingSaveListViewModel"
+    >
     
     <ContentPage.Content>
         <StackLayout Padding="10,0">

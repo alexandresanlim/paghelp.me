@@ -4,7 +4,11 @@
              xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls" 
              xmlns:content="clr-namespace:PixQrCodeGeneratorOffline.Views.Content"
              xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon" 
-             x:Class="PixQrCodeGeneratorOffline.Views.Content.StartPageContents.StartPageContactsKeysView">
+             x:Class="PixQrCodeGeneratorOffline.Views.Content.StartPageContents.StartPageContactsKeysView"
+             xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
+             x:DataType="vm:DashboardViewModel"
+             xmlns:models="clr-namespace:PixQrCodeGeneratorOffline.Models"
+             >
     
   <ContentView.Content>
         <Grid>
@@ -19,7 +23,7 @@
                     </CollectionView.ItemsLayout>
 
                     <CollectionView.ItemTemplate>
-                        <DataTemplate>
+                        <DataTemplate x:DataType="models:PixKey">
 
                             <StackLayout Padding="5,0,0,0">
                                 <Frame VerticalOptions="FillAndExpand" CornerRadius="10" Padding="15" BackgroundColor="{DynamicResource foreground_page}" WidthRequest="150">

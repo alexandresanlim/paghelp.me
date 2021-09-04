@@ -8,6 +8,7 @@
     xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon"
     BackgroundColor="{StaticResource background_page}"
     Title="Sobre o App"
+     x:DataType="vm:AboutViewModel"
              >
 
     <ContentPage.Content>

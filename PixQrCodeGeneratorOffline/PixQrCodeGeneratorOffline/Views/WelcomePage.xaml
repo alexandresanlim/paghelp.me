@@ -4,6 +4,7 @@
              xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
              xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon" 
              x:Class="PixQrCodeGeneratorOffline.Views.WelcomePage"
+             xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
              >
     
     <ContentPage.Content>

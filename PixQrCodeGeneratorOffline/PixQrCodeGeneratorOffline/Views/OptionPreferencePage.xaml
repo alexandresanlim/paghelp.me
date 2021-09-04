@@ -7,7 +7,10 @@
                                xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon" 
                                xmlns:content="clr-namespace:PixQrCodeGeneratorOffline.Views.Content"
               BackgroundColor="{DynamicResource background_page}"
-              Title="Preferências">
+              Title="Preferências"
+              xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
+     x:DataType="vm:OptionPreferenceViewModel"
+              >
 
 
     <ContentPage.Resources>

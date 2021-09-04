@@ -3,10 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls" 
              xmlns:share="clr-namespace:PixQrCodeGeneratorOffline.Views.Shared"
-             xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels" xmlns:content="clr-namespace:PixQrCodeGeneratorOffline.Views.Content"
+             xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels" 
+             xmlns:content="clr-namespace:PixQrCodeGeneratorOffline.Views.Content"
              x:Class="PixQrCodeGeneratorOffline.Views.GuidePage"
              Title="Guia Pix"
              BackgroundColor="{StaticResource background_page}"
+             xmlns:models="clr-namespace:PixQrCodeGeneratorOffline.Models"
+     x:DataType="vm:GuideViewModel"
              >
     <ContentPage.Content>
         <!--<controls:CustomFrame>
@@ -24,7 +27,7 @@
                 <controls:CustomCollectionView ItemsSource="{Binding GuideList}" Grid.Row="0">
                     
                     <controls:CustomCollectionView.ItemTemplate>
-                        <DataTemplate>
+                        <DataTemplate x:DataType="models:Guide">
 
                         <StackLayout HeightRequest="100" Spacing="0">
                             <StackLayout.GestureRecognizers>

@@ -9,9 +9,11 @@
              xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon" 
              xmlns:local="clr-namespace:PixQrCodeGeneratorOffline.Converters" 
              xmlns:shared="clr-namespace:PixQrCodeGeneratorOffline.Views.Shared"
-    xmlns:share="clr-namespace:PixQrCodeGeneratorOffline.Views.Shared" xmlns:content="clr-namespace:PixQrCodeGeneratorOffline.Views.Content"
+    xmlns:share="clr-namespace:PixQrCodeGeneratorOffline.Views.Shared" 
+    xmlns:content="clr-namespace:PixQrCodeGeneratorOffline.Views.Content"
     BackgroundColor="{DynamicResource background_page}"
              Title="Nova Cobrança"
+     x:DataType="vm:CreateBillingViewModel"
              >
 
     <ContentPage.Resources>

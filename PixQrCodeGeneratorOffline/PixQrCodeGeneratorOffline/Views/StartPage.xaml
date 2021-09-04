@@ -10,8 +10,13 @@
              x:Class="PixQrCodeGeneratorOffline.Views.StartPage"
              Shell.NavBarIsVisible="False"
              BackgroundColor="{DynamicResource background_page}"
+             xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
+             xmlns:models="clr-namespace:PixQrCodeGeneratorOffline.Models"
+             xmlns:helpers="clr-namespace:PixQrCodeGeneratorOffline.ViewModels.Helpers"
+             x:DataType="vm:DashboardViewModel"
              >
 
+    
 
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -302,7 +307,7 @@
 
 
                     <CarouselView.ItemTemplate>
-                        <DataTemplate>
+                        <DataTemplate x:DataType="helpers:DashboardWelcome">
 
                             <StackLayout Padding="10,0" Spacing="50">
 

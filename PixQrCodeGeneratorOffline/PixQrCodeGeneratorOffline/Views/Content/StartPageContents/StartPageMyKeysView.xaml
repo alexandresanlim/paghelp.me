@@ -5,7 +5,11 @@
              xmlns:content="clr-namespace:PixQrCodeGeneratorOffline.Views.Content"
              xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon" 
              xmlns:qr="clr-namespace:Xam.Forms;assembly=Xam.Forms.QRCode"
-             x:Class="PixQrCodeGeneratorOffline.Views.Content.StartPageContents.StartPageMyKeysView">
+             x:Class="PixQrCodeGeneratorOffline.Views.Content.StartPageContents.StartPageMyKeysView"
+             xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
+             x:DataType="vm:DashboardViewModel"
+             xmlns:models="clr-namespace:PixQrCodeGeneratorOffline.Models"
+             >
 
     <ContentView.Content>
         <Grid>
@@ -22,7 +26,7 @@
                               >
 
                     <CarouselView.ItemTemplate>
-                        <DataTemplate>
+                        <DataTemplate x:DataType="models:PixKey">
 
 
                             <StackLayout Padding="0,0,10,0">
@@ -104,7 +108,7 @@
                     </CollectionView.ItemsLayout>
 
                     <CollectionView.ItemTemplate>
-                        <DataTemplate>
+                        <DataTemplate x:DataType="models:PixKeyAction">
                             <StackLayout Padding="5,0">
                                 <StackLayout.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding Command}" />

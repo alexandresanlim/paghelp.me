@@ -248,10 +248,19 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         #endregion
 
-        public ICommand ChangeSelectPixKeyCommand => new Command<PixKey>((pixkey) =>
+        public ICommand ChangeSelectPixKeyCommand => new Command<PixKey>(async (pixkey) =>
         {
-            CurrentPixKey = pixkey;
-            CurrentPixKeyActions = pixkey?.Actions?.ToObservableCollection() ?? new ObservableCollection<PixKeyAction>();
+            await Xamarin.Essentials.MainThread.InvokeOnMainThreadAsync(() =>
+            {
+                CurrentPixKey = pixkey;
+                CurrentPixKeyActions = pixkey?.Actions?.ToObservableCollection() ?? new ObservableCollection<PixKeyAction>();
+            });
+
+            //await Task.Run(() =>
+            //{
+            //    CurrentPixKey = pixkey;
+            //    CurrentPixKeyActions = pixkey?.Actions?.ToObservableCollection() ?? new ObservableCollection<PixKeyAction>();
+            //});
         });
 
         public ICommand NavigateToPreferencesCommand => new Command(async () => await NavigateAsync(new OptionPreferencePage()));

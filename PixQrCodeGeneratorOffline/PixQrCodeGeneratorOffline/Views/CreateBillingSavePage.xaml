@@ -4,6 +4,8 @@
              xmlns:content="clr-namespace:PixQrCodeGeneratorOffline.Views.Content"
              x:Class="PixQrCodeGeneratorOffline.Views.CreateBillingSavePage"
              BackgroundColor="{DynamicResource background_page}"
+             xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
+     x:DataType="vm:CreateBillingSaveViewModel"
              >
     <ContentPage.Content>
         <StackLayout Padding="5,5,5,0">

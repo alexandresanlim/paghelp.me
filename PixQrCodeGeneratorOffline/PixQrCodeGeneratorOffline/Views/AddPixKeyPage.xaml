@@ -7,8 +7,12 @@
              x:Class="PixQrCodeGeneratorOffline.Views.AddPixKeyPage"
              xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon"
              xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
+    xmlns:helpers="clr-namespace:PixQrCodeGeneratorOffline.ViewModels.Helpers"
+    
     Title="Editar Chave"
     BackgroundColor="{DynamicResource background_page}"
+     x:DataType="vm:AddPixKeyViewModel"
+    xmlns:models="clr-namespace:PixQrCodeGeneratorOffline.Models"
              >
 
     <ContentPage.Resources>
@@ -62,7 +66,7 @@
                     HeightRequest="250">
 
                 <CarouselView.ItemTemplate>
-                    <DataTemplate>
+                    <DataTemplate x:DataType="helpers:AddPixInput">
                         <StackLayout Padding="5,15,5,0">
                             <StackLayout Spacing="15" Padding="0,15,0,0">
                                 <controls:CustomIcon Glyph="{Binding Icon}" Size="{DynamicResource FontSizeLarge}" IconColor="{DynamicResource textSecondary}" />
@@ -111,7 +115,8 @@
         </StackLayout>
 
         <!--<Grid RowDefinitions="auto,*,auto" RowSpacing="0">
-            --><!--<StackLayout Grid.Row="0" Spacing="0" Padding="15,0,0,0" Orientation="Horizontal" BackgroundColor="{Binding CurrenStyle.Primary}">
+            -->
+        <!--<StackLayout Grid.Row="0" Spacing="0" Padding="15,0,0,0" Orientation="Horizontal" BackgroundColor="{Binding CurrenStyle.Primary}">
 
                 <StackLayout Padding="0,0,30,0">
                     <StackLayout.GestureRecognizers>
@@ -139,7 +144,7 @@
                 </StackLayout>
             </StackLayout>-->
 
-            <!--<StackLayout Grid.Row="1" Padding="15">
+        <!--<StackLayout Grid.Row="1" Padding="15">
                 <controls:CustomLabel Text="IMPORTANTE" FontAttributes="Bold" TextColor="{Binding CurrenStyle.TextOnPrimary}" />
 
                 <controls:CustomCarouselView
@@ -165,7 +170,8 @@
                                        IndicatorsShape="Circle"
                                        IndicatorColor="{Binding CurrenStyle.PrimaryLight}"
                                        SelectedIndicatorColor="{Binding CurrenStyle.Primary}" />
-            </StackLayout>--><!--
+            </StackLayout>-->
+        <!--
 
 
             

@@ -8,6 +8,7 @@
              x:Class="PixQrCodeGeneratorOffline.Views.PaymentPage"
              BackgroundColor="{DynamicResource background_page}"
              Shell.NavBarIsVisible="False"
+     x:DataType="vm:PaymentViewModel"
              >
     
     <ContentPage.Content>

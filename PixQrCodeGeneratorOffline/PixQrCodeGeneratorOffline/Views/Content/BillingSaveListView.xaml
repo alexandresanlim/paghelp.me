@@ -3,7 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
              x:Class="PixQrCodeGeneratorOffline.Views.Content.BillingSaveListView"
-             xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon" 
+             xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon"
+             xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
+             x:DataType="vm:DashboardViewModel"
+             xmlns:models="clr-namespace:PixQrCodeGeneratorOffline.Models"
              >
     
   <ContentView.Content>
@@ -25,9 +28,9 @@
             </controls:CustomCollectionView.EmptyView>
 
             <controls:CustomCollectionView.ItemTemplate>
-                <DataTemplate>
-                    <StackLayout HorizontalOptions="FillAndExpand">
-                        <Frame VerticalOptions="FillAndExpand" BackgroundColor="{DynamicResource foreground_page}" CornerRadius="10">
+                <DataTemplate x:DataType="models:PixPayload">
+                    <StackLayout>
+                        <Frame BackgroundColor="{DynamicResource foreground_page}" CornerRadius="10">
                             <Frame.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding Commands.NavigateToPaymentPageCommand}" />
                             </Frame.GestureRecognizers>

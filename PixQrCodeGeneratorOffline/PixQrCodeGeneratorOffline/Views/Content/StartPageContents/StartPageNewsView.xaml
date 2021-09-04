@@ -4,7 +4,11 @@
              xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
              xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon" 
              xmlns:content="clr-namespace:PixQrCodeGeneratorOffline.Views.Content"
-             x:Class="PixQrCodeGeneratorOffline.Views.Content.StartPageContents.StartPageNewsView">
+             x:Class="PixQrCodeGeneratorOffline.Views.Content.StartPageContents.StartPageNewsView"
+             xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
+             x:DataType="vm:DashboardViewModel"
+             xmlns:models="clr-namespace:PixQrCodeGeneratorOffline.Models"
+             >
 
     <ContentView.Content>
 
@@ -14,7 +18,7 @@
                         HeightRequest="960">
 
                 <CollectionView.ItemTemplate>
-                    <DataTemplate>
+                    <DataTemplate x:DataType="models:Feed">
                         <StackLayout Padding="5,0,5,5">
 
                             <StackLayout.GestureRecognizers>

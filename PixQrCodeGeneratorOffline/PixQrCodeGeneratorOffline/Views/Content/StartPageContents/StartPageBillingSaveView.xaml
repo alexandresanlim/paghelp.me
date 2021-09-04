@@ -5,7 +5,10 @@
              xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls" 
              xmlns:content="clr-namespace:PixQrCodeGeneratorOffline.Views.Content"
              xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon" 
-             x:Class="PixQrCodeGeneratorOffline.Views.Content.StartPageContents.StartPageBillingSaveView">
+             x:Class="PixQrCodeGeneratorOffline.Views.Content.StartPageContents.StartPageBillingSaveView"
+             xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
+             x:DataType="vm:DashboardViewModel"
+             >
     
   <ContentView.Content>
         <Grid>

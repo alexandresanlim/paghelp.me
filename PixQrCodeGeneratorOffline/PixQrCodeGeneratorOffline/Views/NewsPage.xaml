@@ -9,6 +9,8 @@
              xmlns:share="clr-namespace:PixQrCodeGeneratorOffline.Views.Shared"
              Title="Notícias"
              BackgroundColor="{DynamicResource background_page}"
+             xmlns:models="clr-namespace:PixQrCodeGeneratorOffline.Models"
+     x:DataType="vm:NewsViewModel"
              >
 
     <!--<ContentPage.Resources>
@@ -33,7 +35,7 @@
                     <controls:CustomCollectionView ItemsSource="{Binding CurrentFeedList}" SelectionMode="None" IsVisible="{Binding CurrentFeedList, Converter={StaticResource HasDataConverter}}">
 
                         <controls:CustomCollectionView.ItemTemplate>
-                            <DataTemplate>
+                            <DataTemplate x:DataType="models:Feed">
                                 <StackLayout Padding="8">
 
                                     <StackLayout.GestureRecognizers>
