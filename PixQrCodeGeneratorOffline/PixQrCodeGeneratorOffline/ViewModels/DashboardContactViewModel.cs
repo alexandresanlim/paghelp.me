@@ -25,7 +25,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public ICommand LoadDataCommand => new Command(async () => await LoadData());
 
-        public ICommand SettingsCommand => new Command(async () => await NavigateModalAsync(new OptionContactPage()));
+        //public ICommand SettingsCommand => new Command(async () => await NavigateModalAsync(new OptionContactPage()));
 
         public async Task LoadData()
         {
