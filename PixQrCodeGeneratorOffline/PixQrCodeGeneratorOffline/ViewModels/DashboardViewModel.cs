@@ -248,9 +248,9 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         #endregion
 
-        public ICommand ChangeSelectPixKeyCommand => new Command<PixKey>(async (pixkey) =>
+        public ICommand ChangeSelectPixKeyCommand => new Command<PixKey>((pixkey) =>
         {
-            await Xamarin.Essentials.MainThread.InvokeOnMainThreadAsync(() =>
+            Xamarin.Essentials.MainThread.BeginInvokeOnMainThread(() =>
             {
                 CurrentPixKey = pixkey;
                 CurrentPixKeyActions = pixkey?.Actions?.ToObservableCollection() ?? new ObservableCollection<PixKeyAction>();

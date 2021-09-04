@@ -15,7 +15,17 @@
         <Grid>
             <StackLayout Style="{DynamicResource styleSession}">
 
+                <!--<Grid>
+                    <Grid RowDefinitions="*,*">
+                        <BoxView Grid.Row="0" BackgroundColor="{DynamicResource background_page}"/>
+                        <BoxView Grid.Row="1"/>
+                    </Grid>
+
+                    
+                </Grid>-->
+
                 <CarouselView ItemsSource="{Binding PixKeyList}"
+                              Margin="0,-30,0,0"
                               PeekAreaInsets="20,0"
                               CurrentItemChangedCommand="{Binding ChangeSelectPixKeyCommand}"
                               CurrentItemChangedCommandParameter="{Binding Source={RelativeSource Self}, Path=CurrentItem}"
