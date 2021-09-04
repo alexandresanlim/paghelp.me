@@ -7,8 +7,8 @@
              xmlns:content="clr-namespace:PixQrCodeGeneratorOffline.Views.Content" 
              xmlns:contentStart="clr-namespace:PixQrCodeGeneratorOffline.Views.Content.StartPageContents" 
              xmlns:collections="clr-namespace:PixQrCodeGeneratorOffline.Views.Collections"
-             x:Class="PixQrCodeGeneratorOffline.Views.StartPage"
              Shell.NavBarIsVisible="False"
+             x:Class="PixQrCodeGeneratorOffline.Views.StartPage"
              BackgroundColor="{DynamicResource background_page}"
              xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
              xmlns:models="clr-namespace:PixQrCodeGeneratorOffline.Models"
@@ -16,6 +16,24 @@
              x:DataType="vm:DashboardViewModel"
              >
 
+
+    <!--<ContentPage.ToolbarItems>
+        <ToolbarItem>
+            <ToolbarItem.IconImageSource>
+                --><!--<controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Users }" Style="{DynamicResource styleTitleIcon}" />--><!--
+                <FontImageSource FontFamily="FontAwesomeSolid" Glyph="{x:Static icons:FontAwesomeSolid.Users }" />
+            </ToolbarItem.IconImageSource>
+            
+        </ToolbarItem>
+
+        <ToolbarItem>
+            <ToolbarItem.IconImageSource>
+                --><!--<controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Users }" Style="{DynamicResource styleTitleIcon}" />--><!--
+                <FontImageSource FontFamily="FontAwesomeSolid" Glyph="{Binding CurrentDashboardCustomInfo.ThemeIcon}" />
+            </ToolbarItem.IconImageSource>
+
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>-->
     
 
     <ContentPage.Resources>

@@ -111,7 +111,7 @@
                            IsVisible="{Binding PixKeyList, Converter={StaticResource HasDataConverter}}"
                            />
 
-                <CollectionView ItemsSource="{Binding CurrentPixKeyActions}" HeightRequest="130" Margin="0,15,0,0" IsVisible="{Binding PixKeyList, Converter={StaticResource HasDataConverter}}">
+                <CollectionView ItemsSource="{Binding CurrentPixKeyActions}" HeightRequest="140" Margin="0,15,0,0" IsVisible="{Binding PixKeyList, Converter={StaticResource HasDataConverter}}">
 
                     <CollectionView.ItemsLayout>
                         <LinearItemsLayout Orientation="Horizontal"/>
@@ -127,7 +127,7 @@
                                 <Frame
                                     BackgroundColor="{DynamicResource foreground_page}"
                                     CornerRadius="15"
-                                    WidthRequest="110"
+                                    WidthRequest="120"
                                     VerticalOptions="FillAndExpand"
                                     Padding="15"
                                     >
