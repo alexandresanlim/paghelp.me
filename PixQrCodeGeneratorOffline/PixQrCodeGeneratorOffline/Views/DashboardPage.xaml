@@ -202,7 +202,7 @@
                             </LinearGradientBrush>
                         </StackLayout.Background>
 
-                        <controls:CustomCarouselView
+                        <CarouselView
                                 IndicatorView="indicatorView"
                                 PeekAreaInsets="40"
                                 ItemsSource="{Binding PixKeyList}"
@@ -211,7 +211,7 @@
                                 CurrentItemChangedCommand="{Binding ChangeSelectPixKeyCommand}"
                                 >
 
-                            <controls:CustomCarouselView.ItemTemplate>
+                            <CarouselView.ItemTemplate>
                                 <DataTemplate>
                                     <ScrollView>
                                         <Grid RowDefinitions="auto,*" Padding="0,15">
@@ -309,9 +309,9 @@
 
 
                                 </DataTemplate>
-                            </controls:CustomCarouselView.ItemTemplate>
+                            </CarouselView.ItemTemplate>
 
-                        </controls:CustomCarouselView>
+                        </CarouselView>
 
                         <IndicatorView x:Name="indicatorView"
                                        IndicatorsShape="Circle"

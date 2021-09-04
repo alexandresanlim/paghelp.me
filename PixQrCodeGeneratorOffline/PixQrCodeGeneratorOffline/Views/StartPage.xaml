@@ -107,7 +107,7 @@
 
             <ScrollView>
                 <StackLayout>
-                    <StackLayout Padding="15" Spacing="25">
+                    <StackLayout Padding="15" Spacing="20">
 
                         <StackLayout.Background>
                             <LinearGradientBrush EndPoint="0,1">
@@ -139,7 +139,7 @@
                         </Grid>
 
                         <StackLayout Spacing="0">
-                            <Label Text="{Binding CurrentDashboardCustomInfo.WelcomeText}" FontSize="{DynamicResource FontSizeMedium}" FontFamily="{DynamicResource FontBold}" TextColor="{DynamicResource textOnPrimary}" />
+                            <Label Text="{Binding CurrentDashboardCustomInfo.WelcomeText}" FontSize="{DynamicResource FontSizeLarge}" FontFamily="{DynamicResource FontBold}" TextColor="{DynamicResource textOnPrimary}" />
                             <Label Text="{Binding CurrentDashboardCustomInfo.WelcomeSubtitleText}" FontSize="{DynamicResource FontSizeSmall}" FontFamily="{DynamicResource FontSemiBold}" TextColor="{DynamicResource textOnPrimary}" />
                         </StackLayout>
 

@@ -98,14 +98,14 @@ namespace PixQrCodeGeneratorOffline.Models
                 },
                 new PixKeyAction
                 {
-                    Title = "Copiar",
+                    Title = "Copiar Chave",
                     Icon = FontAwesomeSolid.Copy,
                     Command = pixKey?.Command?.CopyKeyCommand,
                     Colors = pixKey?.FinancialInstitution?.Institution?.MaterialColor
                 },
                 new PixKeyAction
                 {
-                    Title = "Compartilhar",
+                    Title = "Compartilhar Chave",
                     Icon = FontAwesomeSolid.ShareAlt,
                     Command = pixKey?.Command?.ShareKeyCommand,
                     Colors = pixKey?.FinancialInstitution?.Institution?.MaterialColor
@@ -119,7 +119,7 @@ namespace PixQrCodeGeneratorOffline.Models
                 },
                 new PixKeyAction
                 {
-                    Title = "Editar",
+                    Title = "Editar Chave",
                     Icon = FontAwesomeSolid.Pen,
                     Command = pixKey?.Command?.EditKeyCommand,
                     Colors = pixKey?.FinancialInstitution?.Institution?.MaterialColor

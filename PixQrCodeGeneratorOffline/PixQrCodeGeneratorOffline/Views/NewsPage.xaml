@@ -44,7 +44,7 @@
                                     <Frame BackgroundColor="{StaticResource foreground_page}" CornerRadius="15" Padding="0">
 
                                         <StackLayout>
-                                            <controls:CustomImage Source="{Binding Image}" Aspect="Fill" HeightRequest="200" />
+                                            <Image Source="{Binding Image}" Aspect="Fill" HeightRequest="200" />
                                             <StackLayout Padding="15">
                                                 <Label Text="{Binding Source}" FontSize="{DynamicResource FontSizeSmall}" TextColor="{DynamicResource textPrimary}" FontFamily="{DynamicResource FontSemiBold}" />
                                                 <Label Text="{Binding Title}" FontSize="{DynamicResource FontSizeSmall}" TextColor="{DynamicResource textSecondary}" VerticalOptions="FillAndExpand"/>

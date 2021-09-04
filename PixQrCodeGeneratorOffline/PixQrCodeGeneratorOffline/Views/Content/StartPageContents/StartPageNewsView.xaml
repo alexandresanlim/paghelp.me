@@ -31,7 +31,7 @@
                                         <Grid ColumnDefinitions="auto,*" ColumnSpacing="15">
 
                                             <StackLayout Grid.Column="0">
-                                                <controls:CustomImage Source="{Binding Image}" Aspect="Fill" HeightRequest="80" WidthRequest="80" />
+                                                <Image Source="{Binding Image}" Aspect="Fill" HeightRequest="80" WidthRequest="80" />
                                             </StackLayout>
 
                                             <Label Grid.Column="1" Text="{Binding Title}" MaxLines="4" LineBreakMode="TailTruncation" FontSize="{DynamicResource FontSizeSmall}" TextColor="{DynamicResource textSecondary}" VerticalOptions="FillAndExpand"/>
