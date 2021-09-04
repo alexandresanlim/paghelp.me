@@ -34,7 +34,7 @@
                                 <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
                             </StackLayout.GestureRecognizers>
 
-                            <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.ChevronLeft }" Size="{DynamicResource FontSizeLarge}" IconColor="{DynamicResource textPrimary}" VerticalOptions="CenterAndExpand" />
+                            <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.ChevronLeft }" FontSize="{DynamicResource FontSizeLarge}" IconColor="{DynamicResource textPrimary}" VerticalOptions="CenterAndExpand" />
                         </StackLayout>
 
 
@@ -42,7 +42,7 @@
                             <StackLayout.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding SaveCommand}" />
                             </StackLayout.GestureRecognizers>
-                            <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Save }" Size="{DynamicResource FontSizeLarge}" IconColor="{DynamicResource textPrimary}" />
+                            <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Save }" FontSize="{DynamicResource FontSizeLarge}" IconColor="{DynamicResource textPrimary}" />
                             <Label Text="Salvar" TextColor="{DynamicResource textPrimary}" FontFamily="{DynamicResource FontBold}" />
                         </StackLayout>
                     </StackLayout>
@@ -91,8 +91,8 @@
 
                 <Frame BackgroundColor="{Binding CurrentPixPaylod.PixKey.FinancialInstitution.Institution.MaterialColor.PrimaryDark}" CornerRadius="10" Padding="15">
                     <Grid ColumnDefinitions="*, auto">
-                        <controls:CustomLabel Grid.Column="0" Text="{Binding CurrentPixPaylod.QrCode}" FontSize="Micro" MaxLines="2" LineBreakMode="TailTruncation" TextColor="{Binding CurrentPixPaylod.PixKey.FinancialInstitution.Institution.MaterialColor.TextOnPrimary}" />
-                        <controls:CustomIcon Grid.Column="1" Glyph="{x:Static icons:FontAwesomeSolid.ShareSquare }" IconSize="Medium" IconColor="{Binding CurrentPixPaylod.PixKey.FinancialInstitution.Institution.MaterialColor.TextOnPrimary}" VerticalOptions="CenterAndExpand" />
+                        <Label Grid.Column="0" Text="{Binding CurrentPixPaylod.QrCode}" FontSize="{StaticResource FontSizeMicro}" MaxLines="2" LineBreakMode="TailTruncation" TextColor="{Binding CurrentPixPaylod.PixKey.FinancialInstitution.Institution.MaterialColor.TextOnPrimary}" />
+                        <controls:CustomIcon Grid.Column="1" Glyph="{x:Static icons:FontAwesomeSolid.ShareSquare }" FontSize="{StaticResource FontSizeMedium}" IconColor="{Binding CurrentPixPaylod.PixKey.FinancialInstitution.Institution.MaterialColor.TextOnPrimary}" VerticalOptions="CenterAndExpand" />
                     </Grid>
                 </Frame>
             </StackLayout>

@@ -6,6 +6,6 @@
              xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon"
              >
   <ContentView.Content>
-        <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.ChevronRight }" HorizontalOptions="End" Size="{DynamicResource FontSizeMedium}"  IconColor="{DynamicResource textSecondary}" VerticalOptions="CenterAndExpand" />
+        <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.ChevronRight }" HorizontalOptions="End" FontSize="{DynamicResource FontSizeMedium}"  IconColor="{DynamicResource textSecondary}" VerticalOptions="CenterAndExpand" />
     </ContentView.Content>
 </ContentView>

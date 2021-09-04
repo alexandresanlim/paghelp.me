@@ -3,7 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PixQrCodeGeneratorOffline.App"
              xmlns:adscontrols="clr-namespace:MarcTron.Plugin.Controls;assembly=Plugin.MtAdmob" 
-             xmlns:converters="clr-namespace:PixQrCodeGeneratorOffline.Converters">
+             xmlns:converters="clr-namespace:PixQrCodeGeneratorOffline.Converters"
+             xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
+             >
     <!--
         Define global resources and styles here, that apply to all pages in your app.
     -->
@@ -88,6 +90,10 @@
 
         <Style TargetType="ContentPage">
             <Setter Property="BackgroundColor" Value="{DynamicResource background_page}"/>
+        </Style>
+
+        <Style TargetType="controls:CustomIcon">
+            <Setter Property="FontSize" Value="{StaticResource FontSizeMedium}"/>
         </Style>
 
         <ResourceDictionary>

@@ -56,7 +56,7 @@
             </Style>
 
             <Style x:Key="styleActionIcon" TargetType="controls:CustomIcon">
-                <Setter Property="Size" Value="{DynamicResource FontSizeLarge}"/>
+                <Setter Property="FontSize" Value="{DynamicResource FontSizeLarge}"/>
                 <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
                 <Setter Property="IconColor" Value="{DynamicResource textSecondary}" />
             </Style>
@@ -85,7 +85,7 @@
 
                         <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                             <Label Text="{Binding CurrentDescription}" FontSize="{DynamicResource FontSizeSmall}" TextColor="{Binding CurrentStyleFromKey.TextOnPrimary}" FontFamily="{DynamicResource FontBold}"/>
-                            <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Edit }" Size="{DynamicResource FontSizeMicro}" IconColor="{Binding CurrentStyleFromKey.TextOnPrimary}" />
+                            <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Edit }" FontSize="{DynamicResource FontSizeMicro}" IconColor="{Binding CurrentStyleFromKey.TextOnPrimary}" />
                         </StackLayout>
                     </Frame>
                 </StackLayout>
@@ -125,14 +125,14 @@
                         <Frame.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding InputTextCommand}" CommandParameter="5"/>
                         </Frame.GestureRecognizers>
-                        <Label Text="5" FontAttributes="Bold" Style="{DynamicResource styleKeyboardBilling}" />
+                        <Label Text="5" Style="{DynamicResource styleKeyboardBilling}" />
                     </Frame>
 
                     <Frame Grid.Row="1" Grid.Column="2" Style="{DynamicResource styleButtonKeyboard}">
                         <Frame.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding InputTextCommand}" CommandParameter="6"/>
                         </Frame.GestureRecognizers>
-                        <Label Text="6" FontAttributes="Bold" Style="{DynamicResource styleKeyboardBilling}" />
+                        <Label Text="6" Style="{DynamicResource styleKeyboardBilling}" />
                     </Frame>
 
 
@@ -140,21 +140,21 @@
                         <Frame.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding InputTextCommand}" CommandParameter="7"/>
                         </Frame.GestureRecognizers>
-                        <Label Text="7" FontAttributes="Bold" Style="{DynamicResource styleKeyboardBilling}" />
+                        <Label Text="7" Style="{DynamicResource styleKeyboardBilling}" />
                     </Frame>
 
                     <Frame Grid.Row="2" Grid.Column="1" Style="{DynamicResource styleButtonKeyboard}">
                         <Frame.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding InputTextCommand}" CommandParameter="8"/>
                         </Frame.GestureRecognizers>
-                        <Label Text="8" FontAttributes="Bold" Style="{DynamicResource styleKeyboardBilling}" />
+                        <Label Text="8" Style="{DynamicResource styleKeyboardBilling}" />
                     </Frame>
 
                     <Frame Grid.Row="2" Grid.Column="2" Style="{DynamicResource styleButtonKeyboard}">
                         <Frame.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding InputTextCommand}" CommandParameter="9"/>
                         </Frame.GestureRecognizers>
-                        <Label Text="9" FontAttributes="Bold" Style="{DynamicResource styleKeyboardBilling}" />
+                        <Label Text="9" Style="{DynamicResource styleKeyboardBilling}" />
                     </Frame>
 
                     <Frame Grid.Row="3" Grid.Column="0" Style="{DynamicResource styleButtonKeyboard}">

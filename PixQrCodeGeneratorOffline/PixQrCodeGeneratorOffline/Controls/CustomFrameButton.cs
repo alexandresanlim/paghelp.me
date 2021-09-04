@@ -1,7 +1,4 @@
 ﻿using PixQrCodeGeneratorOffline.Behavior;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -9,7 +6,7 @@ namespace PixQrCodeGeneratorOffline.Controls
 {
     public class CustomFrameButton : Frame
     {
-        private CustomLabel TexButtonValue { get; set; } = new CustomLabel
+        private Label TexButtonValue { get; set; } = new Label
         {
             FontAttributes = FontAttributes.Bold,
             TextColor = App.ThemeColors.TextOnPrimary,
@@ -107,22 +104,22 @@ namespace PixQrCodeGeneratorOffline.Controls
             set { SetValue(LeftIconProperty, value); }
         }
 
-        public static readonly BindableProperty FontSizeProperty =
-           BindableProperty.Create(nameof(FontSize), typeof(NamedSize), typeof(CustomFrameButton), NamedSize.Default, BindingMode.Default, null, propertyChanged: (BindableObject bindable, object oldValue, object newValue) =>
-           {
-               var value = (NamedSize)newValue;
+        //public static readonly BindableProperty FontSizeProperty =
+        //   BindableProperty.Create(nameof(FontSize), typeof(NamedSize), typeof(CustomFrameButton), NamedSize.Default, BindingMode.Default, null, propertyChanged: (BindableObject bindable, object oldValue, object newValue) =>
+        //   {
+        //       var value = (NamedSize)newValue;
 
-               var b = (CustomFrameButton)bindable;
+        //       var b = (CustomFrameButton)bindable;
 
-               b.TexButtonValue.FontSize = Device.GetNamedSize(value, typeof(Label));
-               b.IconValue.IconSize = value == NamedSize.Micro ? NamedSize.Small : value == NamedSize.Small ? NamedSize.Medium : value == NamedSize.Medium ? NamedSize.Large : NamedSize.Default;
-           });
+        //       b.TexButtonValue.FontSize = Device.GetNamedSize(value, typeof(Label));
+        //       b.IconValue.IconSize = value == NamedSize.Micro ? NamedSize.Small : value == NamedSize.Small ? NamedSize.Medium : value == NamedSize.Medium ? NamedSize.Large : NamedSize.Default;
+        //   });
 
-        public NamedSize FontSize
-        {
-            get { return (NamedSize)GetValue(FontSizeProperty); }
-            set { SetValue(FontSizeProperty, value); }
-        }
+        //public NamedSize FontSize
+        //{
+        //    get { return (NamedSize)GetValue(FontSizeProperty); }
+        //    set { SetValue(FontSizeProperty, value); }
+        //}
 
         public static readonly BindableProperty ButtonStyleProperty =
            BindableProperty.Create(nameof(ButtonStyle), typeof(CustomFrameButtonStyle), typeof(CustomFrameButton), CustomFrameButtonStyle.Modern, BindingMode.Default, null, propertyChanged: (BindableObject bindable, object oldValue, object newValue) =>

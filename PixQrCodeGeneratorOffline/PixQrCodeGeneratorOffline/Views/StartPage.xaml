@@ -47,7 +47,7 @@
 
             <Style x:Key="styleTitleIcon" TargetType="controls:CustomIcon">
                 <Setter Property="HorizontalOptions" Value="Start"/>
-                <Setter Property="Size" Value="{DynamicResource FontSizeMedium}" />
+                <Setter Property="FontSize" Value="{DynamicResource FontSizeMedium}" />
                 <Setter Property="IconColor" Value="{DynamicResource textSecondary}" />
             </Style>
 
@@ -66,7 +66,7 @@
 
             <Style x:Key="styleGridActionChevronIcon" TargetType="controls:CustomIcon">
                 <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
-                <Setter Property="Size" Value="{DynamicResource FontSizeMedium}"/>
+                <Setter Property="FontSize" Value="{DynamicResource FontSizeMedium}"/>
                 <Setter Property="IconColor" Value="{DynamicResource textSecondary}"/>
                 <Setter Property="Grid.Column" Value="0" />
             </Style>
@@ -102,7 +102,7 @@
             </Style>
 
             <Style x:Key="styleActionIcon" TargetType="controls:CustomIcon">
-                <Setter Property="Size" Value="{DynamicResource FontSizeSmall}"/>
+                <Setter Property="FontSize" Value="{DynamicResource FontSizeSmall}"/>
                 <Setter Property="IconColor" Value="{DynamicResource textSecondary}" />
             </Style>
 
@@ -115,7 +115,7 @@
             </Style>
 
             <Style x:Key="styleIconActionListContact" TargetType="controls:CustomIcon">
-                <Setter Property="Size" Value="{DynamicResource FontSizeMedium}"/>
+                <Setter Property="FontSize" Value="{DynamicResource FontSizeMedium}"/>
                 <Setter Property="HorizontalOptions" Value="Center"/>
                 <Setter Property="IconColor" Value="{DynamicResource textSecondary}"/>
             </Style>
@@ -176,7 +176,7 @@
 
 
 
-                        <StackLayout Style="{DynamicResource styleTitlePanel}" Spacing="0" Padding="10,40,10,40" BackgroundColor="{DynamicResource primaryDark}">
+                        <StackLayout Style="{DynamicResource styleTitlePanel}" Spacing="0" Padding="10,45,10,40" BackgroundColor="{DynamicResource primaryDark}">
                             
                             
 
@@ -330,10 +330,10 @@
 
             <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="{DynamicResource background_page}" IsVisible="{Binding CurrentDashboardCustomInfo.IsVisibleFingerPrint}">
                 <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Padding="10,0">
-                    <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.EyeSlash }" IconColor="{DynamicResource textPrimary}" Size="50" HorizontalOptions="Center"/>
+                    <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.EyeSlash }" IconColor="{DynamicResource textPrimary}" FontSize="50" HorizontalOptions="Center"/>
 
-                    <controls:CustomLabel Text="Autenticar para continuar" TextColor="{DynamicResource textPrimary}" FontSize="{StaticResource FontSizeMedium}" FontAttributes="Bold" HorizontalOptions="Center"/>
-                    <controls:CustomLabel Text="é preciso autenticar para continuar" TextColor="{DynamicResource textPrimary}" FontSize="{StaticResource FontSizeSmall}" HorizontalOptions="Center"/>
+                    <Label Text="Autenticar para continuar" TextColor="{DynamicResource textPrimary}" FontSize="{StaticResource FontSizeMedium}" FontFamily="{StaticResource FontSemiBold}" HorizontalOptions="Center"/>
+                    <Label Text="é preciso autenticar para continuar" TextColor="{DynamicResource textPrimary}" FontSize="{StaticResource FontSizeSmall}" HorizontalOptions="Center"/>
 
                     <controls:CustomFrameButton TextButton="Autenticar Agora" TapButtonCommand="{Binding AuthenticationCommand}" Margin="0,15,0,0"/>
                 </StackLayout>
@@ -360,7 +360,7 @@
 
                                 <StackLayout VerticalOptions="CenterAndExpand" Spacing="30">
                                     <StackLayout VerticalOptions="Center" Spacing="15">
-                                        <controls:CustomIcon Glyph="{Binding Emoji}" Size="100" IconColor="{DynamicResource textOnSecondary}" />
+                                        <controls:CustomIcon Glyph="{Binding Emoji}" FontSize="100" IconColor="{DynamicResource textOnSecondary}" />
                                         <Label Text="{Binding Title}" HorizontalOptions="Center" FontSize="{DynamicResource FontSizeLarge}" FontFamily="{DynamicResource FontSemiBold}" TextColor="{DynamicResource textOnPrimary}"/>
 
                                     </StackLayout>
@@ -398,7 +398,7 @@
 
                             <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
 
-                                <controls:CustomLabel Text="Começar Agora!" FontSize="{StaticResource FontSizeSmall}" FontAttributes="Bold" TextColor="{DynamicResource textOnSecondary}" />
+                                <Label Text="Começar Agora!" FontSize="{StaticResource FontSizeSmall}" FontFamily="{StaticResource FontSemiBold}" TextColor="{DynamicResource textOnSecondary}" />
                                 <!--<controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.PlusCircle }" IconSize="Small" IconColor="{DynamicResource textOnSecondary}" />-->
                             </StackLayout>
                         </Frame>
@@ -409,7 +409,7 @@
                             </Frame.GestureRecognizers>
 
 
-                            <controls:CustomLabel Text="Próximo" FontSize="{StaticResource FontSizeSmall}" HorizontalOptions="Center" FontAttributes="Bold" TextColor="{DynamicResource textOnSecondary}" />
+                            <Label Text="Próximo" FontSize="{StaticResource FontSizeSmall}" HorizontalOptions="Center" FontFamily="{StaticResource FontSemiBold}" TextColor="{DynamicResource textOnSecondary}" />
 
                         </Frame>
                     </Grid>

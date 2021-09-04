@@ -48,7 +48,7 @@ namespace PixQrCodeGeneratorOffline.Views
 
         private void ReloadStatusBar()
         {
-            App.StatusBarService.SetStatusBarColor(App.ThemeColors.Primary);
+            App.StatusBarService.SetStatusBarColor(App.ThemeColors.PrimaryDark);
         }
 
         //protected override void OnDisappearing()

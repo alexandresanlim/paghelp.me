@@ -25,7 +25,7 @@
 
             <Style x:Key="styleTitleIcon" TargetType="controls:CustomIcon">
                 <Setter Property="HorizontalOptions" Value="Start"/>
-                <Setter Property="Size" Value="{DynamicResource FontSizeMedium}" />
+                <Setter Property="FontSize" Value="{DynamicResource FontSizeMedium}" />
                 <Setter Property="IconColor" Value="{DynamicResource textSecondary}" />
             </Style>
 

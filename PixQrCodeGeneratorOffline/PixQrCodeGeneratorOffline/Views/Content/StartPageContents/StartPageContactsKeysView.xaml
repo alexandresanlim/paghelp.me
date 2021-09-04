@@ -29,7 +29,7 @@
                                 <Frame VerticalOptions="FillAndExpand" CornerRadius="10" Padding="15" BackgroundColor="{DynamicResource foreground_page}" WidthRequest="150">
                                     <StackLayout Spacing="15" HorizontalOptions="FillAndExpand">
 
-                                        <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.UserCircle }" Grid.Column="0" Size="60" IconColor="{DynamicResource textSecondary}" VerticalOptions="Center" />
+                                        <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.UserCircle }" Grid.Column="0" FontSize="60" IconColor="{DynamicResource textSecondary}" VerticalOptions="Center" />
 
                                         <StackLayout Spacing="0">
                                             <Label Text="{Binding Viewer.NamePresentation}" TextColor="{DynamicResource textSecondary}" FontFamily="{DynamicResource FontBold}" FontSize="{StaticResource FontSizeMedium}"  />

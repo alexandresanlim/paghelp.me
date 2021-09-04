@@ -47,7 +47,7 @@
                                                 <StackLayout.GestureRecognizers>
                                                     <TapGestureRecognizer Command="{Binding Command.ShareCommand }"/>
                                                 </StackLayout.GestureRecognizers>
-                                                <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.ShareAlt }" Size="{DynamicResource FontSizeMedium}"  IconColor="{DynamicResource textSecondary}" HorizontalOptions="CenterAndExpand" />
+                                                <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.ShareAlt }" FontSize="{DynamicResource FontSizeMedium}"  IconColor="{DynamicResource textSecondary}" HorizontalOptions="CenterAndExpand" />
                                             </StackLayout>
                                         </StackLayout>
                                     </StackLayout>

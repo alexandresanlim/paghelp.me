@@ -45,14 +45,14 @@
                     <StackLayout.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding DeleteCommand}" />
                     </StackLayout.GestureRecognizers>
-                    <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.TrashAlt }" IconSize="Medium" IconColor="{DynamicResource textPrimary}" />
+                    <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.TrashAlt }" FontSize="{StaticResource FontSizeMedium}" IconColor="{DynamicResource textPrimary}" />
                     <Label Text="Excluir" TextColor="{DynamicResource textPrimary}" FontFamily="{DynamicResource FontBold}" />
                 </StackLayout>
                 <StackLayout Padding="10,15,10,0">
                     <StackLayout.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding SaveCommand}" />
                     </StackLayout.GestureRecognizers>
-                    <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Save }" IconSize="Medium" IconColor="{DynamicResource textPrimary}" />
+                    <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Save }" FontSize="{StaticResource FontSizeMedium}" IconColor="{DynamicResource textPrimary}" />
                     <Label Text="Salvar" TextColor="{DynamicResource textPrimary}" FontFamily="{DynamicResource FontBold}" />
                 </StackLayout>
             </StackLayout>
@@ -69,7 +69,7 @@
                     <DataTemplate x:DataType="helpers:AddPixInput">
                         <StackLayout Padding="5,15,5,0">
                             <StackLayout Spacing="15" Padding="0,15,0,0">
-                                <controls:CustomIcon Glyph="{Binding Icon}" Size="{DynamicResource FontSizeLarge}" IconColor="{DynamicResource textSecondary}" />
+                                <controls:CustomIcon HorizontalOptions="CenterAndExpand" Glyph="{Binding Icon}" FontSize="{DynamicResource FontSizeLarge}" IconColor="{DynamicResource textSecondary}" />
                                 <Label Text="{Binding Title}" TextColor="{DynamicResource textSecondary}" FontSize="{DynamicResource FontSizeLarge}" HorizontalTextAlignment="Center" FontFamily="{StaticResource FontBold}" />
                             </StackLayout>
                             <Frame BackgroundColor="{DynamicResource foreground_page}" Padding="15,30" CornerRadius="10" IsVisible="{Binding IsInstitution, Converter={StaticResource InvertedBooleanConverter}}">
@@ -84,7 +84,7 @@
                                 </Frame.GestureRecognizers>
                                 <StackLayout Orientation="Horizontal">
                                     <Label Text="{Binding Placeholder}" FontFamily="{DynamicResource FontBold}" FontSize="{DynamicResource FontSizeMedium}" TextColor="{DynamicResource textSecondary}" HorizontalOptions="FillAndExpand" />
-                                    <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.ChevronDown }" Size="{DynamicResource FontSizeLarge}" IconColor="{DynamicResource textSecondary}" />
+                                    <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.ChevronDown }" FontSize="{DynamicResource FontSizeLarge}" IconColor="{DynamicResource textSecondary}" />
                                 </StackLayout>
 
                             </Frame>
@@ -126,26 +126,26 @@
                     <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.ChevronLeft }" IconSize="Title" IconColor="{Binding CurrenStyle.TextOnPrimary}" VerticalOptions="CenterAndExpand" />
                 </StackLayout>
 
-                <controls:CustomLabel Text="Editar Chave" FontAttributes="Bold" TextColor="{Binding CurrenStyle.TextOnPrimary}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" FontSize="Medium" />
+                <controls:CustomLabel Text="Editar Chave" FontFamily="Bold" TextColor="{Binding CurrenStyle.TextOnPrimary}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" FontSize="Medium" />
 
                 <StackLayout Padding="10" IsVisible="{Binding IsEdit}">
                     <StackLayout.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding DeleteCommand}" />
                     </StackLayout.GestureRecognizers>
                     <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.TrashAlt }" IconSize="Medium" IconColor="{Binding CurrenStyle.TextOnPrimary}" />
-                    <controls:CustomLabel Text="Excluir" TextColor="{Binding CurrenStyle.TextOnPrimary}" FontAttributes="Bold" />
+                    <controls:CustomLabel Text="Excluir" TextColor="{Binding CurrenStyle.TextOnPrimary}" FontFamily="Bold" />
                 </StackLayout>
                 <StackLayout Padding="10">
                     <StackLayout.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding SaveCommand}" />
                     </StackLayout.GestureRecognizers>
                     <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Save }" IconSize="Medium" IconColor="{Binding CurrenStyle.TextOnPrimary}" />
-                    <controls:CustomLabel Text="Salvar" TextColor="{Binding CurrenStyle.TextOnPrimary}" FontAttributes="Bold" />
+                    <controls:CustomLabel Text="Salvar" TextColor="{Binding CurrenStyle.TextOnPrimary}" FontFamily="Bold" />
                 </StackLayout>
             </StackLayout>-->
 
         <!--<StackLayout Grid.Row="1" Padding="15">
-                <controls:CustomLabel Text="IMPORTANTE" FontAttributes="Bold" TextColor="{Binding CurrenStyle.TextOnPrimary}" />
+                <controls:CustomLabel Text="IMPORTANTE" FontFamily="Bold" TextColor="{Binding CurrenStyle.TextOnPrimary}" />
 
                 <controls:CustomCarouselView
                                 IndicatorView="indicatorView"

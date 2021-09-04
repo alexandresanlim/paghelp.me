@@ -16,7 +16,7 @@
                             <TapGestureRecognizer Tapped="TapGestureRecognizerBackButtonPressed_Tapped"/>
                         </StackLayout.GestureRecognizers>
 
-                        <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.ChevronLeft }" Size="{DynamicResource FontSizeLarge}" IconColor="{DynamicResource textPrimary}" />
+                        <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.ChevronLeft }" FontSize="{DynamicResource FontSizeLarge}" IconColor="{DynamicResource textPrimary}" />
                     </StackLayout>
 
                     <Label Grid.Column="1"
@@ -34,7 +34,7 @@
                             <TapGestureRecognizer Command="{Binding SaveCommand}" />
                         </StackLayout.GestureRecognizers>
                         <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Save }" IconSize="Large" IconColor="{DynamicResource textOnPrimary}" />
-                        <controls:CustomLabel Text="Salvar" TextColor="{DynamicResource textOnPrimary}" FontAttributes="Bold" />
+                        <controls:CustomLabel Text="Salvar" TextColor="{DynamicResource textOnPrimary}" FontFamily="Bold" />
                     </StackLayout>-->
                 </Grid>
                 <ContentPresenter Grid.Row="1" />

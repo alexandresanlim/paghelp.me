@@ -21,7 +21,7 @@
 
                 <StackLayout>
                     <StackLayout VerticalOptions="CenterAndExpand">
-                        <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Wind }" Size="50" IconColor="{DynamicResource textPrimary}" />
+                        <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Wind }" FontSize="50" IconColor="{DynamicResource textPrimary}" />
                         <Label Text="Ainda não há nada por aqui." HorizontalOptions="CenterAndExpand" TextColor="{DynamicResource textPrimary}" />
                     </StackLayout>
                 </StackLayout>
@@ -54,7 +54,7 @@
                                         <Label Grid.Row="1" Grid.Column="1" Text="{Binding PixKey.Viewer.KeyPresentation}" TextColor="{DynamicResource textSecondary}" VerticalOptions="CenterAndExpand" MaxLines="1" LineBreakMode="TailTruncation" />
                                     </Grid>
 
-                                    <Label Grid.Row="2" Grid.Column="1" Text="{Binding PixCob.Viewer.ValuePresentation}" TextColor="{Binding PixKey.FinancialInstitution.Institution.MaterialColor.Primary}" FontAttributes="Bold" FontFamily="{DynamicResource FontBold}" FontSize="{DynamicResource FontSizeLarge}" />
+                                    <Label Grid.Row="2" Grid.Column="1" Text="{Binding PixCob.Viewer.ValuePresentation}" TextColor="{Binding PixKey.FinancialInstitution.Institution.MaterialColor.Primary}" FontFamily="{DynamicResource FontBold}" FontSize="{DynamicResource FontSizeLarge}" />
 
                                 </StackLayout>
                             </Grid>

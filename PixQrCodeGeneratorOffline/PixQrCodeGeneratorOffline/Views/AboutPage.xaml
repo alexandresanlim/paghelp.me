@@ -25,7 +25,7 @@
             <ScrollView Padding="15,10">
                 <StackLayout Spacing="30">
                     <!--<StackLayout Spacing="0">
-                        <controls:CustomLabel Text="Segurança" TextColor="{DynamicResource textOnPrimary}" FontSize="Large" FontAttributes="Bold"  />
+                        <controls:CustomLabel Text="Segurança" TextColor="{DynamicResource textOnPrimary}" FontSize="Large" FontFamily="Bold"  />
 
                         <controls:CustomFrame Padding="15" BackgroundColor="{DynamicResource backgroundTransparent}" CornerRadius="10">
                             <controls:CustomFrame.GestureRecognizers>
@@ -34,7 +34,7 @@
 
                             <StackLayout>
                                 <controls:CustomLabel Text="Somos open source! O que isso significa? Todo o código deste aplicativo é aberto, com isso é possível que qualquer pessoa no mundo possa audita-lo, evitando assim fraudes, compartilhamento de informações ou quaisquer outros tipos de práticas abusivas." TextColor="{DynamicResource textOnBackgroundTransparent}" FontSize="Small" />
-                                <controls:CustomLabel Text="Toque aqui para visualizar" FontAttributes="Bold" TextColor="{DynamicResource textOnBackgroundTransparent}" FontSize="Small" />
+                                <controls:CustomLabel Text="Toque aqui para visualizar" FontFamily="Bold" TextColor="{DynamicResource textOnBackgroundTransparent}" FontSize="Small" />
                             </StackLayout>
 
 
@@ -43,7 +43,7 @@
                     </StackLayout>-->
 
                     <!--<StackLayout Spacing="0">
-                    <controls:CustomLabel Text="Build" TextColor="{DynamicResource textOnPrimary}" FontSize="Large" FontAttributes="Bold" />
+                    <controls:CustomLabel Text="Build" TextColor="{DynamicResource textOnPrimary}" FontSize="Large" FontFamily="Bold" />
                     <controls:CustomFrame Padding="15" BackgroundColor="{DynamicResource primaryDark}" CornerRadius="10">
                         <controls:CustomLabel x:Name="lbBuild" Text="Build" TextColor="{DynamicResource textOnPrimary}" FontSize="Small" />
                     </controls:CustomFrame>
@@ -52,7 +52,7 @@
                     <StackLayout>
                         <Label Text="Versão" Style="{StaticResource titleStyle}" />
                         <Frame Style="{StaticResource styleFrameMenuAbout}">
-                            <controls:CustomLabel x:Name="lbVersion" Text="versão" TextColor="{DynamicResource textPrimary}" FontSize="{StaticResource FontSizeMedium}" FontAttributes="Bold" />
+                            <Label x:Name="lbVersion" Text="versão" TextColor="{DynamicResource textPrimary}" FontSize="{StaticResource FontSizeMedium}" FontFamily="{StaticResource FontSemiBold}" />
                         </Frame>
                     </StackLayout>
 
@@ -64,8 +64,8 @@
                             </Frame.GestureRecognizers>
                             <StackLayout Orientation="Horizontal" Spacing="10">
                             <controls:CustomIcon Glyph="{Binding CurrentStoreIcon}" IconType="brand" IconColor="{DynamicResource textPrimary}" />
-                            <controls:CustomLabel Text="{Binding CurrentStore}" VerticalOptions="CenterAndExpand" TextColor="{DynamicResource textPrimary}" FontAttributes="Bold" FontSize="{StaticResource FontSizeMedium}" />
-                            <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.ChevronRight}" IconColor="{DynamicResource textPrimary}" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" Size="{StaticResource FontSizeMedium}" />
+                            <Label Text="{Binding CurrentStore}" VerticalOptions="CenterAndExpand" TextColor="{DynamicResource textPrimary}" FontFamily="{StaticResource FontSemiBold}" FontSize="{StaticResource FontSizeMedium}" />
+                            <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.ChevronRight}" IconColor="{DynamicResource textPrimary}" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" FontSize="{StaticResource FontSizeMedium}" />
                             </StackLayout>
                         </Frame>
                     </StackLayout>
@@ -79,7 +79,7 @@
 
                             <StackLayout Orientation="Horizontal" Spacing="10">
                                 <controls:CustomIcon IconType="brand" Glyph="{x:Static icons:FontAwesomeBrands.Instagram}" IconColor="{DynamicResource textOnSecondary}" />
-                                <controls:CustomLabel Text="Siga-nos no Instagram" TextColor="{DynamicResource textOnSecondary}" FontAttributes="Bold" FontSize="{StaticResource FontSizeMedium}" />
+                                <controls:CustomLabel Text="Siga-nos no Instagram" TextColor="{DynamicResource textOnSecondary}" FontFamily="Bold" FontSize="{StaticResource FontSizeMedium}" />
                                 <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.ChevronRight}" IconColor="{DynamicResource textOnSecondary}" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" Size="{StaticResource FontSizeMedium}" />
                             </StackLayout>
 
@@ -95,8 +95,8 @@
 
                             <StackLayout Orientation="Horizontal" Spacing="10">
                             <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.PaperPlane}" IconColor="{DynamicResource textPrimary}" />
-                            <controls:CustomLabel Text="Envie uma mensagem" TextColor="{DynamicResource textPrimary}" FontAttributes="Bold" FontSize="{StaticResource FontSizeMedium}" MaxLines="1" LineBreakMode="TailTruncation" />
-                            <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.ChevronRight}" IconColor="{DynamicResource textPrimary}" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" Size="{StaticResource FontSizeMedium}" />
+                            <Label Text="Envie uma mensagem" TextColor="{DynamicResource textPrimary}" FontFamily="{StaticResource FontSemiBold}" FontSize="{StaticResource FontSizeMedium}" MaxLines="1" LineBreakMode="TailTruncation" />
+                            <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.ChevronRight}" IconColor="{DynamicResource textPrimary}" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" FontSize="{StaticResource FontSizeMedium}" />
                             </StackLayout>
 
                         </Frame>
@@ -105,21 +105,21 @@
 
 
                     <!--<StackLayout Spacing="0">
-                    <controls:CustomLabel Text="Lançamento da versão" TextColor="{DynamicResource textOnPrimary}" FontSize="Large" FontAttributes="Bold" />
+                    <controls:CustomLabel Text="Lançamento da versão" TextColor="{DynamicResource textOnPrimary}" FontSize="Large" FontFamily="Bold" />
                     <controls:CustomFrame Padding="15" BackgroundColor="{DynamicResource backgroundTransparent}" CornerRadius="10">
                         <controls:CustomLabel x:Name="lbDate" Text="lançamento" TextColor="{DynamicResource textOnBackgroundTransparent}" FontSize="Small" />
                     </controls:CustomFrame>
                 </StackLayout>-->
 
                     <!--<StackLayout Spacing="0">
-                        <controls:CustomLabel Text="Ajude-nos a manter" TextColor="{DynamicResource textOnPrimary}" FontSize="Large" FontAttributes="Bold" />
+                        <controls:CustomLabel Text="Ajude-nos a manter" TextColor="{DynamicResource textOnPrimary}" FontSize="Large" FontFamily="Bold" />
                         <controls:CustomFrame Padding="15" BackgroundColor="{DynamicResource backgroundTransparent}" CornerRadius="10">
                             <controls:CustomFrame.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding SupportCommand}" />
                             </controls:CustomFrame.GestureRecognizers>
                             <StackLayout>
                                 <controls:CustomLabel Text="Somos gratuitos e independentes, estamos sempre buscando constantes melhorias para os nossos usuários, corrigindo bugs e melhorando a sua experiência, assim pedidos encarecidamente que apoie-nos de alguma forma, são essas: compartilhando, avaliando na loja ou fazendo uma doação." TextColor="{DynamicResource textOnBackgroundTransparent}" FontSize="Small" />
-                                <controls:CustomLabel Text="Toque aqui para ver as opções" FontAttributes="Bold" TextColor="{DynamicResource textOnBackgroundTransparent}" FontSize="Small" />
+                                <controls:CustomLabel Text="Toque aqui para ver as opções" FontFamily="Bold" TextColor="{DynamicResource textOnBackgroundTransparent}" FontSize="Small" />
                             </StackLayout>
 
                         </controls:CustomFrame>
@@ -127,7 +127,7 @@
 
 
                     <StackLayout Spacing="0">
-                        <controls:CustomLabel Text="Agradecimento" TextColor="{DynamicResource textOnPrimary}" FontSize="Large" FontAttributes="Bold" />
+                        <controls:CustomLabel Text="Agradecimento" TextColor="{DynamicResource textOnPrimary}" FontSize="Large" FontFamily="Bold" />
                         <controls:CustomFrame Padding="15" BackgroundColor="{DynamicResource backgroundTransparent}" CornerRadius="10">
                             <StackLayout Spacing="0">
                                 <controls:CustomLabel Text="- krisdhya Vitória, por revisar textos." TextColor="{DynamicResource textOnBackgroundTransparent}" FontSize="Small" />

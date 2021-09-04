@@ -132,7 +132,7 @@
                                     Padding="15"
                                     >
                                     <StackLayout>
-                                        <controls:CustomIcon Glyph="{Binding Icon}" IconColor="{Binding Colors.Primary}" Size="{DynamicResource FontSizeLarge}" HorizontalOptions="Start" />
+                                        <controls:CustomIcon Glyph="{Binding Icon}" IconColor="{Binding Colors.Primary}" FontSize="{DynamicResource FontSizeLarge}" HorizontalOptions="Start" />
 
                                         <Label Text="{Binding Title}" FontFamily="{DynamicResource FontSemiBold}" TextColor="{Binding Colors.Primary}" FontSize="{DynamicResource FontSizeSmall}" VerticalOptions="EndAndExpand" />
                                     </StackLayout>

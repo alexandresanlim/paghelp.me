@@ -29,7 +29,7 @@
 
                             <StackLayout VerticalOptions="CenterAndExpand" Spacing="30">
                                 <StackLayout VerticalOptions="Center" Spacing="15">
-                                    <controls:CustomIcon Glyph="{Binding Emoji}" Size="100" IconColor="{DynamicResource textOnSecondary}" />
+                                    <controls:CustomIcon Glyph="{Binding Emoji}" FontSize="100" IconColor="{DynamicResource textOnSecondary}" />
                                     <Label Text="{Binding Title}" HorizontalOptions="Center" FontSize="{DynamicResource FontSizeLarge}" FontFamily="{DynamicResource FontSemiBold}" TextColor="{DynamicResource textOnPrimary}"/>
 
                                 </StackLayout>
@@ -75,8 +75,8 @@
 
                         <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
 
-                            <Label Text="Adicionar minha primeira chave" FontSize="{StaticResource FontSizeSmall}" FontAttributes="Bold" TextColor="{DynamicResource textOnSecondary}" />
-                            <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.PlusCircle }" IconSize="Small" IconColor="{DynamicResource textOnSecondary}" />
+                            <Label Text="Adicionar minha primeira chave" FontSize="{StaticResource FontSizeSmall}" FontFamily="{StaticResource FontSemiBold}" TextColor="{DynamicResource textOnSecondary}" />
+                            <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.PlusCircle }" FontSize="{StaticResource FontSizeSmall}" IconColor="{DynamicResource textOnSecondary}" />
                         </StackLayout>
                     </Frame>
 
@@ -86,7 +86,7 @@
                         </Frame.GestureRecognizers>
 
 
-                        <controls:CustomLabel Text="Próximo" FontSize="{StaticResource FontSizeSmall}" HorizontalOptions="Center" FontAttributes="Bold" TextColor="{DynamicResource textOnSecondary}" />
+                        <Label Text="Próximo" FontSize="{StaticResource FontSizeSmall}" HorizontalOptions="Center" FontFamily="{StaticResource FontSemiBold}" TextColor="{DynamicResource textOnSecondary}" />
 
                     </Frame>
                 </Grid>
