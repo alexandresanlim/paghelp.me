@@ -1,9 +1,6 @@
 ﻿using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
-using System;
 using System.Collections.Generic;
-using System.Text;
-using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.Models.Services

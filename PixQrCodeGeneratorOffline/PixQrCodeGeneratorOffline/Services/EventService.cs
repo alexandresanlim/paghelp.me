@@ -1,8 +1,6 @@
 ﻿using Microsoft.AppCenter.Analytics;
 using PixQrCodeGeneratorOffline.Services.Interfaces;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace PixQrCodeGeneratorOffline.Services
 {

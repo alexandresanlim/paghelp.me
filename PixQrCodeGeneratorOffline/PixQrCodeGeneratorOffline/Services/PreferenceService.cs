@@ -1,11 +1,8 @@
-﻿using Acr.UserDialogs;
-using PixQrCodeGeneratorOffline.Extention;
+﻿using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Services.Interfaces;
 using Plugin.Fingerprint;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 

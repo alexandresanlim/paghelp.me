@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Xamarin.Forms;
-
-namespace PixQrCodeGeneratorOffline.Extention
+﻿namespace PixQrCodeGeneratorOffline.Extention
 {
     public static class IconExtention
     {

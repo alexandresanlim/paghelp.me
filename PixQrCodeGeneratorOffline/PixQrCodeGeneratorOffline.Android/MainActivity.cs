@@ -24,19 +24,10 @@ namespace PixQrCodeGeneratorOffline.Droid
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            //TabLayoutResource = Resource.Layout.Tabbar;
-            //ToolbarResource = Resource.Layout.Toolbar;
-
             base.OnCreate(savedInstanceState);
-
             StartPackages(savedInstanceState);
-
             CurrentWindow = (this).Window;
-            //LoadWindowColors();
-
-
             StartAndroidDependency();
-
             LoadApplication(new App());
         }
 
@@ -46,11 +37,7 @@ namespace PixQrCodeGeneratorOffline.Droid
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             Acr.UserDialogs.UserDialogs.Init(this);
             MobileAds.Initialize(ApplicationContext);
-            CrossFingerprint.SetCurrentActivityResolver(() => Xamarin.Essentials.Platform.CurrentActivity);
-            //ZXing.Net.Mobile.Forms.Android.Platform.Init();
-            //CrossCurrentActivity.Current.Init(this, savedInstanceState);
-            //PlatformGestureEffect.Init();
-            //Lottie.Forms.Droid.AnimationViewRenderer.Init();
+            CrossFingerprint.SetCurrentActivityResolver(() => Platform.CurrentActivity);
 
             AppCenter.Start(App.Ids.AppCenter, typeof(Analytics), typeof(Crashes));
         }
@@ -61,24 +48,9 @@ namespace PixQrCodeGeneratorOffline.Droid
             DependencyService.Register<IPDVMode, PDVMode>();
         }
 
-        //private void LoadWindowColors()
-        //{
-        //    //var color = (System.Drawing.Color)App.ThemeColors.Primary;
-
-        //    //CurrentWindow.AddFlags(Android.Views.WindowManagerFlags.TranslucentStatus);
-        //    //CurrentWindow.AddFlags(Android.Views.WindowManagerFlags.TranslucentNavigation);
-
-        //    if (Build.VERSION.SdkInt < BuildVersionCodes.Lollipop)
-        //        return;
-
-        //    CurrentWindow.SetStatusBarColor(Android.Graphics.Color.Black);
-        //    CurrentWindow.SetNavigationBarColor(Android.Graphics.Color.Black);
-        //}
-
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
-            Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
-
+            Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
 

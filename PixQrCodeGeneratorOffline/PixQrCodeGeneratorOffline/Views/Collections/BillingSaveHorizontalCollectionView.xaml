@@ -51,7 +51,7 @@
                                         <Label Grid.Row="1" Grid.Column="1" Text="{Binding PixKey.Viewer.NamePresentation}" TextColor="{DynamicResource textSecondary}" VerticalOptions="CenterAndExpand" />-->
 
                                         <controls:CustomIcon Grid.Row="1" Grid.Column="0" Glyph="{x:Static icons:FontAwesomeSolid.Key }" IconColor="{DynamicResource textSecondary}" />
-                                        <Label Grid.Row="1" Grid.Column="1" Text="{Binding PixKey.Viewer.KeyPresentation}" TextColor="{DynamicResource textSecondary}" VerticalOptions="CenterAndExpand" MaxLines="1" LineBreakMode="TailTruncation" />
+                                        <Label Grid.Row="1" Grid.Column="1" Text="{Binding PixKey.Viewer.KeyPresentation}" TextColor="{DynamicResource textSecondary}" VerticalOptions="CenterAndExpand" MaxLines="1" LineBreakMode="MiddleTruncation" />
                                     </Grid>
 
                                     <Label Grid.Row="2" Grid.Column="1" Text="{Binding PixCob.Viewer.ValuePresentation}" TextColor="{Binding PixKey.FinancialInstitution.Institution.MaterialColor.Primary}" FontFamily="{DynamicResource FontBold}" FontSize="{DynamicResource FontSizeLarge}" />

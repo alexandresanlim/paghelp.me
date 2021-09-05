@@ -1,13 +1,6 @@
 ﻿using PixQrCodeGeneratorOffline.Base.ViewModels;
 using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models;
-using PixQrCodeGeneratorOffline.Models.Base;
-using PixQrCodeGeneratorOffline.Models.DataStatic.Institutions;
-using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
-using PixQrCodeGeneratorOffline.Services;
-using PixQrCodeGeneratorOffline.Style;
-using PixQrCodeGeneratorOffline.Style.Interfaces;
-using PixQrCodeGeneratorOffline.ViewModels.Base;
 using PixQrCodeGeneratorOffline.ViewModels.Helpers;
 using System;
 using System.Collections.Generic;

@@ -1,5 +1,4 @@
-﻿using pix_payload_generator.net.Models.PayloadModels;
-using PixQrCodeGeneratorOffline.Extention;
+﻿using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models;
 using PixQrCodeGeneratorOffline.Services;
 using PixQrCodeGeneratorOffline.ViewModels.Base;

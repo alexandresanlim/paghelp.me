@@ -1,14 +1,10 @@
 ﻿using PixQrCodeGeneratorOffline.Base.ViewModels;
-using PixQrCodeGeneratorOffline.Controls;
 using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models;
 using PixQrCodeGeneratorOffline.Services;
-using PixQrCodeGeneratorOffline.Views.Shared;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;

@@ -1,11 +1,10 @@
 ﻿using PixQrCodeGeneratorOffline.Models.DataStatic.Institutions;
-using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
-using PixQrCodeGeneratorOffline.Style;
-using System.Collections.Generic;
-using Xamarin.Forms;
-using PixQrCodeGeneratorOffline.Models.DataStatic.Institutions.Interfaces;
-using System.Linq;
 using PixQrCodeGeneratorOffline.Models.DataStatic.Institutions.Base;
+using PixQrCodeGeneratorOffline.Models.DataStatic.Institutions.Interfaces;
+using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
+using System.Collections.Generic;
+using System.Linq;
+using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.Models.Services
 {

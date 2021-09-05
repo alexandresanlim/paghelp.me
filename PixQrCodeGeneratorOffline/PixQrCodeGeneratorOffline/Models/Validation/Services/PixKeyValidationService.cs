@@ -1,7 +1,4 @@
 ﻿using PixQrCodeGeneratorOffline.Models.Validation.Services.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace PixQrCodeGeneratorOffline.Models.Validation.Services
 {

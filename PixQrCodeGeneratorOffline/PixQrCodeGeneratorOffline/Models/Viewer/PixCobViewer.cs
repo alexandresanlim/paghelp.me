@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace PixQrCodeGeneratorOffline.Models.Viewer
+﻿namespace PixQrCodeGeneratorOffline.Models.Viewer
 {
     public class PixCobViewer
     {

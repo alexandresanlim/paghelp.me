@@ -1,8 +1,5 @@
 ﻿using PixQrCodeGeneratorOffline.Extention;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Text;
 
 namespace PixQrCodeGeneratorOffline.ViewModels.Helpers
 {

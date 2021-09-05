@@ -1,9 +1,6 @@
 ﻿using PixQrCodeGeneratorOffline.Base.ViewModels;
 using PixQrCodeGeneratorOffline.Services;
-using System.Collections.Generic;
 using System.Threading.Tasks;
-using System.Windows.Input;
-using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.ViewModels
 {

@@ -1,6 +1,4 @@
-﻿using pix_payload_generator.net.Models.CobrancaModels;
-using pix_payload_generator.net.Models.PayloadModels;
-using PixQrCodeGeneratorOffline.Extention;
+﻿using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models.Base;
 using PixQrCodeGeneratorOffline.Models.Commands;
 using PixQrCodeGeneratorOffline.Models.Commands.Interfaces;
@@ -9,12 +7,7 @@ using PixQrCodeGeneratorOffline.Models.Validation;
 using PixQrCodeGeneratorOffline.Models.Validation.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Models.Viewer;
 using PixQrCodeGeneratorOffline.Models.Viewer.Services.Interfaces;
-using PixQrCodeGeneratorOffline.Style;
-using System;
 using System.Collections.Generic;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.Models
