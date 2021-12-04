@@ -12,7 +12,8 @@
              BackgroundColor="{DynamicResource background_page}"
              xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
              xmlns:models="clr-namespace:PixQrCodeGeneratorOffline.Models"
-             xmlns:helpers="clr-namespace:PixQrCodeGeneratorOffline.ViewModels.Helpers"
+             xmlns:helpers="clr-namespace:PixQrCodeGeneratorOffline.ViewModels.Helpers" 
+             xmlns:templates="clr-namespace:PixQrCodeGeneratorOffline.Templates"
              x:DataType="vm:DashboardViewModel"
              >
 
@@ -20,7 +21,9 @@
     <!--<ContentPage.ToolbarItems>
         <ToolbarItem>
             <ToolbarItem.IconImageSource>
-                --><!--<controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Users }" Style="{DynamicResource styleTitleIcon}" />--><!--
+                -->
+    <!--<controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Users }" Style="{DynamicResource styleTitleIcon}" />-->
+    <!--
                 <FontImageSource FontFamily="FontAwesomeSolid" Glyph="{x:Static icons:FontAwesomeSolid.Users }" />
             </ToolbarItem.IconImageSource>
             
@@ -28,36 +31,20 @@
 
         <ToolbarItem>
             <ToolbarItem.IconImageSource>
-                --><!--<controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Users }" Style="{DynamicResource styleTitleIcon}" />--><!--
+                -->
+    <!--<controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Users }" Style="{DynamicResource styleTitleIcon}" />-->
+    <!--
                 <FontImageSource FontFamily="FontAwesomeSolid" Glyph="{Binding CurrentDashboardCustomInfo.ThemeIcon}" />
             </ToolbarItem.IconImageSource>
 
         </ToolbarItem>
     </ContentPage.ToolbarItems>-->
-    
+
 
     <ContentPage.Resources>
         <ResourceDictionary>
 
-            <Style x:Key="styleTitleBottomIcon" TargetType="Label">
-                <Setter Property="FontSize" Value="{DynamicResource FontSizeMedium}" />
-                <Setter Property="FontFamily" Value="{DynamicResource FontBold}" />
-                <Setter Property="TextColor" Value="{DynamicResource textSecondary}" />
-            </Style>
-
-            <Style x:Key="styleTitleIcon" TargetType="controls:CustomIcon">
-                <Setter Property="HorizontalOptions" Value="Start"/>
-                <Setter Property="FontSize" Value="{DynamicResource FontSizeMedium}" />
-                <Setter Property="IconColor" Value="{DynamicResource textSecondary}" />
-            </Style>
-
-            <Style x:Key="styleTitlePanel" TargetType="StackLayout">
-                <Setter Property="Padding" Value="10"/>
-                <Setter Property="Spacing" Value="15" />
-            </Style>
-
-
-
+           
             <Style x:Key="styleGridActionChevronRight" TargetType="Grid">
                 <Setter Property="ColumnDefinitions" Value="auto,*, auto"/>
                 <Setter Property="Padding" Value="10" />
@@ -80,7 +67,7 @@
 
             <Style x:Key="styleFrameAction" TargetType="Frame">
                 <Setter Property="Margin" Value="5,0" />
-                <Setter Property="CornerRadius" Value="10" />
+                <Setter Property="CornerRadius" Value="5" />
                 <Setter Property="Padding" Value="10,5" />
                 <Setter Property="BackgroundColor" Value="{DynamicResource foreground_page}"/>
             </Style>
@@ -158,10 +145,10 @@
                         </StackLayout>
                     </StackLayout>
                 </Grid>-->
-                
-                
 
-               
+
+
+
             <!--</Grid>-->
 
             <ScrollView>
@@ -185,10 +172,9 @@
                         
                         </StackLayout>-->
 
-                    <StackLayout Style="{DynamicResource styleTitlePanel}" BackgroundColor="{StaticResource primaryDark}">
-                        <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Key }" Style="{DynamicResource styleTitleIcon}" />
-                        <Label Text="Minhas Chaves" Style="{DynamicResource styleTitleBottomIcon}" />
-                    </StackLayout>
+                    <templates:TemplateTitlePanel 
+                        Title="Minhas Chaves" 
+                        Icon="{x:Static icons:FontAwesomeSolid.Key}" BackgroundColor="{StaticResource primaryDark}"/>
 
                     <contentStart:StartPageMyKeysView />
 
@@ -198,10 +184,9 @@
 
                     <StackLayout IsVisible="{Binding BillingSaveList, Converter={StaticResource HasDataConverter}}">
 
-                        <StackLayout Style="{DynamicResource styleTitlePanel}">
-                            <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.HandHoldingUsd }" Style="{DynamicResource styleTitleIcon}" />
-                            <Label Text="Cobranças Salvas" Style="{DynamicResource styleTitleBottomIcon}" />
-                        </StackLayout>
+                        <templates:TemplateTitlePanel 
+                            Title="Cobranças Salvas" 
+                            Icon="{x:Static icons:FontAwesomeSolid.HandHoldingUsd}"/>
 
                         <contentStart:StartPageBillingSaveView />
 
@@ -211,10 +196,9 @@
 
                     <!--//////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
 
-                    <StackLayout Style="{DynamicResource styleTitlePanel}">
-                        <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Users }" Style="{DynamicResource styleTitleIcon}" />
-                        <Label Text="Chaves de Contatos" Style="{DynamicResource styleTitleBottomIcon}" />
-                    </StackLayout>
+                    <templates:TemplateTitlePanel 
+                        Title="Chaves de Contatos" 
+                        Icon="{x:Static icons:FontAwesomeSolid.Users}"/>
 
                     <contentStart:StartPageContactsKeysView />
 
@@ -223,10 +207,10 @@
                     <!--//////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
 
                     <StackLayout IsVisible="{Binding CurrentFeedList, Converter={StaticResource HasDataConverter}}">
-                        <StackLayout Style="{DynamicResource styleTitlePanel}">
-                            <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Rss }" Style="{DynamicResource styleTitleIcon}" />
-                            <Label Text="Notícias" Style="{DynamicResource styleTitleBottomIcon}" />
-                        </StackLayout>
+
+                        <templates:TemplateTitlePanel 
+                            Title="Notícias" 
+                            Icon="{x:Static icons:FontAwesomeSolid.Rss}"/>
 
                         <contentStart:StartPageNewsView />
 
@@ -241,10 +225,9 @@
                             <TapGestureRecognizer Command="{Binding NavigateToPreferencesCommand}" />
                         </Grid.GestureRecognizers>
 
-                        <StackLayout Grid.Column="0" Style="{DynamicResource styleTitlePanel}">
-                            <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.UserCog }" Style="{DynamicResource styleTitleIcon}" />
-                            <Label Text="Preferências" Style="{DynamicResource styleTitleBottomIcon}" />
-                        </StackLayout>
+                        <templates:TemplateTitlePanel Grid.Column="0"
+                            Title="Preferências" 
+                            Icon="{x:Static icons:FontAwesomeSolid.UserCog}"/>
 
                         <content:ChevronRightView Grid.Column="1" />
                     </Grid>
@@ -259,10 +242,9 @@
                             <TapGestureRecognizer Command="{Binding NavigateToGuidCommand}" />
                         </Grid.GestureRecognizers>
 
-                        <StackLayout Grid.Column="0" Style="{DynamicResource styleTitlePanel}">
-                            <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Lightbulb }" Style="{DynamicResource styleTitleIcon}" />
-                            <Label Text="Guia Pix" Style="{DynamicResource styleTitleBottomIcon}" />
-                        </StackLayout>
+                        <templates:TemplateTitlePanel 
+                            Title="Guia Pix" 
+                            Icon="{x:Static icons:FontAwesomeSolid.Lightbulb}"/>
 
                         <content:ChevronRightView Grid.Column="1" />
                     </Grid>
@@ -277,10 +259,9 @@
                             <TapGestureRecognizer Command="{Binding NavigateToAboutCommand}" />
                         </Grid.GestureRecognizers>
 
-                        <StackLayout Grid.Column="0" Style="{DynamicResource styleTitlePanel}">
-                            <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.MobileAlt }" Style="{DynamicResource styleTitleIcon}" />
-                            <Label Text="Sobre o App" Style="{DynamicResource styleTitleBottomIcon}" />
-                        </StackLayout>
+                        <templates:TemplateTitlePanel 
+                            Title="Sobre o App" 
+                            Icon="{x:Static icons:FontAwesomeSolid.MobileAlt}"/>
 
                         <content:ChevronRightView Grid.Column="1" />
                     </Grid>
@@ -384,7 +365,7 @@
 
         </Grid>
 
-        
+
 
 
     </ContentPage.Content>

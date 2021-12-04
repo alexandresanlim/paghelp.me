@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<StackLayout xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
+             x:Class="PixQrCodeGeneratorOffline.Templates.TemplateTitlePanel"
+             Padding="10,15"
+             Spacing="15"
+             >
+
+    <StackLayout.Resources>
+        <ResourceDictionary>
+            <Style x:Key="styleTitleBottomIcon" TargetType="Label">
+                <Setter Property="FontSize" Value="{DynamicResource FontSizeMedium}" />
+                <Setter Property="FontFamily" Value="{DynamicResource FontBold}" />
+                <Setter Property="TextColor" Value="{DynamicResource textSecondary}" />
+            </Style>
+
+            <Style x:Key="styleTitleIcon" TargetType="controls:CustomIcon">
+                <Setter Property="HorizontalOptions" Value="Start"/>
+                <Setter Property="FontSize" Value="{DynamicResource FontSizeMedium}" />
+                <Setter Property="IconColor" Value="{DynamicResource textSecondary}" />
+            </Style>
+        </ResourceDictionary>
+    </StackLayout.Resources>
+
+    <controls:CustomIcon x:Name="xIcon" Style="{DynamicResource styleTitleIcon}" />
+    <Label x:Name="xTitle" Text="Minhas Chaves" Style="{DynamicResource styleTitleBottomIcon}" />
+
+</StackLayout>

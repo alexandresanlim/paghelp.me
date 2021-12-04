@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Frame xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+       xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls" 
+       xmlns:content="clr-namespace:PixQrCodeGeneratorOffline.Views.Content"
+       x:Class="PixQrCodeGeneratorOffline.Templates.TemplateAction"
+             Style="{DynamicResource styleFrameAction}">
+
+    <Frame.Resources>
+        <ResourceDictionary>
+
+            <Style x:Key="styleGridActionChevronRight" TargetType="Grid">
+                <Setter Property="ColumnDefinitions" Value="auto,*, auto"/>
+                <Setter Property="Padding" Value="10" />
+                <Setter Property="ColumnSpacing" Value="15" />
+            </Style>
+
+            <Style x:Key="styleGridActionChevronIcon" TargetType="controls:CustomIcon">
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+                <Setter Property="FontSize" Value="{DynamicResource FontSizeMedium}"/>
+                <Setter Property="IconColor" Value="{DynamicResource textSecondary}"/>
+                <Setter Property="Grid.Column" Value="0" />
+            </Style>
+
+            <Style x:Key="styleGridActionTitle" TargetType="Label">
+                <Setter Property="FontSize" Value="{DynamicResource FontSizeSmall}" />
+                <Setter Property="TextColor" Value="{DynamicResource textSecondary}" />
+                <Setter Property="Grid.Column" Value="1" />
+                <Setter Property="FontFamily" Value="{DynamicResource FontSemiBold}"/>
+            </Style>
+
+        </ResourceDictionary>
+    </Frame.Resources>
+
+    <!--<Frame.GestureRecognizers>
+        <TapGestureRecognizer x:Name="xTapCommand" />
+    </Frame.GestureRecognizers>-->
+
+    <Grid Style="{DynamicResource styleGridActionChevronRight}">
+
+
+
+        <controls:CustomIcon x:Name="xIcon" Style="{DynamicResource styleGridActionChevronIcon}" />
+        <Label x:Name="xTitle" Text="Adicionar Nova" Style="{DynamicResource styleGridActionTitle}" />
+        <content:ChevronRightView Grid.Column="2" />
+
+    </Grid>
+</Frame>

@@ -50,7 +50,7 @@
                 <Grid ColumnDefinitions="*, auto">
 
                     <StackLayout Grid.Column="0">
-                        <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.CashRegister }" Style="{DynamicResource styleTitleIcon}" />
+                        <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Rss }" Style="{DynamicResource styleTitleIcon}" />
                         <Label Text="Exibir Notícias" Style="{DynamicResource styleTitleBottomIcon}" />
                     </StackLayout>
 

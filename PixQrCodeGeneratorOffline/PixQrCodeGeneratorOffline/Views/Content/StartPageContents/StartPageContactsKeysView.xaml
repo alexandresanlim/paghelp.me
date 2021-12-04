@@ -7,8 +7,8 @@
              x:Class="PixQrCodeGeneratorOffline.Views.Content.StartPageContents.StartPageContactsKeysView"
              xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
              x:DataType="vm:DashboardViewModel"
-             xmlns:models="clr-namespace:PixQrCodeGeneratorOffline.Models"
-             >
+             xmlns:models="clr-namespace:PixQrCodeGeneratorOffline.Models" 
+      xmlns:templates="clr-namespace:PixQrCodeGeneratorOffline.Templates">
 
     <StackLayout Style="{DynamicResource styleSession}">
 
@@ -65,43 +65,27 @@
         </CollectionView>
 
         <StackLayout Style="{DynamicResource styleStakLatyoutMultipleAction}">
-            <Frame BackgroundColor="{DynamicResource foreground_page}" Style="{DynamicResource styleFrameAction}">
-                <Frame.GestureRecognizers>
+
+            <templates:TemplateAction Title="Adicionar Nova"
+                                      Icon="{x:Static icons:FontAwesomeSolid.PlusCircle }"
+                                      >
+                <templates:TemplateAction.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding NavigateToAddNewKeyPageContactCommand}" />
-                </Frame.GestureRecognizers>
+                </templates:TemplateAction.GestureRecognizers>
 
-                <Grid Style="{DynamicResource styleGridActionChevronRight}">
+            </templates:TemplateAction>
 
 
-
-                    <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.PlusCircle }" Style="{DynamicResource styleGridActionChevronIcon}" />
-                    <Label Text="Adicionar Nova" Style="{DynamicResource styleGridActionTitle}" />
-                    <content:ChevronRightView Grid.Column="2" />
-
-                </Grid>
-
-            </Frame>
-
-            <Frame BackgroundColor="{DynamicResource foreground_page}" 
-                           Style="{DynamicResource styleFrameAction}"
-                           IsVisible="{Binding PixKeyListContact, Converter={StaticResource HasDataConverter}}">
-
-                <Frame.GestureRecognizers>
+            <templates:TemplateAction Title="Excluir Todas"
+                                      Icon="{x:Static icons:FontAwesomeSolid.Trash }"
+                                      IsVisible="{Binding PixKeyListContact, Converter={StaticResource HasDataConverter}}">
+                <templates:TemplateAction.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding RemoveAllKeyContactCommand}" />
-                </Frame.GestureRecognizers>
-                <Grid Style="{DynamicResource styleGridActionChevronRight}">
+                </templates:TemplateAction.GestureRecognizers>
 
+            </templates:TemplateAction>
 
-
-                    <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Trash }" Style="{DynamicResource styleGridActionChevronIcon}" />
-                    <Label Text="Excluir Todas" Style="{DynamicResource styleGridActionTitle}" />
-                    <content:ChevronRightView Grid.Column="2" />
-
-                </Grid>
-            </Frame>
         </StackLayout>
-
-
 
     </StackLayout>
 
