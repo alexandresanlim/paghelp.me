@@ -13,6 +13,9 @@
 
     <ContentView.Content>
         <Grid>
+
+            <BoxView BackgroundColor="{StaticResource primaryDark}" HeightRequest="50" VerticalOptions="Start" />
+
             <StackLayout Style="{DynamicResource styleSession}">
 
                 <!--<Grid>
@@ -25,7 +28,6 @@
                 </Grid>-->
 
                 <CarouselView ItemsSource="{Binding PixKeyList}"
-                              Margin="0,-30,0,0"
                               PeekAreaInsets="20,0"
                               CurrentItemChangedCommand="{Binding ChangeSelectPixKeyCommand}"
                               CurrentItemChangedCommandParameter="{Binding Source={RelativeSource Self}, Path=CurrentItem}"
@@ -162,12 +164,12 @@
                         </Grid>
                     </Frame>
 
-                    <Frame Style="{DynamicResource styleFrameAction}">
+                    <Frame Style="{DynamicResource styleFrameAction}" IsVisible="{Binding PixKeyList, Converter={StaticResource HasDataConverter}}">
                         <Frame.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding ShareAllCommand}" />
                         </Frame.GestureRecognizers>
 
-                        <Grid Style="{DynamicResource styleGridActionChevronRight}" IsVisible="{Binding PixKeyList, Converter={StaticResource HasDataConverter}}">
+                        <Grid Style="{DynamicResource styleGridActionChevronRight}">
 
 
 
@@ -191,6 +193,8 @@
 
                 </Grid>-->
             </StackLayout>
+
+            
 
             <content:PanelLoadView IsVisible="{Binding CurrentDashboardLoadInfo.IsLoadMyKeys}" />
 

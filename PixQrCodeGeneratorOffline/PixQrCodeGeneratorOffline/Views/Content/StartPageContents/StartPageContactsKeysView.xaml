@@ -84,12 +84,14 @@
 
                     </Frame>
 
-                    <Frame BackgroundColor="{DynamicResource foreground_page}" Style="{DynamicResource styleFrameAction}">
+                    <Frame BackgroundColor="{DynamicResource foreground_page}" 
+                           Style="{DynamicResource styleFrameAction}"
+                           IsVisible="{Binding PixKeyListContact, Converter={StaticResource HasDataConverter}}">
 
                         <Frame.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding RemoveAllKeyContactCommand}" />
                         </Frame.GestureRecognizers>
-                        <Grid Style="{DynamicResource styleGridActionChevronRight}" IsVisible="{Binding PixKeyListContact, Converter={StaticResource HasDataConverter}}">
+                        <Grid Style="{DynamicResource styleGridActionChevronRight}">
 
 
 

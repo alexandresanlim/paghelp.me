@@ -141,176 +141,10 @@
 
         <Grid>
 
-            <Grid>
-                <ScrollView>
-                    <StackLayout Spacing="0">
-                        <!--<StackLayout Spacing="0">
+            <!--<Grid RowDefinitions="auto,*">
+                
+                 <Grid Grid.Row="0" ColumnDefinitions="*, auto" VerticalOptions="Start" BackgroundColor="{DynamicResource primaryDark}">
 
-                        
-
-                        <StackLayout Padding="15">
-
-                            
-
-                            
-
-                            -->
-                        <!--<StackLayout Spacing="0">
-                            <Label Text="{Binding CurrentDashboardCustomInfo.WelcomeText}" FontSize="{DynamicResource FontSizeLarge}" FontFamily="{DynamicResource FontBold}" TextColor="{DynamicResource textOnPrimary}" />
-                            <Label Text="{Binding CurrentDashboardCustomInfo.WelcomeSubtitleText}" FontSize="{DynamicResource FontSizeSmall}" FontFamily="{DynamicResource FontSemiBold}" TextColor="{DynamicResource textOnPrimary}" />
-                        </StackLayout>-->
-                        <!--
-
-
-                        </StackLayout>
-
-
-                        
-
-                    </StackLayout>-->
-
-
-
-
-                        <!--//////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
-
-
-
-                        <StackLayout Style="{DynamicResource styleTitlePanel}" Spacing="0" Padding="10,45,10,40" BackgroundColor="{DynamicResource primaryDark}">
-                            
-                            
-
-                            <!--<StackLayout.Background>
-                                <LinearGradientBrush EndPoint="0,1">
-                                    <GradientStop Color="{DynamicResource primary}"
-                                  Offset="0.1" />
-                                    <GradientStop Color="{DynamicResource primaryDark}"
-                                  Offset="1.0" />
-                                </LinearGradientBrush>
-                            </StackLayout.Background>-->
-
-                            <!--<StackLayout Spacing="0">
-                            <Label Text="{Binding CurrentDashboardCustomInfo.WelcomeText}" FontSize="{DynamicResource FontSizeLarge}" FontFamily="{DynamicResource FontBold}" TextColor="{DynamicResource textOnPrimary}" />
-                            <Label Text="{Binding CurrentDashboardCustomInfo.WelcomeSubtitleText}" FontSize="{DynamicResource FontSizeSmall}" FontFamily="{DynamicResource FontSemiBold}" TextColor="{DynamicResource textOnPrimary}" />
-                        </StackLayout>-->
-                            
-
-                            
-                            <Label Text="{Binding CurrentDashboardCustomInfo.WelcomeText}" FontSize="{DynamicResource FontSizeLarge}" FontFamily="{DynamicResource FontBold}" TextColor="{DynamicResource textOnPrimary}" />
-
-                            <!--<controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Key }" IconColor="{DynamicResource textOnPrimary}" Style="{DynamicResource styleTitleIcon}" />-->
-
-
-
-                            <Label Text="Minhas Chaves" TextColor="{DynamicResource textOnPrimary}" Style="{DynamicResource styleTitleBottomIcon}" />
-                        </StackLayout>
-
-                        <contentStart:StartPageMyKeysView />
-
-                        <content:DivisionView/>
-
-                        <!--//////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
-
-                        <StackLayout IsVisible="{Binding BillingSaveList, Converter={StaticResource HasDataConverter}}">
-
-                            <StackLayout Style="{DynamicResource styleTitlePanel}">
-                                <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.HandHoldingUsd }" Style="{DynamicResource styleTitleIcon}" />
-                                <Label Text="Cobranças Salvas" Style="{DynamicResource styleTitleBottomIcon}" />
-                            </StackLayout>
-
-                            <contentStart:StartPageBillingSaveView />
-
-                            <content:DivisionView/>
-
-                        </StackLayout>
-
-                        <!--//////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
-
-                        <StackLayout Style="{DynamicResource styleTitlePanel}">
-                            <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Users }" Style="{DynamicResource styleTitleIcon}" />
-                            <Label Text="Chaves de Contatos" Style="{DynamicResource styleTitleBottomIcon}" />
-                        </StackLayout>
-
-                        <contentStart:StartPageContactsKeysView />
-
-                        <content:DivisionView/>
-
-                        <!--//////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
-
-                        <StackLayout IsVisible="{Binding CurrentFeedList, Converter={StaticResource HasDataConverter}}">
-                            <StackLayout Style="{DynamicResource styleTitlePanel}">
-                                <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Rss }" Style="{DynamicResource styleTitleIcon}" />
-                                <Label Text="Notícias" Style="{DynamicResource styleTitleBottomIcon}" />
-                            </StackLayout>
-
-                            <contentStart:StartPageNewsView />
-
-                            <content:DivisionView/>
-                        </StackLayout>
-
-                        <!--//////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
-
-                        <Grid ColumnDefinitions="*, auto" Padding="0,0,10,0">
-
-                            <Grid.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding NavigateToPreferencesCommand}" />
-                            </Grid.GestureRecognizers>
-
-                            <StackLayout Grid.Column="0" Style="{DynamicResource styleTitlePanel}">
-                                <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.UserCog }" Style="{DynamicResource styleTitleIcon}" />
-                                <Label Text="Preferências" Style="{DynamicResource styleTitleBottomIcon}" />
-                            </StackLayout>
-
-                            <content:ChevronRightView Grid.Column="1" />
-                        </Grid>
-
-                        <content:DivisionView/>
-
-                        <!--//////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
-
-                        <Grid ColumnDefinitions="*, auto" Padding="0,0,10,0">
-
-                            <Grid.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding NavigateToGuidCommand}" />
-                            </Grid.GestureRecognizers>
-
-                            <StackLayout Grid.Column="0" Style="{DynamicResource styleTitlePanel}">
-                                <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Lightbulb }" Style="{DynamicResource styleTitleIcon}" />
-                                <Label Text="Guia Pix" Style="{DynamicResource styleTitleBottomIcon}" />
-                            </StackLayout>
-
-                            <content:ChevronRightView Grid.Column="1" />
-                        </Grid>
-
-                        <content:DivisionView/>
-
-                        <!--//////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
-
-                        <Grid ColumnDefinitions="*, auto" Padding="0,0,10,0">
-
-                            <Grid.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding NavigateToAboutCommand}" />
-                            </Grid.GestureRecognizers>
-
-                            <StackLayout Grid.Column="0" Style="{DynamicResource styleTitlePanel}">
-                                <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.MobileAlt }" Style="{DynamicResource styleTitleIcon}" />
-                                <Label Text="Sobre o App" Style="{DynamicResource styleTitleBottomIcon}" />
-                            </StackLayout>
-
-                            <content:ChevronRightView Grid.Column="1" />
-                        </Grid>
-
-                        <content:DivisionView/>
-
-                    </StackLayout>
-                </ScrollView>
-
-                <Grid ColumnDefinitions="*, auto" VerticalOptions="Start" BackgroundColor="{DynamicResource primaryDark}">
-                    <!--<StackLayout Grid.Column="0">
-                        <Image Source="logo.png" HeightRequest="35" HorizontalOptions="Start" />
-
-
-                    </StackLayout>-->
 
                     <StackLayout Grid.Column="1" Orientation="Horizontal" VerticalOptions="Start" Spacing="0">
                         <StackLayout Padding="15,15,0,15">
@@ -323,8 +157,138 @@
                             <controls:CustomIcon Glyph="{Binding CurrentDashboardCustomInfo.ThemeIcon}" IconColor="{DynamicResource textOnPrimary}" />
                         </StackLayout>
                     </StackLayout>
-                </Grid>
-            </Grid>
+                </Grid>-->
+                
+                
+
+               
+            <!--</Grid>-->
+
+            <ScrollView>
+                <StackLayout Spacing="0">
+
+
+
+                    <!--<StackLayout Style="{DynamicResource styleTitlePanel}" 
+                                     Spacing="0" 
+                                     Padding="10,45,10,40" 
+                                     BackgroundColor="{DynamicResource primaryDark}">
+                            
+                            <Label Text="{Binding CurrentDashboardCustomInfo.WelcomeText}" 
+                                   FontSize="{DynamicResource FontSizeLarge}" 
+                                   FontFamily="{DynamicResource FontBold}" 
+                                   TextColor="{DynamicResource textOnPrimary}" />
+                            
+                            <Label Text="Minhas Chaves" 
+                                   TextColor="{DynamicResource textOnPrimary}" 
+                                   Style="{DynamicResource styleTitleBottomIcon}" />
+                        
+                        </StackLayout>-->
+
+                    <StackLayout Style="{DynamicResource styleTitlePanel}" BackgroundColor="{StaticResource primaryDark}">
+                        <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Key }" Style="{DynamicResource styleTitleIcon}" />
+                        <Label Text="Minhas Chaves" Style="{DynamicResource styleTitleBottomIcon}" />
+                    </StackLayout>
+
+                    <contentStart:StartPageMyKeysView />
+
+                    <content:DivisionView/>
+
+                    <!--//////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+                    <StackLayout IsVisible="{Binding BillingSaveList, Converter={StaticResource HasDataConverter}}">
+
+                        <StackLayout Style="{DynamicResource styleTitlePanel}">
+                            <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.HandHoldingUsd }" Style="{DynamicResource styleTitleIcon}" />
+                            <Label Text="Cobranças Salvas" Style="{DynamicResource styleTitleBottomIcon}" />
+                        </StackLayout>
+
+                        <contentStart:StartPageBillingSaveView />
+
+                        <content:DivisionView/>
+
+                    </StackLayout>
+
+                    <!--//////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+                    <StackLayout Style="{DynamicResource styleTitlePanel}">
+                        <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Users }" Style="{DynamicResource styleTitleIcon}" />
+                        <Label Text="Chaves de Contatos" Style="{DynamicResource styleTitleBottomIcon}" />
+                    </StackLayout>
+
+                    <contentStart:StartPageContactsKeysView />
+
+                    <content:DivisionView/>
+
+                    <!--//////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+                    <StackLayout IsVisible="{Binding CurrentFeedList, Converter={StaticResource HasDataConverter}}">
+                        <StackLayout Style="{DynamicResource styleTitlePanel}">
+                            <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Rss }" Style="{DynamicResource styleTitleIcon}" />
+                            <Label Text="Notícias" Style="{DynamicResource styleTitleBottomIcon}" />
+                        </StackLayout>
+
+                        <contentStart:StartPageNewsView />
+
+                        <content:DivisionView/>
+                    </StackLayout>
+
+                    <!--//////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+                    <Grid ColumnDefinitions="*, auto" Padding="0,0,10,0">
+
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding NavigateToPreferencesCommand}" />
+                        </Grid.GestureRecognizers>
+
+                        <StackLayout Grid.Column="0" Style="{DynamicResource styleTitlePanel}">
+                            <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.UserCog }" Style="{DynamicResource styleTitleIcon}" />
+                            <Label Text="Preferências" Style="{DynamicResource styleTitleBottomIcon}" />
+                        </StackLayout>
+
+                        <content:ChevronRightView Grid.Column="1" />
+                    </Grid>
+
+                    <content:DivisionView/>
+
+                    <!--//////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+                    <Grid ColumnDefinitions="*, auto" Padding="0,0,10,0">
+
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding NavigateToGuidCommand}" />
+                        </Grid.GestureRecognizers>
+
+                        <StackLayout Grid.Column="0" Style="{DynamicResource styleTitlePanel}">
+                            <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Lightbulb }" Style="{DynamicResource styleTitleIcon}" />
+                            <Label Text="Guia Pix" Style="{DynamicResource styleTitleBottomIcon}" />
+                        </StackLayout>
+
+                        <content:ChevronRightView Grid.Column="1" />
+                    </Grid>
+
+                    <content:DivisionView/>
+
+                    <!--//////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+                    <Grid ColumnDefinitions="*, auto" Padding="0,0,10,0">
+
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding NavigateToAboutCommand}" />
+                        </Grid.GestureRecognizers>
+
+                        <StackLayout Grid.Column="0" Style="{DynamicResource styleTitlePanel}">
+                            <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.MobileAlt }" Style="{DynamicResource styleTitleIcon}" />
+                            <Label Text="Sobre o App" Style="{DynamicResource styleTitleBottomIcon}" />
+                        </StackLayout>
+
+                        <content:ChevronRightView Grid.Column="1" />
+                    </Grid>
+
+                    <content:DivisionView/>
+
+                </StackLayout>
+            </ScrollView>
 
 
 
