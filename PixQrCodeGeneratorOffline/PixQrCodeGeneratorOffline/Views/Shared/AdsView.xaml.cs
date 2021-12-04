@@ -10,7 +10,7 @@ using Xamarin.Forms.Xaml;
 namespace PixQrCodeGeneratorOffline.Views.Shared
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class AdsView : ContentView
+    public partial class AdsView : Grid
     {
         public AdsView()
         {

@@ -10,7 +10,7 @@ using Xamarin.Forms.Xaml;
 namespace PixQrCodeGeneratorOffline.Views.Content
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class PanelLoadView : ContentView
+    public partial class PanelLoadView : StackLayout
     {
         public PanelLoadView()
         {

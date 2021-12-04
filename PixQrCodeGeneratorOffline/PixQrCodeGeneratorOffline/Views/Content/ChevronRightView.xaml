@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+<controls:CustomIcon xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
              x:Class="PixQrCodeGeneratorOffline.Views.Content.ChevronRightView"
              xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon"
-             >
-  <ContentView.Content>
-        <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.ChevronRight }" HorizontalOptions="End" FontSize="{DynamicResource FontSizeMedium}"  IconColor="{DynamicResource textSecondary}" VerticalOptions="CenterAndExpand" />
-    </ContentView.Content>
-</ContentView>
+                      Glyph="{x:Static icons:FontAwesomeSolid.ChevronRight }" 
+                     HorizontalOptions="End" FontSize="{DynamicResource FontSizeMedium}"  
+                     IconColor="{DynamicResource textSecondary}" 
+                     VerticalOptions="CenterAndExpand"
+             />

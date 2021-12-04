@@ -10,7 +10,7 @@ using Xamarin.Forms.Xaml;
 namespace PixQrCodeGeneratorOffline.Views.Content
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class DivisionView : ContentView
+    public partial class DivisionView : BoxView
     {
         public DivisionView()
         {

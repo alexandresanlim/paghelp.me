@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+<Grid xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls" 
              xmlns:content="clr-namespace:PixQrCodeGeneratorOffline.Views.Content"
@@ -11,14 +11,11 @@
              xmlns:models="clr-namespace:PixQrCodeGeneratorOffline.Models"
              >
 
-    <ContentView.Content>
-        <Grid>
+    <BoxView BackgroundColor="{StaticResource primaryDark}" HeightRequest="50" VerticalOptions="Start" />
 
-            <BoxView BackgroundColor="{StaticResource primaryDark}" HeightRequest="50" VerticalOptions="Start" />
+    <StackLayout Style="{DynamicResource styleSession}">
 
-            <StackLayout Style="{DynamicResource styleSession}">
-
-                <!--<Grid>
+        <!--<Grid>
                     <Grid RowDefinitions="*,*">
                         <BoxView Grid.Row="0" BackgroundColor="{DynamicResource background_page}"/>
                         <BoxView Grid.Row="1"/>
@@ -27,7 +24,7 @@
                     
                 </Grid>-->
 
-                <CarouselView ItemsSource="{Binding PixKeyList}"
+        <CarouselView ItemsSource="{Binding PixKeyList}"
                               PeekAreaInsets="20,0"
                               CurrentItemChangedCommand="{Binding ChangeSelectPixKeyCommand}"
                               CurrentItemChangedCommandParameter="{Binding Source={RelativeSource Self}, Path=CurrentItem}"
@@ -37,22 +34,22 @@
                           IsVisible="{Binding PixKeyList, Converter={StaticResource HasDataConverter}}"
                               >
 
-                    <CarouselView.ItemTemplate>
-                        <DataTemplate x:DataType="models:PixKey">
+            <CarouselView.ItemTemplate>
+                <DataTemplate x:DataType="models:PixKey">
 
 
-                            <StackLayout Padding="0,0,10,0">
-                                <Frame CornerRadius="10" BackgroundColor="{DynamicResource foreground_page}" Padding="15">
-                                    <Grid ColumnDefinitions="auto,*">
+                    <StackLayout Padding="0,0,10,0">
+                        <Frame CornerRadius="10" BackgroundColor="{DynamicResource foreground_page}" Padding="15">
+                            <Grid ColumnDefinitions="auto,*">
 
-                                        <StackLayout Grid.Column="0" WidthRequest="8" BackgroundColor="{Binding FinancialInstitution.Institution.MaterialColor.Primary}" />
+                                <StackLayout Grid.Column="0" WidthRequest="8" BackgroundColor="{Binding FinancialInstitution.Institution.MaterialColor.Primary}" />
 
-                                        <StackLayout Grid.Column="1" Padding="10,15" Spacing="15">
+                                <StackLayout Grid.Column="1" Padding="10,15" Spacing="15">
 
 
-                                            <Grid ColumnDefinitions="auto,*" ColumnSpacing="15">
+                                    <Grid ColumnDefinitions="auto,*" ColumnSpacing="15">
 
-                                                <qr:QRCode
+                                        <qr:QRCode
                                                     Grid.Column="0"
                                                     Content="{Binding Payload.QrCode}"
                                                     BackgroundColor="White"
@@ -63,27 +60,27 @@
                                                     VerticalOptions="Center" 
                                                     >
 
-                                                    <qr:QRCode.GestureRecognizers>
-                                                        <TapGestureRecognizer Command="{Binding Command.NavigateToPaymentPageCommand}" />
-                                                    </qr:QRCode.GestureRecognizers>
+                                            <qr:QRCode.GestureRecognizers>
+                                                <TapGestureRecognizer Command="{Binding Command.NavigateToPaymentPageCommand}" />
+                                            </qr:QRCode.GestureRecognizers>
 
-                                                </qr:QRCode>
+                                        </qr:QRCode>
 
 
-                                                <Grid Grid.Column="1" ColumnDefinitions="auto, *" RowDefinitions="auto, auto" VerticalOptions="Center" RowSpacing="0">
+                                        <Grid Grid.Column="1" ColumnDefinitions="auto, *" RowDefinitions="auto, auto" VerticalOptions="Center" RowSpacing="0">
 
-                                                    <controls:CustomIcon Grid.Row="0" Grid.Column="0" Glyph="{x:Static icons:FontAwesomeSolid.University }" Style="{DynamicResource styleActionIcon}" />
-                                                    <Label Grid.Row="0" Grid.Column="1" Text="{Binding Viewer.InstitutionPresentation}" Style="{DynamicResource styleActionText}" />
+                                            <controls:CustomIcon Grid.Row="0" Grid.Column="0" Glyph="{x:Static icons:FontAwesomeSolid.University }" Style="{DynamicResource styleActionIcon}" />
+                                            <Label Grid.Row="0" Grid.Column="1" Text="{Binding Viewer.InstitutionPresentation}" Style="{DynamicResource styleActionText}" />
 
-                                                    <!--<controls:CustomIcon Grid.Row="1" Grid.Column="0" Glyph="{x:Static icons:FontAwesomeSolid.UserAlt }" Style="{DynamicResource styleActionIcon}" />
+                                            <!--<controls:CustomIcon Grid.Row="1" Grid.Column="0" Glyph="{x:Static icons:FontAwesomeSolid.UserAlt }" Style="{DynamicResource styleActionIcon}" />
                                                         <Label Grid.Row="1" Grid.Column="1" Text="{Binding Viewer.NamePresentation}" Style="{DynamicResource styleActionText}" />-->
 
-                                                    <controls:CustomIcon Grid.Row="1" Grid.Column="0" Glyph="{x:Static icons:FontAwesomeSolid.Key }" Style="{DynamicResource styleActionIcon}" />
-                                                    <Label Grid.Row="1" Grid.Column="1" MaxLines="1" LineBreakMode="MiddleTruncation" Text="{Binding Viewer.KeyPresentation}" Style="{DynamicResource styleActionText}" />
+                                            <controls:CustomIcon Grid.Row="1" Grid.Column="0" Glyph="{x:Static icons:FontAwesomeSolid.Key }" Style="{DynamicResource styleActionIcon}" />
+                                            <Label Grid.Row="1" Grid.Column="1" MaxLines="1" LineBreakMode="MiddleTruncation" Text="{Binding Viewer.KeyPresentation}" Style="{DynamicResource styleActionText}" />
 
-                                                </Grid>
+                                        </Grid>
 
-                                                <!--<StackLayout Grid.Column="2" Padding="30,5,0,15" VerticalOptions="Start">
+                                        <!--<StackLayout Grid.Column="2" Padding="30,5,0,15" VerticalOptions="Start">
                                                         <StackLayout.GestureRecognizers>
                                                             <TapGestureRecognizer Command="{Binding Command.EditKeyCommand}" />
                                                         </StackLayout.GestureRecognizers>
@@ -93,95 +90,95 @@
                                                         <Label Text="Editar" Style="{DynamicResource styleTextOnButtonActionList}" TextColor="{DynamicResource textSecondary}"/>
                                                     </StackLayout>-->
 
-                                            </Grid>
-
-
-                                        </StackLayout>
                                     </Grid>
-                                </Frame>
-                            </StackLayout>
 
 
-                        </DataTemplate>
-                    </CarouselView.ItemTemplate>
-                </CarouselView>
+                                </StackLayout>
+                            </Grid>
+                        </Frame>
+                    </StackLayout>
 
-                <IndicatorView x:Name="indicatorView"
+
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
+
+        <IndicatorView x:Name="indicatorView"
                                        IndicatorsShape="Circle"
                                        IndicatorColor="LightGray"
                                        SelectedIndicatorColor="DarkGray" 
                            IsVisible="{Binding PixKeyList, Converter={StaticResource HasDataConverter}}"
                            />
 
-                <CollectionView ItemsSource="{Binding CurrentPixKeyActions}" HeightRequest="140" Margin="0,15,0,0" IsVisible="{Binding PixKeyList, Converter={StaticResource HasDataConverter}}">
+        <CollectionView ItemsSource="{Binding CurrentPixKeyActions}" HeightRequest="140" Margin="0,15,0,0" IsVisible="{Binding PixKeyList, Converter={StaticResource HasDataConverter}}">
 
-                    <CollectionView.ItemsLayout>
-                        <LinearItemsLayout Orientation="Horizontal"/>
-                    </CollectionView.ItemsLayout>
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Horizontal"/>
+            </CollectionView.ItemsLayout>
 
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate x:DataType="models:PixKeyAction">
-                            <StackLayout Padding="5,0">
-                                <StackLayout.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding Command}" />
-                                </StackLayout.GestureRecognizers>
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:PixKeyAction">
+                    <StackLayout Padding="5,0">
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding Command}" />
+                        </StackLayout.GestureRecognizers>
 
-                                <Frame
+                        <Frame
                                     BackgroundColor="{DynamicResource foreground_page}"
                                     CornerRadius="15"
                                     WidthRequest="120"
                                     VerticalOptions="FillAndExpand"
                                     Padding="15"
                                     >
-                                    <StackLayout>
-                                        <controls:CustomIcon Glyph="{Binding Icon}" IconColor="{Binding Colors.Primary}" FontSize="{DynamicResource FontSizeLarge}" HorizontalOptions="Start" />
+                            <StackLayout>
+                                <controls:CustomIcon Glyph="{Binding Icon}" IconColor="{Binding Colors.Primary}" FontSize="{DynamicResource FontSizeLarge}" HorizontalOptions="Start" />
 
-                                        <Label Text="{Binding Title}" FontFamily="{DynamicResource FontSemiBold}" TextColor="{Binding Colors.Primary}" FontSize="{DynamicResource FontSizeSmall}" VerticalOptions="EndAndExpand" />
-                                    </StackLayout>
-                                </Frame>
-
-                                
+                                <Label Text="{Binding Title}" FontFamily="{DynamicResource FontSemiBold}" TextColor="{Binding Colors.Primary}" FontSize="{DynamicResource FontSizeSmall}" VerticalOptions="EndAndExpand" />
                             </StackLayout>
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
-
-                </CollectionView>
-
-                <StackLayout Style="{DynamicResource styleStakLatyoutMultipleAction}">
-                    <Frame Style="{DynamicResource styleFrameAction}">
-
-                        <Frame.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding NavigateToAddNewKeyPageCommand}" />
-                        </Frame.GestureRecognizers>
-                        <Grid Style="{DynamicResource styleGridActionChevronRight}">
+                        </Frame>
 
 
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
 
-                            <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.PlusCircle }" Style="{DynamicResource styleGridActionChevronIcon}" />
-                            <Label Text="Adicionar Nova" Style="{DynamicResource styleGridActionTitle}" />
-                            <content:ChevronRightView Grid.Column="2" />
+        </CollectionView>
 
-                        </Grid>
-                    </Frame>
+        <StackLayout Style="{DynamicResource styleStakLatyoutMultipleAction}">
+            <Frame Style="{DynamicResource styleFrameAction}">
 
-                    <Frame Style="{DynamicResource styleFrameAction}" IsVisible="{Binding PixKeyList, Converter={StaticResource HasDataConverter}}">
-                        <Frame.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding ShareAllCommand}" />
-                        </Frame.GestureRecognizers>
-
-                        <Grid Style="{DynamicResource styleGridActionChevronRight}">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding NavigateToAddNewKeyPageCommand}" />
+                </Frame.GestureRecognizers>
+                <Grid Style="{DynamicResource styleGridActionChevronRight}">
 
 
 
-                            <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Share }" Style="{DynamicResource styleGridActionChevronIcon}" />
-                            <Label Text="Compartilhar Todas" Style="{DynamicResource styleGridActionTitle}" />
-                            <content:ChevronRightView Grid.Column="2" />
+                    <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.PlusCircle }" Style="{DynamicResource styleGridActionChevronIcon}" />
+                    <Label Text="Adicionar Nova" Style="{DynamicResource styleGridActionTitle}" />
+                    <content:ChevronRightView Grid.Column="2" />
 
-                        </Grid>
-                    </Frame>
+                </Grid>
+            </Frame>
 
-                </StackLayout>
-                <!--<Grid Style="{DynamicResource styleGridActionChevronRight}" IsVisible="{Binding PixKeyList, Converter={StaticResource HasDataConverter}}">
+            <Frame Style="{DynamicResource styleFrameAction}" IsVisible="{Binding PixKeyList, Converter={StaticResource HasDataConverter}}">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ShareAllCommand}" />
+                </Frame.GestureRecognizers>
+
+                <Grid Style="{DynamicResource styleGridActionChevronRight}">
+
+
+
+                    <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Share }" Style="{DynamicResource styleGridActionChevronIcon}" />
+                    <Label Text="Compartilhar Todas" Style="{DynamicResource styleGridActionTitle}" />
+                    <content:ChevronRightView Grid.Column="2" />
+
+                </Grid>
+            </Frame>
+
+        </StackLayout>
+        <!--<Grid Style="{DynamicResource styleGridActionChevronRight}" IsVisible="{Binding PixKeyList, Converter={StaticResource HasDataConverter}}">
 
                     <Grid.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding RemoveAllCommand}" />
@@ -192,12 +189,7 @@
                     <content:ChevronRightView Grid.Column="2" />
 
                 </Grid>-->
-            </StackLayout>
+    </StackLayout>
 
-            
-
-            <content:PanelLoadView IsVisible="{Binding CurrentDashboardLoadInfo.IsLoadMyKeys}" />
-
-        </Grid>
-    </ContentView.Content>
-</ContentView>
+    <content:PanelLoadView IsVisible="{Binding CurrentDashboardLoadInfo.IsLoadMyKeys}" />
+</Grid>

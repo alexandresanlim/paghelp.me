@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+<Grid xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls" 
              xmlns:content="clr-namespace:PixQrCodeGeneratorOffline.Views.Content"
@@ -9,105 +9,101 @@
              x:DataType="vm:DashboardViewModel"
              xmlns:models="clr-namespace:PixQrCodeGeneratorOffline.Models"
              >
-    
-  <ContentView.Content>
-        <Grid>
-            <StackLayout Style="{DynamicResource styleSession}">
-                
-                <CollectionView ItemsSource="{Binding PixKeyListContact}" 
+
+    <StackLayout Style="{DynamicResource styleSession}">
+
+        <CollectionView ItemsSource="{Binding PixKeyListContact}" 
                                 HeightRequest="250" 
                                 IsVisible="{Binding PixKeyListContact, Converter={StaticResource HasDataConverter}}">
-                    
-                    <CollectionView.ItemsLayout>
-                        <LinearItemsLayout Orientation="Horizontal" />
-                    </CollectionView.ItemsLayout>
 
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate x:DataType="models:PixKey">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Horizontal" />
+            </CollectionView.ItemsLayout>
 
-                            <StackLayout Padding="5,0,0,0">
-                                <Frame VerticalOptions="FillAndExpand" CornerRadius="10" Padding="15" BackgroundColor="{DynamicResource foreground_page}" WidthRequest="150">
-                                    <StackLayout Spacing="15" HorizontalOptions="FillAndExpand">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:PixKey">
 
-                                        <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.UserCircle }" Grid.Column="0" FontSize="60" IconColor="{DynamicResource textSecondary}" VerticalOptions="Center" />
+                    <StackLayout Padding="5,0,0,0">
+                        <Frame VerticalOptions="FillAndExpand" CornerRadius="10" Padding="15" BackgroundColor="{DynamicResource foreground_page}" WidthRequest="150">
+                            <StackLayout Spacing="15" HorizontalOptions="FillAndExpand">
 
-                                        <StackLayout Spacing="0">
-                                            <Label Text="{Binding Viewer.NamePresentation}" TextColor="{DynamicResource textSecondary}" FontFamily="{DynamicResource FontBold}" FontSize="{StaticResource FontSizeMedium}"  />
-                                            <Label Text="{Binding Viewer.KeyPresentation}" TextColor="{DynamicResource textSecondary}" MaxLines="1" LineBreakMode="MiddleTruncation" />
-                                        </StackLayout>
+                                <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.UserCircle }" Grid.Column="0" FontSize="60" IconColor="{DynamicResource textSecondary}" VerticalOptions="Center" />
 
-                                        <BoxView HeightRequest="1" VerticalOptions="EndAndExpand" BackgroundColor="{DynamicResource background_page}" HorizontalOptions="FillAndExpand" />
+                                <StackLayout Spacing="0">
+                                    <Label Text="{Binding Viewer.NamePresentation}" TextColor="{DynamicResource textSecondary}" FontFamily="{DynamicResource FontBold}" FontSize="{StaticResource FontSizeMedium}"  />
+                                    <Label Text="{Binding Viewer.KeyPresentation}" TextColor="{DynamicResource textSecondary}" MaxLines="1" LineBreakMode="MiddleTruncation" />
+                                </StackLayout>
 
-                                        <Grid ColumnDefinitions="*,*">
-                                            <StackLayout Grid.Column="0">
-                                                <StackLayout.GestureRecognizers>
-                                                    <TapGestureRecognizer Command="{Binding Command.CopyKeyCommand}" />
-                                                </StackLayout.GestureRecognizers>
+                                <BoxView HeightRequest="1" VerticalOptions="EndAndExpand" BackgroundColor="{DynamicResource background_page}" HorizontalOptions="FillAndExpand" />
 
-                                                <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Copy }" Style="{DynamicResource styleIconActionListContact}" />
-                                                <Label Text="Copiar" Style="{DynamicResource styleTextOnButtonActionListContact}"/>
-                                            </StackLayout>
+                                <Grid ColumnDefinitions="*,*">
+                                    <StackLayout Grid.Column="0">
+                                        <StackLayout.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding Command.CopyKeyCommand}" />
+                                        </StackLayout.GestureRecognizers>
 
-                                            <StackLayout Grid.Column="1">
-                                                <StackLayout.GestureRecognizers>
-                                                    <TapGestureRecognizer Command="{Binding Command.EditKeyCommand}" />
-                                                </StackLayout.GestureRecognizers>
-
-                                                <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Pen }" Style="{DynamicResource styleIconActionListContact}" />
-                                                <Label Text="Editar" Style="{DynamicResource styleTextOnButtonActionListContact}"/>
-                                            </StackLayout>
-                                        </Grid>
+                                        <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Copy }" Style="{DynamicResource styleIconActionListContact}" />
+                                        <Label Text="Copiar" Style="{DynamicResource styleTextOnButtonActionListContact}"/>
                                     </StackLayout>
-                                </Frame>
+
+                                    <StackLayout Grid.Column="1">
+                                        <StackLayout.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding Command.EditKeyCommand}" />
+                                        </StackLayout.GestureRecognizers>
+
+                                        <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Pen }" Style="{DynamicResource styleIconActionListContact}" />
+                                        <Label Text="Editar" Style="{DynamicResource styleTextOnButtonActionListContact}"/>
+                                    </StackLayout>
+                                </Grid>
                             </StackLayout>
+                        </Frame>
+                    </StackLayout>
 
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
 
-                </CollectionView>
+        </CollectionView>
 
-                <StackLayout Style="{DynamicResource styleStakLatyoutMultipleAction}">
-                    <Frame BackgroundColor="{DynamicResource foreground_page}" Style="{DynamicResource styleFrameAction}">
-                        <Frame.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding NavigateToAddNewKeyPageContactCommand}" />
-                        </Frame.GestureRecognizers>
+        <StackLayout Style="{DynamicResource styleStakLatyoutMultipleAction}">
+            <Frame BackgroundColor="{DynamicResource foreground_page}" Style="{DynamicResource styleFrameAction}">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding NavigateToAddNewKeyPageContactCommand}" />
+                </Frame.GestureRecognizers>
 
-                        <Grid Style="{DynamicResource styleGridActionChevronRight}">
+                <Grid Style="{DynamicResource styleGridActionChevronRight}">
 
 
 
-                            <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.PlusCircle }" Style="{DynamicResource styleGridActionChevronIcon}" />
-                            <Label Text="Adicionar Nova" Style="{DynamicResource styleGridActionTitle}" />
-                            <content:ChevronRightView Grid.Column="2" />
+                    <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.PlusCircle }" Style="{DynamicResource styleGridActionChevronIcon}" />
+                    <Label Text="Adicionar Nova" Style="{DynamicResource styleGridActionTitle}" />
+                    <content:ChevronRightView Grid.Column="2" />
 
-                        </Grid>
+                </Grid>
 
-                    </Frame>
+            </Frame>
 
-                    <Frame BackgroundColor="{DynamicResource foreground_page}" 
+            <Frame BackgroundColor="{DynamicResource foreground_page}" 
                            Style="{DynamicResource styleFrameAction}"
                            IsVisible="{Binding PixKeyListContact, Converter={StaticResource HasDataConverter}}">
 
-                        <Frame.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding RemoveAllKeyContactCommand}" />
-                        </Frame.GestureRecognizers>
-                        <Grid Style="{DynamicResource styleGridActionChevronRight}">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding RemoveAllKeyContactCommand}" />
+                </Frame.GestureRecognizers>
+                <Grid Style="{DynamicResource styleGridActionChevronRight}">
 
 
 
-                            <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Trash }" Style="{DynamicResource styleGridActionChevronIcon}" />
-                            <Label Text="Excluir Todas" Style="{DynamicResource styleGridActionTitle}" />
-                            <content:ChevronRightView Grid.Column="2" />
+                    <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Trash }" Style="{DynamicResource styleGridActionChevronIcon}" />
+                    <Label Text="Excluir Todas" Style="{DynamicResource styleGridActionTitle}" />
+                    <content:ChevronRightView Grid.Column="2" />
 
-                        </Grid>
-                    </Frame>
-                </StackLayout>
+                </Grid>
+            </Frame>
+        </StackLayout>
 
 
 
-            </StackLayout>
+    </StackLayout>
 
-            <content:PanelLoadView IsVisible="{Binding CurrentDashboardLoadInfo.IsLoadContactKeys}" />
-        </Grid>
-    </ContentView.Content>
-</ContentView>
+    <content:PanelLoadView IsVisible="{Binding CurrentDashboardLoadInfo.IsLoadContactKeys}" />
+</Grid>

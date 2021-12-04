@@ -10,7 +10,7 @@ using Xamarin.Forms.Xaml;
 namespace PixQrCodeGeneratorOffline.Views.Content.StartPageContents
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class StartPageBillingSaveView : ContentView
+    public partial class StartPageBillingSaveView : Grid
     {
         public StartPageBillingSaveView()
         {
