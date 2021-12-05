@@ -105,7 +105,7 @@
 
             <IndicatorView x:Name="indicatorView"
                        IsVisible="{Binding PixKeyList, Converter={StaticResource HasDataIfMore}, Mode=TwoWay}" Margin="5" />
-            
+
         </StackLayout>
 
         <CollectionView ItemsSource="{Binding CurrentPixKeyActions}"
@@ -128,7 +128,7 @@
                                WidthRequest="120"
                                VerticalOptions="FillAndExpand"
                                Padding="15">
-                            
+
                             <StackLayout>
                                 <controls:CustomIcon Glyph="{Binding Icon}" IconColor="{Binding Colors.Primary}" FontSize="{DynamicResource FontSizeLarge}" HorizontalOptions="Start" />
 
@@ -142,27 +142,18 @@
             </CollectionView.ItemTemplate>
 
         </CollectionView>
-        
+
         <StackLayout>
 
 
             <templates:TemplateAction Title="Adicionar Nova"
-                                      Icon="{x:Static icons:FontAwesomeSolid.PlusCircle }">
-                <templates:TemplateAction.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding NavigateToAddNewKeyPageCommand}" />
-                </templates:TemplateAction.GestureRecognizers>
-                
-            </templates:TemplateAction>
+                                      Icon="{x:Static icons:FontAwesomeSolid.PlusCircle }"
+                                      TapCommand="{Binding NavigateToAddNewKeyPageCommand}"/>
 
             <templates:TemplateAction Title="Compartilhar Todas"
                                       Icon="{x:Static icons:FontAwesomeSolid.Share }"
-                                      IsVisible="{Binding PixKeyList, Converter={StaticResource HasDataConverter}}">
-                <templates:TemplateAction.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding ShareAllCommand}" />
-                </templates:TemplateAction.GestureRecognizers>
-
-            </templates:TemplateAction>
-
+                                      IsVisible="{Binding PixKeyList, Converter={StaticResource HasDataConverter}}"
+                                      TapCommand="{Binding ShareAllCommand}"/>
 
         </StackLayout>
         <!--<Grid Style="{DynamicResource styleGridActionChevronRight}" IsVisible="{Binding PixKeyList, Converter={StaticResource HasDataConverter}}">

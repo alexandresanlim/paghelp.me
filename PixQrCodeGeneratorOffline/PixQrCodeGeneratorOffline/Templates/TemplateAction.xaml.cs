@@ -35,14 +35,18 @@ namespace PixQrCodeGeneratorOffline.Templates
                 null,
                 propertyChanged: IconPropertyChanged);
 
-        //public static readonly BindableProperty TapProperty =
-        //    BindableProperty.Create(nameof(TapCommand),
-        //        typeof(Command),
-        //        typeof(TemplateTitlePanel),
-        //        null,
-        //        BindingMode.Default,
-        //        null,
-        //        propertyChanged: TapPropertyChanged);
+        public static readonly BindableProperty TapCommandProperty =
+            BindableProperty.Create(nameof(TapCommand),
+                typeof(ICommand),
+                typeof(TemplateTitlePanel),
+                null,
+                BindingMode.Default,
+                null,
+                propertyChanged: TapPropertyChanged);
+
+
+
+
 
         public string Title
         {
@@ -56,11 +60,11 @@ namespace PixQrCodeGeneratorOffline.Templates
             set => SetValue(IconProperty, value);
         }
 
-        //public Command TapCommand
-        //{
-        //    get => (Command)GetValue(TapProperty);
-        //    set => SetValue(TapProperty, value);
-        //}
+        public ICommand TapCommand
+        {
+            get => (ICommand)GetValue(TapCommandProperty);
+            set => SetValue(TapCommandProperty, value);
+        }
 
         static void TitlePropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
@@ -74,10 +78,18 @@ namespace PixQrCodeGeneratorOffline.Templates
             b.xIcon.Glyph = (string)newValue;
         }
 
-        //static void TapPropertyChanged(BindableObject bindable, object oldValue, object newValue)
-        //{
-        //    var b = (TemplateAction)bindable;
-        //    b.xTapCommand.Command = (Command)newValue;
-        //}
+        static void TapPropertyChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            var b = (TemplateAction)bindable;
+            b.GestureRecognizers.Add(new TapGestureRecognizer
+            {
+                Command = (ICommand)newValue,
+            });
+        }
+
+        protected override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+        }
     }
 }

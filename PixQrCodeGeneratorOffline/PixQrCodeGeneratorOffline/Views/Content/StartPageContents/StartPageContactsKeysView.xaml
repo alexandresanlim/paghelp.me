@@ -68,22 +68,13 @@
 
             <templates:TemplateAction Title="Adicionar Nova"
                                       Icon="{x:Static icons:FontAwesomeSolid.PlusCircle }"
-                                      >
-                <templates:TemplateAction.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding NavigateToAddNewKeyPageContactCommand}" />
-                </templates:TemplateAction.GestureRecognizers>
-
-            </templates:TemplateAction>
+                                      TapCommand="{Binding NavigateToAddNewKeyPageContactCommand}" />
 
 
             <templates:TemplateAction Title="Excluir Todas"
                                       Icon="{x:Static icons:FontAwesomeSolid.Trash }"
-                                      IsVisible="{Binding PixKeyListContact, Converter={StaticResource HasDataConverter}}">
-                <templates:TemplateAction.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding RemoveAllKeyContactCommand}" />
-                </templates:TemplateAction.GestureRecognizers>
-
-            </templates:TemplateAction>
+                                      IsVisible="{Binding PixKeyListContact, Converter={StaticResource HasDataConverter}}"
+                                      TapCommand="{Binding RemoveAllKeyContactCommand}"/>
 
         </StackLayout>
 
