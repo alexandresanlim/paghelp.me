@@ -10,7 +10,7 @@
              x:DataType="vm:DashboardViewModel"
              >
 
-    <StackLayout Style="{DynamicResource styleSession}">
+    <StackLayout>
 
         <collections:BillingSaveHorizontalCollectionView />
 

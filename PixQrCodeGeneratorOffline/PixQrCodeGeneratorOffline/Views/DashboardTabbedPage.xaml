@@ -21,6 +21,6 @@
         </x:Arguments>
     </NavigationPage>-->
 
-    <local:DashboardPage Title="Minhas Chaves" />
+    <local:StartPage Title="Minhas Chaves" />
     <local:DashboardContactPage Title="Chaves de Contatos" />
 </TabbedPage>

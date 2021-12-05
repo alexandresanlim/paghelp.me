@@ -35,6 +35,24 @@ namespace PixQrCodeGeneratorOffline.Templates
                 null,
                 propertyChanged: IconPropertyChanged);
 
+        public static readonly BindableProperty TitleColorProperty =
+            BindableProperty.Create(nameof(TitleColor),
+                typeof(Color),
+                typeof(TemplateTitlePanel),
+                App.ThemeColors.TextSecondary,
+                BindingMode.Default,
+                null,
+                propertyChanged: TitleColorPropertyChanged);
+
+        public static readonly BindableProperty IconColorProperty =
+            BindableProperty.Create(nameof(IconColor),
+                typeof(Color),
+                typeof(TemplateTitlePanel),
+                App.ThemeColors.TextSecondary,
+                BindingMode.Default,
+                null,
+                propertyChanged: IconColorPropertyChanged);
+
         public string Title
         {
             get => (string)GetValue(TitleProperty);
@@ -47,6 +65,18 @@ namespace PixQrCodeGeneratorOffline.Templates
             set => SetValue(IconProperty, value);
         }
 
+        public Color TitleColor
+        {
+            get => (Color)GetValue(IconProperty);
+            set => SetValue(IconProperty, value);
+        }
+
+        public Color IconColor
+        {
+            get => (Color)GetValue(IconColorProperty);
+            set => SetValue(IconColorProperty, value);
+        }
+
         static void TitlePropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
             var b = (TemplateTitlePanel)bindable;
@@ -57,6 +87,18 @@ namespace PixQrCodeGeneratorOffline.Templates
         {
             var b = (TemplateTitlePanel)bindable;
             b.xIcon.Glyph = (string)newValue;
+        }
+
+        static void TitleColorPropertyChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            var b = (TemplateTitlePanel)bindable;
+            b.xTitle.TextColor = (Color)newValue;
+        }
+
+        static void IconColorPropertyChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            var b = (TemplateTitlePanel)bindable;
+            b.xIcon.TextColor = (Color)newValue;
         }
     }
 }

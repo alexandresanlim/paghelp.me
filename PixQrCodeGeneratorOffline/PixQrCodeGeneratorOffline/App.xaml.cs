@@ -12,7 +12,6 @@ using PixQrCodeGeneratorOffline.Models.Viewer.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Services;
 using PixQrCodeGeneratorOffline.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Style.Interfaces;
-using PixQrCodeGeneratorOffline.ViewModels;
 using System.Globalization;
 using Xamarin.Forms;
 

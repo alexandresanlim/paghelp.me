@@ -12,7 +12,7 @@
 
     <BoxView BackgroundColor="{StaticResource primaryDark}" HeightRequest="50" VerticalOptions="Start" />
 
-    <StackLayout Style="{DynamicResource styleSession}">
+    <StackLayout>
 
         <!--<Grid>
                     <Grid RowDefinitions="*,*">
@@ -23,32 +23,33 @@
                     
                 </Grid>-->
 
-        <CarouselView ItemsSource="{Binding PixKeyList}"
+        <StackLayout Spacing="0">
+            <CarouselView ItemsSource="{Binding PixKeyList}"
                               PeekAreaInsets="20,0"
                               CurrentItemChangedCommand="{Binding ChangeSelectPixKeyCommand}"
                               CurrentItemChangedCommandParameter="{Binding Source={RelativeSource Self}, Path=CurrentItem}"
                               CurrentItem="{Binding CurrentPixKey}"
-                              HeightRequest="150"
+                              HeightRequest="142"
                               IndicatorView="indicatorView"
                           IsVisible="{Binding PixKeyList, Converter={StaticResource HasDataConverter}}"
                               >
 
-            <CarouselView.ItemTemplate>
-                <DataTemplate x:DataType="models:PixKey">
+                <CarouselView.ItemTemplate>
+                    <DataTemplate x:DataType="models:PixKey">
 
 
-                    <StackLayout Padding="0,0,10,0">
-                        <Frame CornerRadius="10" BackgroundColor="{DynamicResource foreground_page}" Padding="15">
-                            <Grid ColumnDefinitions="auto,*">
+                        <StackLayout Padding="5,0">
+                            <Frame CornerRadius="10" BackgroundColor="{DynamicResource foreground_page}" Padding="15">
+                                <Grid ColumnDefinitions="auto,*">
 
-                                <StackLayout Grid.Column="0" WidthRequest="8" BackgroundColor="{Binding FinancialInstitution.Institution.MaterialColor.Primary}" />
+                                    <StackLayout Grid.Column="0" WidthRequest="8" BackgroundColor="{Binding FinancialInstitution.Institution.MaterialColor.Primary}" />
 
-                                <StackLayout Grid.Column="1" Padding="10,15" Spacing="15">
+                                    <StackLayout Grid.Column="1" Padding="10,15" Spacing="15">
 
 
-                                    <Grid ColumnDefinitions="auto,*" ColumnSpacing="15">
+                                        <Grid ColumnDefinitions="auto,*" ColumnSpacing="15">
 
-                                        <qr:QRCode
+                                            <qr:QRCode
                                                     Grid.Column="0"
                                                     Content="{Binding Payload.QrCode}"
                                                     BackgroundColor="White"
@@ -59,27 +60,27 @@
                                                     VerticalOptions="Center" 
                                                     >
 
-                                            <qr:QRCode.GestureRecognizers>
-                                                <TapGestureRecognizer Command="{Binding Command.NavigateToPaymentPageCommand}" />
-                                            </qr:QRCode.GestureRecognizers>
+                                                <qr:QRCode.GestureRecognizers>
+                                                    <TapGestureRecognizer Command="{Binding Command.NavigateToPaymentPageCommand}" />
+                                                </qr:QRCode.GestureRecognizers>
 
-                                        </qr:QRCode>
+                                            </qr:QRCode>
 
 
-                                        <Grid Grid.Column="1" ColumnDefinitions="auto, *" RowDefinitions="auto, auto" VerticalOptions="Center" RowSpacing="0">
+                                            <Grid Grid.Column="1" ColumnDefinitions="auto, *" RowDefinitions="auto, auto" VerticalOptions="Center" RowSpacing="0">
 
-                                            <controls:CustomIcon Grid.Row="0" Grid.Column="0" Glyph="{x:Static icons:FontAwesomeSolid.University }" Style="{DynamicResource styleActionIcon}" />
-                                            <Label Grid.Row="0" Grid.Column="1" Text="{Binding Viewer.InstitutionPresentation}" Style="{DynamicResource styleActionText}" />
+                                                <controls:CustomIcon Grid.Row="0" Grid.Column="0" Glyph="{x:Static icons:FontAwesomeSolid.University }" Style="{DynamicResource styleActionIcon}" />
+                                                <Label Grid.Row="0" Grid.Column="1" Text="{Binding Viewer.InstitutionPresentation}" Style="{DynamicResource styleActionText}" />
 
-                                            <!--<controls:CustomIcon Grid.Row="1" Grid.Column="0" Glyph="{x:Static icons:FontAwesomeSolid.UserAlt }" Style="{DynamicResource styleActionIcon}" />
+                                                <!--<controls:CustomIcon Grid.Row="1" Grid.Column="0" Glyph="{x:Static icons:FontAwesomeSolid.UserAlt }" Style="{DynamicResource styleActionIcon}" />
                                                         <Label Grid.Row="1" Grid.Column="1" Text="{Binding Viewer.NamePresentation}" Style="{DynamicResource styleActionText}" />-->
 
-                                            <controls:CustomIcon Grid.Row="1" Grid.Column="0" Glyph="{x:Static icons:FontAwesomeSolid.Key }" Style="{DynamicResource styleActionIcon}" />
-                                            <Label Grid.Row="1" Grid.Column="1" MaxLines="1" LineBreakMode="MiddleTruncation" Text="{Binding Viewer.KeyPresentation}" Style="{DynamicResource styleActionText}" />
+                                                <controls:CustomIcon Grid.Row="1" Grid.Column="0" Glyph="{x:Static icons:FontAwesomeSolid.Key }" Style="{DynamicResource styleActionIcon}" />
+                                                <Label Grid.Row="1" Grid.Column="1" MaxLines="1" LineBreakMode="MiddleTruncation" Text="{Binding Viewer.KeyPresentation}" Style="{DynamicResource styleActionText}" />
 
-                                        </Grid>
+                                            </Grid>
 
-                                        <!--<StackLayout Grid.Column="2" Padding="30,5,0,15" VerticalOptions="Start">
+                                            <!--<StackLayout Grid.Column="2" Padding="30,5,0,15" VerticalOptions="Start">
                                                         <StackLayout.GestureRecognizers>
                                                             <TapGestureRecognizer Command="{Binding Command.EditKeyCommand}" />
                                                         </StackLayout.GestureRecognizers>
@@ -89,27 +90,27 @@
                                                         <Label Text="Editar" Style="{DynamicResource styleTextOnButtonActionList}" TextColor="{DynamicResource textSecondary}"/>
                                                     </StackLayout>-->
 
-                                    </Grid>
+                                        </Grid>
 
 
-                                </StackLayout>
-                            </Grid>
-                        </Frame>
-                    </StackLayout>
+                                    </StackLayout>
+                                </Grid>
+                            </Frame>
+                        </StackLayout>
 
 
-                </DataTemplate>
-            </CarouselView.ItemTemplate>
-        </CarouselView>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
 
-        <IndicatorView x:Name="indicatorView"
-                                       IndicatorsShape="Circle"
-                                       IndicatorColor="LightGray"
-                                       SelectedIndicatorColor="DarkGray" 
-                           IsVisible="{Binding PixKeyList, Converter={StaticResource HasDataConverter}}"
-                           />
+            <IndicatorView x:Name="indicatorView"
+                       IsVisible="{Binding PixKeyList, Converter={StaticResource HasDataIfMore}, Mode=TwoWay}" Margin="5" />
+            
+        </StackLayout>
 
-        <CollectionView ItemsSource="{Binding CurrentPixKeyActions}" HeightRequest="140" Margin="0,15,0,0" IsVisible="{Binding PixKeyList, Converter={StaticResource HasDataConverter}}">
+        <CollectionView ItemsSource="{Binding CurrentPixKeyActions}"
+                        HeightRequest="140"
+                        IsVisible="{Binding PixKeyList, Converter={StaticResource HasDataConverter}}">
 
             <CollectionView.ItemsLayout>
                 <LinearItemsLayout Orientation="Horizontal"/>
@@ -117,18 +118,17 @@
 
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="models:PixKeyAction">
-                    <StackLayout Padding="5,0">
+                    <StackLayout Padding="8,0,0,0">
                         <StackLayout.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding Command}" />
                         </StackLayout.GestureRecognizers>
 
-                        <Frame
-                                    BackgroundColor="{DynamicResource foreground_page}"
-                                    CornerRadius="15"
-                                    WidthRequest="120"
-                                    VerticalOptions="FillAndExpand"
-                                    Padding="15"
-                                    >
+                        <Frame BackgroundColor="{DynamicResource foreground_page}"
+                               CornerRadius="10"
+                               WidthRequest="120"
+                               VerticalOptions="FillAndExpand"
+                               Padding="15">
+                            
                             <StackLayout>
                                 <controls:CustomIcon Glyph="{Binding Icon}" IconColor="{Binding Colors.Primary}" FontSize="{DynamicResource FontSizeLarge}" HorizontalOptions="Start" />
 
@@ -142,8 +142,8 @@
             </CollectionView.ItemTemplate>
 
         </CollectionView>
-
-        <StackLayout Style="{DynamicResource styleStakLatyoutMultipleAction}">
+        
+        <StackLayout>
 
 
             <templates:TemplateAction Title="Adicionar Nova"

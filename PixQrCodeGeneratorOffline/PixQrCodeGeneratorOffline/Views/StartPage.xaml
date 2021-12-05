@@ -44,7 +44,7 @@
     <ContentPage.Resources>
         <ResourceDictionary>
 
-           
+
             <Style x:Key="styleGridActionChevronRight" TargetType="Grid">
                 <Setter Property="ColumnDefinitions" Value="auto,*, auto"/>
                 <Setter Property="Padding" Value="10" />
@@ -71,15 +71,6 @@
                 <Setter Property="Padding" Value="10,5" />
                 <Setter Property="BackgroundColor" Value="{DynamicResource foreground_page}"/>
             </Style>
-
-            <Style x:Key="styleStakLatyoutMultipleAction" TargetType="StackLayout">
-                <Setter Property="Spacing" Value="5" />
-                <Setter Property="Padding" Value="0,15,0,0" />
-            </Style>
-
-
-
-
 
             <Style x:Key="styleActionText" TargetType="Label">
                 <Setter Property="FontSize" Value="{DynamicResource FontSizeSmall}"/>
@@ -113,11 +104,6 @@
                 <Setter Property="CornerRadius" Value="10"/>
                 <Setter Property="Padding" Value="10,15"/>
 
-            </Style>
-
-
-            <Style x:Key="styleSession" TargetType="StackLayout">
-                <Setter Property="Padding" Value="0,0,0,30" />
             </Style>
 
         </ResourceDictionary>
@@ -174,7 +160,10 @@
 
                     <templates:TemplateTitlePanel 
                         Title="Minhas Chaves" 
-                        Icon="{x:Static icons:FontAwesomeSolid.Key}" BackgroundColor="{StaticResource primaryDark}"/>
+                        Icon="{x:Static icons:FontAwesomeSolid.Key}" 
+                        BackgroundColor="{StaticResource primaryDark}"
+                        TitleColor="{DynamicResource textOnPrimary}"
+                        IconColor="{DynamicResource textOnPrimary}"/>
 
                     <contentStart:StartPageMyKeysView />
 
@@ -196,6 +185,8 @@
 
                     <!--//////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
 
+                    <content:DivisionView Margin="0,8,0,0"/>
+                    
                     <templates:TemplateTitlePanel 
                         Title="Chaves de Contatos" 
                         Icon="{x:Static icons:FontAwesomeSolid.Users}"/>
@@ -217,8 +208,10 @@
                         <content:DivisionView/>
                     </StackLayout>
 
-                    <!--//////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+                    <!--Preferences-->
 
+                    <content:DivisionView Margin="0,8,0,0"/>
+                    
                     <Grid ColumnDefinitions="*, auto" Padding="0,0,10,0">
 
                         <Grid.GestureRecognizers>
@@ -305,7 +298,7 @@
 
                                 <StackLayout VerticalOptions="CenterAndExpand" Spacing="30">
                                     <StackLayout VerticalOptions="Center" Spacing="15">
-                                        <controls:CustomIcon Glyph="{Binding Emoji}" FontSize="100" IconColor="{DynamicResource textOnSecondary}" />
+                                        <controls:CustomIcon Glyph="{Binding Emoji}" HorizontalOptions="Center" FontSize="100" IconColor="{DynamicResource textOnSecondary}" />
                                         <Label Text="{Binding Title}" HorizontalOptions="Center" FontSize="{DynamicResource FontSizeLarge}" FontFamily="{DynamicResource FontSemiBold}" TextColor="{DynamicResource textOnPrimary}"/>
 
                                     </StackLayout>

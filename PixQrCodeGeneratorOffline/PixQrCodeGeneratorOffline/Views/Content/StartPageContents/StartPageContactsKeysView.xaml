@@ -10,7 +10,7 @@
              xmlns:models="clr-namespace:PixQrCodeGeneratorOffline.Models" 
       xmlns:templates="clr-namespace:PixQrCodeGeneratorOffline.Templates">
 
-    <StackLayout Style="{DynamicResource styleSession}">
+    <StackLayout>
 
         <CollectionView ItemsSource="{Binding PixKeyListContact}" 
                                 HeightRequest="250" 
@@ -64,7 +64,7 @@
 
         </CollectionView>
 
-        <StackLayout Style="{DynamicResource styleStakLatyoutMultipleAction}">
+        <StackLayout>
 
             <templates:TemplateAction Title="Adicionar Nova"
                                       Icon="{x:Static icons:FontAwesomeSolid.PlusCircle }"
