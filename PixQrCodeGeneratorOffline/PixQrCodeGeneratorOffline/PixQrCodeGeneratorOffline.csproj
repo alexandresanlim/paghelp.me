@@ -41,16 +41,46 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Controls\Resources\XFCustomControlResource.xaml.cs">
+      <DependentUpon>XFCustomControlResource.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Converters\Resources\ConverterResource.xaml.cs">
+      <DependentUpon>ConverterResource.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Style\Resources\ColorsResource.xaml.cs">
+      <DependentUpon>ColorsResource.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Style\Resources\FontSizeResource.xaml.cs">
+      <DependentUpon>FontSizeResource.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Style\Resources\FontTypeResource.xaml.cs">
+      <DependentUpon>FontTypeResource.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\BillingSaveListPage.xaml.cs">
       <DependentUpon>BillingSaveListPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Converters\Resources\ConverterDictionary.xaml">
+    <EmbeddedResource Update="Controls\Resources\XFCustomControlResource.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Style\Resources\Colors.xaml">
+    <EmbeddedResource Update="Controls\Resources\StyleControlResource.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Controls\Resources\XFControlsResource.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Converters\Resources\ConverterResource.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Style\Resources\ColorsResource.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Style\Resources\FontSizeResource.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Style\Resources\FontTypeResource.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Templates\TemplateAction.xaml">

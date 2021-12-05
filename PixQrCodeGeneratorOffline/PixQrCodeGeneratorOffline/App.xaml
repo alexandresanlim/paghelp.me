@@ -2,135 +2,25 @@
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PixQrCodeGeneratorOffline.App"
-             xmlns:adscontrols="clr-namespace:MarcTron.Plugin.Controls;assembly=Plugin.MtAdmob" 
              xmlns:converterResources="clr-namespace:PixQrCodeGeneratorOffline.Converters.Resources"
              xmlns:styleResorces="clr-namespace:PixQrCodeGeneratorOffline.Style.Resources"
-             xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
-             >
+             xmlns:controlsResorces="clr-namespace:PixQrCodeGeneratorOffline.Controls.Resources">
     <!--
         Define global resources and styles here, that apply to all pages in your app.
     -->
     <Application.Resources>
 
-
-        <Style TargetType="adscontrols:MTAdView">
-            <Setter Property="HeightRequest">
-                <Setter.Value>
-                    <x:OnIdiom Phone="90" Tablet="130"/>
-                </Setter.Value>
-            </Setter>
-            <!--<Setter Property="WidthRequest">
-                <Setter.Value>
-                    <x:OnIdiom Phone="320" Tablet="320"/>
-                </Setter.Value>
-            </Setter>-->
-        </Style>
-
-        <x:Double x:Key="FontSizeLarge">25</x:Double>
-        <x:Double x:Key="FontSizeMedium">20</x:Double>
-        <x:Double x:Key="FontSizeSmall">15</x:Double>
-        <x:Double x:Key="FontSizeMicro">10</x:Double>
-
-        <x:String x:Key="FontBold">FontPoppinsBold</x:String>
-        <x:String x:Key="FontSemiBold">FontPoppinsSemiBold</x:String>
-
-        <Style TargetType="Label">
-            <Setter Property="FontFamily" Value="FontPoppinsRegular"/>
-            <Setter Property="TextColor" Value="{DynamicResource textPrimary}" />
-        </Style>
-
-        <Style TargetType="Entry">
-            <Setter Property="FontFamily" Value="FontPoppinsRegular"/>
-            <Setter Property="ClearButtonVisibility" Value="WhileEditing"/>
-            <Setter Property="PlaceholderColor" Value="{DynamicResource textSecondary}" />
-            <Setter Property="TextColor" Value="{DynamicResource textPrimary}" />
-        </Style>
-
-        <Style TargetType="Frame">
-            <Setter Property="HasShadow" Value="False"/>
-            <Setter Property="Padding" Value="0"/>
-        </Style>
-
-        <Style TargetType="CarouselView">
-            <Setter Property="Loop" Value="False"/>
-            <Setter Property="IsScrollAnimated" Value="True"/>
-        </Style>
-
-        <Style TargetType="ActivityIndicator">
-            <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
-            <Setter Property="IsRunning" Value="True"/>
-        </Style>
-
-        <Style TargetType="ContentPage">
-            <Setter Property="BackgroundColor" Value="{DynamicResource background_page}"/>
-        </Style>
-
-        <Style TargetType="controls:CustomIcon">
-            <Setter Property="FontSize" Value="{StaticResource FontSizeMedium}"/>
-        </Style>
-
-        <Style TargetType="IndicatorView">
-            <Setter Property="IndicatorsShape" Value="Circle"/>
-            <Setter Property="IndicatorColor" Value="LightGray"/>
-            <Setter Property="SelectedIndicatorColor" Value="DarkGray"/>
-        </Style>
-
-        <!--<ResourceDictionary Source="Colors.xaml" />-->
-
         <ResourceDictionary>
 
             <ResourceDictionary.MergedDictionaries>
-                <converterResources:ConverterDictionary />
-                <styleResorces:Colors />
+                <converterResources:ConverterResource />
+                <styleResorces:ColorsResource />
+                <styleResorces:FontSizeResource />
+                <styleResorces:FontTypeResource />
+                <controlsResorces:XFControlsResource />
+                <controlsResorces:XFCustomControlResource />
+                <controlsResorces:StyleControlResource />
             </ResourceDictionary.MergedDictionaries>
-
-
-            <Style x:Key="styleFrameMenuAbout" TargetType="Frame">
-                <Setter Property="BackgroundColor" Value="{DynamicResource foreground_page}" />
-                <Setter Property="Padding" Value="30,15" />
-                <Setter Property="CornerRadius" Value="30" />
-            </Style>
-
-            <Style x:Key="titleStyle" TargetType="Label">
-                <Setter Property="Margin" Value="15,0,0,0"/>
-                <Setter Property="FontSize" Value="{DynamicResource FontSizeLarge}" />
-                <Setter Property="TextColor" Value="{DynamicResource textSecondary}"/>
-                <Setter Property="FontFamily" Value="{DynamicResource FontBold}"/>
-            </Style>
-
-            <Style x:Key="optionTitle" TargetType="Label">
-                <Setter Property="FontSize" Value="50" />
-                <Setter Property="TextColor" Value="{DynamicResource textSecondary}"/>
-                <Setter Property="FontFamily" Value="{DynamicResource FontBold}"/>
-            </Style>
-
-            <Style x:Key="subOptionTitle" TargetType="Label">
-                <Setter Property="FontSize" Value="30" />
-                <Setter Property="TextColor" Value="{DynamicResource textPrimary}"/>
-                <Setter Property="FontFamily" Value="{DynamicResource FontSemiBold}"/>
-            </Style>
-
-            <Style x:Key="paddingPageGrid" TargetType="Grid">
-                <!--<Setter Property="Padding" Value="0,25,0,0" />-->
-                <!--<Setter Property="Padding" Value="0,25,0,50" />-->
-            </Style>
-
-            <Style x:Key="paddingPageStackLayout" TargetType="StackLayout">
-                <!--<Setter Property="Padding" Value="0,25,0,0" />-->
-                <!--<Setter Property="Padding" Value="0,25,0,50" />-->
-            </Style>
-
-            <!--<Style x:Key="iconMenuStyle" TargetType="controls:CustomIcon">
-                <Setter Property="IconSize" Value="Medium" />
-                <Setter Property="IconColor" Value="{DynamicResource textOnSecondary}"/>
-            </Style>
-
-            <Style x:Key="frameMenuStyle" TargetType="Frame">
-                <Setter Property="CornerRadius" Value="15" />
-                <Setter Property="BackgroundColor" Value="#25000000"/>
-                <Setter Property="WidthRequest" Value="80"/>
-                <Setter Property="Padding" Value="15,25"/>
-            </Style>-->
 
         </ResourceDictionary>
 

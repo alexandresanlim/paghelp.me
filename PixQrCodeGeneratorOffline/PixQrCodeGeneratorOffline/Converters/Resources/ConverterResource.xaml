@@ -2,7 +2,7 @@
 <ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
                     xmlns:converters="clr-namespace:PixQrCodeGeneratorOffline.Converters"
-                    x:Class="PixQrCodeGeneratorOffline.Converters.Resources.ConverterDictionary">
+                    x:Class="PixQrCodeGeneratorOffline.Converters.Resources.ConverterResource">
 
     <converters:HasDataConverter x:Key="HasDataConverter" />
     <converters:HasDataConverterInverted x:Key="HasDataConverterInverted" />

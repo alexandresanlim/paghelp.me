@@ -58,5 +58,10 @@ namespace PixQrCodeGeneratorOffline
 
             public static bool IsUWP => Device.RuntimePlatform == Device.UWP;
         }
+
+        public class Resorces
+        {
+            public static Style.Resources.ColorsResource Colors => new Style.Resources.ColorsResource();
+        }
     }
 }

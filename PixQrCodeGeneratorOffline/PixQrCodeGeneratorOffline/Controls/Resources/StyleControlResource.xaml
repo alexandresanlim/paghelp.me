@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PixQrCodeGeneratorOffline.Controls.Resources.StyleControlResource">
+
+    <Style x:Key="styleFrameMenuAbout" TargetType="Frame">
+        <Setter Property="BackgroundColor" Value="{DynamicResource foreground_page}" />
+        <Setter Property="Padding" Value="30,15" />
+        <Setter Property="CornerRadius" Value="30" />
+    </Style>
+
+    <Style x:Key="titleStyle" TargetType="Label">
+        <Setter Property="Margin" Value="15,0,0,0"/>
+        <Setter Property="FontSize" Value="{DynamicResource FontSizeLarge}" />
+        <Setter Property="TextColor" Value="{DynamicResource textSecondary}"/>
+        <Setter Property="FontFamily" Value="{DynamicResource FontBold}"/>
+    </Style>
+
+    <Style x:Key="optionTitle" TargetType="Label">
+        <Setter Property="FontSize" Value="50" />
+        <Setter Property="TextColor" Value="{DynamicResource textSecondary}"/>
+        <Setter Property="FontFamily" Value="{DynamicResource FontBold}"/>
+    </Style>
+
+    <Style x:Key="subOptionTitle" TargetType="Label">
+        <Setter Property="FontSize" Value="30" />
+        <Setter Property="TextColor" Value="{DynamicResource textPrimary}"/>
+        <Setter Property="FontFamily" Value="{DynamicResource FontSemiBold}"/>
+    </Style>
+</ResourceDictionary>

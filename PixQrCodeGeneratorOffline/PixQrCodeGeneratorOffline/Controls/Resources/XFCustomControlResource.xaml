@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    xmlns:adscontrols="clr-namespace:MarcTron.Plugin.Controls;assembly=Plugin.MtAdmob"
+                    xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
+             x:Class="PixQrCodeGeneratorOffline.Controls.Resources.XFCustomControlResource">
+
+    <Style TargetType="adscontrols:MTAdView">
+        <Setter Property="HeightRequest">
+            <Setter.Value>
+                <x:OnIdiom Phone="90" Tablet="130"/>
+            </Setter.Value>
+        </Setter>
+        <!--<Setter Property="WidthRequest">
+                <Setter.Value>
+                    <x:OnIdiom Phone="320" Tablet="320"/>
+                </Setter.Value>
+            </Setter>-->
+    </Style>
+
+
+    <Style TargetType="controls:CustomIcon">
+        <Setter Property="FontSize" Value="{DynamicResource FontSizeMedium}"/>
+    </Style>
+
+</ResourceDictionary>

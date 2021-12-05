@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace PixQrCodeGeneratorOffline.Converters.Resources
+namespace PixQrCodeGeneratorOffline.Controls.Resources
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ConverterDictionary : ResourceDictionary
+    public partial class XFControlsResource : ResourceDictionary
     {
-        public ConverterDictionary()
+        public XFControlsResource()
         {
             InitializeComponent();
         }

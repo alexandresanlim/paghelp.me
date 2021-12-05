@@ -94,48 +94,45 @@ namespace PixQrCodeGeneratorOffline.Models.Services
 
         public void SetOnCurrentResource(MaterialColor colors)
         {
-            App.Current.Resources["primary"] = colors.Primary;
-            App.Current.Resources["primaryLight"] = colors.PrimaryLight;
-            App.Current.Resources["primaryDark"] = colors.PrimaryDark;
+            App.Resorces.Colors["primary"] = colors.Primary;
+            App.Resorces.Colors["primaryLight"] = colors.PrimaryLight;
+            App.Resorces.Colors["primaryDark"] = colors.PrimaryDark;
 
-            App.Current.Resources["secondary"] = (colors?.Secondary == Color.FromRgba(0, 0, 0, 0)) ? Color.FromHex("#50000000") : colors.Secondary;
-            App.Current.Resources["secondaryLight"] = colors.SecondaryLight;
-            App.Current.Resources["secondaryDark"] = colors.SecondaryDark;
+            App.Resorces.Colors["secondary"] = (colors?.Secondary == Color.FromRgba(0, 0, 0, 0)) ? Color.FromHex("#50000000") : colors.Secondary;
+            App.Resorces.Colors["secondaryLight"] = colors.SecondaryLight;
+            App.Resorces.Colors["secondaryDark"] = colors.SecondaryDark;
 
-
-            App.Current.Resources["textOnPrimary"] = colors.TextOnPrimary;
-            App.Current.Resources["textOnSecondary"] = (colors?.TextOnSecondary == Color.FromRgba(0, 0, 0, 0)) ? Color.White : colors.TextOnSecondary;
+            App.Resorces.Colors["textOnPrimary"] = colors.TextOnPrimary;
+            App.Resorces.Colors["textOnSecondary"] = (colors?.TextOnSecondary == Color.FromRgba(0, 0, 0, 0)) ? Color.White : colors.TextOnSecondary;
 
             if (colors.IsDarkOrLightTheme)
             {
-                App.Current.Resources["background_page"] = colors.BackgroundPage;
-                App.Current.Resources["foreground_page"] = colors.ForegroundPage;
-                App.Current.Resources["textPrimary"] = colors.TextPrimary;
-                App.Current.Resources["textSecondary"] = colors.TextSecondary;
+                App.Resorces.Colors["background_page"] = colors.BackgroundPage;
+                App.Resorces.Colors["foreground_page"] = colors.ForegroundPage;
+                App.Resorces.Colors["textPrimary"] = colors.TextPrimary;
+                App.Resorces.Colors["textSecondary"] = colors.TextSecondary;
             }
         }
 
         public MaterialColor GetOnCurrentResource()
         {
-            var colorsResorce = new PixQrCodeGeneratorOffline.Style.Resources.Colors();
-
             return new MaterialColor
             {
-                Primary = (Color)colorsResorce["primary"],
-                PrimaryLight = (Color)colorsResorce["primaryLight"],
-                PrimaryDark = (Color)colorsResorce["primaryDark"],
+                Primary = (Color)App.Resorces.Colors["primary"],
+                PrimaryLight = (Color)App.Resorces.Colors["primaryLight"],
+                PrimaryDark = (Color)App.Resorces.Colors["primaryDark"],
 
-                Secondary = (Color)colorsResorce["secondary"],
-                SecondaryLight = (Color)colorsResorce["secondaryLight"],
-                SecondaryDark = (Color)colorsResorce["secondaryDark"],
+                Secondary = (Color)App.Resorces.Colors["secondary"],
+                SecondaryLight = (Color)App.Resorces.Colors["secondaryLight"],
+                SecondaryDark = (Color)App.Resorces.Colors["secondaryDark"],
 
-                TextOnPrimary = (Color)colorsResorce["textOnPrimary"],
-                TextOnSecondary = (Color)colorsResorce["textOnSecondary"],
-                BackgroundPage = (Color)colorsResorce["background_page"],
-                ForegroundPage = (Color)colorsResorce["foreground_page"],
+                TextOnPrimary = (Color)App.Resorces.Colors["textOnPrimary"],
+                TextOnSecondary = (Color)App.Resorces.Colors["textOnSecondary"],
+                BackgroundPage = (Color)App.Resorces.Colors["background_page"],
+                ForegroundPage = (Color)App.Resorces.Colors["foreground_page"],
 
-                TextPrimary = (Color)colorsResorce["textPrimary"],
-                TextSecondary = (Color)colorsResorce["textSecondary"],
+                TextPrimary = (Color)App.Resorces.Colors["textPrimary"],
+                TextSecondary = (Color)App.Resorces.Colors["textSecondary"],
             };
         }
 

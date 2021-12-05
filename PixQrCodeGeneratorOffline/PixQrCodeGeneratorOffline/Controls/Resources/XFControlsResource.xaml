@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PixQrCodeGeneratorOffline.Controls.Resources.XFControlsResource">
+
+    <Style TargetType="Label">
+        <Setter Property="FontFamily" Value="FontPoppinsRegular"/>
+        <Setter Property="TextColor" Value="{DynamicResource textPrimary}" />
+    </Style>
+
+    <Style TargetType="Entry">
+        <Setter Property="FontFamily" Value="FontPoppinsRegular"/>
+        <Setter Property="ClearButtonVisibility" Value="WhileEditing"/>
+        <Setter Property="PlaceholderColor" Value="{DynamicResource textSecondary}" />
+        <Setter Property="TextColor" Value="{DynamicResource textPrimary}" />
+    </Style>
+
+    <Style TargetType="Frame">
+        <Setter Property="HasShadow" Value="False"/>
+        <Setter Property="Padding" Value="0"/>
+    </Style>
+
+    <Style TargetType="CarouselView">
+        <Setter Property="Loop" Value="False"/>
+        <Setter Property="IsScrollAnimated" Value="True"/>
+    </Style>
+
+    <Style TargetType="ActivityIndicator">
+        <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+        <Setter Property="IsRunning" Value="True"/>
+    </Style>
+
+    <Style TargetType="ContentPage">
+        <Setter Property="BackgroundColor" Value="{DynamicResource background_page}"/>
+    </Style>
+
+    <Style TargetType="IndicatorView">
+        <Setter Property="IndicatorsShape" Value="Circle"/>
+        <Setter Property="IndicatorColor" Value="LightGray"/>
+        <Setter Property="SelectedIndicatorColor" Value="DarkGray"/>
+    </Style>
+
+</ResourceDictionary>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PixQrCodeGeneratorOffline.Style.Resources.FontSizeResource">
+
+    <x:Double x:Key="FontSizeLarge">25</x:Double>
+    <x:Double x:Key="FontSizeMedium">20</x:Double>
+    <x:Double x:Key="FontSizeSmall">15</x:Double>
+    <x:Double x:Key="FontSizeMicro">10</x:Double>
+
+</ResourceDictionary>
