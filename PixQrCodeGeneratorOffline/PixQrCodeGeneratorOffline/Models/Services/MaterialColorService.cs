@@ -1,6 +1,7 @@
 ﻿using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
 using System.Collections.Generic;
+using System.Linq;
 using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.Models.Services
@@ -116,23 +117,25 @@ namespace PixQrCodeGeneratorOffline.Models.Services
 
         public MaterialColor GetOnCurrentResource()
         {
+            var colorsResorce = new PixQrCodeGeneratorOffline.Style.Resources.Colors();
+
             return new MaterialColor
             {
-                Primary = (Color)App.Current.Resources["primary"],
-                PrimaryLight = (Color)App.Current.Resources["primaryLight"],
-                PrimaryDark = (Color)App.Current.Resources["primaryDark"],
+                Primary = (Color)colorsResorce["primary"],
+                PrimaryLight = (Color)colorsResorce["primaryLight"],
+                PrimaryDark = (Color)colorsResorce["primaryDark"],
 
-                Secondary = (Color)App.Current.Resources["secondary"],
-                SecondaryLight = (Color)App.Current.Resources["secondaryLight"],
-                SecondaryDark = (Color)App.Current.Resources["secondaryDark"],
+                Secondary = (Color)colorsResorce["secondary"],
+                SecondaryLight = (Color)colorsResorce["secondaryLight"],
+                SecondaryDark = (Color)colorsResorce["secondaryDark"],
 
-                TextOnPrimary = (Color)App.Current.Resources["textOnPrimary"],
-                TextOnSecondary = (Color)App.Current.Resources["textOnSecondary"],
-                BackgroundPage = (Color)App.Current.Resources["background_page"],
-                ForegroundPage = (Color)App.Current.Resources["foreground_page"],
+                TextOnPrimary = (Color)colorsResorce["textOnPrimary"],
+                TextOnSecondary = (Color)colorsResorce["textOnSecondary"],
+                BackgroundPage = (Color)colorsResorce["background_page"],
+                ForegroundPage = (Color)colorsResorce["foreground_page"],
 
-                TextPrimary = (Color)App.Current.Resources["textPrimary"],
-                TextSecondary = (Color)App.Current.Resources["textSecondary"],
+                TextPrimary = (Color)colorsResorce["textPrimary"],
+                TextSecondary = (Color)colorsResorce["textSecondary"],
             };
         }
 
