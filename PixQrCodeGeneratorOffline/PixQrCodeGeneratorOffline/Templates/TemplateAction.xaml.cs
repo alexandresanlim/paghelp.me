@@ -44,10 +44,6 @@ namespace PixQrCodeGeneratorOffline.Templates
                 null,
                 propertyChanged: TapPropertyChanged);
 
-
-
-
-
         public string Title
         {
             get => (string)GetValue(TitleProperty);
@@ -85,11 +81,6 @@ namespace PixQrCodeGeneratorOffline.Templates
             {
                 Command = (ICommand)newValue,
             });
-        }
-
-        protected override void OnApplyTemplate()
-        {
-            base.OnApplyTemplate();
         }
     }
 }

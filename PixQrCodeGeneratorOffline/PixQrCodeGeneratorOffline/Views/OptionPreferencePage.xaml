@@ -8,8 +8,8 @@
                                xmlns:content="clr-namespace:PixQrCodeGeneratorOffline.Views.Content"
               BackgroundColor="{DynamicResource background_page}"
               Title="Preferências"
-              xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
-     x:DataType="vm:OptionPreferenceViewModel"
+              xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels" xmlns:preferences="clr-namespace:PixQrCodeGeneratorOffline.Templates.Preferences"
+              x:DataType="vm:OptionPreferenceViewModel"
               >
 
 
@@ -17,26 +17,12 @@
 
         <ResourceDictionary>
 
-            <Style x:Key="styleTitleBottomIcon" TargetType="Label">
-                <Setter Property="FontSize" Value="{DynamicResource FontSizeMedium}" />
-                <Setter Property="FontFamily" Value="{DynamicResource FontBold}" />
-                <Setter Property="TextColor" Value="{DynamicResource textSecondary}" />
-            </Style>
-
-            <Style x:Key="styleTitleIcon" TargetType="controls:CustomIcon">
-                <Setter Property="HorizontalOptions" Value="Start"/>
-                <Setter Property="FontSize" Value="{DynamicResource FontSizeMedium}" />
-                <Setter Property="IconColor" Value="{DynamicResource textSecondary}" />
-            </Style>
-
-            <Style x:Key="styleTitlePanel" TargetType="StackLayout">
-                <Setter Property="Padding" Value="15"/>
-                <Setter Property="Spacing" Value="15" />
+            <Style x:Key="styleGrid" TargetType="Grid">
+                <Setter Property="ColumnDefinitions" Value="*,auto"/>
+                <Setter Property="ColumnSpacing" Value="0"/>
             </Style>
 
         </ResourceDictionary>
-
-
 
     </ContentPage.Resources>
 
@@ -44,59 +30,38 @@
 
         <StackLayout>
 
-            <content:DivisionView />
+            <Grid Style="{StaticResource styleGrid}">
+                <preferences:PreferencePanelTemplate Grid.Column="0" 
+                                                     Title="Exibir Notícias"
+                                                     Icon="{x:Static icons:FontAwesomeSolid.Rss }"
+                                                     Description="Veja notícias do Pix direto na dashboard" />
 
-            <StackLayout Style="{DynamicResource styleTitlePanel}">
-                <Grid ColumnDefinitions="*, auto">
+                <Switch Grid.Column="1" 
+                        IsToggled="{Binding IsPreferenceNews}" 
+                        Toggled="Switch_News" />
+            </Grid>
 
-                    <StackLayout Grid.Column="0">
-                        <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Rss }" Style="{DynamicResource styleTitleIcon}" />
-                        <Label Text="Exibir Notícias" Style="{DynamicResource styleTitleBottomIcon}" />
-                    </StackLayout>
+            <Grid Style="{StaticResource styleGrid}">
+                <preferences:PreferencePanelTemplate Grid.Column="0" 
+                                                     Title="Biometria"
+                                                     Icon="{x:Static icons:FontAwesomeSolid.Fingerprint }"
+                                                     Description="Na próxima vez que você entrar no app, será preciso autenticar para ver suas chaves." />
 
-                    <Switch Grid.Column="1" IsToggled="{Binding IsPreferenceNews}" Toggled="Switch_News" />
+                <Switch Grid.Column="1" 
+                        IsToggled="{Binding IsPreferenceNews}" 
+                        Toggled="Switch_FingerPrint" />
+            </Grid>
 
-                </Grid>
+            <Grid Style="{StaticResource styleGrid}">
+                <preferences:PreferencePanelTemplate Grid.Column="0" 
+                                                     Title="Modo PDV"
+                                                     Icon="{x:Static icons:FontAwesomeSolid.CashRegister }"
+                                                     Description="O app abrirá em tela cheia e se manterá ligada. Ideal para locais com alta recorrência de vendas." />
 
-                <Label Text="Veja notícias do Pix direto na dashboard" />
-            </StackLayout>
-
-            <content:DivisionView />
-
-            <StackLayout Style="{DynamicResource styleTitlePanel}">
-                <Grid ColumnDefinitions="*, auto">
-
-                    <StackLayout Grid.Column="0">
-                        <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Fingerprint }" Style="{DynamicResource styleTitleIcon}" />
-                        <Label Text="Biometria" Style="{DynamicResource styleTitleBottomIcon}" />
-
-                    </StackLayout>
-
-                    <Switch IsToggled="{Binding IsPreferenceFingerPrint}" Toggled="Switch_FingerPrint" />
-
-                </Grid>
-
-                <Label Text="Na próxima vez que você entrar no app, será preciso autenticar para ver suas chaves." />
-            </StackLayout>
-
-            <content:DivisionView />
-
-            <StackLayout Style="{DynamicResource styleTitlePanel}">
-                <Grid ColumnDefinitions="*, auto">
-
-                    <StackLayout Grid.Column="0">
-                        <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.CashRegister }" Style="{DynamicResource styleTitleIcon}" />
-                        <Label Text="Modo PDV" Style="{DynamicResource styleTitleBottomIcon}" />
-                    </StackLayout>
-
-                    <Switch Grid.Column="1" IsToggled="{Binding IsPreferncePdvMode}" Toggled="Switch_PdvMode" />
-
-                </Grid>
-
-                <Label Text="O app abrirá em tela cheia e se manterá ligada. Ideal para locais com alta recorrência de vendas." />
-            </StackLayout>
-
-            <content:DivisionView />
+                <Switch Grid.Column="1" 
+                        IsToggled="{Binding IsPreferenceNews}" 
+                        Toggled="Switch_PdvMode" />
+            </Grid>
 
         </StackLayout>
 

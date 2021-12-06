@@ -1,5 +1,6 @@
 ﻿using Acr.UserDialogs;
 using PixQrCodeGeneratorOffline.Services.Interfaces;
+using System;
 using System.IO;
 using System.Threading.Tasks;
 using Xamarin.Essentials;
@@ -18,11 +19,30 @@ namespace PixQrCodeGeneratorOffline.Services
                 return;
             }
 
-            await Share.RequestAsync(new Xamarin.Essentials.ShareTextRequest
+            await Share.RequestAsync(new ShareTextRequest
             {
                 Text = text,
                 Title = "Escolha uma opção"
             });
+        }
+
+        public async Task ShareOnWhats(string text, string phoneNumber = null)
+        {
+            var textAndPhone = "send?text=" + Uri.EscapeDataString(text);
+
+            if (!string.IsNullOrWhiteSpace(phoneNumber))
+            {
+                phoneNumber = phoneNumber.Replace("+", "").Replace("(", "").Replace(")", "").Replace("-", "").Replace(" ", "");
+                textAndPhone += "&phone=" + phoneNumber;
+            }
+
+            var supportsUri = await Launcher.CanOpenAsync("whatsapp://");
+
+            if (supportsUri)
+                await Launcher.OpenAsync(new Uri("whatsapp://" + textAndPhone));
+
+            else
+                await Launcher.OpenAsync(new Uri("https://api.whatsapp.com/" + textAndPhone));
         }
 
         public async Task CopyText(string text, string textSuccess = "Copiado com sucesso!")

@@ -9,6 +9,7 @@ using PixQrCodeGeneratorOffline.Models.Viewer;
 using PixQrCodeGeneratorOffline.Models.Viewer.Services.Interfaces;
 using System.Collections.Generic;
 using Xamarin.Forms;
+using static PixQrCodeGeneratorOffline.Extention.IconExtention;
 
 namespace PixQrCodeGeneratorOffline.Models
 {
@@ -78,15 +79,24 @@ namespace PixQrCodeGeneratorOffline.Models
 
         public MaterialColor Colors { get; set; }
 
+        public FontAwesomeType IconType { get; set; } = FontAwesomeType.solid;
+
         public static List<PixKeyAction> GetList(PixKey pixKey)
         {
             return new List<PixKeyAction>
             {
                 new PixKeyAction
                 {
-                    Title = "Criar Qr Code",
-                    Icon = FontAwesomeSolid.Qrcode,
+                    Title = "Criar Cobrança",
+                    Icon = FontAwesomeSolid.HandHoldingUsd,
                     Command = pixKey?.Command?.NavigateToCreateBillingPageCommand,
+                    Colors = pixKey?.FinancialInstitution?.Institution?.MaterialColor
+                },
+                new PixKeyAction
+                {
+                    Title = "Ver Qr Code",
+                    Icon = FontAwesomeSolid.Qrcode,
+                    Command = pixKey?.Command?.NavigateToPaymentPageCommand,
                     Colors = pixKey?.FinancialInstitution?.Institution?.MaterialColor
                 },
                 new PixKeyAction
@@ -102,6 +112,14 @@ namespace PixQrCodeGeneratorOffline.Models
                     Icon = FontAwesomeSolid.ShareAlt,
                     Command = pixKey?.Command?.ShareKeyCommand,
                     Colors = pixKey?.FinancialInstitution?.Institution?.MaterialColor
+                },
+                new PixKeyAction
+                {
+                    Title = "Compartilhar no WhatsApp",
+                    Icon = FontAwesomeBrands.Whatsapp,
+                    Command = pixKey?.Command?.ShareOnWhatsCommand,
+                    Colors = pixKey?.FinancialInstitution?.Institution?.MaterialColor,
+                    IconType = FontAwesomeType.brand
                 },
                 new PixKeyAction
                 {

@@ -30,6 +30,8 @@ namespace PixQrCodeGeneratorOffline.Models.Commands
 
         public ICommand ShareKeyCommand { get; private set; }
 
+        public ICommand ShareOnWhatsCommand { get; private set; }
+
         public ICommand NavigateToCreateBillingPageCommand { get; private set; }
 
         public ICommand NavigateToPaymentPageCommand { get; private set; }
@@ -44,6 +46,7 @@ namespace PixQrCodeGeneratorOffline.Models.Commands
             {
                 CopyKeyCommand = GetCopyKeyCommand(pixKey),
                 ShareKeyCommand = GetShareKeyCommand(pixKey),
+                ShareOnWhatsCommand = GetShareKeyOnWhatsCommand(pixKey),
                 NavigateToCreateBillingPageCommand = GetNavigateToCreateBillingCommand(pixKey),
                 NavigateToPaymentPageCommand = GetNavigateToPaymentPageCommand(pixKey),
                 EditKeyCommand = GetEdityKeyCommand(pixKey),
@@ -75,6 +78,31 @@ namespace PixQrCodeGeneratorOffline.Models.Commands
                 finally
                 {
                     _eventService.SendEvent("Compartilhou chave", EventType.SHARE);
+
+                    DialogService.HideLoading();
+                }
+            });
+        }
+
+        private Command GetShareKeyOnWhatsCommand(PixKey pixKey)
+        {
+            return new Command(async () =>
+            {
+                try
+                {
+                    DialogService.ShowLoading("");
+
+                    await Task.Delay(500);
+
+                    await _externalActionService.ShareOnWhats(pixKey?.Key);
+                }
+                catch (System.Exception e)
+                {
+                    e.SendToLog();
+                }
+                finally
+                {
+                    _eventService.SendEvent("Compartilhou chave no WhatsApp", EventType.SHARE);
 
                     DialogService.HideLoading();
                 }
