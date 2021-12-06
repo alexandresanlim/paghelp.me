@@ -181,7 +181,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
             LoadShowWelcome();
             LoadConnectionIcon();
-            LoadThemeIcon();
         }
 
         private void LoadShowWelcome()
@@ -195,11 +194,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         private void LoadConnectionIcon()
         {
             CurrentDashboardCustomInfo.ConnectionIcon = Connectivity.NetworkAccess == NetworkAccess.Internet ? FontAwesomeSolid.Wifi : FontAwesomeSolid.Plane;
-        }
-
-        private void LoadThemeIcon()
-        {
-            CurrentDashboardCustomInfo.ThemeIcon = Preference.ThemeIsDark ? FontAwesomeSolid.Moon : FontAwesomeSolid.Sun;
         }
 
         private async Task ResetProps()
@@ -458,13 +452,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 await LoadBilling();
             }
 
-        });
-
-        public ICommand ChengeThemeCommand => new Command(async () =>
-        {
-            Preference.ThemeIsDark = !Preference.ThemeIsDark;
-            LoadThemeIcon();
-            App.LoadTheme();
         });
 
         private ObservableCollection<PixKeyAction> _currentPixKeyActions;

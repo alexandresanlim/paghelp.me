@@ -66,5 +66,13 @@ namespace PixQrCodeGeneratorOffline.Views
 
             await _optionPreferenceViewModel.OptionPDV();
         }
+
+        //private async void Switch_Theme(object sender, ToggledEventArgs e)
+        //{
+        //    if (IsOppearing)
+        //        return;
+
+        //    await _optionPreferenceViewModel.OptionTheme();
+        //}
     }
 }

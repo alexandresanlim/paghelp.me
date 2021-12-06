@@ -1,4 +1,5 @@
 ﻿using PixQrCodeGeneratorOffline.Base.ViewModels;
+using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Services;
 using System.Threading.Tasks;
 
@@ -11,6 +12,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             IsPreferenceFingerPrint = Preference.FingerPrint;
             IsPreferenceNews = Preference.ShowNews;
             IsPreferncePdvMode = Preference.IsPDVMode;
+            IsThemeDark = Preference.ThemeIsDark;
         }
 
         public async Task OptionFingerPrint()
@@ -42,6 +44,18 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             await DashboardVM.LoadNews();
         }
 
+        public async Task OptionTheme()
+        {
+            await _preferenceService.ChangeTheme();
+            LoadThemeIcon();
+            LoadData();
+        }
+
+        private void LoadThemeIcon()
+        {
+            ThemeIcon = Preference.ThemeIsDark ? FontAwesomeSolid.Moon : FontAwesomeSolid.Sun;
+        }
+
 
         private bool _isPreferenceNews;
         public bool IsPreferenceNews
@@ -62,6 +76,20 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         {
             set => SetProperty(ref _isPreferncePdvMode, value);
             get => _isPreferncePdvMode;
+        }
+
+        private bool _isThemeDark;
+        public bool IsThemeDark
+        {
+            set => SetProperty(ref _isThemeDark, value);
+            get => _isThemeDark;
+        }
+
+        private string _themeIcon;
+        public string ThemeIcon
+        {
+            set => SetProperty(ref _themeIcon, value);
+            get => _themeIcon;
         }
     }
 }

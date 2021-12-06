@@ -16,5 +16,7 @@ namespace PixQrCodeGeneratorOffline.Services.Interfaces
         Task ChangePDVMode();
 
         Task ChangeShowNewsMode();
+
+        Task ChangeTheme();
     }
 }

@@ -48,7 +48,7 @@
                                                      Description="Na próxima vez que você entrar no app, será preciso autenticar para ver suas chaves." />
 
                 <Switch Grid.Column="1" 
-                        IsToggled="{Binding IsPreferenceNews}" 
+                        IsToggled="{Binding IsPreferenceFingerPrint}" 
                         Toggled="Switch_FingerPrint" />
             </Grid>
 
@@ -59,9 +59,20 @@
                                                      Description="O app abrirá em tela cheia e se manterá ligada. Ideal para locais com alta recorrência de vendas." />
 
                 <Switch Grid.Column="1" 
-                        IsToggled="{Binding IsPreferenceNews}" 
+                        IsToggled="{Binding IsPreferncePdvMode}" 
                         Toggled="Switch_PdvMode" />
             </Grid>
+
+            <!--<Grid Style="{StaticResource styleGrid}">
+                <preferences:PreferencePanelTemplate Grid.Column="0" 
+                                                     Title="Dark Mode"
+                                                     Icon="{Binding ThemeIcon}"
+                                                     Description="Use o tema da sua preferência" />
+
+                <Switch Grid.Column="1" 
+                        IsToggled="{Binding IsThemeDark}" 
+                        Toggled="Switch_Theme" />
+            </Grid>-->
 
         </StackLayout>
 
