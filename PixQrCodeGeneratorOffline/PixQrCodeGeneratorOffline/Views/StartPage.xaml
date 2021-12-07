@@ -249,6 +249,23 @@
                     <Grid ColumnDefinitions="*, auto" Padding="0,0,10,0">
 
                         <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding NavigateBenefitsCommand}" />
+                        </Grid.GestureRecognizers>
+
+                        <templates:TemplateTitlePanel 
+                            Title="Vantagens Paghelp.me!" 
+                            Icon="{x:Static icons:FontAwesomeSolid.Heart}"/>
+
+                        <content:ChevronRightView Grid.Column="1" />
+                    </Grid>
+
+                    <content:DivisionView/>
+
+                    <!--//////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+                    <Grid ColumnDefinitions="*, auto" Padding="0,0,10,0">
+
+                        <Grid.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding NavigateToAboutCommand}" />
                         </Grid.GestureRecognizers>
 
@@ -277,82 +294,7 @@
                 </StackLayout>
             </StackLayout>
 
-            <Grid RowDefinitions="*,auto" IsVisible="{Binding CurrentDashboardCustomInfo.ShowWelcome}">
-
-                <Grid.Background>
-                    <LinearGradientBrush EndPoint="0,1">
-                        <GradientStop Color="{DynamicResource staticAccentPrimary}"
-                                  Offset="0.1" />
-                        <GradientStop Color="{DynamicResource staticAccentPrimaryDark}"
-                                  Offset="1.0" />
-                    </LinearGradientBrush>
-                </Grid.Background>
-
-                <CarouselView Grid.Row="0" ItemsSource="{Binding DashboardWelcomenList}" CurrentItemChangedCommand="{Binding CurrentWelcomeItemChangedCommand}" Loop="False" IsScrollAnimated="True" Position="{Binding ActualWelcomeNextPosition}" CurrentItem="{Binding CurrentDashboardWelcome}">
-
-
-                    <CarouselView.ItemTemplate>
-                        <DataTemplate x:DataType="helpers:DashboardWelcome">
-
-                            <StackLayout Padding="10,0" Spacing="50">
-
-                                <StackLayout VerticalOptions="CenterAndExpand" Spacing="30">
-                                    <StackLayout VerticalOptions="Center" Spacing="15">
-                                        <controls:CustomIcon Glyph="{Binding Emoji}" HorizontalOptions="Center" FontSize="100" IconColor="{DynamicResource textOnSecondary}" />
-                                        <Label Text="{Binding Title}" HorizontalOptions="Center" FontSize="{DynamicResource FontSizeLarge}" FontFamily="{DynamicResource FontSemiBold}" TextColor="{DynamicResource textOnPrimary}"/>
-
-                                    </StackLayout>
-
-                                    <Label Text="{Binding Description}" HorizontalOptions="Center" FontSize="{DynamicResource FontSizeSmall}" TextColor="{DynamicResource textOnPrimary}"/>
-
-                                </StackLayout>
-
-                            </StackLayout>
-
-
-
-                        </DataTemplate>
-                    </CarouselView.ItemTemplate>
-
-                </CarouselView>
-
-
-
-                <StackLayout Grid.Row="1" Padding="15,10">
-
-                    <StackLayout Padding="30,5,15,5" IsVisible="{Binding ShowAddkeyOnWelcome, Converter={StaticResource InvertedBooleanConverter}}">
-                        <StackLayout.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding SkipWelcomeCommand}" CommandParameter="true" />
-                        </StackLayout.GestureRecognizers>
-
-                        <Label Text="Pular para o final >" TextColor="{DynamicResource textOnPrimary}" FontFamily="{DynamicResource FontSemiBold}" HorizontalOptions="End"/>
-                    </StackLayout>
-
-                    <Grid>
-                        <Frame BackgroundColor="{DynamicResource secondary}" IsVisible="{Binding ShowAddkeyOnWelcome}" Padding="5,12" CornerRadius="30" HorizontalOptions="FillAndExpand">
-                            <Frame.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding CloseWelcomeCommand}" />
-                            </Frame.GestureRecognizers>
-
-                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-
-                                <Label Text="Começar Agora!" FontSize="{StaticResource FontSizeSmall}" FontFamily="{StaticResource FontSemiBold}" TextColor="{DynamicResource textOnSecondary}" />
-                                <!--<controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.PlusCircle }" IconSize="Small" IconColor="{DynamicResource textOnSecondary}" />-->
-                            </StackLayout>
-                        </Frame>
-
-                        <Frame BackgroundColor="{DynamicResource secondary}" IsVisible="{Binding ShowAddkeyOnWelcome, Converter={StaticResource InvertedBooleanConverter}}" Padding="5,12" CornerRadius="30" HorizontalOptions="FillAndExpand">
-                            <Frame.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding WelcomeNextCommand}" />
-                            </Frame.GestureRecognizers>
-
-
-                            <Label Text="Próximo" FontSize="{StaticResource FontSizeSmall}" HorizontalOptions="Center" FontFamily="{StaticResource FontSemiBold}" TextColor="{DynamicResource textOnSecondary}" />
-
-                        </Frame>
-                    </Grid>
-                </StackLayout>
-            </Grid>
+            
 
             <!--<content:PanelLoadView IsVisible="{Binding IsBusy}" />-->
 

@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls" 
+             xmlns:preferences="clr-namespace:PixQrCodeGeneratorOffline.Templates.Preferences"
+             x:Class="PixQrCodeGeneratorOffline.Views.BenefitsPage"
+             xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels" 
+             xmlns:helpers="clr-namespace:PixQrCodeGeneratorOffline.ViewModels.Helpers" 
+             x:DataType="vm:BenefitsViewModel"
+             Title="Vantagens Paghelp.me!">
+    <ContentPage.Content>
+
+        <Grid RowDefinitions="*,auto">
+            <CollectionView ItemsSource="{Binding DashboardWelcomenList}" Grid.Row="0">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="helpers:DashboardWelcome">
+                        <StackLayout>
+                            <preferences:PreferencePanelTemplate Icon="{Binding Emoji}"
+                                                             Title="{Binding Title}"
+                                                             Description="{Binding Description}"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+
+            <Frame BackgroundColor="{DynamicResource primary}" Grid.Row="1" Padding="5,12" Margin="15" CornerRadius="30" HorizontalOptions="FillAndExpand">
+                <!--<Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding CloseWelcomeCommand}" />
+                </Frame.GestureRecognizers>-->
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+
+                    <Label Text="Adicionar minha primeira chave" FontSize="{StaticResource FontSizeSmall}" FontFamily="{StaticResource FontSemiBold}" TextColor="{DynamicResource textOnSecondary}" />
+
+                </StackLayout>
+            </Frame>
+            
+        </Grid>
+
+        <!--<StackLayout>
+            <preferences:PreferencePanelTemplate
+                Icon="{FontAwesomeSolid.Lock}"
+                />
+        </StackLayout>-->
+        
+        <!--<Grid RowDefinitions="*,auto" IsVisible="{Binding CurrentDashboardCustomInfo.ShowWelcome}">
+
+            --><!--<Grid.Background>
+                    <LinearGradientBrush EndPoint="0,1">
+                        <GradientStop Color="{DynamicResource staticAccentPrimary}"
+                                  Offset="0.1" />
+                        <GradientStop Color="{DynamicResource staticAccentPrimaryDark}"
+                                  Offset="1.0" />
+                    </LinearGradientBrush>
+                </Grid.Background>--><!--
+
+            <CarouselView Grid.Row="0" ItemsSource="{Binding DashboardWelcomenList}" CurrentItemChangedCommand="{Binding CurrentWelcomeItemChangedCommand}" Loop="False" IsScrollAnimated="True" Position="{Binding ActualWelcomeNextPosition}" CurrentItem="{Binding CurrentDashboardWelcome}">
+
+
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+
+                        <StackLayout Padding="10,0" Spacing="50">
+
+                            <StackLayout VerticalOptions="CenterAndExpand" Spacing="30">
+                                <StackLayout VerticalOptions="Center" Spacing="15">
+                                    <controls:CustomIcon Glyph="{Binding Emoji}" HorizontalOptions="Center" FontSize="100" IconColor="{DynamicResource textPrimary}" />
+                                    <Label Text="{Binding Title}" HorizontalOptions="Center" FontSize="{DynamicResource FontSizeLarge}" FontFamily="{DynamicResource FontSemiBold}" TextColor="{DynamicResource textOnPrimary}"/>
+
+                                </StackLayout>
+
+                                <Label Text="{Binding Description}" HorizontalOptions="Center" FontSize="{DynamicResource FontSizeSmall}" TextColor="{DynamicResource textSecondary}"/>
+
+                            </StackLayout>
+
+                        </StackLayout>
+
+
+
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+
+            </CarouselView>
+
+
+
+            <StackLayout Grid.Row="1" Padding="15,10">
+
+                <StackLayout Padding="30,5,15,5">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding SkipWelcomeCommand}" CommandParameter="true" />
+                    </StackLayout.GestureRecognizers>
+
+                    <Label Text="Pular para o final >" TextColor="{DynamicResource textOnPrimary}" FontFamily="{DynamicResource FontSemiBold}" HorizontalOptions="End"/>
+                </StackLayout>
+
+                <Grid>
+                    <Frame BackgroundColor="{DynamicResource secondary}" IsVisible="{Binding ShowAddkeyOnWelcome}" Padding="5,12" CornerRadius="30" HorizontalOptions="FillAndExpand">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding CloseWelcomeCommand}" />
+                        </Frame.GestureRecognizers>
+
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+
+                            <Label Text="Começar Agora!" FontSize="{StaticResource FontSizeSmall}" FontFamily="{StaticResource FontSemiBold}" TextColor="{DynamicResource textOnSecondary}" />
+                            --><!--<controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.PlusCircle }" IconSize="Small" IconColor="{DynamicResource textOnSecondary}" />--><!--
+                        </StackLayout>
+                    </Frame>
+
+                    <Frame BackgroundColor="{DynamicResource secondary}" IsVisible="{Binding ShowAddkeyOnWelcome, Converter={StaticResource InvertedBooleanConverter}}" Padding="5,12" CornerRadius="30" HorizontalOptions="FillAndExpand">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding WelcomeNextCommand}" />
+                        </Frame.GestureRecognizers>
+
+
+                        <Label Text="Próximo" FontSize="{StaticResource FontSizeSmall}" HorizontalOptions="Center" FontFamily="{StaticResource FontSemiBold}" TextColor="{DynamicResource textOnSecondary}" />
+
+                    </Frame>
+                </Grid>
+            </StackLayout>
+        </Grid>-->
+    </ContentPage.Content>
+</ContentPage>

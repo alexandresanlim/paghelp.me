@@ -47,8 +47,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 await LoadDashboardCustomInfo();
 
-                //await ReloadShowInList();
-
                 await LoadPixKey();
 
                 await LoadPixKeyContact();
@@ -58,6 +56,8 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 await LoadCurrentPixKey();
 
                 await LoadNews();
+
+                await NavigateToBenefitsPage();
             }
             catch (System.Exception e)
             {
@@ -77,13 +77,8 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 await Task.Delay(500);
 
-                //var list = ;
+                PixKeyList = _pixKeyService?.GetAll()?.OrderBy(x => x?.FinancialInstitution?.Name)?.ToObservableCollection() ?? new ObservableCollection<PixKey>();
 
-                //PixKeyList = new ObservableCollection<PixKey>();
-
-                PixKeyList = _pixKeyService.GetAll()?.OrderBy(x => x?.FinancialInstitution?.Name)?.ToObservableCollection() ?? new ObservableCollection<PixKey>();
-
-                //CurrentPixKey = PixKeyList?.FirstOrDefault() ?? new PixKey();
             }
             catch (System.Exception e)
             {
@@ -179,16 +174,30 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 WelcomeSubtitleText = DateTimeExtention.GetDashboardSubtitleFromDayOfWeed(),
             };
 
-            LoadShowWelcome();
             LoadConnectionIcon();
         }
 
-        private void LoadShowWelcome()
+        private async Task NavigateToBenefitsPage()
         {
-            CurrentDashboardCustomInfo.ShowWelcome = !Preference.HaveSeenWelcome;
+            if (PixKeyList.Count > 0)
+                return;
 
-            if (CurrentDashboardCustomInfo.ShowWelcome)
-                DashboardWelcomenList = DashboardWelcome.GetList();
+            try
+            {
+                DialogService.ShowLoading();
+
+                await Task.Delay(500);
+
+                await NavigateAsync(new BenefitsPage());
+            }
+            catch (System.Exception e)
+            {
+                e.SendToLog();
+            }
+            finally
+            {
+                DialogService.HideLoading();
+            }
         }
 
         private void LoadConnectionIcon()
@@ -262,93 +271,13 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public ICommand NavigateToAboutCommand => new Command(async () => await NavigateAsync(new AboutPage()));
 
+        public ICommand NavigateBenefitsCommand => new Command(async () => await NavigateAsync(new BenefitsPage()));
+
         //public ICommand ChangeStyleListCommand => new Command(async () =>
         //{
         //    _preferenceService.ChangeShowInList();
         //    await ReloadShowInList();
         //});
-
-        public ICommand WelcomeNextCommand => new Command(async () =>
-        {
-            try
-            {
-                if (ShowAddkeyOnWelcome)
-                    return;
-
-                ActualWelcomeNextPosition = ActualWelcomeNextPosition++;
-            }
-            catch (System.Exception e)
-            {
-                e.SendToLog();
-            }
-        });
-
-        public ICommand SkipWelcomeCommand => new Command(async () =>
-        {
-            try
-            {
-                CurrentDashboardWelcome = LastWelcomeItem;
-            }
-            catch (System.Exception e)
-            {
-                e.SendToLog();
-            }
-        });
-
-        public ICommand CloseWelcomeCommand => new Command(() =>
-        {
-            try
-            {
-                Preference.HaveSeenWelcome = true;
-                LoadShowWelcome();
-            }
-            catch (System.Exception e)
-            {
-                e.SendToLog();
-            }
-        });
-
-        public ICommand CurrentWelcomeItemChangedCommand => new Command(() => CheckIsLastItemOnWelcome());
-
-        private void CheckIsLastItemOnWelcome()
-        {
-            ShowAddkeyOnWelcome = CurrentDashboardWelcome == LastWelcomeItem;
-        }
-
-        //public async Task ReloadShowInList()
-        //{
-        //    try
-        //    {
-        //        IsBusy = true;
-
-        //        await Task.Delay(500);
-
-        //        ShowInList = Preference.ShowInList;
-
-        //        //ReloadAppColorIfShowInListStyle();
-
-        //        if (ShowInList)
-        //        {
-        //            CurrentIconStyleList = FontAwesomeSolid.Th;
-        //        }
-
-        //        else
-        //        {
-        //            SetStatusFromCurrentPixColor();
-        //            CurrentIconStyleList = FontAwesomeSolid.ListAlt;
-        //        }
-        //    }
-        //    catch (System.Exception e)
-        //    {
-        //        e.SendToLog();
-        //    }
-        //    finally
-        //    {
-        //        _eventService.SendEvent("Estilo da dashboard para lista: " + ShowInList, EventType.PREFERENCE);
-
-        //        IsBusy = false;
-        //    }
-        //}
 
         public void SetStatusFromCurrentPixColor()
         {
@@ -364,49 +293,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
             //App.LoadTheme(CurrentPixKey?.FinancialInstitution?.Institution?.MaterialColor);
         }
-
-        #region Props
-
-        //private bool _showInList;
-        //public bool ShowInList
-        //{
-        //    set => SetProperty(ref _showInList, value);
-        //    get => _showInList;
-        //}
-
-        //private string _currentIconStyleList;
-        //public string CurrentIconStyleList
-        //{
-        //    set => SetProperty(ref _currentIconStyleList, value);
-        //    get => _currentIconStyleList;
-        //}
-
-
-
-        private int _actualWelcomeNextPosition;
-        public int ActualWelcomeNextPosition
-        {
-            set => SetProperty(ref _actualWelcomeNextPosition, value);
-            get => _actualWelcomeNextPosition;
-        }
-
-        private DashboardWelcome _currentDashboardWelcome;
-        public DashboardWelcome CurrentDashboardWelcome
-        {
-            set => SetProperty(ref _currentDashboardWelcome, value);
-            get => _currentDashboardWelcome;
-        }
-
-        private DashboardWelcome LastWelcomeItem => DashboardWelcomenList?.LastOrDefault() ?? new DashboardWelcome();
-
-        private bool _showAddkeyOnWelcome;
-        public bool ShowAddkeyOnWelcome
-        {
-            set => SetProperty(ref _showAddkeyOnWelcome, value);
-            get => _showAddkeyOnWelcome;
-        }
-
-        #endregion
 
 
 
@@ -427,7 +313,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 //PixKeyList.Clear();
                 //CurrentPixKey = new PixKey();
                 PixKeyList = new ObservableCollection<PixKey>();
-                
+
                 //await LoadCurrentPixKey(null);
             }
         });

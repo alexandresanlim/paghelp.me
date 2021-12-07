@@ -64,18 +64,6 @@ namespace PixQrCodeGeneratorOffline.Services
             }
         }
 
-        public static bool HaveSeenWelcome
-        {
-            get => Preferences.Get(nameof(HaveSeenWelcome), false);
-            set
-            {
-                if (HaveSeenWelcome == value)
-                    return;
-
-                Preferences.Set(nameof(HaveSeenWelcome), value);
-            }
-        }
-
         public static bool ThemeIsDark
         {
             get => Preferences.Get(nameof(ThemeIsDark), AppInfo.RequestedTheme == AppTheme.Dark);

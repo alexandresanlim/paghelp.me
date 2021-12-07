@@ -42,13 +42,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels.Base
             get => _currentPixKey;
         }
 
-        private ObservableCollection<DashboardWelcome> _dashboardWelcomenList;
-        public ObservableCollection<DashboardWelcome> DashboardWelcomenList
-        {
-            set => SetProperty(ref _dashboardWelcomenList, value);
-            get => _dashboardWelcomenList;
-        }
-
         #endregion
     }
 }
