@@ -60,6 +60,9 @@
     <Compile Update="Views\BillingSaveListPage.xaml.cs">
       <DependentUpon>BillingSaveListPage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\ShareKeyPage.xaml.cs">
+      <DependentUpon>ShareKeyPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -166,6 +169,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Shared\WebViewPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ShareKeyPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\StartPage.xaml">

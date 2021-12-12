@@ -8,9 +8,8 @@ namespace PixQrCodeGeneratorOffline.Controls
     {
         private Label TexButtonValue { get; set; } = new Label
         {
-            FontAttributes = FontAttributes.Bold,
             TextColor = App.ThemeColors.TextOnPrimary,
-            IsVisible = false
+            FontFamily = "FontPoppinsSemiBold"
         };
 
         private TapViewBehavior TapButtonValue { get; set; } = new TapViewBehavior();

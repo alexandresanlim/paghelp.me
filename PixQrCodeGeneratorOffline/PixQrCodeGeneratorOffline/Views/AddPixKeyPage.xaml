@@ -105,12 +105,14 @@
                                 CornerRadius="10"
                                 IsVisible="{Binding IsInstitution, Converter={StaticResource InvertedBooleanConverter}}">
                                 <StackLayout>
+
                                     <Entry
                                         Placeholder="{Binding Placeholder}"
                                         PlaceholderColor="{DynamicResource textSecondary}"
                                         ReturnCommand="{Binding Source={RelativeSource AncestorType={x:Type vm:AddPixKeyViewModel}}, Path=InputNextCommand}"
                                         Text="{Binding Value}"
-                                        TextColor="{DynamicResource textPrimary}" />
+                                        TextColor="{DynamicResource textPrimary}"
+                                        Visual="Material" />
                                 </StackLayout>
                             </Frame>
 
