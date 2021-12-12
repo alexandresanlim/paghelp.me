@@ -18,6 +18,8 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public ICommand LoadDataCommand => new Command(LoadShowWelcome);
 
+        public ICommand NavigateToAddNewKeyPageCommand => new Command(async () => await _pixKeyService.NavigateToAdd());
+
         private void LoadShowWelcome()
         {
             //CurrentDashboardCustomInfo.ShowWelcome = !Preference.HaveSeenWelcome;

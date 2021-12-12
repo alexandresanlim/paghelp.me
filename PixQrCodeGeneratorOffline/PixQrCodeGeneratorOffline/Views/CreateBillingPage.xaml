@@ -1,62 +1,57 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage 
+<ContentPage
+    x:Class="PixQrCodeGeneratorOffline.Views.CreateBillingPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls" 
-             xmlns:qr="clr-namespace:Xam.Forms;assembly=Xam.Forms.QRCode"
-             xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels" 
-             x:Class="PixQrCodeGeneratorOffline.Views.CreateBillingPage"
-             xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon" 
-             xmlns:local="clr-namespace:PixQrCodeGeneratorOffline.Converters" 
-             xmlns:shared="clr-namespace:PixQrCodeGeneratorOffline.Views.Shared"
-    xmlns:share="clr-namespace:PixQrCodeGeneratorOffline.Views.Shared" 
-    xmlns:content="clr-namespace:PixQrCodeGeneratorOffline.Views.Content"
-    BackgroundColor="{DynamicResource background_page}"
-             Title="Nova Cobrança"
-     x:DataType="vm:CreateBillingViewModel"
-             >
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
+    xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon"
+    xmlns:local="clr-namespace:PixQrCodeGeneratorOffline.Converters"
+    xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
+    Title="Nova Cobrança"
+    x:DataType="vm:CreateBillingViewModel"
+    BackgroundColor="{DynamicResource background_page}">
 
     <ContentPage.Resources>
         <ResourceDictionary>
             <local:CurrencyConverter x:Key="CurrencyConverter" />
 
             <Style x:Key="styleKeyboardBilling" TargetType="Label">
-                <Setter Property="TextColor" Value="{DynamicResource textSecondary}"/>
+                <Setter Property="TextColor" Value="{DynamicResource textSecondary}" />
                 <Setter Property="FontSize" Value="35" />
-                <Setter Property="FontFamily" Value="{DynamicResource FontSemiBold}"/>
+                <Setter Property="FontFamily" Value="{DynamicResource FontSemiBold}" />
                 <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
                 <Setter Property="VerticalOptions" Value="CenterAndExpand" />
             </Style>
 
             <Style x:Key="styleButtonKeyboard" TargetType="Frame">
-                <Setter Property="Padding" Value="0"/>
-                <Setter Property="BackgroundColor" Value="{DynamicResource foreground_page}"/>
-                <Setter Property="CornerRadius" Value="15"/>
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="BackgroundColor" Value="{DynamicResource foreground_page}" />
+                <Setter Property="CornerRadius" Value="15" />
             </Style>
 
             <Style x:Key="styleSymbolValueText" TargetType="Label">
-                <Setter Property="TextColor" Value="{Binding CurrentStyleFromKey.Primary}"/>
+                <Setter Property="TextColor" Value="{Binding CurrentStyleFromKey.Primary}" />
                 <Setter Property="FontSize" Value="30" />
-                <Setter Property="FontFamily" Value="{DynamicResource FontSemiBold}"/>
+                <Setter Property="FontFamily" Value="{DynamicResource FontSemiBold}" />
                 <Setter Property="Margin" Value="0,15,0,0" />
             </Style>
 
             <Style x:Key="styleValueText" TargetType="Label">
-                <Setter Property="TextColor" Value="{Binding CurrentStyleFromKey.Primary}"/>
+                <Setter Property="TextColor" Value="{Binding CurrentStyleFromKey.Primary}" />
                 <Setter Property="FontSize" Value="60" />
-                <Setter Property="FontFamily" Value="{DynamicResource FontSemiBold}"/>
+                <Setter Property="FontFamily" Value="{DynamicResource FontSemiBold}" />
             </Style>
 
             <Style x:Key="styleActionText" TargetType="Label">
-                <Setter Property="TextTransform" Value="Uppercase"/>
+                <Setter Property="TextTransform" Value="Uppercase" />
                 <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
-                <Setter Property="FontFamily" Value="{DynamicResource FontBold}"/>
-                <Setter Property="FontSize" Value="{DynamicResource FontSizeLarge}"/>
-                <Setter Property="TextColor" Value="{DynamicResource textSecondary}"/>
+                <Setter Property="FontFamily" Value="{DynamicResource FontBold}" />
+                <Setter Property="FontSize" Value="{DynamicResource FontSizeLarge}" />
+                <Setter Property="TextColor" Value="{DynamicResource textSecondary}" />
             </Style>
 
             <Style x:Key="styleActionIcon" TargetType="controls:CustomIcon">
-                <Setter Property="FontSize" Value="{DynamicResource FontSizeLarge}"/>
+                <Setter Property="FontSize" Value="{DynamicResource FontSizeLarge}" />
                 <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
                 <Setter Property="IconColor" Value="{DynamicResource textSecondary}" />
             </Style>
@@ -67,132 +62,190 @@
 
     <ContentPage.Content>
         <ScrollView>
-            <Grid RowDefinitions="auto,*" Padding="15,10" RowSpacing="15">
-                
+            <Grid
+                Padding="15,10"
+                RowDefinitions="auto,*"
+                RowSpacing="15">
+
                 <StackLayout Grid.Row="0">
 
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                        <Label Text="R$" Style="{DynamicResource styleSymbolValueText}"/>
-                        <Label Text="{Binding CurrentCob.Value}" Style="{DynamicResource styleValueText}"/>
+                    <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                        <Label Style="{DynamicResource styleSymbolValueText}" Text="R$" />
+                        <Label Style="{DynamicResource styleValueText}" Text="{Binding CurrentCob.Value}" />
                     </StackLayout>
-                    
-                    <Label Text="{Binding CurrentPixKey.Viewer.BankAndKey}" TextColor="{DynamicResource textSecondary}" HorizontalOptions="Center" LineBreakMode="TailTruncation" MaxLines="1" />
 
-                    <Frame BackgroundColor="{Binding CurrentStyleFromKey.Primary}" Padding="10" CornerRadius="10">
+                    <Label
+                        HorizontalOptions="Center"
+                        LineBreakMode="TailTruncation"
+                        MaxLines="1"
+                        Text="{Binding CurrentPixKey.Viewer.BankAndKey}"
+                        TextColor="{DynamicResource textSecondary}" />
+
+                    <Frame
+                        Padding="10"
+                        BackgroundColor="{Binding CurrentStyleFromKey.Primary}"
+                        CornerRadius="10">
                         <Frame.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding SetDescriptionCommand}"/>
+                            <TapGestureRecognizer Command="{Binding SetDescriptionCommand}" />
                         </Frame.GestureRecognizers>
 
-                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                            <Label Text="{Binding CurrentDescription}" FontSize="{DynamicResource FontSizeSmall}" TextColor="{Binding CurrentStyleFromKey.TextOnPrimary}" FontFamily="{DynamicResource FontBold}"/>
-                            <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Edit }" FontSize="{DynamicResource FontSizeMicro}" IconColor="{Binding CurrentStyleFromKey.TextOnPrimary}" />
+                        <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                            <Label
+                                FontFamily="{DynamicResource FontBold}"
+                                FontSize="{DynamicResource FontSizeSmall}"
+                                Text="{Binding CurrentDescription}"
+                                TextColor="{Binding CurrentStyleFromKey.TextOnPrimary}" />
+                            <controls:CustomIcon
+                                FontSize="{DynamicResource FontSizeMicro}"
+                                Glyph="{x:Static icons:FontAwesomeSolid.Edit}"
+                                IconColor="{Binding CurrentStyleFromKey.TextOnPrimary}" />
                         </StackLayout>
                     </Frame>
                 </StackLayout>
 
-                <Grid Grid.Row="1" VerticalOptions="FillAndExpand" RowDefinitions="0.5*,0.5*,0.5*,*" ColumnDefinitions="*,*,*">
+                <Grid
+                    Grid.Row="1"
+                    ColumnDefinitions="*,*,*"
+                    RowDefinitions="0.5*,0.5*,0.5*,*"
+                    VerticalOptions="FillAndExpand">
 
-                    <Frame Grid.Row="0" Grid.Column="0" Style="{DynamicResource styleButtonKeyboard}">
+                    <Frame
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Style="{DynamicResource styleButtonKeyboard}">
                         <Frame.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding InputTextCommand}" CommandParameter="1"/>
+                            <TapGestureRecognizer Command="{Binding InputTextCommand}" CommandParameter="1" />
                         </Frame.GestureRecognizers>
-                        <Label Text="1" Style="{DynamicResource styleKeyboardBilling}" />
+                        <Label Style="{DynamicResource styleKeyboardBilling}" Text="1" />
                     </Frame>
 
-                    <Frame Grid.Row="0" Grid.Column="1" Style="{DynamicResource styleButtonKeyboard}">
+                    <Frame
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Style="{DynamicResource styleButtonKeyboard}">
                         <Frame.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding InputTextCommand}" CommandParameter="2"/>
+                            <TapGestureRecognizer Command="{Binding InputTextCommand}" CommandParameter="2" />
                         </Frame.GestureRecognizers>
-                        <Label Text="2" Style="{DynamicResource styleKeyboardBilling}" />
+                        <Label Style="{DynamicResource styleKeyboardBilling}" Text="2" />
                     </Frame>
 
-                    <Frame Grid.Row="0" Grid.Column="2" Style="{DynamicResource styleButtonKeyboard}">
+                    <Frame
+                        Grid.Row="0"
+                        Grid.Column="2"
+                        Style="{DynamicResource styleButtonKeyboard}">
                         <Frame.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding InputTextCommand}" CommandParameter="3"/>
+                            <TapGestureRecognizer Command="{Binding InputTextCommand}" CommandParameter="3" />
                         </Frame.GestureRecognizers>
-                        <Label Text="3" Style="{DynamicResource styleKeyboardBilling}" />
-                    </Frame>
-
-
-                    <Frame Grid.Row="1" Grid.Column="0" Style="{DynamicResource styleButtonKeyboard}">
-                        <Frame.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding InputTextCommand}" CommandParameter="4"/>
-                        </Frame.GestureRecognizers>
-                        <Label Text="4" Style="{DynamicResource styleKeyboardBilling}" />
-                    </Frame>
-
-                    <Frame Grid.Row="1" Grid.Column="1" Style="{DynamicResource styleButtonKeyboard}">
-                        <Frame.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding InputTextCommand}" CommandParameter="5"/>
-                        </Frame.GestureRecognizers>
-                        <Label Text="5" Style="{DynamicResource styleKeyboardBilling}" />
-                    </Frame>
-
-                    <Frame Grid.Row="1" Grid.Column="2" Style="{DynamicResource styleButtonKeyboard}">
-                        <Frame.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding InputTextCommand}" CommandParameter="6"/>
-                        </Frame.GestureRecognizers>
-                        <Label Text="6" Style="{DynamicResource styleKeyboardBilling}" />
+                        <Label Style="{DynamicResource styleKeyboardBilling}" Text="3" />
                     </Frame>
 
 
-                    <Frame Grid.Row="2" Grid.Column="0" Style="{DynamicResource styleButtonKeyboard}">
+                    <Frame
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        Style="{DynamicResource styleButtonKeyboard}">
                         <Frame.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding InputTextCommand}" CommandParameter="7"/>
+                            <TapGestureRecognizer Command="{Binding InputTextCommand}" CommandParameter="4" />
                         </Frame.GestureRecognizers>
-                        <Label Text="7" Style="{DynamicResource styleKeyboardBilling}" />
+                        <Label Style="{DynamicResource styleKeyboardBilling}" Text="4" />
                     </Frame>
 
-                    <Frame Grid.Row="2" Grid.Column="1" Style="{DynamicResource styleButtonKeyboard}">
+                    <Frame
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Style="{DynamicResource styleButtonKeyboard}">
                         <Frame.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding InputTextCommand}" CommandParameter="8"/>
+                            <TapGestureRecognizer Command="{Binding InputTextCommand}" CommandParameter="5" />
                         </Frame.GestureRecognizers>
-                        <Label Text="8" Style="{DynamicResource styleKeyboardBilling}" />
+                        <Label Style="{DynamicResource styleKeyboardBilling}" Text="5" />
                     </Frame>
 
-                    <Frame Grid.Row="2" Grid.Column="2" Style="{DynamicResource styleButtonKeyboard}">
+                    <Frame
+                        Grid.Row="1"
+                        Grid.Column="2"
+                        Style="{DynamicResource styleButtonKeyboard}">
                         <Frame.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding InputTextCommand}" CommandParameter="9"/>
+                            <TapGestureRecognizer Command="{Binding InputTextCommand}" CommandParameter="6" />
                         </Frame.GestureRecognizers>
-                        <Label Text="9" Style="{DynamicResource styleKeyboardBilling}" />
+                        <Label Style="{DynamicResource styleKeyboardBilling}" Text="6" />
                     </Frame>
 
-                    <Frame Grid.Row="3" Grid.Column="0" Style="{DynamicResource styleButtonKeyboard}">
+
+                    <Frame
+                        Grid.Row="2"
+                        Grid.Column="0"
+                        Style="{DynamicResource styleButtonKeyboard}">
                         <Frame.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding ResetCurrentValueCommand}"/>
+                            <TapGestureRecognizer Command="{Binding InputTextCommand}" CommandParameter="7" />
+                        </Frame.GestureRecognizers>
+                        <Label Style="{DynamicResource styleKeyboardBilling}" Text="7" />
+                    </Frame>
+
+                    <Frame
+                        Grid.Row="2"
+                        Grid.Column="1"
+                        Style="{DynamicResource styleButtonKeyboard}">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding InputTextCommand}" CommandParameter="8" />
+                        </Frame.GestureRecognizers>
+                        <Label Style="{DynamicResource styleKeyboardBilling}" Text="8" />
+                    </Frame>
+
+                    <Frame
+                        Grid.Row="2"
+                        Grid.Column="2"
+                        Style="{DynamicResource styleButtonKeyboard}">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding InputTextCommand}" CommandParameter="9" />
+                        </Frame.GestureRecognizers>
+                        <Label Style="{DynamicResource styleKeyboardBilling}" Text="9" />
+                    </Frame>
+
+                    <Frame
+                        Grid.Row="3"
+                        Grid.Column="0"
+                        Style="{DynamicResource styleButtonKeyboard}">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ResetCurrentValueCommand}" />
                         </Frame.GestureRecognizers>
                         <StackLayout VerticalOptions="CenterAndExpand">
                             <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.TimesCircle}" Style="{DynamicResource styleActionIcon}" />
-                            <Label Text="anula" Style="{DynamicResource styleActionText}" />
+                            <Label Style="{DynamicResource styleActionText}" Text="anula" />
                         </StackLayout>
                     </Frame>
 
-                    <Grid Grid.Row="3" Grid.Column="1" RowDefinitions="*,*">
+                    <Grid
+                        Grid.Row="3"
+                        Grid.Column="1"
+                        RowDefinitions="*,*">
                         <Frame Grid.Row="0" Style="{DynamicResource styleButtonKeyboard}">
                             <Frame.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding InputTextCommand}" CommandParameter="0"/>
+                                <TapGestureRecognizer Command="{Binding InputTextCommand}" CommandParameter="0" />
                             </Frame.GestureRecognizers>
-                            <Label Text="0" Style="{DynamicResource styleKeyboardBilling}" />
+                            <Label Style="{DynamicResource styleKeyboardBilling}" Text="0" />
                         </Frame>
 
                         <Frame Grid.Row="1" Style="{DynamicResource styleButtonKeyboard}">
                             <Frame.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding InputTextCommand}" CommandParameter=""/>
+                                <TapGestureRecognizer Command="{Binding InputTextCommand}" CommandParameter="" />
                             </Frame.GestureRecognizers>
-                            <StackLayout VerticalOptions="CenterAndExpand" Spacing="0">
+                            <StackLayout Spacing="0" VerticalOptions="CenterAndExpand">
                                 <!--<controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Backspace }" IconSize="Title" IconColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />-->
-                                <Label Text="limpa" Style="{DynamicResource styleActionText}" />
+                                <Label Style="{DynamicResource styleActionText}" Text="limpa" />
                             </StackLayout>
                         </Frame>
                     </Grid>
 
-                    <Frame Grid.Row="3" Grid.Column="2" Style="{DynamicResource styleButtonKeyboard}">
+                    <Frame
+                        Grid.Row="3"
+                        Grid.Column="2"
+                        Style="{DynamicResource styleButtonKeyboard}">
                         <Frame.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding NavigateToPaymentPageCommand}"/>
+                            <TapGestureRecognizer Command="{Binding NavigateToPaymentPageCommand}" />
                         </Frame.GestureRecognizers>
                         <StackLayout VerticalOptions="CenterAndExpand">
-                            <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.CheckCircle}" Style="{DynamicResource styleActionIcon}"  />
-                            <Label Text="entra" Style="{DynamicResource styleActionText}" />
+                            <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.CheckCircle}" Style="{DynamicResource styleActionIcon}" />
+                            <Label Style="{DynamicResource styleActionText}" Text="entra" />
                         </StackLayout>
                     </Frame>
                 </Grid>

@@ -1,7 +1,8 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<StackLayout xmlns="http://xamarin.com/schemas/2014/forms" 
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PixQrCodeGeneratorOffline.Views.Content.PanelLoadView"
-             BackgroundColor="{DynamicResource background_page}" 
-             HorizontalOptions="FillAndExpand" 
-             VerticalOptions="FillAndExpand" />
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<StackLayout
+    x:Class="PixQrCodeGeneratorOffline.Views.Content.PanelLoadView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundColor="{DynamicResource background_page}"
+    HorizontalOptions="FillAndExpand"
+    VerticalOptions="FillAndExpand" />

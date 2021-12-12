@@ -1,8 +1,9 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<BoxView xmlns="http://xamarin.com/schemas/2014/forms" 
-         xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-         x:Class="PixQrCodeGeneratorOffline.Views.Content.DivisionView"
-         BackgroundColor="{DynamicResource foreground_page}" 
-         HorizontalOptions="FillAndExpand"
-         HeightRequest="2"/>
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<BoxView
+    x:Class="PixQrCodeGeneratorOffline.Views.Content.DivisionView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundColor="{DynamicResource foreground_page}"
+    HeightRequest="2"
+    HorizontalOptions="FillAndExpand" />
 

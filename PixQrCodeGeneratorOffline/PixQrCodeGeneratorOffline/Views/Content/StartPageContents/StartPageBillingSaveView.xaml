@@ -1,31 +1,34 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<Grid xmlns="http://xamarin.com/schemas/2014/forms" 
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             xmlns:collections="clr-namespace:PixQrCodeGeneratorOffline.Views.Collections" 
-             xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls" 
-             xmlns:content="clr-namespace:PixQrCodeGeneratorOffline.Views.Content"
-             xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon" 
-             x:Class="PixQrCodeGeneratorOffline.Views.Content.StartPageContents.StartPageBillingSaveView"
-             xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
-             x:DataType="vm:DashboardViewModel"
-             >
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Grid
+    x:Class="PixQrCodeGeneratorOffline.Views.Content.StartPageContents.StartPageBillingSaveView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:collections="clr-namespace:PixQrCodeGeneratorOffline.Views.Collections"
+    xmlns:content="clr-namespace:PixQrCodeGeneratorOffline.Views.Content"
+    xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
+    xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon"
+    xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
+    x:DataType="vm:DashboardViewModel">
 
     <StackLayout>
 
         <collections:BillingSaveHorizontalCollectionView />
 
-        <Frame Margin="0,15,0,0" BackgroundColor="{DynamicResource foreground_page}" Style="{DynamicResource styleFrameAction}">
+        <Frame
+            Margin="0,15,0,0"
+            BackgroundColor="{DynamicResource foreground_page}"
+            Style="{DynamicResource styleFrameAction}">
 
             <Frame.GestureRecognizers>
                 <TapGestureRecognizer Command="{Binding RemoveAllBillingCommand}" />
             </Frame.GestureRecognizers>
 
-            <Grid Style="{DynamicResource styleGridActionChevronRight}" IsVisible="{Binding BillingSaveList, Converter={StaticResource HasDataConverter}}">
+            <Grid IsVisible="{Binding BillingSaveList, Converter={StaticResource HasDataConverter}}" Style="{DynamicResource styleGridActionChevronRight}">
 
 
 
-                <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Trash }" Style="{DynamicResource styleGridActionChevronIcon}" />
-                <Label Text="Apagar Todas" Style="{DynamicResource styleGridActionTitle}" />
+                <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Trash}" Style="{DynamicResource styleGridActionChevronIcon}" />
+                <Label Style="{DynamicResource styleGridActionTitle}" Text="Apagar Todas" />
                 <content:ChevronRightView Grid.Column="2" />
 
             </Grid>

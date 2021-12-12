@@ -1,21 +1,29 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<Grid xmlns="http://xamarin.com/schemas/2014/forms" 
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PixQrCodeGeneratorOffline.Views.Shared.AdsView"
-             xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls" 
-             xmlns:adscontrols="clr-namespace:MarcTron.Plugin.Controls;assembly=Plugin.MtAdmob"
-             xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon" 
-             VerticalOptions="End"
-             IsVisible="{Binding ShowAds}"
-             BackgroundColor="Black"
-             >
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Grid
+    x:Class="PixQrCodeGeneratorOffline.Views.Shared.AdsView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:adscontrols="clr-namespace:MarcTron.Plugin.Controls;assembly=Plugin.MtAdmob"
+    xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
+    xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon"
+    BackgroundColor="Black"
+    IsVisible="{Binding ShowAds}"
+    VerticalOptions="End">
 
-    <adscontrols:MTAdView x:Name="myAds"/>
+    <adscontrols:MTAdView x:Name="myAds" />
 
-    <Frame HorizontalOptions="EndAndExpand" VerticalOptions="Start" Padding="10" BackgroundColor="#99000000">
+    <Frame
+        Padding="10"
+        BackgroundColor="#99000000"
+        HorizontalOptions="EndAndExpand"
+        VerticalOptions="Start">
         <Frame.GestureRecognizers>
             <TapGestureRecognizer Command="{Binding CloseAdsCommand}" />
         </Frame.GestureRecognizers>
-        <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.TimesCircle }" FontSize="{DynamicResource FontSizeMedium}" IconColor="{DynamicResource primary}" BackgroundColor="#99000000" />
+        <controls:CustomIcon
+            BackgroundColor="#99000000"
+            FontSize="{DynamicResource FontSizeMedium}"
+            Glyph="{x:Static icons:FontAwesomeSolid.TimesCircle}"
+            IconColor="{DynamicResource primary}" />
     </Frame>
 </Grid>

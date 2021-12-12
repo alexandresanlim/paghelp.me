@@ -1,33 +1,40 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PixQrCodeGeneratorOffline.Views.Shared.ContentPageWithNavBar"
-             xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon" 
-             xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
-             Shell.NavBarIsVisible="False"
-             >
-    
+<ContentPage
+    x:Class="PixQrCodeGeneratorOffline.Views.Shared.ContentPageWithNavBar"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
+    xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon"
+    Shell.NavBarIsVisible="False">
+
     <ContentPage.ControlTemplate>
         <ControlTemplate>
             <Grid RowDefinitions="Auto,*" RowSpacing="0">
-                <Grid Grid.Row="0" ColumnDefinitions="auto,*" BackgroundColor="{TemplateBinding BackgroundColor}" Style="{StaticResource paddingPageGrid}">
+                <Grid
+                    Grid.Row="0"
+                    BackgroundColor="{TemplateBinding BackgroundColor}"
+                    ColumnDefinitions="auto,*"
+                    Style="{StaticResource paddingPageGrid}">
                     <StackLayout Grid.Column="0" Padding="15,15,25,15">
                         <StackLayout.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="TapGestureRecognizerBackButtonPressed_Tapped"/>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizerBackButtonPressed_Tapped" />
                         </StackLayout.GestureRecognizers>
 
-                        <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.ChevronLeft }" FontSize="{DynamicResource FontSizeLarge}" IconColor="{DynamicResource textPrimary}" />
+                        <controls:CustomIcon
+                            FontSize="{DynamicResource FontSizeLarge}"
+                            Glyph="{x:Static icons:FontAwesomeSolid.ChevronLeft}"
+                            IconColor="{DynamicResource textPrimary}" />
                     </StackLayout>
 
-                    <Label Grid.Column="1"
-                        FontSize="{StaticResource FontSizeMedium}"
-                        Text="{TemplateBinding Title}"
-                        VerticalOptions="CenterAndExpand" 
+                    <Label
+                        Grid.Column="1"
                         FontFamily="{DynamicResource FontSemiBold}"
-                        TextColor="{DynamicResource textPrimary}"
-                        MaxLines="1"
+                        FontSize="{StaticResource FontSizeMedium}"
                         LineBreakMode="TailTruncation"
-                        />
+                        MaxLines="1"
+                        Text="{TemplateBinding Title}"
+                        TextColor="{DynamicResource textPrimary}"
+                        VerticalOptions="CenterAndExpand" />
 
                     <!--<StackLayout Grid.Column="2" Padding="25,15,15,15" Spacing="0" IsVisible="{Binding SaveCommand, Converter={StaticResource HasDataConverter}}">
                         <StackLayout.GestureRecognizers>

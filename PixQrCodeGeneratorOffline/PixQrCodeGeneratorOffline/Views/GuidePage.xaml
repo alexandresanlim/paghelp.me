@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls" 
-             xmlns:share="clr-namespace:PixQrCodeGeneratorOffline.Views.Shared"
-             xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels" 
-             xmlns:content="clr-namespace:PixQrCodeGeneratorOffline.Views.Content"
-             x:Class="PixQrCodeGeneratorOffline.Views.GuidePage"
-             Title="Guia Pix"
-             BackgroundColor="{StaticResource background_page}"
-             xmlns:models="clr-namespace:PixQrCodeGeneratorOffline.Models"
-     x:DataType="vm:GuideViewModel"
-             >
+<ContentPage
+    x:Class="PixQrCodeGeneratorOffline.Views.GuidePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:content="clr-namespace:PixQrCodeGeneratorOffline.Views.Content"
+    xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
+    xmlns:models="clr-namespace:PixQrCodeGeneratorOffline.Models"
+    xmlns:share="clr-namespace:PixQrCodeGeneratorOffline.Views.Shared"
+    xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
+    Title="Guia Pix"
+    x:DataType="vm:GuideViewModel"
+    BackgroundColor="{StaticResource background_page}">
     <ContentPage.Content>
         <!--<controls:CustomFrame>
             <controls:CustomFrame.Background>
@@ -22,21 +22,33 @@
                 </LinearGradientBrush>
             </controls:CustomFrame.Background>-->
 
-            <Grid RowDefinitions="*, auto" Padding="10,10,10,0" RowSpacing="0">
-                
-                <controls:CustomCollectionView ItemsSource="{Binding GuideList}" Grid.Row="0">
-                    
-                    <controls:CustomCollectionView.ItemTemplate>
-                        <DataTemplate x:DataType="models:Guide">
+        <Grid
+            Padding="10,10,10,0"
+            RowDefinitions="*, auto"
+            RowSpacing="0">
+
+            <controls:CustomCollectionView Grid.Row="0" ItemsSource="{Binding GuideList}">
+
+                <controls:CustomCollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="models:Guide">
 
                         <StackLayout HeightRequest="100" Spacing="0">
                             <StackLayout.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:GuideViewModel}}, Path=OpenAnswerGuideCommand}" CommandParameter="{Binding .}" />
                             </StackLayout.GestureRecognizers>
 
-                            <Grid ColumnDefinitions="*, auto" VerticalOptions="CenterAndExpand" Padding="10,0" ColumnSpacing="15">
+                            <Grid
+                                Padding="10,0"
+                                ColumnDefinitions="*, auto"
+                                ColumnSpacing="15"
+                                VerticalOptions="CenterAndExpand">
 
-                                <Label Grid.Column="0" Text="{Binding Question}" TextColor="{DynamicResource textPrimary}" FontSize="{DynamicResource FontSizeSmall}" FontFamily="{DynamicResource FontSemiBold}" />
+                                <Label
+                                    Grid.Column="0"
+                                    FontFamily="{DynamicResource FontSemiBold}"
+                                    FontSize="{DynamicResource FontSizeSmall}"
+                                    Text="{Binding Question}"
+                                    TextColor="{DynamicResource textPrimary}" />
                                 <content:ChevronRightView Grid.Column="1" />
 
                             </Grid>
@@ -48,11 +60,11 @@
 
 
                     </DataTemplate>
-                    </controls:CustomCollectionView.ItemTemplate>
-                </controls:CustomCollectionView>
+                </controls:CustomCollectionView.ItemTemplate>
+            </controls:CustomCollectionView>
 
-                <share:AdsView Grid.Row="1" />
-            </Grid>
+            <share:AdsView Grid.Row="1" />
+        </Grid>
 
         <!--</controls:CustomFrame>-->
 

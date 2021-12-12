@@ -1,21 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<StackLayout xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             xmlns:content="clr-namespace:PixQrCodeGeneratorOffline.Views.Content" 
-             xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
-             x:Class="PixQrCodeGeneratorOffline.Templates.Preferences.PreferencePanelTemplate">
+<StackLayout
+    x:Class="PixQrCodeGeneratorOffline.Templates.Preferences.PreferencePanelTemplate"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:content="clr-namespace:PixQrCodeGeneratorOffline.Views.Content"
+    xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls">
 
     <StackLayout Padding="15" Spacing="15">
-        
-        <controls:CustomIcon x:Name="xIcon" 
-                             HorizontalOptions="Start"
-                             FontSize="{DynamicResource FontSizeMedium}"
-                             IconColor="{DynamicResource textSecondary}"/>
 
-        <Label x:Name="xTitle" 
-                       FontSize="{DynamicResource FontSizeMedium}"
-                       FontFamily="{DynamicResource FontBold}"
-                       TextColor="{DynamicResource textSecondary}"/>
+        <controls:CustomIcon
+            x:Name="xIcon"
+            FontSize="{DynamicResource FontSizeMedium}"
+            HorizontalOptions="Start"
+            IconColor="{DynamicResource textSecondary}" />
+
+        <Label
+            x:Name="xTitle"
+            FontFamily="{DynamicResource FontBold}"
+            FontSize="{DynamicResource FontSizeMedium}"
+            TextColor="{DynamicResource textSecondary}" />
 
         <Label x:Name="xDescription" />
 
