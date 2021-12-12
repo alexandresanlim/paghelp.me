@@ -28,6 +28,9 @@
         <Grid RowDefinitions="*,auto, auto">
 
             <ScrollView Grid.Row="0" Padding="10">
+                <ScrollView.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding CopyCommand}" />
+                </ScrollView.GestureRecognizers>
                 <Label Text="{Binding PreviewText}" />
             </ScrollView>
 

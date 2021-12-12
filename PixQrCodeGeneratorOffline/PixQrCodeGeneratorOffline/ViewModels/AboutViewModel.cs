@@ -1,7 +1,9 @@
-﻿using PixQrCodeGeneratorOffline.Base.ViewModels;
+﻿using AsyncAwaitBestPractices.MVVM;
+using PixQrCodeGeneratorOffline.Base.ViewModels;
 using PixQrCodeGeneratorOffline.Extention;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -9,6 +11,12 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 {
     public class AboutViewModel : ViewModelBase
     {
+        #region Commands
+
+        public IAsyncCommand OpenGithubCommand => new AsyncCommand(OpenGithubAsync);
+
+        #endregion
+
         public AboutViewModel()
         {
             Title = "Sobre";
@@ -26,7 +34,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
         }
 
-        public ICommand OpenGithubCommand => new Command(async () =>
+        private async Task OpenGithubAsync()
         {
             try
             {
@@ -44,7 +52,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 SetIsLoading(false);
             }
-        });
+        }
 
         public ICommand SupportCommand => new Command(() =>
         {

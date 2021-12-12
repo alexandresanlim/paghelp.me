@@ -15,6 +15,8 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public IAsyncCommand ShareCommand => new AsyncCommand(Share);
 
+        public IAsyncCommand CopyCommand => new AsyncCommand(Copy);
+
         public ShareKeyViewModel(ObservableCollection<PixKey> pixKeyList)
         {
             PixKeyList = pixKeyList;
@@ -51,6 +53,11 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         private async Task Share()
         {
             await _externalActionService.ShareText(PreviewText);
+        }
+
+        private async Task Copy()
+        {
+            await _externalActionService.CopyText(PreviewText);
         }
 
         private ObservableCollection<PixKey> _pixKeyList;

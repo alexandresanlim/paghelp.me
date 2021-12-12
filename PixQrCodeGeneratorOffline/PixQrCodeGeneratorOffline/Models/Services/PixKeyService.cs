@@ -17,12 +17,9 @@ namespace PixQrCodeGeneratorOffline.Models.Services
     {
         private readonly IPixKeyRepository _pixKeyRepository;
 
-        private readonly IExternalActionService _externalActionService;
-
         public PixKeyService()
         {
             _pixKeyRepository = DependencyService.Get<IPixKeyRepository>();
-            _externalActionService = DependencyService.Get<IExternalActionService>();
         }
 
         public bool IsValid(PixKey pixKey)
@@ -71,59 +68,10 @@ namespace PixQrCodeGeneratorOffline.Models.Services
             }
             finally
             {
-                _eventService.SendEvent("Compartilhou todas as chaves", PixQrCodeGeneratorOffline.Services.EventType.SHARE);
+                _eventService.SendEvent("Navegou para página de compartilhar todas as chaves", EventType.NAVIGATION);
 
                 DialogService.HideLoading();
             }
-
-            //var pixKeyList = _pixKeyRepository.GetAll(x => !x.IsContact);
-
-            //if (!HasKeysValidated(pixKeyList))
-            //    return;
-
-            //var info = "";
-
-            //foreach (var item in pixKeyList)
-            //{
-            //    info += item.Viewer.InstitutionAndKey + "\n";
-            //}
-
-            //if (string.IsNullOrWhiteSpace(info))
-            //    return;
-
-            //try
-            //{
-            //    var options = new List<ActionSheetOption>()
-            //    {
-            //        new ActionSheetOption("Compartilhar em texto", async () =>
-            //        {
-            //            await _externalActionService.ShareText(info);
-            //        }),
-            //        new ActionSheetOption("Salvar em txt e compartilhar", async () =>
-            //        {
-            //            var path = _externalActionService.GenerateTxtFile(info, "ChavesPix");
-            //            await _externalActionService.ShareFile(path);
-            //        }),
-            //    };
-
-            //    DialogService.ActionSheet(new Acr.UserDialogs.ActionSheetConfig
-            //    {
-            //        Title = "Selecione uma opção:",
-            //        Options = options,
-            //        Cancel = new ActionSheetOption("Cancelar", () =>
-            //        {
-            //            return;
-            //        })
-            //    });
-            //}
-            //catch (System.Exception e)
-            //{
-            //    e.SendToLog();
-            //}
-            //finally
-            //{
-            //    _eventService.SendEvent("Compartilhou todas as chaves", PixQrCodeGeneratorOffline.Services.EventType.SHARE);
-            //}
         }
 
         public async Task<bool> RemoveAll(bool isContact = false)
