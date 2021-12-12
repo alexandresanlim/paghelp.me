@@ -1,4 +1,5 @@
-﻿using PixQrCodeGeneratorOffline.ViewModels;
+﻿using AsyncAwaitBestPractices;
+using PixQrCodeGeneratorOffline.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,5 +22,10 @@ namespace PixQrCodeGeneratorOffline.Views
 
             BindingContext = _viewModel = new DashboardViewModel();
         }
+
+        //protected override void OnAppearing()
+        //{
+        //    _viewModel.LoadDataCommand.ExecuteAsync().SafeFireAndForget();
+        //}
     }
 }

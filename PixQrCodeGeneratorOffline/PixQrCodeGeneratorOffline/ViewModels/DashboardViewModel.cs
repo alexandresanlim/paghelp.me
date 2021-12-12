@@ -1,4 +1,6 @@
-﻿using PixQrCodeGeneratorOffline.Extention;
+﻿using AsyncAwaitBestPractices;
+using AsyncAwaitBestPractices.MVVM;
+using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models;
 using PixQrCodeGeneratorOffline.Services;
 using PixQrCodeGeneratorOffline.ViewModels.Base;
@@ -19,9 +21,39 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 {
     public class DashboardViewModel : DashboardViewModelBase
     {
+        #region Commands
+
+        public IAsyncCommand NavigateToPreferencesCommand => new AsyncCommand(async () => await NavigateAsync(new OptionPreferencePage()));
+
+        public IAsyncCommand NavigateToGuidCommand => new AsyncCommand(async () => await NavigateAsync(new GuidePage()));
+
+        public IAsyncCommand NavigateToAboutCommand => new AsyncCommand(async () => await NavigateAsync(new AboutPage()));
+
+        public IAsyncCommand NavigateBenefitsCommand => new AsyncCommand(async () => await NavigateAsync(new BenefitsPage()));
+
+        public IAsyncCommand NavigateToAddNewKeyPageCommand => new AsyncCommand(async () => await _pixKeyService.NavigateToAdd());
+
+        public IAsyncCommand NavigateToAddNewKeyPageContactCommand => new AsyncCommand(async () => await _pixKeyService.NavigateToAdd(isContact: true));
+
+        public IAsyncCommand AuthenticationCommand => new AsyncCommand(Authentication);
+
+        public ICommand ChangeSelectPixKeyCommand => new Command<PixKey>(async (pixkey) => await ChangeSelectedPixKey(pixkey));
+
+        public ICommand ShareAllCommand => new Command(_pixKeyService.ShareAllKeys);
+
+        public IAsyncCommand RemoveAllCommand => new AsyncCommand(RemoveAllKeys);
+
+        public IAsyncCommand RemoveAllKeyContactCommand => new AsyncCommand(RemoveAllContactKeys);
+
+        public IAsyncCommand RemoveAllBillingCommand => new AsyncCommand(RemoveAllBilling);
+
+        public IAsyncCommand LoadDataCommand => new AsyncCommand(LoadData);
+
+        #endregion
+
         public DashboardViewModel()
         {
-            LoadDataCommand.Execute(null);
+            LoadDataCommand.ExecuteAsync().SafeFireAndForget();
 
             Connectivity.ConnectivityChanged += Connectivity_ConnectivityChanged;
 
@@ -33,15 +65,13 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             LoadConnectionIcon();
         }
 
-        public ICommand LoadDataCommand => new Command(async () => await LoadData());
-
         public async Task LoadData()
         {
             try
             {
                 IsBusy = true;
 
-                await Task.Delay(1000);
+                await Task.Delay(500);
 
                 await ResetProps();
 
@@ -214,7 +244,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             //CurrentPixKey = new PixKey();
         }
 
-        public ICommand AuthenticationCommand => new Command(async () =>
+        private async Task Authentication()
         {
             try
             {
@@ -236,42 +266,16 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             {
                 e.SendToLog();
             }
-        });
+        }
 
-        #region DashboardVMDependency
-
-        public ICommand NavigateToAddNewKeyPageCommand => new Command(async () => await _pixKeyService.NavigateToAdd());
-
-        public ICommand NavigateToAddNewKeyPageContactCommand => new Command(async () => await _pixKeyService.NavigateToAdd(isContact: true));
-
-        //public Command<PixKey> EditKeyCommand => new Command<PixKey>(async (key) => await _pixKeyService.NavigateToEdit(key));
-
-        //public Command<PixKey> OpenOptionsKeyCommand => new Command<PixKey>(async (key) => await _pixKeyService.NavigateToAction(key));
-
-        #endregion
-
-        public ICommand ChangeSelectPixKeyCommand => new Command<PixKey>((pixkey) =>
+        private async Task ChangeSelectedPixKey(PixKey pixkey)
         {
-            Xamarin.Essentials.MainThread.BeginInvokeOnMainThread(() =>
+            MainThread.BeginInvokeOnMainThread(() =>
             {
                 CurrentPixKey = pixkey;
                 CurrentPixKeyActions = pixkey?.Actions?.ToObservableCollection() ?? new ObservableCollection<PixKeyAction>();
             });
-
-            //await Task.Run(() =>
-            //{
-            //    CurrentPixKey = pixkey;
-            //    CurrentPixKeyActions = pixkey?.Actions?.ToObservableCollection() ?? new ObservableCollection<PixKeyAction>();
-            //});
-        });
-
-        public ICommand NavigateToPreferencesCommand => new Command(async () => await NavigateAsync(new OptionPreferencePage()));
-
-        public ICommand NavigateToGuidCommand => new Command(async () => await NavigateAsync(new GuidePage()));
-
-        public ICommand NavigateToAboutCommand => new Command(async () => await NavigateAsync(new AboutPage()));
-
-        public ICommand NavigateBenefitsCommand => new Command(async () => await NavigateAsync(new BenefitsPage()));
+        }
 
         //public ICommand ChangeStyleListCommand => new Command(async () =>
         //{
@@ -285,25 +289,9 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 return;
 
             CurrentPixKeyActions = CurrentPixKey.Actions.ToObservableCollection();
-
-            //return;
-
-            //if (ShowInList || CurrentPixKey?.FinancialInstitution?.Institution?.MaterialColor == null)
-            //    return;
-
-            //App.LoadTheme(CurrentPixKey?.FinancialInstitution?.Institution?.MaterialColor);
         }
 
-
-
-        #region Nova Dash
-
-        public ICommand ShareAllCommand => new Command(() =>
-        {
-            _pixKeyService.ShareAllKeys();
-        });
-
-        public ICommand RemoveAllCommand => new Command(async () =>
+        private async Task RemoveAllKeys()
         {
             var success = await _pixKeyService.RemoveAll();
 
@@ -316,9 +304,9 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 //await LoadCurrentPixKey(null);
             }
-        });
+        }
 
-        public ICommand RemoveAllKeyContactCommand => new Command(async () =>
+        private async Task RemoveAllContactKeys()
         {
             var success = await _pixKeyService.RemoveAll(isContact: true);
 
@@ -327,9 +315,9 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 PixKeyListContact = new ObservableCollection<PixKey>();
                 //await LoadPixKeyContact();
             }
-        });
+        }
 
-        public ICommand RemoveAllBillingCommand => new Command(async () =>
+        private async Task RemoveAllBilling()
         {
             var success = await _pixPayloadService.RemoveAll();
 
@@ -337,8 +325,9 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             {
                 await LoadBilling();
             }
+        }
 
-        });
+        #region Nova Dash
 
         private ObservableCollection<PixKeyAction> _currentPixKeyActions;
         public ObservableCollection<PixKeyAction> CurrentPixKeyActions

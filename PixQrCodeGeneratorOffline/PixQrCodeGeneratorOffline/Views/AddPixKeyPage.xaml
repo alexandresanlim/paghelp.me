@@ -52,6 +52,7 @@
                     <controls:CustomIcon
                         FontSize="{StaticResource FontSizeMedium}"
                         Glyph="{x:Static icons:FontAwesomeSolid.TrashAlt}"
+                        HorizontalOptions="Center"
                         IconColor="{DynamicResource textPrimary}" />
                     <Label
                         FontFamily="{DynamicResource FontBold}"
@@ -65,6 +66,7 @@
                     <controls:CustomIcon
                         FontSize="{StaticResource FontSizeMedium}"
                         Glyph="{x:Static icons:FontAwesomeSolid.Save}"
+                        HorizontalOptions="Center"
                         IconColor="{DynamicResource textPrimary}" />
                     <Label
                         FontFamily="{DynamicResource FontBold}"
