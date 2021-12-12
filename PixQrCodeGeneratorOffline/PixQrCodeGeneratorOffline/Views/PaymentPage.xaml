@@ -13,7 +13,7 @@
     
     <ContentPage.Content>
 
-        <Grid RowDefinitions="*,auto" Style="{StaticResource paddingPageStackLayout}">
+        <Grid RowDefinitions="*,auto" Padding="10">
 
             <!--<Grid.Background>
                 <LinearGradientBrush EndPoint="0,1">
