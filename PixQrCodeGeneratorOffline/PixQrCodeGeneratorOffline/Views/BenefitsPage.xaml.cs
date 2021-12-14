@@ -13,10 +13,11 @@ namespace PixQrCodeGeneratorOffline.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class BenefitsPage : ContentPage
     {
-        public BenefitsPage()
+        public BenefitsPage(bool hasKeys = false)
         {
             InitializeComponent();
             BindingContext = new BenefitsViewModel();
+            xBtAddKey.IsVisible = !hasKeys;
         }
     }
 }

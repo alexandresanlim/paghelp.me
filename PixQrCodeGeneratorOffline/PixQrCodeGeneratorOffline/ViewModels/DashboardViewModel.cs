@@ -29,7 +29,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public IAsyncCommand NavigateToAboutCommand => new AsyncCommand(async () => await NavigateAsync(new AboutPage()));
 
-        public IAsyncCommand NavigateBenefitsCommand => new AsyncCommand(async () => await NavigateAsync(new BenefitsPage()));
+        public IAsyncCommand NavigateBenefitsCommand => new AsyncCommand(async () => await NavigateAsync(new BenefitsPage(PixKeyList.Count > 0)));
 
         public IAsyncCommand NavigateToAddNewKeyPageCommand => new AsyncCommand(async () => await _pixKeyService.NavigateToAdd());
 
@@ -273,22 +273,9 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             MainThread.BeginInvokeOnMainThread(() =>
             {
                 CurrentPixKey = pixkey;
+                _statusBar.SetStatusBarColor(pixkey.FinancialInstitution.Institution.MaterialColor.Primary);
                 CurrentPixKeyActions = pixkey?.Actions?.ToObservableCollection() ?? new ObservableCollection<PixKeyAction>();
             });
-        }
-
-        //public ICommand ChangeStyleListCommand => new Command(async () =>
-        //{
-        //    _preferenceService.ChangeShowInList();
-        //    await ReloadShowInList();
-        //});
-
-        public void SetStatusFromCurrentPixColor()
-        {
-            if (CurrentPixKey == null)
-                return;
-
-            CurrentPixKeyActions = CurrentPixKey.Actions.ToObservableCollection();
         }
 
         private async Task RemoveAllKeys()

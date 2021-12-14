@@ -92,10 +92,10 @@
 
                     <templates:TemplateTitlePanel
                         Title="Minhas Chaves"
-                        BackgroundColor="{StaticResource primaryDark}"
+                        BackgroundColor="{Binding CurrentPixKey.FinancialInstitution.Institution.MaterialColor.Primary}"
                         Icon="{x:Static icons:FontAwesomeSolid.Key}"
-                        IconColor="{DynamicResource textOnPrimary}"
-                        TitleColor="{DynamicResource textOnPrimary}" />
+                        IconColor="{Binding CurrentPixKey.FinancialInstitution.Institution.MaterialColor.TextOnPrimary}"
+                        TitleColor="{Binding CurrentPixKey.FinancialInstitution.Institution.MaterialColor.TextOnPrimary}" />
 
                     <contentStart:StartPageMyKeysView />
 
@@ -177,7 +177,7 @@
                             <TapGestureRecognizer Command="{Binding NavigateBenefitsCommand}" />
                         </Grid.GestureRecognizers>
 
-                        <templates:TemplateTitlePanel Title="Por quê Paghelp.me?" Icon="{x:Static icons:FontAwesomeSolid.Heart}" />
+                        <templates:TemplateTitlePanel Title="Por quê Paghelp.me?" Icon="{x:Static icons:FontAwesomeSolid.InfoCircle}" />
 
                         <content:ChevronRightView Grid.Column="1" />
                     </Grid>

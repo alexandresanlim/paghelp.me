@@ -13,7 +13,7 @@
     x:DataType="vm:DashboardViewModel">
 
     <BoxView
-        BackgroundColor="{StaticResource primaryDark}"
+        BackgroundColor="{Binding CurrentPixKey.FinancialInstitution.Institution.MaterialColor.Primary}"
         HeightRequest="50"
         VerticalOptions="Start" />
 

@@ -2,6 +2,7 @@
 using PixQrCodeGeneratorOffline.Models;
 using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Services.Interfaces;
+using PixQrCodeGeneratorOffline.Style.Interfaces;
 using PixQrCodeGeneratorOffline.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -33,6 +34,8 @@ namespace PixQrCodeGeneratorOffline.Base.ViewModels
 
         protected readonly IFeedService _feedService;
 
+        protected readonly IStatusBar _statusBar;
+
         public ViewModelBase()
         {
             _financialInstitutionService = DependencyService.Get<IFinancialInstitutionService>();
@@ -44,6 +47,7 @@ namespace PixQrCodeGeneratorOffline.Base.ViewModels
             _externalActionService = DependencyService.Get<IExternalActionService>();
             _eventService = DependencyService.Get<IEventService>();
             _feedService = DependencyService.Get<IFeedService>();
+            _statusBar = DependencyService.Get<IStatusBar>();
 
             ShowAds = false;
 

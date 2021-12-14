@@ -52,15 +52,15 @@ namespace PixQrCodeGeneratorOffline.Views
             }
         }
 
-        protected override bool OnBackButtonPressed()
-        {
-            ReloadStatusBar();
-            return base.OnBackButtonPressed();
-        }
+        //protected override bool OnBackButtonPressed()
+        //{
+        //    ReloadStatusBar();
+        //    return base.OnBackButtonPressed();
+        //}
 
-        private void ReloadStatusBar()
-        {
-            App.StatusBarService.SetStatusBarColor(App.ThemeColors.PrimaryDark);
-        }
+        //private void ReloadStatusBar()
+        //{
+        //    App.StatusBarService.SetStatusBarColor(App.ThemeColors.PrimaryDark);
+        //}
     }
 }
