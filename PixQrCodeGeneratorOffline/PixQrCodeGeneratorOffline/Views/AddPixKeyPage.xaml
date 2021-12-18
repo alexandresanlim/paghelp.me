@@ -97,29 +97,24 @@
                                     FontSize="{DynamicResource FontSizeLarge}"
                                     HorizontalTextAlignment="Center"
                                     Text="{Binding Title}"
-                                    TextColor="{DynamicResource textSecondary}" />
+                                    TextColor="{DynamicResource textSecondary}"
+                                    Visual="Material" />
                             </StackLayout>
                             <Frame
-                                Padding="15,30"
+                                Padding="15"
                                 BackgroundColor="{DynamicResource foreground_page}"
                                 CornerRadius="10"
                                 IsVisible="{Binding IsInstitution, Converter={StaticResource InvertedBooleanConverter}}">
-                                <StackLayout>
-
-                                    <Entry
-                                        Placeholder="{Binding Placeholder}"
-                                        PlaceholderColor="{DynamicResource textSecondary}"
-                                        ReturnCommand="{Binding Source={RelativeSource AncestorType={x:Type vm:AddPixKeyViewModel}}, Path=InputNextCommand}"
-                                        Text="{Binding Value}"
-                                        TextColor="{DynamicResource textPrimary}"
-                                        Visual="Material" />
-                                </StackLayout>
+                                <Entry
+                                    Placeholder="{Binding Placeholder}"
+                                    ReturnCommand="{Binding Source={RelativeSource AncestorType={x:Type vm:AddPixKeyViewModel}}, Path=InputNextCommand}"
+                                    Text="{Binding Value}" />
                             </Frame>
 
                             <Frame
-                                Padding="15,30"
+                                Padding="15"
                                 BackgroundColor="{DynamicResource foreground_page}"
-                                CornerRadius="10"
+                                CornerRadius="5"
                                 IsVisible="{Binding IsInstitution}">
                                 <Frame.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:AddPixKeyViewModel}}, Path=SelectedInstitutionCommand}" />
@@ -146,39 +141,15 @@
 
             <StackLayout>
 
-                <Frame
-                    Margin="15,0"
-                    Padding="15"
-                    BackgroundColor="{DynamicResource staticAccentPrimary}"
-                    CornerRadius="30"
-                    IsVisible="{Binding ShowSaveButton, Converter={StaticResource InvertedBooleanConverter}}">
-                    <Frame.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding InputNextCommand}" />
-                    </Frame.GestureRecognizers>
-                    <Label
-                        FontFamily="{DynamicResource FontBold}"
-                        FontSize="{DynamicResource FontSizeMedium}"
-                        HorizontalOptions="Center"
-                        Text="Próximo"
-                        TextColor="{DynamicResource staticAccentTextOnPrimary}" />
-                </Frame>
+                <Button
+                    Command="{Binding InputNextCommand}"
+                    IsVisible="{Binding ShowSaveButton, Converter={StaticResource InvertedBooleanConverter}}"
+                    Text="Próximo" />
+                <Button
+                    Command="{Binding SaveCommand}"
+                    IsVisible="{Binding ShowSaveButton}"
+                    Text="Salvar" />
 
-                <Frame
-                    Margin="15,0"
-                    Padding="15"
-                    BackgroundColor="{DynamicResource staticAccentPrimary}"
-                    CornerRadius="30"
-                    IsVisible="{Binding ShowSaveButton}">
-                    <Frame.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding SaveCommand}" />
-                    </Frame.GestureRecognizers>
-                    <Label
-                        FontFamily="{DynamicResource FontBold}"
-                        FontSize="{DynamicResource FontSizeMedium}"
-                        HorizontalOptions="Center"
-                        Text="Salvar"
-                        TextColor="{DynamicResource staticAccentTextOnPrimary}" />
-                </Frame>
             </StackLayout>
 
 

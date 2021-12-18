@@ -1,29 +1,23 @@
 ﻿using PixQrCodeGeneratorOffline.Models;
 using PixQrCodeGeneratorOffline.ViewModels;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace PixQrCodeGeneratorOffline.Views
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ShareKeyPage : ContentPage
     {
         private readonly ShareKeyViewModel _shareKeyViewModel;
 
-        private static ShareKeyLoadDataParameter _shareKeyLoadDataParameter = new ShareKeyLoadDataParameter();
+        private static ShareKeyLoadDataParameter _shareKeyLoadDataParameter;
 
         public ShareKeyPage(ObservableCollection<PixKey> pixKeyList)
         {
             InitializeComponent();
 
             BindingContext = _shareKeyViewModel = new ShareKeyViewModel(pixKeyList);
+            _shareKeyLoadDataParameter = new ShareKeyLoadDataParameter();
         }
 
         private void Switch_Toggled(object sender, ToggledEventArgs e)

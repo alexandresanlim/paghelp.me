@@ -39,7 +39,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public ICommand ChangeSelectPixKeyCommand => new Command<PixKey>(async (pixkey) => await ChangeSelectedPixKey(pixkey));
 
-        public IAsyncCommand ShareAllCommand => new AsyncCommand(async () => await _pixKeyService.ShareAllKeys(PixKeyList));
+        public IAsyncCommand ShareAllCommand => new AsyncCommand(async () => await _pixKeyService.NavigateToShareAllKeys(PixKeyList));
 
         public IAsyncCommand RemoveAllCommand => new AsyncCommand(RemoveAllKeys);
 

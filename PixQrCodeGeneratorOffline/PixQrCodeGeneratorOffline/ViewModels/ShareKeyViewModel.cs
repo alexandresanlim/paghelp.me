@@ -52,7 +52,8 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         private async Task Share()
         {
-            await _externalActionService.ShareText(PreviewText);
+            await _pixKeyService.ShareAllKeys(PreviewText);
+            //await _externalActionService.ShareText(PreviewText);
         }
 
         private async Task Copy()

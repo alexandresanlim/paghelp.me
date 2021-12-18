@@ -21,7 +21,9 @@ namespace PixQrCodeGeneratorOffline.Models.Services.Interfaces
 
         bool Remove(PixKey item);
 
-        Task ShareAllKeys(ObservableCollection<PixKey> pixkeyList);
+        Task NavigateToShareAllKeys(ObservableCollection<PixKey> pixkeyList);
+
+        Task ShareAllKeys(string info);
 
         Task<bool> RemoveAll(bool isContact = false);
 

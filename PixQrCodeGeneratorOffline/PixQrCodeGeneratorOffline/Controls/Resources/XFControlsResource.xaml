@@ -1,43 +1,57 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PixQrCodeGeneratorOffline.Controls.Resources.XFControlsResource">
+<ResourceDictionary
+    x:Class="PixQrCodeGeneratorOffline.Controls.Resources.XFControlsResource"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
     <Style TargetType="Label">
-        <Setter Property="FontFamily" Value="FontPoppinsRegular"/>
+        <Setter Property="FontFamily" Value="FontPoppinsRegular" />
         <Setter Property="TextColor" Value="{DynamicResource textPrimary}" />
     </Style>
 
     <Style TargetType="Entry">
-        <Setter Property="FontFamily" Value="FontPoppinsRegular"/>
-        <Setter Property="ClearButtonVisibility" Value="WhileEditing"/>
+        <Setter Property="FontFamily" Value="FontPoppinsRegular" />
+        <Setter Property="ClearButtonVisibility" Value="WhileEditing" />
         <Setter Property="PlaceholderColor" Value="{DynamicResource textSecondary}" />
         <Setter Property="TextColor" Value="{DynamicResource textPrimary}" />
+        <Setter Property="Visual" Value="Material" />
     </Style>
 
     <Style TargetType="Frame">
-        <Setter Property="HasShadow" Value="False"/>
-        <Setter Property="Padding" Value="0"/>
+        <Setter Property="HasShadow" Value="{OnPlatform Default=true, iOS=false}" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="Visual" Value="Material" />
+        <Setter Property="BackgroundColor" Value="{DynamicResource foreground_page}" />
     </Style>
 
     <Style TargetType="CarouselView">
-        <Setter Property="Loop" Value="False"/>
-        <Setter Property="IsScrollAnimated" Value="True"/>
+        <Setter Property="Loop" Value="False" />
+        <Setter Property="IsScrollAnimated" Value="True" />
     </Style>
 
     <Style TargetType="ActivityIndicator">
-        <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
-        <Setter Property="IsRunning" Value="True"/>
+        <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+        <Setter Property="IsRunning" Value="True" />
     </Style>
 
     <Style TargetType="ContentPage">
-        <Setter Property="BackgroundColor" Value="{DynamicResource background_page}"/>
+        <Setter Property="BackgroundColor" Value="{DynamicResource background_page}" />
     </Style>
 
     <Style TargetType="IndicatorView">
-        <Setter Property="IndicatorsShape" Value="Circle"/>
-        <Setter Property="IndicatorColor" Value="LightGray"/>
-        <Setter Property="SelectedIndicatorColor" Value="DarkGray"/>
+        <Setter Property="IndicatorsShape" Value="Circle" />
+        <Setter Property="IndicatorColor" Value="LightGray" />
+        <Setter Property="SelectedIndicatorColor" Value="DarkGray" />
+    </Style>
+
+    <Style TargetType="Button">
+        <Setter Property="Margin" Value="5,0,5,5" />
+        <Setter Property="BackgroundColor" Value="{DynamicResource primaryDark}" />
+        <Setter Property="BorderColor" Value="Transparent" />
+        <Setter Property="CornerRadius" Value="20" />
+        <Setter Property="TextColor" Value="{DynamicResource textOnPrimary}" />
+        <Setter Property="FontFamily" Value="{DynamicResource FontBold}" />
+        <Setter Property="Visual" Value="Material" />
     </Style>
 
 </ResourceDictionary>

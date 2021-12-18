@@ -17,9 +17,12 @@ namespace PixQrCodeGeneratorOffline.Models.Services
     {
         private readonly IPixKeyRepository _pixKeyRepository;
 
+        private readonly IExternalActionService _externalActionService;
+
         public PixKeyService()
         {
             _pixKeyRepository = DependencyService.Get<IPixKeyRepository>();
+            _externalActionService = DependencyService.Get<IExternalActionService>();
         }
 
         public bool IsValid(PixKey pixKey)
@@ -52,7 +55,7 @@ namespace PixQrCodeGeneratorOffline.Models.Services
             return _pixKeyRepository.Remove(item);
         }
 
-        public async Task ShareAllKeys(ObservableCollection<PixKey> pixkeyList)
+        public async Task NavigateToShareAllKeys(ObservableCollection<PixKey> pixkeyList)
         {
             try
             {
@@ -61,6 +64,50 @@ namespace PixQrCodeGeneratorOffline.Models.Services
                 await Task.Delay(500);
 
                 await Shell.Current.Navigation.PushAsync(new ShareKeyPage(pixkeyList));
+            }
+            catch (System.Exception e)
+            {
+                e.SendToLog();
+            }
+            finally
+            {
+                _eventService.SendEvent("Navegou para página de compartilhar todas as chaves", EventType.NAVIGATION);
+
+                DialogService.HideLoading();
+            }
+        }
+
+        public async Task ShareAllKeys(string info)
+        {
+            try
+            {
+                DialogService.ShowLoading("");
+
+                await Task.Delay(500);
+
+
+                var options = new List<ActionSheetOption>()
+                    {
+                        new ActionSheetOption("Compartilhar", async () =>
+                        {
+                            await _externalActionService.ShareText(info);
+                        }),
+                        new ActionSheetOption("Salvar em .txt e compartilhar", async () =>
+                        {
+                            var path = _externalActionService.GenerateTxtFile(info, "ChavesPix");
+                            await _externalActionService.ShareFile(path);
+                        }),
+                    };
+
+                DialogService.ActionSheet(new Acr.UserDialogs.ActionSheetConfig
+                {
+                    Title = "Selecione uma opção:",
+                    Options = options,
+                    Cancel = new ActionSheetOption("Cancelar", () =>
+                    {
+                        return;
+                    })
+                });
             }
             catch (System.Exception e)
             {

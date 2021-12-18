@@ -1,4 +1,6 @@
-﻿using PixQrCodeGeneratorOffline.Base.ViewModels;
+﻿using AsyncAwaitBestPractices;
+using AsyncAwaitBestPractices.MVVM;
+using PixQrCodeGeneratorOffline.Base.ViewModels;
 using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models;
 using PixQrCodeGeneratorOffline.ViewModels.Helpers;
@@ -15,6 +17,20 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 {
     public class AddPixKeyViewModel : ViewModelBase
     {
+        #region Commands
+
+        public IAsyncCommand LoadDataCommand => new AsyncCommand(LoadData);
+
+        public IAsyncCommand SaveCommand => new AsyncCommand(Save);
+
+        public IAsyncCommand DeleteCommand => new AsyncCommand(Delete);
+
+        public ICommand SelectedInstitutionCommand => new Command(SelectedInstitution);
+
+        public ICommand InputNextCommand => new Command(InputNext);
+
+        #endregion
+
         public AddPixKeyViewModel(PixKey pixKey = null, bool isContact = false)
         {
             CurrentPixKey = pixKey ?? new PixKey();
@@ -22,17 +38,15 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
             CurrentDashboard = DashboardVM; //CurrentPixKey.IsContact ? DashboardContactVM : (DashboardViewModelBase)DashboardVM;
 
-            LoadData.Execute(null);
+            LoadDataCommand.ExecuteAsync().SafeFireAndForget();
         }
 
-        public ICommand LoadData => new Command(async () =>
+        private async Task LoadData()
         {
             await LoadInputList();
 
             await ResetProps();
-
-            //await LoadNotices();
-        });
+        }
 
         private async Task ResetProps()
         {
@@ -91,23 +105,13 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
         }
 
-        //private async Task LoadNotices()
-        //{
-        //    Notices = new ObservableCollection<string>
-        //    {
-        //        "Para sua segurança não será possível ver saldo ou realizar transferências, use o app da própria instituição para isso.",
-        //        "Os chaves serão guardadas somente no device, sem a necessidade de conexão com a internet e de modo criptografado.",
-        //        "Não cadastre chaves que ainda não foram registradas em alguma instituição financeira."
-        //    };
-        //}
-
         private async Task LoadInputList()
         {
             InputList = AddPixInput.GetList(CurrentPixKey.IsContact);
             InputPhasesCount = InputList?.Count - 1 ?? 0;
         }
 
-        public ICommand SaveCommand => new Command(async () =>
+        private async Task Save()
         {
             CurrentPixKey.City = CurrentInputValues?.City.Value;
             CurrentPixKey.Key = CurrentInputValues?.Key?.Value;
@@ -207,9 +211,9 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             {
                 SetIsLoading(false);
             }
-        });
+        }
 
-        public ICommand DeleteCommand => new Command(async () =>
+        private async Task Delete()
         {
             var confirm = await DialogService.ConfirmAsync("Tem certeza que deseja excluir a chave " + CurrentPixKey.Key + "?", "Confirmação", "Sim", "Cancelar");
 
@@ -244,7 +248,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                         }
                     }
 
-                    if(CurrentDashboard.PixKeyList.Count == 0)
+                    if (CurrentDashboard.PixKeyList.Count == 0)
                     {
                         CurrentDashboard.PixKeyList = new ObservableCollection<PixKey>();
                     }
@@ -272,9 +276,10 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             {
                 SetIsLoading(false);
             }
-        });
 
-        public ICommand SelectedInstitutionCommand => new Command(() =>
+        }
+
+        private void SelectedInstitution()
         {
             try
             {
@@ -328,9 +333,9 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             {
                 e.SendToLog();
             }
-        });
+        }
 
-        public ICommand InputNextCommand => new Command(async () =>
+        private void InputNext()
         {
             try
             {
@@ -343,9 +348,9 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             {
                 e.SendToLog();
             }
-        });
+        }
 
-        public ICommand CurrentInputChangedCommand => new Command(() => CurrentInputChanged());
+        public ICommand CurrentInputChangedCommand => new Command(CurrentInputChanged);
 
         private void CurrentInputChanged()
         {

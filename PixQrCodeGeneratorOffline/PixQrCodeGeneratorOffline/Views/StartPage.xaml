@@ -231,10 +231,10 @@
                         Text="é preciso autenticar para continuar"
                         TextColor="{DynamicResource textPrimary}" />
 
-                    <controls:CustomFrameButton
+                    <Button
                         Margin="0,15,0,0"
-                        TapButtonCommand="{Binding AuthenticationCommand}"
-                        TextButton="Autenticar Agora" />
+                        Command="{Binding AuthenticationCommand}"
+                        Text="Autenticar Agora" />
                 </StackLayout>
             </StackLayout>
 

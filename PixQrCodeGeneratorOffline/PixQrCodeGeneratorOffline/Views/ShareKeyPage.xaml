@@ -92,11 +92,12 @@
                 </Grid>
             </StackLayout>
 
-            <controls:CustomFrameButton
+
+
+            <Button
                 Grid.Row="2"
-                Margin="10"
-                TapButtonCommand="{Binding ShareCommand}"
-                TextButton="Compartilhar" />
+                Command="{Binding ShareCommand}"
+                Text="Compartilhar" />
         </Grid>
     </ContentPage.Content>
 </ContentPage>

@@ -25,12 +25,12 @@
                 </CollectionView.ItemTemplate>
             </CollectionView>
 
-            <controls:CustomFrameButton
+            <Button
                 x:Name="xBtAddKey"
                 Grid.Row="1"
-                Margin="5,10"
-                TapButtonCommand="{Binding NavigateToAddNewKeyPageCommand}"
-                TextButton="Adicionar minha primeira chave" />
+                Command="{Binding NavigateToAddNewKeyPageCommand}"
+                Text="Adicionar minha primeira chave" />
+
 
             <!--<Frame
                 Grid.Row="1"

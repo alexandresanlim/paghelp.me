@@ -156,19 +156,26 @@ namespace PixQrCodeGeneratorOffline.Models
 
         public static PixKeyType GetKeyType(this string key)
         {
-            if (key.IsEmail())
-                return PixKeyType.Email;
+            try
+            {
+                if (key.IsEmail())
+                    return PixKeyType.Email;
 
-            if (key.IsCPF())
-                return PixKeyType.CPF;
+                if (key.IsCPF())
+                    return PixKeyType.CPF;
 
-            if (key.IsCNPJ())
-                return PixKeyType.CNPJ;
+                if (key.IsCNPJ())
+                    return PixKeyType.CNPJ;
 
-            if (key.IsGuid())
-                return PixKeyType.Aleatoria;
+                if (key.IsGuid())
+                    return PixKeyType.Aleatoria;
 
-            return PixKeyType.NotFound;
+                return PixKeyType.NotFound;
+            }
+            catch (System.Exception)
+            {
+                return PixKeyType.NotFound;
+            }
         }
     }
 

@@ -54,8 +54,6 @@ namespace PixQrCodeGeneratorOffline.Base.ViewModels
             //Application.Current.RequestedThemeChanged += Current_RequestedThemeChanged;
         }
 
-        public ICommand SaveCommand { get; set; }
-
         public static DashboardViewModel DashboardVM { get; set; }
 
         public static DashboardContactViewModel DashboardContactVM { get; set; }
