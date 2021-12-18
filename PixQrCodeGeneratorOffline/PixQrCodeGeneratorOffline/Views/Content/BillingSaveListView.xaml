@@ -28,6 +28,7 @@
                 <controls:CustomIcon
                     FontSize="50"
                     Glyph="{x:Static icons:FontAwesomeSolid.Wind}"
+                    HorizontalOptions="CenterAndExpand"
                     IconColor="{DynamicResource textPrimary}" />
                 <Label
                     HorizontalOptions="CenterAndExpand"

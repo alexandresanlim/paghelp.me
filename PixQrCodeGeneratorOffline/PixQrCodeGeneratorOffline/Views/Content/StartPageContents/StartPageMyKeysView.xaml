@@ -44,10 +44,7 @@
 
 
                         <StackLayout Padding="5,0">
-                            <Frame
-                                Padding="15"
-                                BackgroundColor="{DynamicResource foreground_page}"
-                                CornerRadius="10">
+                            <Frame Padding="15" CornerRadius="10">
                                 <Grid ColumnDefinitions="auto,*">
 
                                     <StackLayout
@@ -63,6 +60,10 @@
 
                                         <Grid ColumnDefinitions="auto,*" ColumnSpacing="15">
 
+                                            <Grid.GestureRecognizers>
+                                                <TapGestureRecognizer Command="{Binding Command.NavigateToPaymentPageCommand}" />
+                                            </Grid.GestureRecognizers>
+
                                             <qr:QRCode
                                                 Grid.Column="0"
                                                 BackgroundColor="White"
@@ -71,14 +72,7 @@
                                                 Level="H"
                                                 VerticalOptions="Center"
                                                 WidthRequest="80"
-                                                Color="#000000">
-
-                                                <qr:QRCode.GestureRecognizers>
-                                                    <TapGestureRecognizer Command="{Binding Command.NavigateToPaymentPageCommand}" />
-                                                </qr:QRCode.GestureRecognizers>
-
-                                            </qr:QRCode>
-
+                                                Color="#000000" />
 
                                             <Grid
                                                 Grid.Column="1"

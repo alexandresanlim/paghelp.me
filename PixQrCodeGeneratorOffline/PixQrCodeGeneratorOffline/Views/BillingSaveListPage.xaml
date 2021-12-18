@@ -1,28 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<shared:ContentPageWithNavBar
+<ContentPage
     x:Class="PixQrCodeGeneratorOffline.Views.BillingSaveListPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:content="clr-namespace:PixQrCodeGeneratorOffline.Views.Content"
-    xmlns:shared="clr-namespace:PixQrCodeGeneratorOffline.Views.Shared"
     xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
     Title="Cobranças salvas"
     x:DataType="vm:BillingSaveListViewModel"
-    BackgroundColor="{DynamicResource background_page}">
+    BackgroundColor="{DynamicResource background_page}"
+    NavigationPage.HasNavigationBar="True">
 
     <ContentPage.Content>
-        <StackLayout Padding="10,0">
-            <!--<StackLayout.Background>
-                <LinearGradientBrush EndPoint="0,1">
-                    <GradientStop Color="{DynamicResource primary}"
-                          Offset="0.1" />
-                    <GradientStop Color="{DynamicResource primaryDark}"
-                          Offset="1.0" />
-                </LinearGradientBrush>
-            </StackLayout.Background>-->
-
-            <content:BillingSaveListView />
-        </StackLayout>
+        <content:BillingSaveListView Margin="10,0" />
     </ContentPage.Content>
 
-</shared:ContentPageWithNavBar>
+</ContentPage>

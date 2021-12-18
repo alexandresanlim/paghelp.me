@@ -13,8 +13,7 @@
                 <Grid
                     Grid.Row="0"
                     BackgroundColor="{TemplateBinding BackgroundColor}"
-                    ColumnDefinitions="auto,*"
-                    Style="{StaticResource paddingPageGrid}">
+                    ColumnDefinitions="auto,*">
                     <StackLayout Grid.Column="0" Padding="15,15,25,15">
                         <StackLayout.GestureRecognizers>
                             <TapGestureRecognizer Tapped="TapGestureRecognizerBackButtonPressed_Tapped" />

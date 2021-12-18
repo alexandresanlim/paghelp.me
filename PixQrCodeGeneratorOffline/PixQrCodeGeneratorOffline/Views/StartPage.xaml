@@ -55,6 +55,8 @@
             <Style x:Key="styleActionIcon" TargetType="controls:CustomIcon">
                 <Setter Property="FontSize" Value="{DynamicResource FontSizeSmall}" />
                 <Setter Property="IconColor" Value="{DynamicResource textSecondary}" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                <Setter Property="FontSize" Value="{StaticResource FontSizeSmall}" />
             </Style>
 
             <Style x:Key="styleTextOnButtonActionListContact" TargetType="Label">
