@@ -1,17 +1,10 @@
 ﻿using PixQrCodeGeneratorOffline.Models;
 using PixQrCodeGeneratorOffline.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace PixQrCodeGeneratorOffline.Views
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PaymentPage : ContentPage
     {
         PaymentViewModel _paymentViewModel;
@@ -24,7 +17,7 @@ namespace PixQrCodeGeneratorOffline.Views
 
             _pixPaylod = paylod;
 
-            App.StatusBarService.SetStatusBarColor(paylod.PixKey.FinancialInstitution.Institution.MaterialColor.Primary);
+            //App.StatusBarService.SetStatusBarColor(paylod.PixKey.FinancialInstitution.Institution.MaterialColor.Primary);
 
             BindingContext = _paymentViewModel = new PaymentViewModel();
         }
@@ -32,24 +25,30 @@ namespace PixQrCodeGeneratorOffline.Views
         protected override void OnAppearing()
         {
             _paymentViewModel.LoadDataCommand.Execute(_pixPaylod);
+
+            if (!(_paymentViewModel.CurrentPixPaylod.Id > 0) && _paymentViewModel.CurrentPixPaylod?.PixCob != null && _paymentViewModel.CurrentPixPaylod.PixCob.Validation.HasValue)
+                ToolbarItems.Add(new ToolbarItem
+                {
+                    Command = _paymentViewModel.SaveCommand,
+                });
         }
 
-        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
-        {
-            ReloadStatusBar();
-            Shell.Current.SendBackButtonPressed();
-        }
+        //private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        //{
+        //    //ReloadStatusBar();
+        //    Shell.Current.SendBackButtonPressed();
+        //}
 
-        protected override bool OnBackButtonPressed()
-        {
-            ReloadStatusBar();
-            return base.OnBackButtonPressed();
-        }
+        //protected override bool OnBackButtonPressed()
+        //{
+        //    //ReloadStatusBar();
+        //    return base.OnBackButtonPressed();
+        //}
 
-        private void ReloadStatusBar()
-        {
-            App.StatusBarService.SetStatusBarColor(App.ThemeColors.PrimaryDark);
-        }
+        //private void ReloadStatusBar()
+        //{
+        //    App.StatusBarService.SetStatusBarColor(App.ThemeColors.PrimaryDark);
+        //}
 
         //protected override void OnDisappearing()
         //{

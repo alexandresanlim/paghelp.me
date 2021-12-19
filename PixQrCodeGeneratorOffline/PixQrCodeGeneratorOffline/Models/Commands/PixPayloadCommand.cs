@@ -31,7 +31,7 @@ namespace PixQrCodeGeneratorOffline.Models.Commands
 
                     await Task.Delay(500);
 
-                    await Shell.Current.Navigation.PushAsync(new PaymentPage(pixPayload));
+                    await Shell.Current.Navigation.PushAsync(new PaymentPage(pixPayload), true);
                 }
                 catch (System.Exception e)
                 {

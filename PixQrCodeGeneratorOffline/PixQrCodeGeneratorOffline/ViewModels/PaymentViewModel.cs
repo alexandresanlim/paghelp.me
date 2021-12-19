@@ -1,8 +1,10 @@
-﻿using PixQrCodeGeneratorOffline.Base.ViewModels;
+﻿using AsyncAwaitBestPractices.MVVM;
+using PixQrCodeGeneratorOffline.Base.ViewModels;
 using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -10,14 +12,22 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 {
     public class PaymentViewModel : ViewModelBase
     {
-        public Command<PixPayload> LoadDataCommand => new Command<PixPayload>((pixPaylod) =>
+        #region Commands
+
+        public ICommand SharePayloadCommand => new Command(SharePayload);
+
+        public IAsyncCommand SaveCommand => new AsyncCommand(Save);
+
+        #endregion
+
+        public ICommand LoadDataCommand => new Command<PixPayload>((pixPaylod) =>
         {
             CurrentPixPaylod = pixPaylod;
 
-            SaveButtonVisible = !(CurrentPixPaylod.Id > 0) && CurrentPixPaylod?.PixCob != null && CurrentPixPaylod.PixCob.Validation.HasValue;
+            //SaveButtonVisible = !(CurrentPixPaylod.Id > 0) && CurrentPixPaylod?.PixCob != null && CurrentPixPaylod.PixCob.Validation.HasValue;
         });
 
-        public ICommand SharePayloadCommand => new Command(async () =>
+        private void SharePayload()
         {
             try
             {
@@ -52,9 +62,9 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             {
                 _eventService.SendEvent("Compartilhou um payload", Services.EventType.SHARE);
             }
-        });
+        }
 
-        public ICommand SaveCommand => new Command(async () =>
+        private async Task Save()
         {
             var identity = await DialogService.PromptAsync(new Acr.UserDialogs.PromptConfig
             {
@@ -86,7 +96,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             {
                 DialogService.Toast("Algo de errado aconteceu, tente novamente mais tarde ou atualize o app.");
             }
-        });
+        }
 
         private PixPayload _currentPixPaylod;
         public PixPayload CurrentPixPaylod

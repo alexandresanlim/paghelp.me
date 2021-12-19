@@ -9,7 +9,8 @@
     xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
     x:DataType="vm:PaymentViewModel"
     BackgroundColor="{DynamicResource background_page}"
-    Shell.NavBarIsVisible="False">
+    NavigationPage.HasNavigationBar="True"
+    Shell.BackgroundColor="{Binding CurrentPixPaylod.PixKey.FinancialInstitution.Institution.MaterialColor.Primary}">
 
     <ContentPage.Content>
 
@@ -28,18 +29,6 @@
                 <StackLayout VerticalOptions="Start">
 
                     <StackLayout Orientation="Horizontal">
-
-                        <StackLayout Padding="0,15,30,10">
-                            <StackLayout.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
-                            </StackLayout.GestureRecognizers>
-
-                            <controls:CustomIcon
-                                FontSize="{DynamicResource FontSizeLarge}"
-                                Glyph="{x:Static icons:FontAwesomeSolid.ChevronLeft}"
-                                IconColor="{DynamicResource textPrimary}"
-                                VerticalOptions="CenterAndExpand" />
-                        </StackLayout>
 
 
                         <StackLayout
