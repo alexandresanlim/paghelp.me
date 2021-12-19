@@ -10,7 +10,8 @@
     xmlns:qr="clr-namespace:Xam.Forms;assembly=Xam.Forms.QRCode"
     xmlns:templates="clr-namespace:PixQrCodeGeneratorOffline.Templates"
     xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
-    x:DataType="vm:DashboardViewModel">
+    x:DataType="vm:DashboardViewModel"
+    >
 
     <BoxView
         BackgroundColor="{Binding CurrentPixKey.FinancialInstitution.Institution.MaterialColor.Primary}"

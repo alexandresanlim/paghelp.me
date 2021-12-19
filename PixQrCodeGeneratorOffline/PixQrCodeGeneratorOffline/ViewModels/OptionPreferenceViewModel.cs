@@ -13,6 +13,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             IsPreferenceNews = Preference.ShowNews;
             IsPreferncePdvMode = Preference.IsPDVMode;
             IsThemeDark = Preference.ThemeIsDark;
+            LoadThemeIcon();
         }
 
         public async Task OptionFingerPrint()
@@ -47,7 +48,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         public async Task OptionTheme()
         {
             await _preferenceService.ChangeTheme();
-            LoadThemeIcon();
             LoadData();
         }
 

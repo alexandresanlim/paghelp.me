@@ -27,6 +27,7 @@
     <Label
         x:Name="xTitle"
         Style="{DynamicResource styleTitleBottomIcon}"
-        Text="Minhas Chaves" />
+        Text="Minhas Chaves"
+        TextColor="{DynamicResource textOnPrimary}" />
 
 </StackLayout>

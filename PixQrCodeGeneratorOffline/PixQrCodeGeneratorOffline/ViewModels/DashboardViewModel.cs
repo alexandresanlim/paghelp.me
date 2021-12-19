@@ -8,6 +8,7 @@ using PixQrCodeGeneratorOffline.ViewModels.Helpers;
 using PixQrCodeGeneratorOffline.Views;
 using Plugin.Fingerprint;
 using Plugin.Fingerprint.Abstractions;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -85,7 +86,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 await LoadCurrentPixKey();
 
-                await LoadNews();
+                //await LoadNews();
 
                 await NavigateToBenefitsPage();
             }
@@ -160,6 +161,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
         }
 
+        [Obsolete("Google desativou a funcionalidade de feed")]
         public async Task LoadNews()
         {
             if (!Preference.ShowNews || Connectivity.NetworkAccess != NetworkAccess.Internet)

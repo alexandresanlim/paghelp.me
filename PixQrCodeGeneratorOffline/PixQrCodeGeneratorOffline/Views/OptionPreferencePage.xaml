@@ -30,7 +30,7 @@
 
         <StackLayout>
 
-            <Grid Style="{StaticResource styleGrid}">
+            <!--<Grid Style="{StaticResource styleGrid}">
                 <preferences:PreferencePanelTemplate
                     Title="Exibir Notícias"
                     Grid.Column="0"
@@ -43,7 +43,7 @@
                     Toggled="Switch_News" />
             </Grid>
 
-            <content:DivisionView />
+            <content:DivisionView />-->
 
             <Grid Style="{StaticResource styleGrid}">
                 <preferences:PreferencePanelTemplate
@@ -73,16 +73,20 @@
                     Toggled="Switch_PdvMode" />
             </Grid>
 
-            <!--<Grid Style="{StaticResource styleGrid}">
-                <preferences:PreferencePanelTemplate Grid.Column="0"
-                                                     Title="Dark Mode"
-                                                     Icon="{Binding ThemeIcon}"
-                                                     Description="Use o tema da sua preferência" />
+            <content:DivisionView />
 
-                <Switch Grid.Column="1"
-                        IsToggled="{Binding IsThemeDark}"
-                        Toggled="Switch_Theme" />
-            </Grid>-->
+            <Grid Style="{StaticResource styleGrid}">
+                <preferences:PreferencePanelTemplate
+                    Title="Dark Mode"
+                    Grid.Column="0"
+                    Description="Use o tema da sua preferência"
+                    Icon="{Binding ThemeIcon}" />
+
+                <Switch
+                    Grid.Column="1"
+                    IsToggled="{Binding IsThemeDark}"
+                    Toggled="Switch_Theme" />
+            </Grid>
 
         </StackLayout>
 

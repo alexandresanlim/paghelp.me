@@ -94,23 +94,23 @@ namespace PixQrCodeGeneratorOffline.Models.Services
 
         public void SetOnCurrentResource(MaterialColor colors)
         {
-            App.Resorces.Colors["primary"] = colors.Primary;
-            App.Resorces.Colors["primaryLight"] = colors.PrimaryLight;
-            App.Resorces.Colors["primaryDark"] = colors.PrimaryDark;
+            App.Current.Resources["primary"] = colors.Primary;
+            App.Current.Resources["primaryLight"] = colors.PrimaryLight;
+            App.Current.Resources["primaryDark"] = colors.PrimaryDark;
 
-            App.Resorces.Colors["secondary"] = (colors?.Secondary == Color.FromRgba(0, 0, 0, 0)) ? Color.FromHex("#50000000") : colors.Secondary;
-            App.Resorces.Colors["secondaryLight"] = colors.SecondaryLight;
-            App.Resorces.Colors["secondaryDark"] = colors.SecondaryDark;
+            App.Current.Resources["secondary"] = (colors?.Secondary == Color.FromRgba(0, 0, 0, 0)) ? Color.FromHex("#50000000") : colors.Secondary;
+            App.Current.Resources["secondaryLight"] = colors.SecondaryLight;
+            App.Current.Resources["secondaryDark"] = colors.SecondaryDark;
 
-            App.Resorces.Colors["textOnPrimary"] = colors.TextOnPrimary;
-            App.Resorces.Colors["textOnSecondary"] = (colors?.TextOnSecondary == Color.FromRgba(0, 0, 0, 0)) ? Color.White : colors.TextOnSecondary;
+            App.Current.Resources["textOnPrimary"] = colors.TextOnPrimary;
+            App.Current.Resources["textOnSecondary"] = (colors?.TextOnSecondary == Color.FromRgba(0, 0, 0, 0)) ? Color.White : colors.TextOnSecondary;
 
             if (colors.IsDarkOrLightTheme)
             {
-                App.Resorces.Colors["background_page"] = colors.BackgroundPage;
-                App.Resorces.Colors["foreground_page"] = colors.ForegroundPage;
-                App.Resorces.Colors["textPrimary"] = colors.TextPrimary;
-                App.Resorces.Colors["textSecondary"] = colors.TextSecondary;
+                App.Current.Resources["background_page"] = colors.BackgroundPage;
+                App.Current.Resources["foreground_page"] = colors.ForegroundPage;
+                App.Current.Resources["textPrimary"] = colors.TextPrimary;
+                App.Current.Resources["textSecondary"] = colors.TextSecondary;
             }
         }
 
