@@ -4,7 +4,6 @@ using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models;
 using PixQrCodeGeneratorOffline.Services;
 using PixQrCodeGeneratorOffline.ViewModels.Base;
-using PixQrCodeGeneratorOffline.ViewModels.Helpers;
 using PixQrCodeGeneratorOffline.Views;
 using Plugin.Fingerprint;
 using Plugin.Fingerprint.Abstractions;
@@ -202,8 +201,8 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             CurrentDashboardCustomInfo = new DashboardCustomInfo
             {
                 IsVisibleFingerPrint = Preference.FingerPrint && await CrossFingerprint.Current.IsAvailableAsync(),
-                WelcomeText = DateTimeExtention.GetDashboardTitleFromPeriod(),
-                WelcomeSubtitleText = DateTimeExtention.GetDashboardSubtitleFromDayOfWeed(),
+                //WelcomeText = DateTimeExtention.GetDashboardTitleFromPeriod(),
+                //WelcomeSubtitleText = DateTimeExtention.GetDashboardSubtitleFromDayOfWeed(),
             };
 
             LoadConnectionIcon();
@@ -239,18 +238,15 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         private async Task ResetProps()
         {
-            //ShowInList = false;
-            //ShowWelcome = false;
-
             CurrentDashboardLoadInfo = new DashboardLoadInfo();
-            //CurrentPixKey = new PixKey();
+            CurrentDashboardCustomInfo = new DashboardCustomInfo();
         }
 
         private async Task Authentication()
         {
             try
             {
-                var request = new AuthenticationRequestConfiguration("Autenticação", "Atentique-se para continuar...");
+                var request = new AuthenticationRequestConfiguration("Autenticação", "Atentique-se para continuar e ver suas chaves");
 
                 var result = await CrossFingerprint.Current.AuthenticateAsync(request);
 
@@ -399,18 +395,11 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
     public class DashboardCustomInfo : Models.Base.NotifyObjectBase
     {
-        private bool _isVisibleFingerPrint = true;
+        private bool _isVisibleFingerPrint = false;
         public bool IsVisibleFingerPrint
         {
             set => SetProperty(ref _isVisibleFingerPrint, value);
             get => _isVisibleFingerPrint;
-        }
-
-        private bool _showWelcome = true;
-        public bool ShowWelcome
-        {
-            set => SetProperty(ref _showWelcome, value);
-            get => _showWelcome;
         }
 
         private string _connectionIcon;
@@ -420,25 +409,18 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             get => _connectionIcon;
         }
 
-        private string _themeIcon;
-        public string ThemeIcon
-        {
-            set => SetProperty(ref _themeIcon, value);
-            get => _themeIcon;
-        }
+        //private string _welcomeText;
+        //public string WelcomeText
+        //{
+        //    set => SetProperty(ref _welcomeText, value);
+        //    get => _welcomeText;
+        //}
 
-        private string _welcomeText;
-        public string WelcomeText
-        {
-            set => SetProperty(ref _welcomeText, value);
-            get => _welcomeText;
-        }
-
-        private string _welcomeSubtitleText;
-        public string WelcomeSubtitleText
-        {
-            set => SetProperty(ref _welcomeSubtitleText, value);
-            get => _welcomeSubtitleText;
-        }
+        //private string _welcomeSubtitleText;
+        //public string WelcomeSubtitleText
+        //{
+        //    set => SetProperty(ref _welcomeSubtitleText, value);
+        //    get => _welcomeSubtitleText;
+        //}
     }
 }

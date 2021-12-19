@@ -212,7 +212,7 @@
                 IsVisible="{Binding CurrentDashboardCustomInfo.IsVisibleFingerPrint}"
                 VerticalOptions="FillAndExpand">
                 <StackLayout
-                    Padding="10,0"
+                    Padding="15,0"
                     HorizontalOptions="CenterAndExpand"
                     VerticalOptions="CenterAndExpand">
                     <controls:CustomIcon
@@ -222,16 +222,18 @@
                         IconColor="{DynamicResource textPrimary}" />
 
                     <Label
+                        Margin="0,30,0,0"
                         FontFamily="{StaticResource FontSemiBold}"
                         FontSize="{StaticResource FontSizeMedium}"
                         HorizontalOptions="Center"
-                        Text="Autenticar para continuar"
+                        Text="Autentique-se para continuar"
                         TextColor="{DynamicResource textPrimary}" />
                     <Label
+                        Margin="10,0"
                         FontSize="{StaticResource FontSizeSmall}"
                         HorizontalOptions="Center"
-                        Text="é preciso autenticar para continuar"
-                        TextColor="{DynamicResource textPrimary}" />
+                        Text="É preciso autenticar-se para ver suas chaves e fazer operações."
+                        TextColor="{DynamicResource textSecondary}" />
 
                     <Button
                         Margin="0,15,0,0"
