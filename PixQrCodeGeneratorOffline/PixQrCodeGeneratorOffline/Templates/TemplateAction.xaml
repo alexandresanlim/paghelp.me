@@ -22,13 +22,13 @@
             <Style x:Key="styleGridActionChevronIcon" TargetType="controls:CustomIcon">
                 <Setter Property="VerticalOptions" Value="CenterAndExpand" />
                 <Setter Property="FontSize" Value="{DynamicResource FontSizeMedium}" />
-                <Setter Property="IconColor" Value="{DynamicResource textSecondary}" />
+                <Setter Property="IconColor" Value="{DynamicResource textPrimary}" />
                 <Setter Property="Grid.Column" Value="0" />
             </Style>
 
             <Style x:Key="styleGridActionTitle" TargetType="Label">
                 <Setter Property="FontSize" Value="{DynamicResource FontSizeSmall}" />
-                <Setter Property="TextColor" Value="{DynamicResource textSecondary}" />
+                <Setter Property="TextColor" Value="{DynamicResource textPrimary}" />
                 <Setter Property="Grid.Column" Value="1" />
                 <Setter Property="FontFamily" Value="{DynamicResource FontSemiBold}" />
             </Style>

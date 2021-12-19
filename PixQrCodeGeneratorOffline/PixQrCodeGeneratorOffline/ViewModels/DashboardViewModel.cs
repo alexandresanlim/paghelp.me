@@ -71,8 +71,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             {
                 IsBusy = true;
 
-                await Task.Delay(500);
-
                 await ResetProps();
 
                 await LoadDashboardCustomInfo();
@@ -271,7 +269,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             MainThread.BeginInvokeOnMainThread(() =>
             {
                 CurrentPixKey = pixkey;
-                _statusBar.SetStatusBarColor(pixkey.FinancialInstitution.Institution.MaterialColor.Primary);
+                _statusBar.SetStatusBarColor(pixkey.FinancialInstitution.Institution.MaterialColor.PrimaryDark);
                 CurrentPixKeyActions = pixkey?.Actions?.ToObservableCollection() ?? new ObservableCollection<PixKeyAction>();
             });
         }

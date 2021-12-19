@@ -3,7 +3,6 @@
     x:Class="PixQrCodeGeneratorOffline.Templates.Preferences.PreferencePanelTemplate"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:content="clr-namespace:PixQrCodeGeneratorOffline.Views.Content"
     xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
     Padding="15"
     Spacing="15">
@@ -12,14 +11,14 @@
         x:Name="xIcon"
         FontSize="{DynamicResource FontSizeMedium}"
         HorizontalOptions="Start"
-        IconColor="{DynamicResource textSecondary}" />
+        IconColor="{DynamicResource textPrimary}" />
 
     <Label
         x:Name="xTitle"
         FontFamily="{DynamicResource FontBold}"
         FontSize="{DynamicResource FontSizeMedium}"
-        TextColor="{DynamicResource textSecondary}" />
+        TextColor="{DynamicResource textPrimary}" />
 
-    <Label x:Name="xDescription" />
+    <Label x:Name="xDescription" TextColor="{DynamicResource textSecondary}" />
 
 </StackLayout>

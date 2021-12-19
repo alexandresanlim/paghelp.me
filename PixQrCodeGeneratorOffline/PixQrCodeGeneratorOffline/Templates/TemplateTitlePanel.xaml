@@ -12,13 +12,13 @@
             <Style x:Key="styleTitleBottomIcon" TargetType="Label">
                 <Setter Property="FontSize" Value="{DynamicResource FontSizeMedium}" />
                 <Setter Property="FontFamily" Value="{DynamicResource FontBold}" />
-                <Setter Property="TextColor" Value="{DynamicResource textSecondary}" />
+                <Setter Property="TextColor" Value="{DynamicResource textPrimary}" />
             </Style>
 
             <Style x:Key="styleTitleIcon" TargetType="controls:CustomIcon">
                 <Setter Property="HorizontalOptions" Value="Start" />
                 <Setter Property="FontSize" Value="{DynamicResource FontSizeMedium}" />
-                <Setter Property="IconColor" Value="{DynamicResource textSecondary}" />
+                <Setter Property="IconColor" Value="{DynamicResource textPrimary}" />
             </Style>
         </ResourceDictionary>
     </StackLayout.Resources>
@@ -27,7 +27,6 @@
     <Label
         x:Name="xTitle"
         Style="{DynamicResource styleTitleBottomIcon}"
-        Text="Minhas Chaves"
-        TextColor="{DynamicResource textOnPrimary}" />
+        Text="Minhas Chaves" />
 
 </StackLayout>

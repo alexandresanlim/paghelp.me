@@ -10,11 +10,10 @@
     xmlns:qr="clr-namespace:Xam.Forms;assembly=Xam.Forms.QRCode"
     xmlns:templates="clr-namespace:PixQrCodeGeneratorOffline.Templates"
     xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
-    x:DataType="vm:DashboardViewModel"
-    >
+    x:DataType="vm:DashboardViewModel">
 
     <BoxView
-        BackgroundColor="{Binding CurrentPixKey.FinancialInstitution.Institution.MaterialColor.Primary}"
+        BackgroundColor="{Binding CurrentPixKey.FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
         HeightRequest="50"
         VerticalOptions="Start" />
 
@@ -48,9 +47,10 @@
                             <Frame Padding="15" CornerRadius="10">
                                 <Grid ColumnDefinitions="auto,*">
 
-                                    <StackLayout
+                                    <BoxView
                                         Grid.Column="0"
-                                        BackgroundColor="{Binding FinancialInstitution.Institution.MaterialColor.Primary}"
+                                        BackgroundColor="{Binding FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
+                                        CornerRadius="15"
                                         WidthRequest="8" />
 
                                     <StackLayout
@@ -161,7 +161,7 @@
                         <Frame
                             Padding="15"
                             BackgroundColor="{DynamicResource foreground_page}"
-                            CornerRadius="10"
+                            CornerRadius="5"
                             VerticalOptions="FillAndExpand"
                             WidthRequest="120">
 
@@ -170,14 +170,14 @@
                                     FontSize="{DynamicResource FontSizeLarge}"
                                     Glyph="{Binding Icon}"
                                     HorizontalOptions="Start"
-                                    IconColor="{Binding Colors.Primary}"
+                                    IconColor="{Binding Colors.PrimaryDark}"
                                     IconType="{Binding IconType}" />
 
                                 <Label
                                     FontFamily="{DynamicResource FontSemiBold}"
                                     FontSize="{DynamicResource FontSizeSmall}"
                                     Text="{Binding Title}"
-                                    TextColor="{Binding Colors.Primary}"
+                                    TextColor="{Binding Colors.PrimaryDark}"
                                     VerticalOptions="EndAndExpand" />
 
                             </StackLayout>

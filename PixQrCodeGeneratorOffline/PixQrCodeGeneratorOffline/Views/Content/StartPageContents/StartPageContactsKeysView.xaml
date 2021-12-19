@@ -38,6 +38,7 @@
                                     Grid.Column="0"
                                     FontSize="60"
                                     Glyph="{x:Static icons:FontAwesomeSolid.UserCircle}"
+                                    HorizontalOptions="Center"
                                     IconColor="{DynamicResource textSecondary}"
                                     VerticalOptions="Center" />
 
@@ -46,19 +47,15 @@
                                         FontFamily="{DynamicResource FontBold}"
                                         FontSize="{StaticResource FontSizeMedium}"
                                         Text="{Binding Viewer.NamePresentation}"
-                                        TextColor="{DynamicResource textSecondary}" />
+                                        TextColor="{DynamicResource textPrimary}" />
                                     <Label
                                         LineBreakMode="MiddleTruncation"
                                         MaxLines="1"
                                         Text="{Binding Viewer.KeyPresentation}"
-                                        TextColor="{DynamicResource textSecondary}" />
+                                        TextColor="{DynamicResource textPrimary}" />
                                 </StackLayout>
 
-                                <BoxView
-                                    BackgroundColor="{DynamicResource background_page}"
-                                    HeightRequest="1"
-                                    HorizontalOptions="FillAndExpand"
-                                    VerticalOptions="EndAndExpand" />
+                                <content:DivisionView />
 
                                 <Grid ColumnDefinitions="*,*">
                                     <StackLayout Grid.Column="0">

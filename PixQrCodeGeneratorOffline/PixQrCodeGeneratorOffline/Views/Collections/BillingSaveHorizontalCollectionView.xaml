@@ -1,28 +1,39 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
-             x:Class="PixQrCodeGeneratorOffline.Views.Collections.BillingSaveHorizontalCollectionView"
-             xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon"
-             xmlns:models="clr-namespace:PixQrCodeGeneratorOffline.Models"
-             >
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="PixQrCodeGeneratorOffline.Views.Collections.BillingSaveHorizontalCollectionView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
+    xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon"
+    xmlns:models="clr-namespace:PixQrCodeGeneratorOffline.Models"
+    xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels">
 
 
 
 
     <ContentView.Content>
-        <controls:CustomCollectionView ItemsSource="{Binding BillingSaveList}" HorizontalOptions="FillAndExpand" HeightRequest="210">
+        <controls:CustomCollectionView
+            HeightRequest="170"
+            HorizontalOptions="FillAndExpand"
+            ItemsSource="{Binding BillingSaveList}">
 
             <controls:CustomCollectionView.ItemsLayout>
-                <LinearItemsLayout Orientation="Horizontal"/>
+                <LinearItemsLayout Orientation="Horizontal" />
             </controls:CustomCollectionView.ItemsLayout>
 
             <controls:CustomCollectionView.EmptyView>
 
                 <StackLayout>
                     <StackLayout VerticalOptions="CenterAndExpand">
-                        <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Wind }" FontSize="50" IconColor="{DynamicResource textPrimary}" />
-                        <Label Text="Ainda não há nada por aqui." HorizontalOptions="CenterAndExpand" TextColor="{DynamicResource textPrimary}" />
+                        <controls:CustomIcon
+                            FontSize="50"
+                            Glyph="{x:Static icons:FontAwesomeSolid.Wind}"
+                            HorizontalOptions="Center"
+                            IconColor="{DynamicResource textPrimary}" />
+                        <Label
+                            HorizontalOptions="CenterAndExpand"
+                            Text="Ainda não há nada por aqui."
+                            TextColor="{DynamicResource textPrimary}" />
                     </StackLayout>
                 </StackLayout>
 
@@ -31,30 +42,74 @@
             <controls:CustomCollectionView.ItemTemplate>
                 <DataTemplate x:DataType="models:PixPayload">
                     <StackLayout Padding="5,0,0,0">
-                        <Frame VerticalOptions="FillAndExpand" BackgroundColor="{DynamicResource foreground_page}" CornerRadius="10" WidthRequest="225" Padding="10">
+                        <Frame
+                            BackgroundColor="{DynamicResource foreground_page}"
+                            CornerRadius="5"
+                            VerticalOptions="FillAndExpand"
+                            WidthRequest="225">
                             <Frame.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding Commands.NavigateToPaymentPageCommand}" />
                             </Frame.GestureRecognizers>
 
                             <Grid ColumnDefinitions="auto,*">
-                                <BoxView Grid.Column="0" BackgroundColor="{Binding PixKey.FinancialInstitution.Institution.MaterialColor.Primary}" WidthRequest="8" />
+                                <BoxView
+                                    Grid.Column="0"
+                                    Margin="10"
+                                    BackgroundColor="{Binding PixKey.FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
+                                    CornerRadius="15"
+                                    WidthRequest="8" />
 
-                                <StackLayout Grid.Column="1" Spacing="15" Padding="15">
-                                    <Label Grid.Row="0" Text="{Binding Identity, StringFormat='ID: {0}'}" TextColor="{DynamicResource textSecondary}" MaxLines="2" FontFamily="{DynamicResource FontSemiBold}" LineBreakMode="TailTruncation"/>
+                                <StackLayout Grid.Column="1" VerticalOptions="Center">
+                                    <Label
+                                        Grid.Row="0"
+                                        FontFamily="{DynamicResource FontSemiBold}"
+                                        FontSize="{StaticResource FontSizeSmall}"
+                                        LineBreakMode="TailTruncation"
+                                        MaxLines="2"
+                                        Text="{Binding Identity, StringFormat='ID: {0}'}"
+                                        TextColor="{DynamicResource textPrimary}" />
 
-                                    <Grid ColumnDefinitions="auto, *" RowDefinitions="auto, auto">
-                                        
-                                        <controls:CustomIcon Grid.Row="0" Grid.Column="0" Glyph="{x:Static icons:FontAwesomeSolid.University }" Style="{DynamicResource styleActionIcon}" />
-                                        <Label Grid.Row="0" Grid.Column="1" Text="{Binding PixKey.Viewer.InstitutionPresentation}" Style="{DynamicResource styleActionText}" />
+                                    <Grid
+                                        ColumnDefinitions="auto, *"
+                                        RowDefinitions="auto, auto"
+                                        RowSpacing="0">
+
+                                        <controls:CustomIcon
+                                            Grid.Row="0"
+                                            Grid.Column="0"
+                                            Glyph="{x:Static icons:FontAwesomeSolid.University}"
+                                            Style="{DynamicResource styleActionIcon}" />
+                                        <Label
+                                            Grid.Row="0"
+                                            Grid.Column="1"
+                                            Style="{DynamicResource styleActionText}"
+                                            Text="{Binding PixKey.Viewer.InstitutionPresentation}" />
 
                                         <!--<controls:CustomIcon Grid.Row="1" Grid.Column="0" Glyph="{x:Static icons:FontAwesomeSolid.UserAlt }" IconColor="{DynamicResource textSecondary}" />
                                         <Label Grid.Row="1" Grid.Column="1" Text="{Binding PixKey.Viewer.NamePresentation}" TextColor="{DynamicResource textSecondary}" VerticalOptions="CenterAndExpand" />-->
 
-                                        <controls:CustomIcon Grid.Row="1" Grid.Column="0" Glyph="{x:Static icons:FontAwesomeSolid.Key }" IconColor="{DynamicResource textSecondary}" />
-                                        <Label Grid.Row="1" Grid.Column="1" Text="{Binding PixKey.Viewer.KeyPresentation}" TextColor="{DynamicResource textSecondary}" VerticalOptions="CenterAndExpand" MaxLines="1" LineBreakMode="MiddleTruncation" />
+                                        <controls:CustomIcon
+                                            Grid.Row="1"
+                                            Grid.Column="0"
+                                            Glyph="{x:Static icons:FontAwesomeSolid.Key}"
+                                            Style="{DynamicResource styleActionIcon}" />
+                                        <Label
+                                            Grid.Row="1"
+                                            Grid.Column="1"
+                                            LineBreakMode="MiddleTruncation"
+                                            MaxLines="1"
+                                            Style="{DynamicResource styleActionText}"
+                                            Text="{Binding PixKey.Viewer.KeyPresentation}" />
                                     </Grid>
 
-                                    <Label Grid.Row="2" Grid.Column="1" Text="{Binding PixCob.Viewer.ValuePresentation}" TextColor="{Binding PixKey.FinancialInstitution.Institution.MaterialColor.Primary}" FontFamily="{DynamicResource FontBold}" FontSize="{DynamicResource FontSizeLarge}" />
+                                    <Label
+                                        Grid.Row="2"
+                                        Grid.Column="1"
+                                        Grid.ColumnSpan="2"
+                                        FontFamily="{DynamicResource FontBold}"
+                                        FontSize="{DynamicResource FontSizeLarge}"
+                                        Text="{Binding PixCob.Viewer.ValuePresentation}"
+                                        TextColor="{Binding PixKey.FinancialInstitution.Institution.MaterialColor.PrimaryDark}" />
 
                                 </StackLayout>
                             </Grid>

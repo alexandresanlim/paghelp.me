@@ -27,13 +27,13 @@
             <Style x:Key="styleGridActionChevronIcon" TargetType="controls:CustomIcon">
                 <Setter Property="VerticalOptions" Value="CenterAndExpand" />
                 <Setter Property="FontSize" Value="{DynamicResource FontSizeMedium}" />
-                <Setter Property="IconColor" Value="{DynamicResource textSecondary}" />
+                <Setter Property="IconColor" Value="{DynamicResource textPrimary}" />
                 <Setter Property="Grid.Column" Value="0" />
             </Style>
 
             <Style x:Key="styleGridActionTitle" TargetType="Label">
                 <Setter Property="FontSize" Value="{DynamicResource FontSizeSmall}" />
-                <Setter Property="TextColor" Value="{DynamicResource textSecondary}" />
+                <Setter Property="TextColor" Value="{DynamicResource textPrimary}" />
                 <Setter Property="Grid.Column" Value="1" />
                 <Setter Property="FontFamily" Value="{DynamicResource FontSemiBold}" />
             </Style>
@@ -47,20 +47,20 @@
 
             <Style x:Key="styleActionText" TargetType="Label">
                 <Setter Property="FontSize" Value="{DynamicResource FontSizeSmall}" />
-                <Setter Property="TextColor" Value="{DynamicResource textSecondary}" />
+                <Setter Property="TextColor" Value="{DynamicResource textPrimary}" />
                 <Setter Property="FontFamily" Value="{DynamicResource FontSemiBold}" />
                 <Setter Property="VerticalOptions" Value="CenterAndExpand" />
             </Style>
 
             <Style x:Key="styleActionIcon" TargetType="controls:CustomIcon">
                 <Setter Property="FontSize" Value="{DynamicResource FontSizeSmall}" />
-                <Setter Property="IconColor" Value="{DynamicResource textSecondary}" />
+                <Setter Property="IconColor" Value="{DynamicResource textPrimary}" />
                 <Setter Property="VerticalOptions" Value="CenterAndExpand" />
                 <Setter Property="FontSize" Value="{StaticResource FontSizeSmall}" />
             </Style>
 
             <Style x:Key="styleTextOnButtonActionListContact" TargetType="Label">
-                <Setter Property="TextColor" Value="{DynamicResource textSecondary}" />
+                <Setter Property="TextColor" Value="{DynamicResource textPrimary}" />
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="FontSize" Value="{DynamicResource FontSizeMicro}" />
                 <Setter Property="FontFamily" Value="{DynamicResource FontSemiBold}" />
@@ -70,12 +70,12 @@
             <Style x:Key="styleIconActionListContact" TargetType="controls:CustomIcon">
                 <Setter Property="FontSize" Value="{DynamicResource FontSizeMedium}" />
                 <Setter Property="HorizontalOptions" Value="Center" />
-                <Setter Property="IconColor" Value="{DynamicResource textSecondary}" />
+                <Setter Property="IconColor" Value="{DynamicResource textPrimary}" />
             </Style>
 
 
             <Style x:Key="styleButtonActionListContact" TargetType="Frame">
-                <Setter Property="BackgroundColor" Value="{DynamicResource textSecondary}" />
+                <Setter Property="BackgroundColor" Value="{DynamicResource textPrimary}" />
                 <Setter Property="CornerRadius" Value="10" />
                 <Setter Property="Padding" Value="10,15" />
 
@@ -94,7 +94,7 @@
 
                     <templates:TemplateTitlePanel
                         Title="Minhas Chaves"
-                        BackgroundColor="{Binding CurrentPixKey.FinancialInstitution.Institution.MaterialColor.Primary}"
+                        BackgroundColor="{Binding CurrentPixKey.FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
                         Icon="{x:Static icons:FontAwesomeSolid.Key}"
                         IconColor="{Binding CurrentPixKey.FinancialInstitution.Institution.MaterialColor.TextOnPrimary}"
                         TitleColor="{Binding CurrentPixKey.FinancialInstitution.Institution.MaterialColor.TextOnPrimary}" />
@@ -117,15 +117,18 @@
 
                     <!--  //////////////////////////////////////////////////////////////////////////////////////////////////////////////  -->
 
-                    <content:DivisionView Margin="0,8,0,0" />
-
-                    <templates:TemplateTitlePanel Title="Chaves de Contatos" Icon="{x:Static icons:FontAwesomeSolid.Users}" />
+                    <templates:TemplateTitlePanel
+                        Title="Chaves de Contatos"
+                        Margin="0,8,0,0"
+                        Icon="{x:Static icons:FontAwesomeSolid.Users}" />
 
                     <contentStart:StartPageContactsKeysView />
 
-                    <content:DivisionView />
+                    <!--<content:DivisionView />
 
+                    -->
                     <!--  //////////////////////////////////////////////////////////////////////////////////////////////////////////////  -->
+                    <!--
 
                     <StackLayout IsVisible="{Binding CurrentFeedList, Converter={StaticResource HasDataConverter}}">
 
@@ -134,7 +137,7 @@
                         <contentStart:StartPageNewsView />
 
                         <content:DivisionView />
-                    </StackLayout>
+                    </StackLayout>-->
 
                     <!--  Preferences  -->
 
@@ -244,7 +247,7 @@
 
 
 
-            <!--<content:PanelLoadView IsVisible="{Binding IsBusy}" />-->
+            <content:PanelLoadView IsVisible="{Binding IsBusy}" />
 
         </Grid>
 

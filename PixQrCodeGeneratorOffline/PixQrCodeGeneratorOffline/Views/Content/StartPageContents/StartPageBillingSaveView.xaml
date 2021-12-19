@@ -15,7 +15,7 @@
         <collections:BillingSaveHorizontalCollectionView />
 
         <Frame
-            Margin="0,15,0,0"
+            Margin="5,5,5,0"
             BackgroundColor="{DynamicResource foreground_page}"
             Style="{DynamicResource styleFrameAction}">
 
