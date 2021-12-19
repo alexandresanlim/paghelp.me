@@ -101,7 +101,7 @@
 
                     <contentStart:StartPageMyKeysView />
 
-                    <content:DivisionView />
+                    <content:DivisionView Margin="0,10,0,0" />
 
                     <!--  //////////////////////////////////////////////////////////////////////////////////////////////////////////////  -->
 
