@@ -14,7 +14,7 @@
     <StackLayout>
 
         <CollectionView
-            HeightRequest="250"
+            HeightRequest="230"
             IsVisible="{Binding PixKeyListContact, Converter={StaticResource HasDataConverter}}"
             ItemsSource="{Binding PixKeyListContact}">
 
@@ -32,32 +32,52 @@
                             CornerRadius="10"
                             VerticalOptions="FillAndExpand"
                             WidthRequest="150">
-                            <StackLayout HorizontalOptions="FillAndExpand" Spacing="15">
+                            <StackLayout HorizontalOptions="FillAndExpand">
 
-                                <controls:CustomIcon
+                                <!--<controls:CustomIcon
                                     Grid.Column="0"
                                     FontSize="60"
                                     Glyph="{x:Static icons:FontAwesomeSolid.UserCircle}"
                                     HorizontalOptions="Center"
                                     IconColor="{DynamicResource textSecondary}"
-                                    VerticalOptions="Center" />
+                                    VerticalOptions="Center" />-->
 
-                                <StackLayout Spacing="0">
+                                <Grid>
+                                    <BoxView
+                                        BackgroundColor="{StaticResource primaryDark}"
+                                        CornerRadius="50"
+                                        HeightRequest="70"
+                                        HorizontalOptions="Center"
+                                        WidthRequest="70" />
+
                                     <Label
-                                        FontFamily="{DynamicResource FontBold}"
-                                        FontSize="{StaticResource FontSizeMedium}"
-                                        Text="{Binding Viewer.NamePresentation}"
-                                        TextColor="{DynamicResource textPrimary}" />
-                                    <Label
-                                        LineBreakMode="MiddleTruncation"
+                                        FontFamily="{StaticResource FontBold}"
+                                        FontSize="25"
+                                        HorizontalOptions="Center"
+                                        LineBreakMode="TailTruncation"
                                         MaxLines="1"
-                                        Text="{Binding Viewer.KeyPresentation}"
-                                        TextColor="{DynamicResource textPrimary}" />
-                                </StackLayout>
+                                        Text="{Binding Viewer.Initial}"
+                                        TextColor="{StaticResource textOnPrimary}"
+                                        TextTransform="Uppercase"
+                                        VerticalOptions="Center" />
+                                </Grid>
+
+
+                                <Label
+                                    FontFamily="{DynamicResource FontBold}"
+                                    FontSize="{StaticResource FontSizeMedium}"
+                                    Text="{Binding Viewer.NamePresentation}"
+                                    TextColor="{DynamicResource textPrimary}" />
+
+                                <Label
+                                    LineBreakMode="MiddleTruncation"
+                                    MaxLines="1"
+                                    Text="{Binding Viewer.KeyPresentation}"
+                                    TextColor="{DynamicResource textPrimary}" />
 
                                 <content:DivisionView />
 
-                                <Grid ColumnDefinitions="*,*">
+                                <Grid ColumnDefinitions="*,*" VerticalOptions="EndAndExpand">
                                     <StackLayout Grid.Column="0">
                                         <StackLayout.GestureRecognizers>
                                             <TapGestureRecognizer Command="{Binding Command.CopyKeyCommand}" />

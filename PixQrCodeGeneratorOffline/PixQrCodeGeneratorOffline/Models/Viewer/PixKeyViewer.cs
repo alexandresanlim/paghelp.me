@@ -13,5 +13,7 @@
         public string InstitutionAndKey { get; set; }
 
         public string BankAndKey { get; set; }
+
+        public string Initial { get; set; }
     }
 }
