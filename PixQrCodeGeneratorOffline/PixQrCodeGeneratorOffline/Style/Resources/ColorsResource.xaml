@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PixQrCodeGeneratorOffline.Style.Resources.ColorsResource">
+<ResourceDictionary
+    x:Class="PixQrCodeGeneratorOffline.Style.Resources.ColorsResource"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
     <Color x:Key="primary">#00796b</Color>
     <Color x:Key="primaryLight">#48a999</Color>

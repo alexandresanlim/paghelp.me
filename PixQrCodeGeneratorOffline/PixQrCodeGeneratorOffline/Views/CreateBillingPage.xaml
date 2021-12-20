@@ -9,7 +9,8 @@
     xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
     Title="Nova Cobrança"
     x:DataType="vm:CreateBillingViewModel"
-    BackgroundColor="{DynamicResource background_page}">
+    BackgroundColor="{DynamicResource background_page}"
+    NavigationPage.HasNavigationBar="False">
 
     <ContentPage.Resources>
         <ResourceDictionary>

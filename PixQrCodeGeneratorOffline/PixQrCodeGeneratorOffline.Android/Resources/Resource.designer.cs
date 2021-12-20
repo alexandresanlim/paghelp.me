@@ -53,12 +53,32 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Animation.design_bottom_sheet_slide_out = global::PixQrCodeGeneratorOffline.Droid.Resource.Animation.design_bottom_sheet_slide_out;
 			global::Acr.UserDialogs.Resource.Animation.design_snackbar_in = global::PixQrCodeGeneratorOffline.Droid.Resource.Animation.design_snackbar_in;
 			global::Acr.UserDialogs.Resource.Animation.design_snackbar_out = global::PixQrCodeGeneratorOffline.Droid.Resource.Animation.design_snackbar_out;
+			global::Acr.UserDialogs.Resource.Animation.fragment_fast_out_extra_slow_in = global::PixQrCodeGeneratorOffline.Droid.Resource.Animation.fragment_fast_out_extra_slow_in;
+			global::Acr.UserDialogs.Resource.Animation.mtrl_bottom_sheet_slide_in = global::PixQrCodeGeneratorOffline.Droid.Resource.Animation.mtrl_bottom_sheet_slide_in;
+			global::Acr.UserDialogs.Resource.Animation.mtrl_bottom_sheet_slide_out = global::PixQrCodeGeneratorOffline.Droid.Resource.Animation.mtrl_bottom_sheet_slide_out;
+			global::Acr.UserDialogs.Resource.Animation.mtrl_card_lowers_interpolator = global::PixQrCodeGeneratorOffline.Droid.Resource.Animation.mtrl_card_lowers_interpolator;
 			global::Acr.UserDialogs.Resource.Animator.design_appbar_state_list_animator = global::PixQrCodeGeneratorOffline.Droid.Resource.Animator.design_appbar_state_list_animator;
 			global::Acr.UserDialogs.Resource.Animator.design_fab_hide_motion_spec = global::PixQrCodeGeneratorOffline.Droid.Resource.Animator.design_fab_hide_motion_spec;
 			global::Acr.UserDialogs.Resource.Animator.design_fab_show_motion_spec = global::PixQrCodeGeneratorOffline.Droid.Resource.Animator.design_fab_show_motion_spec;
+			global::Acr.UserDialogs.Resource.Animator.fragment_close_enter = global::PixQrCodeGeneratorOffline.Droid.Resource.Animator.fragment_close_enter;
+			global::Acr.UserDialogs.Resource.Animator.fragment_close_exit = global::PixQrCodeGeneratorOffline.Droid.Resource.Animator.fragment_close_exit;
+			global::Acr.UserDialogs.Resource.Animator.fragment_fade_enter = global::PixQrCodeGeneratorOffline.Droid.Resource.Animator.fragment_fade_enter;
+			global::Acr.UserDialogs.Resource.Animator.fragment_fade_exit = global::PixQrCodeGeneratorOffline.Droid.Resource.Animator.fragment_fade_exit;
+			global::Acr.UserDialogs.Resource.Animator.fragment_open_enter = global::PixQrCodeGeneratorOffline.Droid.Resource.Animator.fragment_open_enter;
+			global::Acr.UserDialogs.Resource.Animator.fragment_open_exit = global::PixQrCodeGeneratorOffline.Droid.Resource.Animator.fragment_open_exit;
+			global::Acr.UserDialogs.Resource.Animator.linear_indeterminate_line1_head_interpolator = global::PixQrCodeGeneratorOffline.Droid.Resource.Animator.linear_indeterminate_line1_head_interpolator;
+			global::Acr.UserDialogs.Resource.Animator.linear_indeterminate_line1_tail_interpolator = global::PixQrCodeGeneratorOffline.Droid.Resource.Animator.linear_indeterminate_line1_tail_interpolator;
+			global::Acr.UserDialogs.Resource.Animator.linear_indeterminate_line2_head_interpolator = global::PixQrCodeGeneratorOffline.Droid.Resource.Animator.linear_indeterminate_line2_head_interpolator;
+			global::Acr.UserDialogs.Resource.Animator.linear_indeterminate_line2_tail_interpolator = global::PixQrCodeGeneratorOffline.Droid.Resource.Animator.linear_indeterminate_line2_tail_interpolator;
 			global::Acr.UserDialogs.Resource.Animator.mtrl_btn_state_list_anim = global::PixQrCodeGeneratorOffline.Droid.Resource.Animator.mtrl_btn_state_list_anim;
 			global::Acr.UserDialogs.Resource.Animator.mtrl_btn_unelevated_state_list_anim = global::PixQrCodeGeneratorOffline.Droid.Resource.Animator.mtrl_btn_unelevated_state_list_anim;
+			global::Acr.UserDialogs.Resource.Animator.mtrl_card_state_list_anim = global::PixQrCodeGeneratorOffline.Droid.Resource.Animator.mtrl_card_state_list_anim;
 			global::Acr.UserDialogs.Resource.Animator.mtrl_chip_state_list_anim = global::PixQrCodeGeneratorOffline.Droid.Resource.Animator.mtrl_chip_state_list_anim;
+			global::Acr.UserDialogs.Resource.Animator.mtrl_extended_fab_change_size_collapse_motion_spec = global::PixQrCodeGeneratorOffline.Droid.Resource.Animator.mtrl_extended_fab_change_size_collapse_motion_spec;
+			global::Acr.UserDialogs.Resource.Animator.mtrl_extended_fab_change_size_expand_motion_spec = global::PixQrCodeGeneratorOffline.Droid.Resource.Animator.mtrl_extended_fab_change_size_expand_motion_spec;
+			global::Acr.UserDialogs.Resource.Animator.mtrl_extended_fab_hide_motion_spec = global::PixQrCodeGeneratorOffline.Droid.Resource.Animator.mtrl_extended_fab_hide_motion_spec;
+			global::Acr.UserDialogs.Resource.Animator.mtrl_extended_fab_show_motion_spec = global::PixQrCodeGeneratorOffline.Droid.Resource.Animator.mtrl_extended_fab_show_motion_spec;
+			global::Acr.UserDialogs.Resource.Animator.mtrl_extended_fab_state_list_animator = global::PixQrCodeGeneratorOffline.Droid.Resource.Animator.mtrl_extended_fab_state_list_animator;
 			global::Acr.UserDialogs.Resource.Animator.mtrl_fab_hide_motion_spec = global::PixQrCodeGeneratorOffline.Droid.Resource.Animator.mtrl_fab_hide_motion_spec;
 			global::Acr.UserDialogs.Resource.Animator.mtrl_fab_show_motion_spec = global::PixQrCodeGeneratorOffline.Droid.Resource.Animator.mtrl_fab_show_motion_spec;
 			global::Acr.UserDialogs.Resource.Animator.mtrl_fab_transformation_sheet_collapse_spec = global::PixQrCodeGeneratorOffline.Droid.Resource.Animator.mtrl_fab_transformation_sheet_collapse_spec;
@@ -81,6 +101,7 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Attribute.actionMenuTextColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.actionMenuTextColor;
 			global::Acr.UserDialogs.Resource.Attribute.actionModeBackground = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.actionModeBackground;
 			global::Acr.UserDialogs.Resource.Attribute.actionModeCloseButtonStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.actionModeCloseButtonStyle;
+			global::Acr.UserDialogs.Resource.Attribute.actionModeCloseContentDescription = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.actionModeCloseContentDescription;
 			global::Acr.UserDialogs.Resource.Attribute.actionModeCloseDrawable = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.actionModeCloseDrawable;
 			global::Acr.UserDialogs.Resource.Attribute.actionModeCopyDrawable = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.actionModeCopyDrawable;
 			global::Acr.UserDialogs.Resource.Attribute.actionModeCutDrawable = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.actionModeCutDrawable;
@@ -91,10 +112,12 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Attribute.actionModeShareDrawable = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.actionModeShareDrawable;
 			global::Acr.UserDialogs.Resource.Attribute.actionModeSplitBackground = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.actionModeSplitBackground;
 			global::Acr.UserDialogs.Resource.Attribute.actionModeStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.actionModeStyle;
+			global::Acr.UserDialogs.Resource.Attribute.actionModeTheme = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.actionModeTheme;
 			global::Acr.UserDialogs.Resource.Attribute.actionModeWebSearchDrawable = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.actionModeWebSearchDrawable;
 			global::Acr.UserDialogs.Resource.Attribute.actionOverflowButtonStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.actionOverflowButtonStyle;
 			global::Acr.UserDialogs.Resource.Attribute.actionOverflowMenuStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.actionOverflowMenuStyle;
 			global::Acr.UserDialogs.Resource.Attribute.actionProviderClass = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.actionProviderClass;
+			global::Acr.UserDialogs.Resource.Attribute.actionTextColorAlpha = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.actionTextColorAlpha;
 			global::Acr.UserDialogs.Resource.Attribute.actionViewClass = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.actionViewClass;
 			global::Acr.UserDialogs.Resource.Attribute.activityChooserViewStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.activityChooserViewStyle;
 			global::Acr.UserDialogs.Resource.Attribute.ahBarColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.ahBarColor;
@@ -116,27 +139,57 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Attribute.allowStacking = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.allowStacking;
 			global::Acr.UserDialogs.Resource.Attribute.alpha = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.alpha;
 			global::Acr.UserDialogs.Resource.Attribute.alphabeticModifiers = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.alphabeticModifiers;
+			global::Acr.UserDialogs.Resource.Attribute.altSrc = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.altSrc;
+			global::Acr.UserDialogs.Resource.Attribute.animateCircleAngleTo = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.animateCircleAngleTo;
+			global::Acr.UserDialogs.Resource.Attribute.animateRelativeTo = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.animateRelativeTo;
+			global::Acr.UserDialogs.Resource.Attribute.animationMode = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.animationMode;
+			global::Acr.UserDialogs.Resource.Attribute.appBarLayoutStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.appBarLayoutStyle;
+			global::Acr.UserDialogs.Resource.Attribute.applyMotionScene = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.applyMotionScene;
+			global::Acr.UserDialogs.Resource.Attribute.arcMode = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.arcMode;
 			global::Acr.UserDialogs.Resource.Attribute.arrowHeadLength = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.arrowHeadLength;
 			global::Acr.UserDialogs.Resource.Attribute.arrowShaftLength = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.arrowShaftLength;
+			global::Acr.UserDialogs.Resource.Attribute.attributeName = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.attributeName;
+			global::Acr.UserDialogs.Resource.Attribute.autoCompleteMode = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.autoCompleteMode;
 			global::Acr.UserDialogs.Resource.Attribute.autoCompleteTextViewStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.autoCompleteTextViewStyle;
 			global::Acr.UserDialogs.Resource.Attribute.autoSizeMaxTextSize = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.autoSizeMaxTextSize;
 			global::Acr.UserDialogs.Resource.Attribute.autoSizeMinTextSize = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.autoSizeMinTextSize;
 			global::Acr.UserDialogs.Resource.Attribute.autoSizePresetSizes = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.autoSizePresetSizes;
 			global::Acr.UserDialogs.Resource.Attribute.autoSizeStepGranularity = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.autoSizeStepGranularity;
 			global::Acr.UserDialogs.Resource.Attribute.autoSizeTextType = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.autoSizeTextType;
+			global::Acr.UserDialogs.Resource.Attribute.autoTransition = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.autoTransition;
 			global::Acr.UserDialogs.Resource.Attribute.background = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.background;
+			global::Acr.UserDialogs.Resource.Attribute.backgroundColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.backgroundColor;
+			global::Acr.UserDialogs.Resource.Attribute.backgroundInsetBottom = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.backgroundInsetBottom;
+			global::Acr.UserDialogs.Resource.Attribute.backgroundInsetEnd = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.backgroundInsetEnd;
+			global::Acr.UserDialogs.Resource.Attribute.backgroundInsetStart = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.backgroundInsetStart;
+			global::Acr.UserDialogs.Resource.Attribute.backgroundInsetTop = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.backgroundInsetTop;
+			global::Acr.UserDialogs.Resource.Attribute.backgroundOverlayColorAlpha = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.backgroundOverlayColorAlpha;
 			global::Acr.UserDialogs.Resource.Attribute.backgroundSplit = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.backgroundSplit;
 			global::Acr.UserDialogs.Resource.Attribute.backgroundStacked = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.backgroundStacked;
 			global::Acr.UserDialogs.Resource.Attribute.backgroundTint = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.backgroundTint;
 			global::Acr.UserDialogs.Resource.Attribute.backgroundTintMode = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.backgroundTintMode;
+			global::Acr.UserDialogs.Resource.Attribute.badgeGravity = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.badgeGravity;
+			global::Acr.UserDialogs.Resource.Attribute.badgeStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.badgeStyle;
+			global::Acr.UserDialogs.Resource.Attribute.badgeTextColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.badgeTextColor;
 			global::Acr.UserDialogs.Resource.Attribute.barLength = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.barLength;
+			global::Acr.UserDialogs.Resource.Attribute.barrierAllowsGoneWidgets = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.barrierAllowsGoneWidgets;
+			global::Acr.UserDialogs.Resource.Attribute.barrierDirection = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.barrierDirection;
+			global::Acr.UserDialogs.Resource.Attribute.barrierMargin = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.barrierMargin;
 			global::Acr.UserDialogs.Resource.Attribute.behavior_autoHide = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.behavior_autoHide;
+			global::Acr.UserDialogs.Resource.Attribute.behavior_autoShrink = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.behavior_autoShrink;
+			global::Acr.UserDialogs.Resource.Attribute.behavior_draggable = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.behavior_draggable;
+			global::Acr.UserDialogs.Resource.Attribute.behavior_expandedOffset = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.behavior_expandedOffset;
 			global::Acr.UserDialogs.Resource.Attribute.behavior_fitToContents = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.behavior_fitToContents;
+			global::Acr.UserDialogs.Resource.Attribute.behavior_halfExpandedRatio = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.behavior_halfExpandedRatio;
 			global::Acr.UserDialogs.Resource.Attribute.behavior_hideable = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.behavior_hideable;
 			global::Acr.UserDialogs.Resource.Attribute.behavior_overlapTop = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.behavior_overlapTop;
 			global::Acr.UserDialogs.Resource.Attribute.behavior_peekHeight = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.behavior_peekHeight;
+			global::Acr.UserDialogs.Resource.Attribute.behavior_saveFlags = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.behavior_saveFlags;
 			global::Acr.UserDialogs.Resource.Attribute.behavior_skipCollapsed = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.behavior_skipCollapsed;
+			global::Acr.UserDialogs.Resource.Attribute.blendSrc = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.blendSrc;
 			global::Acr.UserDialogs.Resource.Attribute.borderlessButtonStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.borderlessButtonStyle;
+			global::Acr.UserDialogs.Resource.Attribute.borderRound = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.borderRound;
+			global::Acr.UserDialogs.Resource.Attribute.borderRoundPercent = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.borderRoundPercent;
 			global::Acr.UserDialogs.Resource.Attribute.borderWidth = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.borderWidth;
 			global::Acr.UserDialogs.Resource.Attribute.bottomAppBarStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.bottomAppBarStyle;
 			global::Acr.UserDialogs.Resource.Attribute.bottomNavigationStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.bottomNavigationStyle;
@@ -150,7 +203,10 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Attribute.boxCornerRadiusTopEnd = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.boxCornerRadiusTopEnd;
 			global::Acr.UserDialogs.Resource.Attribute.boxCornerRadiusTopStart = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.boxCornerRadiusTopStart;
 			global::Acr.UserDialogs.Resource.Attribute.boxStrokeColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.boxStrokeColor;
+			global::Acr.UserDialogs.Resource.Attribute.boxStrokeErrorColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.boxStrokeErrorColor;
 			global::Acr.UserDialogs.Resource.Attribute.boxStrokeWidth = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.boxStrokeWidth;
+			global::Acr.UserDialogs.Resource.Attribute.boxStrokeWidthFocused = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.boxStrokeWidthFocused;
+			global::Acr.UserDialogs.Resource.Attribute.brightness = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.brightness;
 			global::Acr.UserDialogs.Resource.Attribute.buttonBarButtonStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.buttonBarButtonStyle;
 			global::Acr.UserDialogs.Resource.Attribute.buttonBarNegativeButtonStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.buttonBarNegativeButtonStyle;
 			global::Acr.UserDialogs.Resource.Attribute.buttonBarNeutralButtonStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.buttonBarNeutralButtonStyle;
@@ -167,14 +223,30 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Attribute.cardBackgroundColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.cardBackgroundColor;
 			global::Acr.UserDialogs.Resource.Attribute.cardCornerRadius = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.cardCornerRadius;
 			global::Acr.UserDialogs.Resource.Attribute.cardElevation = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.cardElevation;
+			global::Acr.UserDialogs.Resource.Attribute.cardForegroundColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.cardForegroundColor;
 			global::Acr.UserDialogs.Resource.Attribute.cardMaxElevation = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.cardMaxElevation;
 			global::Acr.UserDialogs.Resource.Attribute.cardPreventCornerOverlap = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.cardPreventCornerOverlap;
 			global::Acr.UserDialogs.Resource.Attribute.cardUseCompatPadding = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.cardUseCompatPadding;
 			global::Acr.UserDialogs.Resource.Attribute.cardViewStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.cardViewStyle;
+			global::Acr.UserDialogs.Resource.Attribute.carousel_backwardTransition = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.carousel_backwardTransition;
+			global::Acr.UserDialogs.Resource.Attribute.carousel_emptyViewsBehavior = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.carousel_emptyViewsBehavior;
+			global::Acr.UserDialogs.Resource.Attribute.carousel_firstView = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.carousel_firstView;
+			global::Acr.UserDialogs.Resource.Attribute.carousel_forwardTransition = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.carousel_forwardTransition;
+			global::Acr.UserDialogs.Resource.Attribute.carousel_infinite = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.carousel_infinite;
+			global::Acr.UserDialogs.Resource.Attribute.carousel_nextState = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.carousel_nextState;
+			global::Acr.UserDialogs.Resource.Attribute.carousel_previousState = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.carousel_previousState;
+			global::Acr.UserDialogs.Resource.Attribute.carousel_touchUpMode = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.carousel_touchUpMode;
+			global::Acr.UserDialogs.Resource.Attribute.carousel_touchUp_dampeningFactor = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.carousel_touchUp_dampeningFactor;
+			global::Acr.UserDialogs.Resource.Attribute.carousel_touchUp_velocityThreshold = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.carousel_touchUp_velocityThreshold;
+			global::Acr.UserDialogs.Resource.Attribute.chainUseRtl = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.chainUseRtl;
 			global::Acr.UserDialogs.Resource.Attribute.checkboxStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.checkboxStyle;
+			global::Acr.UserDialogs.Resource.Attribute.checkedButton = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.checkedButton;
 			global::Acr.UserDialogs.Resource.Attribute.checkedChip = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.checkedChip;
 			global::Acr.UserDialogs.Resource.Attribute.checkedIcon = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.checkedIcon;
 			global::Acr.UserDialogs.Resource.Attribute.checkedIconEnabled = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.checkedIconEnabled;
+			global::Acr.UserDialogs.Resource.Attribute.checkedIconMargin = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.checkedIconMargin;
+			global::Acr.UserDialogs.Resource.Attribute.checkedIconSize = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.checkedIconSize;
+			global::Acr.UserDialogs.Resource.Attribute.checkedIconTint = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.checkedIconTint;
 			global::Acr.UserDialogs.Resource.Attribute.checkedIconVisible = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.checkedIconVisible;
 			global::Acr.UserDialogs.Resource.Attribute.checkedTextViewStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.checkedTextViewStyle;
 			global::Acr.UserDialogs.Resource.Attribute.chipBackgroundColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.chipBackgroundColor;
@@ -187,6 +259,7 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Attribute.chipIconTint = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.chipIconTint;
 			global::Acr.UserDialogs.Resource.Attribute.chipIconVisible = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.chipIconVisible;
 			global::Acr.UserDialogs.Resource.Attribute.chipMinHeight = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.chipMinHeight;
+			global::Acr.UserDialogs.Resource.Attribute.chipMinTouchTargetSize = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.chipMinTouchTargetSize;
 			global::Acr.UserDialogs.Resource.Attribute.chipSpacing = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.chipSpacing;
 			global::Acr.UserDialogs.Resource.Attribute.chipSpacingHorizontal = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.chipSpacingHorizontal;
 			global::Acr.UserDialogs.Resource.Attribute.chipSpacingVertical = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.chipSpacingVertical;
@@ -195,6 +268,20 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Attribute.chipStrokeColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.chipStrokeColor;
 			global::Acr.UserDialogs.Resource.Attribute.chipStrokeWidth = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.chipStrokeWidth;
 			global::Acr.UserDialogs.Resource.Attribute.chipStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.chipStyle;
+			global::Acr.UserDialogs.Resource.Attribute.chipSurfaceColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.chipSurfaceColor;
+			global::Acr.UserDialogs.Resource.Attribute.circleRadius = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.circleRadius;
+			global::Acr.UserDialogs.Resource.Attribute.circularflow_angles = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.circularflow_angles;
+			global::Acr.UserDialogs.Resource.Attribute.circularflow_defaultAngle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.circularflow_defaultAngle;
+			global::Acr.UserDialogs.Resource.Attribute.circularflow_defaultRadius = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.circularflow_defaultRadius;
+			global::Acr.UserDialogs.Resource.Attribute.circularflow_radiusInDP = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.circularflow_radiusInDP;
+			global::Acr.UserDialogs.Resource.Attribute.circularflow_viewCenter = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.circularflow_viewCenter;
+			global::Acr.UserDialogs.Resource.Attribute.circularProgressIndicatorStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.circularProgressIndicatorStyle;
+			global::Acr.UserDialogs.Resource.Attribute.clearsTag = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.clearsTag;
+			global::Acr.UserDialogs.Resource.Attribute.clickAction = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.clickAction;
+			global::Acr.UserDialogs.Resource.Attribute.clockFaceBackgroundColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.clockFaceBackgroundColor;
+			global::Acr.UserDialogs.Resource.Attribute.clockHandColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.clockHandColor;
+			global::Acr.UserDialogs.Resource.Attribute.clockIcon = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.clockIcon;
+			global::Acr.UserDialogs.Resource.Attribute.clockNumberTextColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.clockNumberTextColor;
 			global::Acr.UserDialogs.Resource.Attribute.closeIcon = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.closeIcon;
 			global::Acr.UserDialogs.Resource.Attribute.closeIconEnabled = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.closeIconEnabled;
 			global::Acr.UserDialogs.Resource.Attribute.closeIconEndPadding = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.closeIconEndPadding;
@@ -204,9 +291,11 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Attribute.closeIconVisible = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.closeIconVisible;
 			global::Acr.UserDialogs.Resource.Attribute.closeItemLayout = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.closeItemLayout;
 			global::Acr.UserDialogs.Resource.Attribute.collapseContentDescription = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.collapseContentDescription;
+			global::Acr.UserDialogs.Resource.Attribute.collapsedSize = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.collapsedSize;
 			global::Acr.UserDialogs.Resource.Attribute.collapsedTitleGravity = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.collapsedTitleGravity;
 			global::Acr.UserDialogs.Resource.Attribute.collapsedTitleTextAppearance = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.collapsedTitleTextAppearance;
 			global::Acr.UserDialogs.Resource.Attribute.collapseIcon = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.collapseIcon;
+			global::Acr.UserDialogs.Resource.Attribute.collapsingToolbarLayoutStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.collapsingToolbarLayoutStyle;
 			global::Acr.UserDialogs.Resource.Attribute.color = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.color;
 			global::Acr.UserDialogs.Resource.Attribute.colorAccent = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.colorAccent;
 			global::Acr.UserDialogs.Resource.Attribute.colorBackgroundFloating = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.colorBackgroundFloating;
@@ -215,11 +304,29 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Attribute.colorControlHighlight = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.colorControlHighlight;
 			global::Acr.UserDialogs.Resource.Attribute.colorControlNormal = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.colorControlNormal;
 			global::Acr.UserDialogs.Resource.Attribute.colorError = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.colorError;
+			global::Acr.UserDialogs.Resource.Attribute.colorOnBackground = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.colorOnBackground;
+			global::Acr.UserDialogs.Resource.Attribute.colorOnError = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.colorOnError;
+			global::Acr.UserDialogs.Resource.Attribute.colorOnPrimary = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.colorOnPrimary;
+			global::Acr.UserDialogs.Resource.Attribute.colorOnPrimarySurface = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.colorOnPrimarySurface;
+			global::Acr.UserDialogs.Resource.Attribute.colorOnSecondary = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.colorOnSecondary;
+			global::Acr.UserDialogs.Resource.Attribute.colorOnSurface = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.colorOnSurface;
 			global::Acr.UserDialogs.Resource.Attribute.colorPrimary = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.colorPrimary;
 			global::Acr.UserDialogs.Resource.Attribute.colorPrimaryDark = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.colorPrimaryDark;
+			global::Acr.UserDialogs.Resource.Attribute.colorPrimarySurface = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.colorPrimarySurface;
+			global::Acr.UserDialogs.Resource.Attribute.colorPrimaryVariant = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.colorPrimaryVariant;
 			global::Acr.UserDialogs.Resource.Attribute.colorSecondary = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.colorSecondary;
+			global::Acr.UserDialogs.Resource.Attribute.colorSecondaryVariant = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.colorSecondaryVariant;
+			global::Acr.UserDialogs.Resource.Attribute.colorSurface = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.colorSurface;
 			global::Acr.UserDialogs.Resource.Attribute.colorSwitchThumbNormal = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.colorSwitchThumbNormal;
 			global::Acr.UserDialogs.Resource.Attribute.commitIcon = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.commitIcon;
+			global::Acr.UserDialogs.Resource.Attribute.constraintRotate = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.constraintRotate;
+			global::Acr.UserDialogs.Resource.Attribute.constraints = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.constraints;
+			global::Acr.UserDialogs.Resource.Attribute.constraintSet = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.constraintSet;
+			global::Acr.UserDialogs.Resource.Attribute.constraintSetEnd = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.constraintSetEnd;
+			global::Acr.UserDialogs.Resource.Attribute.constraintSetStart = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.constraintSetStart;
+			global::Acr.UserDialogs.Resource.Attribute.constraint_referenced_ids = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.constraint_referenced_ids;
+			global::Acr.UserDialogs.Resource.Attribute.constraint_referenced_tags = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.constraint_referenced_tags;
+			global::Acr.UserDialogs.Resource.Attribute.content = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.content;
 			global::Acr.UserDialogs.Resource.Attribute.contentDescription = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.contentDescription;
 			global::Acr.UserDialogs.Resource.Attribute.contentInsetEnd = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.contentInsetEnd;
 			global::Acr.UserDialogs.Resource.Attribute.contentInsetEndWithActions = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.contentInsetEndWithActions;
@@ -229,19 +336,55 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Attribute.contentInsetStartWithNavigation = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.contentInsetStartWithNavigation;
 			global::Acr.UserDialogs.Resource.Attribute.contentPadding = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.contentPadding;
 			global::Acr.UserDialogs.Resource.Attribute.contentPaddingBottom = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.contentPaddingBottom;
+			global::Acr.UserDialogs.Resource.Attribute.contentPaddingEnd = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.contentPaddingEnd;
 			global::Acr.UserDialogs.Resource.Attribute.contentPaddingLeft = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.contentPaddingLeft;
 			global::Acr.UserDialogs.Resource.Attribute.contentPaddingRight = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.contentPaddingRight;
+			global::Acr.UserDialogs.Resource.Attribute.contentPaddingStart = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.contentPaddingStart;
 			global::Acr.UserDialogs.Resource.Attribute.contentPaddingTop = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.contentPaddingTop;
 			global::Acr.UserDialogs.Resource.Attribute.contentScrim = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.contentScrim;
+			global::Acr.UserDialogs.Resource.Attribute.contrast = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.contrast;
 			global::Acr.UserDialogs.Resource.Attribute.controlBackground = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.controlBackground;
 			global::Acr.UserDialogs.Resource.Attribute.coordinatorLayoutStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.coordinatorLayoutStyle;
+			global::Acr.UserDialogs.Resource.Attribute.cornerFamily = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.cornerFamily;
+			global::Acr.UserDialogs.Resource.Attribute.cornerFamilyBottomLeft = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.cornerFamilyBottomLeft;
+			global::Acr.UserDialogs.Resource.Attribute.cornerFamilyBottomRight = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.cornerFamilyBottomRight;
+			global::Acr.UserDialogs.Resource.Attribute.cornerFamilyTopLeft = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.cornerFamilyTopLeft;
+			global::Acr.UserDialogs.Resource.Attribute.cornerFamilyTopRight = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.cornerFamilyTopRight;
 			global::Acr.UserDialogs.Resource.Attribute.cornerRadius = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.cornerRadius;
+			global::Acr.UserDialogs.Resource.Attribute.cornerSize = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.cornerSize;
+			global::Acr.UserDialogs.Resource.Attribute.cornerSizeBottomLeft = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.cornerSizeBottomLeft;
+			global::Acr.UserDialogs.Resource.Attribute.cornerSizeBottomRight = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.cornerSizeBottomRight;
+			global::Acr.UserDialogs.Resource.Attribute.cornerSizeTopLeft = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.cornerSizeTopLeft;
+			global::Acr.UserDialogs.Resource.Attribute.cornerSizeTopRight = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.cornerSizeTopRight;
 			global::Acr.UserDialogs.Resource.Attribute.counterEnabled = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.counterEnabled;
 			global::Acr.UserDialogs.Resource.Attribute.counterMaxLength = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.counterMaxLength;
 			global::Acr.UserDialogs.Resource.Attribute.counterOverflowTextAppearance = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.counterOverflowTextAppearance;
+			global::Acr.UserDialogs.Resource.Attribute.counterOverflowTextColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.counterOverflowTextColor;
 			global::Acr.UserDialogs.Resource.Attribute.counterTextAppearance = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.counterTextAppearance;
+			global::Acr.UserDialogs.Resource.Attribute.counterTextColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.counterTextColor;
+			global::Acr.UserDialogs.Resource.Attribute.crossfade = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.crossfade;
+			global::Acr.UserDialogs.Resource.Attribute.currentState = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.currentState;
+			global::Acr.UserDialogs.Resource.Attribute.curveFit = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.curveFit;
+			global::Acr.UserDialogs.Resource.Attribute.customBoolean = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.customBoolean;
+			global::Acr.UserDialogs.Resource.Attribute.customColorDrawableValue = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.customColorDrawableValue;
+			global::Acr.UserDialogs.Resource.Attribute.customColorValue = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.customColorValue;
+			global::Acr.UserDialogs.Resource.Attribute.customDimension = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.customDimension;
+			global::Acr.UserDialogs.Resource.Attribute.customFloatValue = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.customFloatValue;
+			global::Acr.UserDialogs.Resource.Attribute.customIntegerValue = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.customIntegerValue;
 			global::Acr.UserDialogs.Resource.Attribute.customNavigationLayout = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.customNavigationLayout;
+			global::Acr.UserDialogs.Resource.Attribute.customPixelDimension = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.customPixelDimension;
+			global::Acr.UserDialogs.Resource.Attribute.customReference = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.customReference;
+			global::Acr.UserDialogs.Resource.Attribute.customStringValue = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.customStringValue;
+			global::Acr.UserDialogs.Resource.Attribute.dayInvalidStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.dayInvalidStyle;
+			global::Acr.UserDialogs.Resource.Attribute.daySelectedStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.daySelectedStyle;
+			global::Acr.UserDialogs.Resource.Attribute.dayStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.dayStyle;
+			global::Acr.UserDialogs.Resource.Attribute.dayTodayStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.dayTodayStyle;
+			global::Acr.UserDialogs.Resource.Attribute.defaultDuration = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.defaultDuration;
 			global::Acr.UserDialogs.Resource.Attribute.defaultQueryHint = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.defaultQueryHint;
+			global::Acr.UserDialogs.Resource.Attribute.defaultState = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.defaultState;
+			global::Acr.UserDialogs.Resource.Attribute.deltaPolarAngle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.deltaPolarAngle;
+			global::Acr.UserDialogs.Resource.Attribute.deltaPolarRadius = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.deltaPolarRadius;
+			global::Acr.UserDialogs.Resource.Attribute.deriveConstraintsFrom = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.deriveConstraintsFrom;
 			global::Acr.UserDialogs.Resource.Attribute.dialogCornerRadius = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.dialogCornerRadius;
 			global::Acr.UserDialogs.Resource.Attribute.dialogPreferredPadding = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.dialogPreferredPadding;
 			global::Acr.UserDialogs.Resource.Attribute.dialogTheme = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.dialogTheme;
@@ -250,6 +393,9 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Attribute.dividerHorizontal = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.dividerHorizontal;
 			global::Acr.UserDialogs.Resource.Attribute.dividerPadding = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.dividerPadding;
 			global::Acr.UserDialogs.Resource.Attribute.dividerVertical = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.dividerVertical;
+			global::Acr.UserDialogs.Resource.Attribute.dragDirection = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.dragDirection;
+			global::Acr.UserDialogs.Resource.Attribute.dragScale = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.dragScale;
+			global::Acr.UserDialogs.Resource.Attribute.dragThreshold = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.dragThreshold;
 			global::Acr.UserDialogs.Resource.Attribute.drawableBottomCompat = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.drawableBottomCompat;
 			global::Acr.UserDialogs.Resource.Attribute.drawableEndCompat = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.drawableEndCompat;
 			global::Acr.UserDialogs.Resource.Attribute.drawableLeftCompat = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.drawableLeftCompat;
@@ -260,18 +406,37 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Attribute.drawableTintMode = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.drawableTintMode;
 			global::Acr.UserDialogs.Resource.Attribute.drawableTopCompat = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.drawableTopCompat;
 			global::Acr.UserDialogs.Resource.Attribute.drawerArrowStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.drawerArrowStyle;
+			global::Acr.UserDialogs.Resource.Attribute.drawerLayoutStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.drawerLayoutStyle;
+			global::Acr.UserDialogs.Resource.Attribute.drawPath = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.drawPath;
 			global::Acr.UserDialogs.Resource.Attribute.dropdownListPreferredItemHeight = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.dropdownListPreferredItemHeight;
 			global::Acr.UserDialogs.Resource.Attribute.dropDownListViewStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.dropDownListViewStyle;
+			global::Acr.UserDialogs.Resource.Attribute.duration = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.duration;
 			global::Acr.UserDialogs.Resource.Attribute.editTextBackground = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.editTextBackground;
 			global::Acr.UserDialogs.Resource.Attribute.editTextColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.editTextColor;
 			global::Acr.UserDialogs.Resource.Attribute.editTextStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.editTextStyle;
 			global::Acr.UserDialogs.Resource.Attribute.elevation = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.elevation;
+			global::Acr.UserDialogs.Resource.Attribute.elevationOverlayColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.elevationOverlayColor;
+			global::Acr.UserDialogs.Resource.Attribute.elevationOverlayEnabled = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.elevationOverlayEnabled;
+			global::Acr.UserDialogs.Resource.Attribute.enableEdgeToEdge = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.enableEdgeToEdge;
+			global::Acr.UserDialogs.Resource.Attribute.endIconCheckable = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.endIconCheckable;
+			global::Acr.UserDialogs.Resource.Attribute.endIconContentDescription = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.endIconContentDescription;
+			global::Acr.UserDialogs.Resource.Attribute.endIconDrawable = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.endIconDrawable;
+			global::Acr.UserDialogs.Resource.Attribute.endIconMode = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.endIconMode;
+			global::Acr.UserDialogs.Resource.Attribute.endIconTint = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.endIconTint;
+			global::Acr.UserDialogs.Resource.Attribute.endIconTintMode = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.endIconTintMode;
 			global::Acr.UserDialogs.Resource.Attribute.enforceMaterialTheme = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.enforceMaterialTheme;
 			global::Acr.UserDialogs.Resource.Attribute.enforceTextAppearance = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.enforceTextAppearance;
+			global::Acr.UserDialogs.Resource.Attribute.ensureMinTouchTargetSize = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.ensureMinTouchTargetSize;
+			global::Acr.UserDialogs.Resource.Attribute.errorContentDescription = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.errorContentDescription;
 			global::Acr.UserDialogs.Resource.Attribute.errorEnabled = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.errorEnabled;
+			global::Acr.UserDialogs.Resource.Attribute.errorIconDrawable = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.errorIconDrawable;
+			global::Acr.UserDialogs.Resource.Attribute.errorIconTint = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.errorIconTint;
+			global::Acr.UserDialogs.Resource.Attribute.errorIconTintMode = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.errorIconTintMode;
 			global::Acr.UserDialogs.Resource.Attribute.errorTextAppearance = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.errorTextAppearance;
+			global::Acr.UserDialogs.Resource.Attribute.errorTextColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.errorTextColor;
 			global::Acr.UserDialogs.Resource.Attribute.expandActivityOverflowButtonDrawable = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.expandActivityOverflowButtonDrawable;
 			global::Acr.UserDialogs.Resource.Attribute.expanded = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.expanded;
+			global::Acr.UserDialogs.Resource.Attribute.expandedHintEnabled = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.expandedHintEnabled;
 			global::Acr.UserDialogs.Resource.Attribute.expandedTitleGravity = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.expandedTitleGravity;
 			global::Acr.UserDialogs.Resource.Attribute.expandedTitleMargin = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.expandedTitleMargin;
 			global::Acr.UserDialogs.Resource.Attribute.expandedTitleMarginBottom = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.expandedTitleMarginBottom;
@@ -279,7 +444,11 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Attribute.expandedTitleMarginStart = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.expandedTitleMarginStart;
 			global::Acr.UserDialogs.Resource.Attribute.expandedTitleMarginTop = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.expandedTitleMarginTop;
 			global::Acr.UserDialogs.Resource.Attribute.expandedTitleTextAppearance = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.expandedTitleTextAppearance;
+			global::Acr.UserDialogs.Resource.Attribute.extendedFloatingActionButtonStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.extendedFloatingActionButtonStyle;
+			global::Acr.UserDialogs.Resource.Attribute.extendMotionSpec = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.extendMotionSpec;
+			global::Acr.UserDialogs.Resource.Attribute.extraMultilineHeightEnabled = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.extraMultilineHeightEnabled;
 			global::Acr.UserDialogs.Resource.Attribute.fabAlignmentMode = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.fabAlignmentMode;
+			global::Acr.UserDialogs.Resource.Attribute.fabAnimationMode = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.fabAnimationMode;
 			global::Acr.UserDialogs.Resource.Attribute.fabCradleMargin = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.fabCradleMargin;
 			global::Acr.UserDialogs.Resource.Attribute.fabCradleRoundedCornerRadius = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.fabCradleRoundedCornerRadius;
 			global::Acr.UserDialogs.Resource.Attribute.fabCradleVerticalOffset = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.fabCradleVerticalOffset;
@@ -292,6 +461,25 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Attribute.fastScrollVerticalTrackDrawable = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.fastScrollVerticalTrackDrawable;
 			global::Acr.UserDialogs.Resource.Attribute.firstBaselineToTopHeight = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.firstBaselineToTopHeight;
 			global::Acr.UserDialogs.Resource.Attribute.floatingActionButtonStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.floatingActionButtonStyle;
+			global::Acr.UserDialogs.Resource.Attribute.flow_firstHorizontalBias = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.flow_firstHorizontalBias;
+			global::Acr.UserDialogs.Resource.Attribute.flow_firstHorizontalStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.flow_firstHorizontalStyle;
+			global::Acr.UserDialogs.Resource.Attribute.flow_firstVerticalBias = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.flow_firstVerticalBias;
+			global::Acr.UserDialogs.Resource.Attribute.flow_firstVerticalStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.flow_firstVerticalStyle;
+			global::Acr.UserDialogs.Resource.Attribute.flow_horizontalAlign = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.flow_horizontalAlign;
+			global::Acr.UserDialogs.Resource.Attribute.flow_horizontalBias = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.flow_horizontalBias;
+			global::Acr.UserDialogs.Resource.Attribute.flow_horizontalGap = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.flow_horizontalGap;
+			global::Acr.UserDialogs.Resource.Attribute.flow_horizontalStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.flow_horizontalStyle;
+			global::Acr.UserDialogs.Resource.Attribute.flow_lastHorizontalBias = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.flow_lastHorizontalBias;
+			global::Acr.UserDialogs.Resource.Attribute.flow_lastHorizontalStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.flow_lastHorizontalStyle;
+			global::Acr.UserDialogs.Resource.Attribute.flow_lastVerticalBias = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.flow_lastVerticalBias;
+			global::Acr.UserDialogs.Resource.Attribute.flow_lastVerticalStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.flow_lastVerticalStyle;
+			global::Acr.UserDialogs.Resource.Attribute.flow_maxElementsWrap = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.flow_maxElementsWrap;
+			global::Acr.UserDialogs.Resource.Attribute.flow_padding = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.flow_padding;
+			global::Acr.UserDialogs.Resource.Attribute.flow_verticalAlign = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.flow_verticalAlign;
+			global::Acr.UserDialogs.Resource.Attribute.flow_verticalBias = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.flow_verticalBias;
+			global::Acr.UserDialogs.Resource.Attribute.flow_verticalGap = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.flow_verticalGap;
+			global::Acr.UserDialogs.Resource.Attribute.flow_verticalStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.flow_verticalStyle;
+			global::Acr.UserDialogs.Resource.Attribute.flow_wrapMode = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.flow_wrapMode;
 			global::Acr.UserDialogs.Resource.Attribute.font = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.font;
 			global::Acr.UserDialogs.Resource.Attribute.fontFamily = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.fontFamily;
 			global::Acr.UserDialogs.Resource.Attribute.fontProviderAuthority = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.fontProviderAuthority;
@@ -300,25 +488,35 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Attribute.fontProviderFetchTimeout = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.fontProviderFetchTimeout;
 			global::Acr.UserDialogs.Resource.Attribute.fontProviderPackage = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.fontProviderPackage;
 			global::Acr.UserDialogs.Resource.Attribute.fontProviderQuery = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.fontProviderQuery;
+			global::Acr.UserDialogs.Resource.Attribute.fontProviderSystemFontFamily = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.fontProviderSystemFontFamily;
 			global::Acr.UserDialogs.Resource.Attribute.fontStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.fontStyle;
 			global::Acr.UserDialogs.Resource.Attribute.fontVariationSettings = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.fontVariationSettings;
 			global::Acr.UserDialogs.Resource.Attribute.fontWeight = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.fontWeight;
+			global::Acr.UserDialogs.Resource.Attribute.forceApplySystemWindowInsetTop = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.forceApplySystemWindowInsetTop;
 			global::Acr.UserDialogs.Resource.Attribute.foregroundInsidePadding = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.foregroundInsidePadding;
+			global::Acr.UserDialogs.Resource.Attribute.framePosition = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.framePosition;
 			global::Acr.UserDialogs.Resource.Attribute.gapBetweenBars = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.gapBetweenBars;
+			global::Acr.UserDialogs.Resource.Attribute.gestureInsetBottomIgnored = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.gestureInsetBottomIgnored;
 			global::Acr.UserDialogs.Resource.Attribute.goIcon = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.goIcon;
+			global::Acr.UserDialogs.Resource.Attribute.haloColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.haloColor;
+			global::Acr.UserDialogs.Resource.Attribute.haloRadius = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.haloRadius;
 			global::Acr.UserDialogs.Resource.Attribute.headerLayout = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.headerLayout;
 			global::Acr.UserDialogs.Resource.Attribute.height = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.height;
 			global::Acr.UserDialogs.Resource.Attribute.helperText = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.helperText;
 			global::Acr.UserDialogs.Resource.Attribute.helperTextEnabled = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.helperTextEnabled;
 			global::Acr.UserDialogs.Resource.Attribute.helperTextTextAppearance = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.helperTextTextAppearance;
+			global::Acr.UserDialogs.Resource.Attribute.helperTextTextColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.helperTextTextColor;
+			global::Acr.UserDialogs.Resource.Attribute.hideAnimationBehavior = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.hideAnimationBehavior;
 			global::Acr.UserDialogs.Resource.Attribute.hideMotionSpec = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.hideMotionSpec;
 			global::Acr.UserDialogs.Resource.Attribute.hideOnContentScroll = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.hideOnContentScroll;
 			global::Acr.UserDialogs.Resource.Attribute.hideOnScroll = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.hideOnScroll;
 			global::Acr.UserDialogs.Resource.Attribute.hintAnimationEnabled = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.hintAnimationEnabled;
 			global::Acr.UserDialogs.Resource.Attribute.hintEnabled = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.hintEnabled;
 			global::Acr.UserDialogs.Resource.Attribute.hintTextAppearance = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.hintTextAppearance;
+			global::Acr.UserDialogs.Resource.Attribute.hintTextColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.hintTextColor;
 			global::Acr.UserDialogs.Resource.Attribute.homeAsUpIndicator = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.homeAsUpIndicator;
 			global::Acr.UserDialogs.Resource.Attribute.homeLayout = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.homeLayout;
+			global::Acr.UserDialogs.Resource.Attribute.horizontalOffset = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.horizontalOffset;
 			global::Acr.UserDialogs.Resource.Attribute.hoveredFocusedTranslationZ = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.hoveredFocusedTranslationZ;
 			global::Acr.UserDialogs.Resource.Attribute.icon = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.icon;
 			global::Acr.UserDialogs.Resource.Attribute.iconEndPadding = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.iconEndPadding;
@@ -329,39 +527,131 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Attribute.iconStartPadding = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.iconStartPadding;
 			global::Acr.UserDialogs.Resource.Attribute.iconTint = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.iconTint;
 			global::Acr.UserDialogs.Resource.Attribute.iconTintMode = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.iconTintMode;
+			global::Acr.UserDialogs.Resource.Attribute.ifTagNotSet = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.ifTagNotSet;
+			global::Acr.UserDialogs.Resource.Attribute.ifTagSet = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.ifTagSet;
 			global::Acr.UserDialogs.Resource.Attribute.imageButtonStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.imageButtonStyle;
+			global::Acr.UserDialogs.Resource.Attribute.imagePanX = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.imagePanX;
+			global::Acr.UserDialogs.Resource.Attribute.imagePanY = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.imagePanY;
+			global::Acr.UserDialogs.Resource.Attribute.imageRotate = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.imageRotate;
+			global::Acr.UserDialogs.Resource.Attribute.imageZoom = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.imageZoom;
+			global::Acr.UserDialogs.Resource.Attribute.indeterminateAnimationType = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.indeterminateAnimationType;
 			global::Acr.UserDialogs.Resource.Attribute.indeterminateProgressStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.indeterminateProgressStyle;
+			global::Acr.UserDialogs.Resource.Attribute.indicatorColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.indicatorColor;
+			global::Acr.UserDialogs.Resource.Attribute.indicatorDirectionCircular = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.indicatorDirectionCircular;
+			global::Acr.UserDialogs.Resource.Attribute.indicatorDirectionLinear = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.indicatorDirectionLinear;
+			global::Acr.UserDialogs.Resource.Attribute.indicatorInset = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.indicatorInset;
+			global::Acr.UserDialogs.Resource.Attribute.indicatorSize = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.indicatorSize;
 			global::Acr.UserDialogs.Resource.Attribute.initialActivityCount = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.initialActivityCount;
 			global::Acr.UserDialogs.Resource.Attribute.insetForeground = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.insetForeground;
 			global::Acr.UserDialogs.Resource.Attribute.isLightTheme = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.isLightTheme;
+			global::Acr.UserDialogs.Resource.Attribute.isMaterialTheme = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.isMaterialTheme;
 			global::Acr.UserDialogs.Resource.Attribute.itemBackground = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.itemBackground;
+			global::Acr.UserDialogs.Resource.Attribute.itemFillColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.itemFillColor;
 			global::Acr.UserDialogs.Resource.Attribute.itemHorizontalPadding = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.itemHorizontalPadding;
 			global::Acr.UserDialogs.Resource.Attribute.itemHorizontalTranslationEnabled = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.itemHorizontalTranslationEnabled;
 			global::Acr.UserDialogs.Resource.Attribute.itemIconPadding = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.itemIconPadding;
 			global::Acr.UserDialogs.Resource.Attribute.itemIconSize = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.itemIconSize;
 			global::Acr.UserDialogs.Resource.Attribute.itemIconTint = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.itemIconTint;
+			global::Acr.UserDialogs.Resource.Attribute.itemMaxLines = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.itemMaxLines;
 			global::Acr.UserDialogs.Resource.Attribute.itemPadding = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.itemPadding;
+			global::Acr.UserDialogs.Resource.Attribute.itemRippleColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.itemRippleColor;
+			global::Acr.UserDialogs.Resource.Attribute.itemShapeAppearance = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.itemShapeAppearance;
+			global::Acr.UserDialogs.Resource.Attribute.itemShapeAppearanceOverlay = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.itemShapeAppearanceOverlay;
+			global::Acr.UserDialogs.Resource.Attribute.itemShapeFillColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.itemShapeFillColor;
+			global::Acr.UserDialogs.Resource.Attribute.itemShapeInsetBottom = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.itemShapeInsetBottom;
+			global::Acr.UserDialogs.Resource.Attribute.itemShapeInsetEnd = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.itemShapeInsetEnd;
+			global::Acr.UserDialogs.Resource.Attribute.itemShapeInsetStart = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.itemShapeInsetStart;
+			global::Acr.UserDialogs.Resource.Attribute.itemShapeInsetTop = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.itemShapeInsetTop;
 			global::Acr.UserDialogs.Resource.Attribute.itemSpacing = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.itemSpacing;
+			global::Acr.UserDialogs.Resource.Attribute.itemStrokeColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.itemStrokeColor;
+			global::Acr.UserDialogs.Resource.Attribute.itemStrokeWidth = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.itemStrokeWidth;
 			global::Acr.UserDialogs.Resource.Attribute.itemTextAppearance = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.itemTextAppearance;
 			global::Acr.UserDialogs.Resource.Attribute.itemTextAppearanceActive = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.itemTextAppearanceActive;
 			global::Acr.UserDialogs.Resource.Attribute.itemTextAppearanceInactive = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.itemTextAppearanceInactive;
 			global::Acr.UserDialogs.Resource.Attribute.itemTextColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.itemTextColor;
+			global::Acr.UserDialogs.Resource.Attribute.keyboardIcon = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.keyboardIcon;
 			global::Acr.UserDialogs.Resource.Attribute.keylines = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.keylines;
+			global::Acr.UserDialogs.Resource.Attribute.keyPositionType = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.keyPositionType;
+			global::Acr.UserDialogs.Resource.Attribute.labelBehavior = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.labelBehavior;
+			global::Acr.UserDialogs.Resource.Attribute.labelStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.labelStyle;
 			global::Acr.UserDialogs.Resource.Attribute.labelVisibilityMode = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.labelVisibilityMode;
 			global::Acr.UserDialogs.Resource.Attribute.lastBaselineToBottomHeight = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.lastBaselineToBottomHeight;
 			global::Acr.UserDialogs.Resource.Attribute.layout = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.layout;
+			global::Acr.UserDialogs.Resource.Attribute.layoutDescription = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.layoutDescription;
+			global::Acr.UserDialogs.Resource.Attribute.layoutDuringTransition = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.layoutDuringTransition;
 			global::Acr.UserDialogs.Resource.Attribute.layoutManager = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.layoutManager;
 			global::Acr.UserDialogs.Resource.Attribute.layout_anchor = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.layout_anchor;
 			global::Acr.UserDialogs.Resource.Attribute.layout_anchorGravity = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.layout_anchorGravity;
 			global::Acr.UserDialogs.Resource.Attribute.layout_behavior = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.layout_behavior;
 			global::Acr.UserDialogs.Resource.Attribute.layout_collapseMode = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.layout_collapseMode;
 			global::Acr.UserDialogs.Resource.Attribute.layout_collapseParallaxMultiplier = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.layout_collapseParallaxMultiplier;
+			global::Acr.UserDialogs.Resource.Attribute.layout_constrainedHeight = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.layout_constrainedHeight;
+			global::Acr.UserDialogs.Resource.Attribute.layout_constrainedWidth = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.layout_constrainedWidth;
+			global::Acr.UserDialogs.Resource.Attribute.layout_constraintBaseline_creator = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.layout_constraintBaseline_creator;
+			global::Acr.UserDialogs.Resource.Attribute.layout_constraintBaseline_toBaselineOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.layout_constraintBaseline_toBaselineOf;
+			global::Acr.UserDialogs.Resource.Attribute.layout_constraintBaseline_toBottomOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.layout_constraintBaseline_toBottomOf;
+			global::Acr.UserDialogs.Resource.Attribute.layout_constraintBaseline_toTopOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.layout_constraintBaseline_toTopOf;
+			global::Acr.UserDialogs.Resource.Attribute.layout_constraintBottom_creator = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.layout_constraintBottom_creator;
+			global::Acr.UserDialogs.Resource.Attribute.layout_constraintBottom_toBottomOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.layout_constraintBottom_toBottomOf;
+			global::Acr.UserDialogs.Resource.Attribute.layout_constraintBottom_toTopOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.layout_constraintBottom_toTopOf;
+			global::Acr.UserDialogs.Resource.Attribute.layout_constraintCircle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.layout_constraintCircle;
+			global::Acr.UserDialogs.Resource.Attribute.layout_constraintCircleAngle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.layout_constraintCircleAngle;
+			global::Acr.UserDialogs.Resource.Attribute.layout_constraintCircleRadius = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.layout_constraintCircleRadius;
+			global::Acr.UserDialogs.Resource.Attribute.layout_constraintDimensionRatio = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.layout_constraintDimensionRatio;
+			global::Acr.UserDialogs.Resource.Attribute.layout_constraintEnd_toEndOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.layout_constraintEnd_toEndOf;
+			global::Acr.UserDialogs.Resource.Attribute.layout_constraintEnd_toStartOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.layout_constraintEnd_toStartOf;
+			global::Acr.UserDialogs.Resource.Attribute.layout_constraintGuide_begin = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.layout_constraintGuide_begin;
+			global::Acr.UserDialogs.Resource.Attribute.layout_constraintGuide_end = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.layout_constraintGuide_end;
+			global::Acr.UserDialogs.Resource.Attribute.layout_constraintGuide_percent = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.layout_constraintGuide_percent;
+			global::Acr.UserDialogs.Resource.Attribute.layout_constraintHeight = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.layout_constraintHeight;
+			global::Acr.UserDialogs.Resource.Attribute.layout_constraintHeight_default = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.layout_constraintHeight_default;
+			global::Acr.UserDialogs.Resource.Attribute.layout_constraintHeight_max = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.layout_constraintHeight_max;
+			global::Acr.UserDialogs.Resource.Attribute.layout_constraintHeight_min = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.layout_constraintHeight_min;
+			global::Acr.UserDialogs.Resource.Attribute.layout_constraintHeight_percent = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.layout_constraintHeight_percent;
+			global::Acr.UserDialogs.Resource.Attribute.layout_constraintHorizontal_bias = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.layout_constraintHorizontal_bias;
+			global::Acr.UserDialogs.Resource.Attribute.layout_constraintHorizontal_chainStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.layout_constraintHorizontal_chainStyle;
+			global::Acr.UserDialogs.Resource.Attribute.layout_constraintHorizontal_weight = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.layout_constraintHorizontal_weight;
+			global::Acr.UserDialogs.Resource.Attribute.layout_constraintLeft_creator = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.layout_constraintLeft_creator;
+			global::Acr.UserDialogs.Resource.Attribute.layout_constraintLeft_toLeftOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.layout_constraintLeft_toLeftOf;
+			global::Acr.UserDialogs.Resource.Attribute.layout_constraintLeft_toRightOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.layout_constraintLeft_toRightOf;
+			global::Acr.UserDialogs.Resource.Attribute.layout_constraintRight_creator = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.layout_constraintRight_creator;
+			global::Acr.UserDialogs.Resource.Attribute.layout_constraintRight_toLeftOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.layout_constraintRight_toLeftOf;
+			global::Acr.UserDialogs.Resource.Attribute.layout_constraintRight_toRightOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.layout_constraintRight_toRightOf;
+			global::Acr.UserDialogs.Resource.Attribute.layout_constraintStart_toEndOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.layout_constraintStart_toEndOf;
+			global::Acr.UserDialogs.Resource.Attribute.layout_constraintStart_toStartOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.layout_constraintStart_toStartOf;
+			global::Acr.UserDialogs.Resource.Attribute.layout_constraintTag = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.layout_constraintTag;
+			global::Acr.UserDialogs.Resource.Attribute.layout_constraintTop_creator = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.layout_constraintTop_creator;
+			global::Acr.UserDialogs.Resource.Attribute.layout_constraintTop_toBottomOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.layout_constraintTop_toBottomOf;
+			global::Acr.UserDialogs.Resource.Attribute.layout_constraintTop_toTopOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.layout_constraintTop_toTopOf;
+			global::Acr.UserDialogs.Resource.Attribute.layout_constraintVertical_bias = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.layout_constraintVertical_bias;
+			global::Acr.UserDialogs.Resource.Attribute.layout_constraintVertical_chainStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.layout_constraintVertical_chainStyle;
+			global::Acr.UserDialogs.Resource.Attribute.layout_constraintVertical_weight = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.layout_constraintVertical_weight;
+			global::Acr.UserDialogs.Resource.Attribute.layout_constraintWidth = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.layout_constraintWidth;
+			global::Acr.UserDialogs.Resource.Attribute.layout_constraintWidth_default = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.layout_constraintWidth_default;
+			global::Acr.UserDialogs.Resource.Attribute.layout_constraintWidth_max = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.layout_constraintWidth_max;
+			global::Acr.UserDialogs.Resource.Attribute.layout_constraintWidth_min = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.layout_constraintWidth_min;
+			global::Acr.UserDialogs.Resource.Attribute.layout_constraintWidth_percent = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.layout_constraintWidth_percent;
 			global::Acr.UserDialogs.Resource.Attribute.layout_dodgeInsetEdges = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.layout_dodgeInsetEdges;
+			global::Acr.UserDialogs.Resource.Attribute.layout_editor_absoluteX = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.layout_editor_absoluteX;
+			global::Acr.UserDialogs.Resource.Attribute.layout_editor_absoluteY = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.layout_editor_absoluteY;
+			global::Acr.UserDialogs.Resource.Attribute.layout_goneMarginBaseline = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.layout_goneMarginBaseline;
+			global::Acr.UserDialogs.Resource.Attribute.layout_goneMarginBottom = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.layout_goneMarginBottom;
+			global::Acr.UserDialogs.Resource.Attribute.layout_goneMarginEnd = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.layout_goneMarginEnd;
+			global::Acr.UserDialogs.Resource.Attribute.layout_goneMarginLeft = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.layout_goneMarginLeft;
+			global::Acr.UserDialogs.Resource.Attribute.layout_goneMarginRight = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.layout_goneMarginRight;
+			global::Acr.UserDialogs.Resource.Attribute.layout_goneMarginStart = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.layout_goneMarginStart;
+			global::Acr.UserDialogs.Resource.Attribute.layout_goneMarginTop = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.layout_goneMarginTop;
 			global::Acr.UserDialogs.Resource.Attribute.layout_insetEdge = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.layout_insetEdge;
 			global::Acr.UserDialogs.Resource.Attribute.layout_keyline = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.layout_keyline;
+			global::Acr.UserDialogs.Resource.Attribute.layout_marginBaseline = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.layout_marginBaseline;
+			global::Acr.UserDialogs.Resource.Attribute.layout_optimizationLevel = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.layout_optimizationLevel;
 			global::Acr.UserDialogs.Resource.Attribute.layout_scrollFlags = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.layout_scrollFlags;
 			global::Acr.UserDialogs.Resource.Attribute.layout_scrollInterpolator = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.layout_scrollInterpolator;
+			global::Acr.UserDialogs.Resource.Attribute.layout_wrapBehaviorInParent = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.layout_wrapBehaviorInParent;
 			global::Acr.UserDialogs.Resource.Attribute.liftOnScroll = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.liftOnScroll;
+			global::Acr.UserDialogs.Resource.Attribute.liftOnScrollTargetViewId = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.liftOnScrollTargetViewId;
+			global::Acr.UserDialogs.Resource.Attribute.limitBoundsTo = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.limitBoundsTo;
+			global::Acr.UserDialogs.Resource.Attribute.linearProgressIndicatorStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.linearProgressIndicatorStyle;
 			global::Acr.UserDialogs.Resource.Attribute.lineHeight = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.lineHeight;
 			global::Acr.UserDialogs.Resource.Attribute.lineSpacing = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.lineSpacing;
 			global::Acr.UserDialogs.Resource.Attribute.listChoiceBackgroundIndicator = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.listChoiceBackgroundIndicator;
@@ -381,24 +671,116 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Attribute.listPreferredItemPaddingStart = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.listPreferredItemPaddingStart;
 			global::Acr.UserDialogs.Resource.Attribute.logo = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.logo;
 			global::Acr.UserDialogs.Resource.Attribute.logoDescription = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.logoDescription;
+			global::Acr.UserDialogs.Resource.Attribute.materialAlertDialogBodyTextStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.materialAlertDialogBodyTextStyle;
+			global::Acr.UserDialogs.Resource.Attribute.materialAlertDialogTheme = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.materialAlertDialogTheme;
+			global::Acr.UserDialogs.Resource.Attribute.materialAlertDialogTitleIconStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.materialAlertDialogTitleIconStyle;
+			global::Acr.UserDialogs.Resource.Attribute.materialAlertDialogTitlePanelStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.materialAlertDialogTitlePanelStyle;
+			global::Acr.UserDialogs.Resource.Attribute.materialAlertDialogTitleTextStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.materialAlertDialogTitleTextStyle;
+			global::Acr.UserDialogs.Resource.Attribute.materialButtonOutlinedStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.materialButtonOutlinedStyle;
 			global::Acr.UserDialogs.Resource.Attribute.materialButtonStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.materialButtonStyle;
+			global::Acr.UserDialogs.Resource.Attribute.materialButtonToggleGroupStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.materialButtonToggleGroupStyle;
+			global::Acr.UserDialogs.Resource.Attribute.materialCalendarDay = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.materialCalendarDay;
+			global::Acr.UserDialogs.Resource.Attribute.materialCalendarFullscreenTheme = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.materialCalendarFullscreenTheme;
+			global::Acr.UserDialogs.Resource.Attribute.materialCalendarHeaderCancelButton = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.materialCalendarHeaderCancelButton;
+			global::Acr.UserDialogs.Resource.Attribute.materialCalendarHeaderConfirmButton = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.materialCalendarHeaderConfirmButton;
+			global::Acr.UserDialogs.Resource.Attribute.materialCalendarHeaderDivider = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.materialCalendarHeaderDivider;
+			global::Acr.UserDialogs.Resource.Attribute.materialCalendarHeaderLayout = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.materialCalendarHeaderLayout;
+			global::Acr.UserDialogs.Resource.Attribute.materialCalendarHeaderSelection = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.materialCalendarHeaderSelection;
+			global::Acr.UserDialogs.Resource.Attribute.materialCalendarHeaderTitle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.materialCalendarHeaderTitle;
+			global::Acr.UserDialogs.Resource.Attribute.materialCalendarHeaderToggleButton = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.materialCalendarHeaderToggleButton;
+			global::Acr.UserDialogs.Resource.Attribute.materialCalendarMonth = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.materialCalendarMonth;
+			global::Acr.UserDialogs.Resource.Attribute.materialCalendarMonthNavigationButton = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.materialCalendarMonthNavigationButton;
+			global::Acr.UserDialogs.Resource.Attribute.materialCalendarStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.materialCalendarStyle;
+			global::Acr.UserDialogs.Resource.Attribute.materialCalendarTheme = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.materialCalendarTheme;
+			global::Acr.UserDialogs.Resource.Attribute.materialCalendarYearNavigationButton = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.materialCalendarYearNavigationButton;
 			global::Acr.UserDialogs.Resource.Attribute.materialCardViewStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.materialCardViewStyle;
+			global::Acr.UserDialogs.Resource.Attribute.materialCircleRadius = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.materialCircleRadius;
+			global::Acr.UserDialogs.Resource.Attribute.materialClockStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.materialClockStyle;
+			global::Acr.UserDialogs.Resource.Attribute.materialThemeOverlay = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.materialThemeOverlay;
+			global::Acr.UserDialogs.Resource.Attribute.materialTimePickerStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.materialTimePickerStyle;
+			global::Acr.UserDialogs.Resource.Attribute.materialTimePickerTheme = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.materialTimePickerTheme;
+			global::Acr.UserDialogs.Resource.Attribute.maxAcceleration = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.maxAcceleration;
 			global::Acr.UserDialogs.Resource.Attribute.maxActionInlineWidth = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.maxActionInlineWidth;
 			global::Acr.UserDialogs.Resource.Attribute.maxButtonHeight = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.maxButtonHeight;
+			global::Acr.UserDialogs.Resource.Attribute.maxCharacterCount = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.maxCharacterCount;
+			global::Acr.UserDialogs.Resource.Attribute.maxHeight = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.maxHeight;
 			global::Acr.UserDialogs.Resource.Attribute.maxImageSize = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.maxImageSize;
+			global::Acr.UserDialogs.Resource.Attribute.maxLines = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.maxLines;
+			global::Acr.UserDialogs.Resource.Attribute.maxVelocity = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.maxVelocity;
+			global::Acr.UserDialogs.Resource.Attribute.maxWidth = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.maxWidth;
 			global::Acr.UserDialogs.Resource.Attribute.measureWithLargestChild = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.measureWithLargestChild;
 			global::Acr.UserDialogs.Resource.Attribute.menu = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.menu;
+			global::Acr.UserDialogs.Resource.Attribute.menuGravity = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.menuGravity;
+			global::Acr.UserDialogs.Resource.Attribute.methodName = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.methodName;
+			global::Acr.UserDialogs.Resource.Attribute.minHeight = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.minHeight;
+			global::Acr.UserDialogs.Resource.Attribute.minHideDelay = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.minHideDelay;
+			global::Acr.UserDialogs.Resource.Attribute.minSeparation = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.minSeparation;
+			global::Acr.UserDialogs.Resource.Attribute.minTouchTargetSize = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.minTouchTargetSize;
+			global::Acr.UserDialogs.Resource.Attribute.minWidth = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.minWidth;
+			global::Acr.UserDialogs.Resource.Attribute.mock_diagonalsColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.mock_diagonalsColor;
+			global::Acr.UserDialogs.Resource.Attribute.mock_label = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.mock_label;
+			global::Acr.UserDialogs.Resource.Attribute.mock_labelBackgroundColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.mock_labelBackgroundColor;
+			global::Acr.UserDialogs.Resource.Attribute.mock_labelColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.mock_labelColor;
+			global::Acr.UserDialogs.Resource.Attribute.mock_showDiagonals = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.mock_showDiagonals;
+			global::Acr.UserDialogs.Resource.Attribute.mock_showLabel = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.mock_showLabel;
+			global::Acr.UserDialogs.Resource.Attribute.motionDebug = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.motionDebug;
+			global::Acr.UserDialogs.Resource.Attribute.motionDurationLong1 = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.motionDurationLong1;
+			global::Acr.UserDialogs.Resource.Attribute.motionDurationLong2 = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.motionDurationLong2;
+			global::Acr.UserDialogs.Resource.Attribute.motionDurationMedium1 = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.motionDurationMedium1;
+			global::Acr.UserDialogs.Resource.Attribute.motionDurationMedium2 = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.motionDurationMedium2;
+			global::Acr.UserDialogs.Resource.Attribute.motionDurationShort1 = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.motionDurationShort1;
+			global::Acr.UserDialogs.Resource.Attribute.motionDurationShort2 = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.motionDurationShort2;
+			global::Acr.UserDialogs.Resource.Attribute.motionEasingAccelerated = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.motionEasingAccelerated;
+			global::Acr.UserDialogs.Resource.Attribute.motionEasingDecelerated = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.motionEasingDecelerated;
+			global::Acr.UserDialogs.Resource.Attribute.motionEasingEmphasized = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.motionEasingEmphasized;
+			global::Acr.UserDialogs.Resource.Attribute.motionEasingLinear = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.motionEasingLinear;
+			global::Acr.UserDialogs.Resource.Attribute.motionEasingStandard = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.motionEasingStandard;
+			global::Acr.UserDialogs.Resource.Attribute.motionEffect_alpha = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.motionEffect_alpha;
+			global::Acr.UserDialogs.Resource.Attribute.motionEffect_end = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.motionEffect_end;
+			global::Acr.UserDialogs.Resource.Attribute.motionEffect_move = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.motionEffect_move;
+			global::Acr.UserDialogs.Resource.Attribute.motionEffect_start = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.motionEffect_start;
+			global::Acr.UserDialogs.Resource.Attribute.motionEffect_strict = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.motionEffect_strict;
+			global::Acr.UserDialogs.Resource.Attribute.motionEffect_translationX = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.motionEffect_translationX;
+			global::Acr.UserDialogs.Resource.Attribute.motionEffect_translationY = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.motionEffect_translationY;
+			global::Acr.UserDialogs.Resource.Attribute.motionEffect_viewTransition = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.motionEffect_viewTransition;
+			global::Acr.UserDialogs.Resource.Attribute.motionInterpolator = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.motionInterpolator;
+			global::Acr.UserDialogs.Resource.Attribute.motionPath = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.motionPath;
+			global::Acr.UserDialogs.Resource.Attribute.motionPathRotate = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.motionPathRotate;
+			global::Acr.UserDialogs.Resource.Attribute.motionProgress = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.motionProgress;
+			global::Acr.UserDialogs.Resource.Attribute.motionStagger = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.motionStagger;
+			global::Acr.UserDialogs.Resource.Attribute.motionTarget = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.motionTarget;
+			global::Acr.UserDialogs.Resource.Attribute.motion_postLayoutCollision = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.motion_postLayoutCollision;
+			global::Acr.UserDialogs.Resource.Attribute.motion_triggerOnCollision = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.motion_triggerOnCollision;
+			global::Acr.UserDialogs.Resource.Attribute.moveWhenScrollAtTop = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.moveWhenScrollAtTop;
 			global::Acr.UserDialogs.Resource.Attribute.multiChoiceItemLayout = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.multiChoiceItemLayout;
 			global::Acr.UserDialogs.Resource.Attribute.navigationContentDescription = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.navigationContentDescription;
 			global::Acr.UserDialogs.Resource.Attribute.navigationIcon = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.navigationIcon;
+			global::Acr.UserDialogs.Resource.Attribute.navigationIconTint = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.navigationIconTint;
 			global::Acr.UserDialogs.Resource.Attribute.navigationMode = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.navigationMode;
+			global::Acr.UserDialogs.Resource.Attribute.navigationRailStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.navigationRailStyle;
 			global::Acr.UserDialogs.Resource.Attribute.navigationViewStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.navigationViewStyle;
+			global::Acr.UserDialogs.Resource.Attribute.nestedScrollable = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.nestedScrollable;
+			global::Acr.UserDialogs.Resource.Attribute.nestedScrollFlags = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.nestedScrollFlags;
+			global::Acr.UserDialogs.Resource.Attribute.nestedScrollViewStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.nestedScrollViewStyle;
+			global::Acr.UserDialogs.Resource.Attribute.number = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.number;
 			global::Acr.UserDialogs.Resource.Attribute.numericModifiers = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.numericModifiers;
+			global::Acr.UserDialogs.Resource.Attribute.onCross = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.onCross;
+			global::Acr.UserDialogs.Resource.Attribute.onHide = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.onHide;
+			global::Acr.UserDialogs.Resource.Attribute.onNegativeCross = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.onNegativeCross;
+			global::Acr.UserDialogs.Resource.Attribute.onPositiveCross = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.onPositiveCross;
+			global::Acr.UserDialogs.Resource.Attribute.onShow = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.onShow;
+			global::Acr.UserDialogs.Resource.Attribute.onStateTransition = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.onStateTransition;
+			global::Acr.UserDialogs.Resource.Attribute.onTouchUp = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.onTouchUp;
 			global::Acr.UserDialogs.Resource.Attribute.overlapAnchor = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.overlapAnchor;
+			global::Acr.UserDialogs.Resource.Attribute.overlay = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.overlay;
 			global::Acr.UserDialogs.Resource.Attribute.paddingBottomNoButtons = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.paddingBottomNoButtons;
+			global::Acr.UserDialogs.Resource.Attribute.paddingBottomSystemWindowInsets = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.paddingBottomSystemWindowInsets;
 			global::Acr.UserDialogs.Resource.Attribute.paddingEnd = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.paddingEnd;
+			global::Acr.UserDialogs.Resource.Attribute.paddingLeftSystemWindowInsets = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.paddingLeftSystemWindowInsets;
+			global::Acr.UserDialogs.Resource.Attribute.paddingRightSystemWindowInsets = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.paddingRightSystemWindowInsets;
 			global::Acr.UserDialogs.Resource.Attribute.paddingStart = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.paddingStart;
 			global::Acr.UserDialogs.Resource.Attribute.paddingTopNoTitle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.paddingTopNoTitle;
+			global::Acr.UserDialogs.Resource.Attribute.paddingTopSystemWindowInsets = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.paddingTopSystemWindowInsets;
 			global::Acr.UserDialogs.Resource.Attribute.panelBackground = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.panelBackground;
 			global::Acr.UserDialogs.Resource.Attribute.panelMenuListTheme = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.panelMenuListTheme;
 			global::Acr.UserDialogs.Resource.Attribute.panelMenuListWidth = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.panelMenuListWidth;
@@ -407,22 +789,57 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Attribute.passwordToggleEnabled = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.passwordToggleEnabled;
 			global::Acr.UserDialogs.Resource.Attribute.passwordToggleTint = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.passwordToggleTint;
 			global::Acr.UserDialogs.Resource.Attribute.passwordToggleTintMode = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.passwordToggleTintMode;
+			global::Acr.UserDialogs.Resource.Attribute.pathMotionArc = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.pathMotionArc;
+			global::Acr.UserDialogs.Resource.Attribute.path_percent = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.path_percent;
+			global::Acr.UserDialogs.Resource.Attribute.percentHeight = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.percentHeight;
+			global::Acr.UserDialogs.Resource.Attribute.percentWidth = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.percentWidth;
+			global::Acr.UserDialogs.Resource.Attribute.percentX = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.percentX;
+			global::Acr.UserDialogs.Resource.Attribute.percentY = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.percentY;
+			global::Acr.UserDialogs.Resource.Attribute.perpendicularPath_percent = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.perpendicularPath_percent;
+			global::Acr.UserDialogs.Resource.Attribute.pivotAnchor = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.pivotAnchor;
+			global::Acr.UserDialogs.Resource.Attribute.placeholderText = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.placeholderText;
+			global::Acr.UserDialogs.Resource.Attribute.placeholderTextAppearance = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.placeholderTextAppearance;
+			global::Acr.UserDialogs.Resource.Attribute.placeholderTextColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.placeholderTextColor;
+			global::Acr.UserDialogs.Resource.Attribute.placeholder_emptyVisibility = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.placeholder_emptyVisibility;
+			global::Acr.UserDialogs.Resource.Attribute.polarRelativeTo = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.polarRelativeTo;
+			global::Acr.UserDialogs.Resource.Attribute.popupMenuBackground = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.popupMenuBackground;
 			global::Acr.UserDialogs.Resource.Attribute.popupMenuStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.popupMenuStyle;
 			global::Acr.UserDialogs.Resource.Attribute.popupTheme = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.popupTheme;
 			global::Acr.UserDialogs.Resource.Attribute.popupWindowStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.popupWindowStyle;
+			global::Acr.UserDialogs.Resource.Attribute.prefixText = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.prefixText;
+			global::Acr.UserDialogs.Resource.Attribute.prefixTextAppearance = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.prefixTextAppearance;
+			global::Acr.UserDialogs.Resource.Attribute.prefixTextColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.prefixTextColor;
 			global::Acr.UserDialogs.Resource.Attribute.preserveIconSpacing = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.preserveIconSpacing;
 			global::Acr.UserDialogs.Resource.Attribute.pressedTranslationZ = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.pressedTranslationZ;
 			global::Acr.UserDialogs.Resource.Attribute.progressBarPadding = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.progressBarPadding;
 			global::Acr.UserDialogs.Resource.Attribute.progressBarStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.progressBarStyle;
+			global::Acr.UserDialogs.Resource.Attribute.quantizeMotionInterpolator = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.quantizeMotionInterpolator;
+			global::Acr.UserDialogs.Resource.Attribute.quantizeMotionPhase = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.quantizeMotionPhase;
+			global::Acr.UserDialogs.Resource.Attribute.quantizeMotionSteps = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.quantizeMotionSteps;
 			global::Acr.UserDialogs.Resource.Attribute.queryBackground = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.queryBackground;
 			global::Acr.UserDialogs.Resource.Attribute.queryHint = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.queryHint;
+			global::Acr.UserDialogs.Resource.Attribute.queryPatterns = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.queryPatterns;
 			global::Acr.UserDialogs.Resource.Attribute.radioButtonStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.radioButtonStyle;
+			global::Acr.UserDialogs.Resource.Attribute.rangeFillColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.rangeFillColor;
 			global::Acr.UserDialogs.Resource.Attribute.ratingBarStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.ratingBarStyle;
 			global::Acr.UserDialogs.Resource.Attribute.ratingBarStyleIndicator = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.ratingBarStyleIndicator;
 			global::Acr.UserDialogs.Resource.Attribute.ratingBarStyleSmall = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.ratingBarStyleSmall;
+			global::Acr.UserDialogs.Resource.Attribute.reactiveGuide_animateChange = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.reactiveGuide_animateChange;
+			global::Acr.UserDialogs.Resource.Attribute.reactiveGuide_applyToAllConstraintSets = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.reactiveGuide_applyToAllConstraintSets;
+			global::Acr.UserDialogs.Resource.Attribute.reactiveGuide_applyToConstraintSet = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.reactiveGuide_applyToConstraintSet;
+			global::Acr.UserDialogs.Resource.Attribute.reactiveGuide_valueId = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.reactiveGuide_valueId;
 			global::Acr.UserDialogs.Resource.Attribute.recyclerViewStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.recyclerViewStyle;
+			global::Acr.UserDialogs.Resource.Attribute.region_heightLessThan = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.region_heightLessThan;
+			global::Acr.UserDialogs.Resource.Attribute.region_heightMoreThan = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.region_heightMoreThan;
+			global::Acr.UserDialogs.Resource.Attribute.region_widthLessThan = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.region_widthLessThan;
+			global::Acr.UserDialogs.Resource.Attribute.region_widthMoreThan = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.region_widthMoreThan;
 			global::Acr.UserDialogs.Resource.Attribute.reverseLayout = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.reverseLayout;
 			global::Acr.UserDialogs.Resource.Attribute.rippleColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.rippleColor;
+			global::Acr.UserDialogs.Resource.Attribute.rotationCenterId = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.rotationCenterId;
+			global::Acr.UserDialogs.Resource.Attribute.round = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.round;
+			global::Acr.UserDialogs.Resource.Attribute.roundPercent = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.roundPercent;
+			global::Acr.UserDialogs.Resource.Attribute.saturation = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.saturation;
+			global::Acr.UserDialogs.Resource.Attribute.scaleFromTextSize = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.scaleFromTextSize;
 			global::Acr.UserDialogs.Resource.Attribute.scrimAnimationDuration = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.scrimAnimationDuration;
 			global::Acr.UserDialogs.Resource.Attribute.scrimBackground = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.scrimBackground;
 			global::Acr.UserDialogs.Resource.Attribute.scrimVisibleHeightTrigger = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.scrimVisibleHeightTrigger;
@@ -432,38 +849,73 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Attribute.seekBarStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.seekBarStyle;
 			global::Acr.UserDialogs.Resource.Attribute.selectableItemBackground = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.selectableItemBackground;
 			global::Acr.UserDialogs.Resource.Attribute.selectableItemBackgroundBorderless = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.selectableItemBackgroundBorderless;
+			global::Acr.UserDialogs.Resource.Attribute.selectionRequired = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.selectionRequired;
+			global::Acr.UserDialogs.Resource.Attribute.selectorSize = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.selectorSize;
+			global::Acr.UserDialogs.Resource.Attribute.setsTag = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.setsTag;
+			global::Acr.UserDialogs.Resource.Attribute.shapeAppearance = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.shapeAppearance;
+			global::Acr.UserDialogs.Resource.Attribute.shapeAppearanceLargeComponent = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.shapeAppearanceLargeComponent;
+			global::Acr.UserDialogs.Resource.Attribute.shapeAppearanceMediumComponent = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.shapeAppearanceMediumComponent;
+			global::Acr.UserDialogs.Resource.Attribute.shapeAppearanceOverlay = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.shapeAppearanceOverlay;
+			global::Acr.UserDialogs.Resource.Attribute.shapeAppearanceSmallComponent = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.shapeAppearanceSmallComponent;
+			global::Acr.UserDialogs.Resource.Attribute.SharedValue = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.SharedValue;
+			global::Acr.UserDialogs.Resource.Attribute.SharedValueId = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.SharedValueId;
+			global::Acr.UserDialogs.Resource.Attribute.shortcutMatchRequired = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.shortcutMatchRequired;
+			global::Acr.UserDialogs.Resource.Attribute.showAnimationBehavior = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.showAnimationBehavior;
 			global::Acr.UserDialogs.Resource.Attribute.showAsAction = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.showAsAction;
+			global::Acr.UserDialogs.Resource.Attribute.showDelay = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.showDelay;
 			global::Acr.UserDialogs.Resource.Attribute.showDividers = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.showDividers;
 			global::Acr.UserDialogs.Resource.Attribute.showMotionSpec = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.showMotionSpec;
+			global::Acr.UserDialogs.Resource.Attribute.showPaths = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.showPaths;
 			global::Acr.UserDialogs.Resource.Attribute.showText = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.showText;
 			global::Acr.UserDialogs.Resource.Attribute.showTitle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.showTitle;
+			global::Acr.UserDialogs.Resource.Attribute.shrinkMotionSpec = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.shrinkMotionSpec;
 			global::Acr.UserDialogs.Resource.Attribute.singleChoiceItemLayout = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.singleChoiceItemLayout;
 			global::Acr.UserDialogs.Resource.Attribute.singleLine = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.singleLine;
 			global::Acr.UserDialogs.Resource.Attribute.singleSelection = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.singleSelection;
+			global::Acr.UserDialogs.Resource.Attribute.sizePercent = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.sizePercent;
+			global::Acr.UserDialogs.Resource.Attribute.sliderStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.sliderStyle;
 			global::Acr.UserDialogs.Resource.Attribute.snackbarButtonStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.snackbarButtonStyle;
 			global::Acr.UserDialogs.Resource.Attribute.snackbarStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.snackbarStyle;
+			global::Acr.UserDialogs.Resource.Attribute.snackbarTextViewStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.snackbarTextViewStyle;
 			global::Acr.UserDialogs.Resource.Attribute.spanCount = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.spanCount;
 			global::Acr.UserDialogs.Resource.Attribute.spinBars = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.spinBars;
 			global::Acr.UserDialogs.Resource.Attribute.spinnerDropDownItemStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.spinnerDropDownItemStyle;
 			global::Acr.UserDialogs.Resource.Attribute.spinnerStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.spinnerStyle;
 			global::Acr.UserDialogs.Resource.Attribute.splitTrack = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.splitTrack;
+			global::Acr.UserDialogs.Resource.Attribute.springBoundary = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.springBoundary;
+			global::Acr.UserDialogs.Resource.Attribute.springDamping = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.springDamping;
+			global::Acr.UserDialogs.Resource.Attribute.springMass = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.springMass;
+			global::Acr.UserDialogs.Resource.Attribute.springStiffness = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.springStiffness;
+			global::Acr.UserDialogs.Resource.Attribute.springStopThreshold = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.springStopThreshold;
 			global::Acr.UserDialogs.Resource.Attribute.srcCompat = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.srcCompat;
 			global::Acr.UserDialogs.Resource.Attribute.stackFromEnd = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.stackFromEnd;
+			global::Acr.UserDialogs.Resource.Attribute.staggered = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.staggered;
+			global::Acr.UserDialogs.Resource.Attribute.startIconCheckable = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.startIconCheckable;
+			global::Acr.UserDialogs.Resource.Attribute.startIconContentDescription = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.startIconContentDescription;
+			global::Acr.UserDialogs.Resource.Attribute.startIconDrawable = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.startIconDrawable;
+			global::Acr.UserDialogs.Resource.Attribute.startIconTint = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.startIconTint;
+			global::Acr.UserDialogs.Resource.Attribute.startIconTintMode = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.startIconTintMode;
 			global::Acr.UserDialogs.Resource.Attribute.state_above_anchor = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.state_above_anchor;
 			global::Acr.UserDialogs.Resource.Attribute.state_collapsed = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.state_collapsed;
 			global::Acr.UserDialogs.Resource.Attribute.state_collapsible = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.state_collapsible;
+			global::Acr.UserDialogs.Resource.Attribute.state_dragged = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.state_dragged;
 			global::Acr.UserDialogs.Resource.Attribute.state_liftable = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.state_liftable;
 			global::Acr.UserDialogs.Resource.Attribute.state_lifted = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.state_lifted;
 			global::Acr.UserDialogs.Resource.Attribute.statusBarBackground = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.statusBarBackground;
+			global::Acr.UserDialogs.Resource.Attribute.statusBarForeground = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.statusBarForeground;
 			global::Acr.UserDialogs.Resource.Attribute.statusBarScrim = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.statusBarScrim;
 			global::Acr.UserDialogs.Resource.Attribute.strokeColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.strokeColor;
 			global::Acr.UserDialogs.Resource.Attribute.strokeWidth = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.strokeWidth;
 			global::Acr.UserDialogs.Resource.Attribute.subMenuArrow = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.subMenuArrow;
 			global::Acr.UserDialogs.Resource.Attribute.submitBackground = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.submitBackground;
 			global::Acr.UserDialogs.Resource.Attribute.subtitle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.subtitle;
+			global::Acr.UserDialogs.Resource.Attribute.subtitleCentered = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.subtitleCentered;
 			global::Acr.UserDialogs.Resource.Attribute.subtitleTextAppearance = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.subtitleTextAppearance;
 			global::Acr.UserDialogs.Resource.Attribute.subtitleTextColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.subtitleTextColor;
 			global::Acr.UserDialogs.Resource.Attribute.subtitleTextStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.subtitleTextStyle;
+			global::Acr.UserDialogs.Resource.Attribute.suffixText = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.suffixText;
+			global::Acr.UserDialogs.Resource.Attribute.suffixTextAppearance = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.suffixTextAppearance;
+			global::Acr.UserDialogs.Resource.Attribute.suffixTextColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.suffixTextColor;
 			global::Acr.UserDialogs.Resource.Attribute.suggestionRowLayout = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.suggestionRowLayout;
 			global::Acr.UserDialogs.Resource.Attribute.switchMinWidth = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.switchMinWidth;
 			global::Acr.UserDialogs.Resource.Attribute.switchPadding = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.switchPadding;
@@ -476,6 +928,7 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Attribute.tabIconTintMode = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.tabIconTintMode;
 			global::Acr.UserDialogs.Resource.Attribute.tabIndicator = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.tabIndicator;
 			global::Acr.UserDialogs.Resource.Attribute.tabIndicatorAnimationDuration = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.tabIndicatorAnimationDuration;
+			global::Acr.UserDialogs.Resource.Attribute.tabIndicatorAnimationMode = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.tabIndicatorAnimationMode;
 			global::Acr.UserDialogs.Resource.Attribute.tabIndicatorColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.tabIndicatorColor;
 			global::Acr.UserDialogs.Resource.Attribute.tabIndicatorFullWidth = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.tabIndicatorFullWidth;
 			global::Acr.UserDialogs.Resource.Attribute.tabIndicatorGravity = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.tabIndicatorGravity;
@@ -495,6 +948,10 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Attribute.tabTextAppearance = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.tabTextAppearance;
 			global::Acr.UserDialogs.Resource.Attribute.tabTextColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.tabTextColor;
 			global::Acr.UserDialogs.Resource.Attribute.tabUnboundedRipple = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.tabUnboundedRipple;
+			global::Acr.UserDialogs.Resource.Attribute.targetId = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.targetId;
+			global::Acr.UserDialogs.Resource.Attribute.telltales_tailColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.telltales_tailColor;
+			global::Acr.UserDialogs.Resource.Attribute.telltales_tailScale = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.telltales_tailScale;
+			global::Acr.UserDialogs.Resource.Attribute.telltales_velocityMode = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.telltales_velocityMode;
 			global::Acr.UserDialogs.Resource.Attribute.textAllCaps = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.textAllCaps;
 			global::Acr.UserDialogs.Resource.Attribute.textAppearanceBody1 = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.textAppearanceBody1;
 			global::Acr.UserDialogs.Resource.Attribute.textAppearanceBody2 = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.textAppearanceBody2;
@@ -507,6 +964,7 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Attribute.textAppearanceHeadline5 = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.textAppearanceHeadline5;
 			global::Acr.UserDialogs.Resource.Attribute.textAppearanceHeadline6 = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.textAppearanceHeadline6;
 			global::Acr.UserDialogs.Resource.Attribute.textAppearanceLargePopupMenu = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.textAppearanceLargePopupMenu;
+			global::Acr.UserDialogs.Resource.Attribute.textAppearanceLineHeightEnabled = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.textAppearanceLineHeightEnabled;
 			global::Acr.UserDialogs.Resource.Attribute.textAppearanceListItem = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.textAppearanceListItem;
 			global::Acr.UserDialogs.Resource.Attribute.textAppearanceListItemSecondary = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.textAppearanceListItemSecondary;
 			global::Acr.UserDialogs.Resource.Attribute.textAppearanceListItemSmall = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.textAppearanceListItemSmall;
@@ -517,23 +975,50 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Attribute.textAppearanceSmallPopupMenu = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.textAppearanceSmallPopupMenu;
 			global::Acr.UserDialogs.Resource.Attribute.textAppearanceSubtitle1 = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.textAppearanceSubtitle1;
 			global::Acr.UserDialogs.Resource.Attribute.textAppearanceSubtitle2 = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.textAppearanceSubtitle2;
+			global::Acr.UserDialogs.Resource.Attribute.textBackground = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.textBackground;
+			global::Acr.UserDialogs.Resource.Attribute.textBackgroundPanX = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.textBackgroundPanX;
+			global::Acr.UserDialogs.Resource.Attribute.textBackgroundPanY = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.textBackgroundPanY;
+			global::Acr.UserDialogs.Resource.Attribute.textBackgroundRotate = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.textBackgroundRotate;
+			global::Acr.UserDialogs.Resource.Attribute.textBackgroundZoom = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.textBackgroundZoom;
 			global::Acr.UserDialogs.Resource.Attribute.textColorAlertDialogListItem = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.textColorAlertDialogListItem;
 			global::Acr.UserDialogs.Resource.Attribute.textColorSearchUrl = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.textColorSearchUrl;
 			global::Acr.UserDialogs.Resource.Attribute.textEndPadding = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.textEndPadding;
+			global::Acr.UserDialogs.Resource.Attribute.textFillColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.textFillColor;
+			global::Acr.UserDialogs.Resource.Attribute.textInputLayoutFocusedRectEnabled = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.textInputLayoutFocusedRectEnabled;
 			global::Acr.UserDialogs.Resource.Attribute.textInputStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.textInputStyle;
 			global::Acr.UserDialogs.Resource.Attribute.textLocale = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.textLocale;
+			global::Acr.UserDialogs.Resource.Attribute.textOutlineColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.textOutlineColor;
+			global::Acr.UserDialogs.Resource.Attribute.textOutlineThickness = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.textOutlineThickness;
+			global::Acr.UserDialogs.Resource.Attribute.textPanX = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.textPanX;
+			global::Acr.UserDialogs.Resource.Attribute.textPanY = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.textPanY;
 			global::Acr.UserDialogs.Resource.Attribute.textStartPadding = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.textStartPadding;
+			global::Acr.UserDialogs.Resource.Attribute.textureBlurFactor = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.textureBlurFactor;
+			global::Acr.UserDialogs.Resource.Attribute.textureEffect = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.textureEffect;
+			global::Acr.UserDialogs.Resource.Attribute.textureHeight = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.textureHeight;
+			global::Acr.UserDialogs.Resource.Attribute.textureWidth = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.textureWidth;
 			global::Acr.UserDialogs.Resource.Attribute.theme = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.theme;
+			global::Acr.UserDialogs.Resource.Attribute.themeLineHeight = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.themeLineHeight;
 			global::Acr.UserDialogs.Resource.Attribute.thickness = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.thickness;
+			global::Acr.UserDialogs.Resource.Attribute.thumbColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.thumbColor;
+			global::Acr.UserDialogs.Resource.Attribute.thumbElevation = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.thumbElevation;
+			global::Acr.UserDialogs.Resource.Attribute.thumbRadius = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.thumbRadius;
+			global::Acr.UserDialogs.Resource.Attribute.thumbStrokeColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.thumbStrokeColor;
+			global::Acr.UserDialogs.Resource.Attribute.thumbStrokeWidth = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.thumbStrokeWidth;
 			global::Acr.UserDialogs.Resource.Attribute.thumbTextPadding = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.thumbTextPadding;
 			global::Acr.UserDialogs.Resource.Attribute.thumbTint = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.thumbTint;
 			global::Acr.UserDialogs.Resource.Attribute.thumbTintMode = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.thumbTintMode;
+			global::Acr.UserDialogs.Resource.Attribute.tickColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.tickColor;
+			global::Acr.UserDialogs.Resource.Attribute.tickColorActive = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.tickColorActive;
+			global::Acr.UserDialogs.Resource.Attribute.tickColorInactive = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.tickColorInactive;
 			global::Acr.UserDialogs.Resource.Attribute.tickMark = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.tickMark;
 			global::Acr.UserDialogs.Resource.Attribute.tickMarkTint = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.tickMarkTint;
 			global::Acr.UserDialogs.Resource.Attribute.tickMarkTintMode = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.tickMarkTintMode;
+			global::Acr.UserDialogs.Resource.Attribute.tickVisible = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.tickVisible;
 			global::Acr.UserDialogs.Resource.Attribute.tint = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.tint;
 			global::Acr.UserDialogs.Resource.Attribute.tintMode = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.tintMode;
 			global::Acr.UserDialogs.Resource.Attribute.title = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.title;
+			global::Acr.UserDialogs.Resource.Attribute.titleCentered = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.titleCentered;
+			global::Acr.UserDialogs.Resource.Attribute.titleCollapseMode = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.titleCollapseMode;
 			global::Acr.UserDialogs.Resource.Attribute.titleEnabled = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.titleEnabled;
 			global::Acr.UserDialogs.Resource.Attribute.titleMargin = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.titleMargin;
 			global::Acr.UserDialogs.Resource.Attribute.titleMarginBottom = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.titleMarginBottom;
@@ -549,14 +1034,49 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Attribute.toolbarStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.toolbarStyle;
 			global::Acr.UserDialogs.Resource.Attribute.tooltipForegroundColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.tooltipForegroundColor;
 			global::Acr.UserDialogs.Resource.Attribute.tooltipFrameBackground = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.tooltipFrameBackground;
+			global::Acr.UserDialogs.Resource.Attribute.tooltipStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.tooltipStyle;
 			global::Acr.UserDialogs.Resource.Attribute.tooltipText = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.tooltipText;
+			global::Acr.UserDialogs.Resource.Attribute.touchAnchorId = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.touchAnchorId;
+			global::Acr.UserDialogs.Resource.Attribute.touchAnchorSide = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.touchAnchorSide;
+			global::Acr.UserDialogs.Resource.Attribute.touchRegionId = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.touchRegionId;
 			global::Acr.UserDialogs.Resource.Attribute.track = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.track;
+			global::Acr.UserDialogs.Resource.Attribute.trackColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.trackColor;
+			global::Acr.UserDialogs.Resource.Attribute.trackColorActive = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.trackColorActive;
+			global::Acr.UserDialogs.Resource.Attribute.trackColorInactive = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.trackColorInactive;
+			global::Acr.UserDialogs.Resource.Attribute.trackCornerRadius = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.trackCornerRadius;
+			global::Acr.UserDialogs.Resource.Attribute.trackHeight = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.trackHeight;
+			global::Acr.UserDialogs.Resource.Attribute.trackThickness = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.trackThickness;
 			global::Acr.UserDialogs.Resource.Attribute.trackTint = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.trackTint;
 			global::Acr.UserDialogs.Resource.Attribute.trackTintMode = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.trackTintMode;
+			global::Acr.UserDialogs.Resource.Attribute.transformPivotTarget = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.transformPivotTarget;
+			global::Acr.UserDialogs.Resource.Attribute.transitionDisable = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.transitionDisable;
+			global::Acr.UserDialogs.Resource.Attribute.transitionEasing = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.transitionEasing;
+			global::Acr.UserDialogs.Resource.Attribute.transitionFlags = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.transitionFlags;
+			global::Acr.UserDialogs.Resource.Attribute.transitionPathRotate = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.transitionPathRotate;
+			global::Acr.UserDialogs.Resource.Attribute.transitionShapeAppearance = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.transitionShapeAppearance;
+			global::Acr.UserDialogs.Resource.Attribute.triggerId = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.triggerId;
+			global::Acr.UserDialogs.Resource.Attribute.triggerReceiver = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.triggerReceiver;
+			global::Acr.UserDialogs.Resource.Attribute.triggerSlack = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.triggerSlack;
 			global::Acr.UserDialogs.Resource.Attribute.ttcIndex = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.ttcIndex;
+			global::Acr.UserDialogs.Resource.Attribute.upDuration = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.upDuration;
 			global::Acr.UserDialogs.Resource.Attribute.useCompatPadding = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.useCompatPadding;
+			global::Acr.UserDialogs.Resource.Attribute.useMaterialThemeColors = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.useMaterialThemeColors;
+			global::Acr.UserDialogs.Resource.Attribute.values = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.values;
+			global::Acr.UserDialogs.Resource.Attribute.verticalOffset = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.verticalOffset;
 			global::Acr.UserDialogs.Resource.Attribute.viewInflaterClass = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.viewInflaterClass;
+			global::Acr.UserDialogs.Resource.Attribute.viewTransitionMode = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.viewTransitionMode;
+			global::Acr.UserDialogs.Resource.Attribute.viewTransitionOnCross = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.viewTransitionOnCross;
+			global::Acr.UserDialogs.Resource.Attribute.viewTransitionOnNegativeCross = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.viewTransitionOnNegativeCross;
+			global::Acr.UserDialogs.Resource.Attribute.viewTransitionOnPositiveCross = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.viewTransitionOnPositiveCross;
+			global::Acr.UserDialogs.Resource.Attribute.visibilityMode = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.visibilityMode;
 			global::Acr.UserDialogs.Resource.Attribute.voiceIcon = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.voiceIcon;
+			global::Acr.UserDialogs.Resource.Attribute.warmth = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.warmth;
+			global::Acr.UserDialogs.Resource.Attribute.waveDecay = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.waveDecay;
+			global::Acr.UserDialogs.Resource.Attribute.waveOffset = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.waveOffset;
+			global::Acr.UserDialogs.Resource.Attribute.wavePeriod = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.wavePeriod;
+			global::Acr.UserDialogs.Resource.Attribute.wavePhase = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.wavePhase;
+			global::Acr.UserDialogs.Resource.Attribute.waveShape = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.waveShape;
+			global::Acr.UserDialogs.Resource.Attribute.waveVariesBy = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.waveVariesBy;
 			global::Acr.UserDialogs.Resource.Attribute.windowActionBar = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.windowActionBar;
 			global::Acr.UserDialogs.Resource.Attribute.windowActionBarOverlay = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.windowActionBarOverlay;
 			global::Acr.UserDialogs.Resource.Attribute.windowActionModeOverlay = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.windowActionModeOverlay;
@@ -567,6 +1087,9 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Attribute.windowMinWidthMajor = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.windowMinWidthMajor;
 			global::Acr.UserDialogs.Resource.Attribute.windowMinWidthMinor = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.windowMinWidthMinor;
 			global::Acr.UserDialogs.Resource.Attribute.windowNoTitle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.windowNoTitle;
+			global::Acr.UserDialogs.Resource.Attribute.yearSelectedStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.yearSelectedStyle;
+			global::Acr.UserDialogs.Resource.Attribute.yearStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.yearStyle;
+			global::Acr.UserDialogs.Resource.Attribute.yearTodayStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.yearTodayStyle;
 			global::Acr.UserDialogs.Resource.Boolean.abc_action_bar_embed_tabs = global::PixQrCodeGeneratorOffline.Droid.Resource.Boolean.abc_action_bar_embed_tabs;
 			global::Acr.UserDialogs.Resource.Boolean.abc_config_actionMenuItemAllCaps = global::PixQrCodeGeneratorOffline.Droid.Resource.Boolean.abc_config_actionMenuItemAllCaps;
 			global::Acr.UserDialogs.Resource.Boolean.mtrl_btn_textappearance_all_caps = global::PixQrCodeGeneratorOffline.Droid.Resource.Boolean.mtrl_btn_textappearance_all_caps;
@@ -575,6 +1098,8 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Color.abc_btn_colored_borderless_text_material = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.abc_btn_colored_borderless_text_material;
 			global::Acr.UserDialogs.Resource.Color.abc_btn_colored_text_material = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.abc_btn_colored_text_material;
 			global::Acr.UserDialogs.Resource.Color.abc_color_highlight_material = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.abc_color_highlight_material;
+			global::Acr.UserDialogs.Resource.Color.abc_decor_view_status_guard = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.abc_decor_view_status_guard;
+			global::Acr.UserDialogs.Resource.Color.abc_decor_view_status_guard_light = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.abc_decor_view_status_guard_light;
 			global::Acr.UserDialogs.Resource.Color.abc_hint_foreground_material_dark = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.abc_hint_foreground_material_dark;
 			global::Acr.UserDialogs.Resource.Color.abc_hint_foreground_material_light = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.abc_hint_foreground_material_light;
 			global::Acr.UserDialogs.Resource.Color.abc_primary_text_disable_only_material_dark = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.abc_primary_text_disable_only_material_dark;
@@ -595,6 +1120,8 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Color.abc_tint_switch_track = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.abc_tint_switch_track;
 			global::Acr.UserDialogs.Resource.Color.accent_material_dark = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.accent_material_dark;
 			global::Acr.UserDialogs.Resource.Color.accent_material_light = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.accent_material_light;
+			global::Acr.UserDialogs.Resource.Color.androidx_core_ripple_material_light = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.androidx_core_ripple_material_light;
+			global::Acr.UserDialogs.Resource.Color.androidx_core_secondary_text_default_material_light = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.androidx_core_secondary_text_default_material_light;
 			global::Acr.UserDialogs.Resource.Color.background_floating_material_dark = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.background_floating_material_dark;
 			global::Acr.UserDialogs.Resource.Color.background_floating_material_light = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.background_floating_material_light;
 			global::Acr.UserDialogs.Resource.Color.background_material_dark = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.background_material_dark;
@@ -611,9 +1138,35 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Color.cardview_light_background = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.cardview_light_background;
 			global::Acr.UserDialogs.Resource.Color.cardview_shadow_end_color = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.cardview_shadow_end_color;
 			global::Acr.UserDialogs.Resource.Color.cardview_shadow_start_color = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.cardview_shadow_start_color;
+			global::Acr.UserDialogs.Resource.Color.checkbox_themeable_attribute_color = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.checkbox_themeable_attribute_color;
 			global::Acr.UserDialogs.Resource.Color.design_bottom_navigation_shadow_color = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.design_bottom_navigation_shadow_color;
+			global::Acr.UserDialogs.Resource.Color.design_box_stroke_color = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.design_box_stroke_color;
+			global::Acr.UserDialogs.Resource.Color.design_dark_default_color_background = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.design_dark_default_color_background;
+			global::Acr.UserDialogs.Resource.Color.design_dark_default_color_error = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.design_dark_default_color_error;
+			global::Acr.UserDialogs.Resource.Color.design_dark_default_color_on_background = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.design_dark_default_color_on_background;
+			global::Acr.UserDialogs.Resource.Color.design_dark_default_color_on_error = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.design_dark_default_color_on_error;
+			global::Acr.UserDialogs.Resource.Color.design_dark_default_color_on_primary = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.design_dark_default_color_on_primary;
+			global::Acr.UserDialogs.Resource.Color.design_dark_default_color_on_secondary = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.design_dark_default_color_on_secondary;
+			global::Acr.UserDialogs.Resource.Color.design_dark_default_color_on_surface = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.design_dark_default_color_on_surface;
+			global::Acr.UserDialogs.Resource.Color.design_dark_default_color_primary = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.design_dark_default_color_primary;
+			global::Acr.UserDialogs.Resource.Color.design_dark_default_color_primary_dark = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.design_dark_default_color_primary_dark;
+			global::Acr.UserDialogs.Resource.Color.design_dark_default_color_primary_variant = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.design_dark_default_color_primary_variant;
+			global::Acr.UserDialogs.Resource.Color.design_dark_default_color_secondary = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.design_dark_default_color_secondary;
+			global::Acr.UserDialogs.Resource.Color.design_dark_default_color_secondary_variant = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.design_dark_default_color_secondary_variant;
+			global::Acr.UserDialogs.Resource.Color.design_dark_default_color_surface = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.design_dark_default_color_surface;
+			global::Acr.UserDialogs.Resource.Color.design_default_color_background = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.design_default_color_background;
+			global::Acr.UserDialogs.Resource.Color.design_default_color_error = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.design_default_color_error;
+			global::Acr.UserDialogs.Resource.Color.design_default_color_on_background = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.design_default_color_on_background;
+			global::Acr.UserDialogs.Resource.Color.design_default_color_on_error = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.design_default_color_on_error;
+			global::Acr.UserDialogs.Resource.Color.design_default_color_on_primary = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.design_default_color_on_primary;
+			global::Acr.UserDialogs.Resource.Color.design_default_color_on_secondary = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.design_default_color_on_secondary;
+			global::Acr.UserDialogs.Resource.Color.design_default_color_on_surface = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.design_default_color_on_surface;
 			global::Acr.UserDialogs.Resource.Color.design_default_color_primary = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.design_default_color_primary;
 			global::Acr.UserDialogs.Resource.Color.design_default_color_primary_dark = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.design_default_color_primary_dark;
+			global::Acr.UserDialogs.Resource.Color.design_default_color_primary_variant = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.design_default_color_primary_variant;
+			global::Acr.UserDialogs.Resource.Color.design_default_color_secondary = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.design_default_color_secondary;
+			global::Acr.UserDialogs.Resource.Color.design_default_color_secondary_variant = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.design_default_color_secondary_variant;
+			global::Acr.UserDialogs.Resource.Color.design_default_color_surface = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.design_default_color_surface;
 			global::Acr.UserDialogs.Resource.Color.design_error = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.design_error;
 			global::Acr.UserDialogs.Resource.Color.design_fab_shadow_end_color = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.design_fab_shadow_end_color;
 			global::Acr.UserDialogs.Resource.Color.design_fab_shadow_mid_color = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.design_fab_shadow_mid_color;
@@ -622,6 +1175,7 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Color.design_fab_stroke_end_outer_color = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.design_fab_stroke_end_outer_color;
 			global::Acr.UserDialogs.Resource.Color.design_fab_stroke_top_inner_color = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.design_fab_stroke_top_inner_color;
 			global::Acr.UserDialogs.Resource.Color.design_fab_stroke_top_outer_color = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.design_fab_stroke_top_outer_color;
+			global::Acr.UserDialogs.Resource.Color.design_icon_tint = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.design_icon_tint;
 			global::Acr.UserDialogs.Resource.Color.design_snackbar_background_color = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.design_snackbar_background_color;
 			global::Acr.UserDialogs.Resource.Color.dim_foreground_disabled_material_dark = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.dim_foreground_disabled_material_dark;
 			global::Acr.UserDialogs.Resource.Color.dim_foreground_disabled_material_light = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.dim_foreground_disabled_material_light;
@@ -636,6 +1190,7 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Color.material_blue_grey_800 = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.material_blue_grey_800;
 			global::Acr.UserDialogs.Resource.Color.material_blue_grey_900 = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.material_blue_grey_900;
 			global::Acr.UserDialogs.Resource.Color.material_blue_grey_950 = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.material_blue_grey_950;
+			global::Acr.UserDialogs.Resource.Color.material_cursor_color = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.material_cursor_color;
 			global::Acr.UserDialogs.Resource.Color.material_deep_teal_200 = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.material_deep_teal_200;
 			global::Acr.UserDialogs.Resource.Color.material_deep_teal_500 = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.material_deep_teal_500;
 			global::Acr.UserDialogs.Resource.Color.material_grey_100 = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.material_grey_100;
@@ -645,17 +1200,66 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Color.material_grey_800 = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.material_grey_800;
 			global::Acr.UserDialogs.Resource.Color.material_grey_850 = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.material_grey_850;
 			global::Acr.UserDialogs.Resource.Color.material_grey_900 = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.material_grey_900;
+			global::Acr.UserDialogs.Resource.Color.material_on_background_disabled = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.material_on_background_disabled;
+			global::Acr.UserDialogs.Resource.Color.material_on_background_emphasis_high_type = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.material_on_background_emphasis_high_type;
+			global::Acr.UserDialogs.Resource.Color.material_on_background_emphasis_medium = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.material_on_background_emphasis_medium;
+			global::Acr.UserDialogs.Resource.Color.material_on_primary_disabled = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.material_on_primary_disabled;
+			global::Acr.UserDialogs.Resource.Color.material_on_primary_emphasis_high_type = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.material_on_primary_emphasis_high_type;
+			global::Acr.UserDialogs.Resource.Color.material_on_primary_emphasis_medium = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.material_on_primary_emphasis_medium;
+			global::Acr.UserDialogs.Resource.Color.material_on_surface_disabled = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.material_on_surface_disabled;
+			global::Acr.UserDialogs.Resource.Color.material_on_surface_emphasis_high_type = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.material_on_surface_emphasis_high_type;
+			global::Acr.UserDialogs.Resource.Color.material_on_surface_emphasis_medium = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.material_on_surface_emphasis_medium;
+			global::Acr.UserDialogs.Resource.Color.material_on_surface_stroke = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.material_on_surface_stroke;
+			global::Acr.UserDialogs.Resource.Color.material_slider_active_tick_marks_color = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.material_slider_active_tick_marks_color;
+			global::Acr.UserDialogs.Resource.Color.material_slider_active_track_color = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.material_slider_active_track_color;
+			global::Acr.UserDialogs.Resource.Color.material_slider_halo_color = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.material_slider_halo_color;
+			global::Acr.UserDialogs.Resource.Color.material_slider_inactive_tick_marks_color = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.material_slider_inactive_tick_marks_color;
+			global::Acr.UserDialogs.Resource.Color.material_slider_inactive_track_color = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.material_slider_inactive_track_color;
+			global::Acr.UserDialogs.Resource.Color.material_slider_thumb_color = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.material_slider_thumb_color;
+			global::Acr.UserDialogs.Resource.Color.material_timepicker_button_background = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.material_timepicker_button_background;
+			global::Acr.UserDialogs.Resource.Color.material_timepicker_button_stroke = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.material_timepicker_button_stroke;
+			global::Acr.UserDialogs.Resource.Color.material_timepicker_clockface = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.material_timepicker_clockface;
+			global::Acr.UserDialogs.Resource.Color.material_timepicker_clock_text_color = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.material_timepicker_clock_text_color;
+			global::Acr.UserDialogs.Resource.Color.material_timepicker_modebutton_tint = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.material_timepicker_modebutton_tint;
 			global::Acr.UserDialogs.Resource.Color.mtrl_btn_bg_color_selector = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.mtrl_btn_bg_color_selector;
 			global::Acr.UserDialogs.Resource.Color.mtrl_btn_ripple_color = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.mtrl_btn_ripple_color;
 			global::Acr.UserDialogs.Resource.Color.mtrl_btn_stroke_color_selector = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.mtrl_btn_stroke_color_selector;
+			global::Acr.UserDialogs.Resource.Color.mtrl_btn_text_btn_bg_color_selector = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.mtrl_btn_text_btn_bg_color_selector;
 			global::Acr.UserDialogs.Resource.Color.mtrl_btn_text_btn_ripple_color = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.mtrl_btn_text_btn_ripple_color;
 			global::Acr.UserDialogs.Resource.Color.mtrl_btn_text_color_disabled = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.mtrl_btn_text_color_disabled;
 			global::Acr.UserDialogs.Resource.Color.mtrl_btn_text_color_selector = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.mtrl_btn_text_color_selector;
 			global::Acr.UserDialogs.Resource.Color.mtrl_btn_transparent_bg_color = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.mtrl_btn_transparent_bg_color;
+			global::Acr.UserDialogs.Resource.Color.mtrl_calendar_item_stroke_color = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.mtrl_calendar_item_stroke_color;
+			global::Acr.UserDialogs.Resource.Color.mtrl_calendar_selected_range = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.mtrl_calendar_selected_range;
+			global::Acr.UserDialogs.Resource.Color.mtrl_card_view_foreground = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.mtrl_card_view_foreground;
+			global::Acr.UserDialogs.Resource.Color.mtrl_card_view_ripple = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.mtrl_card_view_ripple;
 			global::Acr.UserDialogs.Resource.Color.mtrl_chip_background_color = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.mtrl_chip_background_color;
 			global::Acr.UserDialogs.Resource.Color.mtrl_chip_close_icon_tint = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.mtrl_chip_close_icon_tint;
+			global::Acr.UserDialogs.Resource.Color.mtrl_chip_surface_color = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.mtrl_chip_surface_color;
 			global::Acr.UserDialogs.Resource.Color.mtrl_chip_text_color = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.mtrl_chip_text_color;
+			global::Acr.UserDialogs.Resource.Color.mtrl_choice_chip_background_color = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.mtrl_choice_chip_background_color;
+			global::Acr.UserDialogs.Resource.Color.mtrl_choice_chip_ripple_color = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.mtrl_choice_chip_ripple_color;
+			global::Acr.UserDialogs.Resource.Color.mtrl_choice_chip_text_color = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.mtrl_choice_chip_text_color;
+			global::Acr.UserDialogs.Resource.Color.mtrl_error = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.mtrl_error;
+			global::Acr.UserDialogs.Resource.Color.mtrl_fab_bg_color_selector = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.mtrl_fab_bg_color_selector;
+			global::Acr.UserDialogs.Resource.Color.mtrl_fab_icon_text_color_selector = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.mtrl_fab_icon_text_color_selector;
 			global::Acr.UserDialogs.Resource.Color.mtrl_fab_ripple_color = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.mtrl_fab_ripple_color;
+			global::Acr.UserDialogs.Resource.Color.mtrl_filled_background_color = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.mtrl_filled_background_color;
+			global::Acr.UserDialogs.Resource.Color.mtrl_filled_icon_tint = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.mtrl_filled_icon_tint;
+			global::Acr.UserDialogs.Resource.Color.mtrl_filled_stroke_color = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.mtrl_filled_stroke_color;
+			global::Acr.UserDialogs.Resource.Color.mtrl_indicator_text_color = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.mtrl_indicator_text_color;
+			global::Acr.UserDialogs.Resource.Color.mtrl_navigation_bar_colored_item_tint = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.mtrl_navigation_bar_colored_item_tint;
+			global::Acr.UserDialogs.Resource.Color.mtrl_navigation_bar_colored_ripple_color = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.mtrl_navigation_bar_colored_ripple_color;
+			global::Acr.UserDialogs.Resource.Color.mtrl_navigation_bar_item_tint = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.mtrl_navigation_bar_item_tint;
+			global::Acr.UserDialogs.Resource.Color.mtrl_navigation_bar_ripple_color = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.mtrl_navigation_bar_ripple_color;
+			global::Acr.UserDialogs.Resource.Color.mtrl_navigation_item_background_color = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.mtrl_navigation_item_background_color;
+			global::Acr.UserDialogs.Resource.Color.mtrl_navigation_item_icon_tint = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.mtrl_navigation_item_icon_tint;
+			global::Acr.UserDialogs.Resource.Color.mtrl_navigation_item_text_color = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.mtrl_navigation_item_text_color;
+			global::Acr.UserDialogs.Resource.Color.mtrl_on_primary_text_btn_text_color_selector = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.mtrl_on_primary_text_btn_text_color_selector;
+			global::Acr.UserDialogs.Resource.Color.mtrl_on_surface_ripple_color = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.mtrl_on_surface_ripple_color;
+			global::Acr.UserDialogs.Resource.Color.mtrl_outlined_icon_tint = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.mtrl_outlined_icon_tint;
+			global::Acr.UserDialogs.Resource.Color.mtrl_outlined_stroke_color = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.mtrl_outlined_stroke_color;
+			global::Acr.UserDialogs.Resource.Color.mtrl_popupmenu_overlay_color = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.mtrl_popupmenu_overlay_color;
 			global::Acr.UserDialogs.Resource.Color.mtrl_scrim_color = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.mtrl_scrim_color;
 			global::Acr.UserDialogs.Resource.Color.mtrl_tabs_colored_ripple_color = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.mtrl_tabs_colored_ripple_color;
 			global::Acr.UserDialogs.Resource.Color.mtrl_tabs_icon_color_selector = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.mtrl_tabs_icon_color_selector;
@@ -665,6 +1269,7 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Color.mtrl_textinput_default_box_stroke_color = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.mtrl_textinput_default_box_stroke_color;
 			global::Acr.UserDialogs.Resource.Color.mtrl_textinput_disabled_color = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.mtrl_textinput_disabled_color;
 			global::Acr.UserDialogs.Resource.Color.mtrl_textinput_filled_box_default_background_color = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.mtrl_textinput_filled_box_default_background_color;
+			global::Acr.UserDialogs.Resource.Color.mtrl_textinput_focused_box_stroke_color = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.mtrl_textinput_focused_box_stroke_color;
 			global::Acr.UserDialogs.Resource.Color.mtrl_textinput_hovered_box_stroke_color = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.mtrl_textinput_hovered_box_stroke_color;
 			global::Acr.UserDialogs.Resource.Color.mtrl_text_btn_text_color_selector = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.mtrl_text_btn_text_color_selector;
 			global::Acr.UserDialogs.Resource.Color.notification_action_color_filter = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.notification_action_color_filter;
@@ -677,6 +1282,7 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Color.primary_text_default_material_light = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.primary_text_default_material_light;
 			global::Acr.UserDialogs.Resource.Color.primary_text_disabled_material_dark = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.primary_text_disabled_material_dark;
 			global::Acr.UserDialogs.Resource.Color.primary_text_disabled_material_light = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.primary_text_disabled_material_light;
+			global::Acr.UserDialogs.Resource.Color.radiobutton_themeable_attribute_color = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.radiobutton_themeable_attribute_color;
 			global::Acr.UserDialogs.Resource.Color.ripple_material_dark = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.ripple_material_dark;
 			global::Acr.UserDialogs.Resource.Color.ripple_material_light = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.ripple_material_light;
 			global::Acr.UserDialogs.Resource.Color.secondary_text_default_material_dark = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.secondary_text_default_material_dark;
@@ -689,6 +1295,8 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Color.switch_thumb_material_light = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.switch_thumb_material_light;
 			global::Acr.UserDialogs.Resource.Color.switch_thumb_normal_material_dark = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.switch_thumb_normal_material_dark;
 			global::Acr.UserDialogs.Resource.Color.switch_thumb_normal_material_light = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.switch_thumb_normal_material_light;
+			global::Acr.UserDialogs.Resource.Color.test_mtrl_calendar_day = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.test_mtrl_calendar_day;
+			global::Acr.UserDialogs.Resource.Color.test_mtrl_calendar_day_selected = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.test_mtrl_calendar_day_selected;
 			global::Acr.UserDialogs.Resource.Color.tooltip_background_dark = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.tooltip_background_dark;
 			global::Acr.UserDialogs.Resource.Color.tooltip_background_light = global::PixQrCodeGeneratorOffline.Droid.Resource.Color.tooltip_background_light;
 			global::Acr.UserDialogs.Resource.Dimension.abc_action_bar_content_inset_material = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.abc_action_bar_content_inset_material;
@@ -750,6 +1358,9 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Dimension.abc_seekbar_track_background_height_material = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.abc_seekbar_track_background_height_material;
 			global::Acr.UserDialogs.Resource.Dimension.abc_seekbar_track_progress_height_material = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.abc_seekbar_track_progress_height_material;
 			global::Acr.UserDialogs.Resource.Dimension.abc_select_dialog_padding_start_material = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.abc_select_dialog_padding_start_material;
+			global::Acr.UserDialogs.Resource.Dimension.abc_star_big = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.abc_star_big;
+			global::Acr.UserDialogs.Resource.Dimension.abc_star_medium = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.abc_star_medium;
+			global::Acr.UserDialogs.Resource.Dimension.abc_star_small = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.abc_star_small;
 			global::Acr.UserDialogs.Resource.Dimension.abc_switch_padding = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.abc_switch_padding;
 			global::Acr.UserDialogs.Resource.Dimension.abc_text_size_body_1_material = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.abc_text_size_body_1_material;
 			global::Acr.UserDialogs.Resource.Dimension.abc_text_size_body_2_material = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.abc_text_size_body_2_material;
@@ -769,9 +1380,12 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Dimension.abc_text_size_subtitle_material_toolbar = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.abc_text_size_subtitle_material_toolbar;
 			global::Acr.UserDialogs.Resource.Dimension.abc_text_size_title_material = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.abc_text_size_title_material;
 			global::Acr.UserDialogs.Resource.Dimension.abc_text_size_title_material_toolbar = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.abc_text_size_title_material_toolbar;
+			global::Acr.UserDialogs.Resource.Dimension.action_bar_size = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.action_bar_size;
+			global::Acr.UserDialogs.Resource.Dimension.appcompat_dialog_background_inset = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.appcompat_dialog_background_inset;
 			global::Acr.UserDialogs.Resource.Dimension.cardview_compat_inset_shadow = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.cardview_compat_inset_shadow;
 			global::Acr.UserDialogs.Resource.Dimension.cardview_default_elevation = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.cardview_default_elevation;
 			global::Acr.UserDialogs.Resource.Dimension.cardview_default_radius = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.cardview_default_radius;
+			global::Acr.UserDialogs.Resource.Dimension.clock_face_margin_start = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.clock_face_margin_start;
 			global::Acr.UserDialogs.Resource.Dimension.compat_button_inset_horizontal_material = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.compat_button_inset_horizontal_material;
 			global::Acr.UserDialogs.Resource.Dimension.compat_button_inset_vertical_material = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.compat_button_inset_vertical_material;
 			global::Acr.UserDialogs.Resource.Dimension.compat_button_padding_horizontal_material = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.compat_button_padding_horizontal_material;
@@ -779,6 +1393,8 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Dimension.compat_control_corner_material = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.compat_control_corner_material;
 			global::Acr.UserDialogs.Resource.Dimension.compat_notification_large_icon_max_height = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.compat_notification_large_icon_max_height;
 			global::Acr.UserDialogs.Resource.Dimension.compat_notification_large_icon_max_width = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.compat_notification_large_icon_max_width;
+			global::Acr.UserDialogs.Resource.Dimension.default_dimension = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.default_dimension;
+			global::Acr.UserDialogs.Resource.Dimension.def_drawer_elevation = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.def_drawer_elevation;
 			global::Acr.UserDialogs.Resource.Dimension.design_appbar_elevation = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.design_appbar_elevation;
 			global::Acr.UserDialogs.Resource.Dimension.design_bottom_navigation_active_item_max_width = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.design_bottom_navigation_active_item_max_width;
 			global::Acr.UserDialogs.Resource.Dimension.design_bottom_navigation_active_item_min_width = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.design_bottom_navigation_active_item_min_width;
@@ -788,9 +1404,11 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Dimension.design_bottom_navigation_icon_size = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.design_bottom_navigation_icon_size;
 			global::Acr.UserDialogs.Resource.Dimension.design_bottom_navigation_item_max_width = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.design_bottom_navigation_item_max_width;
 			global::Acr.UserDialogs.Resource.Dimension.design_bottom_navigation_item_min_width = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.design_bottom_navigation_item_min_width;
+			global::Acr.UserDialogs.Resource.Dimension.design_bottom_navigation_label_padding = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.design_bottom_navigation_label_padding;
 			global::Acr.UserDialogs.Resource.Dimension.design_bottom_navigation_margin = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.design_bottom_navigation_margin;
 			global::Acr.UserDialogs.Resource.Dimension.design_bottom_navigation_shadow_height = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.design_bottom_navigation_shadow_height;
 			global::Acr.UserDialogs.Resource.Dimension.design_bottom_navigation_text_size = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.design_bottom_navigation_text_size;
+			global::Acr.UserDialogs.Resource.Dimension.design_bottom_sheet_elevation = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.design_bottom_sheet_elevation;
 			global::Acr.UserDialogs.Resource.Dimension.design_bottom_sheet_modal_elevation = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.design_bottom_sheet_modal_elevation;
 			global::Acr.UserDialogs.Resource.Dimension.design_bottom_sheet_peek_height_min = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.design_bottom_sheet_peek_height_min;
 			global::Acr.UserDialogs.Resource.Dimension.design_fab_border_width = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.design_fab_border_width;
@@ -809,6 +1427,7 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Dimension.design_navigation_padding_bottom = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.design_navigation_padding_bottom;
 			global::Acr.UserDialogs.Resource.Dimension.design_navigation_separator_vertical_padding = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.design_navigation_separator_vertical_padding;
 			global::Acr.UserDialogs.Resource.Dimension.design_snackbar_action_inline_max_width = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.design_snackbar_action_inline_max_width;
+			global::Acr.UserDialogs.Resource.Dimension.design_snackbar_action_text_color_alpha = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.design_snackbar_action_text_color_alpha;
 			global::Acr.UserDialogs.Resource.Dimension.design_snackbar_background_corner_radius = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.design_snackbar_background_corner_radius;
 			global::Acr.UserDialogs.Resource.Dimension.design_snackbar_elevation = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.design_snackbar_elevation;
 			global::Acr.UserDialogs.Resource.Dimension.design_snackbar_extra_spacing_horizontal = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.design_snackbar_extra_spacing_horizontal;
@@ -838,7 +1457,56 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Dimension.item_touch_helper_max_drag_scroll_per_frame = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.item_touch_helper_max_drag_scroll_per_frame;
 			global::Acr.UserDialogs.Resource.Dimension.item_touch_helper_swipe_escape_max_velocity = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.item_touch_helper_swipe_escape_max_velocity;
 			global::Acr.UserDialogs.Resource.Dimension.item_touch_helper_swipe_escape_velocity = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.item_touch_helper_swipe_escape_velocity;
+			global::Acr.UserDialogs.Resource.Dimension.material_bottom_sheet_max_width = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.material_bottom_sheet_max_width;
+			global::Acr.UserDialogs.Resource.Dimension.material_clock_display_padding = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.material_clock_display_padding;
+			global::Acr.UserDialogs.Resource.Dimension.material_clock_face_margin_top = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.material_clock_face_margin_top;
+			global::Acr.UserDialogs.Resource.Dimension.material_clock_hand_center_dot_radius = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.material_clock_hand_center_dot_radius;
+			global::Acr.UserDialogs.Resource.Dimension.material_clock_hand_padding = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.material_clock_hand_padding;
+			global::Acr.UserDialogs.Resource.Dimension.material_clock_hand_stroke_width = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.material_clock_hand_stroke_width;
+			global::Acr.UserDialogs.Resource.Dimension.material_clock_number_text_size = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.material_clock_number_text_size;
+			global::Acr.UserDialogs.Resource.Dimension.material_clock_period_toggle_height = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.material_clock_period_toggle_height;
+			global::Acr.UserDialogs.Resource.Dimension.material_clock_period_toggle_margin_left = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.material_clock_period_toggle_margin_left;
+			global::Acr.UserDialogs.Resource.Dimension.material_clock_period_toggle_width = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.material_clock_period_toggle_width;
+			global::Acr.UserDialogs.Resource.Dimension.material_clock_size = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.material_clock_size;
+			global::Acr.UserDialogs.Resource.Dimension.material_cursor_inset_bottom = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.material_cursor_inset_bottom;
+			global::Acr.UserDialogs.Resource.Dimension.material_cursor_inset_top = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.material_cursor_inset_top;
+			global::Acr.UserDialogs.Resource.Dimension.material_cursor_width = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.material_cursor_width;
+			global::Acr.UserDialogs.Resource.Dimension.material_emphasis_disabled = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.material_emphasis_disabled;
+			global::Acr.UserDialogs.Resource.Dimension.material_emphasis_high_type = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.material_emphasis_high_type;
+			global::Acr.UserDialogs.Resource.Dimension.material_emphasis_medium = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.material_emphasis_medium;
+			global::Acr.UserDialogs.Resource.Dimension.material_filled_edittext_font_1_3_padding_bottom = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.material_filled_edittext_font_1_3_padding_bottom;
+			global::Acr.UserDialogs.Resource.Dimension.material_filled_edittext_font_1_3_padding_top = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.material_filled_edittext_font_1_3_padding_top;
+			global::Acr.UserDialogs.Resource.Dimension.material_filled_edittext_font_2_0_padding_bottom = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.material_filled_edittext_font_2_0_padding_bottom;
+			global::Acr.UserDialogs.Resource.Dimension.material_filled_edittext_font_2_0_padding_top = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.material_filled_edittext_font_2_0_padding_top;
+			global::Acr.UserDialogs.Resource.Dimension.material_font_1_3_box_collapsed_padding_top = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.material_font_1_3_box_collapsed_padding_top;
+			global::Acr.UserDialogs.Resource.Dimension.material_font_2_0_box_collapsed_padding_top = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.material_font_2_0_box_collapsed_padding_top;
+			global::Acr.UserDialogs.Resource.Dimension.material_helper_text_default_padding_top = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.material_helper_text_default_padding_top;
+			global::Acr.UserDialogs.Resource.Dimension.material_helper_text_font_1_3_padding_horizontal = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.material_helper_text_font_1_3_padding_horizontal;
+			global::Acr.UserDialogs.Resource.Dimension.material_helper_text_font_1_3_padding_top = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.material_helper_text_font_1_3_padding_top;
+			global::Acr.UserDialogs.Resource.Dimension.material_input_text_to_prefix_suffix_padding = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.material_input_text_to_prefix_suffix_padding;
+			global::Acr.UserDialogs.Resource.Dimension.material_textinput_default_width = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.material_textinput_default_width;
+			global::Acr.UserDialogs.Resource.Dimension.material_textinput_max_width = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.material_textinput_max_width;
+			global::Acr.UserDialogs.Resource.Dimension.material_textinput_min_width = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.material_textinput_min_width;
+			global::Acr.UserDialogs.Resource.Dimension.material_text_view_test_line_height = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.material_text_view_test_line_height;
+			global::Acr.UserDialogs.Resource.Dimension.material_text_view_test_line_height_override = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.material_text_view_test_line_height_override;
+			global::Acr.UserDialogs.Resource.Dimension.material_timepicker_dialog_buttons_margin_top = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.material_timepicker_dialog_buttons_margin_top;
+			global::Acr.UserDialogs.Resource.Dimension.material_time_picker_minimum_screen_height = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.material_time_picker_minimum_screen_height;
+			global::Acr.UserDialogs.Resource.Dimension.material_time_picker_minimum_screen_width = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.material_time_picker_minimum_screen_width;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_alert_dialog_background_inset_bottom = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_alert_dialog_background_inset_bottom;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_alert_dialog_background_inset_end = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_alert_dialog_background_inset_end;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_alert_dialog_background_inset_start = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_alert_dialog_background_inset_start;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_alert_dialog_background_inset_top = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_alert_dialog_background_inset_top;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_alert_dialog_picker_background_inset = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_alert_dialog_picker_background_inset;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_badge_horizontal_edge_offset = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_badge_horizontal_edge_offset;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_badge_long_text_horizontal_padding = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_badge_long_text_horizontal_padding;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_badge_radius = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_badge_radius;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_badge_text_horizontal_edge_offset = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_badge_text_horizontal_edge_offset;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_badge_text_size = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_badge_text_size;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_badge_toolbar_action_menu_item_horizontal_offset = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_badge_toolbar_action_menu_item_horizontal_offset;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_badge_toolbar_action_menu_item_vertical_offset = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_badge_toolbar_action_menu_item_vertical_offset;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_badge_with_text_radius = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_badge_with_text_radius;
 			global::Acr.UserDialogs.Resource.Dimension.mtrl_bottomappbar_fabOffsetEndMode = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_bottomappbar_fabOffsetEndMode;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_bottomappbar_fab_bottom_margin = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_bottomappbar_fab_bottom_margin;
 			global::Acr.UserDialogs.Resource.Dimension.mtrl_bottomappbar_fab_cradle_margin = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_bottomappbar_fab_cradle_margin;
 			global::Acr.UserDialogs.Resource.Dimension.mtrl_bottomappbar_fab_cradle_rounded_corner_radius = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_bottomappbar_fab_cradle_rounded_corner_radius;
 			global::Acr.UserDialogs.Resource.Dimension.mtrl_bottomappbar_fab_cradle_vertical_offset = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_bottomappbar_fab_cradle_vertical_offset;
@@ -854,36 +1522,171 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Dimension.mtrl_btn_icon_padding = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_btn_icon_padding;
 			global::Acr.UserDialogs.Resource.Dimension.mtrl_btn_inset = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_btn_inset;
 			global::Acr.UserDialogs.Resource.Dimension.mtrl_btn_letter_spacing = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_btn_letter_spacing;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_btn_max_width = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_btn_max_width;
 			global::Acr.UserDialogs.Resource.Dimension.mtrl_btn_padding_bottom = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_btn_padding_bottom;
 			global::Acr.UserDialogs.Resource.Dimension.mtrl_btn_padding_left = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_btn_padding_left;
 			global::Acr.UserDialogs.Resource.Dimension.mtrl_btn_padding_right = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_btn_padding_right;
 			global::Acr.UserDialogs.Resource.Dimension.mtrl_btn_padding_top = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_btn_padding_top;
 			global::Acr.UserDialogs.Resource.Dimension.mtrl_btn_pressed_z = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_btn_pressed_z;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_btn_snackbar_margin_horizontal = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_btn_snackbar_margin_horizontal;
 			global::Acr.UserDialogs.Resource.Dimension.mtrl_btn_stroke_size = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_btn_stroke_size;
 			global::Acr.UserDialogs.Resource.Dimension.mtrl_btn_text_btn_icon_padding = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_btn_text_btn_icon_padding;
 			global::Acr.UserDialogs.Resource.Dimension.mtrl_btn_text_btn_padding_left = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_btn_text_btn_padding_left;
 			global::Acr.UserDialogs.Resource.Dimension.mtrl_btn_text_btn_padding_right = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_btn_text_btn_padding_right;
 			global::Acr.UserDialogs.Resource.Dimension.mtrl_btn_text_size = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_btn_text_size;
 			global::Acr.UserDialogs.Resource.Dimension.mtrl_btn_z = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_btn_z;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_calendar_action_confirm_button_min_width = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_calendar_action_confirm_button_min_width;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_calendar_action_height = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_calendar_action_height;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_calendar_action_padding = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_calendar_action_padding;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_calendar_bottom_padding = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_calendar_bottom_padding;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_calendar_content_padding = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_calendar_content_padding;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_calendar_days_of_week_height = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_calendar_days_of_week_height;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_calendar_day_corner = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_calendar_day_corner;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_calendar_day_height = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_calendar_day_height;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_calendar_day_horizontal_padding = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_calendar_day_horizontal_padding;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_calendar_day_today_stroke = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_calendar_day_today_stroke;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_calendar_day_vertical_padding = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_calendar_day_vertical_padding;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_calendar_day_width = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_calendar_day_width;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_calendar_dialog_background_inset = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_calendar_dialog_background_inset;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_calendar_header_content_padding = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_calendar_header_content_padding;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_calendar_header_content_padding_fullscreen = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_calendar_header_content_padding_fullscreen;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_calendar_header_divider_thickness = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_calendar_header_divider_thickness;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_calendar_header_height = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_calendar_header_height;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_calendar_header_height_fullscreen = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_calendar_header_height_fullscreen;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_calendar_header_selection_line_height = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_calendar_header_selection_line_height;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_calendar_header_text_padding = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_calendar_header_text_padding;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_calendar_header_toggle_margin_bottom = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_calendar_header_toggle_margin_bottom;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_calendar_header_toggle_margin_top = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_calendar_header_toggle_margin_top;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_calendar_landscape_header_width = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_calendar_landscape_header_width;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_calendar_maximum_default_fullscreen_minor_axis = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_calendar_maximum_default_fullscreen_minor_axis;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_calendar_month_horizontal_padding = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_calendar_month_horizontal_padding;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_calendar_month_vertical_padding = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_calendar_month_vertical_padding;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_calendar_navigation_bottom_padding = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_calendar_navigation_bottom_padding;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_calendar_navigation_height = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_calendar_navigation_height;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_calendar_navigation_top_padding = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_calendar_navigation_top_padding;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_calendar_pre_l_text_clip_padding = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_calendar_pre_l_text_clip_padding;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_calendar_selection_baseline_to_top_fullscreen = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_calendar_selection_baseline_to_top_fullscreen;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_calendar_selection_text_baseline_to_bottom = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_calendar_selection_text_baseline_to_bottom;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_calendar_selection_text_baseline_to_bottom_fullscreen = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_calendar_selection_text_baseline_to_bottom_fullscreen;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_calendar_selection_text_baseline_to_top = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_calendar_selection_text_baseline_to_top;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_calendar_text_input_padding_top = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_calendar_text_input_padding_top;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_calendar_title_baseline_to_top = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_calendar_title_baseline_to_top;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_calendar_title_baseline_to_top_fullscreen = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_calendar_title_baseline_to_top_fullscreen;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_calendar_year_corner = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_calendar_year_corner;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_calendar_year_height = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_calendar_year_height;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_calendar_year_horizontal_padding = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_calendar_year_horizontal_padding;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_calendar_year_vertical_padding = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_calendar_year_vertical_padding;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_calendar_year_width = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_calendar_year_width;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_card_checked_icon_margin = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_card_checked_icon_margin;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_card_checked_icon_size = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_card_checked_icon_size;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_card_corner_radius = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_card_corner_radius;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_card_dragged_z = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_card_dragged_z;
 			global::Acr.UserDialogs.Resource.Dimension.mtrl_card_elevation = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_card_elevation;
 			global::Acr.UserDialogs.Resource.Dimension.mtrl_card_spacing = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_card_spacing;
 			global::Acr.UserDialogs.Resource.Dimension.mtrl_chip_pressed_translation_z = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_chip_pressed_translation_z;
 			global::Acr.UserDialogs.Resource.Dimension.mtrl_chip_text_size = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_chip_text_size;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_edittext_rectangle_top_offset = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_edittext_rectangle_top_offset;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_exposed_dropdown_menu_popup_elevation = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_exposed_dropdown_menu_popup_elevation;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_exposed_dropdown_menu_popup_vertical_offset = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_exposed_dropdown_menu_popup_vertical_offset;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_exposed_dropdown_menu_popup_vertical_padding = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_exposed_dropdown_menu_popup_vertical_padding;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_extended_fab_bottom_padding = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_extended_fab_bottom_padding;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_extended_fab_corner_radius = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_extended_fab_corner_radius;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_extended_fab_disabled_elevation = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_extended_fab_disabled_elevation;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_extended_fab_disabled_translation_z = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_extended_fab_disabled_translation_z;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_extended_fab_elevation = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_extended_fab_elevation;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_extended_fab_end_padding = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_extended_fab_end_padding;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_extended_fab_end_padding_icon = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_extended_fab_end_padding_icon;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_extended_fab_icon_size = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_extended_fab_icon_size;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_extended_fab_icon_text_spacing = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_extended_fab_icon_text_spacing;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_extended_fab_min_height = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_extended_fab_min_height;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_extended_fab_min_width = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_extended_fab_min_width;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_extended_fab_start_padding = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_extended_fab_start_padding;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_extended_fab_start_padding_icon = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_extended_fab_start_padding_icon;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_extended_fab_top_padding = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_extended_fab_top_padding;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_extended_fab_translation_z_base = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_extended_fab_translation_z_base;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_extended_fab_translation_z_hovered_focused = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_extended_fab_translation_z_hovered_focused;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_extended_fab_translation_z_pressed = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_extended_fab_translation_z_pressed;
 			global::Acr.UserDialogs.Resource.Dimension.mtrl_fab_elevation = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_fab_elevation;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_fab_min_touch_target = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_fab_min_touch_target;
 			global::Acr.UserDialogs.Resource.Dimension.mtrl_fab_translation_z_hovered_focused = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_fab_translation_z_hovered_focused;
 			global::Acr.UserDialogs.Resource.Dimension.mtrl_fab_translation_z_pressed = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_fab_translation_z_pressed;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_high_ripple_default_alpha = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_high_ripple_default_alpha;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_high_ripple_focused_alpha = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_high_ripple_focused_alpha;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_high_ripple_hovered_alpha = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_high_ripple_hovered_alpha;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_high_ripple_pressed_alpha = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_high_ripple_pressed_alpha;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_large_touch_target = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_large_touch_target;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_low_ripple_default_alpha = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_low_ripple_default_alpha;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_low_ripple_focused_alpha = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_low_ripple_focused_alpha;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_low_ripple_hovered_alpha = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_low_ripple_hovered_alpha;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_low_ripple_pressed_alpha = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_low_ripple_pressed_alpha;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_min_touch_target_size = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_min_touch_target_size;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_navigation_bar_item_default_icon_size = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_navigation_bar_item_default_icon_size;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_navigation_bar_item_default_margin = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_navigation_bar_item_default_margin;
 			global::Acr.UserDialogs.Resource.Dimension.mtrl_navigation_elevation = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_navigation_elevation;
 			global::Acr.UserDialogs.Resource.Dimension.mtrl_navigation_item_horizontal_padding = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_navigation_item_horizontal_padding;
 			global::Acr.UserDialogs.Resource.Dimension.mtrl_navigation_item_icon_padding = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_navigation_item_icon_padding;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_navigation_item_icon_size = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_navigation_item_icon_size;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_navigation_item_shape_horizontal_margin = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_navigation_item_shape_horizontal_margin;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_navigation_item_shape_vertical_margin = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_navigation_item_shape_vertical_margin;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_navigation_rail_active_text_size = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_navigation_rail_active_text_size;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_navigation_rail_compact_width = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_navigation_rail_compact_width;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_navigation_rail_default_width = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_navigation_rail_default_width;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_navigation_rail_elevation = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_navigation_rail_elevation;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_navigation_rail_icon_margin = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_navigation_rail_icon_margin;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_navigation_rail_icon_size = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_navigation_rail_icon_size;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_navigation_rail_margin = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_navigation_rail_margin;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_navigation_rail_text_bottom_margin = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_navigation_rail_text_bottom_margin;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_navigation_rail_text_size = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_navigation_rail_text_size;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_progress_circular_inset = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_progress_circular_inset;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_progress_circular_inset_extra_small = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_progress_circular_inset_extra_small;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_progress_circular_inset_medium = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_progress_circular_inset_medium;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_progress_circular_inset_small = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_progress_circular_inset_small;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_progress_circular_radius = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_progress_circular_radius;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_progress_circular_size = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_progress_circular_size;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_progress_circular_size_extra_small = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_progress_circular_size_extra_small;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_progress_circular_size_medium = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_progress_circular_size_medium;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_progress_circular_size_small = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_progress_circular_size_small;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_progress_circular_track_thickness_extra_small = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_progress_circular_track_thickness_extra_small;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_progress_circular_track_thickness_medium = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_progress_circular_track_thickness_medium;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_progress_circular_track_thickness_small = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_progress_circular_track_thickness_small;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_progress_indicator_full_rounded_corner_radius = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_progress_indicator_full_rounded_corner_radius;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_progress_track_thickness = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_progress_track_thickness;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_shape_corner_size_large_component = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_shape_corner_size_large_component;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_shape_corner_size_medium_component = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_shape_corner_size_medium_component;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_shape_corner_size_small_component = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_shape_corner_size_small_component;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_slider_halo_radius = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_slider_halo_radius;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_slider_label_padding = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_slider_label_padding;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_slider_label_radius = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_slider_label_radius;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_slider_label_square_side = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_slider_label_square_side;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_slider_thumb_elevation = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_slider_thumb_elevation;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_slider_thumb_radius = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_slider_thumb_radius;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_slider_track_height = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_slider_track_height;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_slider_track_side_padding = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_slider_track_side_padding;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_slider_track_top = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_slider_track_top;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_slider_widget_height = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_slider_widget_height;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_snackbar_action_text_color_alpha = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_snackbar_action_text_color_alpha;
 			global::Acr.UserDialogs.Resource.Dimension.mtrl_snackbar_background_corner_radius = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_snackbar_background_corner_radius;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_snackbar_background_overlay_color_alpha = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_snackbar_background_overlay_color_alpha;
 			global::Acr.UserDialogs.Resource.Dimension.mtrl_snackbar_margin = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_snackbar_margin;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_snackbar_message_margin_horizontal = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_snackbar_message_margin_horizontal;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_snackbar_padding_horizontal = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_snackbar_padding_horizontal;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_switch_thumb_elevation = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_switch_thumb_elevation;
 			global::Acr.UserDialogs.Resource.Dimension.mtrl_textinput_box_corner_radius_medium = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_textinput_box_corner_radius_medium;
 			global::Acr.UserDialogs.Resource.Dimension.mtrl_textinput_box_corner_radius_small = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_textinput_box_corner_radius_small;
 			global::Acr.UserDialogs.Resource.Dimension.mtrl_textinput_box_label_cutout_padding = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_textinput_box_label_cutout_padding;
 			global::Acr.UserDialogs.Resource.Dimension.mtrl_textinput_box_stroke_width_default = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_textinput_box_stroke_width_default;
 			global::Acr.UserDialogs.Resource.Dimension.mtrl_textinput_box_stroke_width_focused = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_textinput_box_stroke_width_focused;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_textinput_counter_margin_start = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_textinput_counter_margin_start;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_textinput_end_icon_margin_start = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_textinput_end_icon_margin_start;
 			global::Acr.UserDialogs.Resource.Dimension.mtrl_textinput_outline_box_expanded_padding = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_textinput_outline_box_expanded_padding;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_textinput_start_icon_margin_end = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_textinput_start_icon_margin_end;
 			global::Acr.UserDialogs.Resource.Dimension.mtrl_toolbar_default_height = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_toolbar_default_height;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_tooltip_arrowSize = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_tooltip_arrowSize;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_tooltip_cornerSize = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_tooltip_cornerSize;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_tooltip_minHeight = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_tooltip_minHeight;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_tooltip_minWidth = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_tooltip_minWidth;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_tooltip_padding = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_tooltip_padding;
+			global::Acr.UserDialogs.Resource.Dimension.mtrl_transition_shared_axis_slide_distance = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.mtrl_transition_shared_axis_slide_distance;
 			global::Acr.UserDialogs.Resource.Dimension.notification_action_icon_size = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.notification_action_icon_size;
 			global::Acr.UserDialogs.Resource.Dimension.notification_action_text_size = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.notification_action_text_size;
 			global::Acr.UserDialogs.Resource.Dimension.notification_big_circle_margin = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.notification_big_circle_margin;
@@ -899,6 +1702,18 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Dimension.notification_subtext_size = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.notification_subtext_size;
 			global::Acr.UserDialogs.Resource.Dimension.notification_top_pad = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.notification_top_pad;
 			global::Acr.UserDialogs.Resource.Dimension.notification_top_pad_large_text = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.notification_top_pad_large_text;
+			global::Acr.UserDialogs.Resource.Dimension.test_mtrl_calendar_day_cornerSize = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.test_mtrl_calendar_day_cornerSize;
+			global::Acr.UserDialogs.Resource.Dimension.test_navigation_bar_active_item_max_width = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.test_navigation_bar_active_item_max_width;
+			global::Acr.UserDialogs.Resource.Dimension.test_navigation_bar_active_item_min_width = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.test_navigation_bar_active_item_min_width;
+			global::Acr.UserDialogs.Resource.Dimension.test_navigation_bar_active_text_size = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.test_navigation_bar_active_text_size;
+			global::Acr.UserDialogs.Resource.Dimension.test_navigation_bar_elevation = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.test_navigation_bar_elevation;
+			global::Acr.UserDialogs.Resource.Dimension.test_navigation_bar_height = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.test_navigation_bar_height;
+			global::Acr.UserDialogs.Resource.Dimension.test_navigation_bar_icon_size = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.test_navigation_bar_icon_size;
+			global::Acr.UserDialogs.Resource.Dimension.test_navigation_bar_item_max_width = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.test_navigation_bar_item_max_width;
+			global::Acr.UserDialogs.Resource.Dimension.test_navigation_bar_item_min_width = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.test_navigation_bar_item_min_width;
+			global::Acr.UserDialogs.Resource.Dimension.test_navigation_bar_label_padding = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.test_navigation_bar_label_padding;
+			global::Acr.UserDialogs.Resource.Dimension.test_navigation_bar_shadow_height = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.test_navigation_bar_shadow_height;
+			global::Acr.UserDialogs.Resource.Dimension.test_navigation_bar_text_size = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.test_navigation_bar_text_size;
 			global::Acr.UserDialogs.Resource.Dimension.tooltip_corner_radius = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.tooltip_corner_radius;
 			global::Acr.UserDialogs.Resource.Dimension.tooltip_horizontal_padding = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.tooltip_horizontal_padding;
 			global::Acr.UserDialogs.Resource.Dimension.tooltip_margin = global::PixQrCodeGeneratorOffline.Droid.Resource.Dimension.tooltip_margin;
@@ -970,6 +1785,8 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Drawable.abc_seekbar_track_material = global::PixQrCodeGeneratorOffline.Droid.Resource.Drawable.abc_seekbar_track_material;
 			global::Acr.UserDialogs.Resource.Drawable.abc_spinner_mtrl_am_alpha = global::PixQrCodeGeneratorOffline.Droid.Resource.Drawable.abc_spinner_mtrl_am_alpha;
 			global::Acr.UserDialogs.Resource.Drawable.abc_spinner_textfield_background_material = global::PixQrCodeGeneratorOffline.Droid.Resource.Drawable.abc_spinner_textfield_background_material;
+			global::Acr.UserDialogs.Resource.Drawable.abc_star_black_48dp = global::PixQrCodeGeneratorOffline.Droid.Resource.Drawable.abc_star_black_48dp;
+			global::Acr.UserDialogs.Resource.Drawable.abc_star_half_black_48dp = global::PixQrCodeGeneratorOffline.Droid.Resource.Drawable.abc_star_half_black_48dp;
 			global::Acr.UserDialogs.Resource.Drawable.abc_switch_thumb_material = global::PixQrCodeGeneratorOffline.Droid.Resource.Drawable.abc_switch_thumb_material;
 			global::Acr.UserDialogs.Resource.Drawable.abc_switch_track_mtrl_alpha = global::PixQrCodeGeneratorOffline.Droid.Resource.Drawable.abc_switch_track_mtrl_alpha;
 			global::Acr.UserDialogs.Resource.Drawable.abc_tab_indicator_material = global::PixQrCodeGeneratorOffline.Droid.Resource.Drawable.abc_tab_indicator_material;
@@ -980,6 +1797,9 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Drawable.abc_textfield_search_default_mtrl_alpha = global::PixQrCodeGeneratorOffline.Droid.Resource.Drawable.abc_textfield_search_default_mtrl_alpha;
 			global::Acr.UserDialogs.Resource.Drawable.abc_textfield_search_material = global::PixQrCodeGeneratorOffline.Droid.Resource.Drawable.abc_textfield_search_material;
 			global::Acr.UserDialogs.Resource.Drawable.abc_text_cursor_material = global::PixQrCodeGeneratorOffline.Droid.Resource.Drawable.abc_text_cursor_material;
+			global::Acr.UserDialogs.Resource.Drawable.abc_text_select_handle_left_mtrl = global::PixQrCodeGeneratorOffline.Droid.Resource.Drawable.abc_text_select_handle_left_mtrl;
+			global::Acr.UserDialogs.Resource.Drawable.abc_text_select_handle_middle_mtrl = global::PixQrCodeGeneratorOffline.Droid.Resource.Drawable.abc_text_select_handle_middle_mtrl;
+			global::Acr.UserDialogs.Resource.Drawable.abc_text_select_handle_right_mtrl = global::PixQrCodeGeneratorOffline.Droid.Resource.Drawable.abc_text_select_handle_right_mtrl;
 			global::Acr.UserDialogs.Resource.Drawable.abc_vector_test = global::PixQrCodeGeneratorOffline.Droid.Resource.Drawable.abc_vector_test;
 			global::Acr.UserDialogs.Resource.Drawable.avd_hide_password = global::PixQrCodeGeneratorOffline.Droid.Resource.Drawable.avd_hide_password;
 			global::Acr.UserDialogs.Resource.Drawable.avd_show_password = global::PixQrCodeGeneratorOffline.Droid.Resource.Drawable.avd_show_password;
@@ -996,11 +1816,33 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Drawable.design_ic_visibility_off = global::PixQrCodeGeneratorOffline.Droid.Resource.Drawable.design_ic_visibility_off;
 			global::Acr.UserDialogs.Resource.Drawable.design_password_eye = global::PixQrCodeGeneratorOffline.Droid.Resource.Drawable.design_password_eye;
 			global::Acr.UserDialogs.Resource.Drawable.design_snackbar_background = global::PixQrCodeGeneratorOffline.Droid.Resource.Drawable.design_snackbar_background;
+			global::Acr.UserDialogs.Resource.Drawable.ic_clock_black_24dp = global::PixQrCodeGeneratorOffline.Droid.Resource.Drawable.ic_clock_black_24dp;
 			global::Acr.UserDialogs.Resource.Drawable.ic_errorstatus = global::PixQrCodeGeneratorOffline.Droid.Resource.Drawable.ic_errorstatus;
+			global::Acr.UserDialogs.Resource.Drawable.ic_keyboard_black_24dp = global::PixQrCodeGeneratorOffline.Droid.Resource.Drawable.ic_keyboard_black_24dp;
+			global::Acr.UserDialogs.Resource.Drawable.ic_mtrl_checked_circle = global::PixQrCodeGeneratorOffline.Droid.Resource.Drawable.ic_mtrl_checked_circle;
 			global::Acr.UserDialogs.Resource.Drawable.ic_mtrl_chip_checked_black = global::PixQrCodeGeneratorOffline.Droid.Resource.Drawable.ic_mtrl_chip_checked_black;
 			global::Acr.UserDialogs.Resource.Drawable.ic_mtrl_chip_checked_circle = global::PixQrCodeGeneratorOffline.Droid.Resource.Drawable.ic_mtrl_chip_checked_circle;
 			global::Acr.UserDialogs.Resource.Drawable.ic_mtrl_chip_close_circle = global::PixQrCodeGeneratorOffline.Droid.Resource.Drawable.ic_mtrl_chip_close_circle;
 			global::Acr.UserDialogs.Resource.Drawable.ic_successstatus = global::PixQrCodeGeneratorOffline.Droid.Resource.Drawable.ic_successstatus;
+			global::Acr.UserDialogs.Resource.Drawable.material_cursor_drawable = global::PixQrCodeGeneratorOffline.Droid.Resource.Drawable.material_cursor_drawable;
+			global::Acr.UserDialogs.Resource.Drawable.material_ic_calendar_black_24dp = global::PixQrCodeGeneratorOffline.Droid.Resource.Drawable.material_ic_calendar_black_24dp;
+			global::Acr.UserDialogs.Resource.Drawable.material_ic_clear_black_24dp = global::PixQrCodeGeneratorOffline.Droid.Resource.Drawable.material_ic_clear_black_24dp;
+			global::Acr.UserDialogs.Resource.Drawable.material_ic_edit_black_24dp = global::PixQrCodeGeneratorOffline.Droid.Resource.Drawable.material_ic_edit_black_24dp;
+			global::Acr.UserDialogs.Resource.Drawable.material_ic_keyboard_arrow_left_black_24dp = global::PixQrCodeGeneratorOffline.Droid.Resource.Drawable.material_ic_keyboard_arrow_left_black_24dp;
+			global::Acr.UserDialogs.Resource.Drawable.material_ic_keyboard_arrow_next_black_24dp = global::PixQrCodeGeneratorOffline.Droid.Resource.Drawable.material_ic_keyboard_arrow_next_black_24dp;
+			global::Acr.UserDialogs.Resource.Drawable.material_ic_keyboard_arrow_previous_black_24dp = global::PixQrCodeGeneratorOffline.Droid.Resource.Drawable.material_ic_keyboard_arrow_previous_black_24dp;
+			global::Acr.UserDialogs.Resource.Drawable.material_ic_keyboard_arrow_right_black_24dp = global::PixQrCodeGeneratorOffline.Droid.Resource.Drawable.material_ic_keyboard_arrow_right_black_24dp;
+			global::Acr.UserDialogs.Resource.Drawable.material_ic_menu_arrow_down_black_24dp = global::PixQrCodeGeneratorOffline.Droid.Resource.Drawable.material_ic_menu_arrow_down_black_24dp;
+			global::Acr.UserDialogs.Resource.Drawable.material_ic_menu_arrow_up_black_24dp = global::PixQrCodeGeneratorOffline.Droid.Resource.Drawable.material_ic_menu_arrow_up_black_24dp;
+			global::Acr.UserDialogs.Resource.Drawable.mtrl_dialog_background = global::PixQrCodeGeneratorOffline.Droid.Resource.Drawable.mtrl_dialog_background;
+			global::Acr.UserDialogs.Resource.Drawable.mtrl_dropdown_arrow = global::PixQrCodeGeneratorOffline.Droid.Resource.Drawable.mtrl_dropdown_arrow;
+			global::Acr.UserDialogs.Resource.Drawable.mtrl_ic_arrow_drop_down = global::PixQrCodeGeneratorOffline.Droid.Resource.Drawable.mtrl_ic_arrow_drop_down;
+			global::Acr.UserDialogs.Resource.Drawable.mtrl_ic_arrow_drop_up = global::PixQrCodeGeneratorOffline.Droid.Resource.Drawable.mtrl_ic_arrow_drop_up;
+			global::Acr.UserDialogs.Resource.Drawable.mtrl_ic_cancel = global::PixQrCodeGeneratorOffline.Droid.Resource.Drawable.mtrl_ic_cancel;
+			global::Acr.UserDialogs.Resource.Drawable.mtrl_ic_error = global::PixQrCodeGeneratorOffline.Droid.Resource.Drawable.mtrl_ic_error;
+			global::Acr.UserDialogs.Resource.Drawable.mtrl_navigation_bar_item_background = global::PixQrCodeGeneratorOffline.Droid.Resource.Drawable.mtrl_navigation_bar_item_background;
+			global::Acr.UserDialogs.Resource.Drawable.mtrl_popupmenu_background = global::PixQrCodeGeneratorOffline.Droid.Resource.Drawable.mtrl_popupmenu_background;
+			global::Acr.UserDialogs.Resource.Drawable.mtrl_popupmenu_background_dark = global::PixQrCodeGeneratorOffline.Droid.Resource.Drawable.mtrl_popupmenu_background_dark;
 			global::Acr.UserDialogs.Resource.Drawable.mtrl_tabs_default_indicator = global::PixQrCodeGeneratorOffline.Droid.Resource.Drawable.mtrl_tabs_default_indicator;
 			global::Acr.UserDialogs.Resource.Drawable.navigation_empty_icon = global::PixQrCodeGeneratorOffline.Droid.Resource.Drawable.navigation_empty_icon;
 			global::Acr.UserDialogs.Resource.Drawable.notification_action_background = global::PixQrCodeGeneratorOffline.Droid.Resource.Drawable.notification_action_background;
@@ -1017,8 +1859,10 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Drawable.notify_panel_notification_icon_bg = global::PixQrCodeGeneratorOffline.Droid.Resource.Drawable.notify_panel_notification_icon_bg;
 			global::Acr.UserDialogs.Resource.Drawable.roundedbg = global::PixQrCodeGeneratorOffline.Droid.Resource.Drawable.roundedbg;
 			global::Acr.UserDialogs.Resource.Drawable.roundedbgdark = global::PixQrCodeGeneratorOffline.Droid.Resource.Drawable.roundedbgdark;
+			global::Acr.UserDialogs.Resource.Drawable.test_custom_background = global::PixQrCodeGeneratorOffline.Droid.Resource.Drawable.test_custom_background;
 			global::Acr.UserDialogs.Resource.Drawable.tooltip_frame_dark = global::PixQrCodeGeneratorOffline.Droid.Resource.Drawable.tooltip_frame_dark;
 			global::Acr.UserDialogs.Resource.Drawable.tooltip_frame_light = global::PixQrCodeGeneratorOffline.Droid.Resource.Drawable.tooltip_frame_light;
+			global::Acr.UserDialogs.Resource.Id.accelerate = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.accelerate;
 			global::Acr.UserDialogs.Resource.Id.accessibility_action_clickable_span = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.accessibility_action_clickable_span;
 			global::Acr.UserDialogs.Resource.Id.accessibility_custom_action_0 = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.accessibility_custom_action_0;
 			global::Acr.UserDialogs.Resource.Id.accessibility_custom_action_1 = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.accessibility_custom_action_1;
@@ -1052,7 +1896,10 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Id.accessibility_custom_action_7 = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.accessibility_custom_action_7;
 			global::Acr.UserDialogs.Resource.Id.accessibility_custom_action_8 = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.accessibility_custom_action_8;
 			global::Acr.UserDialogs.Resource.Id.accessibility_custom_action_9 = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.accessibility_custom_action_9;
+			global::Acr.UserDialogs.Resource.Id.actionDown = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.actionDown;
+			global::Acr.UserDialogs.Resource.Id.actionDownUp = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.actionDownUp;
 			global::Acr.UserDialogs.Resource.Id.actions = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.actions;
+			global::Acr.UserDialogs.Resource.Id.actionUp = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.actionUp;
 			global::Acr.UserDialogs.Resource.Id.action_bar = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.action_bar;
 			global::Acr.UserDialogs.Resource.Id.action_bar_activity_content = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.action_bar_activity_content;
 			global::Acr.UserDialogs.Resource.Id.action_bar_container = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.action_bar_container;
@@ -1073,105 +1920,281 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Id.activity_chooser_view_content = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.activity_chooser_view_content;
 			global::Acr.UserDialogs.Resource.Id.add = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.add;
 			global::Acr.UserDialogs.Resource.Id.alertTitle = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.alertTitle;
+			global::Acr.UserDialogs.Resource.Id.aligned = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.aligned;
 			global::Acr.UserDialogs.Resource.Id.all = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.all;
+			global::Acr.UserDialogs.Resource.Id.allStates = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.allStates;
 			global::Acr.UserDialogs.Resource.Id.ALT = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.ALT;
 			global::Acr.UserDialogs.Resource.Id.always = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.always;
+			global::Acr.UserDialogs.Resource.Id.animateToEnd = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.animateToEnd;
+			global::Acr.UserDialogs.Resource.Id.animateToStart = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.animateToStart;
+			global::Acr.UserDialogs.Resource.Id.anticipate = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.anticipate;
+			global::Acr.UserDialogs.Resource.Id.antiClockwise = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.antiClockwise;
+			global::Acr.UserDialogs.Resource.Id.arc = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.arc;
+			global::Acr.UserDialogs.Resource.Id.asConfigured = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.asConfigured;
 			global::Acr.UserDialogs.Resource.Id.async = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.async;
 			global::Acr.UserDialogs.Resource.Id.auto = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.auto;
+			global::Acr.UserDialogs.Resource.Id.autoComplete = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.autoComplete;
+			global::Acr.UserDialogs.Resource.Id.autoCompleteToEnd = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.autoCompleteToEnd;
+			global::Acr.UserDialogs.Resource.Id.autoCompleteToStart = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.autoCompleteToStart;
+			global::Acr.UserDialogs.Resource.Id.barrier = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.barrier;
+			global::Acr.UserDialogs.Resource.Id.baseline = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.baseline;
 			global::Acr.UserDialogs.Resource.Id.beginning = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.beginning;
+			global::Acr.UserDialogs.Resource.Id.beginOnFirstDraw = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.beginOnFirstDraw;
+			global::Acr.UserDialogs.Resource.Id.bestChoice = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.bestChoice;
 			global::Acr.UserDialogs.Resource.Id.blocking = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.blocking;
 			global::Acr.UserDialogs.Resource.Id.bottom = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.bottom;
+			global::Acr.UserDialogs.Resource.Id.BOTTOM_END = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.BOTTOM_END;
+			global::Acr.UserDialogs.Resource.Id.BOTTOM_START = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.BOTTOM_START;
+			global::Acr.UserDialogs.Resource.Id.bounce = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.bounce;
+			global::Acr.UserDialogs.Resource.Id.bounceBoth = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.bounceBoth;
+			global::Acr.UserDialogs.Resource.Id.bounceEnd = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.bounceEnd;
+			global::Acr.UserDialogs.Resource.Id.bounceStart = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.bounceStart;
 			global::Acr.UserDialogs.Resource.Id.buttonPanel = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.buttonPanel;
+			global::Acr.UserDialogs.Resource.Id.cache_measures = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.cache_measures;
+			global::Acr.UserDialogs.Resource.Id.cancel_button = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.cancel_button;
+			global::Acr.UserDialogs.Resource.Id.carryVelocity = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.carryVelocity;
 			global::Acr.UserDialogs.Resource.Id.center = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.center;
 			global::Acr.UserDialogs.Resource.Id.center_horizontal = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.center_horizontal;
 			global::Acr.UserDialogs.Resource.Id.center_vertical = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.center_vertical;
+			global::Acr.UserDialogs.Resource.Id.chain = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.chain;
+			global::Acr.UserDialogs.Resource.Id.chains = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.chains;
 			global::Acr.UserDialogs.Resource.Id.checkbox = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.checkbox;
 			global::Acr.UserDialogs.Resource.Id.@checked = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.@checked;
+			global::Acr.UserDialogs.Resource.Id.chip = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.chip;
+			global::Acr.UserDialogs.Resource.Id.chip1 = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.chip1;
+			global::Acr.UserDialogs.Resource.Id.chip2 = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.chip2;
+			global::Acr.UserDialogs.Resource.Id.chip3 = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.chip3;
+			global::Acr.UserDialogs.Resource.Id.chip_group = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.chip_group;
 			global::Acr.UserDialogs.Resource.Id.chronometer = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.chronometer;
+			global::Acr.UserDialogs.Resource.Id.circle_center = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.circle_center;
+			global::Acr.UserDialogs.Resource.Id.clear_text = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.clear_text;
 			global::Acr.UserDialogs.Resource.Id.clip_horizontal = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.clip_horizontal;
 			global::Acr.UserDialogs.Resource.Id.clip_vertical = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.clip_vertical;
+			global::Acr.UserDialogs.Resource.Id.clockwise = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.clockwise;
+			global::Acr.UserDialogs.Resource.Id.closest = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.closest;
 			global::Acr.UserDialogs.Resource.Id.collapseActionView = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.collapseActionView;
+			global::Acr.UserDialogs.Resource.Id.confirm_button = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.confirm_button;
+			global::Acr.UserDialogs.Resource.Id.constraint = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.constraint;
 			global::Acr.UserDialogs.Resource.Id.container = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.container;
 			global::Acr.UserDialogs.Resource.Id.content = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.content;
 			global::Acr.UserDialogs.Resource.Id.contentPanel = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.contentPanel;
+			global::Acr.UserDialogs.Resource.Id.contiguous = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.contiguous;
+			global::Acr.UserDialogs.Resource.Id.continuousVelocity = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.continuousVelocity;
 			global::Acr.UserDialogs.Resource.Id.coordinator = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.coordinator;
+			global::Acr.UserDialogs.Resource.Id.cos = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.cos;
+			global::Acr.UserDialogs.Resource.Id.counterclockwise = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.counterclockwise;
 			global::Acr.UserDialogs.Resource.Id.CTRL = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.CTRL;
+			global::Acr.UserDialogs.Resource.Id.currentState = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.currentState;
 			global::Acr.UserDialogs.Resource.Id.custom = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.custom;
 			global::Acr.UserDialogs.Resource.Id.customPanel = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.customPanel;
+			global::Acr.UserDialogs.Resource.Id.cut = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.cut;
+			global::Acr.UserDialogs.Resource.Id.date_picker_actions = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.date_picker_actions;
+			global::Acr.UserDialogs.Resource.Id.decelerate = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.decelerate;
+			global::Acr.UserDialogs.Resource.Id.decelerateAndComplete = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.decelerateAndComplete;
 			global::Acr.UserDialogs.Resource.Id.decor_content_parent = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.decor_content_parent;
 			global::Acr.UserDialogs.Resource.Id.default_activity_button = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.default_activity_button;
+			global::Acr.UserDialogs.Resource.Id.deltaRelative = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.deltaRelative;
+			global::Acr.UserDialogs.Resource.Id.dependency_ordering = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.dependency_ordering;
 			global::Acr.UserDialogs.Resource.Id.design_bottom_sheet = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.design_bottom_sheet;
 			global::Acr.UserDialogs.Resource.Id.design_menu_item_action_area = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.design_menu_item_action_area;
 			global::Acr.UserDialogs.Resource.Id.design_menu_item_action_area_stub = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.design_menu_item_action_area_stub;
 			global::Acr.UserDialogs.Resource.Id.design_menu_item_text = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.design_menu_item_text;
 			global::Acr.UserDialogs.Resource.Id.design_navigation_view = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.design_navigation_view;
 			global::Acr.UserDialogs.Resource.Id.dialog_button = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.dialog_button;
+			global::Acr.UserDialogs.Resource.Id.dimensions = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.dimensions;
+			global::Acr.UserDialogs.Resource.Id.direct = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.direct;
 			global::Acr.UserDialogs.Resource.Id.disableHome = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.disableHome;
+			global::Acr.UserDialogs.Resource.Id.disableIntraAutoTransition = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.disableIntraAutoTransition;
+			global::Acr.UserDialogs.Resource.Id.disablePostScroll = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.disablePostScroll;
+			global::Acr.UserDialogs.Resource.Id.disableScroll = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.disableScroll;
+			global::Acr.UserDialogs.Resource.Id.disjoint = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.disjoint;
+			global::Acr.UserDialogs.Resource.Id.dragAnticlockwise = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.dragAnticlockwise;
+			global::Acr.UserDialogs.Resource.Id.dragClockwise = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.dragClockwise;
+			global::Acr.UserDialogs.Resource.Id.dragDown = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.dragDown;
+			global::Acr.UserDialogs.Resource.Id.dragEnd = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.dragEnd;
+			global::Acr.UserDialogs.Resource.Id.dragLeft = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.dragLeft;
+			global::Acr.UserDialogs.Resource.Id.dragRight = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.dragRight;
+			global::Acr.UserDialogs.Resource.Id.dragStart = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.dragStart;
+			global::Acr.UserDialogs.Resource.Id.dragUp = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.dragUp;
+			global::Acr.UserDialogs.Resource.Id.dropdown_menu = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.dropdown_menu;
+			global::Acr.UserDialogs.Resource.Id.easeIn = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.easeIn;
+			global::Acr.UserDialogs.Resource.Id.easeInOut = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.easeInOut;
+			global::Acr.UserDialogs.Resource.Id.easeOut = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.easeOut;
+			global::Acr.UserDialogs.Resource.Id.east = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.east;
 			global::Acr.UserDialogs.Resource.Id.edit_query = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.edit_query;
+			global::Acr.UserDialogs.Resource.Id.elastic = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.elastic;
 			global::Acr.UserDialogs.Resource.Id.end = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.end;
+			global::Acr.UserDialogs.Resource.Id.endToStart = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.endToStart;
 			global::Acr.UserDialogs.Resource.Id.enterAlways = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.enterAlways;
 			global::Acr.UserDialogs.Resource.Id.enterAlwaysCollapsed = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.enterAlwaysCollapsed;
 			global::Acr.UserDialogs.Resource.Id.exitUntilCollapsed = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.exitUntilCollapsed;
 			global::Acr.UserDialogs.Resource.Id.expanded_menu = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.expanded_menu;
 			global::Acr.UserDialogs.Resource.Id.expand_activities_button = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.expand_activities_button;
+			global::Acr.UserDialogs.Resource.Id.fade = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.fade;
 			global::Acr.UserDialogs.Resource.Id.fill = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.fill;
 			global::Acr.UserDialogs.Resource.Id.filled = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.filled;
 			global::Acr.UserDialogs.Resource.Id.fill_horizontal = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.fill_horizontal;
 			global::Acr.UserDialogs.Resource.Id.fill_vertical = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.fill_vertical;
+			global::Acr.UserDialogs.Resource.Id.fitToContents = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.fitToContents;
 			global::Acr.UserDialogs.Resource.Id.@fixed = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.@fixed;
+			global::Acr.UserDialogs.Resource.Id.flip = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.flip;
+			global::Acr.UserDialogs.Resource.Id.floating = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.floating;
 			global::Acr.UserDialogs.Resource.Id.forever = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.forever;
+			global::Acr.UserDialogs.Resource.Id.fragment_container_view_tag = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.fragment_container_view_tag;
+			global::Acr.UserDialogs.Resource.Id.frost = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.frost;
 			global::Acr.UserDialogs.Resource.Id.FUNCTION = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.FUNCTION;
 			global::Acr.UserDialogs.Resource.Id.ghost_view = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.ghost_view;
 			global::Acr.UserDialogs.Resource.Id.ghost_view_holder = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.ghost_view_holder;
+			global::Acr.UserDialogs.Resource.Id.gone = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.gone;
+			global::Acr.UserDialogs.Resource.Id.graph = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.graph;
+			global::Acr.UserDialogs.Resource.Id.graph_wrap = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.graph_wrap;
+			global::Acr.UserDialogs.Resource.Id.grouping = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.grouping;
+			global::Acr.UserDialogs.Resource.Id.groups = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.groups;
 			global::Acr.UserDialogs.Resource.Id.group_divider = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.group_divider;
+			global::Acr.UserDialogs.Resource.Id.guideline = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.guideline;
+			global::Acr.UserDialogs.Resource.Id.header_title = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.header_title;
+			global::Acr.UserDialogs.Resource.Id.hideable = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.hideable;
 			global::Acr.UserDialogs.Resource.Id.home = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.home;
 			global::Acr.UserDialogs.Resource.Id.homeAsUp = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.homeAsUp;
+			global::Acr.UserDialogs.Resource.Id.honorRequest = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.honorRequest;
+			global::Acr.UserDialogs.Resource.Id.horizontal_only = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.horizontal_only;
 			global::Acr.UserDialogs.Resource.Id.icon = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.icon;
 			global::Acr.UserDialogs.Resource.Id.icon_group = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.icon_group;
 			global::Acr.UserDialogs.Resource.Id.ifRoom = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.ifRoom;
+			global::Acr.UserDialogs.Resource.Id.ignore = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.ignore;
+			global::Acr.UserDialogs.Resource.Id.ignoreRequest = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.ignoreRequest;
 			global::Acr.UserDialogs.Resource.Id.image = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.image;
+			global::Acr.UserDialogs.Resource.Id.immediateStop = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.immediateStop;
+			global::Acr.UserDialogs.Resource.Id.included = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.included;
 			global::Acr.UserDialogs.Resource.Id.info = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.info;
+			global::Acr.UserDialogs.Resource.Id.invisible = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.invisible;
+			global::Acr.UserDialogs.Resource.Id.inward = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.inward;
 			global::Acr.UserDialogs.Resource.Id.italic = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.italic;
 			global::Acr.UserDialogs.Resource.Id.item_touch_helper_previous_elevation = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.item_touch_helper_previous_elevation;
+			global::Acr.UserDialogs.Resource.Id.jumpToEnd = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.jumpToEnd;
+			global::Acr.UserDialogs.Resource.Id.jumpToStart = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.jumpToStart;
 			global::Acr.UserDialogs.Resource.Id.labeled = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.labeled;
+			global::Acr.UserDialogs.Resource.Id.layout = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.layout;
 			global::Acr.UserDialogs.Resource.Id.left = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.left;
+			global::Acr.UserDialogs.Resource.Id.leftToRight = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.leftToRight;
+			global::Acr.UserDialogs.Resource.Id.legacy = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.legacy;
 			global::Acr.UserDialogs.Resource.Id.line1 = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.line1;
 			global::Acr.UserDialogs.Resource.Id.line3 = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.line3;
+			global::Acr.UserDialogs.Resource.Id.linear = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.linear;
 			global::Acr.UserDialogs.Resource.Id.listMode = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.listMode;
 			global::Acr.UserDialogs.Resource.Id.list_item = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.list_item;
 			global::Acr.UserDialogs.Resource.Id.loadingImage = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.loadingImage;
 			global::Acr.UserDialogs.Resource.Id.loadingProgressBar = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.loadingProgressBar;
 			global::Acr.UserDialogs.Resource.Id.loadingProgressWheel = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.loadingProgressWheel;
 			global::Acr.UserDialogs.Resource.Id.masked = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.masked;
+			global::Acr.UserDialogs.Resource.Id.match_constraint = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.match_constraint;
+			global::Acr.UserDialogs.Resource.Id.match_parent = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.match_parent;
+			global::Acr.UserDialogs.Resource.Id.material_clock_display = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.material_clock_display;
+			global::Acr.UserDialogs.Resource.Id.material_clock_face = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.material_clock_face;
+			global::Acr.UserDialogs.Resource.Id.material_clock_hand = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.material_clock_hand;
+			global::Acr.UserDialogs.Resource.Id.material_clock_period_am_button = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.material_clock_period_am_button;
+			global::Acr.UserDialogs.Resource.Id.material_clock_period_pm_button = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.material_clock_period_pm_button;
+			global::Acr.UserDialogs.Resource.Id.material_clock_period_toggle = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.material_clock_period_toggle;
+			global::Acr.UserDialogs.Resource.Id.material_hour_text_input = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.material_hour_text_input;
+			global::Acr.UserDialogs.Resource.Id.material_hour_tv = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.material_hour_tv;
+			global::Acr.UserDialogs.Resource.Id.material_label = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.material_label;
+			global::Acr.UserDialogs.Resource.Id.material_minute_text_input = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.material_minute_text_input;
+			global::Acr.UserDialogs.Resource.Id.material_minute_tv = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.material_minute_tv;
+			global::Acr.UserDialogs.Resource.Id.material_textinput_timepicker = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.material_textinput_timepicker;
+			global::Acr.UserDialogs.Resource.Id.material_timepicker_cancel_button = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.material_timepicker_cancel_button;
+			global::Acr.UserDialogs.Resource.Id.material_timepicker_container = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.material_timepicker_container;
+			global::Acr.UserDialogs.Resource.Id.material_timepicker_edit_text = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.material_timepicker_edit_text;
+			global::Acr.UserDialogs.Resource.Id.material_timepicker_mode_button = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.material_timepicker_mode_button;
+			global::Acr.UserDialogs.Resource.Id.material_timepicker_ok_button = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.material_timepicker_ok_button;
+			global::Acr.UserDialogs.Resource.Id.material_timepicker_view = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.material_timepicker_view;
+			global::Acr.UserDialogs.Resource.Id.material_value_index = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.material_value_index;
 			global::Acr.UserDialogs.Resource.Id.message = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.message;
 			global::Acr.UserDialogs.Resource.Id.META = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.META;
 			global::Acr.UserDialogs.Resource.Id.middle = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.middle;
 			global::Acr.UserDialogs.Resource.Id.mini = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.mini;
+			global::Acr.UserDialogs.Resource.Id.month_grid = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.month_grid;
+			global::Acr.UserDialogs.Resource.Id.month_navigation_bar = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.month_navigation_bar;
+			global::Acr.UserDialogs.Resource.Id.month_navigation_fragment_toggle = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.month_navigation_fragment_toggle;
+			global::Acr.UserDialogs.Resource.Id.month_navigation_next = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.month_navigation_next;
+			global::Acr.UserDialogs.Resource.Id.month_navigation_previous = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.month_navigation_previous;
+			global::Acr.UserDialogs.Resource.Id.month_title = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.month_title;
+			global::Acr.UserDialogs.Resource.Id.motion_base = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.motion_base;
+			global::Acr.UserDialogs.Resource.Id.mtrl_anchor_parent = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.mtrl_anchor_parent;
+			global::Acr.UserDialogs.Resource.Id.mtrl_calendar_days_of_week = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.mtrl_calendar_days_of_week;
+			global::Acr.UserDialogs.Resource.Id.mtrl_calendar_day_selector_frame = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.mtrl_calendar_day_selector_frame;
+			global::Acr.UserDialogs.Resource.Id.mtrl_calendar_frame = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.mtrl_calendar_frame;
+			global::Acr.UserDialogs.Resource.Id.mtrl_calendar_main_pane = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.mtrl_calendar_main_pane;
+			global::Acr.UserDialogs.Resource.Id.mtrl_calendar_months = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.mtrl_calendar_months;
+			global::Acr.UserDialogs.Resource.Id.mtrl_calendar_selection_frame = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.mtrl_calendar_selection_frame;
+			global::Acr.UserDialogs.Resource.Id.mtrl_calendar_text_input_frame = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.mtrl_calendar_text_input_frame;
+			global::Acr.UserDialogs.Resource.Id.mtrl_calendar_year_selector_frame = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.mtrl_calendar_year_selector_frame;
+			global::Acr.UserDialogs.Resource.Id.mtrl_card_checked_layer_id = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.mtrl_card_checked_layer_id;
 			global::Acr.UserDialogs.Resource.Id.mtrl_child_content_container = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.mtrl_child_content_container;
 			global::Acr.UserDialogs.Resource.Id.mtrl_internal_children_alpha_tag = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.mtrl_internal_children_alpha_tag;
+			global::Acr.UserDialogs.Resource.Id.mtrl_motion_snapshot_view = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.mtrl_motion_snapshot_view;
+			global::Acr.UserDialogs.Resource.Id.mtrl_picker_fullscreen = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.mtrl_picker_fullscreen;
+			global::Acr.UserDialogs.Resource.Id.mtrl_picker_header = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.mtrl_picker_header;
+			global::Acr.UserDialogs.Resource.Id.mtrl_picker_header_selection_text = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.mtrl_picker_header_selection_text;
+			global::Acr.UserDialogs.Resource.Id.mtrl_picker_header_title_and_selection = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.mtrl_picker_header_title_and_selection;
+			global::Acr.UserDialogs.Resource.Id.mtrl_picker_header_toggle = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.mtrl_picker_header_toggle;
+			global::Acr.UserDialogs.Resource.Id.mtrl_picker_text_input_date = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.mtrl_picker_text_input_date;
+			global::Acr.UserDialogs.Resource.Id.mtrl_picker_text_input_range_end = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.mtrl_picker_text_input_range_end;
+			global::Acr.UserDialogs.Resource.Id.mtrl_picker_text_input_range_start = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.mtrl_picker_text_input_range_start;
+			global::Acr.UserDialogs.Resource.Id.mtrl_picker_title_text = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.mtrl_picker_title_text;
+			global::Acr.UserDialogs.Resource.Id.mtrl_view_tag_bottom_padding = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.mtrl_view_tag_bottom_padding;
 			global::Acr.UserDialogs.Resource.Id.multiply = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.multiply;
+			global::Acr.UserDialogs.Resource.Id.navigation_bar_item_icon_view = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.navigation_bar_item_icon_view;
+			global::Acr.UserDialogs.Resource.Id.navigation_bar_item_labels_group = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.navigation_bar_item_labels_group;
+			global::Acr.UserDialogs.Resource.Id.navigation_bar_item_large_label_view = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.navigation_bar_item_large_label_view;
+			global::Acr.UserDialogs.Resource.Id.navigation_bar_item_small_label_view = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.navigation_bar_item_small_label_view;
 			global::Acr.UserDialogs.Resource.Id.navigation_header_container = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.navigation_header_container;
 			global::Acr.UserDialogs.Resource.Id.never = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.never;
+			global::Acr.UserDialogs.Resource.Id.neverCompleteToEnd = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.neverCompleteToEnd;
+			global::Acr.UserDialogs.Resource.Id.neverCompleteToStart = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.neverCompleteToStart;
 			global::Acr.UserDialogs.Resource.Id.none = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.none;
 			global::Acr.UserDialogs.Resource.Id.normal = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.normal;
+			global::Acr.UserDialogs.Resource.Id.north = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.north;
+			global::Acr.UserDialogs.Resource.Id.noScroll = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.noScroll;
+			global::Acr.UserDialogs.Resource.Id.noState = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.noState;
 			global::Acr.UserDialogs.Resource.Id.notification_background = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.notification_background;
 			global::Acr.UserDialogs.Resource.Id.notification_main_column = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.notification_main_column;
 			global::Acr.UserDialogs.Resource.Id.notification_main_column_container = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.notification_main_column_container;
+			global::Acr.UserDialogs.Resource.Id.NO_DEBUG = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.NO_DEBUG;
 			global::Acr.UserDialogs.Resource.Id.off = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.off;
 			global::Acr.UserDialogs.Resource.Id.on = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.on;
 			global::Acr.UserDialogs.Resource.Id.outline = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.outline;
+			global::Acr.UserDialogs.Resource.Id.outward = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.outward;
+			global::Acr.UserDialogs.Resource.Id.overshoot = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.overshoot;
+			global::Acr.UserDialogs.Resource.Id.packed = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.packed;
 			global::Acr.UserDialogs.Resource.Id.parallax = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.parallax;
+			global::Acr.UserDialogs.Resource.Id.parent = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.parent;
 			global::Acr.UserDialogs.Resource.Id.parentPanel = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.parentPanel;
+			global::Acr.UserDialogs.Resource.Id.parentRelative = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.parentRelative;
 			global::Acr.UserDialogs.Resource.Id.parent_matrix = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.parent_matrix;
+			global::Acr.UserDialogs.Resource.Id.password_toggle = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.password_toggle;
+			global::Acr.UserDialogs.Resource.Id.path = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.path;
+			global::Acr.UserDialogs.Resource.Id.pathRelative = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.pathRelative;
+			global::Acr.UserDialogs.Resource.Id.peekHeight = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.peekHeight;
+			global::Acr.UserDialogs.Resource.Id.percent = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.percent;
 			global::Acr.UserDialogs.Resource.Id.pin = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.pin;
+			global::Acr.UserDialogs.Resource.Id.position = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.position;
+			global::Acr.UserDialogs.Resource.Id.postLayout = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.postLayout;
 			global::Acr.UserDialogs.Resource.Id.progress_circular = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.progress_circular;
 			global::Acr.UserDialogs.Resource.Id.progress_horizontal = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.progress_horizontal;
 			global::Acr.UserDialogs.Resource.Id.radio = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.radio;
+			global::Acr.UserDialogs.Resource.Id.ratio = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.ratio;
+			global::Acr.UserDialogs.Resource.Id.rectangles = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.rectangles;
+			global::Acr.UserDialogs.Resource.Id.reverseSawtooth = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.reverseSawtooth;
 			global::Acr.UserDialogs.Resource.Id.right = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.right;
+			global::Acr.UserDialogs.Resource.Id.rightToLeft = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.rightToLeft;
 			global::Acr.UserDialogs.Resource.Id.right_icon = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.right_icon;
 			global::Acr.UserDialogs.Resource.Id.right_side = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.right_side;
+			global::Acr.UserDialogs.Resource.Id.rounded = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.rounded;
+			global::Acr.UserDialogs.Resource.Id.row_index_key = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.row_index_key;
 			global::Acr.UserDialogs.Resource.Id.save_non_transition_alpha = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.save_non_transition_alpha;
 			global::Acr.UserDialogs.Resource.Id.save_overlay_view = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.save_overlay_view;
+			global::Acr.UserDialogs.Resource.Id.sawtooth = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.sawtooth;
+			global::Acr.UserDialogs.Resource.Id.scale = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.scale;
 			global::Acr.UserDialogs.Resource.Id.screen = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.screen;
 			global::Acr.UserDialogs.Resource.Id.scroll = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.scroll;
 			global::Acr.UserDialogs.Resource.Id.scrollable = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.scrollable;
@@ -1189,65 +2212,126 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Id.search_src_text = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.search_src_text;
 			global::Acr.UserDialogs.Resource.Id.search_voice_btn = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.search_voice_btn;
 			global::Acr.UserDialogs.Resource.Id.selected = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.selected;
+			global::Acr.UserDialogs.Resource.Id.selection_type = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.selection_type;
 			global::Acr.UserDialogs.Resource.Id.select_dialog_listview = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.select_dialog_listview;
+			global::Acr.UserDialogs.Resource.Id.sharedValueSet = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.sharedValueSet;
+			global::Acr.UserDialogs.Resource.Id.sharedValueUnset = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.sharedValueUnset;
 			global::Acr.UserDialogs.Resource.Id.SHIFT = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.SHIFT;
 			global::Acr.UserDialogs.Resource.Id.shortcut = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.shortcut;
 			global::Acr.UserDialogs.Resource.Id.showCustom = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.showCustom;
 			global::Acr.UserDialogs.Resource.Id.showHome = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.showHome;
 			global::Acr.UserDialogs.Resource.Id.showTitle = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.showTitle;
+			global::Acr.UserDialogs.Resource.Id.SHOW_ALL = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.SHOW_ALL;
+			global::Acr.UserDialogs.Resource.Id.SHOW_PATH = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.SHOW_PATH;
+			global::Acr.UserDialogs.Resource.Id.SHOW_PROGRESS = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.SHOW_PROGRESS;
+			global::Acr.UserDialogs.Resource.Id.sin = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.sin;
+			global::Acr.UserDialogs.Resource.Id.skipCollapsed = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.skipCollapsed;
+			global::Acr.UserDialogs.Resource.Id.skipped = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.skipped;
+			global::Acr.UserDialogs.Resource.Id.slide = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.slide;
 			global::Acr.UserDialogs.Resource.Id.snackbar_action = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.snackbar_action;
 			global::Acr.UserDialogs.Resource.Id.snackbar_text = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.snackbar_text;
 			global::Acr.UserDialogs.Resource.Id.snap = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.snap;
 			global::Acr.UserDialogs.Resource.Id.snapMargins = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.snapMargins;
+			global::Acr.UserDialogs.Resource.Id.south = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.south;
 			global::Acr.UserDialogs.Resource.Id.spacer = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.spacer;
+			global::Acr.UserDialogs.Resource.Id.special_effects_controller_view_tag = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.special_effects_controller_view_tag;
+			global::Acr.UserDialogs.Resource.Id.spline = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.spline;
 			global::Acr.UserDialogs.Resource.Id.split_action_bar = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.split_action_bar;
+			global::Acr.UserDialogs.Resource.Id.spread = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.spread;
+			global::Acr.UserDialogs.Resource.Id.spread_inside = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.spread_inside;
+			global::Acr.UserDialogs.Resource.Id.spring = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.spring;
+			global::Acr.UserDialogs.Resource.Id.square = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.square;
 			global::Acr.UserDialogs.Resource.Id.src_atop = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.src_atop;
 			global::Acr.UserDialogs.Resource.Id.src_in = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.src_in;
 			global::Acr.UserDialogs.Resource.Id.src_over = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.src_over;
+			global::Acr.UserDialogs.Resource.Id.standard = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.standard;
 			global::Acr.UserDialogs.Resource.Id.start = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.start;
+			global::Acr.UserDialogs.Resource.Id.startHorizontal = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.startHorizontal;
+			global::Acr.UserDialogs.Resource.Id.startToEnd = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.startToEnd;
+			global::Acr.UserDialogs.Resource.Id.startVertical = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.startVertical;
+			global::Acr.UserDialogs.Resource.Id.staticLayout = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.staticLayout;
+			global::Acr.UserDialogs.Resource.Id.staticPostLayout = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.staticPostLayout;
+			global::Acr.UserDialogs.Resource.Id.stop = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.stop;
 			global::Acr.UserDialogs.Resource.Id.stretch = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.stretch;
 			global::Acr.UserDialogs.Resource.Id.submenuarrow = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.submenuarrow;
 			global::Acr.UserDialogs.Resource.Id.submit_area = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.submit_area;
+			global::Acr.UserDialogs.Resource.Id.supportScrollUp = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.supportScrollUp;
 			global::Acr.UserDialogs.Resource.Id.SYM = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.SYM;
 			global::Acr.UserDialogs.Resource.Id.tabMode = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.tabMode;
 			global::Acr.UserDialogs.Resource.Id.tag_accessibility_actions = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.tag_accessibility_actions;
 			global::Acr.UserDialogs.Resource.Id.tag_accessibility_clickable_spans = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.tag_accessibility_clickable_spans;
 			global::Acr.UserDialogs.Resource.Id.tag_accessibility_heading = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.tag_accessibility_heading;
 			global::Acr.UserDialogs.Resource.Id.tag_accessibility_pane_title = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.tag_accessibility_pane_title;
+			global::Acr.UserDialogs.Resource.Id.tag_on_apply_window_listener = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.tag_on_apply_window_listener;
+			global::Acr.UserDialogs.Resource.Id.tag_on_receive_content_listener = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.tag_on_receive_content_listener;
+			global::Acr.UserDialogs.Resource.Id.tag_on_receive_content_mime_types = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.tag_on_receive_content_mime_types;
 			global::Acr.UserDialogs.Resource.Id.tag_screen_reader_focusable = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.tag_screen_reader_focusable;
+			global::Acr.UserDialogs.Resource.Id.tag_state_description = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.tag_state_description;
 			global::Acr.UserDialogs.Resource.Id.tag_transition_group = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.tag_transition_group;
 			global::Acr.UserDialogs.Resource.Id.tag_unhandled_key_event_manager = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.tag_unhandled_key_event_manager;
 			global::Acr.UserDialogs.Resource.Id.tag_unhandled_key_listeners = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.tag_unhandled_key_listeners;
+			global::Acr.UserDialogs.Resource.Id.tag_window_insets_animation_callback = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.tag_window_insets_animation_callback;
+			global::Acr.UserDialogs.Resource.Id.test_checkbox_android_button_tint = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.test_checkbox_android_button_tint;
+			global::Acr.UserDialogs.Resource.Id.test_checkbox_app_button_tint = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.test_checkbox_app_button_tint;
+			global::Acr.UserDialogs.Resource.Id.test_radiobutton_android_button_tint = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.test_radiobutton_android_button_tint;
+			global::Acr.UserDialogs.Resource.Id.test_radiobutton_app_button_tint = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.test_radiobutton_app_button_tint;
 			global::Acr.UserDialogs.Resource.Id.text = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.text;
 			global::Acr.UserDialogs.Resource.Id.text2 = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.text2;
+			global::Acr.UserDialogs.Resource.Id.textEnd = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.textEnd;
 			global::Acr.UserDialogs.Resource.Id.textinput_counter = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.textinput_counter;
 			global::Acr.UserDialogs.Resource.Id.textinput_error = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.textinput_error;
 			global::Acr.UserDialogs.Resource.Id.textinput_helper_text = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.textinput_helper_text;
+			global::Acr.UserDialogs.Resource.Id.textinput_placeholder = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.textinput_placeholder;
+			global::Acr.UserDialogs.Resource.Id.textinput_prefix_text = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.textinput_prefix_text;
+			global::Acr.UserDialogs.Resource.Id.textinput_suffix_text = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.textinput_suffix_text;
 			global::Acr.UserDialogs.Resource.Id.textSpacerNoButtons = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.textSpacerNoButtons;
 			global::Acr.UserDialogs.Resource.Id.textSpacerNoTitle = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.textSpacerNoTitle;
 			global::Acr.UserDialogs.Resource.Id.textStart = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.textStart;
+			global::Acr.UserDialogs.Resource.Id.textTop = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.textTop;
 			global::Acr.UserDialogs.Resource.Id.textViewStatus = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.textViewStatus;
+			global::Acr.UserDialogs.Resource.Id.text_input_end_icon = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.text_input_end_icon;
+			global::Acr.UserDialogs.Resource.Id.text_input_error_icon = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.text_input_error_icon;
+			global::Acr.UserDialogs.Resource.Id.text_input_start_icon = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.text_input_start_icon;
 			global::Acr.UserDialogs.Resource.Id.time = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.time;
 			global::Acr.UserDialogs.Resource.Id.title = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.title;
 			global::Acr.UserDialogs.Resource.Id.titleDividerNoCustom = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.titleDividerNoCustom;
 			global::Acr.UserDialogs.Resource.Id.title_template = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.title_template;
+			global::Acr.UserDialogs.Resource.Id.toggle = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.toggle;
 			global::Acr.UserDialogs.Resource.Id.top = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.top;
 			global::Acr.UserDialogs.Resource.Id.topPanel = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.topPanel;
+			global::Acr.UserDialogs.Resource.Id.TOP_END = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.TOP_END;
+			global::Acr.UserDialogs.Resource.Id.TOP_START = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.TOP_START;
 			global::Acr.UserDialogs.Resource.Id.touch_outside = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.touch_outside;
+			global::Acr.UserDialogs.Resource.Id.transitionToEnd = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.transitionToEnd;
+			global::Acr.UserDialogs.Resource.Id.transitionToStart = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.transitionToStart;
 			global::Acr.UserDialogs.Resource.Id.transition_current_scene = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.transition_current_scene;
 			global::Acr.UserDialogs.Resource.Id.transition_layout_save = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.transition_layout_save;
 			global::Acr.UserDialogs.Resource.Id.transition_position = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.transition_position;
 			global::Acr.UserDialogs.Resource.Id.transition_scene_layoutid_cache = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.transition_scene_layoutid_cache;
 			global::Acr.UserDialogs.Resource.Id.transition_transform = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.transition_transform;
+			global::Acr.UserDialogs.Resource.Id.triangle = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.triangle;
 			global::Acr.UserDialogs.Resource.Id.@unchecked = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.@unchecked;
 			global::Acr.UserDialogs.Resource.Id.uniform = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.uniform;
 			global::Acr.UserDialogs.Resource.Id.unlabeled = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.unlabeled;
 			global::Acr.UserDialogs.Resource.Id.up = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.up;
 			global::Acr.UserDialogs.Resource.Id.useLogo = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.useLogo;
+			global::Acr.UserDialogs.Resource.Id.vertical_only = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.vertical_only;
 			global::Acr.UserDialogs.Resource.Id.view_offset_helper = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.view_offset_helper;
+			global::Acr.UserDialogs.Resource.Id.view_transition = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.view_transition;
+			global::Acr.UserDialogs.Resource.Id.view_tree_lifecycle_owner = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.view_tree_lifecycle_owner;
+			global::Acr.UserDialogs.Resource.Id.view_tree_saved_state_registry_owner = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.view_tree_saved_state_registry_owner;
+			global::Acr.UserDialogs.Resource.Id.view_tree_view_model_store_owner = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.view_tree_view_model_store_owner;
 			global::Acr.UserDialogs.Resource.Id.visible = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.visible;
+			global::Acr.UserDialogs.Resource.Id.visible_removing_fragment_view_tag = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.visible_removing_fragment_view_tag;
+			global::Acr.UserDialogs.Resource.Id.west = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.west;
+			global::Acr.UserDialogs.Resource.Id.withinBounds = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.withinBounds;
 			global::Acr.UserDialogs.Resource.Id.withText = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.withText;
+			global::Acr.UserDialogs.Resource.Id.wrap = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.wrap;
 			global::Acr.UserDialogs.Resource.Id.wrap_content = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.wrap_content;
+			global::Acr.UserDialogs.Resource.Id.wrap_content_constrained = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.wrap_content_constrained;
+			global::Acr.UserDialogs.Resource.Id.x_left = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.x_left;
+			global::Acr.UserDialogs.Resource.Id.x_right = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.x_right;
+			global::Acr.UserDialogs.Resource.Id.zero_corner_chip = global::PixQrCodeGeneratorOffline.Droid.Resource.Id.zero_corner_chip;
 			global::Acr.UserDialogs.Resource.Integer.abc_config_activityDefaultDur = global::PixQrCodeGeneratorOffline.Droid.Resource.Integer.abc_config_activityDefaultDur;
 			global::Acr.UserDialogs.Resource.Integer.abc_config_activityShortDur = global::PixQrCodeGeneratorOffline.Droid.Resource.Integer.abc_config_activityShortDur;
 			global::Acr.UserDialogs.Resource.Integer.app_bar_elevation_anim_duration = global::PixQrCodeGeneratorOffline.Droid.Resource.Integer.app_bar_elevation_anim_duration;
@@ -1257,8 +2341,21 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Integer.design_snackbar_text_max_lines = global::PixQrCodeGeneratorOffline.Droid.Resource.Integer.design_snackbar_text_max_lines;
 			global::Acr.UserDialogs.Resource.Integer.design_tab_indicator_anim_duration_ms = global::PixQrCodeGeneratorOffline.Droid.Resource.Integer.design_tab_indicator_anim_duration_ms;
 			global::Acr.UserDialogs.Resource.Integer.hide_password_duration = global::PixQrCodeGeneratorOffline.Droid.Resource.Integer.hide_password_duration;
+			global::Acr.UserDialogs.Resource.Integer.material_motion_duration_long_1 = global::PixQrCodeGeneratorOffline.Droid.Resource.Integer.material_motion_duration_long_1;
+			global::Acr.UserDialogs.Resource.Integer.material_motion_duration_long_2 = global::PixQrCodeGeneratorOffline.Droid.Resource.Integer.material_motion_duration_long_2;
+			global::Acr.UserDialogs.Resource.Integer.material_motion_duration_medium_1 = global::PixQrCodeGeneratorOffline.Droid.Resource.Integer.material_motion_duration_medium_1;
+			global::Acr.UserDialogs.Resource.Integer.material_motion_duration_medium_2 = global::PixQrCodeGeneratorOffline.Droid.Resource.Integer.material_motion_duration_medium_2;
+			global::Acr.UserDialogs.Resource.Integer.material_motion_duration_short_1 = global::PixQrCodeGeneratorOffline.Droid.Resource.Integer.material_motion_duration_short_1;
+			global::Acr.UserDialogs.Resource.Integer.material_motion_duration_short_2 = global::PixQrCodeGeneratorOffline.Droid.Resource.Integer.material_motion_duration_short_2;
+			global::Acr.UserDialogs.Resource.Integer.material_motion_path = global::PixQrCodeGeneratorOffline.Droid.Resource.Integer.material_motion_path;
+			global::Acr.UserDialogs.Resource.Integer.mtrl_badge_max_character_count = global::PixQrCodeGeneratorOffline.Droid.Resource.Integer.mtrl_badge_max_character_count;
 			global::Acr.UserDialogs.Resource.Integer.mtrl_btn_anim_delay_ms = global::PixQrCodeGeneratorOffline.Droid.Resource.Integer.mtrl_btn_anim_delay_ms;
 			global::Acr.UserDialogs.Resource.Integer.mtrl_btn_anim_duration_ms = global::PixQrCodeGeneratorOffline.Droid.Resource.Integer.mtrl_btn_anim_duration_ms;
+			global::Acr.UserDialogs.Resource.Integer.mtrl_calendar_header_orientation = global::PixQrCodeGeneratorOffline.Droid.Resource.Integer.mtrl_calendar_header_orientation;
+			global::Acr.UserDialogs.Resource.Integer.mtrl_calendar_selection_text_lines = global::PixQrCodeGeneratorOffline.Droid.Resource.Integer.mtrl_calendar_selection_text_lines;
+			global::Acr.UserDialogs.Resource.Integer.mtrl_calendar_year_selector_span = global::PixQrCodeGeneratorOffline.Droid.Resource.Integer.mtrl_calendar_year_selector_span;
+			global::Acr.UserDialogs.Resource.Integer.mtrl_card_anim_delay_ms = global::PixQrCodeGeneratorOffline.Droid.Resource.Integer.mtrl_card_anim_delay_ms;
+			global::Acr.UserDialogs.Resource.Integer.mtrl_card_anim_duration_ms = global::PixQrCodeGeneratorOffline.Droid.Resource.Integer.mtrl_card_anim_duration_ms;
 			global::Acr.UserDialogs.Resource.Integer.mtrl_chip_anim_duration = global::PixQrCodeGeneratorOffline.Droid.Resource.Integer.mtrl_chip_anim_duration;
 			global::Acr.UserDialogs.Resource.Integer.mtrl_tab_indicator_anim_duration_ms = global::PixQrCodeGeneratorOffline.Droid.Resource.Integer.mtrl_tab_indicator_anim_duration_ms;
 			global::Acr.UserDialogs.Resource.Integer.show_password_duration = global::PixQrCodeGeneratorOffline.Droid.Resource.Integer.show_password_duration;
@@ -1316,11 +2413,54 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Layout.design_navigation_item_subheader = global::PixQrCodeGeneratorOffline.Droid.Resource.Layout.design_navigation_item_subheader;
 			global::Acr.UserDialogs.Resource.Layout.design_navigation_menu = global::PixQrCodeGeneratorOffline.Droid.Resource.Layout.design_navigation_menu;
 			global::Acr.UserDialogs.Resource.Layout.design_navigation_menu_item = global::PixQrCodeGeneratorOffline.Droid.Resource.Layout.design_navigation_menu_item;
+			global::Acr.UserDialogs.Resource.Layout.design_text_input_end_icon = global::PixQrCodeGeneratorOffline.Droid.Resource.Layout.design_text_input_end_icon;
+			global::Acr.UserDialogs.Resource.Layout.design_text_input_start_icon = global::PixQrCodeGeneratorOffline.Droid.Resource.Layout.design_text_input_start_icon;
 			global::Acr.UserDialogs.Resource.Layout.loading = global::PixQrCodeGeneratorOffline.Droid.Resource.Layout.loading;
 			global::Acr.UserDialogs.Resource.Layout.loadingimage = global::PixQrCodeGeneratorOffline.Droid.Resource.Layout.loadingimage;
 			global::Acr.UserDialogs.Resource.Layout.loadingprogress = global::PixQrCodeGeneratorOffline.Droid.Resource.Layout.loadingprogress;
+			global::Acr.UserDialogs.Resource.Layout.material_chip_input_combo = global::PixQrCodeGeneratorOffline.Droid.Resource.Layout.material_chip_input_combo;
+			global::Acr.UserDialogs.Resource.Layout.material_clockface_textview = global::PixQrCodeGeneratorOffline.Droid.Resource.Layout.material_clockface_textview;
+			global::Acr.UserDialogs.Resource.Layout.material_clockface_view = global::PixQrCodeGeneratorOffline.Droid.Resource.Layout.material_clockface_view;
+			global::Acr.UserDialogs.Resource.Layout.material_clock_display = global::PixQrCodeGeneratorOffline.Droid.Resource.Layout.material_clock_display;
+			global::Acr.UserDialogs.Resource.Layout.material_clock_display_divider = global::PixQrCodeGeneratorOffline.Droid.Resource.Layout.material_clock_display_divider;
+			global::Acr.UserDialogs.Resource.Layout.material_clock_period_toggle = global::PixQrCodeGeneratorOffline.Droid.Resource.Layout.material_clock_period_toggle;
+			global::Acr.UserDialogs.Resource.Layout.material_clock_period_toggle_land = global::PixQrCodeGeneratorOffline.Droid.Resource.Layout.material_clock_period_toggle_land;
+			global::Acr.UserDialogs.Resource.Layout.material_radial_view_group = global::PixQrCodeGeneratorOffline.Droid.Resource.Layout.material_radial_view_group;
+			global::Acr.UserDialogs.Resource.Layout.material_textinput_timepicker = global::PixQrCodeGeneratorOffline.Droid.Resource.Layout.material_textinput_timepicker;
+			global::Acr.UserDialogs.Resource.Layout.material_timepicker = global::PixQrCodeGeneratorOffline.Droid.Resource.Layout.material_timepicker;
+			global::Acr.UserDialogs.Resource.Layout.material_timepicker_dialog = global::PixQrCodeGeneratorOffline.Droid.Resource.Layout.material_timepicker_dialog;
+			global::Acr.UserDialogs.Resource.Layout.material_timepicker_textinput_display = global::PixQrCodeGeneratorOffline.Droid.Resource.Layout.material_timepicker_textinput_display;
+			global::Acr.UserDialogs.Resource.Layout.material_time_chip = global::PixQrCodeGeneratorOffline.Droid.Resource.Layout.material_time_chip;
+			global::Acr.UserDialogs.Resource.Layout.material_time_input = global::PixQrCodeGeneratorOffline.Droid.Resource.Layout.material_time_input;
+			global::Acr.UserDialogs.Resource.Layout.mtrl_alert_dialog = global::PixQrCodeGeneratorOffline.Droid.Resource.Layout.mtrl_alert_dialog;
+			global::Acr.UserDialogs.Resource.Layout.mtrl_alert_dialog_actions = global::PixQrCodeGeneratorOffline.Droid.Resource.Layout.mtrl_alert_dialog_actions;
+			global::Acr.UserDialogs.Resource.Layout.mtrl_alert_dialog_title = global::PixQrCodeGeneratorOffline.Droid.Resource.Layout.mtrl_alert_dialog_title;
+			global::Acr.UserDialogs.Resource.Layout.mtrl_alert_select_dialog_item = global::PixQrCodeGeneratorOffline.Droid.Resource.Layout.mtrl_alert_select_dialog_item;
+			global::Acr.UserDialogs.Resource.Layout.mtrl_alert_select_dialog_multichoice = global::PixQrCodeGeneratorOffline.Droid.Resource.Layout.mtrl_alert_select_dialog_multichoice;
+			global::Acr.UserDialogs.Resource.Layout.mtrl_alert_select_dialog_singlechoice = global::PixQrCodeGeneratorOffline.Droid.Resource.Layout.mtrl_alert_select_dialog_singlechoice;
+			global::Acr.UserDialogs.Resource.Layout.mtrl_calendar_day = global::PixQrCodeGeneratorOffline.Droid.Resource.Layout.mtrl_calendar_day;
+			global::Acr.UserDialogs.Resource.Layout.mtrl_calendar_days_of_week = global::PixQrCodeGeneratorOffline.Droid.Resource.Layout.mtrl_calendar_days_of_week;
+			global::Acr.UserDialogs.Resource.Layout.mtrl_calendar_day_of_week = global::PixQrCodeGeneratorOffline.Droid.Resource.Layout.mtrl_calendar_day_of_week;
+			global::Acr.UserDialogs.Resource.Layout.mtrl_calendar_horizontal = global::PixQrCodeGeneratorOffline.Droid.Resource.Layout.mtrl_calendar_horizontal;
+			global::Acr.UserDialogs.Resource.Layout.mtrl_calendar_month = global::PixQrCodeGeneratorOffline.Droid.Resource.Layout.mtrl_calendar_month;
+			global::Acr.UserDialogs.Resource.Layout.mtrl_calendar_months = global::PixQrCodeGeneratorOffline.Droid.Resource.Layout.mtrl_calendar_months;
+			global::Acr.UserDialogs.Resource.Layout.mtrl_calendar_month_labeled = global::PixQrCodeGeneratorOffline.Droid.Resource.Layout.mtrl_calendar_month_labeled;
+			global::Acr.UserDialogs.Resource.Layout.mtrl_calendar_month_navigation = global::PixQrCodeGeneratorOffline.Droid.Resource.Layout.mtrl_calendar_month_navigation;
+			global::Acr.UserDialogs.Resource.Layout.mtrl_calendar_vertical = global::PixQrCodeGeneratorOffline.Droid.Resource.Layout.mtrl_calendar_vertical;
+			global::Acr.UserDialogs.Resource.Layout.mtrl_calendar_year = global::PixQrCodeGeneratorOffline.Droid.Resource.Layout.mtrl_calendar_year;
 			global::Acr.UserDialogs.Resource.Layout.mtrl_layout_snackbar = global::PixQrCodeGeneratorOffline.Droid.Resource.Layout.mtrl_layout_snackbar;
 			global::Acr.UserDialogs.Resource.Layout.mtrl_layout_snackbar_include = global::PixQrCodeGeneratorOffline.Droid.Resource.Layout.mtrl_layout_snackbar_include;
+			global::Acr.UserDialogs.Resource.Layout.mtrl_navigation_rail_item = global::PixQrCodeGeneratorOffline.Droid.Resource.Layout.mtrl_navigation_rail_item;
+			global::Acr.UserDialogs.Resource.Layout.mtrl_picker_actions = global::PixQrCodeGeneratorOffline.Droid.Resource.Layout.mtrl_picker_actions;
+			global::Acr.UserDialogs.Resource.Layout.mtrl_picker_dialog = global::PixQrCodeGeneratorOffline.Droid.Resource.Layout.mtrl_picker_dialog;
+			global::Acr.UserDialogs.Resource.Layout.mtrl_picker_fullscreen = global::PixQrCodeGeneratorOffline.Droid.Resource.Layout.mtrl_picker_fullscreen;
+			global::Acr.UserDialogs.Resource.Layout.mtrl_picker_header_dialog = global::PixQrCodeGeneratorOffline.Droid.Resource.Layout.mtrl_picker_header_dialog;
+			global::Acr.UserDialogs.Resource.Layout.mtrl_picker_header_fullscreen = global::PixQrCodeGeneratorOffline.Droid.Resource.Layout.mtrl_picker_header_fullscreen;
+			global::Acr.UserDialogs.Resource.Layout.mtrl_picker_header_selection_text = global::PixQrCodeGeneratorOffline.Droid.Resource.Layout.mtrl_picker_header_selection_text;
+			global::Acr.UserDialogs.Resource.Layout.mtrl_picker_header_title_text = global::PixQrCodeGeneratorOffline.Droid.Resource.Layout.mtrl_picker_header_title_text;
+			global::Acr.UserDialogs.Resource.Layout.mtrl_picker_header_toggle = global::PixQrCodeGeneratorOffline.Droid.Resource.Layout.mtrl_picker_header_toggle;
+			global::Acr.UserDialogs.Resource.Layout.mtrl_picker_text_input_date = global::PixQrCodeGeneratorOffline.Droid.Resource.Layout.mtrl_picker_text_input_date;
+			global::Acr.UserDialogs.Resource.Layout.mtrl_picker_text_input_date_range = global::PixQrCodeGeneratorOffline.Droid.Resource.Layout.mtrl_picker_text_input_date_range;
 			global::Acr.UserDialogs.Resource.Layout.notification_action = global::PixQrCodeGeneratorOffline.Droid.Resource.Layout.notification_action;
 			global::Acr.UserDialogs.Resource.Layout.notification_action_tombstone = global::PixQrCodeGeneratorOffline.Droid.Resource.Layout.notification_action_tombstone;
 			global::Acr.UserDialogs.Resource.Layout.notification_template_custom_big = global::PixQrCodeGeneratorOffline.Droid.Resource.Layout.notification_template_custom_big;
@@ -1331,6 +2471,22 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Layout.select_dialog_multichoice_material = global::PixQrCodeGeneratorOffline.Droid.Resource.Layout.select_dialog_multichoice_material;
 			global::Acr.UserDialogs.Resource.Layout.select_dialog_singlechoice_material = global::PixQrCodeGeneratorOffline.Droid.Resource.Layout.select_dialog_singlechoice_material;
 			global::Acr.UserDialogs.Resource.Layout.support_simple_spinner_dropdown_item = global::PixQrCodeGeneratorOffline.Droid.Resource.Layout.support_simple_spinner_dropdown_item;
+			global::Acr.UserDialogs.Resource.Layout.test_action_chip = global::PixQrCodeGeneratorOffline.Droid.Resource.Layout.test_action_chip;
+			global::Acr.UserDialogs.Resource.Layout.test_chip_zero_corner_radius = global::PixQrCodeGeneratorOffline.Droid.Resource.Layout.test_chip_zero_corner_radius;
+			global::Acr.UserDialogs.Resource.Layout.test_design_checkbox = global::PixQrCodeGeneratorOffline.Droid.Resource.Layout.test_design_checkbox;
+			global::Acr.UserDialogs.Resource.Layout.test_design_radiobutton = global::PixQrCodeGeneratorOffline.Droid.Resource.Layout.test_design_radiobutton;
+			global::Acr.UserDialogs.Resource.Layout.test_navigation_bar_item_layout = global::PixQrCodeGeneratorOffline.Droid.Resource.Layout.test_navigation_bar_item_layout;
+			global::Acr.UserDialogs.Resource.Layout.test_reflow_chipgroup = global::PixQrCodeGeneratorOffline.Droid.Resource.Layout.test_reflow_chipgroup;
+			global::Acr.UserDialogs.Resource.Layout.test_toolbar = global::PixQrCodeGeneratorOffline.Droid.Resource.Layout.test_toolbar;
+			global::Acr.UserDialogs.Resource.Layout.test_toolbar_custom_background = global::PixQrCodeGeneratorOffline.Droid.Resource.Layout.test_toolbar_custom_background;
+			global::Acr.UserDialogs.Resource.Layout.test_toolbar_elevation = global::PixQrCodeGeneratorOffline.Droid.Resource.Layout.test_toolbar_elevation;
+			global::Acr.UserDialogs.Resource.Layout.test_toolbar_surface = global::PixQrCodeGeneratorOffline.Droid.Resource.Layout.test_toolbar_surface;
+			global::Acr.UserDialogs.Resource.Layout.text_view_without_line_height = global::PixQrCodeGeneratorOffline.Droid.Resource.Layout.text_view_without_line_height;
+			global::Acr.UserDialogs.Resource.Layout.text_view_with_line_height_from_appearance = global::PixQrCodeGeneratorOffline.Droid.Resource.Layout.text_view_with_line_height_from_appearance;
+			global::Acr.UserDialogs.Resource.Layout.text_view_with_line_height_from_layout = global::PixQrCodeGeneratorOffline.Droid.Resource.Layout.text_view_with_line_height_from_layout;
+			global::Acr.UserDialogs.Resource.Layout.text_view_with_line_height_from_style = global::PixQrCodeGeneratorOffline.Droid.Resource.Layout.text_view_with_line_height_from_style;
+			global::Acr.UserDialogs.Resource.Layout.text_view_with_theme_line_height = global::PixQrCodeGeneratorOffline.Droid.Resource.Layout.text_view_with_theme_line_height;
+			global::Acr.UserDialogs.Resource.Plurals.mtrl_badge_content_description = global::PixQrCodeGeneratorOffline.Droid.Resource.Plurals.mtrl_badge_content_description;
 			global::Acr.UserDialogs.Resource.String.abc_action_bar_home_description = global::PixQrCodeGeneratorOffline.Droid.Resource.String.abc_action_bar_home_description;
 			global::Acr.UserDialogs.Resource.String.abc_action_bar_up_description = global::PixQrCodeGeneratorOffline.Droid.Resource.String.abc_action_bar_up_description;
 			global::Acr.UserDialogs.Resource.String.abc_action_menu_overflow_description = global::PixQrCodeGeneratorOffline.Droid.Resource.String.abc_action_menu_overflow_description;
@@ -1359,14 +2515,76 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.String.abc_shareactionprovider_share_with_application = global::PixQrCodeGeneratorOffline.Droid.Resource.String.abc_shareactionprovider_share_with_application;
 			global::Acr.UserDialogs.Resource.String.abc_toolbar_collapse_description = global::PixQrCodeGeneratorOffline.Droid.Resource.String.abc_toolbar_collapse_description;
 			global::Acr.UserDialogs.Resource.String.appbar_scrolling_view_behavior = global::PixQrCodeGeneratorOffline.Droid.Resource.String.appbar_scrolling_view_behavior;
+			global::Acr.UserDialogs.Resource.String.bottomsheet_action_expand_halfway = global::PixQrCodeGeneratorOffline.Droid.Resource.String.bottomsheet_action_expand_halfway;
 			global::Acr.UserDialogs.Resource.String.bottom_sheet_behavior = global::PixQrCodeGeneratorOffline.Droid.Resource.String.bottom_sheet_behavior;
 			global::Acr.UserDialogs.Resource.String.character_counter_content_description = global::PixQrCodeGeneratorOffline.Droid.Resource.String.character_counter_content_description;
+			global::Acr.UserDialogs.Resource.String.character_counter_overflowed_content_description = global::PixQrCodeGeneratorOffline.Droid.Resource.String.character_counter_overflowed_content_description;
 			global::Acr.UserDialogs.Resource.String.character_counter_pattern = global::PixQrCodeGeneratorOffline.Droid.Resource.String.character_counter_pattern;
+			global::Acr.UserDialogs.Resource.String.chip_text = global::PixQrCodeGeneratorOffline.Droid.Resource.String.chip_text;
+			global::Acr.UserDialogs.Resource.String.clear_text_end_icon_content_description = global::PixQrCodeGeneratorOffline.Droid.Resource.String.clear_text_end_icon_content_description;
+			global::Acr.UserDialogs.Resource.String.error_icon_content_description = global::PixQrCodeGeneratorOffline.Droid.Resource.String.error_icon_content_description;
+			global::Acr.UserDialogs.Resource.String.exposed_dropdown_menu_content_description = global::PixQrCodeGeneratorOffline.Droid.Resource.String.exposed_dropdown_menu_content_description;
 			global::Acr.UserDialogs.Resource.String.fab_transformation_scrim_behavior = global::PixQrCodeGeneratorOffline.Droid.Resource.String.fab_transformation_scrim_behavior;
 			global::Acr.UserDialogs.Resource.String.fab_transformation_sheet_behavior = global::PixQrCodeGeneratorOffline.Droid.Resource.String.fab_transformation_sheet_behavior;
 			global::Acr.UserDialogs.Resource.String.hide_bottom_view_on_scroll_behavior = global::PixQrCodeGeneratorOffline.Droid.Resource.String.hide_bottom_view_on_scroll_behavior;
+			global::Acr.UserDialogs.Resource.String.icon_content_description = global::PixQrCodeGeneratorOffline.Droid.Resource.String.icon_content_description;
+			global::Acr.UserDialogs.Resource.String.item_view_role_description = global::PixQrCodeGeneratorOffline.Droid.Resource.String.item_view_role_description;
 			global::Acr.UserDialogs.Resource.String.library_name = global::PixQrCodeGeneratorOffline.Droid.Resource.String.library_name;
+			global::Acr.UserDialogs.Resource.String.material_clock_display_divider = global::PixQrCodeGeneratorOffline.Droid.Resource.String.material_clock_display_divider;
+			global::Acr.UserDialogs.Resource.String.material_clock_toggle_content_description = global::PixQrCodeGeneratorOffline.Droid.Resource.String.material_clock_toggle_content_description;
+			global::Acr.UserDialogs.Resource.String.material_hour_selection = global::PixQrCodeGeneratorOffline.Droid.Resource.String.material_hour_selection;
+			global::Acr.UserDialogs.Resource.String.material_hour_suffix = global::PixQrCodeGeneratorOffline.Droid.Resource.String.material_hour_suffix;
+			global::Acr.UserDialogs.Resource.String.material_minute_selection = global::PixQrCodeGeneratorOffline.Droid.Resource.String.material_minute_selection;
+			global::Acr.UserDialogs.Resource.String.material_minute_suffix = global::PixQrCodeGeneratorOffline.Droid.Resource.String.material_minute_suffix;
+			global::Acr.UserDialogs.Resource.String.material_motion_easing_accelerated = global::PixQrCodeGeneratorOffline.Droid.Resource.String.material_motion_easing_accelerated;
+			global::Acr.UserDialogs.Resource.String.material_motion_easing_decelerated = global::PixQrCodeGeneratorOffline.Droid.Resource.String.material_motion_easing_decelerated;
+			global::Acr.UserDialogs.Resource.String.material_motion_easing_emphasized = global::PixQrCodeGeneratorOffline.Droid.Resource.String.material_motion_easing_emphasized;
+			global::Acr.UserDialogs.Resource.String.material_motion_easing_linear = global::PixQrCodeGeneratorOffline.Droid.Resource.String.material_motion_easing_linear;
+			global::Acr.UserDialogs.Resource.String.material_motion_easing_standard = global::PixQrCodeGeneratorOffline.Droid.Resource.String.material_motion_easing_standard;
+			global::Acr.UserDialogs.Resource.String.material_slider_range_end = global::PixQrCodeGeneratorOffline.Droid.Resource.String.material_slider_range_end;
+			global::Acr.UserDialogs.Resource.String.material_slider_range_start = global::PixQrCodeGeneratorOffline.Droid.Resource.String.material_slider_range_start;
+			global::Acr.UserDialogs.Resource.String.material_timepicker_am = global::PixQrCodeGeneratorOffline.Droid.Resource.String.material_timepicker_am;
+			global::Acr.UserDialogs.Resource.String.material_timepicker_clock_mode_description = global::PixQrCodeGeneratorOffline.Droid.Resource.String.material_timepicker_clock_mode_description;
+			global::Acr.UserDialogs.Resource.String.material_timepicker_hour = global::PixQrCodeGeneratorOffline.Droid.Resource.String.material_timepicker_hour;
+			global::Acr.UserDialogs.Resource.String.material_timepicker_minute = global::PixQrCodeGeneratorOffline.Droid.Resource.String.material_timepicker_minute;
+			global::Acr.UserDialogs.Resource.String.material_timepicker_pm = global::PixQrCodeGeneratorOffline.Droid.Resource.String.material_timepicker_pm;
+			global::Acr.UserDialogs.Resource.String.material_timepicker_select_time = global::PixQrCodeGeneratorOffline.Droid.Resource.String.material_timepicker_select_time;
+			global::Acr.UserDialogs.Resource.String.material_timepicker_text_input_mode_description = global::PixQrCodeGeneratorOffline.Droid.Resource.String.material_timepicker_text_input_mode_description;
+			global::Acr.UserDialogs.Resource.String.mtrl_badge_numberless_content_description = global::PixQrCodeGeneratorOffline.Droid.Resource.String.mtrl_badge_numberless_content_description;
 			global::Acr.UserDialogs.Resource.String.mtrl_chip_close_icon_content_description = global::PixQrCodeGeneratorOffline.Droid.Resource.String.mtrl_chip_close_icon_content_description;
+			global::Acr.UserDialogs.Resource.String.mtrl_exceed_max_badge_number_content_description = global::PixQrCodeGeneratorOffline.Droid.Resource.String.mtrl_exceed_max_badge_number_content_description;
+			global::Acr.UserDialogs.Resource.String.mtrl_exceed_max_badge_number_suffix = global::PixQrCodeGeneratorOffline.Droid.Resource.String.mtrl_exceed_max_badge_number_suffix;
+			global::Acr.UserDialogs.Resource.String.mtrl_picker_a11y_next_month = global::PixQrCodeGeneratorOffline.Droid.Resource.String.mtrl_picker_a11y_next_month;
+			global::Acr.UserDialogs.Resource.String.mtrl_picker_a11y_prev_month = global::PixQrCodeGeneratorOffline.Droid.Resource.String.mtrl_picker_a11y_prev_month;
+			global::Acr.UserDialogs.Resource.String.mtrl_picker_announce_current_selection = global::PixQrCodeGeneratorOffline.Droid.Resource.String.mtrl_picker_announce_current_selection;
+			global::Acr.UserDialogs.Resource.String.mtrl_picker_cancel = global::PixQrCodeGeneratorOffline.Droid.Resource.String.mtrl_picker_cancel;
+			global::Acr.UserDialogs.Resource.String.mtrl_picker_confirm = global::PixQrCodeGeneratorOffline.Droid.Resource.String.mtrl_picker_confirm;
+			global::Acr.UserDialogs.Resource.String.mtrl_picker_date_header_selected = global::PixQrCodeGeneratorOffline.Droid.Resource.String.mtrl_picker_date_header_selected;
+			global::Acr.UserDialogs.Resource.String.mtrl_picker_date_header_title = global::PixQrCodeGeneratorOffline.Droid.Resource.String.mtrl_picker_date_header_title;
+			global::Acr.UserDialogs.Resource.String.mtrl_picker_date_header_unselected = global::PixQrCodeGeneratorOffline.Droid.Resource.String.mtrl_picker_date_header_unselected;
+			global::Acr.UserDialogs.Resource.String.mtrl_picker_day_of_week_column_header = global::PixQrCodeGeneratorOffline.Droid.Resource.String.mtrl_picker_day_of_week_column_header;
+			global::Acr.UserDialogs.Resource.String.mtrl_picker_invalid_format = global::PixQrCodeGeneratorOffline.Droid.Resource.String.mtrl_picker_invalid_format;
+			global::Acr.UserDialogs.Resource.String.mtrl_picker_invalid_format_example = global::PixQrCodeGeneratorOffline.Droid.Resource.String.mtrl_picker_invalid_format_example;
+			global::Acr.UserDialogs.Resource.String.mtrl_picker_invalid_format_use = global::PixQrCodeGeneratorOffline.Droid.Resource.String.mtrl_picker_invalid_format_use;
+			global::Acr.UserDialogs.Resource.String.mtrl_picker_invalid_range = global::PixQrCodeGeneratorOffline.Droid.Resource.String.mtrl_picker_invalid_range;
+			global::Acr.UserDialogs.Resource.String.mtrl_picker_navigate_to_year_description = global::PixQrCodeGeneratorOffline.Droid.Resource.String.mtrl_picker_navigate_to_year_description;
+			global::Acr.UserDialogs.Resource.String.mtrl_picker_out_of_range = global::PixQrCodeGeneratorOffline.Droid.Resource.String.mtrl_picker_out_of_range;
+			global::Acr.UserDialogs.Resource.String.mtrl_picker_range_header_only_end_selected = global::PixQrCodeGeneratorOffline.Droid.Resource.String.mtrl_picker_range_header_only_end_selected;
+			global::Acr.UserDialogs.Resource.String.mtrl_picker_range_header_only_start_selected = global::PixQrCodeGeneratorOffline.Droid.Resource.String.mtrl_picker_range_header_only_start_selected;
+			global::Acr.UserDialogs.Resource.String.mtrl_picker_range_header_selected = global::PixQrCodeGeneratorOffline.Droid.Resource.String.mtrl_picker_range_header_selected;
+			global::Acr.UserDialogs.Resource.String.mtrl_picker_range_header_title = global::PixQrCodeGeneratorOffline.Droid.Resource.String.mtrl_picker_range_header_title;
+			global::Acr.UserDialogs.Resource.String.mtrl_picker_range_header_unselected = global::PixQrCodeGeneratorOffline.Droid.Resource.String.mtrl_picker_range_header_unselected;
+			global::Acr.UserDialogs.Resource.String.mtrl_picker_save = global::PixQrCodeGeneratorOffline.Droid.Resource.String.mtrl_picker_save;
+			global::Acr.UserDialogs.Resource.String.mtrl_picker_text_input_date_hint = global::PixQrCodeGeneratorOffline.Droid.Resource.String.mtrl_picker_text_input_date_hint;
+			global::Acr.UserDialogs.Resource.String.mtrl_picker_text_input_date_range_end_hint = global::PixQrCodeGeneratorOffline.Droid.Resource.String.mtrl_picker_text_input_date_range_end_hint;
+			global::Acr.UserDialogs.Resource.String.mtrl_picker_text_input_date_range_start_hint = global::PixQrCodeGeneratorOffline.Droid.Resource.String.mtrl_picker_text_input_date_range_start_hint;
+			global::Acr.UserDialogs.Resource.String.mtrl_picker_text_input_day_abbr = global::PixQrCodeGeneratorOffline.Droid.Resource.String.mtrl_picker_text_input_day_abbr;
+			global::Acr.UserDialogs.Resource.String.mtrl_picker_text_input_month_abbr = global::PixQrCodeGeneratorOffline.Droid.Resource.String.mtrl_picker_text_input_month_abbr;
+			global::Acr.UserDialogs.Resource.String.mtrl_picker_text_input_year_abbr = global::PixQrCodeGeneratorOffline.Droid.Resource.String.mtrl_picker_text_input_year_abbr;
+			global::Acr.UserDialogs.Resource.String.mtrl_picker_toggle_to_calendar_input_mode = global::PixQrCodeGeneratorOffline.Droid.Resource.String.mtrl_picker_toggle_to_calendar_input_mode;
+			global::Acr.UserDialogs.Resource.String.mtrl_picker_toggle_to_day_selection = global::PixQrCodeGeneratorOffline.Droid.Resource.String.mtrl_picker_toggle_to_day_selection;
+			global::Acr.UserDialogs.Resource.String.mtrl_picker_toggle_to_text_input_mode = global::PixQrCodeGeneratorOffline.Droid.Resource.String.mtrl_picker_toggle_to_text_input_mode;
+			global::Acr.UserDialogs.Resource.String.mtrl_picker_toggle_to_year_selection = global::PixQrCodeGeneratorOffline.Droid.Resource.String.mtrl_picker_toggle_to_year_selection;
 			global::Acr.UserDialogs.Resource.String.password_toggle_content_description = global::PixQrCodeGeneratorOffline.Droid.Resource.String.password_toggle_content_description;
 			global::Acr.UserDialogs.Resource.String.path_password_eye = global::PixQrCodeGeneratorOffline.Droid.Resource.String.path_password_eye;
 			global::Acr.UserDialogs.Resource.String.path_password_eye_mask_strike_through = global::PixQrCodeGeneratorOffline.Droid.Resource.String.path_password_eye_mask_strike_through;
@@ -1376,10 +2594,12 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.String.status_bar_notification_info_overflow = global::PixQrCodeGeneratorOffline.Droid.Resource.String.status_bar_notification_info_overflow;
 			global::Acr.UserDialogs.Resource.Style.AlertDialog_AppCompat = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.AlertDialog_AppCompat;
 			global::Acr.UserDialogs.Resource.Style.AlertDialog_AppCompat_Light = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.AlertDialog_AppCompat_Light;
+			global::Acr.UserDialogs.Resource.Style.AndroidThemeColorAccentYellow = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.AndroidThemeColorAccentYellow;
 			global::Acr.UserDialogs.Resource.Style.Animation_AppCompat_Dialog = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Animation_AppCompat_Dialog;
 			global::Acr.UserDialogs.Resource.Style.Animation_AppCompat_DropDownUp = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Animation_AppCompat_DropDownUp;
 			global::Acr.UserDialogs.Resource.Style.Animation_AppCompat_Tooltip = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Animation_AppCompat_Tooltip;
 			global::Acr.UserDialogs.Resource.Style.Animation_Design_BottomSheetDialog = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Animation_Design_BottomSheetDialog;
+			global::Acr.UserDialogs.Resource.Style.Animation_MaterialComponents_BottomSheetDialog = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Animation_MaterialComponents_BottomSheetDialog;
 			global::Acr.UserDialogs.Resource.Style.Base_AlertDialog_AppCompat = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_AlertDialog_AppCompat;
 			global::Acr.UserDialogs.Resource.Style.Base_AlertDialog_AppCompat_Light = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_AlertDialog_AppCompat_Light;
 			global::Acr.UserDialogs.Resource.Style.Base_Animation_AppCompat_Dialog = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_Animation_AppCompat_Dialog;
@@ -1388,6 +2608,9 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Style.Base_CardView = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_CardView;
 			global::Acr.UserDialogs.Resource.Style.Base_DialogWindowTitleBackground_AppCompat = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_DialogWindowTitleBackground_AppCompat;
 			global::Acr.UserDialogs.Resource.Style.Base_DialogWindowTitle_AppCompat = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_DialogWindowTitle_AppCompat;
+			global::Acr.UserDialogs.Resource.Style.Base_MaterialAlertDialog_MaterialComponents_Title_Icon = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_MaterialAlertDialog_MaterialComponents_Title_Icon;
+			global::Acr.UserDialogs.Resource.Style.Base_MaterialAlertDialog_MaterialComponents_Title_Panel = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_MaterialAlertDialog_MaterialComponents_Title_Panel;
+			global::Acr.UserDialogs.Resource.Style.Base_MaterialAlertDialog_MaterialComponents_Title_Text = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_MaterialAlertDialog_MaterialComponents_Title_Text;
 			global::Acr.UserDialogs.Resource.Style.Base_TextAppearance_AppCompat = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_TextAppearance_AppCompat;
 			global::Acr.UserDialogs.Resource.Style.Base_TextAppearance_AppCompat_Body1 = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_TextAppearance_AppCompat_Body1;
 			global::Acr.UserDialogs.Resource.Style.Base_TextAppearance_AppCompat_Body2 = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_TextAppearance_AppCompat_Body2;
@@ -1433,6 +2656,10 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Small = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Small;
 			global::Acr.UserDialogs.Resource.Style.Base_TextAppearance_AppCompat_Widget_Switch = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Switch;
 			global::Acr.UserDialogs.Resource.Style.Base_TextAppearance_AppCompat_Widget_TextView_SpinnerItem = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_TextView_SpinnerItem;
+			global::Acr.UserDialogs.Resource.Style.Base_TextAppearance_MaterialComponents_Badge = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_TextAppearance_MaterialComponents_Badge;
+			global::Acr.UserDialogs.Resource.Style.Base_TextAppearance_MaterialComponents_Button = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_TextAppearance_MaterialComponents_Button;
+			global::Acr.UserDialogs.Resource.Style.Base_TextAppearance_MaterialComponents_Headline6 = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_TextAppearance_MaterialComponents_Headline6;
+			global::Acr.UserDialogs.Resource.Style.Base_TextAppearance_MaterialComponents_Subtitle2 = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_TextAppearance_MaterialComponents_Subtitle2;
 			global::Acr.UserDialogs.Resource.Style.Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item;
 			global::Acr.UserDialogs.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle;
 			global::Acr.UserDialogs.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Title = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Title;
@@ -1445,6 +2672,9 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Style.Base_ThemeOverlay_AppCompat_Light = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Light;
 			global::Acr.UserDialogs.Resource.Style.Base_ThemeOverlay_MaterialComponents_Dialog = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_ThemeOverlay_MaterialComponents_Dialog;
 			global::Acr.UserDialogs.Resource.Style.Base_ThemeOverlay_MaterialComponents_Dialog_Alert = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_ThemeOverlay_MaterialComponents_Dialog_Alert;
+			global::Acr.UserDialogs.Resource.Style.Base_ThemeOverlay_MaterialComponents_Dialog_Alert_Framework = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_ThemeOverlay_MaterialComponents_Dialog_Alert_Framework;
+			global::Acr.UserDialogs.Resource.Style.Base_ThemeOverlay_MaterialComponents_Light_Dialog_Alert_Framework = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_ThemeOverlay_MaterialComponents_Light_Dialog_Alert_Framework;
+			global::Acr.UserDialogs.Resource.Style.Base_ThemeOverlay_MaterialComponents_MaterialAlertDialog = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_ThemeOverlay_MaterialComponents_MaterialAlertDialog;
 			global::Acr.UserDialogs.Resource.Style.Base_Theme_AppCompat = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_Theme_AppCompat;
 			global::Acr.UserDialogs.Resource.Style.Base_Theme_AppCompat_CompactMenu = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_Theme_AppCompat_CompactMenu;
 			global::Acr.UserDialogs.Resource.Style.Base_Theme_AppCompat_Dialog = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_Theme_AppCompat_Dialog;
@@ -1465,6 +2695,7 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Style.Base_Theme_MaterialComponents_Dialog = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_Theme_MaterialComponents_Dialog;
 			global::Acr.UserDialogs.Resource.Style.Base_Theme_MaterialComponents_DialogWhenLarge = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_Theme_MaterialComponents_DialogWhenLarge;
 			global::Acr.UserDialogs.Resource.Style.Base_Theme_MaterialComponents_Dialog_Alert = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_Theme_MaterialComponents_Dialog_Alert;
+			global::Acr.UserDialogs.Resource.Style.Base_Theme_MaterialComponents_Dialog_Bridge = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_Theme_MaterialComponents_Dialog_Bridge;
 			global::Acr.UserDialogs.Resource.Style.Base_Theme_MaterialComponents_Dialog_FixedSize = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_Theme_MaterialComponents_Dialog_FixedSize;
 			global::Acr.UserDialogs.Resource.Style.Base_Theme_MaterialComponents_Dialog_MinWidth = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_Theme_MaterialComponents_Dialog_MinWidth;
 			global::Acr.UserDialogs.Resource.Style.Base_Theme_MaterialComponents_Light = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_Theme_MaterialComponents_Light;
@@ -1474,22 +2705,32 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog;
 			global::Acr.UserDialogs.Resource.Style.Base_Theme_MaterialComponents_Light_DialogWhenLarge = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_DialogWhenLarge;
 			global::Acr.UserDialogs.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_Alert = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_Alert;
+			global::Acr.UserDialogs.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_Bridge = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_Bridge;
 			global::Acr.UserDialogs.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_FixedSize = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_FixedSize;
 			global::Acr.UserDialogs.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_MinWidth = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_MinWidth;
+			global::Acr.UserDialogs.Resource.Style.Base_V14_ThemeOverlay_MaterialComponents_BottomSheetDialog = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_V14_ThemeOverlay_MaterialComponents_BottomSheetDialog;
 			global::Acr.UserDialogs.Resource.Style.Base_V14_ThemeOverlay_MaterialComponents_Dialog = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_V14_ThemeOverlay_MaterialComponents_Dialog;
 			global::Acr.UserDialogs.Resource.Style.Base_V14_ThemeOverlay_MaterialComponents_Dialog_Alert = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_V14_ThemeOverlay_MaterialComponents_Dialog_Alert;
+			global::Acr.UserDialogs.Resource.Style.Base_V14_ThemeOverlay_MaterialComponents_MaterialAlertDialog = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_V14_ThemeOverlay_MaterialComponents_MaterialAlertDialog;
 			global::Acr.UserDialogs.Resource.Style.Base_V14_Theme_MaterialComponents = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_V14_Theme_MaterialComponents;
 			global::Acr.UserDialogs.Resource.Style.Base_V14_Theme_MaterialComponents_Bridge = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Bridge;
 			global::Acr.UserDialogs.Resource.Style.Base_V14_Theme_MaterialComponents_Dialog = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Dialog;
+			global::Acr.UserDialogs.Resource.Style.Base_V14_Theme_MaterialComponents_Dialog_Bridge = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Dialog_Bridge;
 			global::Acr.UserDialogs.Resource.Style.Base_V14_Theme_MaterialComponents_Light = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Light;
 			global::Acr.UserDialogs.Resource.Style.Base_V14_Theme_MaterialComponents_Light_Bridge = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Light_Bridge;
 			global::Acr.UserDialogs.Resource.Style.Base_V14_Theme_MaterialComponents_Light_DarkActionBar_Bridge = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Light_DarkActionBar_Bridge;
 			global::Acr.UserDialogs.Resource.Style.Base_V14_Theme_MaterialComponents_Light_Dialog = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Light_Dialog;
+			global::Acr.UserDialogs.Resource.Style.Base_V14_Theme_MaterialComponents_Light_Dialog_Bridge = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Light_Dialog_Bridge;
 			global::Acr.UserDialogs.Resource.Style.Base_V21_ThemeOverlay_AppCompat_Dialog = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_V21_ThemeOverlay_AppCompat_Dialog;
+			global::Acr.UserDialogs.Resource.Style.Base_V21_ThemeOverlay_MaterialComponents_BottomSheetDialog = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_V21_ThemeOverlay_MaterialComponents_BottomSheetDialog;
 			global::Acr.UserDialogs.Resource.Style.Base_V21_Theme_AppCompat = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_V21_Theme_AppCompat;
 			global::Acr.UserDialogs.Resource.Style.Base_V21_Theme_AppCompat_Dialog = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_V21_Theme_AppCompat_Dialog;
 			global::Acr.UserDialogs.Resource.Style.Base_V21_Theme_AppCompat_Light = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_V21_Theme_AppCompat_Light;
 			global::Acr.UserDialogs.Resource.Style.Base_V21_Theme_AppCompat_Light_Dialog = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_V21_Theme_AppCompat_Light_Dialog;
+			global::Acr.UserDialogs.Resource.Style.Base_V21_Theme_MaterialComponents = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_V21_Theme_MaterialComponents;
+			global::Acr.UserDialogs.Resource.Style.Base_V21_Theme_MaterialComponents_Dialog = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_V21_Theme_MaterialComponents_Dialog;
+			global::Acr.UserDialogs.Resource.Style.Base_V21_Theme_MaterialComponents_Light = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_V21_Theme_MaterialComponents_Light;
+			global::Acr.UserDialogs.Resource.Style.Base_V21_Theme_MaterialComponents_Light_Dialog = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_V21_Theme_MaterialComponents_Light_Dialog;
 			global::Acr.UserDialogs.Resource.Style.Base_V22_Theme_AppCompat = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_V22_Theme_AppCompat;
 			global::Acr.UserDialogs.Resource.Style.Base_V22_Theme_AppCompat_Light = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_V22_Theme_AppCompat_Light;
 			global::Acr.UserDialogs.Resource.Style.Base_V23_Theme_AppCompat = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_V23_Theme_AppCompat;
@@ -1566,12 +2807,33 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Style.Base_Widget_AppCompat_Toolbar = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_Widget_AppCompat_Toolbar;
 			global::Acr.UserDialogs.Resource.Style.Base_Widget_AppCompat_Toolbar_Button_Navigation = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_Widget_AppCompat_Toolbar_Button_Navigation;
 			global::Acr.UserDialogs.Resource.Style.Base_Widget_Design_TabLayout = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_Widget_Design_TabLayout;
+			global::Acr.UserDialogs.Resource.Style.Base_Widget_MaterialComponents_AutoCompleteTextView = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_Widget_MaterialComponents_AutoCompleteTextView;
+			global::Acr.UserDialogs.Resource.Style.Base_Widget_MaterialComponents_CheckedTextView = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_Widget_MaterialComponents_CheckedTextView;
 			global::Acr.UserDialogs.Resource.Style.Base_Widget_MaterialComponents_Chip = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_Widget_MaterialComponents_Chip;
+			global::Acr.UserDialogs.Resource.Style.Base_Widget_MaterialComponents_MaterialCalendar_NavigationButton = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_Widget_MaterialComponents_MaterialCalendar_NavigationButton;
+			global::Acr.UserDialogs.Resource.Style.Base_Widget_MaterialComponents_PopupMenu = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_Widget_MaterialComponents_PopupMenu;
+			global::Acr.UserDialogs.Resource.Style.Base_Widget_MaterialComponents_PopupMenu_ContextMenu = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_Widget_MaterialComponents_PopupMenu_ContextMenu;
+			global::Acr.UserDialogs.Resource.Style.Base_Widget_MaterialComponents_PopupMenu_ListPopupWindow = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_Widget_MaterialComponents_PopupMenu_ListPopupWindow;
+			global::Acr.UserDialogs.Resource.Style.Base_Widget_MaterialComponents_PopupMenu_Overflow = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_Widget_MaterialComponents_PopupMenu_Overflow;
+			global::Acr.UserDialogs.Resource.Style.Base_Widget_MaterialComponents_Slider = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_Widget_MaterialComponents_Slider;
+			global::Acr.UserDialogs.Resource.Style.Base_Widget_MaterialComponents_Snackbar = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_Widget_MaterialComponents_Snackbar;
 			global::Acr.UserDialogs.Resource.Style.Base_Widget_MaterialComponents_TextInputEditText = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_Widget_MaterialComponents_TextInputEditText;
 			global::Acr.UserDialogs.Resource.Style.Base_Widget_MaterialComponents_TextInputLayout = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_Widget_MaterialComponents_TextInputLayout;
+			global::Acr.UserDialogs.Resource.Style.Base_Widget_MaterialComponents_TextView = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Base_Widget_MaterialComponents_TextView;
 			global::Acr.UserDialogs.Resource.Style.CardView = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.CardView;
 			global::Acr.UserDialogs.Resource.Style.CardView_Dark = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.CardView_Dark;
 			global::Acr.UserDialogs.Resource.Style.CardView_Light = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.CardView_Light;
+			global::Acr.UserDialogs.Resource.Style.EmptyTheme = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.EmptyTheme;
+			global::Acr.UserDialogs.Resource.Style.MaterialAlertDialog_MaterialComponents = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.MaterialAlertDialog_MaterialComponents;
+			global::Acr.UserDialogs.Resource.Style.MaterialAlertDialog_MaterialComponents_Body_Text = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.MaterialAlertDialog_MaterialComponents_Body_Text;
+			global::Acr.UserDialogs.Resource.Style.MaterialAlertDialog_MaterialComponents_Picker_Date_Calendar = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.MaterialAlertDialog_MaterialComponents_Picker_Date_Calendar;
+			global::Acr.UserDialogs.Resource.Style.MaterialAlertDialog_MaterialComponents_Picker_Date_Spinner = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.MaterialAlertDialog_MaterialComponents_Picker_Date_Spinner;
+			global::Acr.UserDialogs.Resource.Style.MaterialAlertDialog_MaterialComponents_Title_Icon = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.MaterialAlertDialog_MaterialComponents_Title_Icon;
+			global::Acr.UserDialogs.Resource.Style.MaterialAlertDialog_MaterialComponents_Title_Icon_CenterStacked = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.MaterialAlertDialog_MaterialComponents_Title_Icon_CenterStacked;
+			global::Acr.UserDialogs.Resource.Style.MaterialAlertDialog_MaterialComponents_Title_Panel = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.MaterialAlertDialog_MaterialComponents_Title_Panel;
+			global::Acr.UserDialogs.Resource.Style.MaterialAlertDialog_MaterialComponents_Title_Panel_CenterStacked = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.MaterialAlertDialog_MaterialComponents_Title_Panel_CenterStacked;
+			global::Acr.UserDialogs.Resource.Style.MaterialAlertDialog_MaterialComponents_Title_Text = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.MaterialAlertDialog_MaterialComponents_Title_Text;
+			global::Acr.UserDialogs.Resource.Style.MaterialAlertDialog_MaterialComponents_Title_Text_CenterStacked = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.MaterialAlertDialog_MaterialComponents_Title_Text_CenterStacked;
 			global::Acr.UserDialogs.Resource.Style.Platform_AppCompat = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Platform_AppCompat;
 			global::Acr.UserDialogs.Resource.Style.Platform_AppCompat_Light = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Platform_AppCompat_Light;
 			global::Acr.UserDialogs.Resource.Style.Platform_MaterialComponents = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Platform_MaterialComponents;
@@ -1603,6 +2865,38 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Text = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Text;
 			global::Acr.UserDialogs.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton;
 			global::Acr.UserDialogs.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton_Overflow = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton_Overflow;
+			global::Acr.UserDialogs.Resource.Style.ShapeAppearanceOverlay = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.ShapeAppearanceOverlay;
+			global::Acr.UserDialogs.Resource.Style.ShapeAppearanceOverlay_BottomLeftDifferentCornerSize = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.ShapeAppearanceOverlay_BottomLeftDifferentCornerSize;
+			global::Acr.UserDialogs.Resource.Style.ShapeAppearanceOverlay_BottomRightCut = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.ShapeAppearanceOverlay_BottomRightCut;
+			global::Acr.UserDialogs.Resource.Style.ShapeAppearanceOverlay_Cut = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.ShapeAppearanceOverlay_Cut;
+			global::Acr.UserDialogs.Resource.Style.ShapeAppearanceOverlay_DifferentCornerSize = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.ShapeAppearanceOverlay_DifferentCornerSize;
+			global::Acr.UserDialogs.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_BottomSheet = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_BottomSheet;
+			global::Acr.UserDialogs.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_Chip = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_Chip;
+			global::Acr.UserDialogs.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_ExtendedFloatingActionButton = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_ExtendedFloatingActionButton;
+			global::Acr.UserDialogs.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_FloatingActionButton = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_FloatingActionButton;
+			global::Acr.UserDialogs.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Day = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Day;
+			global::Acr.UserDialogs.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Window_Fullscreen = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Window_Fullscreen;
+			global::Acr.UserDialogs.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Year = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Year;
+			global::Acr.UserDialogs.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_TextInputLayout_FilledBox = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_TextInputLayout_FilledBox;
+			global::Acr.UserDialogs.Resource.Style.ShapeAppearanceOverlay_TopLeftCut = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.ShapeAppearanceOverlay_TopLeftCut;
+			global::Acr.UserDialogs.Resource.Style.ShapeAppearanceOverlay_TopRightDifferentCornerSize = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.ShapeAppearanceOverlay_TopRightDifferentCornerSize;
+			global::Acr.UserDialogs.Resource.Style.ShapeAppearance_MaterialComponents = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.ShapeAppearance_MaterialComponents;
+			global::Acr.UserDialogs.Resource.Style.ShapeAppearance_MaterialComponents_LargeComponent = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.ShapeAppearance_MaterialComponents_LargeComponent;
+			global::Acr.UserDialogs.Resource.Style.ShapeAppearance_MaterialComponents_MediumComponent = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.ShapeAppearance_MaterialComponents_MediumComponent;
+			global::Acr.UserDialogs.Resource.Style.ShapeAppearance_MaterialComponents_SmallComponent = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.ShapeAppearance_MaterialComponents_SmallComponent;
+			global::Acr.UserDialogs.Resource.Style.ShapeAppearance_MaterialComponents_Test = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.ShapeAppearance_MaterialComponents_Test;
+			global::Acr.UserDialogs.Resource.Style.ShapeAppearance_MaterialComponents_Tooltip = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.ShapeAppearance_MaterialComponents_Tooltip;
+			global::Acr.UserDialogs.Resource.Style.TestStyleWithLineHeight = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.TestStyleWithLineHeight;
+			global::Acr.UserDialogs.Resource.Style.TestStyleWithLineHeightAppearance = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.TestStyleWithLineHeightAppearance;
+			global::Acr.UserDialogs.Resource.Style.TestStyleWithoutLineHeight = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.TestStyleWithoutLineHeight;
+			global::Acr.UserDialogs.Resource.Style.TestStyleWithThemeLineHeightAttribute = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.TestStyleWithThemeLineHeightAttribute;
+			global::Acr.UserDialogs.Resource.Style.TestThemeWithLineHeight = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.TestThemeWithLineHeight;
+			global::Acr.UserDialogs.Resource.Style.TestThemeWithLineHeightDisabled = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.TestThemeWithLineHeightDisabled;
+			global::Acr.UserDialogs.Resource.Style.Test_ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Day = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Test_ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Day;
+			global::Acr.UserDialogs.Resource.Style.Test_Theme_MaterialComponents_MaterialCalendar = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Test_Theme_MaterialComponents_MaterialCalendar;
+			global::Acr.UserDialogs.Resource.Style.Test_Widget_MaterialComponents_MaterialCalendar = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Test_Widget_MaterialComponents_MaterialCalendar;
+			global::Acr.UserDialogs.Resource.Style.Test_Widget_MaterialComponents_MaterialCalendar_Day = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Test_Widget_MaterialComponents_MaterialCalendar_Day;
+			global::Acr.UserDialogs.Resource.Style.Test_Widget_MaterialComponents_MaterialCalendar_Day_Selected = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Test_Widget_MaterialComponents_MaterialCalendar_Day_Selected;
 			global::Acr.UserDialogs.Resource.Style.TextAppearance_AppCompat = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.TextAppearance_AppCompat;
 			global::Acr.UserDialogs.Resource.Style.TextAppearance_AppCompat_Body1 = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.TextAppearance_AppCompat_Body1;
 			global::Acr.UserDialogs.Resource.Style.TextAppearance_AppCompat_Body2 = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.TextAppearance_AppCompat_Body2;
@@ -1662,8 +2956,12 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Style.TextAppearance_Design_Error = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.TextAppearance_Design_Error;
 			global::Acr.UserDialogs.Resource.Style.TextAppearance_Design_HelperText = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.TextAppearance_Design_HelperText;
 			global::Acr.UserDialogs.Resource.Style.TextAppearance_Design_Hint = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.TextAppearance_Design_Hint;
+			global::Acr.UserDialogs.Resource.Style.TextAppearance_Design_Placeholder = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.TextAppearance_Design_Placeholder;
+			global::Acr.UserDialogs.Resource.Style.TextAppearance_Design_Prefix = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.TextAppearance_Design_Prefix;
 			global::Acr.UserDialogs.Resource.Style.TextAppearance_Design_Snackbar_Message = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.TextAppearance_Design_Snackbar_Message;
+			global::Acr.UserDialogs.Resource.Style.TextAppearance_Design_Suffix = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.TextAppearance_Design_Suffix;
 			global::Acr.UserDialogs.Resource.Style.TextAppearance_Design_Tab = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.TextAppearance_Design_Tab;
+			global::Acr.UserDialogs.Resource.Style.TextAppearance_MaterialComponents_Badge = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.TextAppearance_MaterialComponents_Badge;
 			global::Acr.UserDialogs.Resource.Style.TextAppearance_MaterialComponents_Body1 = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.TextAppearance_MaterialComponents_Body1;
 			global::Acr.UserDialogs.Resource.Style.TextAppearance_MaterialComponents_Body2 = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.TextAppearance_MaterialComponents_Body2;
 			global::Acr.UserDialogs.Resource.Style.TextAppearance_MaterialComponents_Button = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.TextAppearance_MaterialComponents_Button;
@@ -1678,9 +2976,12 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Style.TextAppearance_MaterialComponents_Overline = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.TextAppearance_MaterialComponents_Overline;
 			global::Acr.UserDialogs.Resource.Style.TextAppearance_MaterialComponents_Subtitle1 = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.TextAppearance_MaterialComponents_Subtitle1;
 			global::Acr.UserDialogs.Resource.Style.TextAppearance_MaterialComponents_Subtitle2 = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.TextAppearance_MaterialComponents_Subtitle2;
+			global::Acr.UserDialogs.Resource.Style.TextAppearance_MaterialComponents_TimePicker_Title = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.TextAppearance_MaterialComponents_TimePicker_Title;
+			global::Acr.UserDialogs.Resource.Style.TextAppearance_MaterialComponents_Tooltip = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.TextAppearance_MaterialComponents_Tooltip;
 			global::Acr.UserDialogs.Resource.Style.TextAppearance_Widget_AppCompat_ExpandedMenu_Item = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.TextAppearance_Widget_AppCompat_ExpandedMenu_Item;
 			global::Acr.UserDialogs.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Subtitle = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Subtitle;
 			global::Acr.UserDialogs.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Title = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Title;
+			global::Acr.UserDialogs.Resource.Style.ThemeOverlayColorAccentRed = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.ThemeOverlayColorAccentRed;
 			global::Acr.UserDialogs.Resource.Style.ThemeOverlay_AppCompat = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.ThemeOverlay_AppCompat;
 			global::Acr.UserDialogs.Resource.Style.ThemeOverlay_AppCompat_ActionBar = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.ThemeOverlay_AppCompat_ActionBar;
 			global::Acr.UserDialogs.Resource.Style.ThemeOverlay_AppCompat_Dark = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.ThemeOverlay_AppCompat_Dark;
@@ -1690,18 +2991,45 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Style.ThemeOverlay_AppCompat_Dialog = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.ThemeOverlay_AppCompat_Dialog;
 			global::Acr.UserDialogs.Resource.Style.ThemeOverlay_AppCompat_Dialog_Alert = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.ThemeOverlay_AppCompat_Dialog_Alert;
 			global::Acr.UserDialogs.Resource.Style.ThemeOverlay_AppCompat_Light = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.ThemeOverlay_AppCompat_Light;
+			global::Acr.UserDialogs.Resource.Style.ThemeOverlay_Design_TextInputEditText = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.ThemeOverlay_Design_TextInputEditText;
 			global::Acr.UserDialogs.Resource.Style.ThemeOverlay_MaterialComponents = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.ThemeOverlay_MaterialComponents;
 			global::Acr.UserDialogs.Resource.Style.ThemeOverlay_MaterialComponents_ActionBar = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.ThemeOverlay_MaterialComponents_ActionBar;
+			global::Acr.UserDialogs.Resource.Style.ThemeOverlay_MaterialComponents_ActionBar_Primary = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.ThemeOverlay_MaterialComponents_ActionBar_Primary;
+			global::Acr.UserDialogs.Resource.Style.ThemeOverlay_MaterialComponents_ActionBar_Surface = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.ThemeOverlay_MaterialComponents_ActionBar_Surface;
+			global::Acr.UserDialogs.Resource.Style.ThemeOverlay_MaterialComponents_AutoCompleteTextView = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.ThemeOverlay_MaterialComponents_AutoCompleteTextView;
+			global::Acr.UserDialogs.Resource.Style.ThemeOverlay_MaterialComponents_AutoCompleteTextView_FilledBox = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.ThemeOverlay_MaterialComponents_AutoCompleteTextView_FilledBox;
+			global::Acr.UserDialogs.Resource.Style.ThemeOverlay_MaterialComponents_AutoCompleteTextView_FilledBox_Dense = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.ThemeOverlay_MaterialComponents_AutoCompleteTextView_FilledBox_Dense;
+			global::Acr.UserDialogs.Resource.Style.ThemeOverlay_MaterialComponents_AutoCompleteTextView_OutlinedBox = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.ThemeOverlay_MaterialComponents_AutoCompleteTextView_OutlinedBox;
+			global::Acr.UserDialogs.Resource.Style.ThemeOverlay_MaterialComponents_AutoCompleteTextView_OutlinedBox_Dense = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.ThemeOverlay_MaterialComponents_AutoCompleteTextView_OutlinedBox_Dense;
+			global::Acr.UserDialogs.Resource.Style.ThemeOverlay_MaterialComponents_BottomAppBar_Primary = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.ThemeOverlay_MaterialComponents_BottomAppBar_Primary;
+			global::Acr.UserDialogs.Resource.Style.ThemeOverlay_MaterialComponents_BottomAppBar_Surface = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.ThemeOverlay_MaterialComponents_BottomAppBar_Surface;
+			global::Acr.UserDialogs.Resource.Style.ThemeOverlay_MaterialComponents_BottomSheetDialog = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.ThemeOverlay_MaterialComponents_BottomSheetDialog;
 			global::Acr.UserDialogs.Resource.Style.ThemeOverlay_MaterialComponents_Dark = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Dark;
 			global::Acr.UserDialogs.Resource.Style.ThemeOverlay_MaterialComponents_Dark_ActionBar = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Dark_ActionBar;
+			global::Acr.UserDialogs.Resource.Style.ThemeOverlay_MaterialComponents_DayNight_BottomSheetDialog = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.ThemeOverlay_MaterialComponents_DayNight_BottomSheetDialog;
 			global::Acr.UserDialogs.Resource.Style.ThemeOverlay_MaterialComponents_Dialog = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Dialog;
 			global::Acr.UserDialogs.Resource.Style.ThemeOverlay_MaterialComponents_Dialog_Alert = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Dialog_Alert;
+			global::Acr.UserDialogs.Resource.Style.ThemeOverlay_MaterialComponents_Dialog_Alert_Framework = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Dialog_Alert_Framework;
 			global::Acr.UserDialogs.Resource.Style.ThemeOverlay_MaterialComponents_Light = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Light;
+			global::Acr.UserDialogs.Resource.Style.ThemeOverlay_MaterialComponents_Light_Dialog_Alert_Framework = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Light_Dialog_Alert_Framework;
+			global::Acr.UserDialogs.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog;
+			global::Acr.UserDialogs.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Centered = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Centered;
+			global::Acr.UserDialogs.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date;
+			global::Acr.UserDialogs.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Calendar = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Calendar;
+			global::Acr.UserDialogs.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Header_Text = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Header_Text;
+			global::Acr.UserDialogs.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Header_Text_Day = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Header_Text_Day;
+			global::Acr.UserDialogs.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Spinner = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Spinner;
+			global::Acr.UserDialogs.Resource.Style.ThemeOverlay_MaterialComponents_MaterialCalendar = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.ThemeOverlay_MaterialComponents_MaterialCalendar;
+			global::Acr.UserDialogs.Resource.Style.ThemeOverlay_MaterialComponents_MaterialCalendar_Fullscreen = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.ThemeOverlay_MaterialComponents_MaterialCalendar_Fullscreen;
 			global::Acr.UserDialogs.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText;
 			global::Acr.UserDialogs.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_FilledBox = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_FilledBox;
 			global::Acr.UserDialogs.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_FilledBox_Dense = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_FilledBox_Dense;
 			global::Acr.UserDialogs.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox;
 			global::Acr.UserDialogs.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox_Dense = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox_Dense;
+			global::Acr.UserDialogs.Resource.Style.ThemeOverlay_MaterialComponents_TimePicker = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.ThemeOverlay_MaterialComponents_TimePicker;
+			global::Acr.UserDialogs.Resource.Style.ThemeOverlay_MaterialComponents_TimePicker_Display = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.ThemeOverlay_MaterialComponents_TimePicker_Display;
+			global::Acr.UserDialogs.Resource.Style.ThemeOverlay_MaterialComponents_Toolbar_Primary = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Toolbar_Primary;
+			global::Acr.UserDialogs.Resource.Style.ThemeOverlay_MaterialComponents_Toolbar_Surface = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Toolbar_Surface;
 			global::Acr.UserDialogs.Resource.Style.Theme_AppCompat = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Theme_AppCompat;
 			global::Acr.UserDialogs.Resource.Style.Theme_AppCompat_CompactMenu = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Theme_AppCompat_CompactMenu;
 			global::Acr.UserDialogs.Resource.Style.Theme_AppCompat_DayNight = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Theme_AppCompat_DayNight;
@@ -1715,6 +3043,7 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Style.Theme_AppCompat_DialogWhenLarge = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Theme_AppCompat_DialogWhenLarge;
 			global::Acr.UserDialogs.Resource.Style.Theme_AppCompat_Dialog_Alert = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Theme_AppCompat_Dialog_Alert;
 			global::Acr.UserDialogs.Resource.Style.Theme_AppCompat_Dialog_MinWidth = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Theme_AppCompat_Dialog_MinWidth;
+			global::Acr.UserDialogs.Resource.Style.Theme_AppCompat_Empty = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Theme_AppCompat_Empty;
 			global::Acr.UserDialogs.Resource.Style.Theme_AppCompat_Light = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Theme_AppCompat_Light;
 			global::Acr.UserDialogs.Resource.Style.Theme_AppCompat_Light_DarkActionBar = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Theme_AppCompat_Light_DarkActionBar;
 			global::Acr.UserDialogs.Resource.Style.Theme_AppCompat_Light_Dialog = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Theme_AppCompat_Light_Dialog;
@@ -1733,11 +3062,33 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Style.Theme_MaterialComponents_BottomSheetDialog = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Theme_MaterialComponents_BottomSheetDialog;
 			global::Acr.UserDialogs.Resource.Style.Theme_MaterialComponents_Bridge = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Theme_MaterialComponents_Bridge;
 			global::Acr.UserDialogs.Resource.Style.Theme_MaterialComponents_CompactMenu = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Theme_MaterialComponents_CompactMenu;
+			global::Acr.UserDialogs.Resource.Style.Theme_MaterialComponents_DayNight = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Theme_MaterialComponents_DayNight;
+			global::Acr.UserDialogs.Resource.Style.Theme_MaterialComponents_DayNight_BottomSheetDialog = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Theme_MaterialComponents_DayNight_BottomSheetDialog;
+			global::Acr.UserDialogs.Resource.Style.Theme_MaterialComponents_DayNight_Bridge = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Theme_MaterialComponents_DayNight_Bridge;
+			global::Acr.UserDialogs.Resource.Style.Theme_MaterialComponents_DayNight_DarkActionBar = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Theme_MaterialComponents_DayNight_DarkActionBar;
+			global::Acr.UserDialogs.Resource.Style.Theme_MaterialComponents_DayNight_DarkActionBar_Bridge = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Theme_MaterialComponents_DayNight_DarkActionBar_Bridge;
+			global::Acr.UserDialogs.Resource.Style.Theme_MaterialComponents_DayNight_Dialog = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Theme_MaterialComponents_DayNight_Dialog;
+			global::Acr.UserDialogs.Resource.Style.Theme_MaterialComponents_DayNight_DialogWhenLarge = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Theme_MaterialComponents_DayNight_DialogWhenLarge;
+			global::Acr.UserDialogs.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_Alert = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_Alert;
+			global::Acr.UserDialogs.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_Alert_Bridge = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_Alert_Bridge;
+			global::Acr.UserDialogs.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_Bridge = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_Bridge;
+			global::Acr.UserDialogs.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_FixedSize = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_FixedSize;
+			global::Acr.UserDialogs.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_FixedSize_Bridge = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_FixedSize_Bridge;
+			global::Acr.UserDialogs.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_MinWidth = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_MinWidth;
+			global::Acr.UserDialogs.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_MinWidth_Bridge = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_MinWidth_Bridge;
+			global::Acr.UserDialogs.Resource.Style.Theme_MaterialComponents_DayNight_NoActionBar = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Theme_MaterialComponents_DayNight_NoActionBar;
+			global::Acr.UserDialogs.Resource.Style.Theme_MaterialComponents_DayNight_NoActionBar_Bridge = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Theme_MaterialComponents_DayNight_NoActionBar_Bridge;
 			global::Acr.UserDialogs.Resource.Style.Theme_MaterialComponents_Dialog = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Theme_MaterialComponents_Dialog;
 			global::Acr.UserDialogs.Resource.Style.Theme_MaterialComponents_DialogWhenLarge = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Theme_MaterialComponents_DialogWhenLarge;
 			global::Acr.UserDialogs.Resource.Style.Theme_MaterialComponents_Dialog_Alert = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Theme_MaterialComponents_Dialog_Alert;
+			global::Acr.UserDialogs.Resource.Style.Theme_MaterialComponents_Dialog_Alert_Bridge = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Theme_MaterialComponents_Dialog_Alert_Bridge;
+			global::Acr.UserDialogs.Resource.Style.Theme_MaterialComponents_Dialog_Bridge = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Theme_MaterialComponents_Dialog_Bridge;
+			global::Acr.UserDialogs.Resource.Style.Theme_MaterialComponents_Dialog_FixedSize = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Theme_MaterialComponents_Dialog_FixedSize;
+			global::Acr.UserDialogs.Resource.Style.Theme_MaterialComponents_Dialog_FixedSize_Bridge = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Theme_MaterialComponents_Dialog_FixedSize_Bridge;
 			global::Acr.UserDialogs.Resource.Style.Theme_MaterialComponents_Dialog_MinWidth = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Theme_MaterialComponents_Dialog_MinWidth;
+			global::Acr.UserDialogs.Resource.Style.Theme_MaterialComponents_Dialog_MinWidth_Bridge = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Theme_MaterialComponents_Dialog_MinWidth_Bridge;
 			global::Acr.UserDialogs.Resource.Style.Theme_MaterialComponents_Light = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Theme_MaterialComponents_Light;
+			global::Acr.UserDialogs.Resource.Style.Theme_MaterialComponents_Light_BarSize = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Theme_MaterialComponents_Light_BarSize;
 			global::Acr.UserDialogs.Resource.Style.Theme_MaterialComponents_Light_BottomSheetDialog = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Theme_MaterialComponents_Light_BottomSheetDialog;
 			global::Acr.UserDialogs.Resource.Style.Theme_MaterialComponents_Light_Bridge = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Theme_MaterialComponents_Light_Bridge;
 			global::Acr.UserDialogs.Resource.Style.Theme_MaterialComponents_Light_DarkActionBar = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Theme_MaterialComponents_Light_DarkActionBar;
@@ -1745,7 +3096,13 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Style.Theme_MaterialComponents_Light_Dialog = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog;
 			global::Acr.UserDialogs.Resource.Style.Theme_MaterialComponents_Light_DialogWhenLarge = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Theme_MaterialComponents_Light_DialogWhenLarge;
 			global::Acr.UserDialogs.Resource.Style.Theme_MaterialComponents_Light_Dialog_Alert = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog_Alert;
+			global::Acr.UserDialogs.Resource.Style.Theme_MaterialComponents_Light_Dialog_Alert_Bridge = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog_Alert_Bridge;
+			global::Acr.UserDialogs.Resource.Style.Theme_MaterialComponents_Light_Dialog_Bridge = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog_Bridge;
+			global::Acr.UserDialogs.Resource.Style.Theme_MaterialComponents_Light_Dialog_FixedSize = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog_FixedSize;
+			global::Acr.UserDialogs.Resource.Style.Theme_MaterialComponents_Light_Dialog_FixedSize_Bridge = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog_FixedSize_Bridge;
 			global::Acr.UserDialogs.Resource.Style.Theme_MaterialComponents_Light_Dialog_MinWidth = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog_MinWidth;
+			global::Acr.UserDialogs.Resource.Style.Theme_MaterialComponents_Light_Dialog_MinWidth_Bridge = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog_MinWidth_Bridge;
+			global::Acr.UserDialogs.Resource.Style.Theme_MaterialComponents_Light_LargeTouch = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Theme_MaterialComponents_Light_LargeTouch;
 			global::Acr.UserDialogs.Resource.Style.Theme_MaterialComponents_Light_NoActionBar = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Theme_MaterialComponents_Light_NoActionBar;
 			global::Acr.UserDialogs.Resource.Style.Theme_MaterialComponents_Light_NoActionBar_Bridge = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Theme_MaterialComponents_Light_NoActionBar_Bridge;
 			global::Acr.UserDialogs.Resource.Style.Theme_MaterialComponents_NoActionBar = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Theme_MaterialComponents_NoActionBar;
@@ -1834,11 +3191,27 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Style.Widget_Design_ScrimInsetsFrameLayout = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_Design_ScrimInsetsFrameLayout;
 			global::Acr.UserDialogs.Resource.Style.Widget_Design_Snackbar = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_Design_Snackbar;
 			global::Acr.UserDialogs.Resource.Style.Widget_Design_TabLayout = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_Design_TabLayout;
+			global::Acr.UserDialogs.Resource.Style.Widget_Design_TextInputEditText = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_Design_TextInputEditText;
 			global::Acr.UserDialogs.Resource.Style.Widget_Design_TextInputLayout = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_Design_TextInputLayout;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_ActionBar_Primary = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_ActionBar_Primary;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_ActionBar_PrimarySurface = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_ActionBar_PrimarySurface;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_ActionBar_Solid = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_ActionBar_Solid;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_ActionBar_Surface = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_ActionBar_Surface;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_AppBarLayout_Primary = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_AppBarLayout_Primary;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_AppBarLayout_PrimarySurface = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_AppBarLayout_PrimarySurface;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_AppBarLayout_Surface = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_AppBarLayout_Surface;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_AutoCompleteTextView_FilledBox = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_AutoCompleteTextView_FilledBox;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_AutoCompleteTextView_FilledBox_Dense = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_AutoCompleteTextView_FilledBox_Dense;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_AutoCompleteTextView_OutlinedBox = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_AutoCompleteTextView_OutlinedBox;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_AutoCompleteTextView_OutlinedBox_Dense = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_AutoCompleteTextView_OutlinedBox_Dense;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_Badge = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_Badge;
 			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_BottomAppBar = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_BottomAppBar;
 			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_BottomAppBar_Colored = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_BottomAppBar_Colored;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_BottomAppBar_PrimarySurface = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_BottomAppBar_PrimarySurface;
 			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_BottomNavigationView = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_BottomNavigationView;
 			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_BottomNavigationView_Colored = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_BottomNavigationView_Colored;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_BottomNavigationView_PrimarySurface = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_BottomNavigationView_PrimarySurface;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_BottomSheet = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_BottomSheet;
 			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_BottomSheet_Modal = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_BottomSheet_Modal;
 			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_Button = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_Button;
 			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_Button_Icon = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_Button_Icon;
@@ -1846,31 +3219,99 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_Button_OutlinedButton_Icon = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_Button_OutlinedButton_Icon;
 			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_Button_TextButton = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_Button_TextButton;
 			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_Button_TextButton_Dialog = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_Button_TextButton_Dialog;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_Button_TextButton_Dialog_Flush = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_Button_TextButton_Dialog_Flush;
 			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_Button_TextButton_Dialog_Icon = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_Button_TextButton_Dialog_Icon;
 			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_Button_TextButton_Icon = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_Button_TextButton_Icon;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_Button_TextButton_Snackbar = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_Button_TextButton_Snackbar;
 			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_Button_UnelevatedButton = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_Button_UnelevatedButton;
 			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_Button_UnelevatedButton_Icon = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_Button_UnelevatedButton_Icon;
 			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_CardView = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_CardView;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_CheckedTextView = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_CheckedTextView;
 			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_ChipGroup = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_ChipGroup;
 			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_Chip_Action = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_Chip_Action;
 			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_Chip_Choice = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_Chip_Choice;
 			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_Chip_Entry = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_Chip_Entry;
 			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_Chip_Filter = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_Chip_Filter;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_CircularProgressIndicator = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_CircularProgressIndicator;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_CircularProgressIndicator_ExtraSmall = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_CircularProgressIndicator_ExtraSmall;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_CircularProgressIndicator_Medium = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_CircularProgressIndicator_Medium;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_CircularProgressIndicator_Small = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_CircularProgressIndicator_Small;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_CollapsingToolbar = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_CollapsingToolbar;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_CompoundButton_CheckBox = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_CompoundButton_CheckBox;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_CompoundButton_RadioButton = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_CompoundButton_RadioButton;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_CompoundButton_Switch = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_CompoundButton_Switch;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_ExtendedFloatingActionButton = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_ExtendedFloatingActionButton;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_ExtendedFloatingActionButton_Icon = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_ExtendedFloatingActionButton_Icon;
 			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_FloatingActionButton = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_FloatingActionButton;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_Light_ActionBar_Solid = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_Light_ActionBar_Solid;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_LinearProgressIndicator = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_LinearProgressIndicator;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_MaterialButtonToggleGroup = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_MaterialButtonToggleGroup;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_MaterialCalendar = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Day = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Day;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_MaterialCalendar_DayTextView = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_DayTextView;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Day_Invalid = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Day_Invalid;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Day_Selected = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Day_Selected;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Day_Today = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Day_Today;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Fullscreen = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Fullscreen;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderCancelButton = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderCancelButton;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderConfirmButton = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderConfirmButton;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderDivider = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderDivider;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderLayout = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderLayout;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderSelection = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderSelection;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderSelection_Fullscreen = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderSelection_Fullscreen;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderTitle = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderTitle;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderToggleButton = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderToggleButton;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Item = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Item;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_MaterialCalendar_MonthNavigationButton = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_MonthNavigationButton;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_MaterialCalendar_MonthTextView = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_MonthTextView;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Year = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Year;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_MaterialCalendar_YearNavigationButton = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_YearNavigationButton;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Year_Selected = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Year_Selected;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Year_Today = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Year_Today;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_NavigationRailView = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_NavigationRailView;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_NavigationRailView_Colored = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_NavigationRailView_Colored;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_NavigationRailView_Colored_Compact = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_NavigationRailView_Colored_Compact;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_NavigationRailView_Compact = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_NavigationRailView_Compact;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_NavigationRailView_PrimarySurface = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_NavigationRailView_PrimarySurface;
 			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_NavigationView = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_NavigationView;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_PopupMenu = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_PopupMenu;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_PopupMenu_ContextMenu = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_PopupMenu_ContextMenu;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_PopupMenu_ListPopupWindow = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_PopupMenu_ListPopupWindow;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_PopupMenu_Overflow = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_PopupMenu_Overflow;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_ProgressIndicator = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_ProgressIndicator;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_ShapeableImageView = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_ShapeableImageView;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_Slider = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_Slider;
 			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_Snackbar = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_Snackbar;
 			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_Snackbar_FullWidth = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_Snackbar_FullWidth;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_Snackbar_TextView = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_Snackbar_TextView;
 			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_TabLayout = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_TabLayout;
 			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_TabLayout_Colored = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_TabLayout_Colored;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_TabLayout_PrimarySurface = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_TabLayout_PrimarySurface;
 			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_TextInputEditText_FilledBox = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_TextInputEditText_FilledBox;
 			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_TextInputEditText_FilledBox_Dense = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_TextInputEditText_FilledBox_Dense;
 			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_TextInputEditText_OutlinedBox = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_TextInputEditText_OutlinedBox;
 			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_TextInputEditText_OutlinedBox_Dense = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_TextInputEditText_OutlinedBox_Dense;
 			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_TextInputLayout_FilledBox = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_TextInputLayout_FilledBox;
 			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_TextInputLayout_FilledBox_Dense = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_TextInputLayout_FilledBox_Dense;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_TextInputLayout_FilledBox_Dense_ExposedDropdownMenu = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_TextInputLayout_FilledBox_Dense_ExposedDropdownMenu;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_TextInputLayout_FilledBox_ExposedDropdownMenu = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_TextInputLayout_FilledBox_ExposedDropdownMenu;
 			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_TextInputLayout_OutlinedBox = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_TextInputLayout_OutlinedBox;
 			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_TextInputLayout_OutlinedBox_Dense = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_TextInputLayout_OutlinedBox_Dense;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_TextInputLayout_OutlinedBox_Dense_ExposedDropdownMenu = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_TextInputLayout_OutlinedBox_Dense_ExposedDropdownMenu;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_TextInputLayout_OutlinedBox_ExposedDropdownMenu = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_TextInputLayout_OutlinedBox_ExposedDropdownMenu;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_TextView = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_TextView;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_TimePicker = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_TimePicker;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_TimePicker_Button = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_TimePicker_Button;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_TimePicker_Clock = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_TimePicker_Clock;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_TimePicker_Display = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_TimePicker_Display;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_TimePicker_Display_TextInputEditText = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_TimePicker_Display_TextInputEditText;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_TimePicker_ImageButton = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_TimePicker_ImageButton;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_TimePicker_ImageButton_ShapeAppearance = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_TimePicker_ImageButton_ShapeAppearance;
 			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_Toolbar = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_Toolbar;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_Toolbar_Primary = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_Toolbar_Primary;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_Toolbar_PrimarySurface = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_Toolbar_PrimarySurface;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_Toolbar_Surface = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_Toolbar_Surface;
+			global::Acr.UserDialogs.Resource.Style.Widget_MaterialComponents_Tooltip = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_MaterialComponents_Tooltip;
 			global::Acr.UserDialogs.Resource.Style.Widget_Support_CoordinatorLayout = global::PixQrCodeGeneratorOffline.Droid.Resource.Style.Widget_Support_CoordinatorLayout;
 			global::Acr.UserDialogs.Resource.Styleable.ActionBar = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ActionBar;
 			global::Acr.UserDialogs.Resource.Styleable.ActionBarLayout = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ActionBarLayout;
@@ -1956,6 +3397,8 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Styleable.AppBarLayout_Layout_layout_scrollFlags = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.AppBarLayout_Layout_layout_scrollFlags;
 			global::Acr.UserDialogs.Resource.Styleable.AppBarLayout_Layout_layout_scrollInterpolator = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.AppBarLayout_Layout_layout_scrollInterpolator;
 			global::Acr.UserDialogs.Resource.Styleable.AppBarLayout_liftOnScroll = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.AppBarLayout_liftOnScroll;
+			global::Acr.UserDialogs.Resource.Styleable.AppBarLayout_liftOnScrollTargetViewId = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.AppBarLayout_liftOnScrollTargetViewId;
+			global::Acr.UserDialogs.Resource.Styleable.AppBarLayout_statusBarForeground = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.AppBarLayout_statusBarForeground;
 			global::Acr.UserDialogs.Resource.Styleable.AppCompatImageView = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.AppCompatImageView;
 			global::Acr.UserDialogs.Resource.Styleable.AppCompatImageView_android_src = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.AppCompatImageView_android_src;
 			global::Acr.UserDialogs.Resource.Styleable.AppCompatImageView_srcCompat = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.AppCompatImageView_srcCompat;
@@ -2014,6 +3457,7 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_actionMenuTextColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.AppCompatTheme_actionMenuTextColor;
 			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_actionModeBackground = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.AppCompatTheme_actionModeBackground;
 			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_actionModeCloseButtonStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.AppCompatTheme_actionModeCloseButtonStyle;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_actionModeCloseContentDescription = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.AppCompatTheme_actionModeCloseContentDescription;
 			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_actionModeCloseDrawable = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.AppCompatTheme_actionModeCloseDrawable;
 			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_actionModeCopyDrawable = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.AppCompatTheme_actionModeCopyDrawable;
 			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_actionModeCutDrawable = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.AppCompatTheme_actionModeCutDrawable;
@@ -2024,6 +3468,7 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_actionModeShareDrawable = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.AppCompatTheme_actionModeShareDrawable;
 			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_actionModeSplitBackground = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.AppCompatTheme_actionModeSplitBackground;
 			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_actionModeStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.AppCompatTheme_actionModeStyle;
+			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_actionModeTheme = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.AppCompatTheme_actionModeTheme;
 			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_actionModeWebSearchDrawable = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.AppCompatTheme_actionModeWebSearchDrawable;
 			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_actionOverflowButtonStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.AppCompatTheme_actionOverflowButtonStyle;
 			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_actionOverflowMenuStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.AppCompatTheme_actionOverflowMenuStyle;
@@ -2122,22 +3567,62 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_windowMinWidthMajor = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.AppCompatTheme_windowMinWidthMajor;
 			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_windowMinWidthMinor = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.AppCompatTheme_windowMinWidthMinor;
 			global::Acr.UserDialogs.Resource.Styleable.AppCompatTheme_windowNoTitle = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.AppCompatTheme_windowNoTitle;
+			global::Acr.UserDialogs.Resource.Styleable.Badge = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Badge;
+			global::Acr.UserDialogs.Resource.Styleable.Badge_backgroundColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Badge_backgroundColor;
+			global::Acr.UserDialogs.Resource.Styleable.Badge_badgeGravity = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Badge_badgeGravity;
+			global::Acr.UserDialogs.Resource.Styleable.Badge_badgeTextColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Badge_badgeTextColor;
+			global::Acr.UserDialogs.Resource.Styleable.Badge_horizontalOffset = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Badge_horizontalOffset;
+			global::Acr.UserDialogs.Resource.Styleable.Badge_maxCharacterCount = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Badge_maxCharacterCount;
+			global::Acr.UserDialogs.Resource.Styleable.Badge_number = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Badge_number;
+			global::Acr.UserDialogs.Resource.Styleable.Badge_verticalOffset = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Badge_verticalOffset;
+			global::Acr.UserDialogs.Resource.Styleable.BaseProgressIndicator = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.BaseProgressIndicator;
+			global::Acr.UserDialogs.Resource.Styleable.BaseProgressIndicator_android_indeterminate = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.BaseProgressIndicator_android_indeterminate;
+			global::Acr.UserDialogs.Resource.Styleable.BaseProgressIndicator_hideAnimationBehavior = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.BaseProgressIndicator_hideAnimationBehavior;
+			global::Acr.UserDialogs.Resource.Styleable.BaseProgressIndicator_indicatorColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.BaseProgressIndicator_indicatorColor;
+			global::Acr.UserDialogs.Resource.Styleable.BaseProgressIndicator_minHideDelay = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.BaseProgressIndicator_minHideDelay;
+			global::Acr.UserDialogs.Resource.Styleable.BaseProgressIndicator_showAnimationBehavior = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.BaseProgressIndicator_showAnimationBehavior;
+			global::Acr.UserDialogs.Resource.Styleable.BaseProgressIndicator_showDelay = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.BaseProgressIndicator_showDelay;
+			global::Acr.UserDialogs.Resource.Styleable.BaseProgressIndicator_trackColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.BaseProgressIndicator_trackColor;
+			global::Acr.UserDialogs.Resource.Styleable.BaseProgressIndicator_trackCornerRadius = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.BaseProgressIndicator_trackCornerRadius;
+			global::Acr.UserDialogs.Resource.Styleable.BaseProgressIndicator_trackThickness = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.BaseProgressIndicator_trackThickness;
 			global::Acr.UserDialogs.Resource.Styleable.BottomAppBar = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.BottomAppBar;
 			global::Acr.UserDialogs.Resource.Styleable.BottomAppBar_backgroundTint = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.BottomAppBar_backgroundTint;
+			global::Acr.UserDialogs.Resource.Styleable.BottomAppBar_elevation = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.BottomAppBar_elevation;
 			global::Acr.UserDialogs.Resource.Styleable.BottomAppBar_fabAlignmentMode = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.BottomAppBar_fabAlignmentMode;
+			global::Acr.UserDialogs.Resource.Styleable.BottomAppBar_fabAnimationMode = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.BottomAppBar_fabAnimationMode;
 			global::Acr.UserDialogs.Resource.Styleable.BottomAppBar_fabCradleMargin = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.BottomAppBar_fabCradleMargin;
 			global::Acr.UserDialogs.Resource.Styleable.BottomAppBar_fabCradleRoundedCornerRadius = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.BottomAppBar_fabCradleRoundedCornerRadius;
 			global::Acr.UserDialogs.Resource.Styleable.BottomAppBar_fabCradleVerticalOffset = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.BottomAppBar_fabCradleVerticalOffset;
 			global::Acr.UserDialogs.Resource.Styleable.BottomAppBar_hideOnScroll = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.BottomAppBar_hideOnScroll;
+			global::Acr.UserDialogs.Resource.Styleable.BottomAppBar_paddingBottomSystemWindowInsets = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.BottomAppBar_paddingBottomSystemWindowInsets;
+			global::Acr.UserDialogs.Resource.Styleable.BottomAppBar_paddingLeftSystemWindowInsets = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.BottomAppBar_paddingLeftSystemWindowInsets;
+			global::Acr.UserDialogs.Resource.Styleable.BottomAppBar_paddingRightSystemWindowInsets = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.BottomAppBar_paddingRightSystemWindowInsets;
 			global::Acr.UserDialogs.Resource.Styleable.BottomNavigationView = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.BottomNavigationView;
 			global::Acr.UserDialogs.Resource.Styleable.BottomNavigationView_itemHorizontalTranslationEnabled = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.BottomNavigationView_itemHorizontalTranslationEnabled;
 			global::Acr.UserDialogs.Resource.Styleable.BottomSheetBehavior_Layout = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.BottomSheetBehavior_Layout;
+			global::Acr.UserDialogs.Resource.Styleable.BottomSheetBehavior_Layout_android_elevation = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.BottomSheetBehavior_Layout_android_elevation;
+			global::Acr.UserDialogs.Resource.Styleable.BottomSheetBehavior_Layout_android_maxWidth = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.BottomSheetBehavior_Layout_android_maxWidth;
+			global::Acr.UserDialogs.Resource.Styleable.BottomSheetBehavior_Layout_backgroundTint = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.BottomSheetBehavior_Layout_backgroundTint;
+			global::Acr.UserDialogs.Resource.Styleable.BottomSheetBehavior_Layout_behavior_draggable = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_draggable;
+			global::Acr.UserDialogs.Resource.Styleable.BottomSheetBehavior_Layout_behavior_expandedOffset = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_expandedOffset;
 			global::Acr.UserDialogs.Resource.Styleable.BottomSheetBehavior_Layout_behavior_fitToContents = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_fitToContents;
+			global::Acr.UserDialogs.Resource.Styleable.BottomSheetBehavior_Layout_behavior_halfExpandedRatio = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_halfExpandedRatio;
 			global::Acr.UserDialogs.Resource.Styleable.BottomSheetBehavior_Layout_behavior_hideable = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_hideable;
 			global::Acr.UserDialogs.Resource.Styleable.BottomSheetBehavior_Layout_behavior_peekHeight = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_peekHeight;
+			global::Acr.UserDialogs.Resource.Styleable.BottomSheetBehavior_Layout_behavior_saveFlags = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_saveFlags;
 			global::Acr.UserDialogs.Resource.Styleable.BottomSheetBehavior_Layout_behavior_skipCollapsed = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_skipCollapsed;
+			global::Acr.UserDialogs.Resource.Styleable.BottomSheetBehavior_Layout_gestureInsetBottomIgnored = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.BottomSheetBehavior_Layout_gestureInsetBottomIgnored;
+			global::Acr.UserDialogs.Resource.Styleable.BottomSheetBehavior_Layout_paddingBottomSystemWindowInsets = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.BottomSheetBehavior_Layout_paddingBottomSystemWindowInsets;
+			global::Acr.UserDialogs.Resource.Styleable.BottomSheetBehavior_Layout_paddingLeftSystemWindowInsets = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.BottomSheetBehavior_Layout_paddingLeftSystemWindowInsets;
+			global::Acr.UserDialogs.Resource.Styleable.BottomSheetBehavior_Layout_paddingRightSystemWindowInsets = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.BottomSheetBehavior_Layout_paddingRightSystemWindowInsets;
+			global::Acr.UserDialogs.Resource.Styleable.BottomSheetBehavior_Layout_paddingTopSystemWindowInsets = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.BottomSheetBehavior_Layout_paddingTopSystemWindowInsets;
+			global::Acr.UserDialogs.Resource.Styleable.BottomSheetBehavior_Layout_shapeAppearance = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.BottomSheetBehavior_Layout_shapeAppearance;
+			global::Acr.UserDialogs.Resource.Styleable.BottomSheetBehavior_Layout_shapeAppearanceOverlay = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.BottomSheetBehavior_Layout_shapeAppearanceOverlay;
 			global::Acr.UserDialogs.Resource.Styleable.ButtonBarLayout = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ButtonBarLayout;
 			global::Acr.UserDialogs.Resource.Styleable.ButtonBarLayout_allowStacking = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ButtonBarLayout_allowStacking;
+			global::Acr.UserDialogs.Resource.Styleable.Capability = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Capability;
+			global::Acr.UserDialogs.Resource.Styleable.Capability_queryPatterns = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Capability_queryPatterns;
+			global::Acr.UserDialogs.Resource.Styleable.Capability_shortcutMatchRequired = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Capability_shortcutMatchRequired;
 			global::Acr.UserDialogs.Resource.Styleable.CardView = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.CardView;
 			global::Acr.UserDialogs.Resource.Styleable.CardView_android_minHeight = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.CardView_android_minHeight;
 			global::Acr.UserDialogs.Resource.Styleable.CardView_android_minWidth = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.CardView_android_minWidth;
@@ -2152,12 +3637,24 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Styleable.CardView_contentPaddingLeft = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.CardView_contentPaddingLeft;
 			global::Acr.UserDialogs.Resource.Styleable.CardView_contentPaddingRight = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.CardView_contentPaddingRight;
 			global::Acr.UserDialogs.Resource.Styleable.CardView_contentPaddingTop = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.CardView_contentPaddingTop;
+			global::Acr.UserDialogs.Resource.Styleable.Carousel = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Carousel;
+			global::Acr.UserDialogs.Resource.Styleable.Carousel_carousel_backwardTransition = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Carousel_carousel_backwardTransition;
+			global::Acr.UserDialogs.Resource.Styleable.Carousel_carousel_emptyViewsBehavior = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Carousel_carousel_emptyViewsBehavior;
+			global::Acr.UserDialogs.Resource.Styleable.Carousel_carousel_firstView = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Carousel_carousel_firstView;
+			global::Acr.UserDialogs.Resource.Styleable.Carousel_carousel_forwardTransition = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Carousel_carousel_forwardTransition;
+			global::Acr.UserDialogs.Resource.Styleable.Carousel_carousel_infinite = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Carousel_carousel_infinite;
+			global::Acr.UserDialogs.Resource.Styleable.Carousel_carousel_nextState = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Carousel_carousel_nextState;
+			global::Acr.UserDialogs.Resource.Styleable.Carousel_carousel_previousState = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Carousel_carousel_previousState;
+			global::Acr.UserDialogs.Resource.Styleable.Carousel_carousel_touchUpMode = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Carousel_carousel_touchUpMode;
+			global::Acr.UserDialogs.Resource.Styleable.Carousel_carousel_touchUp_dampeningFactor = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Carousel_carousel_touchUp_dampeningFactor;
+			global::Acr.UserDialogs.Resource.Styleable.Carousel_carousel_touchUp_velocityThreshold = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Carousel_carousel_touchUp_velocityThreshold;
 			global::Acr.UserDialogs.Resource.Styleable.Chip = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Chip;
 			global::Acr.UserDialogs.Resource.Styleable.ChipGroup = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ChipGroup;
 			global::Acr.UserDialogs.Resource.Styleable.ChipGroup_checkedChip = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ChipGroup_checkedChip;
 			global::Acr.UserDialogs.Resource.Styleable.ChipGroup_chipSpacing = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ChipGroup_chipSpacing;
 			global::Acr.UserDialogs.Resource.Styleable.ChipGroup_chipSpacingHorizontal = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ChipGroup_chipSpacingHorizontal;
 			global::Acr.UserDialogs.Resource.Styleable.ChipGroup_chipSpacingVertical = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ChipGroup_chipSpacingVertical;
+			global::Acr.UserDialogs.Resource.Styleable.ChipGroup_selectionRequired = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ChipGroup_selectionRequired;
 			global::Acr.UserDialogs.Resource.Styleable.ChipGroup_singleLine = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ChipGroup_singleLine;
 			global::Acr.UserDialogs.Resource.Styleable.ChipGroup_singleSelection = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ChipGroup_singleSelection;
 			global::Acr.UserDialogs.Resource.Styleable.Chip_android_checkable = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Chip_android_checkable;
@@ -2165,8 +3662,11 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Styleable.Chip_android_maxWidth = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Chip_android_maxWidth;
 			global::Acr.UserDialogs.Resource.Styleable.Chip_android_text = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Chip_android_text;
 			global::Acr.UserDialogs.Resource.Styleable.Chip_android_textAppearance = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Chip_android_textAppearance;
+			global::Acr.UserDialogs.Resource.Styleable.Chip_android_textColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Chip_android_textColor;
+			global::Acr.UserDialogs.Resource.Styleable.Chip_android_textSize = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Chip_android_textSize;
 			global::Acr.UserDialogs.Resource.Styleable.Chip_checkedIcon = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Chip_checkedIcon;
 			global::Acr.UserDialogs.Resource.Styleable.Chip_checkedIconEnabled = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Chip_checkedIconEnabled;
+			global::Acr.UserDialogs.Resource.Styleable.Chip_checkedIconTint = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Chip_checkedIconTint;
 			global::Acr.UserDialogs.Resource.Styleable.Chip_checkedIconVisible = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Chip_checkedIconVisible;
 			global::Acr.UserDialogs.Resource.Styleable.Chip_chipBackgroundColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Chip_chipBackgroundColor;
 			global::Acr.UserDialogs.Resource.Styleable.Chip_chipCornerRadius = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Chip_chipCornerRadius;
@@ -2177,9 +3677,11 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Styleable.Chip_chipIconTint = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Chip_chipIconTint;
 			global::Acr.UserDialogs.Resource.Styleable.Chip_chipIconVisible = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Chip_chipIconVisible;
 			global::Acr.UserDialogs.Resource.Styleable.Chip_chipMinHeight = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Chip_chipMinHeight;
+			global::Acr.UserDialogs.Resource.Styleable.Chip_chipMinTouchTargetSize = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Chip_chipMinTouchTargetSize;
 			global::Acr.UserDialogs.Resource.Styleable.Chip_chipStartPadding = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Chip_chipStartPadding;
 			global::Acr.UserDialogs.Resource.Styleable.Chip_chipStrokeColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Chip_chipStrokeColor;
 			global::Acr.UserDialogs.Resource.Styleable.Chip_chipStrokeWidth = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Chip_chipStrokeWidth;
+			global::Acr.UserDialogs.Resource.Styleable.Chip_chipSurfaceColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Chip_chipSurfaceColor;
 			global::Acr.UserDialogs.Resource.Styleable.Chip_closeIcon = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Chip_closeIcon;
 			global::Acr.UserDialogs.Resource.Styleable.Chip_closeIconEnabled = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Chip_closeIconEnabled;
 			global::Acr.UserDialogs.Resource.Styleable.Chip_closeIconEndPadding = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Chip_closeIconEndPadding;
@@ -2187,13 +3689,27 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Styleable.Chip_closeIconStartPadding = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Chip_closeIconStartPadding;
 			global::Acr.UserDialogs.Resource.Styleable.Chip_closeIconTint = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Chip_closeIconTint;
 			global::Acr.UserDialogs.Resource.Styleable.Chip_closeIconVisible = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Chip_closeIconVisible;
+			global::Acr.UserDialogs.Resource.Styleable.Chip_ensureMinTouchTargetSize = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Chip_ensureMinTouchTargetSize;
 			global::Acr.UserDialogs.Resource.Styleable.Chip_hideMotionSpec = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Chip_hideMotionSpec;
 			global::Acr.UserDialogs.Resource.Styleable.Chip_iconEndPadding = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Chip_iconEndPadding;
 			global::Acr.UserDialogs.Resource.Styleable.Chip_iconStartPadding = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Chip_iconStartPadding;
 			global::Acr.UserDialogs.Resource.Styleable.Chip_rippleColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Chip_rippleColor;
+			global::Acr.UserDialogs.Resource.Styleable.Chip_shapeAppearance = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Chip_shapeAppearance;
+			global::Acr.UserDialogs.Resource.Styleable.Chip_shapeAppearanceOverlay = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Chip_shapeAppearanceOverlay;
 			global::Acr.UserDialogs.Resource.Styleable.Chip_showMotionSpec = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Chip_showMotionSpec;
 			global::Acr.UserDialogs.Resource.Styleable.Chip_textEndPadding = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Chip_textEndPadding;
 			global::Acr.UserDialogs.Resource.Styleable.Chip_textStartPadding = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Chip_textStartPadding;
+			global::Acr.UserDialogs.Resource.Styleable.CircularProgressIndicator = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.CircularProgressIndicator;
+			global::Acr.UserDialogs.Resource.Styleable.CircularProgressIndicator_indicatorDirectionCircular = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.CircularProgressIndicator_indicatorDirectionCircular;
+			global::Acr.UserDialogs.Resource.Styleable.CircularProgressIndicator_indicatorInset = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.CircularProgressIndicator_indicatorInset;
+			global::Acr.UserDialogs.Resource.Styleable.CircularProgressIndicator_indicatorSize = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.CircularProgressIndicator_indicatorSize;
+			global::Acr.UserDialogs.Resource.Styleable.ClockFaceView = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ClockFaceView;
+			global::Acr.UserDialogs.Resource.Styleable.ClockFaceView_clockFaceBackgroundColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ClockFaceView_clockFaceBackgroundColor;
+			global::Acr.UserDialogs.Resource.Styleable.ClockFaceView_clockNumberTextColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ClockFaceView_clockNumberTextColor;
+			global::Acr.UserDialogs.Resource.Styleable.ClockHandView = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ClockHandView;
+			global::Acr.UserDialogs.Resource.Styleable.ClockHandView_clockHandColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ClockHandView_clockHandColor;
+			global::Acr.UserDialogs.Resource.Styleable.ClockHandView_materialCircleRadius = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ClockHandView_materialCircleRadius;
+			global::Acr.UserDialogs.Resource.Styleable.ClockHandView_selectorSize = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ClockHandView_selectorSize;
 			global::Acr.UserDialogs.Resource.Styleable.CollapsingToolbarLayout = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.CollapsingToolbarLayout;
 			global::Acr.UserDialogs.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleGravity = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleGravity;
 			global::Acr.UserDialogs.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleTextAppearance = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleTextAppearance;
@@ -2205,13 +3721,17 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginStart = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginStart;
 			global::Acr.UserDialogs.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginTop = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginTop;
 			global::Acr.UserDialogs.Resource.Styleable.CollapsingToolbarLayout_expandedTitleTextAppearance = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleTextAppearance;
+			global::Acr.UserDialogs.Resource.Styleable.CollapsingToolbarLayout_extraMultilineHeightEnabled = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.CollapsingToolbarLayout_extraMultilineHeightEnabled;
+			global::Acr.UserDialogs.Resource.Styleable.CollapsingToolbarLayout_forceApplySystemWindowInsetTop = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.CollapsingToolbarLayout_forceApplySystemWindowInsetTop;
 			global::Acr.UserDialogs.Resource.Styleable.CollapsingToolbarLayout_Layout = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout;
 			global::Acr.UserDialogs.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseMode = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseMode;
 			global::Acr.UserDialogs.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseParallaxMultiplier = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseParallaxMultiplier;
+			global::Acr.UserDialogs.Resource.Styleable.CollapsingToolbarLayout_maxLines = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.CollapsingToolbarLayout_maxLines;
 			global::Acr.UserDialogs.Resource.Styleable.CollapsingToolbarLayout_scrimAnimationDuration = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.CollapsingToolbarLayout_scrimAnimationDuration;
 			global::Acr.UserDialogs.Resource.Styleable.CollapsingToolbarLayout_scrimVisibleHeightTrigger = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.CollapsingToolbarLayout_scrimVisibleHeightTrigger;
 			global::Acr.UserDialogs.Resource.Styleable.CollapsingToolbarLayout_statusBarScrim = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.CollapsingToolbarLayout_statusBarScrim;
 			global::Acr.UserDialogs.Resource.Styleable.CollapsingToolbarLayout_title = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.CollapsingToolbarLayout_title;
+			global::Acr.UserDialogs.Resource.Styleable.CollapsingToolbarLayout_titleCollapseMode = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.CollapsingToolbarLayout_titleCollapseMode;
 			global::Acr.UserDialogs.Resource.Styleable.CollapsingToolbarLayout_titleEnabled = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.CollapsingToolbarLayout_titleEnabled;
 			global::Acr.UserDialogs.Resource.Styleable.CollapsingToolbarLayout_toolbarId = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.CollapsingToolbarLayout_toolbarId;
 			global::Acr.UserDialogs.Resource.Styleable.ColorStateListItem = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ColorStateListItem;
@@ -2223,6 +3743,483 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Styleable.CompoundButton_buttonCompat = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.CompoundButton_buttonCompat;
 			global::Acr.UserDialogs.Resource.Styleable.CompoundButton_buttonTint = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.CompoundButton_buttonTint;
 			global::Acr.UserDialogs.Resource.Styleable.CompoundButton_buttonTintMode = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.CompoundButton_buttonTintMode;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_android_elevation = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_android_elevation;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_android_layout_height = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_android_layout_height;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_android_layout_margin = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_android_layout_margin;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_android_layout_marginBottom = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_android_layout_marginBottom;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_android_layout_marginEnd = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_android_layout_marginEnd;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_android_layout_marginHorizontal = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_android_layout_marginHorizontal;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_android_layout_marginLeft = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_android_layout_marginLeft;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_android_layout_marginRight = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_android_layout_marginRight;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_android_layout_marginStart = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_android_layout_marginStart;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_android_layout_marginTop = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_android_layout_marginTop;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_android_layout_marginVertical = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_android_layout_marginVertical;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_android_layout_width = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_android_layout_width;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_android_maxHeight = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_android_maxHeight;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_android_maxWidth = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_android_maxWidth;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_android_minHeight = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_android_minHeight;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_android_minWidth = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_android_minWidth;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_android_orientation = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_android_orientation;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_android_padding = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_android_padding;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_android_paddingBottom = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_android_paddingBottom;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_android_paddingEnd = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_android_paddingEnd;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_android_paddingLeft = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_android_paddingLeft;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_android_paddingRight = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_android_paddingRight;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_android_paddingStart = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_android_paddingStart;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_android_paddingTop = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_android_paddingTop;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_android_visibility = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_android_visibility;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_barrierAllowsGoneWidgets = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_barrierAllowsGoneWidgets;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_barrierDirection = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_barrierDirection;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_barrierMargin = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_barrierMargin;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_chainUseRtl = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_chainUseRtl;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_circularflow_angles = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_circularflow_angles;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_circularflow_defaultAngle = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_circularflow_defaultAngle;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_circularflow_defaultRadius = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_circularflow_defaultRadius;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_circularflow_radiusInDP = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_circularflow_radiusInDP;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_circularflow_viewCenter = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_circularflow_viewCenter;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_constraintSet = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_constraintSet;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_constraint_referenced_ids = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_constraint_referenced_ids;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_constraint_referenced_tags = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_constraint_referenced_tags;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_flow_firstHorizontalBias = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_flow_firstHorizontalBias;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_flow_firstHorizontalStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_flow_firstHorizontalStyle;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_flow_firstVerticalBias = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_flow_firstVerticalBias;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_flow_firstVerticalStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_flow_firstVerticalStyle;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_flow_horizontalAlign = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_flow_horizontalAlign;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_flow_horizontalBias = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_flow_horizontalBias;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_flow_horizontalGap = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_flow_horizontalGap;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_flow_horizontalStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_flow_horizontalStyle;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_flow_lastHorizontalBias = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_flow_lastHorizontalBias;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_flow_lastHorizontalStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_flow_lastHorizontalStyle;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_flow_lastVerticalBias = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_flow_lastVerticalBias;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_flow_lastVerticalStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_flow_lastVerticalStyle;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_flow_maxElementsWrap = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_flow_maxElementsWrap;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_flow_verticalAlign = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_flow_verticalAlign;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_flow_verticalBias = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_flow_verticalBias;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_flow_verticalGap = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_flow_verticalGap;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_flow_verticalStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_flow_verticalStyle;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_flow_wrapMode = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_flow_wrapMode;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_layoutDescription = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_layoutDescription;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_layout_constrainedHeight = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_layout_constrainedHeight;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_layout_constrainedWidth = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_layout_constrainedWidth;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_layout_constraintBaseline_creator = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_layout_constraintBaseline_creator;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_layout_constraintBaseline_toBaselineOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_layout_constraintBaseline_toBaselineOf;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_layout_constraintBaseline_toBottomOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_layout_constraintBaseline_toBottomOf;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_layout_constraintBaseline_toTopOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_layout_constraintBaseline_toTopOf;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_layout_constraintBottom_creator = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_layout_constraintBottom_creator;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_layout_constraintBottom_toBottomOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_layout_constraintBottom_toBottomOf;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_layout_constraintBottom_toTopOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_layout_constraintBottom_toTopOf;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_layout_constraintCircle = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_layout_constraintCircle;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_layout_constraintCircleAngle = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_layout_constraintCircleAngle;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_layout_constraintCircleRadius = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_layout_constraintCircleRadius;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_layout_constraintDimensionRatio = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_layout_constraintDimensionRatio;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_layout_constraintEnd_toEndOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_layout_constraintEnd_toEndOf;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_layout_constraintEnd_toStartOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_layout_constraintEnd_toStartOf;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_layout_constraintGuide_begin = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_layout_constraintGuide_begin;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_layout_constraintGuide_end = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_layout_constraintGuide_end;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_layout_constraintGuide_percent = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_layout_constraintGuide_percent;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_layout_constraintHeight = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_layout_constraintHeight;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_layout_constraintHeight_default = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_layout_constraintHeight_default;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_layout_constraintHeight_max = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_layout_constraintHeight_max;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_layout_constraintHeight_min = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_layout_constraintHeight_min;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_layout_constraintHeight_percent = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_layout_constraintHeight_percent;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_layout_constraintHorizontal_bias = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_layout_constraintHorizontal_bias;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_layout_constraintHorizontal_chainStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_layout_constraintHorizontal_chainStyle;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_layout_constraintHorizontal_weight = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_layout_constraintHorizontal_weight;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_layout_constraintLeft_creator = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_layout_constraintLeft_creator;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_layout_constraintLeft_toLeftOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_layout_constraintLeft_toLeftOf;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_layout_constraintLeft_toRightOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_layout_constraintLeft_toRightOf;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_layout_constraintRight_creator = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_layout_constraintRight_creator;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_layout_constraintRight_toLeftOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_layout_constraintRight_toLeftOf;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_layout_constraintRight_toRightOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_layout_constraintRight_toRightOf;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_layout_constraintStart_toEndOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_layout_constraintStart_toEndOf;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_layout_constraintStart_toStartOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_layout_constraintStart_toStartOf;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_layout_constraintTag = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_layout_constraintTag;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_layout_constraintTop_creator = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_layout_constraintTop_creator;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_layout_constraintTop_toBottomOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_layout_constraintTop_toBottomOf;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_layout_constraintTop_toTopOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_layout_constraintTop_toTopOf;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_layout_constraintVertical_bias = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_layout_constraintVertical_bias;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_layout_constraintVertical_chainStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_layout_constraintVertical_chainStyle;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_layout_constraintVertical_weight = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_layout_constraintVertical_weight;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_layout_constraintWidth = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_layout_constraintWidth;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_layout_constraintWidth_default = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_layout_constraintWidth_default;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_layout_constraintWidth_max = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_layout_constraintWidth_max;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_layout_constraintWidth_min = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_layout_constraintWidth_min;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_layout_constraintWidth_percent = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_layout_constraintWidth_percent;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_layout_editor_absoluteX = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_layout_editor_absoluteX;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_layout_editor_absoluteY = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_layout_editor_absoluteY;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_layout_goneMarginBaseline = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_layout_goneMarginBaseline;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_layout_goneMarginBottom = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_layout_goneMarginBottom;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_layout_goneMarginEnd = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_layout_goneMarginEnd;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_layout_goneMarginLeft = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_layout_goneMarginLeft;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_layout_goneMarginRight = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_layout_goneMarginRight;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_layout_goneMarginStart = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_layout_goneMarginStart;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_layout_goneMarginTop = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_layout_goneMarginTop;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_layout_marginBaseline = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_layout_marginBaseline;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_layout_optimizationLevel = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_layout_optimizationLevel;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_Layout_layout_wrapBehaviorInParent = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_Layout_layout_wrapBehaviorInParent;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_placeholder = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_placeholder;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_placeholder_content = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_placeholder_content;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_placeholder_placeholder_emptyVisibility = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_placeholder_placeholder_emptyVisibility;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_ReactiveGuide = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_ReactiveGuide;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_ReactiveGuide_reactiveGuide_animateChange = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_ReactiveGuide_reactiveGuide_animateChange;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_ReactiveGuide_reactiveGuide_applyToAllConstraintSets = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_ReactiveGuide_reactiveGuide_applyToAllConstraintSets;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_ReactiveGuide_reactiveGuide_applyToConstraintSet = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_ReactiveGuide_reactiveGuide_applyToConstraintSet;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintLayout_ReactiveGuide_reactiveGuide_valueId = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintLayout_ReactiveGuide_reactiveGuide_valueId;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_android_alpha = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_android_alpha;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_android_elevation = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_android_elevation;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_android_id = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_android_id;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_android_layout_height = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_android_layout_height;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_android_layout_marginBottom = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_android_layout_marginBottom;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_android_layout_marginEnd = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_android_layout_marginEnd;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_android_layout_marginLeft = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_android_layout_marginLeft;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_android_layout_marginRight = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_android_layout_marginRight;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_android_layout_marginStart = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_android_layout_marginStart;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_android_layout_marginTop = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_android_layout_marginTop;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_android_layout_width = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_android_layout_width;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_android_maxHeight = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_android_maxHeight;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_android_maxWidth = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_android_maxWidth;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_android_minHeight = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_android_minHeight;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_android_minWidth = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_android_minWidth;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_android_orientation = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_android_orientation;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_android_rotation = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_android_rotation;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_android_rotationX = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_android_rotationX;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_android_rotationY = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_android_rotationY;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_android_scaleX = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_android_scaleX;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_android_scaleY = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_android_scaleY;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_android_transformPivotX = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_android_transformPivotX;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_android_transformPivotY = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_android_transformPivotY;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_android_translationX = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_android_translationX;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_android_translationY = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_android_translationY;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_android_translationZ = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_android_translationZ;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_android_visibility = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_android_visibility;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_animateCircleAngleTo = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_animateCircleAngleTo;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_animateRelativeTo = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_animateRelativeTo;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_barrierAllowsGoneWidgets = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_barrierAllowsGoneWidgets;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_barrierDirection = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_barrierDirection;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_barrierMargin = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_barrierMargin;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_chainUseRtl = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_chainUseRtl;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_constraint_referenced_ids = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_constraint_referenced_ids;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_drawPath = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_drawPath;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_flow_firstHorizontalBias = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_flow_firstHorizontalBias;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_flow_firstHorizontalStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_flow_firstHorizontalStyle;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_flow_firstVerticalBias = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_flow_firstVerticalBias;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_flow_firstVerticalStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_flow_firstVerticalStyle;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_flow_horizontalAlign = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_flow_horizontalAlign;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_flow_horizontalBias = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_flow_horizontalBias;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_flow_horizontalGap = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_flow_horizontalGap;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_flow_horizontalStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_flow_horizontalStyle;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_flow_lastHorizontalBias = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_flow_lastHorizontalBias;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_flow_lastHorizontalStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_flow_lastHorizontalStyle;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_flow_lastVerticalBias = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_flow_lastVerticalBias;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_flow_lastVerticalStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_flow_lastVerticalStyle;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_flow_maxElementsWrap = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_flow_maxElementsWrap;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_flow_verticalAlign = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_flow_verticalAlign;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_flow_verticalBias = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_flow_verticalBias;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_flow_verticalGap = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_flow_verticalGap;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_flow_verticalStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_flow_verticalStyle;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_flow_wrapMode = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_flow_wrapMode;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_layout_constrainedHeight = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_layout_constrainedHeight;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_layout_constrainedWidth = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_layout_constrainedWidth;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_layout_constraintBaseline_creator = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_layout_constraintBaseline_creator;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_layout_constraintBottom_creator = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_layout_constraintBottom_creator;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_layout_constraintCircleAngle = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_layout_constraintCircleAngle;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_layout_constraintCircleRadius = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_layout_constraintCircleRadius;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_layout_constraintDimensionRatio = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_layout_constraintDimensionRatio;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_layout_constraintGuide_begin = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_layout_constraintGuide_begin;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_layout_constraintGuide_end = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_layout_constraintGuide_end;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_layout_constraintGuide_percent = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_layout_constraintGuide_percent;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_layout_constraintHeight = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_layout_constraintHeight;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_layout_constraintHeight_default = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_layout_constraintHeight_default;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_layout_constraintHeight_max = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_layout_constraintHeight_max;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_layout_constraintHeight_min = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_layout_constraintHeight_min;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_layout_constraintHeight_percent = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_layout_constraintHeight_percent;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_layout_constraintHorizontal_bias = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_layout_constraintHorizontal_bias;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_layout_constraintHorizontal_chainStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_layout_constraintHorizontal_chainStyle;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_layout_constraintHorizontal_weight = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_layout_constraintHorizontal_weight;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_layout_constraintLeft_creator = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_layout_constraintLeft_creator;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_layout_constraintRight_creator = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_layout_constraintRight_creator;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_layout_constraintTag = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_layout_constraintTag;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_layout_constraintTop_creator = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_layout_constraintTop_creator;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_layout_constraintVertical_bias = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_layout_constraintVertical_bias;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_layout_constraintVertical_chainStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_layout_constraintVertical_chainStyle;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_layout_constraintVertical_weight = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_layout_constraintVertical_weight;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_layout_constraintWidth = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_layout_constraintWidth;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_layout_constraintWidth_default = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_layout_constraintWidth_default;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_layout_constraintWidth_max = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_layout_constraintWidth_max;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_layout_constraintWidth_min = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_layout_constraintWidth_min;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_layout_constraintWidth_percent = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_layout_constraintWidth_percent;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_layout_editor_absoluteX = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_layout_editor_absoluteX;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_layout_editor_absoluteY = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_layout_editor_absoluteY;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_layout_goneMarginBaseline = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_layout_goneMarginBaseline;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_layout_goneMarginBottom = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_layout_goneMarginBottom;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_layout_goneMarginEnd = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_layout_goneMarginEnd;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_layout_goneMarginLeft = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_layout_goneMarginLeft;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_layout_goneMarginRight = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_layout_goneMarginRight;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_layout_goneMarginStart = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_layout_goneMarginStart;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_layout_goneMarginTop = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_layout_goneMarginTop;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_layout_marginBaseline = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_layout_marginBaseline;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_layout_wrapBehaviorInParent = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_layout_wrapBehaviorInParent;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_motionProgress = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_motionProgress;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_motionStagger = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_motionStagger;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_motionTarget = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_motionTarget;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_pathMotionArc = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_pathMotionArc;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_pivotAnchor = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_pivotAnchor;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_polarRelativeTo = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_polarRelativeTo;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_quantizeMotionInterpolator = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_quantizeMotionInterpolator;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_quantizeMotionPhase = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_quantizeMotionPhase;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_quantizeMotionSteps = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_quantizeMotionSteps;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_transformPivotTarget = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_transformPivotTarget;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_transitionEasing = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_transitionEasing;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_transitionPathRotate = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_transitionPathRotate;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintOverride_visibilityMode = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintOverride_visibilityMode;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_android_alpha = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_android_alpha;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_android_elevation = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_android_elevation;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_android_id = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_android_id;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_android_layout_height = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_android_layout_height;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_android_layout_marginBottom = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_android_layout_marginBottom;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_android_layout_marginEnd = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_android_layout_marginEnd;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_android_layout_marginLeft = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_android_layout_marginLeft;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_android_layout_marginRight = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_android_layout_marginRight;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_android_layout_marginStart = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_android_layout_marginStart;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_android_layout_marginTop = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_android_layout_marginTop;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_android_layout_width = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_android_layout_width;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_android_maxHeight = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_android_maxHeight;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_android_maxWidth = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_android_maxWidth;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_android_minHeight = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_android_minHeight;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_android_minWidth = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_android_minWidth;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_android_orientation = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_android_orientation;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_android_pivotX = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_android_pivotX;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_android_pivotY = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_android_pivotY;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_android_rotation = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_android_rotation;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_android_rotationX = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_android_rotationX;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_android_rotationY = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_android_rotationY;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_android_scaleX = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_android_scaleX;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_android_scaleY = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_android_scaleY;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_android_transformPivotX = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_android_transformPivotX;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_android_transformPivotY = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_android_transformPivotY;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_android_translationX = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_android_translationX;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_android_translationY = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_android_translationY;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_android_translationZ = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_android_translationZ;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_android_visibility = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_android_visibility;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_animateCircleAngleTo = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_animateCircleAngleTo;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_animateRelativeTo = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_animateRelativeTo;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_barrierAllowsGoneWidgets = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_barrierAllowsGoneWidgets;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_barrierDirection = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_barrierDirection;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_barrierMargin = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_barrierMargin;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_chainUseRtl = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_chainUseRtl;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_constraintRotate = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_constraintRotate;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_constraint_referenced_ids = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_constraint_referenced_ids;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_constraint_referenced_tags = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_constraint_referenced_tags;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_deriveConstraintsFrom = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_deriveConstraintsFrom;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_drawPath = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_drawPath;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_flow_firstHorizontalBias = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_flow_firstHorizontalBias;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_flow_firstHorizontalStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_flow_firstHorizontalStyle;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_flow_firstVerticalBias = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_flow_firstVerticalBias;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_flow_firstVerticalStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_flow_firstVerticalStyle;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_flow_horizontalAlign = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_flow_horizontalAlign;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_flow_horizontalBias = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_flow_horizontalBias;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_flow_horizontalGap = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_flow_horizontalGap;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_flow_horizontalStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_flow_horizontalStyle;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_flow_lastHorizontalBias = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_flow_lastHorizontalBias;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_flow_lastHorizontalStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_flow_lastHorizontalStyle;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_flow_lastVerticalBias = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_flow_lastVerticalBias;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_flow_lastVerticalStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_flow_lastVerticalStyle;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_flow_maxElementsWrap = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_flow_maxElementsWrap;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_flow_verticalAlign = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_flow_verticalAlign;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_flow_verticalBias = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_flow_verticalBias;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_flow_verticalGap = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_flow_verticalGap;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_flow_verticalStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_flow_verticalStyle;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_flow_wrapMode = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_flow_wrapMode;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_layout_constrainedHeight = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_layout_constrainedHeight;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_layout_constrainedWidth = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_layout_constrainedWidth;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_layout_constraintBaseline_creator = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_layout_constraintBaseline_creator;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_layout_constraintBaseline_toBaselineOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_layout_constraintBaseline_toBaselineOf;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_layout_constraintBaseline_toBottomOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_layout_constraintBaseline_toBottomOf;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_layout_constraintBaseline_toTopOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_layout_constraintBaseline_toTopOf;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_layout_constraintBottom_creator = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_layout_constraintBottom_creator;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_layout_constraintBottom_toBottomOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_layout_constraintBottom_toBottomOf;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_layout_constraintBottom_toTopOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_layout_constraintBottom_toTopOf;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_layout_constraintCircle = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_layout_constraintCircle;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_layout_constraintCircleAngle = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_layout_constraintCircleAngle;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_layout_constraintCircleRadius = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_layout_constraintCircleRadius;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_layout_constraintDimensionRatio = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_layout_constraintDimensionRatio;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_layout_constraintEnd_toEndOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_layout_constraintEnd_toEndOf;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_layout_constraintEnd_toStartOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_layout_constraintEnd_toStartOf;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_layout_constraintGuide_begin = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_layout_constraintGuide_begin;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_layout_constraintGuide_end = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_layout_constraintGuide_end;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_layout_constraintGuide_percent = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_layout_constraintGuide_percent;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_layout_constraintHeight_default = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_layout_constraintHeight_default;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_layout_constraintHeight_max = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_layout_constraintHeight_max;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_layout_constraintHeight_min = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_layout_constraintHeight_min;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_layout_constraintHeight_percent = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_layout_constraintHeight_percent;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_layout_constraintHorizontal_bias = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_layout_constraintHorizontal_bias;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_layout_constraintHorizontal_chainStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_layout_constraintHorizontal_chainStyle;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_layout_constraintHorizontal_weight = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_layout_constraintHorizontal_weight;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_layout_constraintLeft_creator = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_layout_constraintLeft_creator;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_layout_constraintLeft_toLeftOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_layout_constraintLeft_toLeftOf;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_layout_constraintLeft_toRightOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_layout_constraintLeft_toRightOf;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_layout_constraintRight_creator = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_layout_constraintRight_creator;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_layout_constraintRight_toLeftOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_layout_constraintRight_toLeftOf;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_layout_constraintRight_toRightOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_layout_constraintRight_toRightOf;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_layout_constraintStart_toEndOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_layout_constraintStart_toEndOf;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_layout_constraintStart_toStartOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_layout_constraintStart_toStartOf;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_layout_constraintTag = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_layout_constraintTag;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_layout_constraintTop_creator = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_layout_constraintTop_creator;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_layout_constraintTop_toBottomOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_layout_constraintTop_toBottomOf;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_layout_constraintTop_toTopOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_layout_constraintTop_toTopOf;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_layout_constraintVertical_bias = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_layout_constraintVertical_bias;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_layout_constraintVertical_chainStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_layout_constraintVertical_chainStyle;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_layout_constraintVertical_weight = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_layout_constraintVertical_weight;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_layout_constraintWidth_default = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_layout_constraintWidth_default;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_layout_constraintWidth_max = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_layout_constraintWidth_max;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_layout_constraintWidth_min = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_layout_constraintWidth_min;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_layout_constraintWidth_percent = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_layout_constraintWidth_percent;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_layout_editor_absoluteX = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_layout_editor_absoluteX;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_layout_editor_absoluteY = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_layout_editor_absoluteY;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_layout_goneMarginBaseline = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_layout_goneMarginBaseline;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_layout_goneMarginBottom = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_layout_goneMarginBottom;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_layout_goneMarginEnd = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_layout_goneMarginEnd;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_layout_goneMarginLeft = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_layout_goneMarginLeft;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_layout_goneMarginRight = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_layout_goneMarginRight;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_layout_goneMarginStart = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_layout_goneMarginStart;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_layout_goneMarginTop = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_layout_goneMarginTop;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_layout_marginBaseline = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_layout_marginBaseline;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_layout_wrapBehaviorInParent = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_layout_wrapBehaviorInParent;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_motionProgress = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_motionProgress;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_motionStagger = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_motionStagger;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_pathMotionArc = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_pathMotionArc;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_pivotAnchor = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_pivotAnchor;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_polarRelativeTo = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_polarRelativeTo;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_quantizeMotionSteps = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_quantizeMotionSteps;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_transitionEasing = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_transitionEasing;
+			global::Acr.UserDialogs.Resource.Styleable.ConstraintSet_transitionPathRotate = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_transitionPathRotate;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_android_alpha = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_android_alpha;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_android_elevation = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_android_elevation;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_android_id = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_android_id;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_android_layout_height = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_android_layout_height;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_android_layout_marginBottom = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_android_layout_marginBottom;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_android_layout_marginEnd = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_android_layout_marginEnd;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_android_layout_marginLeft = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_android_layout_marginLeft;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_android_layout_marginRight = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_android_layout_marginRight;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_android_layout_marginStart = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_android_layout_marginStart;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_android_layout_marginTop = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_android_layout_marginTop;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_android_layout_width = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_android_layout_width;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_android_maxHeight = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_android_maxHeight;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_android_maxWidth = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_android_maxWidth;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_android_minHeight = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_android_minHeight;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_android_minWidth = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_android_minWidth;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_android_orientation = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_android_orientation;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_android_rotation = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_android_rotation;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_android_rotationX = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_android_rotationX;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_android_rotationY = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_android_rotationY;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_android_scaleX = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_android_scaleX;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_android_scaleY = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_android_scaleY;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_android_transformPivotX = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_android_transformPivotX;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_android_transformPivotY = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_android_transformPivotY;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_android_translationX = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_android_translationX;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_android_translationY = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_android_translationY;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_android_translationZ = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_android_translationZ;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_android_visibility = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_android_visibility;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_animateCircleAngleTo = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_animateCircleAngleTo;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_animateRelativeTo = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_animateRelativeTo;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_barrierAllowsGoneWidgets = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_barrierAllowsGoneWidgets;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_barrierDirection = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_barrierDirection;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_barrierMargin = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_barrierMargin;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_chainUseRtl = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_chainUseRtl;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_constraint_referenced_ids = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_constraint_referenced_ids;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_constraint_referenced_tags = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_constraint_referenced_tags;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_drawPath = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_drawPath;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_flow_firstHorizontalBias = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_flow_firstHorizontalBias;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_flow_firstHorizontalStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_flow_firstHorizontalStyle;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_flow_firstVerticalBias = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_flow_firstVerticalBias;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_flow_firstVerticalStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_flow_firstVerticalStyle;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_flow_horizontalAlign = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_flow_horizontalAlign;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_flow_horizontalBias = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_flow_horizontalBias;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_flow_horizontalGap = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_flow_horizontalGap;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_flow_horizontalStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_flow_horizontalStyle;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_flow_lastHorizontalBias = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_flow_lastHorizontalBias;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_flow_lastHorizontalStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_flow_lastHorizontalStyle;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_flow_lastVerticalBias = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_flow_lastVerticalBias;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_flow_lastVerticalStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_flow_lastVerticalStyle;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_flow_maxElementsWrap = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_flow_maxElementsWrap;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_flow_verticalAlign = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_flow_verticalAlign;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_flow_verticalBias = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_flow_verticalBias;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_flow_verticalGap = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_flow_verticalGap;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_flow_verticalStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_flow_verticalStyle;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_flow_wrapMode = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_flow_wrapMode;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_layout_constrainedHeight = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_layout_constrainedHeight;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_layout_constrainedWidth = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_layout_constrainedWidth;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_layout_constraintBaseline_creator = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_layout_constraintBaseline_creator;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_layout_constraintBaseline_toBaselineOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_layout_constraintBaseline_toBaselineOf;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_layout_constraintBaseline_toBottomOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_layout_constraintBaseline_toBottomOf;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_layout_constraintBaseline_toTopOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_layout_constraintBaseline_toTopOf;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_layout_constraintBottom_creator = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_layout_constraintBottom_creator;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_layout_constraintBottom_toBottomOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_layout_constraintBottom_toBottomOf;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_layout_constraintBottom_toTopOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_layout_constraintBottom_toTopOf;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_layout_constraintCircle = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_layout_constraintCircle;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_layout_constraintCircleAngle = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_layout_constraintCircleAngle;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_layout_constraintCircleRadius = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_layout_constraintCircleRadius;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_layout_constraintDimensionRatio = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_layout_constraintDimensionRatio;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_layout_constraintEnd_toEndOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_layout_constraintEnd_toEndOf;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_layout_constraintEnd_toStartOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_layout_constraintEnd_toStartOf;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_layout_constraintGuide_begin = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_layout_constraintGuide_begin;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_layout_constraintGuide_end = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_layout_constraintGuide_end;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_layout_constraintGuide_percent = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_layout_constraintGuide_percent;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_layout_constraintHeight = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_layout_constraintHeight;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_layout_constraintHeight_default = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_layout_constraintHeight_default;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_layout_constraintHeight_max = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_layout_constraintHeight_max;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_layout_constraintHeight_min = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_layout_constraintHeight_min;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_layout_constraintHeight_percent = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_layout_constraintHeight_percent;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_layout_constraintHorizontal_bias = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_layout_constraintHorizontal_bias;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_layout_constraintHorizontal_chainStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_layout_constraintHorizontal_chainStyle;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_layout_constraintHorizontal_weight = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_layout_constraintHorizontal_weight;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_layout_constraintLeft_creator = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_layout_constraintLeft_creator;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_layout_constraintLeft_toLeftOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_layout_constraintLeft_toLeftOf;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_layout_constraintLeft_toRightOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_layout_constraintLeft_toRightOf;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_layout_constraintRight_creator = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_layout_constraintRight_creator;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_layout_constraintRight_toLeftOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_layout_constraintRight_toLeftOf;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_layout_constraintRight_toRightOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_layout_constraintRight_toRightOf;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_layout_constraintStart_toEndOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_layout_constraintStart_toEndOf;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_layout_constraintStart_toStartOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_layout_constraintStart_toStartOf;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_layout_constraintTag = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_layout_constraintTag;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_layout_constraintTop_creator = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_layout_constraintTop_creator;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_layout_constraintTop_toBottomOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_layout_constraintTop_toBottomOf;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_layout_constraintTop_toTopOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_layout_constraintTop_toTopOf;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_layout_constraintVertical_bias = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_layout_constraintVertical_bias;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_layout_constraintVertical_chainStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_layout_constraintVertical_chainStyle;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_layout_constraintVertical_weight = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_layout_constraintVertical_weight;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_layout_constraintWidth = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_layout_constraintWidth;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_layout_constraintWidth_default = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_layout_constraintWidth_default;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_layout_constraintWidth_max = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_layout_constraintWidth_max;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_layout_constraintWidth_min = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_layout_constraintWidth_min;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_layout_constraintWidth_percent = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_layout_constraintWidth_percent;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_layout_editor_absoluteX = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_layout_editor_absoluteX;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_layout_editor_absoluteY = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_layout_editor_absoluteY;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_layout_goneMarginBaseline = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_layout_goneMarginBaseline;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_layout_goneMarginBottom = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_layout_goneMarginBottom;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_layout_goneMarginEnd = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_layout_goneMarginEnd;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_layout_goneMarginLeft = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_layout_goneMarginLeft;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_layout_goneMarginRight = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_layout_goneMarginRight;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_layout_goneMarginStart = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_layout_goneMarginStart;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_layout_goneMarginTop = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_layout_goneMarginTop;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_layout_marginBaseline = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_layout_marginBaseline;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_layout_wrapBehaviorInParent = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_layout_wrapBehaviorInParent;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_motionProgress = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_motionProgress;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_motionStagger = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_motionStagger;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_pathMotionArc = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_pathMotionArc;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_pivotAnchor = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_pivotAnchor;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_polarRelativeTo = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_polarRelativeTo;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_quantizeMotionInterpolator = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_quantizeMotionInterpolator;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_quantizeMotionPhase = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_quantizeMotionPhase;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_quantizeMotionSteps = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_quantizeMotionSteps;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_transformPivotTarget = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_transformPivotTarget;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_transitionEasing = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_transitionEasing;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_transitionPathRotate = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_transitionPathRotate;
+			global::Acr.UserDialogs.Resource.Styleable.Constraint_visibilityMode = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Constraint_visibilityMode;
 			global::Acr.UserDialogs.Resource.Styleable.CoordinatorLayout = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.CoordinatorLayout;
 			global::Acr.UserDialogs.Resource.Styleable.CoordinatorLayout_keylines = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.CoordinatorLayout_keylines;
 			global::Acr.UserDialogs.Resource.Styleable.CoordinatorLayout_Layout = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.CoordinatorLayout_Layout;
@@ -2234,6 +4231,18 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Styleable.CoordinatorLayout_Layout_layout_insetEdge = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_insetEdge;
 			global::Acr.UserDialogs.Resource.Styleable.CoordinatorLayout_Layout_layout_keyline = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_keyline;
 			global::Acr.UserDialogs.Resource.Styleable.CoordinatorLayout_statusBarBackground = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.CoordinatorLayout_statusBarBackground;
+			global::Acr.UserDialogs.Resource.Styleable.CustomAttribute = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.CustomAttribute;
+			global::Acr.UserDialogs.Resource.Styleable.CustomAttribute_attributeName = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.CustomAttribute_attributeName;
+			global::Acr.UserDialogs.Resource.Styleable.CustomAttribute_customBoolean = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.CustomAttribute_customBoolean;
+			global::Acr.UserDialogs.Resource.Styleable.CustomAttribute_customColorDrawableValue = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.CustomAttribute_customColorDrawableValue;
+			global::Acr.UserDialogs.Resource.Styleable.CustomAttribute_customColorValue = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.CustomAttribute_customColorValue;
+			global::Acr.UserDialogs.Resource.Styleable.CustomAttribute_customDimension = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.CustomAttribute_customDimension;
+			global::Acr.UserDialogs.Resource.Styleable.CustomAttribute_customFloatValue = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.CustomAttribute_customFloatValue;
+			global::Acr.UserDialogs.Resource.Styleable.CustomAttribute_customIntegerValue = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.CustomAttribute_customIntegerValue;
+			global::Acr.UserDialogs.Resource.Styleable.CustomAttribute_customPixelDimension = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.CustomAttribute_customPixelDimension;
+			global::Acr.UserDialogs.Resource.Styleable.CustomAttribute_customReference = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.CustomAttribute_customReference;
+			global::Acr.UserDialogs.Resource.Styleable.CustomAttribute_customStringValue = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.CustomAttribute_customStringValue;
+			global::Acr.UserDialogs.Resource.Styleable.CustomAttribute_methodName = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.CustomAttribute_methodName;
 			global::Acr.UserDialogs.Resource.Styleable.DrawerArrowToggle = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.DrawerArrowToggle;
 			global::Acr.UserDialogs.Resource.Styleable.DrawerArrowToggle_arrowHeadLength = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.DrawerArrowToggle_arrowHeadLength;
 			global::Acr.UserDialogs.Resource.Styleable.DrawerArrowToggle_arrowShaftLength = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.DrawerArrowToggle_arrowShaftLength;
@@ -2243,13 +4252,27 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Styleable.DrawerArrowToggle_gapBetweenBars = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.DrawerArrowToggle_gapBetweenBars;
 			global::Acr.UserDialogs.Resource.Styleable.DrawerArrowToggle_spinBars = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.DrawerArrowToggle_spinBars;
 			global::Acr.UserDialogs.Resource.Styleable.DrawerArrowToggle_thickness = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.DrawerArrowToggle_thickness;
+			global::Acr.UserDialogs.Resource.Styleable.DrawerLayout = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.DrawerLayout;
+			global::Acr.UserDialogs.Resource.Styleable.DrawerLayout_elevation = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.DrawerLayout_elevation;
+			global::Acr.UserDialogs.Resource.Styleable.ExtendedFloatingActionButton = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ExtendedFloatingActionButton;
+			global::Acr.UserDialogs.Resource.Styleable.ExtendedFloatingActionButton_Behavior_Layout = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ExtendedFloatingActionButton_Behavior_Layout;
+			global::Acr.UserDialogs.Resource.Styleable.ExtendedFloatingActionButton_Behavior_Layout_behavior_autoHide = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ExtendedFloatingActionButton_Behavior_Layout_behavior_autoHide;
+			global::Acr.UserDialogs.Resource.Styleable.ExtendedFloatingActionButton_Behavior_Layout_behavior_autoShrink = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ExtendedFloatingActionButton_Behavior_Layout_behavior_autoShrink;
+			global::Acr.UserDialogs.Resource.Styleable.ExtendedFloatingActionButton_collapsedSize = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ExtendedFloatingActionButton_collapsedSize;
+			global::Acr.UserDialogs.Resource.Styleable.ExtendedFloatingActionButton_elevation = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ExtendedFloatingActionButton_elevation;
+			global::Acr.UserDialogs.Resource.Styleable.ExtendedFloatingActionButton_extendMotionSpec = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ExtendedFloatingActionButton_extendMotionSpec;
+			global::Acr.UserDialogs.Resource.Styleable.ExtendedFloatingActionButton_hideMotionSpec = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ExtendedFloatingActionButton_hideMotionSpec;
+			global::Acr.UserDialogs.Resource.Styleable.ExtendedFloatingActionButton_showMotionSpec = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ExtendedFloatingActionButton_showMotionSpec;
+			global::Acr.UserDialogs.Resource.Styleable.ExtendedFloatingActionButton_shrinkMotionSpec = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ExtendedFloatingActionButton_shrinkMotionSpec;
 			global::Acr.UserDialogs.Resource.Styleable.FloatingActionButton = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.FloatingActionButton;
+			global::Acr.UserDialogs.Resource.Styleable.FloatingActionButton_android_enabled = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.FloatingActionButton_android_enabled;
 			global::Acr.UserDialogs.Resource.Styleable.FloatingActionButton_backgroundTint = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.FloatingActionButton_backgroundTint;
 			global::Acr.UserDialogs.Resource.Styleable.FloatingActionButton_backgroundTintMode = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.FloatingActionButton_backgroundTintMode;
 			global::Acr.UserDialogs.Resource.Styleable.FloatingActionButton_Behavior_Layout = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.FloatingActionButton_Behavior_Layout;
 			global::Acr.UserDialogs.Resource.Styleable.FloatingActionButton_Behavior_Layout_behavior_autoHide = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.FloatingActionButton_Behavior_Layout_behavior_autoHide;
 			global::Acr.UserDialogs.Resource.Styleable.FloatingActionButton_borderWidth = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.FloatingActionButton_borderWidth;
 			global::Acr.UserDialogs.Resource.Styleable.FloatingActionButton_elevation = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.FloatingActionButton_elevation;
+			global::Acr.UserDialogs.Resource.Styleable.FloatingActionButton_ensureMinTouchTargetSize = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.FloatingActionButton_ensureMinTouchTargetSize;
 			global::Acr.UserDialogs.Resource.Styleable.FloatingActionButton_fabCustomSize = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.FloatingActionButton_fabCustomSize;
 			global::Acr.UserDialogs.Resource.Styleable.FloatingActionButton_fabSize = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.FloatingActionButton_fabSize;
 			global::Acr.UserDialogs.Resource.Styleable.FloatingActionButton_hideMotionSpec = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.FloatingActionButton_hideMotionSpec;
@@ -2257,6 +4280,8 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Styleable.FloatingActionButton_maxImageSize = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.FloatingActionButton_maxImageSize;
 			global::Acr.UserDialogs.Resource.Styleable.FloatingActionButton_pressedTranslationZ = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.FloatingActionButton_pressedTranslationZ;
 			global::Acr.UserDialogs.Resource.Styleable.FloatingActionButton_rippleColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.FloatingActionButton_rippleColor;
+			global::Acr.UserDialogs.Resource.Styleable.FloatingActionButton_shapeAppearance = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.FloatingActionButton_shapeAppearance;
+			global::Acr.UserDialogs.Resource.Styleable.FloatingActionButton_shapeAppearanceOverlay = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.FloatingActionButton_shapeAppearanceOverlay;
 			global::Acr.UserDialogs.Resource.Styleable.FloatingActionButton_showMotionSpec = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.FloatingActionButton_showMotionSpec;
 			global::Acr.UserDialogs.Resource.Styleable.FloatingActionButton_useCompatPadding = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.FloatingActionButton_useCompatPadding;
 			global::Acr.UserDialogs.Resource.Styleable.FlowLayout = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.FlowLayout;
@@ -2280,10 +4305,18 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Styleable.FontFamily_fontProviderFetchTimeout = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.FontFamily_fontProviderFetchTimeout;
 			global::Acr.UserDialogs.Resource.Styleable.FontFamily_fontProviderPackage = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.FontFamily_fontProviderPackage;
 			global::Acr.UserDialogs.Resource.Styleable.FontFamily_fontProviderQuery = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.FontFamily_fontProviderQuery;
+			global::Acr.UserDialogs.Resource.Styleable.FontFamily_fontProviderSystemFontFamily = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.FontFamily_fontProviderSystemFontFamily;
 			global::Acr.UserDialogs.Resource.Styleable.ForegroundLinearLayout = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ForegroundLinearLayout;
 			global::Acr.UserDialogs.Resource.Styleable.ForegroundLinearLayout_android_foreground = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ForegroundLinearLayout_android_foreground;
 			global::Acr.UserDialogs.Resource.Styleable.ForegroundLinearLayout_android_foregroundGravity = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ForegroundLinearLayout_android_foregroundGravity;
 			global::Acr.UserDialogs.Resource.Styleable.ForegroundLinearLayout_foregroundInsidePadding = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ForegroundLinearLayout_foregroundInsidePadding;
+			global::Acr.UserDialogs.Resource.Styleable.Fragment = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Fragment;
+			global::Acr.UserDialogs.Resource.Styleable.FragmentContainerView = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.FragmentContainerView;
+			global::Acr.UserDialogs.Resource.Styleable.FragmentContainerView_android_name = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.FragmentContainerView_android_name;
+			global::Acr.UserDialogs.Resource.Styleable.FragmentContainerView_android_tag = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.FragmentContainerView_android_tag;
+			global::Acr.UserDialogs.Resource.Styleable.Fragment_android_id = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Fragment_android_id;
+			global::Acr.UserDialogs.Resource.Styleable.Fragment_android_name = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Fragment_android_name;
+			global::Acr.UserDialogs.Resource.Styleable.Fragment_android_tag = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Fragment_android_tag;
 			global::Acr.UserDialogs.Resource.Styleable.GradientColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.GradientColor;
 			global::Acr.UserDialogs.Resource.Styleable.GradientColorItem = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.GradientColorItem;
 			global::Acr.UserDialogs.Resource.Styleable.GradientColorItem_android_color = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.GradientColorItem_android_color;
@@ -2300,6 +4333,198 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Styleable.GradientColor_android_startY = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.GradientColor_android_startY;
 			global::Acr.UserDialogs.Resource.Styleable.GradientColor_android_tileMode = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.GradientColor_android_tileMode;
 			global::Acr.UserDialogs.Resource.Styleable.GradientColor_android_type = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.GradientColor_android_type;
+			global::Acr.UserDialogs.Resource.Styleable.ImageFilterView = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ImageFilterView;
+			global::Acr.UserDialogs.Resource.Styleable.ImageFilterView_altSrc = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ImageFilterView_altSrc;
+			global::Acr.UserDialogs.Resource.Styleable.ImageFilterView_blendSrc = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ImageFilterView_blendSrc;
+			global::Acr.UserDialogs.Resource.Styleable.ImageFilterView_brightness = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ImageFilterView_brightness;
+			global::Acr.UserDialogs.Resource.Styleable.ImageFilterView_contrast = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ImageFilterView_contrast;
+			global::Acr.UserDialogs.Resource.Styleable.ImageFilterView_crossfade = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ImageFilterView_crossfade;
+			global::Acr.UserDialogs.Resource.Styleable.ImageFilterView_imagePanX = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ImageFilterView_imagePanX;
+			global::Acr.UserDialogs.Resource.Styleable.ImageFilterView_imagePanY = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ImageFilterView_imagePanY;
+			global::Acr.UserDialogs.Resource.Styleable.ImageFilterView_imageRotate = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ImageFilterView_imageRotate;
+			global::Acr.UserDialogs.Resource.Styleable.ImageFilterView_imageZoom = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ImageFilterView_imageZoom;
+			global::Acr.UserDialogs.Resource.Styleable.ImageFilterView_overlay = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ImageFilterView_overlay;
+			global::Acr.UserDialogs.Resource.Styleable.ImageFilterView_round = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ImageFilterView_round;
+			global::Acr.UserDialogs.Resource.Styleable.ImageFilterView_roundPercent = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ImageFilterView_roundPercent;
+			global::Acr.UserDialogs.Resource.Styleable.ImageFilterView_saturation = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ImageFilterView_saturation;
+			global::Acr.UserDialogs.Resource.Styleable.ImageFilterView_warmth = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ImageFilterView_warmth;
+			global::Acr.UserDialogs.Resource.Styleable.include = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.include;
+			global::Acr.UserDialogs.Resource.Styleable.include_constraintSet = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.include_constraintSet;
+			global::Acr.UserDialogs.Resource.Styleable.Insets = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Insets;
+			global::Acr.UserDialogs.Resource.Styleable.Insets_paddingBottomSystemWindowInsets = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Insets_paddingBottomSystemWindowInsets;
+			global::Acr.UserDialogs.Resource.Styleable.Insets_paddingLeftSystemWindowInsets = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Insets_paddingLeftSystemWindowInsets;
+			global::Acr.UserDialogs.Resource.Styleable.Insets_paddingRightSystemWindowInsets = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Insets_paddingRightSystemWindowInsets;
+			global::Acr.UserDialogs.Resource.Styleable.Insets_paddingTopSystemWindowInsets = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Insets_paddingTopSystemWindowInsets;
+			global::Acr.UserDialogs.Resource.Styleable.KeyAttribute = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyAttribute;
+			global::Acr.UserDialogs.Resource.Styleable.KeyAttribute_android_alpha = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyAttribute_android_alpha;
+			global::Acr.UserDialogs.Resource.Styleable.KeyAttribute_android_elevation = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyAttribute_android_elevation;
+			global::Acr.UserDialogs.Resource.Styleable.KeyAttribute_android_rotation = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyAttribute_android_rotation;
+			global::Acr.UserDialogs.Resource.Styleable.KeyAttribute_android_rotationX = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyAttribute_android_rotationX;
+			global::Acr.UserDialogs.Resource.Styleable.KeyAttribute_android_rotationY = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyAttribute_android_rotationY;
+			global::Acr.UserDialogs.Resource.Styleable.KeyAttribute_android_scaleX = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyAttribute_android_scaleX;
+			global::Acr.UserDialogs.Resource.Styleable.KeyAttribute_android_scaleY = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyAttribute_android_scaleY;
+			global::Acr.UserDialogs.Resource.Styleable.KeyAttribute_android_transformPivotX = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyAttribute_android_transformPivotX;
+			global::Acr.UserDialogs.Resource.Styleable.KeyAttribute_android_transformPivotY = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyAttribute_android_transformPivotY;
+			global::Acr.UserDialogs.Resource.Styleable.KeyAttribute_android_translationX = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyAttribute_android_translationX;
+			global::Acr.UserDialogs.Resource.Styleable.KeyAttribute_android_translationY = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyAttribute_android_translationY;
+			global::Acr.UserDialogs.Resource.Styleable.KeyAttribute_android_translationZ = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyAttribute_android_translationZ;
+			global::Acr.UserDialogs.Resource.Styleable.KeyAttribute_curveFit = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyAttribute_curveFit;
+			global::Acr.UserDialogs.Resource.Styleable.KeyAttribute_framePosition = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyAttribute_framePosition;
+			global::Acr.UserDialogs.Resource.Styleable.KeyAttribute_motionProgress = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyAttribute_motionProgress;
+			global::Acr.UserDialogs.Resource.Styleable.KeyAttribute_motionTarget = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyAttribute_motionTarget;
+			global::Acr.UserDialogs.Resource.Styleable.KeyAttribute_transformPivotTarget = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyAttribute_transformPivotTarget;
+			global::Acr.UserDialogs.Resource.Styleable.KeyAttribute_transitionEasing = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyAttribute_transitionEasing;
+			global::Acr.UserDialogs.Resource.Styleable.KeyAttribute_transitionPathRotate = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyAttribute_transitionPathRotate;
+			global::Acr.UserDialogs.Resource.Styleable.KeyCycle = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyCycle;
+			global::Acr.UserDialogs.Resource.Styleable.KeyCycle_android_alpha = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyCycle_android_alpha;
+			global::Acr.UserDialogs.Resource.Styleable.KeyCycle_android_elevation = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyCycle_android_elevation;
+			global::Acr.UserDialogs.Resource.Styleable.KeyCycle_android_rotation = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyCycle_android_rotation;
+			global::Acr.UserDialogs.Resource.Styleable.KeyCycle_android_rotationX = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyCycle_android_rotationX;
+			global::Acr.UserDialogs.Resource.Styleable.KeyCycle_android_rotationY = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyCycle_android_rotationY;
+			global::Acr.UserDialogs.Resource.Styleable.KeyCycle_android_scaleX = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyCycle_android_scaleX;
+			global::Acr.UserDialogs.Resource.Styleable.KeyCycle_android_scaleY = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyCycle_android_scaleY;
+			global::Acr.UserDialogs.Resource.Styleable.KeyCycle_android_translationX = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyCycle_android_translationX;
+			global::Acr.UserDialogs.Resource.Styleable.KeyCycle_android_translationY = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyCycle_android_translationY;
+			global::Acr.UserDialogs.Resource.Styleable.KeyCycle_android_translationZ = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyCycle_android_translationZ;
+			global::Acr.UserDialogs.Resource.Styleable.KeyCycle_curveFit = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyCycle_curveFit;
+			global::Acr.UserDialogs.Resource.Styleable.KeyCycle_framePosition = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyCycle_framePosition;
+			global::Acr.UserDialogs.Resource.Styleable.KeyCycle_motionProgress = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyCycle_motionProgress;
+			global::Acr.UserDialogs.Resource.Styleable.KeyCycle_motionTarget = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyCycle_motionTarget;
+			global::Acr.UserDialogs.Resource.Styleable.KeyCycle_transitionEasing = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyCycle_transitionEasing;
+			global::Acr.UserDialogs.Resource.Styleable.KeyCycle_transitionPathRotate = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyCycle_transitionPathRotate;
+			global::Acr.UserDialogs.Resource.Styleable.KeyCycle_waveOffset = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyCycle_waveOffset;
+			global::Acr.UserDialogs.Resource.Styleable.KeyCycle_wavePeriod = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyCycle_wavePeriod;
+			global::Acr.UserDialogs.Resource.Styleable.KeyCycle_wavePhase = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyCycle_wavePhase;
+			global::Acr.UserDialogs.Resource.Styleable.KeyCycle_waveShape = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyCycle_waveShape;
+			global::Acr.UserDialogs.Resource.Styleable.KeyCycle_waveVariesBy = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyCycle_waveVariesBy;
+			global::Acr.UserDialogs.Resource.Styleable.KeyFrame = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyFrame;
+			global::Acr.UserDialogs.Resource.Styleable.KeyFramesAcceleration = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyFramesAcceleration;
+			global::Acr.UserDialogs.Resource.Styleable.KeyFramesVelocity = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyFramesVelocity;
+			global::Acr.UserDialogs.Resource.Styleable.KeyPosition = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyPosition;
+			global::Acr.UserDialogs.Resource.Styleable.KeyPosition_curveFit = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyPosition_curveFit;
+			global::Acr.UserDialogs.Resource.Styleable.KeyPosition_drawPath = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyPosition_drawPath;
+			global::Acr.UserDialogs.Resource.Styleable.KeyPosition_framePosition = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyPosition_framePosition;
+			global::Acr.UserDialogs.Resource.Styleable.KeyPosition_keyPositionType = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyPosition_keyPositionType;
+			global::Acr.UserDialogs.Resource.Styleable.KeyPosition_motionTarget = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyPosition_motionTarget;
+			global::Acr.UserDialogs.Resource.Styleable.KeyPosition_pathMotionArc = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyPosition_pathMotionArc;
+			global::Acr.UserDialogs.Resource.Styleable.KeyPosition_percentHeight = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyPosition_percentHeight;
+			global::Acr.UserDialogs.Resource.Styleable.KeyPosition_percentWidth = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyPosition_percentWidth;
+			global::Acr.UserDialogs.Resource.Styleable.KeyPosition_percentX = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyPosition_percentX;
+			global::Acr.UserDialogs.Resource.Styleable.KeyPosition_percentY = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyPosition_percentY;
+			global::Acr.UserDialogs.Resource.Styleable.KeyPosition_sizePercent = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyPosition_sizePercent;
+			global::Acr.UserDialogs.Resource.Styleable.KeyPosition_transitionEasing = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyPosition_transitionEasing;
+			global::Acr.UserDialogs.Resource.Styleable.KeyTimeCycle = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyTimeCycle;
+			global::Acr.UserDialogs.Resource.Styleable.KeyTimeCycle_android_alpha = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyTimeCycle_android_alpha;
+			global::Acr.UserDialogs.Resource.Styleable.KeyTimeCycle_android_elevation = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyTimeCycle_android_elevation;
+			global::Acr.UserDialogs.Resource.Styleable.KeyTimeCycle_android_rotation = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyTimeCycle_android_rotation;
+			global::Acr.UserDialogs.Resource.Styleable.KeyTimeCycle_android_rotationX = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyTimeCycle_android_rotationX;
+			global::Acr.UserDialogs.Resource.Styleable.KeyTimeCycle_android_rotationY = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyTimeCycle_android_rotationY;
+			global::Acr.UserDialogs.Resource.Styleable.KeyTimeCycle_android_scaleX = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyTimeCycle_android_scaleX;
+			global::Acr.UserDialogs.Resource.Styleable.KeyTimeCycle_android_scaleY = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyTimeCycle_android_scaleY;
+			global::Acr.UserDialogs.Resource.Styleable.KeyTimeCycle_android_translationX = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyTimeCycle_android_translationX;
+			global::Acr.UserDialogs.Resource.Styleable.KeyTimeCycle_android_translationY = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyTimeCycle_android_translationY;
+			global::Acr.UserDialogs.Resource.Styleable.KeyTimeCycle_android_translationZ = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyTimeCycle_android_translationZ;
+			global::Acr.UserDialogs.Resource.Styleable.KeyTimeCycle_curveFit = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyTimeCycle_curveFit;
+			global::Acr.UserDialogs.Resource.Styleable.KeyTimeCycle_framePosition = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyTimeCycle_framePosition;
+			global::Acr.UserDialogs.Resource.Styleable.KeyTimeCycle_motionProgress = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyTimeCycle_motionProgress;
+			global::Acr.UserDialogs.Resource.Styleable.KeyTimeCycle_motionTarget = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyTimeCycle_motionTarget;
+			global::Acr.UserDialogs.Resource.Styleable.KeyTimeCycle_transitionEasing = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyTimeCycle_transitionEasing;
+			global::Acr.UserDialogs.Resource.Styleable.KeyTimeCycle_transitionPathRotate = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyTimeCycle_transitionPathRotate;
+			global::Acr.UserDialogs.Resource.Styleable.KeyTimeCycle_waveDecay = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyTimeCycle_waveDecay;
+			global::Acr.UserDialogs.Resource.Styleable.KeyTimeCycle_waveOffset = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyTimeCycle_waveOffset;
+			global::Acr.UserDialogs.Resource.Styleable.KeyTimeCycle_wavePeriod = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyTimeCycle_wavePeriod;
+			global::Acr.UserDialogs.Resource.Styleable.KeyTimeCycle_wavePhase = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyTimeCycle_wavePhase;
+			global::Acr.UserDialogs.Resource.Styleable.KeyTimeCycle_waveShape = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyTimeCycle_waveShape;
+			global::Acr.UserDialogs.Resource.Styleable.KeyTrigger = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyTrigger;
+			global::Acr.UserDialogs.Resource.Styleable.KeyTrigger_framePosition = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyTrigger_framePosition;
+			global::Acr.UserDialogs.Resource.Styleable.KeyTrigger_motionTarget = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyTrigger_motionTarget;
+			global::Acr.UserDialogs.Resource.Styleable.KeyTrigger_motion_postLayoutCollision = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyTrigger_motion_postLayoutCollision;
+			global::Acr.UserDialogs.Resource.Styleable.KeyTrigger_motion_triggerOnCollision = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyTrigger_motion_triggerOnCollision;
+			global::Acr.UserDialogs.Resource.Styleable.KeyTrigger_onCross = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyTrigger_onCross;
+			global::Acr.UserDialogs.Resource.Styleable.KeyTrigger_onNegativeCross = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyTrigger_onNegativeCross;
+			global::Acr.UserDialogs.Resource.Styleable.KeyTrigger_onPositiveCross = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyTrigger_onPositiveCross;
+			global::Acr.UserDialogs.Resource.Styleable.KeyTrigger_triggerId = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyTrigger_triggerId;
+			global::Acr.UserDialogs.Resource.Styleable.KeyTrigger_triggerReceiver = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyTrigger_triggerReceiver;
+			global::Acr.UserDialogs.Resource.Styleable.KeyTrigger_triggerSlack = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyTrigger_triggerSlack;
+			global::Acr.UserDialogs.Resource.Styleable.KeyTrigger_viewTransitionOnCross = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyTrigger_viewTransitionOnCross;
+			global::Acr.UserDialogs.Resource.Styleable.KeyTrigger_viewTransitionOnNegativeCross = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyTrigger_viewTransitionOnNegativeCross;
+			global::Acr.UserDialogs.Resource.Styleable.KeyTrigger_viewTransitionOnPositiveCross = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.KeyTrigger_viewTransitionOnPositiveCross;
+			global::Acr.UserDialogs.Resource.Styleable.Layout = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_android_layout_height = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_android_layout_height;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_android_layout_marginBottom = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_android_layout_marginBottom;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_android_layout_marginEnd = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_android_layout_marginEnd;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_android_layout_marginLeft = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_android_layout_marginLeft;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_android_layout_marginRight = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_android_layout_marginRight;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_android_layout_marginStart = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_android_layout_marginStart;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_android_layout_marginTop = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_android_layout_marginTop;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_android_layout_width = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_android_layout_width;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_android_orientation = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_android_orientation;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_barrierAllowsGoneWidgets = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_barrierAllowsGoneWidgets;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_barrierDirection = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_barrierDirection;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_barrierMargin = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_barrierMargin;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_chainUseRtl = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_chainUseRtl;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_constraint_referenced_ids = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_constraint_referenced_ids;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_constraint_referenced_tags = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_constraint_referenced_tags;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_layout_constrainedHeight = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_layout_constrainedHeight;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_layout_constrainedWidth = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_layout_constrainedWidth;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_layout_constraintBaseline_creator = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_layout_constraintBaseline_creator;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_layout_constraintBaseline_toBaselineOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_layout_constraintBaseline_toBaselineOf;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_layout_constraintBaseline_toBottomOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_layout_constraintBaseline_toBottomOf;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_layout_constraintBaseline_toTopOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_layout_constraintBaseline_toTopOf;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_layout_constraintBottom_creator = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_layout_constraintBottom_creator;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_layout_constraintBottom_toBottomOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_layout_constraintBottom_toBottomOf;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_layout_constraintBottom_toTopOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_layout_constraintBottom_toTopOf;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_layout_constraintCircle = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_layout_constraintCircle;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_layout_constraintCircleAngle = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_layout_constraintCircleAngle;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_layout_constraintCircleRadius = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_layout_constraintCircleRadius;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_layout_constraintDimensionRatio = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_layout_constraintDimensionRatio;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_layout_constraintEnd_toEndOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_layout_constraintEnd_toEndOf;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_layout_constraintEnd_toStartOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_layout_constraintEnd_toStartOf;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_layout_constraintGuide_begin = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_layout_constraintGuide_begin;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_layout_constraintGuide_end = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_layout_constraintGuide_end;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_layout_constraintGuide_percent = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_layout_constraintGuide_percent;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_layout_constraintHeight = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_layout_constraintHeight;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_layout_constraintHeight_default = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_layout_constraintHeight_default;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_layout_constraintHeight_max = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_layout_constraintHeight_max;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_layout_constraintHeight_min = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_layout_constraintHeight_min;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_layout_constraintHeight_percent = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_layout_constraintHeight_percent;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_layout_constraintHorizontal_bias = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_layout_constraintHorizontal_bias;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_layout_constraintHorizontal_chainStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_layout_constraintHorizontal_chainStyle;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_layout_constraintHorizontal_weight = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_layout_constraintHorizontal_weight;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_layout_constraintLeft_creator = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_layout_constraintLeft_creator;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_layout_constraintLeft_toLeftOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_layout_constraintLeft_toLeftOf;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_layout_constraintLeft_toRightOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_layout_constraintLeft_toRightOf;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_layout_constraintRight_creator = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_layout_constraintRight_creator;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_layout_constraintRight_toLeftOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_layout_constraintRight_toLeftOf;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_layout_constraintRight_toRightOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_layout_constraintRight_toRightOf;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_layout_constraintStart_toEndOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_layout_constraintStart_toEndOf;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_layout_constraintStart_toStartOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_layout_constraintStart_toStartOf;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_layout_constraintTop_creator = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_layout_constraintTop_creator;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_layout_constraintTop_toBottomOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_layout_constraintTop_toBottomOf;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_layout_constraintTop_toTopOf = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_layout_constraintTop_toTopOf;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_layout_constraintVertical_bias = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_layout_constraintVertical_bias;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_layout_constraintVertical_chainStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_layout_constraintVertical_chainStyle;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_layout_constraintVertical_weight = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_layout_constraintVertical_weight;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_layout_constraintWidth = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_layout_constraintWidth;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_layout_constraintWidth_default = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_layout_constraintWidth_default;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_layout_constraintWidth_max = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_layout_constraintWidth_max;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_layout_constraintWidth_min = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_layout_constraintWidth_min;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_layout_constraintWidth_percent = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_layout_constraintWidth_percent;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_layout_editor_absoluteX = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_layout_editor_absoluteX;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_layout_editor_absoluteY = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_layout_editor_absoluteY;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_layout_goneMarginBaseline = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_layout_goneMarginBaseline;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_layout_goneMarginBottom = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_layout_goneMarginBottom;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_layout_goneMarginEnd = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_layout_goneMarginEnd;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_layout_goneMarginLeft = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_layout_goneMarginLeft;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_layout_goneMarginRight = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_layout_goneMarginRight;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_layout_goneMarginStart = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_layout_goneMarginStart;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_layout_goneMarginTop = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_layout_goneMarginTop;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_layout_marginBaseline = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_layout_marginBaseline;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_layout_wrapBehaviorInParent = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_layout_wrapBehaviorInParent;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_maxHeight = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_maxHeight;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_maxWidth = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_maxWidth;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_minHeight = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_minHeight;
+			global::Acr.UserDialogs.Resource.Styleable.Layout_minWidth = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Layout_minWidth;
 			global::Acr.UserDialogs.Resource.Styleable.LinearLayoutCompat = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.LinearLayoutCompat;
 			global::Acr.UserDialogs.Resource.Styleable.LinearLayoutCompat_android_baselineAligned = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.LinearLayoutCompat_android_baselineAligned;
 			global::Acr.UserDialogs.Resource.Styleable.LinearLayoutCompat_android_baselineAlignedChildIndex = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.LinearLayoutCompat_android_baselineAlignedChildIndex;
@@ -2315,10 +4540,32 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_width = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_width;
 			global::Acr.UserDialogs.Resource.Styleable.LinearLayoutCompat_measureWithLargestChild = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.LinearLayoutCompat_measureWithLargestChild;
 			global::Acr.UserDialogs.Resource.Styleable.LinearLayoutCompat_showDividers = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.LinearLayoutCompat_showDividers;
+			global::Acr.UserDialogs.Resource.Styleable.LinearProgressIndicator = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.LinearProgressIndicator;
+			global::Acr.UserDialogs.Resource.Styleable.LinearProgressIndicator_indeterminateAnimationType = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.LinearProgressIndicator_indeterminateAnimationType;
+			global::Acr.UserDialogs.Resource.Styleable.LinearProgressIndicator_indicatorDirectionLinear = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.LinearProgressIndicator_indicatorDirectionLinear;
 			global::Acr.UserDialogs.Resource.Styleable.ListPopupWindow = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ListPopupWindow;
 			global::Acr.UserDialogs.Resource.Styleable.ListPopupWindow_android_dropDownHorizontalOffset = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ListPopupWindow_android_dropDownHorizontalOffset;
 			global::Acr.UserDialogs.Resource.Styleable.ListPopupWindow_android_dropDownVerticalOffset = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ListPopupWindow_android_dropDownVerticalOffset;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialAlertDialog = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialAlertDialog;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialAlertDialogTheme = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialAlertDialogTheme;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialAlertDialogTheme_materialAlertDialogBodyTextStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialAlertDialogTheme_materialAlertDialogBodyTextStyle;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialAlertDialogTheme_materialAlertDialogTheme = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialAlertDialogTheme_materialAlertDialogTheme;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialAlertDialogTheme_materialAlertDialogTitleIconStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialAlertDialogTheme_materialAlertDialogTitleIconStyle;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialAlertDialogTheme_materialAlertDialogTitlePanelStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialAlertDialogTheme_materialAlertDialogTitlePanelStyle;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialAlertDialogTheme_materialAlertDialogTitleTextStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialAlertDialogTheme_materialAlertDialogTitleTextStyle;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialAlertDialog_backgroundInsetBottom = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialAlertDialog_backgroundInsetBottom;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialAlertDialog_backgroundInsetEnd = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialAlertDialog_backgroundInsetEnd;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialAlertDialog_backgroundInsetStart = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialAlertDialog_backgroundInsetStart;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialAlertDialog_backgroundInsetTop = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialAlertDialog_backgroundInsetTop;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialAutoCompleteTextView = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialAutoCompleteTextView;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialAutoCompleteTextView_android_inputType = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialAutoCompleteTextView_android_inputType;
 			global::Acr.UserDialogs.Resource.Styleable.MaterialButton = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialButton;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialButtonToggleGroup = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialButtonToggleGroup;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialButtonToggleGroup_checkedButton = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialButtonToggleGroup_checkedButton;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialButtonToggleGroup_selectionRequired = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialButtonToggleGroup_selectionRequired;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialButtonToggleGroup_singleSelection = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialButtonToggleGroup_singleSelection;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialButton_android_background = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialButton_android_background;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialButton_android_checkable = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialButton_android_checkable;
 			global::Acr.UserDialogs.Resource.Styleable.MaterialButton_android_insetBottom = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialButton_android_insetBottom;
 			global::Acr.UserDialogs.Resource.Styleable.MaterialButton_android_insetLeft = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialButton_android_insetLeft;
 			global::Acr.UserDialogs.Resource.Styleable.MaterialButton_android_insetRight = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialButton_android_insetRight;
@@ -2326,6 +4573,7 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Styleable.MaterialButton_backgroundTint = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialButton_backgroundTint;
 			global::Acr.UserDialogs.Resource.Styleable.MaterialButton_backgroundTintMode = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialButton_backgroundTintMode;
 			global::Acr.UserDialogs.Resource.Styleable.MaterialButton_cornerRadius = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialButton_cornerRadius;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialButton_elevation = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialButton_elevation;
 			global::Acr.UserDialogs.Resource.Styleable.MaterialButton_icon = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialButton_icon;
 			global::Acr.UserDialogs.Resource.Styleable.MaterialButton_iconGravity = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialButton_iconGravity;
 			global::Acr.UserDialogs.Resource.Styleable.MaterialButton_iconPadding = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialButton_iconPadding;
@@ -2333,11 +4581,69 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Styleable.MaterialButton_iconTint = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialButton_iconTint;
 			global::Acr.UserDialogs.Resource.Styleable.MaterialButton_iconTintMode = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialButton_iconTintMode;
 			global::Acr.UserDialogs.Resource.Styleable.MaterialButton_rippleColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialButton_rippleColor;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialButton_shapeAppearance = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialButton_shapeAppearance;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialButton_shapeAppearanceOverlay = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialButton_shapeAppearanceOverlay;
 			global::Acr.UserDialogs.Resource.Styleable.MaterialButton_strokeColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialButton_strokeColor;
 			global::Acr.UserDialogs.Resource.Styleable.MaterialButton_strokeWidth = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialButton_strokeWidth;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialCalendar = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialCalendar;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialCalendarItem = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialCalendarItem;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialCalendarItem_android_insetBottom = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialCalendarItem_android_insetBottom;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialCalendarItem_android_insetLeft = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialCalendarItem_android_insetLeft;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialCalendarItem_android_insetRight = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialCalendarItem_android_insetRight;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialCalendarItem_android_insetTop = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialCalendarItem_android_insetTop;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialCalendarItem_itemFillColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialCalendarItem_itemFillColor;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialCalendarItem_itemShapeAppearance = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialCalendarItem_itemShapeAppearance;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialCalendarItem_itemShapeAppearanceOverlay = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialCalendarItem_itemShapeAppearanceOverlay;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialCalendarItem_itemStrokeColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialCalendarItem_itemStrokeColor;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialCalendarItem_itemStrokeWidth = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialCalendarItem_itemStrokeWidth;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialCalendarItem_itemTextColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialCalendarItem_itemTextColor;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialCalendar_android_windowFullscreen = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialCalendar_android_windowFullscreen;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialCalendar_dayInvalidStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialCalendar_dayInvalidStyle;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialCalendar_daySelectedStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialCalendar_daySelectedStyle;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialCalendar_dayStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialCalendar_dayStyle;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialCalendar_dayTodayStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialCalendar_dayTodayStyle;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialCalendar_nestedScrollable = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialCalendar_nestedScrollable;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialCalendar_rangeFillColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialCalendar_rangeFillColor;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialCalendar_yearSelectedStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialCalendar_yearSelectedStyle;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialCalendar_yearStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialCalendar_yearStyle;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialCalendar_yearTodayStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialCalendar_yearTodayStyle;
 			global::Acr.UserDialogs.Resource.Styleable.MaterialCardView = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialCardView;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialCardView_android_checkable = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialCardView_android_checkable;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialCardView_cardForegroundColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialCardView_cardForegroundColor;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialCardView_checkedIcon = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialCardView_checkedIcon;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialCardView_checkedIconMargin = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialCardView_checkedIconMargin;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialCardView_checkedIconSize = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialCardView_checkedIconSize;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialCardView_checkedIconTint = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialCardView_checkedIconTint;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialCardView_rippleColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialCardView_rippleColor;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialCardView_shapeAppearance = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialCardView_shapeAppearance;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialCardView_shapeAppearanceOverlay = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialCardView_shapeAppearanceOverlay;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialCardView_state_dragged = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialCardView_state_dragged;
 			global::Acr.UserDialogs.Resource.Styleable.MaterialCardView_strokeColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialCardView_strokeColor;
 			global::Acr.UserDialogs.Resource.Styleable.MaterialCardView_strokeWidth = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialCardView_strokeWidth;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialCheckBox = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialCheckBox;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialCheckBox_buttonTint = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialCheckBox_buttonTint;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialCheckBox_useMaterialThemeColors = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialCheckBox_useMaterialThemeColors;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialRadioButton = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialRadioButton;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialRadioButton_buttonTint = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialRadioButton_buttonTint;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialRadioButton_useMaterialThemeColors = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialRadioButton_useMaterialThemeColors;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialShape = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialShape;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialShape_shapeAppearance = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialShape_shapeAppearance;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialShape_shapeAppearanceOverlay = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialShape_shapeAppearanceOverlay;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialTextAppearance = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialTextAppearance;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialTextAppearance_android_letterSpacing = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialTextAppearance_android_letterSpacing;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialTextAppearance_android_lineHeight = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialTextAppearance_android_lineHeight;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialTextAppearance_lineHeight = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialTextAppearance_lineHeight;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialTextView = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialTextView;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialTextView_android_lineHeight = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialTextView_android_lineHeight;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialTextView_android_textAppearance = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialTextView_android_textAppearance;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialTextView_lineHeight = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialTextView_lineHeight;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialTimePicker = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialTimePicker;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialTimePicker_clockIcon = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialTimePicker_clockIcon;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialTimePicker_keyboardIcon = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialTimePicker_keyboardIcon;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialToolbar = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialToolbar;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialToolbar_navigationIconTint = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialToolbar_navigationIconTint;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialToolbar_subtitleCentered = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialToolbar_subtitleCentered;
+			global::Acr.UserDialogs.Resource.Styleable.MaterialToolbar_titleCentered = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MaterialToolbar_titleCentered;
 			global::Acr.UserDialogs.Resource.Styleable.MenuGroup = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MenuGroup;
 			global::Acr.UserDialogs.Resource.Styleable.MenuGroup_android_checkableBehavior = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MenuGroup_android_checkableBehavior;
 			global::Acr.UserDialogs.Resource.Styleable.MenuGroup_android_enabled = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MenuGroup_android_enabled;
@@ -2379,6 +4685,91 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Styleable.MenuView_android_windowAnimationStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MenuView_android_windowAnimationStyle;
 			global::Acr.UserDialogs.Resource.Styleable.MenuView_preserveIconSpacing = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MenuView_preserveIconSpacing;
 			global::Acr.UserDialogs.Resource.Styleable.MenuView_subMenuArrow = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MenuView_subMenuArrow;
+			global::Acr.UserDialogs.Resource.Styleable.MockView = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MockView;
+			global::Acr.UserDialogs.Resource.Styleable.MockView_mock_diagonalsColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MockView_mock_diagonalsColor;
+			global::Acr.UserDialogs.Resource.Styleable.MockView_mock_label = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MockView_mock_label;
+			global::Acr.UserDialogs.Resource.Styleable.MockView_mock_labelBackgroundColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MockView_mock_labelBackgroundColor;
+			global::Acr.UserDialogs.Resource.Styleable.MockView_mock_labelColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MockView_mock_labelColor;
+			global::Acr.UserDialogs.Resource.Styleable.MockView_mock_showDiagonals = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MockView_mock_showDiagonals;
+			global::Acr.UserDialogs.Resource.Styleable.MockView_mock_showLabel = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MockView_mock_showLabel;
+			global::Acr.UserDialogs.Resource.Styleable.Motion = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Motion;
+			global::Acr.UserDialogs.Resource.Styleable.MotionEffect = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MotionEffect;
+			global::Acr.UserDialogs.Resource.Styleable.MotionEffect_motionEffect_alpha = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MotionEffect_motionEffect_alpha;
+			global::Acr.UserDialogs.Resource.Styleable.MotionEffect_motionEffect_end = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MotionEffect_motionEffect_end;
+			global::Acr.UserDialogs.Resource.Styleable.MotionEffect_motionEffect_move = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MotionEffect_motionEffect_move;
+			global::Acr.UserDialogs.Resource.Styleable.MotionEffect_motionEffect_start = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MotionEffect_motionEffect_start;
+			global::Acr.UserDialogs.Resource.Styleable.MotionEffect_motionEffect_strict = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MotionEffect_motionEffect_strict;
+			global::Acr.UserDialogs.Resource.Styleable.MotionEffect_motionEffect_translationX = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MotionEffect_motionEffect_translationX;
+			global::Acr.UserDialogs.Resource.Styleable.MotionEffect_motionEffect_translationY = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MotionEffect_motionEffect_translationY;
+			global::Acr.UserDialogs.Resource.Styleable.MotionEffect_motionEffect_viewTransition = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MotionEffect_motionEffect_viewTransition;
+			global::Acr.UserDialogs.Resource.Styleable.MotionHelper = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MotionHelper;
+			global::Acr.UserDialogs.Resource.Styleable.MotionHelper_onHide = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MotionHelper_onHide;
+			global::Acr.UserDialogs.Resource.Styleable.MotionHelper_onShow = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MotionHelper_onShow;
+			global::Acr.UserDialogs.Resource.Styleable.MotionLabel = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MotionLabel;
+			global::Acr.UserDialogs.Resource.Styleable.MotionLabel_android_autoSizeTextType = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MotionLabel_android_autoSizeTextType;
+			global::Acr.UserDialogs.Resource.Styleable.MotionLabel_android_fontFamily = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MotionLabel_android_fontFamily;
+			global::Acr.UserDialogs.Resource.Styleable.MotionLabel_android_gravity = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MotionLabel_android_gravity;
+			global::Acr.UserDialogs.Resource.Styleable.MotionLabel_android_shadowRadius = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MotionLabel_android_shadowRadius;
+			global::Acr.UserDialogs.Resource.Styleable.MotionLabel_android_text = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MotionLabel_android_text;
+			global::Acr.UserDialogs.Resource.Styleable.MotionLabel_android_textColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MotionLabel_android_textColor;
+			global::Acr.UserDialogs.Resource.Styleable.MotionLabel_android_textSize = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MotionLabel_android_textSize;
+			global::Acr.UserDialogs.Resource.Styleable.MotionLabel_android_textStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MotionLabel_android_textStyle;
+			global::Acr.UserDialogs.Resource.Styleable.MotionLabel_android_typeface = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MotionLabel_android_typeface;
+			global::Acr.UserDialogs.Resource.Styleable.MotionLabel_borderRound = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MotionLabel_borderRound;
+			global::Acr.UserDialogs.Resource.Styleable.MotionLabel_borderRoundPercent = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MotionLabel_borderRoundPercent;
+			global::Acr.UserDialogs.Resource.Styleable.MotionLabel_scaleFromTextSize = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MotionLabel_scaleFromTextSize;
+			global::Acr.UserDialogs.Resource.Styleable.MotionLabel_textBackground = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MotionLabel_textBackground;
+			global::Acr.UserDialogs.Resource.Styleable.MotionLabel_textBackgroundPanX = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MotionLabel_textBackgroundPanX;
+			global::Acr.UserDialogs.Resource.Styleable.MotionLabel_textBackgroundPanY = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MotionLabel_textBackgroundPanY;
+			global::Acr.UserDialogs.Resource.Styleable.MotionLabel_textBackgroundRotate = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MotionLabel_textBackgroundRotate;
+			global::Acr.UserDialogs.Resource.Styleable.MotionLabel_textBackgroundZoom = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MotionLabel_textBackgroundZoom;
+			global::Acr.UserDialogs.Resource.Styleable.MotionLabel_textOutlineColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MotionLabel_textOutlineColor;
+			global::Acr.UserDialogs.Resource.Styleable.MotionLabel_textOutlineThickness = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MotionLabel_textOutlineThickness;
+			global::Acr.UserDialogs.Resource.Styleable.MotionLabel_textPanX = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MotionLabel_textPanX;
+			global::Acr.UserDialogs.Resource.Styleable.MotionLabel_textPanY = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MotionLabel_textPanY;
+			global::Acr.UserDialogs.Resource.Styleable.MotionLabel_textureBlurFactor = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MotionLabel_textureBlurFactor;
+			global::Acr.UserDialogs.Resource.Styleable.MotionLabel_textureEffect = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MotionLabel_textureEffect;
+			global::Acr.UserDialogs.Resource.Styleable.MotionLabel_textureHeight = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MotionLabel_textureHeight;
+			global::Acr.UserDialogs.Resource.Styleable.MotionLabel_textureWidth = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MotionLabel_textureWidth;
+			global::Acr.UserDialogs.Resource.Styleable.MotionLayout = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MotionLayout;
+			global::Acr.UserDialogs.Resource.Styleable.MotionLayout_applyMotionScene = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MotionLayout_applyMotionScene;
+			global::Acr.UserDialogs.Resource.Styleable.MotionLayout_currentState = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MotionLayout_currentState;
+			global::Acr.UserDialogs.Resource.Styleable.MotionLayout_layoutDescription = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MotionLayout_layoutDescription;
+			global::Acr.UserDialogs.Resource.Styleable.MotionLayout_motionDebug = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MotionLayout_motionDebug;
+			global::Acr.UserDialogs.Resource.Styleable.MotionLayout_motionProgress = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MotionLayout_motionProgress;
+			global::Acr.UserDialogs.Resource.Styleable.MotionLayout_showPaths = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MotionLayout_showPaths;
+			global::Acr.UserDialogs.Resource.Styleable.MotionScene = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MotionScene;
+			global::Acr.UserDialogs.Resource.Styleable.MotionScene_defaultDuration = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MotionScene_defaultDuration;
+			global::Acr.UserDialogs.Resource.Styleable.MotionScene_layoutDuringTransition = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MotionScene_layoutDuringTransition;
+			global::Acr.UserDialogs.Resource.Styleable.MotionTelltales = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MotionTelltales;
+			global::Acr.UserDialogs.Resource.Styleable.MotionTelltales_telltales_tailColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MotionTelltales_telltales_tailColor;
+			global::Acr.UserDialogs.Resource.Styleable.MotionTelltales_telltales_tailScale = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MotionTelltales_telltales_tailScale;
+			global::Acr.UserDialogs.Resource.Styleable.MotionTelltales_telltales_velocityMode = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.MotionTelltales_telltales_velocityMode;
+			global::Acr.UserDialogs.Resource.Styleable.Motion_animateCircleAngleTo = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Motion_animateCircleAngleTo;
+			global::Acr.UserDialogs.Resource.Styleable.Motion_animateRelativeTo = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Motion_animateRelativeTo;
+			global::Acr.UserDialogs.Resource.Styleable.Motion_drawPath = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Motion_drawPath;
+			global::Acr.UserDialogs.Resource.Styleable.Motion_motionPathRotate = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Motion_motionPathRotate;
+			global::Acr.UserDialogs.Resource.Styleable.Motion_motionStagger = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Motion_motionStagger;
+			global::Acr.UserDialogs.Resource.Styleable.Motion_pathMotionArc = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Motion_pathMotionArc;
+			global::Acr.UserDialogs.Resource.Styleable.Motion_quantizeMotionInterpolator = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Motion_quantizeMotionInterpolator;
+			global::Acr.UserDialogs.Resource.Styleable.Motion_quantizeMotionPhase = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Motion_quantizeMotionPhase;
+			global::Acr.UserDialogs.Resource.Styleable.Motion_quantizeMotionSteps = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Motion_quantizeMotionSteps;
+			global::Acr.UserDialogs.Resource.Styleable.Motion_transitionEasing = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Motion_transitionEasing;
+			global::Acr.UserDialogs.Resource.Styleable.NavigationBarView = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.NavigationBarView;
+			global::Acr.UserDialogs.Resource.Styleable.NavigationBarView_backgroundTint = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.NavigationBarView_backgroundTint;
+			global::Acr.UserDialogs.Resource.Styleable.NavigationBarView_elevation = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.NavigationBarView_elevation;
+			global::Acr.UserDialogs.Resource.Styleable.NavigationBarView_itemBackground = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.NavigationBarView_itemBackground;
+			global::Acr.UserDialogs.Resource.Styleable.NavigationBarView_itemIconSize = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.NavigationBarView_itemIconSize;
+			global::Acr.UserDialogs.Resource.Styleable.NavigationBarView_itemIconTint = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.NavigationBarView_itemIconTint;
+			global::Acr.UserDialogs.Resource.Styleable.NavigationBarView_itemRippleColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.NavigationBarView_itemRippleColor;
+			global::Acr.UserDialogs.Resource.Styleable.NavigationBarView_itemTextAppearanceActive = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.NavigationBarView_itemTextAppearanceActive;
+			global::Acr.UserDialogs.Resource.Styleable.NavigationBarView_itemTextAppearanceInactive = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.NavigationBarView_itemTextAppearanceInactive;
+			global::Acr.UserDialogs.Resource.Styleable.NavigationBarView_itemTextColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.NavigationBarView_itemTextColor;
+			global::Acr.UserDialogs.Resource.Styleable.NavigationBarView_labelVisibilityMode = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.NavigationBarView_labelVisibilityMode;
+			global::Acr.UserDialogs.Resource.Styleable.NavigationBarView_menu = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.NavigationBarView_menu;
+			global::Acr.UserDialogs.Resource.Styleable.NavigationRailView = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.NavigationRailView;
+			global::Acr.UserDialogs.Resource.Styleable.NavigationRailView_headerLayout = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.NavigationRailView_headerLayout;
+			global::Acr.UserDialogs.Resource.Styleable.NavigationRailView_menuGravity = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.NavigationRailView_menuGravity;
 			global::Acr.UserDialogs.Resource.Styleable.NavigationView = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.NavigationView;
 			global::Acr.UserDialogs.Resource.Styleable.NavigationView_android_background = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.NavigationView_android_background;
 			global::Acr.UserDialogs.Resource.Styleable.NavigationView_android_fitsSystemWindows = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.NavigationView_android_fitsSystemWindows;
@@ -2388,10 +4779,44 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Styleable.NavigationView_itemBackground = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.NavigationView_itemBackground;
 			global::Acr.UserDialogs.Resource.Styleable.NavigationView_itemHorizontalPadding = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.NavigationView_itemHorizontalPadding;
 			global::Acr.UserDialogs.Resource.Styleable.NavigationView_itemIconPadding = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.NavigationView_itemIconPadding;
+			global::Acr.UserDialogs.Resource.Styleable.NavigationView_itemIconSize = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.NavigationView_itemIconSize;
 			global::Acr.UserDialogs.Resource.Styleable.NavigationView_itemIconTint = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.NavigationView_itemIconTint;
+			global::Acr.UserDialogs.Resource.Styleable.NavigationView_itemMaxLines = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.NavigationView_itemMaxLines;
+			global::Acr.UserDialogs.Resource.Styleable.NavigationView_itemShapeAppearance = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.NavigationView_itemShapeAppearance;
+			global::Acr.UserDialogs.Resource.Styleable.NavigationView_itemShapeAppearanceOverlay = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.NavigationView_itemShapeAppearanceOverlay;
+			global::Acr.UserDialogs.Resource.Styleable.NavigationView_itemShapeFillColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.NavigationView_itemShapeFillColor;
+			global::Acr.UserDialogs.Resource.Styleable.NavigationView_itemShapeInsetBottom = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.NavigationView_itemShapeInsetBottom;
+			global::Acr.UserDialogs.Resource.Styleable.NavigationView_itemShapeInsetEnd = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.NavigationView_itemShapeInsetEnd;
+			global::Acr.UserDialogs.Resource.Styleable.NavigationView_itemShapeInsetStart = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.NavigationView_itemShapeInsetStart;
+			global::Acr.UserDialogs.Resource.Styleable.NavigationView_itemShapeInsetTop = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.NavigationView_itemShapeInsetTop;
 			global::Acr.UserDialogs.Resource.Styleable.NavigationView_itemTextAppearance = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.NavigationView_itemTextAppearance;
 			global::Acr.UserDialogs.Resource.Styleable.NavigationView_itemTextColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.NavigationView_itemTextColor;
 			global::Acr.UserDialogs.Resource.Styleable.NavigationView_menu = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.NavigationView_menu;
+			global::Acr.UserDialogs.Resource.Styleable.NavigationView_shapeAppearance = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.NavigationView_shapeAppearance;
+			global::Acr.UserDialogs.Resource.Styleable.NavigationView_shapeAppearanceOverlay = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.NavigationView_shapeAppearanceOverlay;
+			global::Acr.UserDialogs.Resource.Styleable.OnClick = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.OnClick;
+			global::Acr.UserDialogs.Resource.Styleable.OnClick_clickAction = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.OnClick_clickAction;
+			global::Acr.UserDialogs.Resource.Styleable.OnClick_targetId = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.OnClick_targetId;
+			global::Acr.UserDialogs.Resource.Styleable.OnSwipe = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.OnSwipe;
+			global::Acr.UserDialogs.Resource.Styleable.OnSwipe_autoCompleteMode = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.OnSwipe_autoCompleteMode;
+			global::Acr.UserDialogs.Resource.Styleable.OnSwipe_dragDirection = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.OnSwipe_dragDirection;
+			global::Acr.UserDialogs.Resource.Styleable.OnSwipe_dragScale = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.OnSwipe_dragScale;
+			global::Acr.UserDialogs.Resource.Styleable.OnSwipe_dragThreshold = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.OnSwipe_dragThreshold;
+			global::Acr.UserDialogs.Resource.Styleable.OnSwipe_limitBoundsTo = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.OnSwipe_limitBoundsTo;
+			global::Acr.UserDialogs.Resource.Styleable.OnSwipe_maxAcceleration = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.OnSwipe_maxAcceleration;
+			global::Acr.UserDialogs.Resource.Styleable.OnSwipe_maxVelocity = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.OnSwipe_maxVelocity;
+			global::Acr.UserDialogs.Resource.Styleable.OnSwipe_moveWhenScrollAtTop = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.OnSwipe_moveWhenScrollAtTop;
+			global::Acr.UserDialogs.Resource.Styleable.OnSwipe_nestedScrollFlags = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.OnSwipe_nestedScrollFlags;
+			global::Acr.UserDialogs.Resource.Styleable.OnSwipe_onTouchUp = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.OnSwipe_onTouchUp;
+			global::Acr.UserDialogs.Resource.Styleable.OnSwipe_rotationCenterId = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.OnSwipe_rotationCenterId;
+			global::Acr.UserDialogs.Resource.Styleable.OnSwipe_springBoundary = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.OnSwipe_springBoundary;
+			global::Acr.UserDialogs.Resource.Styleable.OnSwipe_springDamping = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.OnSwipe_springDamping;
+			global::Acr.UserDialogs.Resource.Styleable.OnSwipe_springMass = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.OnSwipe_springMass;
+			global::Acr.UserDialogs.Resource.Styleable.OnSwipe_springStiffness = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.OnSwipe_springStiffness;
+			global::Acr.UserDialogs.Resource.Styleable.OnSwipe_springStopThreshold = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.OnSwipe_springStopThreshold;
+			global::Acr.UserDialogs.Resource.Styleable.OnSwipe_touchAnchorId = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.OnSwipe_touchAnchorId;
+			global::Acr.UserDialogs.Resource.Styleable.OnSwipe_touchAnchorSide = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.OnSwipe_touchAnchorSide;
+			global::Acr.UserDialogs.Resource.Styleable.OnSwipe_touchRegionId = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.OnSwipe_touchRegionId;
 			global::Acr.UserDialogs.Resource.Styleable.PopupWindow = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.PopupWindow;
 			global::Acr.UserDialogs.Resource.Styleable.PopupWindowBackgroundState = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.PopupWindowBackgroundState;
 			global::Acr.UserDialogs.Resource.Styleable.PopupWindowBackgroundState_state_above_anchor = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.PopupWindowBackgroundState_state_above_anchor;
@@ -2411,6 +4836,17 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Styleable.ProgressWheel_ahText = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ProgressWheel_ahText;
 			global::Acr.UserDialogs.Resource.Styleable.ProgressWheel_ahTextColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ProgressWheel_ahTextColor;
 			global::Acr.UserDialogs.Resource.Styleable.ProgressWheel_ahTextSize = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ProgressWheel_ahTextSize;
+			global::Acr.UserDialogs.Resource.Styleable.PropertySet = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.PropertySet;
+			global::Acr.UserDialogs.Resource.Styleable.PropertySet_android_alpha = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.PropertySet_android_alpha;
+			global::Acr.UserDialogs.Resource.Styleable.PropertySet_android_visibility = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.PropertySet_android_visibility;
+			global::Acr.UserDialogs.Resource.Styleable.PropertySet_layout_constraintTag = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.PropertySet_layout_constraintTag;
+			global::Acr.UserDialogs.Resource.Styleable.PropertySet_motionProgress = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.PropertySet_motionProgress;
+			global::Acr.UserDialogs.Resource.Styleable.PropertySet_visibilityMode = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.PropertySet_visibilityMode;
+			global::Acr.UserDialogs.Resource.Styleable.RadialViewGroup = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.RadialViewGroup;
+			global::Acr.UserDialogs.Resource.Styleable.RadialViewGroup_materialCircleRadius = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.RadialViewGroup_materialCircleRadius;
+			global::Acr.UserDialogs.Resource.Styleable.RangeSlider = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.RangeSlider;
+			global::Acr.UserDialogs.Resource.Styleable.RangeSlider_minSeparation = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.RangeSlider_minSeparation;
+			global::Acr.UserDialogs.Resource.Styleable.RangeSlider_values = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.RangeSlider_values;
 			global::Acr.UserDialogs.Resource.Styleable.RecycleListView = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.RecycleListView;
 			global::Acr.UserDialogs.Resource.Styleable.RecycleListView_paddingBottomNoButtons = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.RecycleListView_paddingBottomNoButtons;
 			global::Acr.UserDialogs.Resource.Styleable.RecycleListView_paddingTopNoTitle = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.RecycleListView_paddingTopNoTitle;
@@ -2449,19 +4885,72 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Styleable.SearchView_submitBackground = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.SearchView_submitBackground;
 			global::Acr.UserDialogs.Resource.Styleable.SearchView_suggestionRowLayout = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.SearchView_suggestionRowLayout;
 			global::Acr.UserDialogs.Resource.Styleable.SearchView_voiceIcon = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.SearchView_voiceIcon;
+			global::Acr.UserDialogs.Resource.Styleable.ShapeableImageView = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ShapeableImageView;
+			global::Acr.UserDialogs.Resource.Styleable.ShapeableImageView_contentPadding = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ShapeableImageView_contentPadding;
+			global::Acr.UserDialogs.Resource.Styleable.ShapeableImageView_contentPaddingBottom = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ShapeableImageView_contentPaddingBottom;
+			global::Acr.UserDialogs.Resource.Styleable.ShapeableImageView_contentPaddingEnd = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ShapeableImageView_contentPaddingEnd;
+			global::Acr.UserDialogs.Resource.Styleable.ShapeableImageView_contentPaddingLeft = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ShapeableImageView_contentPaddingLeft;
+			global::Acr.UserDialogs.Resource.Styleable.ShapeableImageView_contentPaddingRight = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ShapeableImageView_contentPaddingRight;
+			global::Acr.UserDialogs.Resource.Styleable.ShapeableImageView_contentPaddingStart = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ShapeableImageView_contentPaddingStart;
+			global::Acr.UserDialogs.Resource.Styleable.ShapeableImageView_contentPaddingTop = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ShapeableImageView_contentPaddingTop;
+			global::Acr.UserDialogs.Resource.Styleable.ShapeableImageView_shapeAppearance = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ShapeableImageView_shapeAppearance;
+			global::Acr.UserDialogs.Resource.Styleable.ShapeableImageView_shapeAppearanceOverlay = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ShapeableImageView_shapeAppearanceOverlay;
+			global::Acr.UserDialogs.Resource.Styleable.ShapeableImageView_strokeColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ShapeableImageView_strokeColor;
+			global::Acr.UserDialogs.Resource.Styleable.ShapeableImageView_strokeWidth = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ShapeableImageView_strokeWidth;
+			global::Acr.UserDialogs.Resource.Styleable.ShapeAppearance = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ShapeAppearance;
+			global::Acr.UserDialogs.Resource.Styleable.ShapeAppearance_cornerFamily = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ShapeAppearance_cornerFamily;
+			global::Acr.UserDialogs.Resource.Styleable.ShapeAppearance_cornerFamilyBottomLeft = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ShapeAppearance_cornerFamilyBottomLeft;
+			global::Acr.UserDialogs.Resource.Styleable.ShapeAppearance_cornerFamilyBottomRight = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ShapeAppearance_cornerFamilyBottomRight;
+			global::Acr.UserDialogs.Resource.Styleable.ShapeAppearance_cornerFamilyTopLeft = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ShapeAppearance_cornerFamilyTopLeft;
+			global::Acr.UserDialogs.Resource.Styleable.ShapeAppearance_cornerFamilyTopRight = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ShapeAppearance_cornerFamilyTopRight;
+			global::Acr.UserDialogs.Resource.Styleable.ShapeAppearance_cornerSize = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ShapeAppearance_cornerSize;
+			global::Acr.UserDialogs.Resource.Styleable.ShapeAppearance_cornerSizeBottomLeft = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ShapeAppearance_cornerSizeBottomLeft;
+			global::Acr.UserDialogs.Resource.Styleable.ShapeAppearance_cornerSizeBottomRight = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ShapeAppearance_cornerSizeBottomRight;
+			global::Acr.UserDialogs.Resource.Styleable.ShapeAppearance_cornerSizeTopLeft = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ShapeAppearance_cornerSizeTopLeft;
+			global::Acr.UserDialogs.Resource.Styleable.ShapeAppearance_cornerSizeTopRight = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ShapeAppearance_cornerSizeTopRight;
+			global::Acr.UserDialogs.Resource.Styleable.Slider = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Slider;
+			global::Acr.UserDialogs.Resource.Styleable.Slider_android_enabled = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Slider_android_enabled;
+			global::Acr.UserDialogs.Resource.Styleable.Slider_android_stepSize = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Slider_android_stepSize;
+			global::Acr.UserDialogs.Resource.Styleable.Slider_android_value = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Slider_android_value;
+			global::Acr.UserDialogs.Resource.Styleable.Slider_android_valueFrom = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Slider_android_valueFrom;
+			global::Acr.UserDialogs.Resource.Styleable.Slider_android_valueTo = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Slider_android_valueTo;
+			global::Acr.UserDialogs.Resource.Styleable.Slider_haloColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Slider_haloColor;
+			global::Acr.UserDialogs.Resource.Styleable.Slider_haloRadius = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Slider_haloRadius;
+			global::Acr.UserDialogs.Resource.Styleable.Slider_labelBehavior = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Slider_labelBehavior;
+			global::Acr.UserDialogs.Resource.Styleable.Slider_labelStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Slider_labelStyle;
+			global::Acr.UserDialogs.Resource.Styleable.Slider_thumbColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Slider_thumbColor;
+			global::Acr.UserDialogs.Resource.Styleable.Slider_thumbElevation = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Slider_thumbElevation;
+			global::Acr.UserDialogs.Resource.Styleable.Slider_thumbRadius = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Slider_thumbRadius;
+			global::Acr.UserDialogs.Resource.Styleable.Slider_thumbStrokeColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Slider_thumbStrokeColor;
+			global::Acr.UserDialogs.Resource.Styleable.Slider_thumbStrokeWidth = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Slider_thumbStrokeWidth;
+			global::Acr.UserDialogs.Resource.Styleable.Slider_tickColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Slider_tickColor;
+			global::Acr.UserDialogs.Resource.Styleable.Slider_tickColorActive = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Slider_tickColorActive;
+			global::Acr.UserDialogs.Resource.Styleable.Slider_tickColorInactive = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Slider_tickColorInactive;
+			global::Acr.UserDialogs.Resource.Styleable.Slider_tickVisible = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Slider_tickVisible;
+			global::Acr.UserDialogs.Resource.Styleable.Slider_trackColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Slider_trackColor;
+			global::Acr.UserDialogs.Resource.Styleable.Slider_trackColorActive = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Slider_trackColorActive;
+			global::Acr.UserDialogs.Resource.Styleable.Slider_trackColorInactive = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Slider_trackColorInactive;
+			global::Acr.UserDialogs.Resource.Styleable.Slider_trackHeight = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Slider_trackHeight;
 			global::Acr.UserDialogs.Resource.Styleable.Snackbar = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Snackbar;
 			global::Acr.UserDialogs.Resource.Styleable.SnackbarLayout = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.SnackbarLayout;
+			global::Acr.UserDialogs.Resource.Styleable.SnackbarLayout_actionTextColorAlpha = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.SnackbarLayout_actionTextColorAlpha;
 			global::Acr.UserDialogs.Resource.Styleable.SnackbarLayout_android_maxWidth = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.SnackbarLayout_android_maxWidth;
+			global::Acr.UserDialogs.Resource.Styleable.SnackbarLayout_animationMode = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.SnackbarLayout_animationMode;
+			global::Acr.UserDialogs.Resource.Styleable.SnackbarLayout_backgroundOverlayColorAlpha = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.SnackbarLayout_backgroundOverlayColorAlpha;
+			global::Acr.UserDialogs.Resource.Styleable.SnackbarLayout_backgroundTint = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.SnackbarLayout_backgroundTint;
+			global::Acr.UserDialogs.Resource.Styleable.SnackbarLayout_backgroundTintMode = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.SnackbarLayout_backgroundTintMode;
 			global::Acr.UserDialogs.Resource.Styleable.SnackbarLayout_elevation = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.SnackbarLayout_elevation;
 			global::Acr.UserDialogs.Resource.Styleable.SnackbarLayout_maxActionInlineWidth = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.SnackbarLayout_maxActionInlineWidth;
 			global::Acr.UserDialogs.Resource.Styleable.Snackbar_snackbarButtonStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Snackbar_snackbarButtonStyle;
 			global::Acr.UserDialogs.Resource.Styleable.Snackbar_snackbarStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Snackbar_snackbarStyle;
+			global::Acr.UserDialogs.Resource.Styleable.Snackbar_snackbarTextViewStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Snackbar_snackbarTextViewStyle;
 			global::Acr.UserDialogs.Resource.Styleable.Spinner = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Spinner;
 			global::Acr.UserDialogs.Resource.Styleable.Spinner_android_dropDownWidth = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Spinner_android_dropDownWidth;
 			global::Acr.UserDialogs.Resource.Styleable.Spinner_android_entries = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Spinner_android_entries;
 			global::Acr.UserDialogs.Resource.Styleable.Spinner_android_popupBackground = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Spinner_android_popupBackground;
 			global::Acr.UserDialogs.Resource.Styleable.Spinner_android_prompt = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Spinner_android_prompt;
 			global::Acr.UserDialogs.Resource.Styleable.Spinner_popupTheme = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Spinner_popupTheme;
+			global::Acr.UserDialogs.Resource.Styleable.State = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.State;
 			global::Acr.UserDialogs.Resource.Styleable.StateListDrawable = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.StateListDrawable;
 			global::Acr.UserDialogs.Resource.Styleable.StateListDrawableItem = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.StateListDrawableItem;
 			global::Acr.UserDialogs.Resource.Styleable.StateListDrawableItem_android_drawable = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.StateListDrawableItem_android_drawable;
@@ -2471,6 +4960,10 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Styleable.StateListDrawable_android_exitFadeDuration = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.StateListDrawable_android_exitFadeDuration;
 			global::Acr.UserDialogs.Resource.Styleable.StateListDrawable_android_variablePadding = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.StateListDrawable_android_variablePadding;
 			global::Acr.UserDialogs.Resource.Styleable.StateListDrawable_android_visible = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.StateListDrawable_android_visible;
+			global::Acr.UserDialogs.Resource.Styleable.StateSet = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.StateSet;
+			global::Acr.UserDialogs.Resource.Styleable.StateSet_defaultState = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.StateSet_defaultState;
+			global::Acr.UserDialogs.Resource.Styleable.State_android_id = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.State_android_id;
+			global::Acr.UserDialogs.Resource.Styleable.State_constraints = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.State_constraints;
 			global::Acr.UserDialogs.Resource.Styleable.SwitchCompat = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.SwitchCompat;
 			global::Acr.UserDialogs.Resource.Styleable.SwitchCompat_android_textOff = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.SwitchCompat_android_textOff;
 			global::Acr.UserDialogs.Resource.Styleable.SwitchCompat_android_textOn = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.SwitchCompat_android_textOn;
@@ -2486,6 +4979,8 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Styleable.SwitchCompat_track = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.SwitchCompat_track;
 			global::Acr.UserDialogs.Resource.Styleable.SwitchCompat_trackTint = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.SwitchCompat_trackTint;
 			global::Acr.UserDialogs.Resource.Styleable.SwitchCompat_trackTintMode = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.SwitchCompat_trackTintMode;
+			global::Acr.UserDialogs.Resource.Styleable.SwitchMaterial = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.SwitchMaterial;
+			global::Acr.UserDialogs.Resource.Styleable.SwitchMaterial_useMaterialThemeColors = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.SwitchMaterial_useMaterialThemeColors;
 			global::Acr.UserDialogs.Resource.Styleable.TabItem = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TabItem;
 			global::Acr.UserDialogs.Resource.Styleable.TabItem_android_icon = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TabItem_android_icon;
 			global::Acr.UserDialogs.Resource.Styleable.TabItem_android_layout = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TabItem_android_layout;
@@ -2498,6 +4993,7 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Styleable.TabLayout_tabIconTintMode = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TabLayout_tabIconTintMode;
 			global::Acr.UserDialogs.Resource.Styleable.TabLayout_tabIndicator = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TabLayout_tabIndicator;
 			global::Acr.UserDialogs.Resource.Styleable.TabLayout_tabIndicatorAnimationDuration = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TabLayout_tabIndicatorAnimationDuration;
+			global::Acr.UserDialogs.Resource.Styleable.TabLayout_tabIndicatorAnimationMode = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TabLayout_tabIndicatorAnimationMode;
 			global::Acr.UserDialogs.Resource.Styleable.TabLayout_tabIndicatorColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TabLayout_tabIndicatorColor;
 			global::Acr.UserDialogs.Resource.Styleable.TabLayout_tabIndicatorFullWidth = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TabLayout_tabIndicatorFullWidth;
 			global::Acr.UserDialogs.Resource.Styleable.TabLayout_tabIndicatorGravity = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TabLayout_tabIndicatorGravity;
@@ -2533,8 +5029,28 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Styleable.TextAppearance_fontVariationSettings = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextAppearance_fontVariationSettings;
 			global::Acr.UserDialogs.Resource.Styleable.TextAppearance_textAllCaps = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextAppearance_textAllCaps;
 			global::Acr.UserDialogs.Resource.Styleable.TextAppearance_textLocale = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextAppearance_textLocale;
+			global::Acr.UserDialogs.Resource.Styleable.TextEffects = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextEffects;
+			global::Acr.UserDialogs.Resource.Styleable.TextEffects_android_fontFamily = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextEffects_android_fontFamily;
+			global::Acr.UserDialogs.Resource.Styleable.TextEffects_android_shadowColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextEffects_android_shadowColor;
+			global::Acr.UserDialogs.Resource.Styleable.TextEffects_android_shadowDx = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextEffects_android_shadowDx;
+			global::Acr.UserDialogs.Resource.Styleable.TextEffects_android_shadowDy = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextEffects_android_shadowDy;
+			global::Acr.UserDialogs.Resource.Styleable.TextEffects_android_shadowRadius = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextEffects_android_shadowRadius;
+			global::Acr.UserDialogs.Resource.Styleable.TextEffects_android_text = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextEffects_android_text;
+			global::Acr.UserDialogs.Resource.Styleable.TextEffects_android_textSize = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextEffects_android_textSize;
+			global::Acr.UserDialogs.Resource.Styleable.TextEffects_android_textStyle = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextEffects_android_textStyle;
+			global::Acr.UserDialogs.Resource.Styleable.TextEffects_android_typeface = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextEffects_android_typeface;
+			global::Acr.UserDialogs.Resource.Styleable.TextEffects_borderRound = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextEffects_borderRound;
+			global::Acr.UserDialogs.Resource.Styleable.TextEffects_borderRoundPercent = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextEffects_borderRoundPercent;
+			global::Acr.UserDialogs.Resource.Styleable.TextEffects_textFillColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextEffects_textFillColor;
+			global::Acr.UserDialogs.Resource.Styleable.TextEffects_textOutlineColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextEffects_textOutlineColor;
+			global::Acr.UserDialogs.Resource.Styleable.TextEffects_textOutlineThickness = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextEffects_textOutlineThickness;
+			global::Acr.UserDialogs.Resource.Styleable.TextInputEditText = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextInputEditText;
+			global::Acr.UserDialogs.Resource.Styleable.TextInputEditText_textInputLayoutFocusedRectEnabled = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextInputEditText_textInputLayoutFocusedRectEnabled;
 			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextInputLayout;
+			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_android_enabled = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextInputLayout_android_enabled;
 			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_android_hint = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextInputLayout_android_hint;
+			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_android_maxWidth = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextInputLayout_android_maxWidth;
+			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_android_minWidth = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextInputLayout_android_minWidth;
 			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_android_textColorHint = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextInputLayout_android_textColorHint;
 			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_boxBackgroundColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextInputLayout_boxBackgroundColor;
 			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_boxBackgroundMode = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextInputLayout_boxBackgroundMode;
@@ -2544,24 +5060,58 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_boxCornerRadiusTopEnd = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextInputLayout_boxCornerRadiusTopEnd;
 			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_boxCornerRadiusTopStart = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextInputLayout_boxCornerRadiusTopStart;
 			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_boxStrokeColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextInputLayout_boxStrokeColor;
+			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_boxStrokeErrorColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextInputLayout_boxStrokeErrorColor;
 			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_boxStrokeWidth = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextInputLayout_boxStrokeWidth;
+			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_boxStrokeWidthFocused = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextInputLayout_boxStrokeWidthFocused;
 			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_counterEnabled = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextInputLayout_counterEnabled;
 			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_counterMaxLength = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextInputLayout_counterMaxLength;
 			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_counterOverflowTextAppearance = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextInputLayout_counterOverflowTextAppearance;
+			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_counterOverflowTextColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextInputLayout_counterOverflowTextColor;
 			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_counterTextAppearance = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextInputLayout_counterTextAppearance;
+			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_counterTextColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextInputLayout_counterTextColor;
+			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_endIconCheckable = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextInputLayout_endIconCheckable;
+			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_endIconContentDescription = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextInputLayout_endIconContentDescription;
+			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_endIconDrawable = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextInputLayout_endIconDrawable;
+			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_endIconMode = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextInputLayout_endIconMode;
+			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_endIconTint = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextInputLayout_endIconTint;
+			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_endIconTintMode = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextInputLayout_endIconTintMode;
+			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_errorContentDescription = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextInputLayout_errorContentDescription;
 			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_errorEnabled = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextInputLayout_errorEnabled;
+			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_errorIconDrawable = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextInputLayout_errorIconDrawable;
+			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_errorIconTint = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextInputLayout_errorIconTint;
+			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_errorIconTintMode = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextInputLayout_errorIconTintMode;
 			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_errorTextAppearance = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextInputLayout_errorTextAppearance;
+			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_errorTextColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextInputLayout_errorTextColor;
+			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_expandedHintEnabled = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextInputLayout_expandedHintEnabled;
 			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_helperText = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextInputLayout_helperText;
 			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_helperTextEnabled = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextInputLayout_helperTextEnabled;
 			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_helperTextTextAppearance = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextInputLayout_helperTextTextAppearance;
+			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_helperTextTextColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextInputLayout_helperTextTextColor;
 			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_hintAnimationEnabled = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextInputLayout_hintAnimationEnabled;
 			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_hintEnabled = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextInputLayout_hintEnabled;
 			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_hintTextAppearance = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextInputLayout_hintTextAppearance;
+			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_hintTextColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextInputLayout_hintTextColor;
 			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_passwordToggleContentDescription = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextInputLayout_passwordToggleContentDescription;
 			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_passwordToggleDrawable = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextInputLayout_passwordToggleDrawable;
 			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_passwordToggleEnabled = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextInputLayout_passwordToggleEnabled;
 			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_passwordToggleTint = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextInputLayout_passwordToggleTint;
 			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_passwordToggleTintMode = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextInputLayout_passwordToggleTintMode;
+			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_placeholderText = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextInputLayout_placeholderText;
+			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_placeholderTextAppearance = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextInputLayout_placeholderTextAppearance;
+			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_placeholderTextColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextInputLayout_placeholderTextColor;
+			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_prefixText = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextInputLayout_prefixText;
+			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_prefixTextAppearance = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextInputLayout_prefixTextAppearance;
+			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_prefixTextColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextInputLayout_prefixTextColor;
+			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_shapeAppearance = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextInputLayout_shapeAppearance;
+			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_shapeAppearanceOverlay = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextInputLayout_shapeAppearanceOverlay;
+			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_startIconCheckable = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextInputLayout_startIconCheckable;
+			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_startIconContentDescription = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextInputLayout_startIconContentDescription;
+			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_startIconDrawable = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextInputLayout_startIconDrawable;
+			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_startIconTint = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextInputLayout_startIconTint;
+			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_startIconTintMode = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextInputLayout_startIconTintMode;
+			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_suffixText = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextInputLayout_suffixText;
+			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_suffixTextAppearance = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextInputLayout_suffixTextAppearance;
+			global::Acr.UserDialogs.Resource.Styleable.TextInputLayout_suffixTextColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.TextInputLayout_suffixTextColor;
 			global::Acr.UserDialogs.Resource.Styleable.ThemeEnforcement = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ThemeEnforcement;
 			global::Acr.UserDialogs.Resource.Styleable.ThemeEnforcement_android_textAppearance = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ThemeEnforcement_android_textAppearance;
 			global::Acr.UserDialogs.Resource.Styleable.ThemeEnforcement_enforceMaterialTheme = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ThemeEnforcement_enforceMaterialTheme;
@@ -2597,20 +5147,82 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Acr.UserDialogs.Resource.Styleable.Toolbar_titleMarginTop = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Toolbar_titleMarginTop;
 			global::Acr.UserDialogs.Resource.Styleable.Toolbar_titleTextAppearance = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Toolbar_titleTextAppearance;
 			global::Acr.UserDialogs.Resource.Styleable.Toolbar_titleTextColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Toolbar_titleTextColor;
+			global::Acr.UserDialogs.Resource.Styleable.Tooltip = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Tooltip;
+			global::Acr.UserDialogs.Resource.Styleable.Tooltip_android_layout_margin = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Tooltip_android_layout_margin;
+			global::Acr.UserDialogs.Resource.Styleable.Tooltip_android_minHeight = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Tooltip_android_minHeight;
+			global::Acr.UserDialogs.Resource.Styleable.Tooltip_android_minWidth = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Tooltip_android_minWidth;
+			global::Acr.UserDialogs.Resource.Styleable.Tooltip_android_padding = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Tooltip_android_padding;
+			global::Acr.UserDialogs.Resource.Styleable.Tooltip_android_text = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Tooltip_android_text;
+			global::Acr.UserDialogs.Resource.Styleable.Tooltip_android_textAppearance = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Tooltip_android_textAppearance;
+			global::Acr.UserDialogs.Resource.Styleable.Tooltip_backgroundTint = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Tooltip_backgroundTint;
+			global::Acr.UserDialogs.Resource.Styleable.Transform = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Transform;
+			global::Acr.UserDialogs.Resource.Styleable.Transform_android_elevation = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Transform_android_elevation;
+			global::Acr.UserDialogs.Resource.Styleable.Transform_android_rotation = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Transform_android_rotation;
+			global::Acr.UserDialogs.Resource.Styleable.Transform_android_rotationX = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Transform_android_rotationX;
+			global::Acr.UserDialogs.Resource.Styleable.Transform_android_rotationY = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Transform_android_rotationY;
+			global::Acr.UserDialogs.Resource.Styleable.Transform_android_scaleX = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Transform_android_scaleX;
+			global::Acr.UserDialogs.Resource.Styleable.Transform_android_scaleY = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Transform_android_scaleY;
+			global::Acr.UserDialogs.Resource.Styleable.Transform_android_transformPivotX = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Transform_android_transformPivotX;
+			global::Acr.UserDialogs.Resource.Styleable.Transform_android_transformPivotY = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Transform_android_transformPivotY;
+			global::Acr.UserDialogs.Resource.Styleable.Transform_android_translationX = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Transform_android_translationX;
+			global::Acr.UserDialogs.Resource.Styleable.Transform_android_translationY = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Transform_android_translationY;
+			global::Acr.UserDialogs.Resource.Styleable.Transform_android_translationZ = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Transform_android_translationZ;
+			global::Acr.UserDialogs.Resource.Styleable.Transform_transformPivotTarget = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Transform_transformPivotTarget;
+			global::Acr.UserDialogs.Resource.Styleable.Transition = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Transition;
+			global::Acr.UserDialogs.Resource.Styleable.Transition_android_id = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Transition_android_id;
+			global::Acr.UserDialogs.Resource.Styleable.Transition_autoTransition = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Transition_autoTransition;
+			global::Acr.UserDialogs.Resource.Styleable.Transition_constraintSetEnd = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Transition_constraintSetEnd;
+			global::Acr.UserDialogs.Resource.Styleable.Transition_constraintSetStart = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Transition_constraintSetStart;
+			global::Acr.UserDialogs.Resource.Styleable.Transition_duration = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Transition_duration;
+			global::Acr.UserDialogs.Resource.Styleable.Transition_layoutDuringTransition = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Transition_layoutDuringTransition;
+			global::Acr.UserDialogs.Resource.Styleable.Transition_motionInterpolator = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Transition_motionInterpolator;
+			global::Acr.UserDialogs.Resource.Styleable.Transition_pathMotionArc = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Transition_pathMotionArc;
+			global::Acr.UserDialogs.Resource.Styleable.Transition_staggered = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Transition_staggered;
+			global::Acr.UserDialogs.Resource.Styleable.Transition_transitionDisable = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Transition_transitionDisable;
+			global::Acr.UserDialogs.Resource.Styleable.Transition_transitionFlags = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Transition_transitionFlags;
+			global::Acr.UserDialogs.Resource.Styleable.Variant = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Variant;
+			global::Acr.UserDialogs.Resource.Styleable.Variant_constraints = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Variant_constraints;
+			global::Acr.UserDialogs.Resource.Styleable.Variant_region_heightLessThan = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Variant_region_heightLessThan;
+			global::Acr.UserDialogs.Resource.Styleable.Variant_region_heightMoreThan = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Variant_region_heightMoreThan;
+			global::Acr.UserDialogs.Resource.Styleable.Variant_region_widthLessThan = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Variant_region_widthLessThan;
+			global::Acr.UserDialogs.Resource.Styleable.Variant_region_widthMoreThan = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.Variant_region_widthMoreThan;
 			global::Acr.UserDialogs.Resource.Styleable.View = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.View;
 			global::Acr.UserDialogs.Resource.Styleable.ViewBackgroundHelper = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ViewBackgroundHelper;
 			global::Acr.UserDialogs.Resource.Styleable.ViewBackgroundHelper_android_background = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ViewBackgroundHelper_android_background;
 			global::Acr.UserDialogs.Resource.Styleable.ViewBackgroundHelper_backgroundTint = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ViewBackgroundHelper_backgroundTint;
 			global::Acr.UserDialogs.Resource.Styleable.ViewBackgroundHelper_backgroundTintMode = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ViewBackgroundHelper_backgroundTintMode;
+			global::Acr.UserDialogs.Resource.Styleable.ViewPager2 = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ViewPager2;
+			global::Acr.UserDialogs.Resource.Styleable.ViewPager2_android_orientation = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ViewPager2_android_orientation;
 			global::Acr.UserDialogs.Resource.Styleable.ViewStubCompat = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ViewStubCompat;
 			global::Acr.UserDialogs.Resource.Styleable.ViewStubCompat_android_id = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ViewStubCompat_android_id;
 			global::Acr.UserDialogs.Resource.Styleable.ViewStubCompat_android_inflatedId = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ViewStubCompat_android_inflatedId;
 			global::Acr.UserDialogs.Resource.Styleable.ViewStubCompat_android_layout = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ViewStubCompat_android_layout;
+			global::Acr.UserDialogs.Resource.Styleable.ViewTransition = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ViewTransition;
+			global::Acr.UserDialogs.Resource.Styleable.ViewTransition_android_id = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ViewTransition_android_id;
+			global::Acr.UserDialogs.Resource.Styleable.ViewTransition_clearsTag = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ViewTransition_clearsTag;
+			global::Acr.UserDialogs.Resource.Styleable.ViewTransition_duration = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ViewTransition_duration;
+			global::Acr.UserDialogs.Resource.Styleable.ViewTransition_ifTagNotSet = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ViewTransition_ifTagNotSet;
+			global::Acr.UserDialogs.Resource.Styleable.ViewTransition_ifTagSet = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ViewTransition_ifTagSet;
+			global::Acr.UserDialogs.Resource.Styleable.ViewTransition_motionInterpolator = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ViewTransition_motionInterpolator;
+			global::Acr.UserDialogs.Resource.Styleable.ViewTransition_motionTarget = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ViewTransition_motionTarget;
+			global::Acr.UserDialogs.Resource.Styleable.ViewTransition_onStateTransition = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ViewTransition_onStateTransition;
+			global::Acr.UserDialogs.Resource.Styleable.ViewTransition_pathMotionArc = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ViewTransition_pathMotionArc;
+			global::Acr.UserDialogs.Resource.Styleable.ViewTransition_setsTag = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ViewTransition_setsTag;
+			global::Acr.UserDialogs.Resource.Styleable.ViewTransition_SharedValue = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ViewTransition_SharedValue;
+			global::Acr.UserDialogs.Resource.Styleable.ViewTransition_SharedValueId = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ViewTransition_SharedValueId;
+			global::Acr.UserDialogs.Resource.Styleable.ViewTransition_transitionDisable = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ViewTransition_transitionDisable;
+			global::Acr.UserDialogs.Resource.Styleable.ViewTransition_upDuration = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ViewTransition_upDuration;
+			global::Acr.UserDialogs.Resource.Styleable.ViewTransition_viewTransitionMode = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ViewTransition_viewTransitionMode;
 			global::Acr.UserDialogs.Resource.Styleable.View_android_focusable = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.View_android_focusable;
 			global::Acr.UserDialogs.Resource.Styleable.View_android_theme = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.View_android_theme;
 			global::Acr.UserDialogs.Resource.Styleable.View_paddingEnd = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.View_paddingEnd;
 			global::Acr.UserDialogs.Resource.Styleable.View_paddingStart = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.View_paddingStart;
 			global::Acr.UserDialogs.Resource.Styleable.View_theme = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.View_theme;
+			global::Acr.UserDialogs.Resource.Xml.standalone_badge = global::PixQrCodeGeneratorOffline.Droid.Resource.Xml.standalone_badge;
+			global::Acr.UserDialogs.Resource.Xml.standalone_badge_gravity_bottom_end = global::PixQrCodeGeneratorOffline.Droid.Resource.Xml.standalone_badge_gravity_bottom_end;
+			global::Acr.UserDialogs.Resource.Xml.standalone_badge_gravity_bottom_start = global::PixQrCodeGeneratorOffline.Droid.Resource.Xml.standalone_badge_gravity_bottom_start;
+			global::Acr.UserDialogs.Resource.Xml.standalone_badge_gravity_top_start = global::PixQrCodeGeneratorOffline.Droid.Resource.Xml.standalone_badge_gravity_top_start;
+			global::Acr.UserDialogs.Resource.Xml.standalone_badge_offset = global::PixQrCodeGeneratorOffline.Droid.Resource.Xml.standalone_badge_offset;
 			global::AndroidHUD.Resource.Attribute.ahBarColor = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.ahBarColor;
 			global::AndroidHUD.Resource.Attribute.ahBarLength = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.ahBarLength;
 			global::AndroidHUD.Resource.Attribute.ahBarWidth = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.ahBarWidth;
@@ -6735,7 +9347,6 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.colorSurface = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.colorSurface;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.colorSwitchThumbNormal = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.colorSwitchThumbNormal;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.commitIcon = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.commitIcon;
-			global::Xamarin.Forms.Platform.Android.Resource.Attribute.ConstraintRotate = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.ConstraintRotate;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.constraints = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.constraints;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.constraintSet = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.constraintSet;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.constraintSetEnd = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.constraintSetEnd;
@@ -10491,7 +13102,6 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ConstraintSet_barrierDirection = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_barrierDirection;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ConstraintSet_barrierMargin = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_barrierMargin;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ConstraintSet_chainUseRtl = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_chainUseRtl;
-			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ConstraintSet_ConstraintRotate = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_ConstraintRotate;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ConstraintSet_constraint_referenced_ids = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_constraint_referenced_ids;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ConstraintSet_constraint_referenced_tags = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_constraint_referenced_tags;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ConstraintSet_deriveConstraintsFrom = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_deriveConstraintsFrom;
@@ -12022,7 +14632,6 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Xamarin.Forms.Platform.Resource.Attribute.colorSurface = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.colorSurface;
 			global::Xamarin.Forms.Platform.Resource.Attribute.colorSwitchThumbNormal = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.colorSwitchThumbNormal;
 			global::Xamarin.Forms.Platform.Resource.Attribute.commitIcon = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.commitIcon;
-			global::Xamarin.Forms.Platform.Resource.Attribute.ConstraintRotate = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.ConstraintRotate;
 			global::Xamarin.Forms.Platform.Resource.Attribute.constraints = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.constraints;
 			global::Xamarin.Forms.Platform.Resource.Attribute.constraintSet = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.constraintSet;
 			global::Xamarin.Forms.Platform.Resource.Attribute.constraintSetEnd = global::PixQrCodeGeneratorOffline.Droid.Resource.Attribute.constraintSetEnd;
@@ -15778,7 +18387,6 @@ namespace PixQrCodeGeneratorOffline.Droid
 			global::Xamarin.Forms.Platform.Resource.Styleable.ConstraintSet_barrierDirection = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_barrierDirection;
 			global::Xamarin.Forms.Platform.Resource.Styleable.ConstraintSet_barrierMargin = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_barrierMargin;
 			global::Xamarin.Forms.Platform.Resource.Styleable.ConstraintSet_chainUseRtl = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_chainUseRtl;
-			global::Xamarin.Forms.Platform.Resource.Styleable.ConstraintSet_ConstraintRotate = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_ConstraintRotate;
 			global::Xamarin.Forms.Platform.Resource.Styleable.ConstraintSet_constraint_referenced_ids = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_constraint_referenced_ids;
 			global::Xamarin.Forms.Platform.Resource.Styleable.ConstraintSet_constraint_referenced_tags = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_constraint_referenced_tags;
 			global::Xamarin.Forms.Platform.Resource.Styleable.ConstraintSet_deriveConstraintsFrom = global::PixQrCodeGeneratorOffline.Droid.Resource.Styleable.ConstraintSet_deriveConstraintsFrom;
@@ -17281,749 +19889,749 @@ namespace PixQrCodeGeneratorOffline.Droid
 		public partial class Attribute
 		{
 			
+			// aapt resource value: 0x7F040002
+			public const int action = 2130968578;
+			
 			// aapt resource value: 0x7F040003
-			public const int action = 2130968579;
+			public const int actionBarDivider = 2130968579;
 			
 			// aapt resource value: 0x7F040004
-			public const int actionBarDivider = 2130968580;
+			public const int actionBarItemBackground = 2130968580;
 			
 			// aapt resource value: 0x7F040005
-			public const int actionBarItemBackground = 2130968581;
+			public const int actionBarPopupTheme = 2130968581;
 			
 			// aapt resource value: 0x7F040006
-			public const int actionBarPopupTheme = 2130968582;
+			public const int actionBarSize = 2130968582;
 			
 			// aapt resource value: 0x7F040007
-			public const int actionBarSize = 2130968583;
+			public const int actionBarSplitStyle = 2130968583;
 			
 			// aapt resource value: 0x7F040008
-			public const int actionBarSplitStyle = 2130968584;
+			public const int actionBarStyle = 2130968584;
 			
 			// aapt resource value: 0x7F040009
-			public const int actionBarStyle = 2130968585;
+			public const int actionBarTabBarStyle = 2130968585;
 			
 			// aapt resource value: 0x7F04000A
-			public const int actionBarTabBarStyle = 2130968586;
+			public const int actionBarTabStyle = 2130968586;
 			
 			// aapt resource value: 0x7F04000B
-			public const int actionBarTabStyle = 2130968587;
+			public const int actionBarTabTextStyle = 2130968587;
 			
 			// aapt resource value: 0x7F04000C
-			public const int actionBarTabTextStyle = 2130968588;
+			public const int actionBarTheme = 2130968588;
 			
 			// aapt resource value: 0x7F04000D
-			public const int actionBarTheme = 2130968589;
+			public const int actionBarWidgetTheme = 2130968589;
 			
 			// aapt resource value: 0x7F04000E
-			public const int actionBarWidgetTheme = 2130968590;
+			public const int actionButtonStyle = 2130968590;
 			
 			// aapt resource value: 0x7F04000F
-			public const int actionButtonStyle = 2130968591;
+			public const int actionDropDownStyle = 2130968591;
 			
 			// aapt resource value: 0x7F040010
-			public const int actionDropDownStyle = 2130968592;
+			public const int actionLayout = 2130968592;
 			
 			// aapt resource value: 0x7F040011
-			public const int actionLayout = 2130968593;
+			public const int actionMenuTextAppearance = 2130968593;
 			
 			// aapt resource value: 0x7F040012
-			public const int actionMenuTextAppearance = 2130968594;
+			public const int actionMenuTextColor = 2130968594;
 			
 			// aapt resource value: 0x7F040013
-			public const int actionMenuTextColor = 2130968595;
+			public const int actionModeBackground = 2130968595;
 			
 			// aapt resource value: 0x7F040014
-			public const int actionModeBackground = 2130968596;
+			public const int actionModeCloseButtonStyle = 2130968596;
 			
 			// aapt resource value: 0x7F040015
-			public const int actionModeCloseButtonStyle = 2130968597;
+			public const int actionModeCloseContentDescription = 2130968597;
 			
 			// aapt resource value: 0x7F040016
-			public const int actionModeCloseContentDescription = 2130968598;
+			public const int actionModeCloseDrawable = 2130968598;
 			
 			// aapt resource value: 0x7F040017
-			public const int actionModeCloseDrawable = 2130968599;
+			public const int actionModeCopyDrawable = 2130968599;
 			
 			// aapt resource value: 0x7F040018
-			public const int actionModeCopyDrawable = 2130968600;
+			public const int actionModeCutDrawable = 2130968600;
 			
 			// aapt resource value: 0x7F040019
-			public const int actionModeCutDrawable = 2130968601;
+			public const int actionModeFindDrawable = 2130968601;
 			
 			// aapt resource value: 0x7F04001A
-			public const int actionModeFindDrawable = 2130968602;
+			public const int actionModePasteDrawable = 2130968602;
 			
 			// aapt resource value: 0x7F04001B
-			public const int actionModePasteDrawable = 2130968603;
+			public const int actionModePopupWindowStyle = 2130968603;
 			
 			// aapt resource value: 0x7F04001C
-			public const int actionModePopupWindowStyle = 2130968604;
+			public const int actionModeSelectAllDrawable = 2130968604;
 			
 			// aapt resource value: 0x7F04001D
-			public const int actionModeSelectAllDrawable = 2130968605;
+			public const int actionModeShareDrawable = 2130968605;
 			
 			// aapt resource value: 0x7F04001E
-			public const int actionModeShareDrawable = 2130968606;
+			public const int actionModeSplitBackground = 2130968606;
 			
 			// aapt resource value: 0x7F04001F
-			public const int actionModeSplitBackground = 2130968607;
+			public const int actionModeStyle = 2130968607;
 			
 			// aapt resource value: 0x7F040020
-			public const int actionModeStyle = 2130968608;
+			public const int actionModeTheme = 2130968608;
 			
 			// aapt resource value: 0x7F040021
-			public const int actionModeTheme = 2130968609;
+			public const int actionModeWebSearchDrawable = 2130968609;
 			
 			// aapt resource value: 0x7F040022
-			public const int actionModeWebSearchDrawable = 2130968610;
+			public const int actionOverflowButtonStyle = 2130968610;
 			
 			// aapt resource value: 0x7F040023
-			public const int actionOverflowButtonStyle = 2130968611;
+			public const int actionOverflowMenuStyle = 2130968611;
 			
 			// aapt resource value: 0x7F040024
-			public const int actionOverflowMenuStyle = 2130968612;
+			public const int actionProviderClass = 2130968612;
 			
 			// aapt resource value: 0x7F040025
-			public const int actionProviderClass = 2130968613;
+			public const int actionTextColorAlpha = 2130968613;
 			
 			// aapt resource value: 0x7F040026
-			public const int actionTextColorAlpha = 2130968614;
+			public const int actionViewClass = 2130968614;
 			
 			// aapt resource value: 0x7F040027
-			public const int actionViewClass = 2130968615;
-			
-			// aapt resource value: 0x7F040028
-			public const int activityChooserViewStyle = 2130968616;
-			
-			// aapt resource value: 0x7F04002C
-			public const int adjustable = 2130968620;
-			
-			// aapt resource value: 0x7F040029
-			public const int adSize = 2130968617;
-			
-			// aapt resource value: 0x7F04002A
-			public const int adSizes = 2130968618;
+			public const int activityChooserViewStyle = 2130968615;
 			
 			// aapt resource value: 0x7F04002B
-			public const int adUnitId = 2130968619;
+			public const int adjustable = 2130968619;
+			
+			// aapt resource value: 0x7F040028
+			public const int adSize = 2130968616;
+			
+			// aapt resource value: 0x7F040029
+			public const int adSizes = 2130968617;
+			
+			// aapt resource value: 0x7F04002A
+			public const int adUnitId = 2130968618;
+			
+			// aapt resource value: 0x7F04002C
+			public const int ahBarColor = 2130968620;
 			
 			// aapt resource value: 0x7F04002D
-			public const int ahBarColor = 2130968621;
+			public const int ahBarLength = 2130968621;
 			
 			// aapt resource value: 0x7F04002E
-			public const int ahBarLength = 2130968622;
+			public const int ahBarWidth = 2130968622;
 			
 			// aapt resource value: 0x7F04002F
-			public const int ahBarWidth = 2130968623;
+			public const int ahCircleColor = 2130968623;
 			
 			// aapt resource value: 0x7F040030
-			public const int ahCircleColor = 2130968624;
+			public const int ahDelayMillis = 2130968624;
 			
 			// aapt resource value: 0x7F040031
-			public const int ahDelayMillis = 2130968625;
+			public const int ahRadius = 2130968625;
 			
 			// aapt resource value: 0x7F040032
-			public const int ahRadius = 2130968626;
+			public const int ahRimColor = 2130968626;
 			
 			// aapt resource value: 0x7F040033
-			public const int ahRimColor = 2130968627;
+			public const int ahRimWidth = 2130968627;
 			
 			// aapt resource value: 0x7F040034
-			public const int ahRimWidth = 2130968628;
+			public const int ahSpinSpeed = 2130968628;
 			
 			// aapt resource value: 0x7F040035
-			public const int ahSpinSpeed = 2130968629;
+			public const int ahText = 2130968629;
 			
 			// aapt resource value: 0x7F040036
-			public const int ahText = 2130968630;
+			public const int ahTextColor = 2130968630;
 			
 			// aapt resource value: 0x7F040037
-			public const int ahTextColor = 2130968631;
+			public const int ahTextSize = 2130968631;
 			
 			// aapt resource value: 0x7F040038
-			public const int ahTextSize = 2130968632;
+			public const int alertDialogButtonGroupStyle = 2130968632;
 			
 			// aapt resource value: 0x7F040039
-			public const int alertDialogButtonGroupStyle = 2130968633;
+			public const int alertDialogCenterButtons = 2130968633;
 			
 			// aapt resource value: 0x7F04003A
-			public const int alertDialogCenterButtons = 2130968634;
+			public const int alertDialogStyle = 2130968634;
 			
 			// aapt resource value: 0x7F04003B
-			public const int alertDialogStyle = 2130968635;
+			public const int alertDialogTheme = 2130968635;
 			
 			// aapt resource value: 0x7F04003C
-			public const int alertDialogTheme = 2130968636;
+			public const int allowDividerAbove = 2130968636;
 			
 			// aapt resource value: 0x7F04003D
-			public const int allowDividerAbove = 2130968637;
+			public const int allowDividerAfterLastItem = 2130968637;
 			
 			// aapt resource value: 0x7F04003E
-			public const int allowDividerAfterLastItem = 2130968638;
+			public const int allowDividerBelow = 2130968638;
 			
 			// aapt resource value: 0x7F04003F
-			public const int allowDividerBelow = 2130968639;
+			public const int allowStacking = 2130968639;
 			
 			// aapt resource value: 0x7F040040
-			public const int allowStacking = 2130968640;
+			public const int alpha = 2130968640;
 			
 			// aapt resource value: 0x7F040041
-			public const int alpha = 2130968641;
+			public const int alphabeticModifiers = 2130968641;
 			
 			// aapt resource value: 0x7F040042
-			public const int alphabeticModifiers = 2130968642;
+			public const int altSrc = 2130968642;
 			
 			// aapt resource value: 0x7F040043
-			public const int altSrc = 2130968643;
+			public const int animateCircleAngleTo = 2130968643;
 			
 			// aapt resource value: 0x7F040044
-			public const int animateCircleAngleTo = 2130968644;
+			public const int animateRelativeTo = 2130968644;
 			
 			// aapt resource value: 0x7F040045
-			public const int animateRelativeTo = 2130968645;
+			public const int animationMode = 2130968645;
 			
 			// aapt resource value: 0x7F040046
-			public const int animationMode = 2130968646;
+			public const int appBarLayoutStyle = 2130968646;
 			
 			// aapt resource value: 0x7F040047
-			public const int appBarLayoutStyle = 2130968647;
+			public const int applyMotionScene = 2130968647;
 			
 			// aapt resource value: 0x7F040048
-			public const int applyMotionScene = 2130968648;
+			public const int arcMode = 2130968648;
 			
 			// aapt resource value: 0x7F040049
-			public const int arcMode = 2130968649;
+			public const int argType = 2130968649;
 			
 			// aapt resource value: 0x7F04004A
-			public const int argType = 2130968650;
+			public const int arrowHeadLength = 2130968650;
 			
 			// aapt resource value: 0x7F04004B
-			public const int arrowHeadLength = 2130968651;
+			public const int arrowShaftLength = 2130968651;
 			
 			// aapt resource value: 0x7F04004C
-			public const int arrowShaftLength = 2130968652;
+			public const int attributeName = 2130968652;
 			
 			// aapt resource value: 0x7F04004D
-			public const int attributeName = 2130968653;
+			public const int autoCompleteMode = 2130968653;
 			
 			// aapt resource value: 0x7F04004E
-			public const int autoCompleteMode = 2130968654;
+			public const int autoCompleteTextViewStyle = 2130968654;
 			
 			// aapt resource value: 0x7F04004F
-			public const int autoCompleteTextViewStyle = 2130968655;
+			public const int autoSizeMaxTextSize = 2130968655;
 			
 			// aapt resource value: 0x7F040050
-			public const int autoSizeMaxTextSize = 2130968656;
+			public const int autoSizeMinTextSize = 2130968656;
 			
 			// aapt resource value: 0x7F040051
-			public const int autoSizeMinTextSize = 2130968657;
+			public const int autoSizePresetSizes = 2130968657;
 			
 			// aapt resource value: 0x7F040052
-			public const int autoSizePresetSizes = 2130968658;
+			public const int autoSizeStepGranularity = 2130968658;
 			
 			// aapt resource value: 0x7F040053
-			public const int autoSizeStepGranularity = 2130968659;
+			public const int autoSizeTextType = 2130968659;
 			
 			// aapt resource value: 0x7F040054
-			public const int autoSizeTextType = 2130968660;
+			public const int autoTransition = 2130968660;
 			
 			// aapt resource value: 0x7F040055
-			public const int autoTransition = 2130968661;
+			public const int background = 2130968661;
 			
 			// aapt resource value: 0x7F040056
-			public const int background = 2130968662;
+			public const int backgroundColor = 2130968662;
 			
 			// aapt resource value: 0x7F040057
-			public const int backgroundColor = 2130968663;
+			public const int backgroundInsetBottom = 2130968663;
 			
 			// aapt resource value: 0x7F040058
-			public const int backgroundInsetBottom = 2130968664;
+			public const int backgroundInsetEnd = 2130968664;
 			
 			// aapt resource value: 0x7F040059
-			public const int backgroundInsetEnd = 2130968665;
+			public const int backgroundInsetStart = 2130968665;
 			
 			// aapt resource value: 0x7F04005A
-			public const int backgroundInsetStart = 2130968666;
+			public const int backgroundInsetTop = 2130968666;
 			
 			// aapt resource value: 0x7F04005B
-			public const int backgroundInsetTop = 2130968667;
+			public const int backgroundOverlayColorAlpha = 2130968667;
 			
 			// aapt resource value: 0x7F04005C
-			public const int backgroundOverlayColorAlpha = 2130968668;
+			public const int backgroundSplit = 2130968668;
 			
 			// aapt resource value: 0x7F04005D
-			public const int backgroundSplit = 2130968669;
+			public const int backgroundStacked = 2130968669;
 			
 			// aapt resource value: 0x7F04005E
-			public const int backgroundStacked = 2130968670;
+			public const int backgroundTint = 2130968670;
 			
 			// aapt resource value: 0x7F04005F
-			public const int backgroundTint = 2130968671;
+			public const int backgroundTintMode = 2130968671;
 			
 			// aapt resource value: 0x7F040060
-			public const int backgroundTintMode = 2130968672;
+			public const int badgeGravity = 2130968672;
 			
 			// aapt resource value: 0x7F040061
-			public const int badgeGravity = 2130968673;
+			public const int badgeStyle = 2130968673;
 			
 			// aapt resource value: 0x7F040062
-			public const int badgeStyle = 2130968674;
+			public const int badgeTextColor = 2130968674;
 			
 			// aapt resource value: 0x7F040063
-			public const int badgeTextColor = 2130968675;
+			public const int barLength = 2130968675;
 			
 			// aapt resource value: 0x7F040064
-			public const int barLength = 2130968676;
+			public const int barrierAllowsGoneWidgets = 2130968676;
 			
 			// aapt resource value: 0x7F040065
-			public const int barrierAllowsGoneWidgets = 2130968677;
+			public const int barrierDirection = 2130968677;
 			
 			// aapt resource value: 0x7F040066
-			public const int barrierDirection = 2130968678;
+			public const int barrierMargin = 2130968678;
 			
 			// aapt resource value: 0x7F040067
-			public const int barrierMargin = 2130968679;
+			public const int behavior_autoHide = 2130968679;
 			
 			// aapt resource value: 0x7F040068
-			public const int behavior_autoHide = 2130968680;
+			public const int behavior_autoShrink = 2130968680;
 			
 			// aapt resource value: 0x7F040069
-			public const int behavior_autoShrink = 2130968681;
+			public const int behavior_draggable = 2130968681;
 			
 			// aapt resource value: 0x7F04006A
-			public const int behavior_draggable = 2130968682;
+			public const int behavior_expandedOffset = 2130968682;
 			
 			// aapt resource value: 0x7F04006B
-			public const int behavior_expandedOffset = 2130968683;
+			public const int behavior_fitToContents = 2130968683;
 			
 			// aapt resource value: 0x7F04006C
-			public const int behavior_fitToContents = 2130968684;
+			public const int behavior_halfExpandedRatio = 2130968684;
 			
 			// aapt resource value: 0x7F04006D
-			public const int behavior_halfExpandedRatio = 2130968685;
+			public const int behavior_hideable = 2130968685;
 			
 			// aapt resource value: 0x7F04006E
-			public const int behavior_hideable = 2130968686;
+			public const int behavior_overlapTop = 2130968686;
 			
 			// aapt resource value: 0x7F04006F
-			public const int behavior_overlapTop = 2130968687;
+			public const int behavior_peekHeight = 2130968687;
 			
 			// aapt resource value: 0x7F040070
-			public const int behavior_peekHeight = 2130968688;
+			public const int behavior_saveFlags = 2130968688;
 			
 			// aapt resource value: 0x7F040071
-			public const int behavior_saveFlags = 2130968689;
+			public const int behavior_skipCollapsed = 2130968689;
 			
 			// aapt resource value: 0x7F040072
-			public const int behavior_skipCollapsed = 2130968690;
-			
-			// aapt resource value: 0x7F040073
-			public const int blendSrc = 2130968691;
-			
-			// aapt resource value: 0x7F040077
-			public const int borderlessButtonStyle = 2130968695;
-			
-			// aapt resource value: 0x7F040074
-			public const int borderRound = 2130968692;
-			
-			// aapt resource value: 0x7F040075
-			public const int borderRoundPercent = 2130968693;
+			public const int blendSrc = 2130968690;
 			
 			// aapt resource value: 0x7F040076
-			public const int borderWidth = 2130968694;
+			public const int borderlessButtonStyle = 2130968694;
+			
+			// aapt resource value: 0x7F040073
+			public const int borderRound = 2130968691;
+			
+			// aapt resource value: 0x7F040074
+			public const int borderRoundPercent = 2130968692;
+			
+			// aapt resource value: 0x7F040075
+			public const int borderWidth = 2130968693;
+			
+			// aapt resource value: 0x7F040077
+			public const int bottomAppBarStyle = 2130968695;
 			
 			// aapt resource value: 0x7F040078
-			public const int bottomAppBarStyle = 2130968696;
+			public const int bottomNavigationStyle = 2130968696;
 			
 			// aapt resource value: 0x7F040079
-			public const int bottomNavigationStyle = 2130968697;
+			public const int bottomSheetDialogTheme = 2130968697;
 			
 			// aapt resource value: 0x7F04007A
-			public const int bottomSheetDialogTheme = 2130968698;
+			public const int bottomSheetStyle = 2130968698;
 			
 			// aapt resource value: 0x7F04007B
-			public const int bottomSheetStyle = 2130968699;
+			public const int boxBackgroundColor = 2130968699;
 			
 			// aapt resource value: 0x7F04007C
-			public const int boxBackgroundColor = 2130968700;
+			public const int boxBackgroundMode = 2130968700;
 			
 			// aapt resource value: 0x7F04007D
-			public const int boxBackgroundMode = 2130968701;
+			public const int boxCollapsedPaddingTop = 2130968701;
 			
 			// aapt resource value: 0x7F04007E
-			public const int boxCollapsedPaddingTop = 2130968702;
+			public const int boxCornerRadiusBottomEnd = 2130968702;
 			
 			// aapt resource value: 0x7F04007F
-			public const int boxCornerRadiusBottomEnd = 2130968703;
+			public const int boxCornerRadiusBottomStart = 2130968703;
 			
 			// aapt resource value: 0x7F040080
-			public const int boxCornerRadiusBottomStart = 2130968704;
+			public const int boxCornerRadiusTopEnd = 2130968704;
 			
 			// aapt resource value: 0x7F040081
-			public const int boxCornerRadiusTopEnd = 2130968705;
+			public const int boxCornerRadiusTopStart = 2130968705;
 			
 			// aapt resource value: 0x7F040082
-			public const int boxCornerRadiusTopStart = 2130968706;
+			public const int boxStrokeColor = 2130968706;
 			
 			// aapt resource value: 0x7F040083
-			public const int boxStrokeColor = 2130968707;
+			public const int boxStrokeErrorColor = 2130968707;
 			
 			// aapt resource value: 0x7F040084
-			public const int boxStrokeErrorColor = 2130968708;
+			public const int boxStrokeWidth = 2130968708;
 			
 			// aapt resource value: 0x7F040085
-			public const int boxStrokeWidth = 2130968709;
+			public const int boxStrokeWidthFocused = 2130968709;
 			
 			// aapt resource value: 0x7F040086
-			public const int boxStrokeWidthFocused = 2130968710;
+			public const int brightness = 2130968710;
 			
 			// aapt resource value: 0x7F040087
-			public const int brightness = 2130968711;
+			public const int buttonBarButtonStyle = 2130968711;
 			
 			// aapt resource value: 0x7F040088
-			public const int buttonBarButtonStyle = 2130968712;
+			public const int buttonBarNegativeButtonStyle = 2130968712;
 			
 			// aapt resource value: 0x7F040089
-			public const int buttonBarNegativeButtonStyle = 2130968713;
+			public const int buttonBarNeutralButtonStyle = 2130968713;
 			
 			// aapt resource value: 0x7F04008A
-			public const int buttonBarNeutralButtonStyle = 2130968714;
+			public const int buttonBarPositiveButtonStyle = 2130968714;
 			
 			// aapt resource value: 0x7F04008B
-			public const int buttonBarPositiveButtonStyle = 2130968715;
+			public const int buttonBarStyle = 2130968715;
 			
 			// aapt resource value: 0x7F04008C
-			public const int buttonBarStyle = 2130968716;
+			public const int buttonCompat = 2130968716;
 			
 			// aapt resource value: 0x7F04008D
-			public const int buttonCompat = 2130968717;
+			public const int buttonGravity = 2130968717;
 			
 			// aapt resource value: 0x7F04008E
-			public const int buttonGravity = 2130968718;
+			public const int buttonIconDimen = 2130968718;
 			
 			// aapt resource value: 0x7F04008F
-			public const int buttonIconDimen = 2130968719;
+			public const int buttonPanelSideLayout = 2130968719;
 			
 			// aapt resource value: 0x7F040090
-			public const int buttonPanelSideLayout = 2130968720;
+			public const int buttonStyle = 2130968720;
 			
 			// aapt resource value: 0x7F040091
-			public const int buttonStyle = 2130968721;
+			public const int buttonStyleSmall = 2130968721;
 			
 			// aapt resource value: 0x7F040092
-			public const int buttonStyleSmall = 2130968722;
+			public const int buttonTint = 2130968722;
 			
 			// aapt resource value: 0x7F040093
-			public const int buttonTint = 2130968723;
+			public const int buttonTintMode = 2130968723;
 			
 			// aapt resource value: 0x7F040094
-			public const int buttonTintMode = 2130968724;
+			public const int cardBackgroundColor = 2130968724;
 			
 			// aapt resource value: 0x7F040095
-			public const int cardBackgroundColor = 2130968725;
+			public const int cardCornerRadius = 2130968725;
 			
 			// aapt resource value: 0x7F040096
-			public const int cardCornerRadius = 2130968726;
+			public const int cardElevation = 2130968726;
 			
 			// aapt resource value: 0x7F040097
-			public const int cardElevation = 2130968727;
+			public const int cardForegroundColor = 2130968727;
 			
 			// aapt resource value: 0x7F040098
-			public const int cardForegroundColor = 2130968728;
+			public const int cardMaxElevation = 2130968728;
 			
 			// aapt resource value: 0x7F040099
-			public const int cardMaxElevation = 2130968729;
+			public const int cardPreventCornerOverlap = 2130968729;
 			
 			// aapt resource value: 0x7F04009A
-			public const int cardPreventCornerOverlap = 2130968730;
+			public const int cardUseCompatPadding = 2130968730;
 			
 			// aapt resource value: 0x7F04009B
-			public const int cardUseCompatPadding = 2130968731;
+			public const int cardViewStyle = 2130968731;
 			
 			// aapt resource value: 0x7F04009C
-			public const int cardViewStyle = 2130968732;
+			public const int carousel_backwardTransition = 2130968732;
 			
 			// aapt resource value: 0x7F04009D
-			public const int carousel_backwardTransition = 2130968733;
+			public const int carousel_emptyViewsBehavior = 2130968733;
 			
 			// aapt resource value: 0x7F04009E
-			public const int carousel_emptyViewsBehavior = 2130968734;
+			public const int carousel_firstView = 2130968734;
 			
 			// aapt resource value: 0x7F04009F
-			public const int carousel_firstView = 2130968735;
+			public const int carousel_forwardTransition = 2130968735;
 			
 			// aapt resource value: 0x7F0400A0
-			public const int carousel_forwardTransition = 2130968736;
+			public const int carousel_infinite = 2130968736;
 			
 			// aapt resource value: 0x7F0400A1
-			public const int carousel_infinite = 2130968737;
+			public const int carousel_nextState = 2130968737;
 			
 			// aapt resource value: 0x7F0400A2
-			public const int carousel_nextState = 2130968738;
+			public const int carousel_previousState = 2130968738;
 			
 			// aapt resource value: 0x7F0400A3
-			public const int carousel_previousState = 2130968739;
+			public const int carousel_touchUpMode = 2130968739;
 			
 			// aapt resource value: 0x7F0400A4
-			public const int carousel_touchUpMode = 2130968740;
+			public const int carousel_touchUp_dampeningFactor = 2130968740;
 			
 			// aapt resource value: 0x7F0400A5
-			public const int carousel_touchUp_dampeningFactor = 2130968741;
+			public const int carousel_touchUp_velocityThreshold = 2130968741;
 			
 			// aapt resource value: 0x7F0400A6
-			public const int carousel_touchUp_velocityThreshold = 2130968742;
+			public const int chainUseRtl = 2130968742;
 			
 			// aapt resource value: 0x7F0400A7
-			public const int chainUseRtl = 2130968743;
+			public const int checkBoxPreferenceStyle = 2130968743;
 			
 			// aapt resource value: 0x7F0400A8
-			public const int checkBoxPreferenceStyle = 2130968744;
+			public const int checkboxStyle = 2130968744;
 			
 			// aapt resource value: 0x7F0400A9
-			public const int checkboxStyle = 2130968745;
+			public const int checkedButton = 2130968745;
 			
 			// aapt resource value: 0x7F0400AA
-			public const int checkedButton = 2130968746;
+			public const int checkedChip = 2130968746;
 			
 			// aapt resource value: 0x7F0400AB
-			public const int checkedChip = 2130968747;
+			public const int checkedIcon = 2130968747;
 			
 			// aapt resource value: 0x7F0400AC
-			public const int checkedIcon = 2130968748;
+			public const int checkedIconEnabled = 2130968748;
 			
 			// aapt resource value: 0x7F0400AD
-			public const int checkedIconEnabled = 2130968749;
+			public const int checkedIconMargin = 2130968749;
 			
 			// aapt resource value: 0x7F0400AE
-			public const int checkedIconMargin = 2130968750;
+			public const int checkedIconSize = 2130968750;
 			
 			// aapt resource value: 0x7F0400AF
-			public const int checkedIconSize = 2130968751;
+			public const int checkedIconTint = 2130968751;
 			
 			// aapt resource value: 0x7F0400B0
-			public const int checkedIconTint = 2130968752;
+			public const int checkedIconVisible = 2130968752;
 			
 			// aapt resource value: 0x7F0400B1
-			public const int checkedIconVisible = 2130968753;
+			public const int checkedTextViewStyle = 2130968753;
 			
 			// aapt resource value: 0x7F0400B2
-			public const int checkedTextViewStyle = 2130968754;
+			public const int chipBackgroundColor = 2130968754;
 			
 			// aapt resource value: 0x7F0400B3
-			public const int chipBackgroundColor = 2130968755;
+			public const int chipCornerRadius = 2130968755;
 			
 			// aapt resource value: 0x7F0400B4
-			public const int chipCornerRadius = 2130968756;
+			public const int chipEndPadding = 2130968756;
 			
 			// aapt resource value: 0x7F0400B5
-			public const int chipEndPadding = 2130968757;
+			public const int chipGroupStyle = 2130968757;
 			
 			// aapt resource value: 0x7F0400B6
-			public const int chipGroupStyle = 2130968758;
+			public const int chipIcon = 2130968758;
 			
 			// aapt resource value: 0x7F0400B7
-			public const int chipIcon = 2130968759;
+			public const int chipIconEnabled = 2130968759;
 			
 			// aapt resource value: 0x7F0400B8
-			public const int chipIconEnabled = 2130968760;
+			public const int chipIconSize = 2130968760;
 			
 			// aapt resource value: 0x7F0400B9
-			public const int chipIconSize = 2130968761;
+			public const int chipIconTint = 2130968761;
 			
 			// aapt resource value: 0x7F0400BA
-			public const int chipIconTint = 2130968762;
+			public const int chipIconVisible = 2130968762;
 			
 			// aapt resource value: 0x7F0400BB
-			public const int chipIconVisible = 2130968763;
+			public const int chipMinHeight = 2130968763;
 			
 			// aapt resource value: 0x7F0400BC
-			public const int chipMinHeight = 2130968764;
+			public const int chipMinTouchTargetSize = 2130968764;
 			
 			// aapt resource value: 0x7F0400BD
-			public const int chipMinTouchTargetSize = 2130968765;
+			public const int chipSpacing = 2130968765;
 			
 			// aapt resource value: 0x7F0400BE
-			public const int chipSpacing = 2130968766;
+			public const int chipSpacingHorizontal = 2130968766;
 			
 			// aapt resource value: 0x7F0400BF
-			public const int chipSpacingHorizontal = 2130968767;
+			public const int chipSpacingVertical = 2130968767;
 			
 			// aapt resource value: 0x7F0400C0
-			public const int chipSpacingVertical = 2130968768;
+			public const int chipStandaloneStyle = 2130968768;
 			
 			// aapt resource value: 0x7F0400C1
-			public const int chipStandaloneStyle = 2130968769;
+			public const int chipStartPadding = 2130968769;
 			
 			// aapt resource value: 0x7F0400C2
-			public const int chipStartPadding = 2130968770;
+			public const int chipStrokeColor = 2130968770;
 			
 			// aapt resource value: 0x7F0400C3
-			public const int chipStrokeColor = 2130968771;
+			public const int chipStrokeWidth = 2130968771;
 			
 			// aapt resource value: 0x7F0400C4
-			public const int chipStrokeWidth = 2130968772;
+			public const int chipStyle = 2130968772;
 			
 			// aapt resource value: 0x7F0400C5
-			public const int chipStyle = 2130968773;
+			public const int chipSurfaceColor = 2130968773;
 			
 			// aapt resource value: 0x7F0400C6
-			public const int chipSurfaceColor = 2130968774;
-			
-			// aapt resource value: 0x7F0400C7
-			public const int circleRadius = 2130968775;
-			
-			// aapt resource value: 0x7F0400C9
-			public const int circularflow_angles = 2130968777;
-			
-			// aapt resource value: 0x7F0400CA
-			public const int circularflow_defaultAngle = 2130968778;
-			
-			// aapt resource value: 0x7F0400CB
-			public const int circularflow_defaultRadius = 2130968779;
-			
-			// aapt resource value: 0x7F0400CC
-			public const int circularflow_radiusInDP = 2130968780;
-			
-			// aapt resource value: 0x7F0400CD
-			public const int circularflow_viewCenter = 2130968781;
+			public const int circleRadius = 2130968774;
 			
 			// aapt resource value: 0x7F0400C8
-			public const int circularProgressIndicatorStyle = 2130968776;
+			public const int circularflow_angles = 2130968776;
+			
+			// aapt resource value: 0x7F0400C9
+			public const int circularflow_defaultAngle = 2130968777;
+			
+			// aapt resource value: 0x7F0400CA
+			public const int circularflow_defaultRadius = 2130968778;
+			
+			// aapt resource value: 0x7F0400CB
+			public const int circularflow_radiusInDP = 2130968779;
+			
+			// aapt resource value: 0x7F0400CC
+			public const int circularflow_viewCenter = 2130968780;
+			
+			// aapt resource value: 0x7F0400C7
+			public const int circularProgressIndicatorStyle = 2130968775;
+			
+			// aapt resource value: 0x7F0400CD
+			public const int clearsTag = 2130968781;
 			
 			// aapt resource value: 0x7F0400CE
-			public const int clearsTag = 2130968782;
+			public const int clickAction = 2130968782;
 			
 			// aapt resource value: 0x7F0400CF
-			public const int clickAction = 2130968783;
+			public const int clockFaceBackgroundColor = 2130968783;
 			
 			// aapt resource value: 0x7F0400D0
-			public const int clockFaceBackgroundColor = 2130968784;
+			public const int clockHandColor = 2130968784;
 			
 			// aapt resource value: 0x7F0400D1
-			public const int clockHandColor = 2130968785;
+			public const int clockIcon = 2130968785;
 			
 			// aapt resource value: 0x7F0400D2
-			public const int clockIcon = 2130968786;
+			public const int clockNumberTextColor = 2130968786;
 			
 			// aapt resource value: 0x7F0400D3
-			public const int clockNumberTextColor = 2130968787;
+			public const int closeIcon = 2130968787;
 			
 			// aapt resource value: 0x7F0400D4
-			public const int closeIcon = 2130968788;
+			public const int closeIconEnabled = 2130968788;
 			
 			// aapt resource value: 0x7F0400D5
-			public const int closeIconEnabled = 2130968789;
+			public const int closeIconEndPadding = 2130968789;
 			
 			// aapt resource value: 0x7F0400D6
-			public const int closeIconEndPadding = 2130968790;
+			public const int closeIconSize = 2130968790;
 			
 			// aapt resource value: 0x7F0400D7
-			public const int closeIconSize = 2130968791;
+			public const int closeIconStartPadding = 2130968791;
 			
 			// aapt resource value: 0x7F0400D8
-			public const int closeIconStartPadding = 2130968792;
+			public const int closeIconTint = 2130968792;
 			
 			// aapt resource value: 0x7F0400D9
-			public const int closeIconTint = 2130968793;
+			public const int closeIconVisible = 2130968793;
 			
 			// aapt resource value: 0x7F0400DA
-			public const int closeIconVisible = 2130968794;
+			public const int closeItemLayout = 2130968794;
 			
 			// aapt resource value: 0x7F0400DB
-			public const int closeItemLayout = 2130968795;
-			
-			// aapt resource value: 0x7F0400DC
-			public const int collapseContentDescription = 2130968796;
-			
-			// aapt resource value: 0x7F0400DE
-			public const int collapsedSize = 2130968798;
-			
-			// aapt resource value: 0x7F0400DF
-			public const int collapsedTitleGravity = 2130968799;
-			
-			// aapt resource value: 0x7F0400E0
-			public const int collapsedTitleTextAppearance = 2130968800;
+			public const int collapseContentDescription = 2130968795;
 			
 			// aapt resource value: 0x7F0400DD
-			public const int collapseIcon = 2130968797;
+			public const int collapsedSize = 2130968797;
+			
+			// aapt resource value: 0x7F0400DE
+			public const int collapsedTitleGravity = 2130968798;
+			
+			// aapt resource value: 0x7F0400DF
+			public const int collapsedTitleTextAppearance = 2130968799;
+			
+			// aapt resource value: 0x7F0400DC
+			public const int collapseIcon = 2130968796;
+			
+			// aapt resource value: 0x7F0400E0
+			public const int collapsingToolbarLayoutStyle = 2130968800;
 			
 			// aapt resource value: 0x7F0400E1
-			public const int collapsingToolbarLayoutStyle = 2130968801;
+			public const int collectionViewStyle = 2130968801;
 			
 			// aapt resource value: 0x7F0400E2
-			public const int collectionViewStyle = 2130968802;
+			public const int color = 2130968802;
 			
 			// aapt resource value: 0x7F0400E3
-			public const int color = 2130968803;
+			public const int colorAccent = 2130968803;
 			
 			// aapt resource value: 0x7F0400E4
-			public const int colorAccent = 2130968804;
+			public const int colorBackgroundFloating = 2130968804;
 			
 			// aapt resource value: 0x7F0400E5
-			public const int colorBackgroundFloating = 2130968805;
+			public const int colorButtonNormal = 2130968805;
 			
 			// aapt resource value: 0x7F0400E6
-			public const int colorButtonNormal = 2130968806;
+			public const int colorControlActivated = 2130968806;
 			
 			// aapt resource value: 0x7F0400E7
-			public const int colorControlActivated = 2130968807;
+			public const int colorControlHighlight = 2130968807;
 			
 			// aapt resource value: 0x7F0400E8
-			public const int colorControlHighlight = 2130968808;
+			public const int colorControlNormal = 2130968808;
 			
 			// aapt resource value: 0x7F0400E9
-			public const int colorControlNormal = 2130968809;
+			public const int colorError = 2130968809;
 			
 			// aapt resource value: 0x7F0400EA
-			public const int colorError = 2130968810;
+			public const int colorOnBackground = 2130968810;
 			
 			// aapt resource value: 0x7F0400EB
-			public const int colorOnBackground = 2130968811;
+			public const int colorOnError = 2130968811;
 			
 			// aapt resource value: 0x7F0400EC
-			public const int colorOnError = 2130968812;
+			public const int colorOnPrimary = 2130968812;
 			
 			// aapt resource value: 0x7F0400ED
-			public const int colorOnPrimary = 2130968813;
+			public const int colorOnPrimarySurface = 2130968813;
 			
 			// aapt resource value: 0x7F0400EE
-			public const int colorOnPrimarySurface = 2130968814;
+			public const int colorOnSecondary = 2130968814;
 			
 			// aapt resource value: 0x7F0400EF
-			public const int colorOnSecondary = 2130968815;
+			public const int colorOnSurface = 2130968815;
 			
 			// aapt resource value: 0x7F0400F0
-			public const int colorOnSurface = 2130968816;
+			public const int colorPrimary = 2130968816;
 			
 			// aapt resource value: 0x7F0400F1
-			public const int colorPrimary = 2130968817;
+			public const int colorPrimaryDark = 2130968817;
 			
 			// aapt resource value: 0x7F0400F2
-			public const int colorPrimaryDark = 2130968818;
+			public const int colorPrimarySurface = 2130968818;
 			
 			// aapt resource value: 0x7F0400F3
-			public const int colorPrimarySurface = 2130968819;
+			public const int colorPrimaryVariant = 2130968819;
 			
 			// aapt resource value: 0x7F0400F4
-			public const int colorPrimaryVariant = 2130968820;
+			public const int colorSecondary = 2130968820;
 			
 			// aapt resource value: 0x7F0400F5
-			public const int colorSecondary = 2130968821;
+			public const int colorSecondaryVariant = 2130968821;
 			
 			// aapt resource value: 0x7F0400F6
-			public const int colorSecondaryVariant = 2130968822;
+			public const int colorSurface = 2130968822;
 			
 			// aapt resource value: 0x7F0400F7
-			public const int colorSurface = 2130968823;
+			public const int colorSwitchThumbNormal = 2130968823;
 			
 			// aapt resource value: 0x7F0400F8
-			public const int colorSwitchThumbNormal = 2130968824;
+			public const int commitIcon = 2130968824;
 			
 			// aapt resource value: 0x7F0400F9
-			public const int commitIcon = 2130968825;
-			
-			// aapt resource value: 0x7F040000
-			public const int ConstraintRotate = 2130968576;
+			public const int constraintRotate = 2130968825;
 			
 			// aapt resource value: 0x7F0400FF
 			public const int constraints = 2130968831;
@@ -19792,11 +22400,11 @@ namespace PixQrCodeGeneratorOffline.Droid
 			// aapt resource value: 0x7F040346
 			public const int shapeAppearanceSmallComponent = 2130969414;
 			
-			// aapt resource value: 0x7F040001
-			public const int SharedValue = 2130968577;
+			// aapt resource value: 0x7F040000
+			public const int SharedValue = 2130968576;
 			
-			// aapt resource value: 0x7F040002
-			public const int SharedValueId = 2130968578;
+			// aapt resource value: 0x7F040001
+			public const int SharedValueId = 2130968577;
 			
 			// aapt resource value: 0x7F040347
 			public const int shortcutMatchRequired = 2130969415;
@@ -27932,11 +30540,11 @@ namespace PixQrCodeGeneratorOffline.Droid
 		public partial class Styleable
 		{
 			
-			// aapt resource value: { 0x7F040056,0x7F04005D,0x7F04005E,0x7F040102,0x7F040103,0x7F040104,0x7F040105,0x7F040106,0x7F040107,0x7F04012D,0x7F040149,0x7F04014A,0x7F040165,0x7F0401C4,0x7F0401CB,0x7F0401D1,0x7F0401D2,0x7F0401D5,0x7F0401E7,0x7F0401FB,0x7F040271,0x7F0402CB,0x7F040304,0x7F040315,0x7F040316,0x7F04037C,0x7F040380,0x7F0403F1,0x7F0403FD }
+			// aapt resource value: { 0x7F040055,0x7F04005C,0x7F04005D,0x7F040102,0x7F040103,0x7F040104,0x7F040105,0x7F040106,0x7F040107,0x7F04012D,0x7F040149,0x7F04014A,0x7F040165,0x7F0401C4,0x7F0401CB,0x7F0401D1,0x7F0401D2,0x7F0401D5,0x7F0401E7,0x7F0401FB,0x7F040271,0x7F0402CB,0x7F040304,0x7F040315,0x7F040316,0x7F04037C,0x7F040380,0x7F0403F1,0x7F0403FD }
 			public static int[] ActionBar = new int[] {
-					2130968662,
+					2130968661,
+					2130968668,
 					2130968669,
-					2130968670,
 					2130968834,
 					2130968835,
 					2130968836,
@@ -28069,11 +30677,11 @@ namespace PixQrCodeGeneratorOffline.Droid
 			public static int[] ActionMenuView = new int[] {
 					-1};
 			
-			// aapt resource value: { 0x7F040056,0x7F04005D,0x7F0400DB,0x7F0401C4,0x7F040380,0x7F0403FD }
+			// aapt resource value: { 0x7F040055,0x7F04005C,0x7F0400DA,0x7F0401C4,0x7F040380,0x7F0403FD }
 			public static int[] ActionMode = new int[] {
-					2130968662,
-					2130968669,
-					2130968795,
+					2130968661,
+					2130968668,
+					2130968794,
 					2130969028,
 					2130969472,
 					2130969597};
@@ -28107,10 +30715,10 @@ namespace PixQrCodeGeneratorOffline.Droid
 			// aapt resource value: 1
 			public const int ActivityChooserView_initialActivityCount = 1;
 			
-			// aapt resource value: { 0x1010003,0x7F040003,0x7F040131,0x7F040132,0x7F0403AD }
+			// aapt resource value: { 0x1010003,0x7F040002,0x7F040131,0x7F040132,0x7F0403AD }
 			public static int[] ActivityNavigator = new int[] {
 					16842755,
-					2130968579,
+					2130968578,
 					2130968881,
 					2130968882,
 					2130969517};
@@ -28130,11 +30738,11 @@ namespace PixQrCodeGeneratorOffline.Droid
 			// aapt resource value: 4
 			public const int ActivityNavigator_targetPackage = 4;
 			
-			// aapt resource value: { 0x7F040029,0x7F04002A,0x7F04002B }
+			// aapt resource value: { 0x7F040028,0x7F040029,0x7F04002A }
 			public static int[] AdsAttrs = new int[] {
+					2130968616,
 					2130968617,
-					2130968618,
-					2130968619};
+					2130968618};
 			
 			// aapt resource value: 0
 			public const int AdsAttrs_adSize = 0;
@@ -28145,11 +30753,11 @@ namespace PixQrCodeGeneratorOffline.Droid
 			// aapt resource value: 2
 			public const int AdsAttrs_adUnitId = 2;
 			
-			// aapt resource value: { 0x10100F2,0x7F04008F,0x7F040090,0x7F040266,0x7F040267,0x7F0402C6,0x7F040351,0x7F040353 }
+			// aapt resource value: { 0x10100F2,0x7F04008E,0x7F04008F,0x7F040266,0x7F040267,0x7F0402C6,0x7F040351,0x7F040353 }
 			public static int[] AlertDialog = new int[] {
 					16842994,
+					2130968718,
 					2130968719,
-					2130968720,
 					2130969190,
 					2130969191,
 					2130969286,
@@ -28371,14 +30979,14 @@ namespace PixQrCodeGeneratorOffline.Droid
 			// aapt resource value: 0
 			public const int AppCompatTextHelper_android_textAppearance = 0;
 			
-			// aapt resource value: { 0x1010034,0x7F040050,0x7F040051,0x7F040052,0x7F040053,0x7F040054,0x7F040152,0x7F040153,0x7F040154,0x7F040155,0x7F040157,0x7F040158,0x7F040159,0x7F04015A,0x7F040198,0x7F0401AE,0x7F0401B7,0x7F040212,0x7F04025F,0x7F0403B1,0x7F0403D3 }
+			// aapt resource value: { 0x1010034,0x7F04004F,0x7F040050,0x7F040051,0x7F040052,0x7F040053,0x7F040152,0x7F040153,0x7F040154,0x7F040155,0x7F040157,0x7F040158,0x7F040159,0x7F04015A,0x7F040198,0x7F0401AE,0x7F0401B7,0x7F040212,0x7F04025F,0x7F0403B1,0x7F0403D3 }
 			public static int[] AppCompatTextView = new int[] {
 					16842804,
+					2130968655,
 					2130968656,
 					2130968657,
 					2130968658,
 					2130968659,
-					2130968660,
 					2130968914,
 					2130968915,
 					2130968916,
@@ -28458,10 +31066,11 @@ namespace PixQrCodeGeneratorOffline.Droid
 			// aapt resource value: 20
 			public const int AppCompatTextView_textLocale = 20;
 			
-			// aapt resource value: { 0x1010057,0x10100AE,0x7F040004,0x7F040005,0x7F040006,0x7F040007,0x7F040008,0x7F040009,0x7F04000A,0x7F04000B,0x7F04000C,0x7F04000D,0x7F04000E,0x7F04000F,0x7F040010,0x7F040012,0x7F040013,0x7F040014,0x7F040015,0x7F040016,0x7F040017,0x7F040018,0x7F040019,0x7F04001A,0x7F04001B,0x7F04001C,0x7F04001D,0x7F04001E,0x7F04001F,0x7F040020,0x7F040021,0x7F040022,0x7F040023,0x7F040024,0x7F040028,0x7F040039,0x7F04003A,0x7F04003B,0x7F04003C,0x7F04004F,0x7F040077,0x7F040088,0x7F040089,0x7F04008A,0x7F04008B,0x7F04008C,0x7F040091,0x7F040092,0x7F0400A9,0x7F0400B2,0x7F0400E4,0x7F0400E5,0x7F0400E6,0x7F0400E7,0x7F0400E8,0x7F0400E9,0x7F0400EA,0x7F0400F1,0x7F0400F2,0x7F0400F8,0x7F040111,0x7F040140,0x7F040145,0x7F040146,0x7F04014B,0x7F04014D,0x7F04015D,0x7F04015E,0x7F040161,0x7F040162,0x7F040164,0x7F0401D1,0x7F0401E1,0x7F040262,0x7F040263,0x7F040264,0x7F040265,0x7F040268,0x7F040269,0x7F04026A,0x7F04026B,0x7F04026C,0x7F04026D,0x7F04026E,0x7F04026F,0x7F040270,0x7F0402E8,0x7F0402E9,0x7F0402EA,0x7F040303,0x7F040305,0x7F04031D,0x7F04031F,0x7F040320,0x7F040321,0x7F040338,0x7F04033B,0x7F04033D,0x7F04033E,0x7F04035E,0x7F04035F,0x7F04038D,0x7F0403BC,0x7F0403BE,0x7F0403BF,0x7F0403C0,0x7F0403C2,0x7F0403C3,0x7F0403C4,0x7F0403C5,0x7F0403CD,0x7F0403CE,0x7F0403FF,0x7F040400,0x7F040401,0x7F040402,0x7F040423,0x7F040432,0x7F040433,0x7F040434,0x7F040435,0x7F040436,0x7F040437,0x7F040438,0x7F040439,0x7F04043A,0x7F04043B }
+			// aapt resource value: { 0x1010057,0x10100AE,0x7F040003,0x7F040004,0x7F040005,0x7F040006,0x7F040007,0x7F040008,0x7F040009,0x7F04000A,0x7F04000B,0x7F04000C,0x7F04000D,0x7F04000E,0x7F04000F,0x7F040011,0x7F040012,0x7F040013,0x7F040014,0x7F040015,0x7F040016,0x7F040017,0x7F040018,0x7F040019,0x7F04001A,0x7F04001B,0x7F04001C,0x7F04001D,0x7F04001E,0x7F04001F,0x7F040020,0x7F040021,0x7F040022,0x7F040023,0x7F040027,0x7F040038,0x7F040039,0x7F04003A,0x7F04003B,0x7F04004E,0x7F040076,0x7F040087,0x7F040088,0x7F040089,0x7F04008A,0x7F04008B,0x7F040090,0x7F040091,0x7F0400A8,0x7F0400B1,0x7F0400E3,0x7F0400E4,0x7F0400E5,0x7F0400E6,0x7F0400E7,0x7F0400E8,0x7F0400E9,0x7F0400F0,0x7F0400F1,0x7F0400F7,0x7F040111,0x7F040140,0x7F040145,0x7F040146,0x7F04014B,0x7F04014D,0x7F04015D,0x7F04015E,0x7F040161,0x7F040162,0x7F040164,0x7F0401D1,0x7F0401E1,0x7F040262,0x7F040263,0x7F040264,0x7F040265,0x7F040268,0x7F040269,0x7F04026A,0x7F04026B,0x7F04026C,0x7F04026D,0x7F04026E,0x7F04026F,0x7F040270,0x7F0402E8,0x7F0402E9,0x7F0402EA,0x7F040303,0x7F040305,0x7F04031D,0x7F04031F,0x7F040320,0x7F040321,0x7F040338,0x7F04033B,0x7F04033D,0x7F04033E,0x7F04035E,0x7F04035F,0x7F04038D,0x7F0403BC,0x7F0403BE,0x7F0403BF,0x7F0403C0,0x7F0403C2,0x7F0403C3,0x7F0403C4,0x7F0403C5,0x7F0403CD,0x7F0403CE,0x7F0403FF,0x7F040400,0x7F040401,0x7F040402,0x7F040423,0x7F040432,0x7F040433,0x7F040434,0x7F040435,0x7F040436,0x7F040437,0x7F040438,0x7F040439,0x7F04043A,0x7F04043B }
 			public static int[] AppCompatTheme = new int[] {
 					16842839,
 					16842926,
+					2130968579,
 					2130968580,
 					2130968581,
 					2130968582,
@@ -28474,7 +31083,7 @@ namespace PixQrCodeGeneratorOffline.Droid
 					2130968589,
 					2130968590,
 					2130968591,
-					2130968592,
+					2130968593,
 					2130968594,
 					2130968595,
 					2130968596,
@@ -28493,33 +31102,32 @@ namespace PixQrCodeGeneratorOffline.Droid
 					2130968609,
 					2130968610,
 					2130968611,
-					2130968612,
-					2130968616,
+					2130968615,
+					2130968632,
 					2130968633,
 					2130968634,
 					2130968635,
-					2130968636,
-					2130968655,
-					2130968695,
+					2130968654,
+					2130968694,
+					2130968711,
 					2130968712,
 					2130968713,
 					2130968714,
 					2130968715,
-					2130968716,
+					2130968720,
 					2130968721,
-					2130968722,
-					2130968745,
-					2130968754,
+					2130968744,
+					2130968753,
+					2130968803,
 					2130968804,
 					2130968805,
 					2130968806,
 					2130968807,
 					2130968808,
 					2130968809,
-					2130968810,
+					2130968816,
 					2130968817,
-					2130968818,
-					2130968824,
+					2130968823,
 					2130968849,
 					2130968896,
 					2130968901,
@@ -28980,11 +31588,11 @@ namespace PixQrCodeGeneratorOffline.Droid
 			// aapt resource value: 1
 			public const int BackgroundStyle_selectableItemBackground = 1;
 			
-			// aapt resource value: { 0x7F040057,0x7F040061,0x7F040063,0x7F0401D3,0x7F040292,0x7F0402D3,0x7F040422 }
+			// aapt resource value: { 0x7F040056,0x7F040060,0x7F040062,0x7F0401D3,0x7F040292,0x7F0402D3,0x7F040422 }
 			public static int[] Badge = new int[] {
-					2130968663,
-					2130968673,
-					2130968675,
+					2130968662,
+					2130968672,
+					2130968674,
 					2130969043,
 					2130969234,
 					2130969299,
@@ -29050,9 +31658,9 @@ namespace PixQrCodeGeneratorOffline.Droid
 			// aapt resource value: 8
 			public const int BaseProgressIndicator_trackThickness = 8;
 			
-			// aapt resource value: { 0x7F04005F,0x7F040165,0x7F04018C,0x7F04018D,0x7F04018E,0x7F04018F,0x7F040190,0x7F0401CC,0x7F0402E1,0x7F0402E3,0x7F0402E4 }
+			// aapt resource value: { 0x7F04005E,0x7F040165,0x7F04018C,0x7F04018D,0x7F04018E,0x7F04018F,0x7F040190,0x7F0401CC,0x7F0402E1,0x7F0402E3,0x7F0402E4 }
 			public static int[] BottomAppBar = new int[] {
-					2130968671,
+					2130968670,
 					2130968933,
 					2130968972,
 					2130968973,
@@ -29104,19 +31712,19 @@ namespace PixQrCodeGeneratorOffline.Droid
 			// aapt resource value: 0
 			public const int BottomNavigationView_itemHorizontalTranslationEnabled = 0;
 			
-			// aapt resource value: { 0x101011F,0x1010440,0x7F04005F,0x7F04006A,0x7F04006B,0x7F04006C,0x7F04006D,0x7F04006E,0x7F040070,0x7F040071,0x7F040072,0x7F0401BE,0x7F0402E1,0x7F0402E3,0x7F0402E4,0x7F0402E7,0x7F040342,0x7F040345 }
+			// aapt resource value: { 0x101011F,0x1010440,0x7F04005E,0x7F040069,0x7F04006A,0x7F04006B,0x7F04006C,0x7F04006D,0x7F04006F,0x7F040070,0x7F040071,0x7F0401BE,0x7F0402E1,0x7F0402E3,0x7F0402E4,0x7F0402E7,0x7F040342,0x7F040345 }
 			public static int[] BottomSheetBehavior_Layout = new int[] {
 					16843039,
 					16843840,
-					2130968671,
+					2130968670,
+					2130968681,
 					2130968682,
 					2130968683,
 					2130968684,
 					2130968685,
-					2130968686,
+					2130968687,
 					2130968688,
 					2130968689,
-					2130968690,
 					2130969022,
 					2130969313,
 					2130969315,
@@ -29179,9 +31787,9 @@ namespace PixQrCodeGeneratorOffline.Droid
 			// aapt resource value: 17
 			public const int BottomSheetBehavior_Layout_shapeAppearanceOverlay = 17;
 			
-			// aapt resource value: { 0x7F040040 }
+			// aapt resource value: { 0x7F04003F }
 			public static int[] ButtonBarLayout = new int[] {
-					2130968640};
+					2130968639};
 			
 			// aapt resource value: 0
 			public const int ButtonBarLayout_allowStacking = 0;
@@ -29197,16 +31805,16 @@ namespace PixQrCodeGeneratorOffline.Droid
 			// aapt resource value: 1
 			public const int Capability_shortcutMatchRequired = 1;
 			
-			// aapt resource value: { 0x101013F,0x1010140,0x7F040095,0x7F040096,0x7F040097,0x7F040099,0x7F04009A,0x7F04009B,0x7F040108,0x7F040109,0x7F04010B,0x7F04010C,0x7F04010E }
+			// aapt resource value: { 0x101013F,0x1010140,0x7F040094,0x7F040095,0x7F040096,0x7F040098,0x7F040099,0x7F04009A,0x7F040108,0x7F040109,0x7F04010B,0x7F04010C,0x7F04010E }
 			public static int[] CardView = new int[] {
 					16843071,
 					16843072,
+					2130968724,
 					2130968725,
 					2130968726,
-					2130968727,
+					2130968728,
 					2130968729,
 					2130968730,
-					2130968731,
 					2130968840,
 					2130968841,
 					2130968843,
@@ -29252,8 +31860,9 @@ namespace PixQrCodeGeneratorOffline.Droid
 			// aapt resource value: 12
 			public const int CardView_contentPaddingTop = 12;
 			
-			// aapt resource value: { 0x7F04009D,0x7F04009E,0x7F04009F,0x7F0400A0,0x7F0400A1,0x7F0400A2,0x7F0400A3,0x7F0400A4,0x7F0400A5,0x7F0400A6 }
+			// aapt resource value: { 0x7F04009C,0x7F04009D,0x7F04009E,0x7F04009F,0x7F0400A0,0x7F0400A1,0x7F0400A2,0x7F0400A3,0x7F0400A4,0x7F0400A5 }
 			public static int[] Carousel = new int[] {
+					2130968732,
 					2130968733,
 					2130968734,
 					2130968735,
@@ -29262,8 +31871,7 @@ namespace PixQrCodeGeneratorOffline.Droid
 					2130968738,
 					2130968739,
 					2130968740,
-					2130968741,
-					2130968742};
+					2130968741};
 			
 			// aapt resource value: 0
 			public const int Carousel_carousel_backwardTransition = 0;
@@ -29322,7 +31930,7 @@ namespace PixQrCodeGeneratorOffline.Droid
 			// aapt resource value: 5
 			public const int CheckBoxPreference_summaryOn = 5;
 			
-			// aapt resource value: { 0x1010034,0x1010095,0x1010098,0x10100AB,0x101011F,0x101014F,0x10101E5,0x7F0400AC,0x7F0400AD,0x7F0400B0,0x7F0400B1,0x7F0400B3,0x7F0400B4,0x7F0400B5,0x7F0400B7,0x7F0400B8,0x7F0400B9,0x7F0400BA,0x7F0400BB,0x7F0400BC,0x7F0400BD,0x7F0400C2,0x7F0400C3,0x7F0400C4,0x7F0400C6,0x7F0400D4,0x7F0400D5,0x7F0400D6,0x7F0400D7,0x7F0400D8,0x7F0400D9,0x7F0400DA,0x7F040173,0x7F0401CA,0x7F0401D6,0x7F0401DB,0x7F04032C,0x7F040342,0x7F040345,0x7F04034D,0x7F0403CF,0x7F0403D8 }
+			// aapt resource value: { 0x1010034,0x1010095,0x1010098,0x10100AB,0x101011F,0x101014F,0x10101E5,0x7F0400AB,0x7F0400AC,0x7F0400AF,0x7F0400B0,0x7F0400B2,0x7F0400B3,0x7F0400B4,0x7F0400B6,0x7F0400B7,0x7F0400B8,0x7F0400B9,0x7F0400BA,0x7F0400BB,0x7F0400BC,0x7F0400C1,0x7F0400C2,0x7F0400C3,0x7F0400C5,0x7F0400D3,0x7F0400D4,0x7F0400D5,0x7F0400D6,0x7F0400D7,0x7F0400D8,0x7F0400D9,0x7F040173,0x7F0401CA,0x7F0401D6,0x7F0401DB,0x7F04032C,0x7F040342,0x7F040345,0x7F04034D,0x7F0403CF,0x7F0403D8 }
 			public static int[] Chip = new int[] {
 					16842804,
 					16842901,
@@ -29331,31 +31939,31 @@ namespace PixQrCodeGeneratorOffline.Droid
 					16843039,
 					16843087,
 					16843237,
+					2130968747,
 					2130968748,
-					2130968749,
+					2130968751,
 					2130968752,
-					2130968753,
+					2130968754,
 					2130968755,
 					2130968756,
-					2130968757,
+					2130968758,
 					2130968759,
 					2130968760,
 					2130968761,
 					2130968762,
 					2130968763,
 					2130968764,
-					2130968765,
+					2130968769,
 					2130968770,
 					2130968771,
-					2130968772,
-					2130968774,
+					2130968773,
+					2130968787,
 					2130968788,
 					2130968789,
 					2130968790,
 					2130968791,
 					2130968792,
 					2130968793,
-					2130968794,
 					2130968947,
 					2130969034,
 					2130969046,
@@ -29367,12 +31975,12 @@ namespace PixQrCodeGeneratorOffline.Droid
 					2130969551,
 					2130969560};
 			
-			// aapt resource value: { 0x7F0400AB,0x7F0400BE,0x7F0400BF,0x7F0400C0,0x7F04033F,0x7F040354,0x7F040356 }
+			// aapt resource value: { 0x7F0400AA,0x7F0400BD,0x7F0400BE,0x7F0400BF,0x7F04033F,0x7F040354,0x7F040356 }
 			public static int[] ChipGroup = new int[] {
-					2130968747,
+					2130968746,
+					2130968765,
 					2130968766,
 					2130968767,
-					2130968768,
 					2130969407,
 					2130969428,
 					2130969430};
@@ -29539,10 +32147,10 @@ namespace PixQrCodeGeneratorOffline.Droid
 			// aapt resource value: 2
 			public const int CircularProgressIndicator_indicatorSize = 2;
 			
-			// aapt resource value: { 0x7F0400D0,0x7F0400D3 }
+			// aapt resource value: { 0x7F0400CF,0x7F0400D2 }
 			public static int[] ClockFaceView = new int[] {
-					2130968784,
-					2130968787};
+					2130968783,
+					2130968786};
 			
 			// aapt resource value: 0
 			public const int ClockFaceView_clockFaceBackgroundColor = 0;
@@ -29550,9 +32158,9 @@ namespace PixQrCodeGeneratorOffline.Droid
 			// aapt resource value: 1
 			public const int ClockFaceView_clockNumberTextColor = 1;
 			
-			// aapt resource value: { 0x7F0400D1,0x7F04028A,0x7F040340 }
+			// aapt resource value: { 0x7F0400D0,0x7F04028A,0x7F040340 }
 			public static int[] ClockHandView = new int[] {
-					2130968785,
+					2130968784,
 					2130969226,
 					2130969408};
 			
@@ -29565,10 +32173,10 @@ namespace PixQrCodeGeneratorOffline.Droid
 			// aapt resource value: 2
 			public const int ClockHandView_selectorSize = 2;
 			
-			// aapt resource value: { 0x7F0400DF,0x7F0400E0,0x7F04010F,0x7F040182,0x7F040183,0x7F040184,0x7F040185,0x7F040186,0x7F040187,0x7F040188,0x7F04018B,0x7F0401B9,0x7F040295,0x7F040332,0x7F040334,0x7F040377,0x7F0403F1,0x7F0403F3,0x7F0403F4,0x7F0403FE }
+			// aapt resource value: { 0x7F0400DE,0x7F0400DF,0x7F04010F,0x7F040182,0x7F040183,0x7F040184,0x7F040185,0x7F040186,0x7F040187,0x7F040188,0x7F04018B,0x7F0401B9,0x7F040295,0x7F040332,0x7F040334,0x7F040377,0x7F0403F1,0x7F0403F3,0x7F0403F4,0x7F0403FE }
 			public static int[] CollapsingToolbarLayout = new int[] {
+					2130968798,
 					2130968799,
-					2130968800,
 					2130968847,
 					2130968962,
 					2130968963,
@@ -29659,11 +32267,11 @@ namespace PixQrCodeGeneratorOffline.Droid
 			// aapt resource value: 19
 			public const int CollapsingToolbarLayout_toolbarId = 19;
 			
-			// aapt resource value: { 0x10101A5,0x101031F,0x7F040041 }
+			// aapt resource value: { 0x10101A5,0x101031F,0x7F040040 }
 			public static int[] ColorStateListItem = new int[] {
 					16843173,
 					16843551,
-					2130968641};
+					2130968640};
 			
 			// aapt resource value: 2
 			public const int ColorStateListItem_alpha = 2;
@@ -29674,12 +32282,12 @@ namespace PixQrCodeGeneratorOffline.Droid
 			// aapt resource value: 0
 			public const int ColorStateListItem_android_color = 0;
 			
-			// aapt resource value: { 0x1010107,0x7F04008D,0x7F040093,0x7F040094 }
+			// aapt resource value: { 0x1010107,0x7F04008C,0x7F040092,0x7F040093 }
 			public static int[] CompoundButton = new int[] {
 					16843015,
-					2130968717,
-					2130968723,
-					2130968724};
+					2130968716,
+					2130968722,
+					2130968723};
 			
 			// aapt resource value: 0
 			public const int CompoundButton_android_button = 0;
@@ -29693,7 +32301,7 @@ namespace PixQrCodeGeneratorOffline.Droid
 			// aapt resource value: 3
 			public const int CompoundButton_buttonTintMode = 3;
 			
-			// aapt resource value: { 0x10100C4,0x10100D0,0x10100DC,0x10100F4,0x10100F5,0x10100F7,0x10100F8,0x10100F9,0x10100FA,0x101011F,0x1010120,0x101013F,0x1010140,0x101031F,0x1010320,0x1010321,0x1010322,0x1010323,0x1010324,0x1010325,0x1010326,0x1010327,0x1010328,0x10103B5,0x10103B6,0x10103FA,0x1010440,0x7F040044,0x7F040045,0x7F040065,0x7F040066,0x7F040067,0x7F0400A7,0x7F0400FD,0x7F0400FE,0x7F040151,0x7F04019A,0x7F04019B,0x7F04019C,0x7F04019D,0x7F04019E,0x7F04019F,0x7F0401A0,0x7F0401A1,0x7F0401A2,0x7F0401A3,0x7F0401A4,0x7F0401A5,0x7F0401A6,0x7F0401A8,0x7F0401A9,0x7F0401AA,0x7F0401AB,0x7F0401AC,0x7F04021D,0x7F04021E,0x7F04021F,0x7F040220,0x7F040221,0x7F040222,0x7F040223,0x7F040224,0x7F040225,0x7F040226,0x7F040227,0x7F040228,0x7F040229,0x7F04022A,0x7F04022B,0x7F04022C,0x7F04022D,0x7F04022E,0x7F04022F,0x7F040230,0x7F040231,0x7F040232,0x7F040233,0x7F040234,0x7F040235,0x7F040236,0x7F040237,0x7F040238,0x7F040239,0x7F04023A,0x7F04023B,0x7F04023C,0x7F04023D,0x7F04023E,0x7F04023F,0x7F040240,0x7F040241,0x7F040242,0x7F040243,0x7F040244,0x7F040245,0x7F040246,0x7F040247,0x7F040248,0x7F040249,0x7F04024A,0x7F04024C,0x7F04024D,0x7F04024E,0x7F04024F,0x7F040250,0x7F040251,0x7F040252,0x7F040253,0x7F040254,0x7F040257,0x7F04025B,0x7F0402C0,0x7F0402C1,0x7F0402F0,0x7F0402F8,0x7F0402FD,0x7F040317,0x7F040318,0x7F040319,0x7F040411,0x7F040413,0x7F040415,0x7F040428 }
+			// aapt resource value: { 0x10100C4,0x10100D0,0x10100DC,0x10100F4,0x10100F5,0x10100F7,0x10100F8,0x10100F9,0x10100FA,0x101011F,0x1010120,0x101013F,0x1010140,0x101031F,0x1010320,0x1010321,0x1010322,0x1010323,0x1010324,0x1010325,0x1010326,0x1010327,0x1010328,0x10103B5,0x10103B6,0x10103FA,0x1010440,0x7F040043,0x7F040044,0x7F040064,0x7F040065,0x7F040066,0x7F0400A6,0x7F0400FD,0x7F0400FE,0x7F040151,0x7F04019A,0x7F04019B,0x7F04019C,0x7F04019D,0x7F04019E,0x7F04019F,0x7F0401A0,0x7F0401A1,0x7F0401A2,0x7F0401A3,0x7F0401A4,0x7F0401A5,0x7F0401A6,0x7F0401A8,0x7F0401A9,0x7F0401AA,0x7F0401AB,0x7F0401AC,0x7F04021D,0x7F04021E,0x7F04021F,0x7F040220,0x7F040221,0x7F040222,0x7F040223,0x7F040224,0x7F040225,0x7F040226,0x7F040227,0x7F040228,0x7F040229,0x7F04022A,0x7F04022B,0x7F04022C,0x7F04022D,0x7F04022E,0x7F04022F,0x7F040230,0x7F040231,0x7F040232,0x7F040233,0x7F040234,0x7F040235,0x7F040236,0x7F040237,0x7F040238,0x7F040239,0x7F04023A,0x7F04023B,0x7F04023C,0x7F04023D,0x7F04023E,0x7F04023F,0x7F040240,0x7F040241,0x7F040242,0x7F040243,0x7F040244,0x7F040245,0x7F040246,0x7F040247,0x7F040248,0x7F040249,0x7F04024A,0x7F04024C,0x7F04024D,0x7F04024E,0x7F04024F,0x7F040250,0x7F040251,0x7F040252,0x7F040253,0x7F040254,0x7F040257,0x7F04025B,0x7F0402C0,0x7F0402C1,0x7F0402F0,0x7F0402F8,0x7F0402FD,0x7F040317,0x7F040318,0x7F040319,0x7F040411,0x7F040413,0x7F040415,0x7F040428 }
 			public static int[] Constraint = new int[] {
 					16842948,
 					16842960,
@@ -29722,12 +32330,12 @@ namespace PixQrCodeGeneratorOffline.Droid
 					16843702,
 					16843770,
 					16843840,
+					2130968643,
 					2130968644,
-					2130968645,
+					2130968676,
 					2130968677,
 					2130968678,
-					2130968679,
-					2130968743,
+					2130968742,
 					2130968829,
 					2130968830,
 					2130968913,
@@ -29819,7 +32427,7 @@ namespace PixQrCodeGeneratorOffline.Droid
 					2130969621,
 					2130969640};
 			
-			// aapt resource value: { 0x10100C4,0x10100D5,0x10100D6,0x10100D7,0x10100D8,0x10100D9,0x10100DC,0x10100F4,0x10100F5,0x10100F6,0x10100F7,0x10100F8,0x10100F9,0x10100FA,0x101011F,0x1010120,0x101013F,0x1010140,0x10103B3,0x10103B4,0x10103B5,0x10103B6,0x1010440,0x101053B,0x101053C,0x7F040065,0x7F040066,0x7F040067,0x7F0400A7,0x7F0400C9,0x7F0400CA,0x7F0400CB,0x7F0400CC,0x7F0400CD,0x7F0400FA,0x7F0400FD,0x7F0400FE,0x7F04019A,0x7F04019B,0x7F04019C,0x7F04019D,0x7F04019E,0x7F04019F,0x7F0401A0,0x7F0401A1,0x7F0401A2,0x7F0401A3,0x7F0401A4,0x7F0401A5,0x7F0401A6,0x7F0401A8,0x7F0401A9,0x7F0401AA,0x7F0401AB,0x7F0401AC,0x7F040215,0x7F04021D,0x7F04021E,0x7F04021F,0x7F040220,0x7F040221,0x7F040222,0x7F040223,0x7F040224,0x7F040225,0x7F040226,0x7F040227,0x7F040228,0x7F040229,0x7F04022A,0x7F04022B,0x7F04022C,0x7F04022D,0x7F04022E,0x7F04022F,0x7F040230,0x7F040231,0x7F040232,0x7F040233,0x7F040234,0x7F040235,0x7F040236,0x7F040237,0x7F040238,0x7F040239,0x7F04023A,0x7F04023B,0x7F04023C,0x7F04023D,0x7F04023E,0x7F04023F,0x7F040240,0x7F040241,0x7F040242,0x7F040243,0x7F040244,0x7F040245,0x7F040246,0x7F040247,0x7F040248,0x7F040249,0x7F04024A,0x7F04024C,0x7F04024D,0x7F04024E,0x7F04024F,0x7F040250,0x7F040251,0x7F040252,0x7F040253,0x7F040254,0x7F040257,0x7F040258,0x7F04025B }
+			// aapt resource value: { 0x10100C4,0x10100D5,0x10100D6,0x10100D7,0x10100D8,0x10100D9,0x10100DC,0x10100F4,0x10100F5,0x10100F6,0x10100F7,0x10100F8,0x10100F9,0x10100FA,0x101011F,0x1010120,0x101013F,0x1010140,0x10103B3,0x10103B4,0x10103B5,0x10103B6,0x1010440,0x101053B,0x101053C,0x7F040064,0x7F040065,0x7F040066,0x7F0400A6,0x7F0400C8,0x7F0400C9,0x7F0400CA,0x7F0400CB,0x7F0400CC,0x7F0400FA,0x7F0400FD,0x7F0400FE,0x7F04019A,0x7F04019B,0x7F04019C,0x7F04019D,0x7F04019E,0x7F04019F,0x7F0401A0,0x7F0401A1,0x7F0401A2,0x7F0401A3,0x7F0401A4,0x7F0401A5,0x7F0401A6,0x7F0401A8,0x7F0401A9,0x7F0401AA,0x7F0401AB,0x7F0401AC,0x7F040215,0x7F04021D,0x7F04021E,0x7F04021F,0x7F040220,0x7F040221,0x7F040222,0x7F040223,0x7F040224,0x7F040225,0x7F040226,0x7F040227,0x7F040228,0x7F040229,0x7F04022A,0x7F04022B,0x7F04022C,0x7F04022D,0x7F04022E,0x7F04022F,0x7F040230,0x7F040231,0x7F040232,0x7F040233,0x7F040234,0x7F040235,0x7F040236,0x7F040237,0x7F040238,0x7F040239,0x7F04023A,0x7F04023B,0x7F04023C,0x7F04023D,0x7F04023E,0x7F04023F,0x7F040240,0x7F040241,0x7F040242,0x7F040243,0x7F040244,0x7F040245,0x7F040246,0x7F040247,0x7F040248,0x7F040249,0x7F04024A,0x7F04024C,0x7F04024D,0x7F04024E,0x7F04024F,0x7F040250,0x7F040251,0x7F040252,0x7F040253,0x7F040254,0x7F040257,0x7F040258,0x7F04025B }
 			public static int[] ConstraintLayout_Layout = new int[] {
 					16842948,
 					16842965,
@@ -29846,15 +32454,15 @@ namespace PixQrCodeGeneratorOffline.Droid
 					16843840,
 					16844091,
 					16844092,
+					2130968676,
 					2130968677,
 					2130968678,
-					2130968679,
-					2130968743,
+					2130968742,
+					2130968776,
 					2130968777,
 					2130968778,
 					2130968779,
 					2130968780,
-					2130968781,
 					2130968826,
 					2130968829,
 					2130968830,
@@ -30308,7 +32916,7 @@ namespace PixQrCodeGeneratorOffline.Droid
 			// aapt resource value: 3
 			public const int ConstraintLayout_ReactiveGuide_reactiveGuide_valueId = 3;
 			
-			// aapt resource value: { 0x10100C4,0x10100D0,0x10100DC,0x10100F4,0x10100F5,0x10100F7,0x10100F8,0x10100F9,0x10100FA,0x101011F,0x1010120,0x101013F,0x1010140,0x101031F,0x1010320,0x1010321,0x1010322,0x1010323,0x1010324,0x1010325,0x1010326,0x1010327,0x1010328,0x10103B5,0x10103B6,0x10103FA,0x1010440,0x7F040044,0x7F040045,0x7F040065,0x7F040066,0x7F040067,0x7F0400A7,0x7F0400FD,0x7F040151,0x7F04019A,0x7F04019B,0x7F04019C,0x7F04019D,0x7F04019E,0x7F04019F,0x7F0401A0,0x7F0401A1,0x7F0401A2,0x7F0401A3,0x7F0401A4,0x7F0401A5,0x7F0401A6,0x7F0401A8,0x7F0401A9,0x7F0401AA,0x7F0401AB,0x7F0401AC,0x7F04021D,0x7F04021E,0x7F04021F,0x7F040223,0x7F040227,0x7F040228,0x7F040229,0x7F04022C,0x7F04022D,0x7F04022E,0x7F04022F,0x7F040230,0x7F040231,0x7F040232,0x7F040233,0x7F040234,0x7F040235,0x7F040236,0x7F040237,0x7F04023A,0x7F04023F,0x7F040240,0x7F040243,0x7F040244,0x7F040245,0x7F040246,0x7F040247,0x7F040248,0x7F040249,0x7F04024A,0x7F04024C,0x7F04024D,0x7F04024E,0x7F04024F,0x7F040250,0x7F040251,0x7F040252,0x7F040253,0x7F040254,0x7F040257,0x7F04025B,0x7F0402C0,0x7F0402C1,0x7F0402C2,0x7F0402F0,0x7F0402F8,0x7F0402FD,0x7F040317,0x7F040318,0x7F040319,0x7F040411,0x7F040413,0x7F040415,0x7F040428 }
+			// aapt resource value: { 0x10100C4,0x10100D0,0x10100DC,0x10100F4,0x10100F5,0x10100F7,0x10100F8,0x10100F9,0x10100FA,0x101011F,0x1010120,0x101013F,0x1010140,0x101031F,0x1010320,0x1010321,0x1010322,0x1010323,0x1010324,0x1010325,0x1010326,0x1010327,0x1010328,0x10103B5,0x10103B6,0x10103FA,0x1010440,0x7F040043,0x7F040044,0x7F040064,0x7F040065,0x7F040066,0x7F0400A6,0x7F0400FD,0x7F040151,0x7F04019A,0x7F04019B,0x7F04019C,0x7F04019D,0x7F04019E,0x7F04019F,0x7F0401A0,0x7F0401A1,0x7F0401A2,0x7F0401A3,0x7F0401A4,0x7F0401A5,0x7F0401A6,0x7F0401A8,0x7F0401A9,0x7F0401AA,0x7F0401AB,0x7F0401AC,0x7F04021D,0x7F04021E,0x7F04021F,0x7F040223,0x7F040227,0x7F040228,0x7F040229,0x7F04022C,0x7F04022D,0x7F04022E,0x7F04022F,0x7F040230,0x7F040231,0x7F040232,0x7F040233,0x7F040234,0x7F040235,0x7F040236,0x7F040237,0x7F04023A,0x7F04023F,0x7F040240,0x7F040243,0x7F040244,0x7F040245,0x7F040246,0x7F040247,0x7F040248,0x7F040249,0x7F04024A,0x7F04024C,0x7F04024D,0x7F04024E,0x7F04024F,0x7F040250,0x7F040251,0x7F040252,0x7F040253,0x7F040254,0x7F040257,0x7F04025B,0x7F0402C0,0x7F0402C1,0x7F0402C2,0x7F0402F0,0x7F0402F8,0x7F0402FD,0x7F040317,0x7F040318,0x7F040319,0x7F040411,0x7F040413,0x7F040415,0x7F040428 }
 			public static int[] ConstraintOverride = new int[] {
 					16842948,
 					16842960,
@@ -30337,12 +32945,12 @@ namespace PixQrCodeGeneratorOffline.Droid
 					16843702,
 					16843770,
 					16843840,
+					2130968643,
 					2130968644,
-					2130968645,
+					2130968676,
 					2130968677,
 					2130968678,
-					2130968679,
-					2130968743,
+					2130968742,
 					2130968829,
 					2130968913,
 					2130968986,
@@ -30739,7 +33347,7 @@ namespace PixQrCodeGeneratorOffline.Droid
 			// aapt resource value: 106
 			public const int ConstraintOverride_visibilityMode = 106;
 			
-			// aapt resource value: { 0x10100C4,0x10100D0,0x10100DC,0x10100F4,0x10100F5,0x10100F7,0x10100F8,0x10100F9,0x10100FA,0x101011F,0x1010120,0x101013F,0x1010140,0x10101B5,0x10101B6,0x101031F,0x1010320,0x1010321,0x1010322,0x1010323,0x1010324,0x1010325,0x1010326,0x1010327,0x1010328,0x10103B5,0x10103B6,0x10103FA,0x1010440,0x7F040000,0x7F040044,0x7F040045,0x7F040065,0x7F040066,0x7F040067,0x7F0400A7,0x7F0400FD,0x7F0400FE,0x7F04013E,0x7F040151,0x7F04019A,0x7F04019B,0x7F04019C,0x7F04019D,0x7F04019E,0x7F04019F,0x7F0401A0,0x7F0401A1,0x7F0401A2,0x7F0401A3,0x7F0401A4,0x7F0401A5,0x7F0401A6,0x7F0401A8,0x7F0401A9,0x7F0401AA,0x7F0401AB,0x7F0401AC,0x7F04021D,0x7F04021E,0x7F04021F,0x7F040220,0x7F040221,0x7F040222,0x7F040223,0x7F040224,0x7F040225,0x7F040226,0x7F040227,0x7F040228,0x7F040229,0x7F04022A,0x7F04022B,0x7F04022C,0x7F04022D,0x7F04022E,0x7F040230,0x7F040231,0x7F040232,0x7F040233,0x7F040234,0x7F040235,0x7F040236,0x7F040237,0x7F040238,0x7F040239,0x7F04023A,0x7F04023B,0x7F04023C,0x7F04023D,0x7F04023E,0x7F04023F,0x7F040240,0x7F040241,0x7F040242,0x7F040243,0x7F040244,0x7F040245,0x7F040247,0x7F040248,0x7F040249,0x7F04024A,0x7F04024C,0x7F04024D,0x7F04024E,0x7F04024F,0x7F040250,0x7F040251,0x7F040252,0x7F040253,0x7F040254,0x7F040257,0x7F04025B,0x7F0402C0,0x7F0402C1,0x7F0402F0,0x7F0402F8,0x7F0402FD,0x7F040319,0x7F040413,0x7F040415 }
+			// aapt resource value: { 0x10100C4,0x10100D0,0x10100DC,0x10100F4,0x10100F5,0x10100F7,0x10100F8,0x10100F9,0x10100FA,0x101011F,0x1010120,0x101013F,0x1010140,0x10101B5,0x10101B6,0x101031F,0x1010320,0x1010321,0x1010322,0x1010323,0x1010324,0x1010325,0x1010326,0x1010327,0x1010328,0x10103B5,0x10103B6,0x10103FA,0x1010440,0x7F040043,0x7F040044,0x7F040064,0x7F040065,0x7F040066,0x7F0400A6,0x7F0400F9,0x7F0400FD,0x7F0400FE,0x7F04013E,0x7F040151,0x7F04019A,0x7F04019B,0x7F04019C,0x7F04019D,0x7F04019E,0x7F04019F,0x7F0401A0,0x7F0401A1,0x7F0401A2,0x7F0401A3,0x7F0401A4,0x7F0401A5,0x7F0401A6,0x7F0401A8,0x7F0401A9,0x7F0401AA,0x7F0401AB,0x7F0401AC,0x7F04021D,0x7F04021E,0x7F04021F,0x7F040220,0x7F040221,0x7F040222,0x7F040223,0x7F040224,0x7F040225,0x7F040226,0x7F040227,0x7F040228,0x7F040229,0x7F04022A,0x7F04022B,0x7F04022C,0x7F04022D,0x7F04022E,0x7F040230,0x7F040231,0x7F040232,0x7F040233,0x7F040234,0x7F040235,0x7F040236,0x7F040237,0x7F040238,0x7F040239,0x7F04023A,0x7F04023B,0x7F04023C,0x7F04023D,0x7F04023E,0x7F04023F,0x7F040240,0x7F040241,0x7F040242,0x7F040243,0x7F040244,0x7F040245,0x7F040247,0x7F040248,0x7F040249,0x7F04024A,0x7F04024C,0x7F04024D,0x7F04024E,0x7F04024F,0x7F040250,0x7F040251,0x7F040252,0x7F040253,0x7F040254,0x7F040257,0x7F04025B,0x7F0402C0,0x7F0402C1,0x7F0402F0,0x7F0402F8,0x7F0402FD,0x7F040319,0x7F040413,0x7F040415 }
 			public static int[] ConstraintSet = new int[] {
 					16842948,
 					16842960,
@@ -30770,13 +33378,13 @@ namespace PixQrCodeGeneratorOffline.Droid
 					16843702,
 					16843770,
 					16843840,
-					2130968576,
+					2130968643,
 					2130968644,
-					2130968645,
+					2130968676,
 					2130968677,
 					2130968678,
-					2130968679,
-					2130968743,
+					2130968742,
+					2130968825,
 					2130968829,
 					2130968830,
 					2130968894,
@@ -30950,26 +33558,26 @@ namespace PixQrCodeGeneratorOffline.Droid
 			// aapt resource value: 2
 			public const int ConstraintSet_android_visibility = 2;
 			
+			// aapt resource value: 29
+			public const int ConstraintSet_animateCircleAngleTo = 29;
+			
 			// aapt resource value: 30
-			public const int ConstraintSet_animateCircleAngleTo = 30;
+			public const int ConstraintSet_animateRelativeTo = 30;
 			
 			// aapt resource value: 31
-			public const int ConstraintSet_animateRelativeTo = 31;
+			public const int ConstraintSet_barrierAllowsGoneWidgets = 31;
 			
 			// aapt resource value: 32
-			public const int ConstraintSet_barrierAllowsGoneWidgets = 32;
+			public const int ConstraintSet_barrierDirection = 32;
 			
 			// aapt resource value: 33
-			public const int ConstraintSet_barrierDirection = 33;
+			public const int ConstraintSet_barrierMargin = 33;
 			
 			// aapt resource value: 34
-			public const int ConstraintSet_barrierMargin = 34;
+			public const int ConstraintSet_chainUseRtl = 34;
 			
 			// aapt resource value: 35
-			public const int ConstraintSet_chainUseRtl = 35;
-			
-			// aapt resource value: 29
-			public const int ConstraintSet_ConstraintRotate = 29;
+			public const int ConstraintSet_constraintRotate = 35;
 			
 			// aapt resource value: 36
 			public const int ConstraintSet_constraint_referenced_ids = 36;
@@ -31637,9 +34245,9 @@ namespace PixQrCodeGeneratorOffline.Droid
 			// aapt resource value: 1
 			public const int CoordinatorLayout_statusBarBackground = 1;
 			
-			// aapt resource value: { 0x7F04004D,0x7F040127,0x7F040128,0x7F040129,0x7F04012A,0x7F04012B,0x7F04012C,0x7F04012E,0x7F04012F,0x7F040130,0x7F04029B }
+			// aapt resource value: { 0x7F04004C,0x7F040127,0x7F040128,0x7F040129,0x7F04012A,0x7F04012B,0x7F04012C,0x7F04012E,0x7F04012F,0x7F040130,0x7F04029B }
 			public static int[] CustomAttribute = new int[] {
-					2130968653,
+					2130968652,
 					2130968871,
 					2130968872,
 					2130968873,
@@ -31735,12 +34343,12 @@ namespace PixQrCodeGeneratorOffline.Droid
 			// aapt resource value: 11
 			public const int DialogPreference_positiveButtonText = 11;
 			
-			// aapt resource value: { 0x7F04004B,0x7F04004C,0x7F040064,0x7F0400E3,0x7F040156,0x7F0401BD,0x7F04035D,0x7F0403DF }
+			// aapt resource value: { 0x7F04004A,0x7F04004B,0x7F040063,0x7F0400E2,0x7F040156,0x7F0401BD,0x7F04035D,0x7F0403DF }
 			public static int[] DrawerArrowToggle = new int[] {
+					2130968650,
 					2130968651,
-					2130968652,
-					2130968676,
-					2130968803,
+					2130968675,
+					2130968802,
 					2130968918,
 					2130969021,
 					2130969437,
@@ -31784,19 +34392,19 @@ namespace PixQrCodeGeneratorOffline.Droid
 			// aapt resource value: 0
 			public const int EditTextPreference_useSimpleSummaryProvider = 0;
 			
-			// aapt resource value: { 0x7F0400DE,0x7F040165,0x7F040189,0x7F0401CA,0x7F04034D,0x7F040352 }
+			// aapt resource value: { 0x7F0400DD,0x7F040165,0x7F040189,0x7F0401CA,0x7F04034D,0x7F040352 }
 			public static int[] ExtendedFloatingActionButton = new int[] {
-					2130968798,
+					2130968797,
 					2130968933,
 					2130968969,
 					2130969034,
 					2130969421,
 					2130969426};
 			
-			// aapt resource value: { 0x7F040068,0x7F040069 }
+			// aapt resource value: { 0x7F040067,0x7F040068 }
 			public static int[] ExtendedFloatingActionButton_Behavior_Layout = new int[] {
-					2130968680,
-					2130968681};
+					2130968679,
+					2130968680};
 			
 			// aapt resource value: 0
 			public const int ExtendedFloatingActionButton_Behavior_Layout_behavior_autoHide = 0;
@@ -31822,12 +34430,12 @@ namespace PixQrCodeGeneratorOffline.Droid
 			// aapt resource value: 5
 			public const int ExtendedFloatingActionButton_shrinkMotionSpec = 5;
 			
-			// aapt resource value: { 0x101000E,0x7F04005F,0x7F040060,0x7F040076,0x7F040165,0x7F040173,0x7F040191,0x7F040192,0x7F0401CA,0x7F0401D4,0x7F040294,0x7F040314,0x7F04032C,0x7F040342,0x7F040345,0x7F04034D,0x7F04041E }
+			// aapt resource value: { 0x101000E,0x7F04005E,0x7F04005F,0x7F040075,0x7F040165,0x7F040173,0x7F040191,0x7F040192,0x7F0401CA,0x7F0401D4,0x7F040294,0x7F040314,0x7F04032C,0x7F040342,0x7F040345,0x7F04034D,0x7F04041E }
 			public static int[] FloatingActionButton = new int[] {
 					16842766,
+					2130968670,
 					2130968671,
-					2130968672,
-					2130968694,
+					2130968693,
 					2130968933,
 					2130968947,
 					2130968977,
@@ -31851,9 +34459,9 @@ namespace PixQrCodeGeneratorOffline.Droid
 			// aapt resource value: 2
 			public const int FloatingActionButton_backgroundTintMode = 2;
 			
-			// aapt resource value: { 0x7F040068 }
+			// aapt resource value: { 0x7F040067 }
 			public static int[] FloatingActionButton_Behavior_Layout = new int[] {
-					2130968680};
+					2130968679};
 			
 			// aapt resource value: 0
 			public const int FloatingActionButton_Behavior_Layout_behavior_autoHide = 0;
@@ -32088,11 +34696,11 @@ namespace PixQrCodeGeneratorOffline.Droid
 			// aapt resource value: 2
 			public const int GradientColor_android_type = 2;
 			
-			// aapt resource value: { 0x7F040043,0x7F040073,0x7F040087,0x7F040110,0x7F040124,0x7F0401E2,0x7F0401E3,0x7F0401E4,0x7F0401E5,0x7F0402DF,0x7F04032E,0x7F04032F,0x7F040330,0x7F04042A }
+			// aapt resource value: { 0x7F040042,0x7F040072,0x7F040086,0x7F040110,0x7F040124,0x7F0401E2,0x7F0401E3,0x7F0401E4,0x7F0401E5,0x7F0402DF,0x7F04032E,0x7F04032F,0x7F040330,0x7F04042A }
 			public static int[] ImageFilterView = new int[] {
-					2130968643,
-					2130968691,
-					2130968711,
+					2130968642,
+					2130968690,
+					2130968710,
 					2130968848,
 					2130968868,
 					2130969058,
@@ -32173,9 +34781,9 @@ namespace PixQrCodeGeneratorOffline.Droid
 			// aapt resource value: 3
 			public const int Insets_paddingTopSystemWindowInsets = 3;
 			
-			// aapt resource value: { 0x7F0400E2 }
+			// aapt resource value: { 0x7F0400E1 }
 			public static int[] ItemsViewRendererTheme = new int[] {
-					2130968802};
+					2130968801};
 			
 			// aapt resource value: 0
 			public const int ItemsViewRendererTheme_collectionViewStyle = 0;
@@ -32551,7 +35159,7 @@ namespace PixQrCodeGeneratorOffline.Droid
 			// aapt resource value: 12
 			public const int KeyTrigger_viewTransitionOnPositiveCross = 12;
 			
-			// aapt resource value: { 0x10100C4,0x10100F4,0x10100F5,0x10100F7,0x10100F8,0x10100F9,0x10100FA,0x10103B5,0x10103B6,0x7F040065,0x7F040066,0x7F040067,0x7F0400A7,0x7F0400FD,0x7F0400FE,0x7F04021D,0x7F04021E,0x7F04021F,0x7F040220,0x7F040221,0x7F040222,0x7F040223,0x7F040224,0x7F040225,0x7F040226,0x7F040227,0x7F040228,0x7F040229,0x7F04022A,0x7F04022B,0x7F04022C,0x7F04022D,0x7F04022E,0x7F04022F,0x7F040230,0x7F040231,0x7F040232,0x7F040233,0x7F040234,0x7F040235,0x7F040236,0x7F040237,0x7F040238,0x7F040239,0x7F04023A,0x7F04023B,0x7F04023C,0x7F04023D,0x7F04023E,0x7F040240,0x7F040241,0x7F040242,0x7F040243,0x7F040244,0x7F040245,0x7F040246,0x7F040247,0x7F040248,0x7F040249,0x7F04024A,0x7F04024C,0x7F04024D,0x7F04024E,0x7F04024F,0x7F040250,0x7F040251,0x7F040252,0x7F040253,0x7F040254,0x7F040257,0x7F04025B,0x7F040293,0x7F040297,0x7F04029E,0x7F0402A2 }
+			// aapt resource value: { 0x10100C4,0x10100F4,0x10100F5,0x10100F7,0x10100F8,0x10100F9,0x10100FA,0x10103B5,0x10103B6,0x7F040064,0x7F040065,0x7F040066,0x7F0400A6,0x7F0400FD,0x7F0400FE,0x7F04021D,0x7F04021E,0x7F04021F,0x7F040220,0x7F040221,0x7F040222,0x7F040223,0x7F040224,0x7F040225,0x7F040226,0x7F040227,0x7F040228,0x7F040229,0x7F04022A,0x7F04022B,0x7F04022C,0x7F04022D,0x7F04022E,0x7F04022F,0x7F040230,0x7F040231,0x7F040232,0x7F040233,0x7F040234,0x7F040235,0x7F040236,0x7F040237,0x7F040238,0x7F040239,0x7F04023A,0x7F04023B,0x7F04023C,0x7F04023D,0x7F04023E,0x7F040240,0x7F040241,0x7F040242,0x7F040243,0x7F040244,0x7F040245,0x7F040246,0x7F040247,0x7F040248,0x7F040249,0x7F04024A,0x7F04024C,0x7F04024D,0x7F04024E,0x7F04024F,0x7F040250,0x7F040251,0x7F040252,0x7F040253,0x7F040254,0x7F040257,0x7F04025B,0x7F040293,0x7F040297,0x7F04029E,0x7F0402A2 }
 			public static int[] Layout = new int[] {
 					16842948,
 					16842996,
@@ -32562,10 +35170,10 @@ namespace PixQrCodeGeneratorOffline.Droid
 					16843002,
 					16843701,
 					16843702,
+					2130968676,
 					2130968677,
 					2130968678,
-					2130968679,
-					2130968743,
+					2130968742,
 					2130968829,
 					2130968830,
 					2130969117,
@@ -32957,12 +35565,12 @@ namespace PixQrCodeGeneratorOffline.Droid
 			// aapt resource value: 4
 			public const int ListPreference_useSimpleSummaryProvider = 4;
 			
-			// aapt resource value: { 0x7F040058,0x7F040059,0x7F04005A,0x7F04005B }
+			// aapt resource value: { 0x7F040057,0x7F040058,0x7F040059,0x7F04005A }
 			public static int[] MaterialAlertDialog = new int[] {
+					2130968663,
 					2130968664,
 					2130968665,
-					2130968666,
-					2130968667};
+					2130968666};
 			
 			// aapt resource value: { 0x7F040273,0x7F040274,0x7F040275,0x7F040276,0x7F040277 }
 			public static int[] MaterialAlertDialogTheme = new int[] {
@@ -33006,7 +35614,7 @@ namespace PixQrCodeGeneratorOffline.Droid
 			// aapt resource value: 0
 			public const int MaterialAutoCompleteTextView_android_inputType = 0;
 			
-			// aapt resource value: { 0x10100D4,0x10101B7,0x10101B8,0x10101B9,0x10101BA,0x10101E5,0x7F04005F,0x7F040060,0x7F040118,0x7F040165,0x7F0401D5,0x7F0401D7,0x7F0401D8,0x7F0401D9,0x7F0401DC,0x7F0401DD,0x7F04032C,0x7F040342,0x7F040345,0x7F040378,0x7F040379 }
+			// aapt resource value: { 0x10100D4,0x10101B7,0x10101B8,0x10101B9,0x10101BA,0x10101E5,0x7F04005E,0x7F04005F,0x7F040118,0x7F040165,0x7F0401D5,0x7F0401D7,0x7F0401D8,0x7F0401D9,0x7F0401DC,0x7F0401DD,0x7F04032C,0x7F040342,0x7F040345,0x7F040378,0x7F040379 }
 			public static int[] MaterialButton = new int[] {
 					16842964,
 					16843191,
@@ -33014,8 +35622,8 @@ namespace PixQrCodeGeneratorOffline.Droid
 					16843193,
 					16843194,
 					16843237,
+					2130968670,
 					2130968671,
-					2130968672,
 					2130968856,
 					2130968933,
 					2130969045,
@@ -33030,9 +35638,9 @@ namespace PixQrCodeGeneratorOffline.Droid
 					2130969464,
 					2130969465};
 			
-			// aapt resource value: { 0x7F0400AA,0x7F04033F,0x7F040356 }
+			// aapt resource value: { 0x7F0400A9,0x7F04033F,0x7F040356 }
 			public static int[] MaterialButtonToggleGroup = new int[] {
-					2130968746,
+					2130968745,
 					2130969407,
 					2130969430};
 			
@@ -33194,14 +35802,14 @@ namespace PixQrCodeGeneratorOffline.Droid
 			// aapt resource value: 9
 			public const int MaterialCalendar_yearTodayStyle = 9;
 			
-			// aapt resource value: { 0x10101E5,0x7F040098,0x7F0400AC,0x7F0400AE,0x7F0400AF,0x7F0400B0,0x7F04032C,0x7F040342,0x7F040345,0x7F040372,0x7F040378,0x7F040379 }
+			// aapt resource value: { 0x10101E5,0x7F040097,0x7F0400AB,0x7F0400AD,0x7F0400AE,0x7F0400AF,0x7F04032C,0x7F040342,0x7F040345,0x7F040372,0x7F040378,0x7F040379 }
 			public static int[] MaterialCardView = new int[] {
 					16843237,
-					2130968728,
-					2130968748,
+					2130968727,
+					2130968747,
+					2130968749,
 					2130968750,
 					2130968751,
-					2130968752,
 					2130969388,
 					2130969410,
 					2130969413,
@@ -33245,9 +35853,9 @@ namespace PixQrCodeGeneratorOffline.Droid
 			// aapt resource value: 11
 			public const int MaterialCardView_strokeWidth = 11;
 			
-			// aapt resource value: { 0x7F040093,0x7F04041F }
+			// aapt resource value: { 0x7F040092,0x7F04041F }
 			public static int[] MaterialCheckBox = new int[] {
-					2130968723,
+					2130968722,
 					2130969631};
 			
 			// aapt resource value: 0
@@ -33256,9 +35864,9 @@ namespace PixQrCodeGeneratorOffline.Droid
 			// aapt resource value: 1
 			public const int MaterialCheckBox_useMaterialThemeColors = 1;
 			
-			// aapt resource value: { 0x7F040093,0x7F04041F }
+			// aapt resource value: { 0x7F040092,0x7F04041F }
 			public static int[] MaterialRadioButton = new int[] {
-					2130968723,
+					2130968722,
 					2130969631};
 			
 			// aapt resource value: 0
@@ -33308,9 +35916,9 @@ namespace PixQrCodeGeneratorOffline.Droid
 			// aapt resource value: 2
 			public const int MaterialTextView_lineHeight = 2;
 			
-			// aapt resource value: { 0x7F0400D2,0x7F04020D }
+			// aapt resource value: { 0x7F0400D1,0x7F04020D }
 			public static int[] MaterialTimePicker = new int[] {
-					2130968786,
+					2130968785,
 					2130969101};
 			
 			// aapt resource value: 0
@@ -33361,7 +35969,7 @@ namespace PixQrCodeGeneratorOffline.Droid
 			// aapt resource value: 2
 			public const int MenuGroup_android_visible = 2;
 			
-			// aapt resource value: { 0x1010002,0x101000E,0x10100D0,0x1010106,0x1010194,0x10101DE,0x10101DF,0x10101E1,0x10101E2,0x10101E3,0x10101E4,0x10101E5,0x101026F,0x7F040011,0x7F040025,0x7F040027,0x7F040042,0x7F040101,0x7F0401DC,0x7F0401DD,0x7F0402D4,0x7F04034A,0x7F040404 }
+			// aapt resource value: { 0x1010002,0x101000E,0x10100D0,0x1010106,0x1010194,0x10101DE,0x10101DF,0x10101E1,0x10101E2,0x10101E3,0x10101E4,0x10101E5,0x101026F,0x7F040010,0x7F040024,0x7F040026,0x7F040041,0x7F040101,0x7F0401DC,0x7F0401DD,0x7F0402D4,0x7F04034A,0x7F040404 }
 			public static int[] MenuItem = new int[] {
 					16842754,
 					16842766,
@@ -33376,10 +35984,10 @@ namespace PixQrCodeGeneratorOffline.Droid
 					16843236,
 					16843237,
 					16843375,
-					2130968593,
-					2130968613,
-					2130968615,
-					2130968642,
+					2130968592,
+					2130968612,
+					2130968614,
+					2130968641,
 					2130968833,
 					2130969052,
 					2130969053,
@@ -33522,10 +36130,10 @@ namespace PixQrCodeGeneratorOffline.Droid
 			// aapt resource value: 5
 			public const int MockView_mock_showLabel = 5;
 			
-			// aapt resource value: { 0x7F040044,0x7F040045,0x7F040151,0x7F0402BF,0x7F0402C1,0x7F0402F0,0x7F040317,0x7F040318,0x7F040319,0x7F040413 }
+			// aapt resource value: { 0x7F040043,0x7F040044,0x7F040151,0x7F0402BF,0x7F0402C1,0x7F0402F0,0x7F040317,0x7F040318,0x7F040319,0x7F040413 }
 			public static int[] Motion = new int[] {
+					2130968643,
 					2130968644,
-					2130968645,
 					2130968913,
 					2130969279,
 					2130969281,
@@ -33581,7 +36189,7 @@ namespace PixQrCodeGeneratorOffline.Droid
 			// aapt resource value: 1
 			public const int MotionHelper_onShow = 1;
 			
-			// aapt resource value: { 0x1010095,0x1010096,0x1010097,0x1010098,0x10100AF,0x101014F,0x1010164,0x10103AC,0x1010535,0x7F040074,0x7F040075,0x7F040331,0x7F0403C8,0x7F0403C9,0x7F0403CA,0x7F0403CB,0x7F0403CC,0x7F0403D4,0x7F0403D5,0x7F0403D6,0x7F0403D7,0x7F0403D9,0x7F0403DA,0x7F0403DB,0x7F0403DC }
+			// aapt resource value: { 0x1010095,0x1010096,0x1010097,0x1010098,0x10100AF,0x101014F,0x1010164,0x10103AC,0x1010535,0x7F040073,0x7F040074,0x7F040331,0x7F0403C8,0x7F0403C9,0x7F0403CA,0x7F0403CB,0x7F0403CC,0x7F0403D4,0x7F0403D5,0x7F0403D6,0x7F0403D7,0x7F0403D9,0x7F0403DA,0x7F0403DB,0x7F0403DC }
 			public static int[] MotionLabel = new int[] {
 					16842901,
 					16842902,
@@ -33592,8 +36200,8 @@ namespace PixQrCodeGeneratorOffline.Droid
 					16843108,
 					16843692,
 					16844085,
+					2130968691,
 					2130968692,
-					2130968693,
 					2130969393,
 					2130969544,
 					2130969545,
@@ -33684,9 +36292,9 @@ namespace PixQrCodeGeneratorOffline.Droid
 			// aapt resource value: 24
 			public const int MotionLabel_textureWidth = 24;
 			
-			// aapt resource value: { 0x7F040048,0x7F040125,0x7F040215,0x7F0402A9,0x7F0402C0,0x7F04034E }
+			// aapt resource value: { 0x7F040047,0x7F040125,0x7F040215,0x7F0402A9,0x7F0402C0,0x7F04034E }
 			public static int[] MotionLayout = new int[] {
-					2130968648,
+					2130968647,
 					2130968869,
 					2130969109,
 					2130969257,
@@ -33825,11 +36433,11 @@ namespace PixQrCodeGeneratorOffline.Droid
 			// aapt resource value: 8
 			public const int NavAction_popUpToInclusive = 8;
 			
-			// aapt resource value: { 0x1010003,0x10101ED,0x7F04004A,0x7F0402D2 }
+			// aapt resource value: { 0x1010003,0x10101ED,0x7F040049,0x7F0402D2 }
 			public static int[] NavArgument = new int[] {
 					16842755,
 					16843245,
-					2130968650,
+					2130968649,
 					2130969298};
 			
 			// aapt resource value: 1
@@ -33844,10 +36452,10 @@ namespace PixQrCodeGeneratorOffline.Droid
 			// aapt resource value: 3
 			public const int NavArgument_nullable = 3;
 			
-			// aapt resource value: { 0x10104EE,0x7F040003,0x7F04029C,0x7F04041D }
+			// aapt resource value: { 0x10104EE,0x7F040002,0x7F04029C,0x7F04041D }
 			public static int[] NavDeepLink = new int[] {
 					16844014,
-					2130968579,
+					2130968578,
 					2130969244,
 					2130969629};
 			
@@ -33877,9 +36485,9 @@ namespace PixQrCodeGeneratorOffline.Droid
 			// aapt resource value: 0
 			public const int NavHost_navGraph = 0;
 			
-			// aapt resource value: { 0x7F04005F,0x7F040165,0x7F0401F3,0x7F0401F8,0x7F0401F9,0x7F0401FC,0x7F040208,0x7F040209,0x7F04020A,0x7F040211,0x7F040299 }
+			// aapt resource value: { 0x7F04005E,0x7F040165,0x7F0401F3,0x7F0401F8,0x7F0401F9,0x7F0401FC,0x7F040208,0x7F040209,0x7F04020A,0x7F040211,0x7F040299 }
 			public static int[] NavigationBarView = new int[] {
-					2130968671,
+					2130968670,
 					2130968933,
 					2130969075,
 					2130969080,
@@ -34048,9 +36656,9 @@ namespace PixQrCodeGeneratorOffline.Droid
 			// aapt resource value: 0
 			public const int NavInclude_graph = 0;
 			
-			// aapt resource value: { 0x7F0400CF,0x7F0403AC }
+			// aapt resource value: { 0x7F0400CE,0x7F0403AC }
 			public static int[] OnClick = new int[] {
-					2130968783,
+					2130968782,
 					2130969516};
 			
 			// aapt resource value: 0
@@ -34059,9 +36667,9 @@ namespace PixQrCodeGeneratorOffline.Droid
 			// aapt resource value: 1
 			public const int OnClick_targetId = 1;
 			
-			// aapt resource value: { 0x7F04004E,0x7F04014E,0x7F04014F,0x7F040150,0x7F04025E,0x7F04028F,0x7F040296,0x7F0402C5,0x7F0402CF,0x7F0402DB,0x7F04032D,0x7F040361,0x7F040362,0x7F040363,0x7F040364,0x7F040365,0x7F040405,0x7F040406,0x7F040407 }
+			// aapt resource value: { 0x7F04004D,0x7F04014E,0x7F04014F,0x7F040150,0x7F04025E,0x7F04028F,0x7F040296,0x7F0402C5,0x7F0402CF,0x7F0402DB,0x7F04032D,0x7F040361,0x7F040362,0x7F040363,0x7F040364,0x7F040365,0x7F040405,0x7F040406,0x7F040407 }
 			public static int[] OnSwipe = new int[] {
-					2130968654,
+					2130968653,
 					2130968910,
 					2130968911,
 					2130968912,
@@ -34160,7 +36768,7 @@ namespace PixQrCodeGeneratorOffline.Droid
 			// aapt resource value: 2
 			public const int PopupWindow_overlapAnchor = 2;
 			
-			// aapt resource value: { 0x1010002,0x101000D,0x101000E,0x10100F2,0x10101E1,0x10101E6,0x10101E8,0x10101E9,0x10101EA,0x10101EB,0x10101EC,0x10101ED,0x10101EE,0x10102E3,0x101055C,0x1010561,0x7F04003D,0x7F04003F,0x7F04013A,0x7F04013D,0x7F040168,0x7F04016A,0x7F0401BB,0x7F0401D5,0x7F0401DA,0x7F0401F2,0x7F04020B,0x7F040214,0x7F0402DC,0x7F0402F7,0x7F04033C,0x7F040348,0x7F040355,0x7F040385,0x7F0403F1,0x7F040431 }
+			// aapt resource value: { 0x1010002,0x101000D,0x101000E,0x10100F2,0x10101E1,0x10101E6,0x10101E8,0x10101E9,0x10101EA,0x10101EB,0x10101EC,0x10101ED,0x10101EE,0x10102E3,0x101055C,0x1010561,0x7F04003C,0x7F04003E,0x7F04013A,0x7F04013D,0x7F040168,0x7F04016A,0x7F0401BB,0x7F0401D5,0x7F0401DA,0x7F0401F2,0x7F04020B,0x7F040214,0x7F0402DC,0x7F0402F7,0x7F04033C,0x7F040348,0x7F040355,0x7F040385,0x7F0403F1,0x7F040431 }
 			public static int[] Preference = new int[] {
 					16842754,
 					16842765,
@@ -34178,8 +36786,8 @@ namespace PixQrCodeGeneratorOffline.Droid
 					16843491,
 					16844124,
 					16844129,
-					2130968637,
-					2130968639,
+					2130968636,
+					2130968638,
 					2130968890,
 					2130968893,
 					2130968936,
@@ -34199,19 +36807,19 @@ namespace PixQrCodeGeneratorOffline.Droid
 					2130969585,
 					2130969649};
 			
-			// aapt resource value: { 0x10100F2,0x1010129,0x101012A,0x7F04003E }
+			// aapt resource value: { 0x10100F2,0x1010129,0x101012A,0x7F04003D }
 			public static int[] PreferenceFragment = new int[] {
 					16842994,
 					16843049,
 					16843050,
-					2130968638};
+					2130968637};
 			
-			// aapt resource value: { 0x10100F2,0x1010129,0x101012A,0x7F04003E }
+			// aapt resource value: { 0x10100F2,0x1010129,0x101012A,0x7F04003D }
 			public static int[] PreferenceFragmentCompat = new int[] {
 					16842994,
 					16843049,
 					16843050,
-					2130968638};
+					2130968637};
 			
 			// aapt resource value: 3
 			public const int PreferenceFragmentCompat_allowDividerAfterLastItem = 3;
@@ -34271,9 +36879,9 @@ namespace PixQrCodeGeneratorOffline.Droid
 			// aapt resource value: 3
 			public const int PreferenceImageView_maxWidth = 3;
 			
-			// aapt resource value: { 0x7F0400A8,0x7F040144,0x7F04015F,0x7F040163,0x7F040307,0x7F040308,0x7F040309,0x7F04030A,0x7F04030B,0x7F04030C,0x7F04030D,0x7F04030E,0x7F04030F,0x7F04033A,0x7F04038B,0x7F04038C }
+			// aapt resource value: { 0x7F0400A7,0x7F040144,0x7F04015F,0x7F040163,0x7F040307,0x7F040308,0x7F040309,0x7F04030A,0x7F04030B,0x7F04030C,0x7F04030D,0x7F04030E,0x7F04030F,0x7F04033A,0x7F04038B,0x7F04038C }
 			public static int[] PreferenceTheme = new int[] {
-					2130968744,
+					2130968743,
 					2130968900,
 					2130968927,
 					2130968931,
@@ -34446,8 +37054,9 @@ namespace PixQrCodeGeneratorOffline.Droid
 			// aapt resource value: 35
 			public const int Preference_widgetLayout = 35;
 			
-			// aapt resource value: { 0x7F04002D,0x7F04002E,0x7F04002F,0x7F040030,0x7F040031,0x7F040032,0x7F040033,0x7F040034,0x7F040035,0x7F040036,0x7F040037,0x7F040038 }
+			// aapt resource value: { 0x7F04002C,0x7F04002D,0x7F04002E,0x7F04002F,0x7F040030,0x7F040031,0x7F040032,0x7F040033,0x7F040034,0x7F040035,0x7F040036,0x7F040037 }
 			public static int[] ProgressWheel = new int[] {
+					2130968620,
 					2130968621,
 					2130968622,
 					2130968623,
@@ -34458,8 +37067,7 @@ namespace PixQrCodeGeneratorOffline.Droid
 					2130968628,
 					2130968629,
 					2130968630,
-					2130968631,
-					2130968632};
+					2130968631};
 			
 			// aapt resource value: 0
 			public const int ProgressWheel_ahBarColor = 0;
@@ -34607,9 +37215,9 @@ namespace PixQrCodeGeneratorOffline.Droid
 			// aapt resource value: 0
 			public const int ScrimInsetsFrameLayout_insetForeground = 0;
 			
-			// aapt resource value: { 0x7F04006F }
+			// aapt resource value: { 0x7F04006E }
 			public static int[] ScrollingViewBehavior_Layout = new int[] {
-					2130968687};
+					2130968686};
 			
 			// aapt resource value: 0
 			public const int ScrollingViewBehavior_Layout_behavior_overlapTop = 0;
@@ -34621,14 +37229,14 @@ namespace PixQrCodeGeneratorOffline.Droid
 			// aapt resource value: 0
 			public const int ScrollViewRendererTheme_scrollViewStyle = 0;
 			
-			// aapt resource value: { 0x10100DA,0x101011F,0x1010220,0x1010264,0x7F0400D4,0x7F0400F9,0x7F040138,0x7F0401BF,0x7F0401DE,0x7F040214,0x7F04031A,0x7F04031B,0x7F040336,0x7F040337,0x7F04037B,0x7F040384,0x7F040429 }
+			// aapt resource value: { 0x10100DA,0x101011F,0x1010220,0x1010264,0x7F0400D3,0x7F0400F8,0x7F040138,0x7F0401BF,0x7F0401DE,0x7F040214,0x7F04031A,0x7F04031B,0x7F040336,0x7F040337,0x7F04037B,0x7F040384,0x7F040429 }
 			public static int[] SearchView = new int[] {
 					16842970,
 					16843039,
 					16843296,
 					16843364,
-					2130968788,
-					2130968825,
+					2130968787,
+					2130968824,
 					2130968888,
 					2130969023,
 					2130969054,
@@ -34692,11 +37300,11 @@ namespace PixQrCodeGeneratorOffline.Droid
 			// aapt resource value: 16
 			public const int SearchView_voiceIcon = 16;
 			
-			// aapt resource value: { 0x10100F2,0x1010136,0x7F04002C,0x7F04029D,0x7F040339,0x7F04034F,0x7F04041C }
+			// aapt resource value: { 0x10100F2,0x1010136,0x7F04002B,0x7F04029D,0x7F040339,0x7F04034F,0x7F04041C }
 			public static int[] SeekBarPreference = new int[] {
 					16842994,
 					16843062,
-					2130968620,
+					2130968619,
 					2130969245,
 					2130969401,
 					2130969423,
@@ -34910,14 +37518,14 @@ namespace PixQrCodeGeneratorOffline.Droid
 					2130969434,
 					2130969435};
 			
-			// aapt resource value: { 0x101011F,0x7F040026,0x7F040046,0x7F04005C,0x7F04005F,0x7F040060,0x7F040165,0x7F040290 }
+			// aapt resource value: { 0x101011F,0x7F040025,0x7F040045,0x7F04005B,0x7F04005E,0x7F04005F,0x7F040165,0x7F040290 }
 			public static int[] SnackbarLayout = new int[] {
 					16843039,
-					2130968614,
-					2130968646,
-					2130968668,
+					2130968613,
+					2130968645,
+					2130968667,
+					2130968670,
 					2130968671,
-					2130968672,
 					2130968933,
 					2130969232};
 			
@@ -35377,7 +37985,7 @@ namespace PixQrCodeGeneratorOffline.Droid
 			// aapt resource value: 15
 			public const int TextAppearance_textLocale = 15;
 			
-			// aapt resource value: { 0x1010095,0x1010096,0x1010097,0x101014F,0x1010161,0x1010162,0x1010163,0x1010164,0x10103AC,0x7F040074,0x7F040075,0x7F0403D0,0x7F0403D4,0x7F0403D5 }
+			// aapt resource value: { 0x1010095,0x1010096,0x1010097,0x101014F,0x1010161,0x1010162,0x1010163,0x1010164,0x10103AC,0x7F040073,0x7F040074,0x7F0403D0,0x7F0403D4,0x7F0403D5 }
 			public static int[] TextEffects = new int[] {
 					16842901,
 					16842902,
@@ -35388,8 +37996,8 @@ namespace PixQrCodeGeneratorOffline.Droid
 					16843107,
 					16843108,
 					16843692,
+					2130968691,
 					2130968692,
-					2130968693,
 					2130969552,
 					2130969556,
 					2130969557};
@@ -35443,13 +38051,14 @@ namespace PixQrCodeGeneratorOffline.Droid
 			// aapt resource value: 0
 			public const int TextInputEditText_textInputLayoutFocusedRectEnabled = 0;
 			
-			// aapt resource value: { 0x101000E,0x101009A,0x101011F,0x101013F,0x1010150,0x7F04007C,0x7F04007D,0x7F04007E,0x7F04007F,0x7F040080,0x7F040081,0x7F040082,0x7F040083,0x7F040084,0x7F040085,0x7F040086,0x7F04011E,0x7F04011F,0x7F040120,0x7F040121,0x7F040122,0x7F040123,0x7F04016B,0x7F04016C,0x7F04016D,0x7F04016E,0x7F04016F,0x7F040170,0x7F040177,0x7F040178,0x7F040179,0x7F04017A,0x7F04017B,0x7F04017C,0x7F04017D,0x7F040181,0x7F0401C5,0x7F0401C6,0x7F0401C7,0x7F0401C8,0x7F0401CD,0x7F0401CE,0x7F0401CF,0x7F0401D0,0x7F0402EB,0x7F0402EC,0x7F0402ED,0x7F0402EE,0x7F0402EF,0x7F0402F9,0x7F0402FA,0x7F0402FB,0x7F040310,0x7F040311,0x7F040312,0x7F040342,0x7F040345,0x7F04036A,0x7F04036B,0x7F04036C,0x7F04036D,0x7F04036E,0x7F040381,0x7F040382,0x7F040383 }
+			// aapt resource value: { 0x101000E,0x101009A,0x101011F,0x101013F,0x1010150,0x7F04007B,0x7F04007C,0x7F04007D,0x7F04007E,0x7F04007F,0x7F040080,0x7F040081,0x7F040082,0x7F040083,0x7F040084,0x7F040085,0x7F04011E,0x7F04011F,0x7F040120,0x7F040121,0x7F040122,0x7F040123,0x7F04016B,0x7F04016C,0x7F04016D,0x7F04016E,0x7F04016F,0x7F040170,0x7F040177,0x7F040178,0x7F040179,0x7F04017A,0x7F04017B,0x7F04017C,0x7F04017D,0x7F040181,0x7F0401C5,0x7F0401C6,0x7F0401C7,0x7F0401C8,0x7F0401CD,0x7F0401CE,0x7F0401CF,0x7F0401D0,0x7F0402EB,0x7F0402EC,0x7F0402ED,0x7F0402EE,0x7F0402EF,0x7F0402F9,0x7F0402FA,0x7F0402FB,0x7F040310,0x7F040311,0x7F040312,0x7F040342,0x7F040345,0x7F04036A,0x7F04036B,0x7F04036C,0x7F04036D,0x7F04036E,0x7F040381,0x7F040382,0x7F040383 }
 			public static int[] TextInputLayout = new int[] {
 					16842766,
 					16842906,
 					16843039,
 					16843071,
 					16843088,
+					2130968699,
 					2130968700,
 					2130968701,
 					2130968702,
@@ -35460,7 +38069,6 @@ namespace PixQrCodeGeneratorOffline.Droid
 					2130968707,
 					2130968708,
 					2130968709,
-					2130968710,
 					2130968862,
 					2130968863,
 					2130968864,
@@ -35721,13 +38329,13 @@ namespace PixQrCodeGeneratorOffline.Droid
 			// aapt resource value: 2
 			public const int ThemeEnforcement_enforceTextAppearance = 2;
 			
-			// aapt resource value: { 0x10100AF,0x1010140,0x7F04008E,0x7F0400DC,0x7F0400DD,0x7F040102,0x7F040103,0x7F040104,0x7F040105,0x7F040106,0x7F040107,0x7F040271,0x7F040272,0x7F040291,0x7F040299,0x7F0402C8,0x7F0402C9,0x7F040304,0x7F04037C,0x7F04037E,0x7F04037F,0x7F0403F1,0x7F0403F5,0x7F0403F6,0x7F0403F7,0x7F0403F8,0x7F0403F9,0x7F0403FA,0x7F0403FB,0x7F0403FC }
+			// aapt resource value: { 0x10100AF,0x1010140,0x7F04008D,0x7F0400DB,0x7F0400DC,0x7F040102,0x7F040103,0x7F040104,0x7F040105,0x7F040106,0x7F040107,0x7F040271,0x7F040272,0x7F040291,0x7F040299,0x7F0402C8,0x7F0402C9,0x7F040304,0x7F04037C,0x7F04037E,0x7F04037F,0x7F0403F1,0x7F0403F5,0x7F0403F6,0x7F0403F7,0x7F0403F8,0x7F0403F9,0x7F0403FA,0x7F0403FB,0x7F0403FC }
 			public static int[] Toolbar = new int[] {
 					16842927,
 					16843072,
-					2130968718,
+					2130968717,
+					2130968795,
 					2130968796,
-					2130968797,
 					2130968834,
 					2130968835,
 					2130968836,
@@ -35844,7 +38452,7 @@ namespace PixQrCodeGeneratorOffline.Droid
 			// aapt resource value: 29
 			public const int Toolbar_titleTextColor = 29;
 			
-			// aapt resource value: { 0x1010034,0x10100D5,0x10100F6,0x101013F,0x1010140,0x101014F,0x7F04005F }
+			// aapt resource value: { 0x1010034,0x10100D5,0x10100F6,0x101013F,0x1010140,0x101014F,0x7F04005E }
 			public static int[] Tooltip = new int[] {
 					16842804,
 					16842965,
@@ -35852,7 +38460,7 @@ namespace PixQrCodeGeneratorOffline.Droid
 					16843071,
 					16843072,
 					16843087,
-					2130968671};
+					2130968670};
 			
 			// aapt resource value: 2
 			public const int Tooltip_android_layout_margin = 2;
@@ -35926,10 +38534,10 @@ namespace PixQrCodeGeneratorOffline.Droid
 			// aapt resource value: 11
 			public const int Transform_transformPivotTarget = 11;
 			
-			// aapt resource value: { 0x10100D0,0x7F040055,0x7F0400FB,0x7F0400FC,0x7F040160,0x7F040216,0x7F0402BD,0x7F0402F0,0x7F040368,0x7F040412,0x7F040414 }
+			// aapt resource value: { 0x10100D0,0x7F040054,0x7F0400FB,0x7F0400FC,0x7F040160,0x7F040216,0x7F0402BD,0x7F0402F0,0x7F040368,0x7F040412,0x7F040414 }
 			public static int[] Transition = new int[] {
 					16842960,
-					2130968661,
+					2130968660,
 					2130968827,
 					2130968828,
 					2130968928,
@@ -36004,11 +38612,11 @@ namespace PixQrCodeGeneratorOffline.Droid
 					2130969317,
 					2130969565};
 			
-			// aapt resource value: { 0x10100D4,0x7F04005F,0x7F040060 }
+			// aapt resource value: { 0x10100D4,0x7F04005E,0x7F04005F }
 			public static int[] ViewBackgroundHelper = new int[] {
 					16842964,
-					2130968671,
-					2130968672};
+					2130968670,
+					2130968671};
 			
 			// aapt resource value: 0
 			public const int ViewBackgroundHelper_android_background = 0;
@@ -36041,12 +38649,12 @@ namespace PixQrCodeGeneratorOffline.Droid
 			// aapt resource value: 1
 			public const int ViewStubCompat_android_layout = 1;
 			
-			// aapt resource value: { 0x10100D0,0x7F040001,0x7F040002,0x7F0400CE,0x7F040160,0x7F0401DF,0x7F0401E0,0x7F0402BD,0x7F0402C2,0x7F0402DA,0x7F0402F0,0x7F040341,0x7F040412,0x7F04041B,0x7F040424 }
+			// aapt resource value: { 0x10100D0,0x7F040000,0x7F040001,0x7F0400CD,0x7F040160,0x7F0401DF,0x7F0401E0,0x7F0402BD,0x7F0402C2,0x7F0402DA,0x7F0402F0,0x7F040341,0x7F040412,0x7F04041B,0x7F040424 }
 			public static int[] ViewTransition = new int[] {
 					16842960,
+					2130968576,
 					2130968577,
-					2130968578,
-					2130968782,
+					2130968781,
 					2130968928,
 					2130969055,
 					2130969056,
