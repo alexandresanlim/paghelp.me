@@ -1,13 +1,10 @@
 ﻿using PixQrCodeGeneratorOffline.Models.DataStatic.Institutions.Base;
 using PixQrCodeGeneratorOffline.Models.DataStatic.Institutions.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.Models.DataStatic.Institutions
 {
-    class BancoInter : InstitutionBase, IInstitution
+    class BancoInter : InstitutionBase, IInstitutionBank
     {
         public string Name => "Banco Inter";
 

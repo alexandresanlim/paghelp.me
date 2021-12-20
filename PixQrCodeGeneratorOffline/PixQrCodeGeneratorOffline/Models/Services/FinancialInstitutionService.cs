@@ -10,13 +10,6 @@ namespace PixQrCodeGeneratorOffline.Models.Services
 {
     public class FinancialInstitutionService : IFinancialInstitutionService
     {
-        private readonly IMaterialColorService _materialColorService;
-
-        public FinancialInstitutionService()
-        {
-            _materialColorService = DependencyService.Get<IMaterialColorService>();
-        }
-
         public FinancialInstitution Create(FinancialInstitutionType financialInstitutionType, bool availablePremium = false)
         {
             return new FinancialInstitution
@@ -155,7 +148,7 @@ namespace PixQrCodeGeneratorOffline.Models.Services
             return ToInstitution(i);
         }
 
-        private Institution ToInstitution(IInstitution institution)
+        private Institution ToInstitution(IInstitutionBank institution)
         {
             return new Institution
             {
@@ -165,24 +158,24 @@ namespace PixQrCodeGeneratorOffline.Models.Services
             };
         }
 
-        public string GetName(IInstitution institution)
+        public string GetName(IInstitutionBank institution)
         {
             return institution.Name;
         }
 
-        public MaterialColor GetMaterialColor(IInstitution institution)
+        public MaterialColor GetMaterialColor(IInstitutionBank institution)
         {
             return institution.MaterialColor;
         }
 
-        public FinancialInstitutionType GetType(IInstitution institution)
+        public FinancialInstitutionType GetType(IInstitutionBank institution)
         {
             return institution.Type;
         }
 
-        public List<IInstitution> GetInstitutionList()
+        public List<IInstitutionBank> GetInstitutionList()
         {
-            return new List<IInstitution>
+            return new List<IInstitutionBank>
             {
                 new BancoBMG(),
                 new BancoBTGPactual(),

@@ -7,7 +7,7 @@ using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.Models.DataStatic.Institutions
 {
-    public class BancoBTGPactual : InstitutionBase, IInstitution
+    public class BancoBTGPactual : InstitutionBase, IInstitutionBank
     {
         public string Name => "Banco BTG Pactual";
 
