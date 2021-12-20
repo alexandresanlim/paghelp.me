@@ -94,13 +94,6 @@ namespace PixQrCodeGeneratorOffline.Models
                 },
                 new PixKeyAction
                 {
-                    Title = "Ver Qr Code",
-                    Icon = FontAwesomeSolid.Qrcode,
-                    Command = pixKey?.Command?.NavigateToPaymentPageCommand,
-                    Colors = pixKey?.FinancialInstitution?.Institution?.MaterialColor
-                },
-                new PixKeyAction
-                {
                     Title = "Copiar Chave",
                     Icon = FontAwesomeSolid.Copy,
                     Command = pixKey?.Command?.CopyKeyCommand,
@@ -128,6 +121,20 @@ namespace PixQrCodeGeneratorOffline.Models
                     Command = pixKey?.Command?.NavigateToBillingCommand,
                     Colors = pixKey?.FinancialInstitution?.Institution?.MaterialColor
                 },
+                new PixKeyAction
+                {
+                    Title = "Ver Qr Code",
+                    Icon = FontAwesomeSolid.Qrcode,
+                    Command = pixKey?.Command?.NavigateToPaymentPageCommand,
+                    Colors = pixKey?.FinancialInstitution?.Institution?.MaterialColor
+                },
+                //new PixKeyAction
+                //{
+                //    Title = "Baixar Qr Code",
+                //    Icon = FontAwesomeSolid.Qrcode,
+                //    Command = pixKey?.Command?.NavigateToDownloadQrCodeCommand,
+                //    Colors = pixKey?.FinancialInstitution?.Institution?.MaterialColor
+                //},
                 new PixKeyAction
                 {
                     Title = "Editar Chave",

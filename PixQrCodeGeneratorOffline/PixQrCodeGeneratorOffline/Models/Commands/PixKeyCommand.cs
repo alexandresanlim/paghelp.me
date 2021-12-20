@@ -5,6 +5,7 @@ using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Services;
 using PixQrCodeGeneratorOffline.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Views;
+using PixQrCodeGeneratorOffline.Views.Shared;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -36,6 +37,8 @@ namespace PixQrCodeGeneratorOffline.Models.Commands
 
         public ICommand NavigateToPaymentPageCommand { get; private set; }
 
+        public ICommand NavigateToDownloadQrCodeCommand { get; private set; }
+
         public ICommand EditKeyCommand { get; private set; }
 
         public ICommand NavigateToBillingCommand { get; private set; }
@@ -50,7 +53,8 @@ namespace PixQrCodeGeneratorOffline.Models.Commands
                 NavigateToCreateBillingPageCommand = GetNavigateToCreateBillingCommand(pixKey),
                 NavigateToPaymentPageCommand = GetNavigateToPaymentPageCommand(pixKey),
                 EditKeyCommand = GetEdityKeyCommand(pixKey),
-                NavigateToBillingCommand = GetNavigateToBillingCommand(pixKey)
+                NavigateToBillingCommand = GetNavigateToBillingCommand(pixKey),
+                NavigateToDownloadQrCodeCommand = GetNavigateToDownloadQrCodeCommand(pixKey),
             } : new PixKeyCommand();
         }
 
@@ -155,6 +159,31 @@ namespace PixQrCodeGeneratorOffline.Models.Commands
                 finally
                 {
                     _eventService.SendEvent("Navegou para pagina de pagamento a partir da dashboard", EventType.NAVIGATION);
+
+                    DialogService.HideLoading();
+                }
+            });
+        }
+
+        private Command GetNavigateToDownloadQrCodeCommand(PixKey pixKey)
+        {
+            return new Command(async () =>
+            {
+                try
+                {
+                    DialogService.ShowLoading("");
+
+                    await Task.Delay(500);
+
+                    await Shell.Current.Navigation.PushAsync(new WebViewPage(new System.Uri("https://chart.googleapis.com/chart?chs=400x400&cht=qr&chl=" + pixKey?.Payload?.QrCode)));
+                }
+                catch (System.Exception e)
+                {
+                    e.SendToLog();
+                }
+                finally
+                {
+                    _eventService.SendEvent("Navegou para baixar o Qr Code", EventType.NAVIGATION);
 
                     DialogService.HideLoading();
                 }
