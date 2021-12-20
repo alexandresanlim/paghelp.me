@@ -141,16 +141,16 @@ namespace PixQrCodeGeneratorOffline.Models.Services
         //        : GetInstitutionList()?.FirstOrDefault(x => x.Name.ToLower().Equals(financialInstitution?.Name?.ToLower())) ?? new NaoInformado();
         //}
 
-        public Institution GetInstitutionInstance(FinancialInstitution financialInstitution)
+        public InstitutionBank GetInstitutionInstance(FinancialInstitution financialInstitution)
         {
             var i = GetInstitutionList()?.FirstOrDefault(x => x.Type == financialInstitution.Type || x.Name.ToLower().Equals(financialInstitution?.Name?.ToLower())) ?? new NaoInformado();
 
             return ToInstitution(i);
         }
 
-        private Institution ToInstitution(IInstitutionBank institution)
+        private InstitutionBank ToInstitution(IInstitutionBank institution)
         {
-            return new Institution
+            return new InstitutionBank
             {
                 Name = GetName(institution),
                 Type = GetType(institution),

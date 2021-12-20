@@ -1,9 +1,0 @@
-﻿namespace PixQrCodeGeneratorOffline.Models.DataStatic.Institutions.Interfaces
-{
-    public interface IInstitution
-    {
-        string Name { get; }
-
-        MaterialColor MaterialColor { get; }
-    }
-}

@@ -17,7 +17,7 @@ namespace PixQrCodeGeneratorOffline.Models
         public FinancialInstitutionType Type { get; set; }
 
         [LiteDB.BsonIgnore]
-        public Institution Institution => _financialInstitutionService.GetInstitutionInstance(this) ?? new Institution();
+        public InstitutionBank Institution => _financialInstitutionService.GetInstitutionInstance(this) ?? new InstitutionBank();
     }
 
     public enum FinancialInstitutionType

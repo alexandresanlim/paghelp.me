@@ -14,6 +14,6 @@ namespace PixQrCodeGeneratorOffline.Models.Services.Interfaces
 
         //IInstitution GetInstitution(FinancialInstitution financialInstitution);
 
-        Institution GetInstitutionInstance(FinancialInstitution financialInstitution);
+        InstitutionBank GetInstitutionInstance(FinancialInstitution financialInstitution);
     }
 }
