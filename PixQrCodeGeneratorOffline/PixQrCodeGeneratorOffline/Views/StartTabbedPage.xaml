@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage
+    x:Class="PixQrCodeGeneratorOffline.Views.StartTabbedPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:PixQrCodeGeneratorOffline.Views"
+    BarBackgroundColor="{DynamicResource primaryDark}"
+    Shell.NavBarIsVisible="False">
+    <!--  Pages can be added as references or inline  -->
+
+
+    <views:StartPage Title="Pix" />
+    <views:StartMorePage Title="Mais" />
+    <!--<views:StartCryptoPage Title="Criptomoedas" />-->
+</TabbedPage>

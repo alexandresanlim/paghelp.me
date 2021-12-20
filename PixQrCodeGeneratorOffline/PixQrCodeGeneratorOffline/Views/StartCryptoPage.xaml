@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="PixQrCodeGeneratorOffline.Views.StartCryptoPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:contentStart="clr-namespace:PixQrCodeGeneratorOffline.Views.Content.StartPageContents"
+    xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
+    xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon"
+    xmlns:templates="clr-namespace:PixQrCodeGeneratorOffline.Templates"
+    BackgroundColor="{DynamicResource background_page}">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Spacing="0">
+                <Grid ColumnDefinitions="*, auto" ColumnSpacing="0">
+                    <templates:TemplateTitlePanel
+                        Title="Minhas Chaves Cripto"
+                        Grid.Column="0"
+                        BackgroundColor="{Binding CurrentPixKey.FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
+                        Icon="{x:Static icons:FontAwesomeSolid.Key}"
+                        IconColor="{Binding CurrentPixKey.FinancialInstitution.Institution.MaterialColor.TextOnPrimary}"
+                        TitleColor="{Binding CurrentPixKey.FinancialInstitution.Institution.MaterialColor.TextOnPrimary}" />
+
+                    <StackLayout
+                        Grid.Column="1"
+                        Padding="30,15,15,15"
+                        BackgroundColor="{Binding CurrentPixKey.FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
+                        IsVisible="False">
+                        <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Eye}" TextColor="{DynamicResource textPrimary}" />
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding HideValueCommand}" />
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+                </Grid>
+
+                <!--<contentStart:StartPageMyKeysView />-->
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

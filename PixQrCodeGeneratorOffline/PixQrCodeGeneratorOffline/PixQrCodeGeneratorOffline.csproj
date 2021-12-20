@@ -60,6 +60,9 @@
     <Compile Update="Views\BillingSaveListPage.xaml.cs">
       <DependentUpon>BillingSaveListPage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\StartMorePage.xaml.cs">
+      <DependentUpon>StartMorePage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\ShareKeyPage.xaml.cs">
       <DependentUpon>ShareKeyPage.xaml</DependentUpon>
     </Compile>
@@ -129,6 +132,9 @@
     <EmbeddedResource Update="Views\Content\StartPageContents\StartPageContactsKeysView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\Content\StartPageContents\StartPageMyKeysCryptoView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\Content\StartPageContents\StartPageMyKeysView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -147,10 +153,10 @@
     <EmbeddedResource Update="Views\DashboardContactPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\DashboardTabbedPage.xaml">
+    <EmbeddedResource Update="Views\GuidePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\GuidePage.xaml">
+    <EmbeddedResource Update="Views\StartMorePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\NewsPage.xaml">
@@ -174,7 +180,13 @@
     <EmbeddedResource Update="Views\ShareKeyPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\StartCryptoPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\StartPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\StartTabbedPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

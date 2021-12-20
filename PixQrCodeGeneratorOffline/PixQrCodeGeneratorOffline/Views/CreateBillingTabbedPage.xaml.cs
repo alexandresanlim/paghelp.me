@@ -19,7 +19,7 @@ namespace PixQrCodeGeneratorOffline.Views
         {
             PixKey = pixKey;
 
-            App.StatusBarService.SetStatusBarColor(pixKey.FinancialInstitution.Institution.MaterialColor.Primary);
+            //App.StatusBarService.SetStatusBarColor(pixKey.FinancialInstitution.Institution.MaterialColor.Primary);
 
             InitializeComponent();
 

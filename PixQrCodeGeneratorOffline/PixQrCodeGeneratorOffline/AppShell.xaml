@@ -33,7 +33,7 @@
     <TabBar>
         <ShellContent
             Title="Pix"
-            ContentTemplate="{DataTemplate local:StartPage}"
+            ContentTemplate="{DataTemplate local:StartTabbedPage}"
             Icon="icon_key.png" />
         <!--<ShellContent Title="Notícias" Icon="icon_feed.png" ContentTemplate="{DataTemplate local:NewsPage}" />-->
         <!--<ShellContent Title="Guia PIX" Icon="icon_help.png" ContentTemplate="{DataTemplate local:GuidePage}" />

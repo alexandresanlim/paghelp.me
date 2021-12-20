@@ -10,8 +10,7 @@
     xmlns:templates="clr-namespace:PixQrCodeGeneratorOffline.Templates"
     xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
     x:DataType="vm:DashboardViewModel"
-    BackgroundColor="{DynamicResource background_page}"
-    Shell.NavBarIsVisible="False">
+    BackgroundColor="{DynamicResource background_page}">
 
 
     <ContentPage.Resources>
@@ -45,7 +44,7 @@
                 <Setter Property="BackgroundColor" Value="{DynamicResource foreground_page}" />
             </Style>
 
-            
+
 
             <Style x:Key="styleTextOnButtonActionListContact" TargetType="Label">
                 <Setter Property="TextColor" Value="{DynamicResource textPrimary}" />
@@ -82,7 +81,7 @@
 
                     <Grid ColumnDefinitions="*, auto" ColumnSpacing="0">
                         <templates:TemplateTitlePanel
-                            Title="Minhas Chaves"
+                            Title="Minhas Chaves Pix"
                             Grid.Column="0"
                             BackgroundColor="{Binding CurrentPixKey.FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
                             Icon="{x:Static icons:FontAwesomeSolid.Key}"
@@ -145,21 +144,7 @@
 
                     <content:DivisionView Margin="0,8,0,0" />
 
-                    <Grid Padding="0,0,10,0" ColumnDefinitions="*, auto">
 
-                        <Grid.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding NavigateToPreferencesCommand}" />
-                        </Grid.GestureRecognizers>
-
-                        <templates:TemplateTitlePanel
-                            Title="Preferências"
-                            Grid.Column="0"
-                            Icon="{x:Static icons:FontAwesomeSolid.UserCog}" />
-
-                        <content:ChevronRightView Grid.Column="1" />
-                    </Grid>
-
-                    <content:DivisionView />
 
                     <!--  //////////////////////////////////////////////////////////////////////////////////////////////////////////////  -->
 
@@ -174,35 +159,6 @@
                         <content:ChevronRightView Grid.Column="1" />
                     </Grid>
 
-                    <content:DivisionView />
-
-                    <!--  //////////////////////////////////////////////////////////////////////////////////////////////////////////////  -->
-
-                    <Grid Padding="0,0,10,0" ColumnDefinitions="*, auto">
-
-                        <Grid.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding NavigateBenefitsCommand}" />
-                        </Grid.GestureRecognizers>
-
-                        <templates:TemplateTitlePanel Title="Por quê Paghelp.me?" Icon="{x:Static icons:FontAwesomeSolid.InfoCircle}" />
-
-                        <content:ChevronRightView Grid.Column="1" />
-                    </Grid>
-
-                    <content:DivisionView />
-
-                    <!--  //////////////////////////////////////////////////////////////////////////////////////////////////////////////  -->
-
-                    <Grid Padding="0,0,10,0" ColumnDefinitions="*, auto">
-
-                        <Grid.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding NavigateToAboutCommand}" />
-                        </Grid.GestureRecognizers>
-
-                        <templates:TemplateTitlePanel Title="Sobre o App" Icon="{x:Static icons:FontAwesomeSolid.MobileAlt}" />
-
-                        <content:ChevronRightView Grid.Column="1" />
-                    </Grid>
 
                     <content:DivisionView />
 

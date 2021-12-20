@@ -24,13 +24,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
     {
         #region Commands
 
-        public IAsyncCommand NavigateToPreferencesCommand => new AsyncCommand(async () => await NavigateAsync(new OptionPreferencePage()));
-
         public IAsyncCommand NavigateToGuidCommand => new AsyncCommand(async () => await NavigateAsync(new GuidePage()));
-
-        public IAsyncCommand NavigateToAboutCommand => new AsyncCommand(async () => await NavigateAsync(new AboutPage()));
-
-        public IAsyncCommand NavigateBenefitsCommand => new AsyncCommand(async () => await NavigateAsync(new BenefitsPage(PixKeyList.Count > 0)));
 
         public IAsyncCommand NavigateToAddNewKeyPageCommand => new AsyncCommand(async () => await _pixKeyService.NavigateToAdd());
 
@@ -327,7 +321,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             MainThread.BeginInvokeOnMainThread(() =>
             {
                 CurrentPixKey = pixkey;
-                _statusBar.SetStatusBarColor(pixkey.FinancialInstitution.Institution.MaterialColor.PrimaryDark);
+                //_statusBar.SetStatusBarColor(pixkey.FinancialInstitution.Institution.MaterialColor.PrimaryDark);
                 CurrentPixKeyActions = pixkey?.Actions?.ToObservableCollection() ?? new ObservableCollection<PixKeyAction>();
             });
         }

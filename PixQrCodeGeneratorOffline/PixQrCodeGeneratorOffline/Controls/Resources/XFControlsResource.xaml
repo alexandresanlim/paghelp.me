@@ -54,4 +54,10 @@
         <Setter Property="Visual" Value="Material" />
     </Style>
 
+    <Style TargetType="TabbedPage">
+        <Setter Property="BackgroundColor" Value="{DynamicResource primaryDark}" />
+        <Setter Property="BarTextColor" Value="{DynamicResource textOnPrimary}" />
+        <Setter Property="BarBackgroundColor" Value="{DynamicResource primaryDark}" />
+    </Style>
+
 </ResourceDictionary>

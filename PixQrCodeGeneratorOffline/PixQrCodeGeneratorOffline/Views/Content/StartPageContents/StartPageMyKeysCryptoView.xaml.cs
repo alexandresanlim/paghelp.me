@@ -3,9 +3,9 @@ using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.Views.Content.StartPageContents
 {
-    public partial class StartPageMyKeysView : Grid
+    public partial class StartPageMyKeysCryptoView : Grid
     {
-        public StartPageMyKeysView()
+        public StartPageMyKeysCryptoView()
         {
             InitializeComponent();
         }
