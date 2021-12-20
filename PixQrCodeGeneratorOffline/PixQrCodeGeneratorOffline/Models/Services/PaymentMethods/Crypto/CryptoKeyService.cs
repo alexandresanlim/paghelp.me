@@ -5,6 +5,8 @@ using PixQrCodeGeneratorOffline.Models.Repository.PaymentMethods.Crypto.Interfac
 using PixQrCodeGeneratorOffline.Models.Services.PaymentMethods.Crypto.Interfaces;
 using PixQrCodeGeneratorOffline.Services;
 using PixQrCodeGeneratorOffline.Services.Interfaces;
+using PixQrCodeGeneratorOffline.Views;
+using PixQrCodeGeneratorOffline.Views.PaymentMethods.Crypto;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -197,7 +199,7 @@ namespace PixQrCodeGeneratorOffline.Models.Services.PaymentMethods.Crypto
 
                 await Task.Delay(500);
 
-                //await Shell.Current.Navigation.PushAsync(new AddPixKeyPage(null, isContact));
+                await Shell.Current.Navigation.PushAsync(new AddCryptoKeyPage(null, isContact));
             }
             catch (System.Exception e)
             {
