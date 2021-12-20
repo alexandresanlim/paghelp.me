@@ -6,7 +6,8 @@
     xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
     xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
     Title="Compartilhar Chaves"
-    x:DataType="vm:ShareKeyViewModel">
+    x:DataType="vm:ShareKeyViewModel"
+    BackgroundColor="{DynamicResource background_page}">
 
     <ContentPage.Resources>
 

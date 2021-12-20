@@ -8,7 +8,8 @@
     xmlns:preferences="clr-namespace:PixQrCodeGeneratorOffline.Templates.Preferences"
     xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
     Title="Vantagens Paghelp.me!"
-    x:DataType="vm:BenefitsViewModel">
+    x:DataType="vm:BenefitsViewModel"
+    BackgroundColor="{DynamicResource background_page}">
     <ContentPage.Content>
 
         <Grid RowDefinitions="*,auto">
