@@ -1,6 +1,8 @@
-﻿namespace PixQrCodeGeneratorOffline.Models.Viewer
+﻿using PixQrCodeGeneratorOffline.Models.Base;
+
+namespace PixQrCodeGeneratorOffline.Models.Viewer
 {
-    public class PixKeyViewer
+    public class PixKeyViewer : NotifyObjectBase
     {
         public string NameAndCity { get; set; }
 
@@ -15,5 +17,12 @@
         public string BankAndKey { get; set; }
 
         public string Initial { get; set; }
+
+        private bool _isHideValue;
+        public bool IsHideValue
+        {
+            get => _isHideValue;
+            set => SetProperty(ref _isHideValue, value);
+        }
     }
 }

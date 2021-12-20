@@ -29,7 +29,7 @@
                     FontSize="50"
                     Glyph="{x:Static icons:FontAwesomeSolid.Wind}"
                     HorizontalOptions="CenterAndExpand"
-                    IconColor="{DynamicResource textPrimary}" />
+                    TextColor="{DynamicResource textPrimary}" />
                 <Label
                     HorizontalOptions="CenterAndExpand"
                     Text="Ainda não há nada por aqui."
@@ -70,7 +70,7 @@
                                     Grid.Row="0"
                                     Grid.Column="0"
                                     Glyph="{x:Static icons:FontAwesomeSolid.UserAlt}"
-                                    IconColor="{DynamicResource textSecondary}" />
+                                    TextColor="{DynamicResource textSecondary}" />
                                 <Label
                                     Grid.Row="0"
                                     Grid.Column="1"
@@ -82,7 +82,7 @@
                                     Grid.Row="1"
                                     Grid.Column="0"
                                     Glyph="{x:Static icons:FontAwesomeSolid.Key}"
-                                    IconColor="{DynamicResource textSecondary}" />
+                                    TextColor="{DynamicResource textSecondary}" />
                                 <Label
                                     Grid.Row="1"
                                     Grid.Column="1"

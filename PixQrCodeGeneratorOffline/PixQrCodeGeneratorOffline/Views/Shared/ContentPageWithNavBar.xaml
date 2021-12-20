@@ -22,7 +22,7 @@
                         <controls:CustomIcon
                             FontSize="{DynamicResource FontSizeLarge}"
                             Glyph="{x:Static icons:FontAwesomeSolid.ChevronLeft}"
-                            IconColor="{DynamicResource textPrimary}" />
+                            TextColor="{DynamicResource textPrimary}" />
                     </StackLayout>
 
                     <Label

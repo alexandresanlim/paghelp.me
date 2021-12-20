@@ -8,5 +8,5 @@
     FontSize="{DynamicResource FontSizeMedium}"
     Glyph="{x:Static icons:FontAwesomeSolid.ChevronRight}"
     HorizontalOptions="End"
-    IconColor="{DynamicResource textSecondary}"
+    TextColor="{DynamicResource textSecondary}"
     VerticalOptions="CenterAndExpand" />

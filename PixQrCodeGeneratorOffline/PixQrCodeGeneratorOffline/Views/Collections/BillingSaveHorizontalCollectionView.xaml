@@ -8,8 +8,20 @@
     xmlns:models="clr-namespace:PixQrCodeGeneratorOffline.Models"
     xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels">
 
-
-
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <Style x:Key="styleActionIcon" TargetType="controls:CustomIcon">
+                <Setter Property="FontSize" Value="{DynamicResource FontSizeSmall}" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                <Setter Property="TextColor" Value="{DynamicResource textPrimary}" />
+            </Style>
+            <Style x:Key="styleActionText" TargetType="Label">
+                <Setter Property="FontFamily" Value="{DynamicResource FontSemiBold}" />
+                <Setter Property="FontSize" Value="{DynamicResource FontSizeSmall}" />
+                <Setter Property="TextColor" Value="{DynamicResource textPrimary}" />
+            </Style>
+        </ResourceDictionary>
+    </ContentView.Resources>
 
     <ContentView.Content>
         <controls:CustomCollectionView
@@ -29,7 +41,7 @@
                             FontSize="50"
                             Glyph="{x:Static icons:FontAwesomeSolid.Wind}"
                             HorizontalOptions="Center"
-                            IconColor="{DynamicResource textPrimary}" />
+                            TextColor="{DynamicResource textPrimary}" />
                         <Label
                             HorizontalOptions="CenterAndExpand"
                             Text="Ainda não há nada por aqui."

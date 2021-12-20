@@ -42,7 +42,7 @@
                             <controls:CustomIcon
                                 FontSize="{DynamicResource FontSizeLarge}"
                                 Glyph="{x:Static icons:FontAwesomeSolid.Save}"
-                                IconColor="{DynamicResource textPrimary}" />
+                                TextColor="{DynamicResource textPrimary}" />
                             <Label
                                 FontFamily="{DynamicResource FontBold}"
                                 Text="Salvar"
@@ -140,7 +140,7 @@
                             Grid.Column="1"
                             FontSize="{StaticResource FontSizeMedium}"
                             Glyph="{x:Static icons:FontAwesomeSolid.ShareSquare}"
-                            IconColor="{Binding CurrentPixPaylod.PixKey.FinancialInstitution.Institution.MaterialColor.TextOnPrimary}"
+                            TextColor="{Binding CurrentPixPaylod.PixKey.FinancialInstitution.Institution.MaterialColor.TextOnPrimary}"
                             VerticalOptions="CenterAndExpand" />
                     </Grid>
                 </Frame>

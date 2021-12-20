@@ -24,6 +24,6 @@
             BackgroundColor="#99000000"
             FontSize="{DynamicResource FontSizeMedium}"
             Glyph="{x:Static icons:FontAwesomeSolid.TimesCircle}"
-            IconColor="{DynamicResource primary}" />
+            TextColor="{DynamicResource primary}" />
     </Frame>
 </Grid>

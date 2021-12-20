@@ -73,7 +73,7 @@
                                             FontSize="{DynamicResource FontSizeMedium}"
                                             Glyph="{x:Static icons:FontAwesomeSolid.ShareAlt}"
                                             HorizontalOptions="CenterAndExpand"
-                                            IconColor="{DynamicResource textSecondary}" />
+                                            TextColor="{DynamicResource textSecondary}" />
                                     </StackLayout>
                                 </StackLayout>
                             </StackLayout>

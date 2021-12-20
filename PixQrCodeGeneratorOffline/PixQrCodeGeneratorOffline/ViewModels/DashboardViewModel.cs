@@ -50,6 +50,8 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public IAsyncCommand LoadDataCommand => new AsyncCommand(LoadData);
 
+        public ICommand HideValueCommand => new Command(HideValue);
+
         #endregion
 
         public DashboardViewModel()
@@ -201,6 +203,16 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                         }),
                     });
                 }
+            }
+        }
+
+        private void HideValue()
+        {
+            IsHideValue = !IsHideValue;
+
+            for (int i = 0; i < PixKeyList.Count; i++)
+            {
+                PixKeyList[i].Viewer.IsHideValue = IsHideValue;
             }
         }
 
@@ -400,6 +412,13 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         {
             get => _currentDashboardCustomInfo;
             set => SetProperty(ref _currentDashboardCustomInfo, value);
+        }
+
+        private bool _isHideValue;
+        public bool IsHideValue
+        {
+            get => _isHideValue;
+            set => SetProperty(ref _isHideValue, value);
         }
 
         #endregion

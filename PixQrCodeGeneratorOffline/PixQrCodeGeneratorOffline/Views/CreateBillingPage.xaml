@@ -54,7 +54,7 @@
             <Style x:Key="styleActionIcon" TargetType="controls:CustomIcon">
                 <Setter Property="FontSize" Value="{DynamicResource FontSizeLarge}" />
                 <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
-                <Setter Property="IconColor" Value="{DynamicResource textSecondary}" />
+                <Setter Property="TextColor" Value="{DynamicResource textSecondary}" />
             </Style>
 
 
@@ -99,7 +99,7 @@
                             <controls:CustomIcon
                                 FontSize="{DynamicResource FontSizeMicro}"
                                 Glyph="{x:Static icons:FontAwesomeSolid.Edit}"
-                                IconColor="{Binding CurrentStyleFromKey.TextOnPrimary}" />
+                                TextColor="{Binding CurrentStyleFromKey.TextOnPrimary}" />
                         </StackLayout>
                     </Frame>
                 </StackLayout>

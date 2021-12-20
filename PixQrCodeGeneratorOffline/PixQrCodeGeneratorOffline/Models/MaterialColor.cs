@@ -29,7 +29,7 @@ namespace PixQrCodeGeneratorOffline.Models
 
         public Color PrimaryDark { get; set; }
 
-        public Color PrimaryTransparence => Primary.SetTransparence(0.5);
+        public Color PrimaryTransparence => Primary.SetTransparence(0.1);
 
         public Color Secondary { get; set; }
 

@@ -53,7 +53,7 @@
                         FontSize="{StaticResource FontSizeMedium}"
                         Glyph="{x:Static icons:FontAwesomeSolid.TrashAlt}"
                         HorizontalOptions="Center"
-                        IconColor="{DynamicResource textPrimary}" />
+                        TextColor="{DynamicResource textPrimary}" />
                     <Label
                         FontFamily="{DynamicResource FontBold}"
                         Text="Excluir"
@@ -67,7 +67,7 @@
                         FontSize="{StaticResource FontSizeMedium}"
                         Glyph="{x:Static icons:FontAwesomeSolid.Save}"
                         HorizontalOptions="Center"
-                        IconColor="{DynamicResource textPrimary}" />
+                        TextColor="{DynamicResource textPrimary}" />
                     <Label
                         FontFamily="{DynamicResource FontBold}"
                         Text="Salvar"
@@ -91,7 +91,7 @@
                                     FontSize="{DynamicResource FontSizeLarge}"
                                     Glyph="{Binding Icon}"
                                     HorizontalOptions="CenterAndExpand"
-                                    IconColor="{DynamicResource textSecondary}" />
+                                    TextColor="{DynamicResource textSecondary}" />
                                 <Label
                                     FontFamily="{StaticResource FontBold}"
                                     FontSize="{DynamicResource FontSizeLarge}"
@@ -129,7 +129,7 @@
                                     <controls:CustomIcon
                                         FontSize="{DynamicResource FontSizeLarge}"
                                         Glyph="{x:Static icons:FontAwesomeSolid.ChevronDown}"
-                                        IconColor="{DynamicResource textSecondary}" />
+                                        TextColor="{DynamicResource textSecondary}" />
                                 </StackLayout>
 
                             </Frame>

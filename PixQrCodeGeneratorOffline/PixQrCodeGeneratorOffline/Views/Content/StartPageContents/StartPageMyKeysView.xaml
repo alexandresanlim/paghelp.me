@@ -12,6 +12,24 @@
     xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
     x:DataType="vm:DashboardViewModel">
 
+    <Grid.Resources>
+        <ResourceDictionary>
+            <Style x:Key="styleActionText" TargetType="Label">
+                <Setter Property="FontSize" Value="{DynamicResource FontSizeSmall}" />
+                <Setter Property="TextColor" Value="{DynamicResource textPrimary}" />
+                <Setter Property="FontFamily" Value="{DynamicResource FontSemiBold}" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+            </Style>
+
+            <Style x:Key="styleActionIcon" TargetType="controls:CustomIcon">
+                <Setter Property="FontSize" Value="{DynamicResource FontSizeSmall}" />
+                <Setter Property="TextColor" Value="{DynamicResource textPrimary}" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                <Setter Property="FontSize" Value="{StaticResource FontSizeSmall}" />
+            </Style>
+        </ResourceDictionary>
+    </Grid.Resources>
+
     <BoxView
         BackgroundColor="{Binding CurrentPixKey.FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
         HeightRequest="50"
@@ -101,6 +119,8 @@
                                                     Grid.Column="0"
                                                     Glyph="{x:Static icons:FontAwesomeSolid.Key}"
                                                     Style="{DynamicResource styleActionIcon}" />
+
+
                                                 <Label
                                                     Grid.Row="1"
                                                     Grid.Column="1"
@@ -108,6 +128,15 @@
                                                     MaxLines="1"
                                                     Style="{DynamicResource styleActionText}"
                                                     Text="{Binding Viewer.KeyPresentation}" />
+
+                                                <!--<StackLayout
+                                                    Grid.Row="1"
+                                                    Grid.Column="1"
+                                                    BackgroundColor="Red"
+                                                    HorizontalOptions="FillAndExpand"
+                                                    IsVisible="{Binding Viewer.IsHideValue}" />-->
+
+
 
                                             </Grid>
 
@@ -159,28 +188,40 @@
                         </StackLayout.GestureRecognizers>
 
                         <Frame
-                            Padding="15"
                             BackgroundColor="{DynamicResource foreground_page}"
                             CornerRadius="5"
                             VerticalOptions="FillAndExpand"
-                            WidthRequest="120">
+                            WidthRequest="150">
 
-                            <StackLayout>
-                                <controls:CustomIcon
-                                    FontSize="{DynamicResource FontSizeLarge}"
-                                    Glyph="{Binding Icon}"
+                            <Grid>
+
+                                <BoxView
+                                    BackgroundColor="{Binding Colors.PrimaryDark}"
+                                    CornerRadius="5,0,0,55"
+                                    HeightRequest="65"
                                     HorizontalOptions="Start"
-                                    IconColor="{Binding Colors.PrimaryDark}"
-                                    IconType="{Binding IconType}" />
+                                    VerticalOptions="Start"
+                                    WidthRequest="65" />
 
-                                <Label
-                                    FontFamily="{DynamicResource FontSemiBold}"
-                                    FontSize="{DynamicResource FontSizeSmall}"
-                                    Text="{Binding Title}"
-                                    TextColor="{Binding Colors.PrimaryDark}"
-                                    VerticalOptions="EndAndExpand" />
+                                <StackLayout Padding="10">
+                                    <controls:CustomIcon
+                                        FontSize="{DynamicResource FontSizeLarge}"
+                                        Glyph="{Binding Icon}"
+                                        HorizontalOptions="Start"
+                                        IconType="{Binding IconType}"
+                                        TextColor="{DynamicResource textPrimary}" />
 
-                            </StackLayout>
+                                    <Label
+                                        FontFamily="{DynamicResource FontBold}"
+                                        FontSize="{DynamicResource FontSizeSmall}"
+                                        Text="{Binding Title}"
+                                        TextColor="{DynamicResource textPrimary}"
+                                        VerticalOptions="EndAndExpand" />
+
+                                </StackLayout>
+                            </Grid>
+
+
                         </Frame>
 
 

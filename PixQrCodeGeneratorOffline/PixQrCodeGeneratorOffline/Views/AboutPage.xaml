@@ -69,8 +69,8 @@
                         <StackLayout Orientation="Horizontal" Spacing="15">
                             <controls:CustomIcon
                                 Glyph="{Binding CurrentStoreIcon}"
-                                IconColor="{DynamicResource textPrimary}"
-                                IconType="brand" />
+                                IconType="brand"
+                                TextColor="{DynamicResource textPrimary}" />
                             <Label
                                 FontFamily="{StaticResource FontSemiBold}"
                                 FontSize="{StaticResource FontSizeSmall}"
@@ -81,7 +81,7 @@
                                 FontSize="{StaticResource FontSizeMedium}"
                                 Glyph="{x:Static icons:FontAwesomeSolid.ChevronRight}"
                                 HorizontalOptions="EndAndExpand"
-                                IconColor="{DynamicResource textPrimary}"
+                                TextColor="{DynamicResource textPrimary}"
                                 VerticalOptions="CenterAndExpand" />
                         </StackLayout>
                     </Frame>
@@ -111,7 +111,7 @@
                         </Frame.GestureRecognizers>
 
                         <StackLayout Orientation="Horizontal" Spacing="15">
-                            <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.PaperPlane}" IconColor="{DynamicResource textPrimary}" />
+                            <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.PaperPlane}" TextColor="{DynamicResource textPrimary}" />
                             <Label
                                 FontFamily="{StaticResource FontSemiBold}"
                                 FontSize="{StaticResource FontSizeSmall}"
@@ -123,7 +123,7 @@
                                 FontSize="{StaticResource FontSizeMedium}"
                                 Glyph="{x:Static icons:FontAwesomeSolid.ChevronRight}"
                                 HorizontalOptions="EndAndExpand"
-                                IconColor="{DynamicResource textPrimary}"
+                                TextColor="{DynamicResource textPrimary}"
                                 VerticalOptions="CenterAndExpand" />
                         </StackLayout>
 

@@ -11,7 +11,7 @@
         x:Name="xIcon"
         FontSize="{DynamicResource FontSizeMedium}"
         HorizontalOptions="Start"
-        IconColor="{DynamicResource textPrimary}" />
+        TextColor="{DynamicResource textPrimary}" />
 
     <Label
         x:Name="xTitle"
