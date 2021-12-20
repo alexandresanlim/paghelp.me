@@ -1,59 +1,57 @@
 ﻿using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models.PaymentMethods.Base;
-using System;
 using System.Collections.Generic;
-using System.Text;
 using static PixQrCodeGeneratorOffline.Extention.IconExtention;
 
-namespace PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix
+namespace PixQrCodeGeneratorOffline.Models.PaymentMethods.Crypto
 {
-    public class PixKeyAction : ActionBase
+    public class CryptoKeyAction : ActionBase
     {
-        public static List<PixKeyAction> GetList(PixKey pixKey)
+        public static List<CryptoKeyAction> GetList(CryptoKey pixKey)
         {
-            return new List<PixKeyAction>
+            return new List<CryptoKeyAction>
             {
-                new PixKeyAction
+                new CryptoKeyAction
                 {
                     Title = "Criar Cobrança",
                     Icon = FontAwesomeSolid.HandHoldingUsd,
-                    Command = pixKey?.Command?.NavigateToCreateBillingPageCommand,
+                    //Command = pixKey?.Command?.NavigateToCreateBillingPageCommand,
                     Colors = pixKey?.FinancialInstitution?.Institution?.MaterialColor
                 },
-                new PixKeyAction
+                new CryptoKeyAction
                 {
                     Title = "Copiar Chave",
                     Icon = FontAwesomeSolid.Copy,
-                    Command = pixKey?.Command?.CopyKeyCommand,
+                    //Command = pixKey?.Command?.CopyKeyCommand,
                     Colors = pixKey?.FinancialInstitution?.Institution?.MaterialColor
                 },
-                new PixKeyAction
+                new CryptoKeyAction
                 {
                     Title = "Compartilhar Chave",
                     Icon = FontAwesomeSolid.ShareAlt,
-                    Command = pixKey?.Command?.ShareKeyCommand,
+                    //Command = pixKey?.Command?.ShareKeyCommand,
                     Colors = pixKey?.FinancialInstitution?.Institution?.MaterialColor
                 },
-                new PixKeyAction
+                new CryptoKeyAction
                 {
                     Title = "Compartilhar no WhatsApp",
                     Icon = FontAwesomeBrands.Whatsapp,
-                    Command = pixKey?.Command?.ShareOnWhatsCommand,
+                    //Command = pixKey?.Command?.ShareOnWhatsCommand,
                     Colors = pixKey?.FinancialInstitution?.Institution?.MaterialColor,
                     IconType = FontAwesomeType.brand
                 },
-                new PixKeyAction
+                new CryptoKeyAction
                 {
                     Title = "Cobranças Salvas",
                     Icon = FontAwesomeSolid.HandHoldingUsd,
-                    Command = pixKey?.Command?.NavigateToBillingCommand,
+                    //Command = pixKey?.Command?.NavigateToBillingCommand,
                     Colors = pixKey?.FinancialInstitution?.Institution?.MaterialColor
                 },
-                new PixKeyAction
+                new CryptoKeyAction
                 {
                     Title = "Ver Qr Code",
                     Icon = FontAwesomeSolid.Qrcode,
-                    Command = pixKey?.Command?.NavigateToPaymentPageCommand,
+                    //Command = pixKey?.Command?.NavigateToPaymentPageCommand,
                     Colors = pixKey?.FinancialInstitution?.Institution?.MaterialColor
                 },
                 //new PixKeyAction
@@ -63,11 +61,11 @@ namespace PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix
                 //    Command = pixKey?.Command?.NavigateToDownloadQrCodeCommand,
                 //    Colors = pixKey?.FinancialInstitution?.Institution?.MaterialColor
                 //},
-                new PixKeyAction
+                new CryptoKeyAction
                 {
                     Title = "Editar Chave",
                     Icon = FontAwesomeSolid.Pen,
-                    Command = pixKey?.Command?.EditKeyCommand,
+                    //Command = pixKey?.Command?.EditKeyCommand,
                     Colors = pixKey?.FinancialInstitution?.Institution?.MaterialColor
                 },
                 
@@ -81,5 +79,4 @@ namespace PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix
             };
         }
     }
-
 }

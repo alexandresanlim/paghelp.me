@@ -38,8 +38,8 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             get => _currentPixKey;
         }
 
-        private ObservableCollection<PixKeyAction> _currentPixKeyActions;
-        public ObservableCollection<PixKeyAction> CurrentPixKeyActions
+        private ObservableCollection<CryptoKeyAction> _currentPixKeyActions;
+        public ObservableCollection<CryptoKeyAction> CurrentPixKeyActions
         {
             set => SetProperty(ref _currentPixKeyActions, value);
             get => _currentPixKeyActions;
