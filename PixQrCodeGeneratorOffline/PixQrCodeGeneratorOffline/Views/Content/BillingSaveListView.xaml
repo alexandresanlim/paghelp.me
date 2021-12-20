@@ -5,7 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
     xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon"
-    xmlns:models="clr-namespace:PixQrCodeGeneratorOffline.Models"
+    xmlns:models="clr-namespace:PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix"
     xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
     x:DataType="vm:DashboardViewModel"
     HeightRequest="200"

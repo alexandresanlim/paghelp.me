@@ -1,6 +1,7 @@
 ﻿using pix_payload_generator.net.Models.CobrancaModels;
 using pix_payload_generator.net.Models.PayloadModels;
 using PixQrCodeGeneratorOffline.Extention;
+using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix;
 using PixQrCodeGeneratorOffline.Models.Repository.Interfaces;
 using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Services;

@@ -1,7 +1,6 @@
-﻿using AsyncAwaitBestPractices;
-using AsyncAwaitBestPractices.MVVM;
+﻿using AsyncAwaitBestPractices.MVVM;
 using PixQrCodeGeneratorOffline.Base.ViewModels;
-using PixQrCodeGeneratorOffline.Models;
+using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using System.Windows.Input;

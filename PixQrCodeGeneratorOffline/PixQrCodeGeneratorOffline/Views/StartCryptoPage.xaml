@@ -4,11 +4,9 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:contentStart="clr-namespace:PixQrCodeGeneratorOffline.Views.Content.StartPageContents"
-    xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
     xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon"
     xmlns:templates="clr-namespace:PixQrCodeGeneratorOffline.Templates"
     xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
-    x:DataType="vm:DashboardCryptoViewModel"
     BackgroundColor="{DynamicResource background_page}">
     <ContentPage.Content>
         <ScrollView>

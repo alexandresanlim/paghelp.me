@@ -1,4 +1,5 @@
-﻿using PixQrCodeGeneratorOffline.Models.Validation.Services.Interfaces;
+﻿using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix;
+using PixQrCodeGeneratorOffline.Models.Validation.Services.Interfaces;
 
 namespace PixQrCodeGeneratorOffline.Models.Validation.Services
 {

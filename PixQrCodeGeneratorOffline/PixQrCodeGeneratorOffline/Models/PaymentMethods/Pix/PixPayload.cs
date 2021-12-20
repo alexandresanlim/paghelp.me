@@ -3,7 +3,7 @@ using PixQrCodeGeneratorOffline.Models.Commands;
 using PixQrCodeGeneratorOffline.Models.Commands.Interfaces;
 using Xamarin.Forms;
 
-namespace PixQrCodeGeneratorOffline.Models
+namespace PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix
 {
     public class PixPayload : NotifyObjectBase
     {

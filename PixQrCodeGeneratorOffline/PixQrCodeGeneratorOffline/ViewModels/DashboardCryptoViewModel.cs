@@ -2,6 +2,8 @@
 using PixQrCodeGeneratorOffline.Base.ViewModels;
 using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models;
+using PixQrCodeGeneratorOffline.Models.PaymentMethods.Crypto;
+using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -14,7 +16,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
     {
         #region Commands
 
-        public ICommand ChangeSelectPixKeyCommand => new Command<PixKey>(async (pixkey) => await ChangeSelectedPixKey(pixkey));
+        public ICommand ChangeSelectPixKeyCommand => new Command<CryptoKey>(async (pixkey) => await ChangeSelectedPixKey(pixkey));
 
         public IAsyncCommand NavigateToAddNewKeyPageCommand => new AsyncCommand(async () => await _pixKeyService.NavigateToAdd());
 
@@ -22,15 +24,15 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         #region Props
 
-        private ObservableCollection<PixKey> _pixKeyList;
-        public ObservableCollection<PixKey> PixKeyList
+        private ObservableCollection<CryptoKey> _pixKeyList;
+        public ObservableCollection<CryptoKey> PixKeyList
         {
             set => SetProperty(ref _pixKeyList, value);
             get => _pixKeyList;
         }
 
-        private PixKey _currentPixKey;
-        public PixKey CurrentPixKey
+        private CryptoKey _currentPixKey;
+        public CryptoKey CurrentPixKey
         {
             set => SetProperty(ref _currentPixKey, value);
             get => _currentPixKey;
@@ -45,13 +47,13 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         #endregion
 
-        private async Task ChangeSelectedPixKey(PixKey pixkey)
+        private async Task ChangeSelectedPixKey(CryptoKey pixkey)
         {
             MainThread.BeginInvokeOnMainThread(() =>
             {
                 CurrentPixKey = pixkey;
                 //_statusBar.SetStatusBarColor(pixkey.FinancialInstitution.Institution.MaterialColor.PrimaryDark);
-                CurrentPixKeyActions = pixkey?.Actions?.ToObservableCollection() ?? new ObservableCollection<PixKeyAction>();
+                //CurrentPixKeyActions = pixkey?.Actions?.ToObservableCollection() ?? new ObservableCollection<PixKeyAction>();
             });
         }
     }

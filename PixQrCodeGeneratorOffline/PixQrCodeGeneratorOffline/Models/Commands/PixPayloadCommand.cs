@@ -1,6 +1,7 @@
 ﻿using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models.Commands.Base;
 using PixQrCodeGeneratorOffline.Models.Commands.Interfaces;
+using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix;
 using PixQrCodeGeneratorOffline.Services;
 using PixQrCodeGeneratorOffline.Views;
 using System.Threading.Tasks;

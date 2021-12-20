@@ -6,11 +6,10 @@
     xmlns:content="clr-namespace:PixQrCodeGeneratorOffline.Views.Content"
     xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
     xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon"
-    xmlns:models="clr-namespace:PixQrCodeGeneratorOffline.Models"
+    xmlns:models="clr-namespace:PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix"
     xmlns:qr="clr-namespace:Xam.Forms;assembly=Xam.Forms.QRCode"
     xmlns:templates="clr-namespace:PixQrCodeGeneratorOffline.Templates"
-    xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
-    x:DataType="vm:DashboardCryptoViewModel">
+    xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels">
     <Grid.Resources>
         <ResourceDictionary>
             <Style x:Key="styleActionText" TargetType="Label">

@@ -1,9 +1,8 @@
-﻿using PixQrCodeGeneratorOffline.ViewModels;
+﻿using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq.Expressions;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace PixQrCodeGeneratorOffline.Models.Services.Interfaces

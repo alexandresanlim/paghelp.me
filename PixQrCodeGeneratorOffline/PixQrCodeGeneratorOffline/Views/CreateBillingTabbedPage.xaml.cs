@@ -13,9 +13,9 @@ namespace PixQrCodeGeneratorOffline.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CreateBillingTabbedPage : TabbedPage
     {
-        private static Models.PixKey PixKey { get; set; }
+        private static Models.PaymentMethods.Pix.PixKey PixKey { get; set; }
 
-        public CreateBillingTabbedPage(Models.PixKey pixKey)
+        public CreateBillingTabbedPage(Models.PaymentMethods.Pix.PixKey pixKey)
         {
             PixKey = pixKey;
 

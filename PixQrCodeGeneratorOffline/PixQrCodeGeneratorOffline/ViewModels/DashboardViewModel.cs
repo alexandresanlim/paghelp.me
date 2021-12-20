@@ -3,6 +3,8 @@ using AsyncAwaitBestPractices;
 using AsyncAwaitBestPractices.MVVM;
 using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models;
+using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix;
+using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix.Extentions;
 using PixQrCodeGeneratorOffline.Services;
 using PixQrCodeGeneratorOffline.ViewModels.Base;
 using PixQrCodeGeneratorOffline.Views;

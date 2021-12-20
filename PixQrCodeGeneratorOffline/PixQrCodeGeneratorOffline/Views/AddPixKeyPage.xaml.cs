@@ -1,22 +1,15 @@
 ﻿using PixQrCodeGeneratorOffline.ViewModels;
-using PixQrCodeGeneratorOffline.Views.Shared;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace PixQrCodeGeneratorOffline.Views
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AddPixKeyPage : ContentPage
     {
         AddPixKeyViewModel _viewModel;
 
-        public AddPixKeyPage(Models.PixKey pixKey = null, bool isContact = false)
+        public AddPixKeyPage(Models.PaymentMethods.Pix.PixKey pixKey = null, bool isContact = false)
         {
             InitializeComponent();
 

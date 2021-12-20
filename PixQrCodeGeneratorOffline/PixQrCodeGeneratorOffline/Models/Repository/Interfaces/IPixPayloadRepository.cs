@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix;
+using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 

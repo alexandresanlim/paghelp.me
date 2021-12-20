@@ -5,7 +5,7 @@ using PixQrCodeGeneratorOffline.Models.Viewer;
 using PixQrCodeGeneratorOffline.Models.Viewer.Services.Interfaces;
 using Xamarin.Forms;
 
-namespace PixQrCodeGeneratorOffline.Models
+namespace PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix
 {
     public class PixCob : NotifyObjectBase
     {

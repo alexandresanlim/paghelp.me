@@ -1,5 +1,6 @@
 ﻿using PixQrCodeGeneratorOffline.Base.ViewModels;
 using PixQrCodeGeneratorOffline.Models;
+using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;

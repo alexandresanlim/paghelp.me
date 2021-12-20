@@ -1,4 +1,5 @@
 ﻿using LiteDB;
+using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix;
 using PixQrCodeGeneratorOffline.Models.Repository.Base;
 using PixQrCodeGeneratorOffline.Models.Repository.Interfaces;
 using System;

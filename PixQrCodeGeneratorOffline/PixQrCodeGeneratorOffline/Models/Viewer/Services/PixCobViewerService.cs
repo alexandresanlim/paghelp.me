@@ -1,7 +1,5 @@
-﻿using PixQrCodeGeneratorOffline.Models.Viewer.Services.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix;
+using PixQrCodeGeneratorOffline.Models.Viewer.Services.Interfaces;
 
 namespace PixQrCodeGeneratorOffline.Models.Viewer.Services
 {

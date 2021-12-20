@@ -1,5 +1,6 @@
 ﻿using Acr.UserDialogs;
 using PixQrCodeGeneratorOffline.Extention;
+using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix;
 using PixQrCodeGeneratorOffline.Models.Repository.Interfaces;
 using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Services;

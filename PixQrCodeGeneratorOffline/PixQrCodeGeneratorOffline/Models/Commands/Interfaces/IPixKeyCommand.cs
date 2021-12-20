@@ -1,4 +1,6 @@
-﻿namespace PixQrCodeGeneratorOffline.Models.Commands.Interfaces
+﻿using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix;
+
+namespace PixQrCodeGeneratorOffline.Models.Commands.Interfaces
 {
     public interface IPixKeyCommand
     {
