@@ -58,7 +58,7 @@ namespace PixQrCodeGeneratorOffline.Droid
         {
             public void SetColor()
             {
-                SetStatusBarColor(App.ThemeColors.PrimaryDark);
+                SetStatusBarColor(App.ThemeColors.PrimaryDark, Color.Transparent);
             }
 
             public void SetStatusBarColor(System.Drawing.Color statusBar, System.Drawing.Color? navigationBar = null)
@@ -71,8 +71,8 @@ namespace PixQrCodeGeneratorOffline.Droid
                 //CurrentWindow.ClearFlags(Android.Views.WindowManagerFlags.TranslucentStatus);
                 CurrentWindow.SetStatusBarColor(statusBar.ToPlatformColor());
 
-
-                //CurrentWindow.SetNavigationBarColor(navigationBar.ToPlatformColor());
+                if (navigationBar.HasValue)
+                    CurrentWindow.SetNavigationBarColor(navigationBar.Value.ToPlatformColor());
             }
         }
 
