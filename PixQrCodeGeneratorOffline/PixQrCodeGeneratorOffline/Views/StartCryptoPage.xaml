@@ -32,7 +32,7 @@
                     </StackLayout>
                 </Grid>
 
-                <!--<contentStart:StartPageMyKeysView />-->
+                <contentStart:StartPageMyKeysCryptoView />
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

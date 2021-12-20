@@ -9,7 +9,8 @@
     xmlns:models="clr-namespace:PixQrCodeGeneratorOffline.Models"
     xmlns:qr="clr-namespace:Xam.Forms;assembly=Xam.Forms.QRCode"
     xmlns:templates="clr-namespace:PixQrCodeGeneratorOffline.Templates"
-    xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels">
+    xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
+    x:DataType="vm:DashboardCryptoViewModel">
     <Grid.Resources>
         <ResourceDictionary>
             <Style x:Key="styleActionText" TargetType="Label">
@@ -237,11 +238,11 @@
                 Icon="{x:Static icons:FontAwesomeSolid.PlusCircle}"
                 TapCommand="{Binding NavigateToAddNewKeyPageCommand}" />
 
-            <templates:TemplateAction
+            <!--<templates:TemplateAction
                 Title="Compartilhar Todas"
                 Icon="{x:Static icons:FontAwesomeSolid.Share}"
                 IsVisible="{Binding PixKeyList, Converter={StaticResource HasDataConverter}}"
-                TapCommand="{Binding ShareAllCommand}" />
+                TapCommand="{Binding ShareAllCommand}" />-->
 
         </StackLayout>
         <!--<Grid Style="{DynamicResource styleGridActionChevronRight}" IsVisible="{Binding PixKeyList, Converter={StaticResource HasDataConverter}}">
@@ -257,5 +258,5 @@
                 </Grid>-->
     </StackLayout>
 
-    <content:PanelLoadView IsVisible="{Binding CurrentDashboardLoadInfo.IsLoadMyKeys}" />
+    <!--<content:PanelLoadView IsVisible="{Binding CurrentDashboardLoadInfo.IsLoadMyKeys}" />-->
 </Grid>
