@@ -7,6 +7,8 @@
     xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
     xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon"
     xmlns:templates="clr-namespace:PixQrCodeGeneratorOffline.Templates"
+    xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
+    x:DataType="vm:DashboardCryptoViewModel"
     BackgroundColor="{DynamicResource background_page}">
     <ContentPage.Content>
         <ScrollView>
@@ -20,7 +22,7 @@
                         IconColor="{Binding CurrentPixKey.FinancialInstitution.Institution.MaterialColor.TextOnPrimary}"
                         TitleColor="{Binding CurrentPixKey.FinancialInstitution.Institution.MaterialColor.TextOnPrimary}" />
 
-                    <StackLayout
+                    <!--<StackLayout
                         Grid.Column="1"
                         Padding="30,15,15,15"
                         BackgroundColor="{Binding CurrentPixKey.FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
@@ -29,7 +31,7 @@
                         <StackLayout.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding HideValueCommand}" />
                         </StackLayout.GestureRecognizers>
-                    </StackLayout>
+                    </StackLayout>-->
                 </Grid>
 
                 <contentStart:StartPageMyKeysCryptoView />
