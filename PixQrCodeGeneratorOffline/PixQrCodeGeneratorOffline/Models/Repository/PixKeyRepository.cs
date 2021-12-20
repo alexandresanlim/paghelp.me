@@ -29,6 +29,18 @@ namespace PixQrCodeGeneratorOffline.Models.Repository
             }
         }
 
+        public List<PixKey> GetAll()
+        {
+            try
+            {
+                return _pixCollection.FindAll().ToList();
+            }
+            catch (Exception e)
+            {
+                return new List<PixKey>();
+            }
+        }
+
         public PixKey FindById(int id)
         {
             try

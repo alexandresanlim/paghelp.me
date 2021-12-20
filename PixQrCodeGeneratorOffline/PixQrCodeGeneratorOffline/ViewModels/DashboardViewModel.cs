@@ -1,4 +1,5 @@
-﻿using AsyncAwaitBestPractices;
+﻿using Acr.UserDialogs;
+using AsyncAwaitBestPractices;
 using AsyncAwaitBestPractices.MVVM;
 using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models;
@@ -55,15 +56,15 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         {
             LoadDataCommand.ExecuteAsync().SafeFireAndForget();
 
-            Connectivity.ConnectivityChanged += Connectivity_ConnectivityChanged;
+            //Connectivity.ConnectivityChanged += Connectivity_ConnectivityChanged;
 
             DashboardVM = this;
         }
 
-        private void Connectivity_ConnectivityChanged(object sender, ConnectivityChangedEventArgs e)
-        {
-            LoadConnectionIcon();
-        }
+        //private void Connectivity_ConnectivityChanged(object sender, ConnectivityChangedEventArgs e)
+        //{
+        //    LoadConnectionIcon();
+        //}
 
         public async Task LoadData()
         {
@@ -82,6 +83,8 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 await LoadBilling();
 
                 await LoadCurrentPixKey();
+
+                await CheckHasAKeyOnClipboard();
 
                 //await LoadNews();
 
@@ -158,6 +161,49 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
         }
 
+        private async Task CheckHasAKeyOnClipboard()
+        {
+            if (Clipboard.HasText)
+            {
+                var text = await Clipboard.GetTextAsync();
+
+                if (text.IsAKey())
+                {
+                    var hasKey = _pixKeyService.GetAll(x => x.Key.ToLower().Equals(text.ToLower()))?.FirstOrDefault();
+
+                    if (hasKey != null && hasKey?.Id > 0)
+                        return;
+
+                    var confirm = await DialogService.ConfirmAsync($"{text}, deseja adiciona-la agora?", "Tem uma chave na sua àrea de tranferência", "Sim", "Cancelar");
+
+                    if (!confirm)
+                        return;
+
+                    var options = new List<ActionSheetOption>()
+                    {
+                        new ActionSheetOption("Minha", async () =>
+                        {
+                            await NavigateAsync(new AddPixKeyPage());
+                        }),
+                        new ActionSheetOption("De um contato", async () =>
+                        {
+                            await NavigateAsync(new AddPixKeyPage(isContact: true));
+                        }),
+                    };
+
+                    DialogService.ActionSheet(new ActionSheetConfig
+                    {
+                        Title = "Essa chave é:",
+                        Options = options,
+                        Cancel = new ActionSheetOption("Cancelar", () =>
+                        {
+                            return;
+                        }),
+                    });
+                }
+            }
+        }
+
         [Obsolete("Google desativou a funcionalidade de feed")]
         public async Task LoadNews()
         {
@@ -203,7 +249,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 //WelcomeSubtitleText = DateTimeExtention.GetDashboardSubtitleFromDayOfWeed(),
             };
 
-            LoadConnectionIcon();
+            //LoadConnectionIcon();
         }
 
         private async Task NavigateToBenefitsPage()
@@ -229,10 +275,10 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
         }
 
-        private void LoadConnectionIcon()
-        {
-            CurrentDashboardCustomInfo.ConnectionIcon = Connectivity.NetworkAccess == NetworkAccess.Internet ? FontAwesomeSolid.Wifi : FontAwesomeSolid.Plane;
-        }
+        //private void LoadConnectionIcon()
+        //{
+        //    CurrentDashboardCustomInfo.ConnectionIcon = Connectivity.NetworkAccess == NetworkAccess.Internet ? FontAwesomeSolid.Wifi : FontAwesomeSolid.Plane;
+        //}
 
         private async Task ResetProps()
         {

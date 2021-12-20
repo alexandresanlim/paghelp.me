@@ -8,6 +8,8 @@ namespace PixQrCodeGeneratorOffline.Models.Repository.Interfaces
     {
         List<PixKey> GetAll(Expression<Func<PixKey, bool>> predicate);
 
+        List<PixKey> GetAll();
+
         PixKey FindById(int id);
 
         bool Update(PixKey item);

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,6 +13,8 @@ namespace PixQrCodeGeneratorOffline.Models.Services.Interfaces
         bool IsValid(PixKey pixKey);
 
         List<PixKey> GetAll(bool isContact = false);
+
+        List<PixKey> GetAll(Expression<Func<PixKey, bool>> predicate);
 
         PixKey GetById(int id);
 

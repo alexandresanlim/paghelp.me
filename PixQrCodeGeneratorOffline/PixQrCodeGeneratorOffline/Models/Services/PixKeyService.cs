@@ -8,6 +8,7 @@ using PixQrCodeGeneratorOffline.Views;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
@@ -33,6 +34,11 @@ namespace PixQrCodeGeneratorOffline.Models.Services
         public List<PixKey> GetAll(bool isContact = false)
         {
             return _pixKeyRepository.GetAll(x => x.IsContact == isContact);
+        }
+
+        public List<PixKey> GetAll(Expression<Func<PixKey, bool>> predicate)
+        {
+            return _pixKeyRepository.GetAll(predicate);
         }
 
         public PixKey GetById(int id)

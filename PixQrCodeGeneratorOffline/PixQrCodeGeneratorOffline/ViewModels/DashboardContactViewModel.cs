@@ -1,4 +1,6 @@
-﻿using PixQrCodeGeneratorOffline.Extention;
+﻿using AsyncAwaitBestPractices;
+using AsyncAwaitBestPractices.MVVM;
+using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models;
 using PixQrCodeGeneratorOffline.ViewModels.Base;
 using System.Collections.ObjectModel;
@@ -11,17 +13,20 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 {
     public class DashboardContactViewModel : DashboardViewModelBase
     {
+        #region Commands
+
+        public IAsyncCommand LoadDataCommand => new AsyncCommand(LoadData);
+
+        public IAsyncCommand NavigateToAddNewKeyPageCommand => new AsyncCommand(async () => await _pixKeyService.NavigateToAdd(isContact: true));
+
+        #endregion
 
         public DashboardContactViewModel()
         {
-            LoadDataCommand.Execute(null);
+            LoadDataCommand.ExecuteAsync().SafeFireAndForget();
 
             DashboardContactVM = this;
         }
-
-        public ICommand LoadDataCommand => new Command(async () => await LoadData());
-
-        //public ICommand SettingsCommand => new Command(async () => await NavigateModalAsync(new OptionContactPage()));
 
         public async Task LoadData()
         {
@@ -38,8 +43,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 e.SendToLog();
             }
         }
-
-        public ICommand NavigateToAddNewKeyPageCommand => new Command(async () => await _pixKeyService.NavigateToAdd(isContact: true));
     }
 
     //public static class DashboardContactViewModelExtention

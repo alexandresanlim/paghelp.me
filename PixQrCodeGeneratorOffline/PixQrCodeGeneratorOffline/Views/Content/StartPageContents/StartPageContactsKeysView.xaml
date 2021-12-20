@@ -44,7 +44,7 @@
 
                                 <Grid>
                                     <BoxView
-                                        BackgroundColor="{StaticResource primaryDark}"
+                                        BackgroundColor="{DynamicResource background_page}"
                                         CornerRadius="50"
                                         HeightRequest="70"
                                         HorizontalOptions="Center"
@@ -57,7 +57,7 @@
                                         LineBreakMode="TailTruncation"
                                         MaxLines="1"
                                         Text="{Binding Viewer.Initial}"
-                                        TextColor="{StaticResource textOnPrimary}"
+                                        TextColor="{StaticResource textPrimary}"
                                         TextTransform="Uppercase"
                                         VerticalOptions="Center" />
                                 </Grid>
