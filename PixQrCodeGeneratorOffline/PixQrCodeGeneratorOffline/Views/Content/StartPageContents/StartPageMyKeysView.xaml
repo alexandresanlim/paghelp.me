@@ -209,7 +209,7 @@
                                         Glyph="{Binding Icon}"
                                         HorizontalOptions="Start"
                                         IconType="{Binding IconType}"
-                                        TextColor="{DynamicResource textPrimary}" />
+                                        TextColor="{Binding Colors.TextOnPrimary}" />
 
                                     <Label
                                         FontFamily="{DynamicResource FontBold}"
