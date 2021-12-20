@@ -99,7 +99,7 @@ namespace PixQrCodeGeneratorOffline.Models.Services
                         }),
                     };
 
-                DialogService.ActionSheet(new Acr.UserDialogs.ActionSheetConfig
+                DialogService.ActionSheet(new ActionSheetConfig
                 {
                     Title = "Selecione uma opção:",
                     Options = options,
