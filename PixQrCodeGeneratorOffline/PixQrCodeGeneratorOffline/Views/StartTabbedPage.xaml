@@ -10,7 +10,7 @@
 
 
     <views:StartPage Title="Pix" />
-    <views:StartCryptoPage Title="Cripto" />
+    <!--<views:StartCryptoPage Title="Cripto" />-->
     <views:StartMorePage Title="Mais" />
 
 </TabbedPage>
