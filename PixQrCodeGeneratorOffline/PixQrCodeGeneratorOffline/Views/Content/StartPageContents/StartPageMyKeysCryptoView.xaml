@@ -6,7 +6,7 @@
     xmlns:content="clr-namespace:PixQrCodeGeneratorOffline.Views.Content"
     xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
     xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon"
-    xmlns:models="clr-namespace:PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix"
+    xmlns:models="clr-namespace:PixQrCodeGeneratorOffline.Models.PaymentMethods.Crypto"
     xmlns:qr="clr-namespace:Xam.Forms;assembly=Xam.Forms.QRCode"
     xmlns:templates="clr-namespace:PixQrCodeGeneratorOffline.Templates"
     xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
@@ -30,7 +30,7 @@
     </Grid.Resources>
 
     <BoxView
-        BackgroundColor="{Binding CurrentPixKey.FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
+        BackgroundColor="{Binding CurrentCryptoKey.FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
         HeightRequest="50"
         VerticalOptions="Start" />
 
@@ -47,17 +47,17 @@
 
         <StackLayout Spacing="0">
             <CarouselView
-                CurrentItem="{Binding CurrentPixKey}"
-                CurrentItemChangedCommand="{Binding ChangeSelectPixKeyCommand}"
+                CurrentItem="{Binding CurrentCryptoKey}"
+                CurrentItemChangedCommand="{Binding ChangeSelectCryptoKeyCommand}"
                 CurrentItemChangedCommandParameter="{Binding Source={RelativeSource Self}, Path=CurrentItem}"
                 HeightRequest="142"
                 IndicatorView="indicatorView"
-                IsVisible="{Binding PixKeyList, Converter={StaticResource HasDataConverter}}"
-                ItemsSource="{Binding PixKeyList}"
+                IsVisible="{Binding CryptoKeyList, Converter={StaticResource HasDataConverter}}"
+                ItemsSource="{Binding CryptoKeyList}"
                 PeekAreaInsets="20,0">
 
                 <CarouselView.ItemTemplate>
-                    <DataTemplate x:DataType="models:PixKey">
+                    <DataTemplate x:DataType="models:CryptoKey">
 
 
                         <StackLayout Padding="5,0">
@@ -165,14 +165,14 @@
             <IndicatorView
                 x:Name="indicatorView"
                 Margin="5"
-                IsVisible="{Binding PixKeyList, Converter={StaticResource HasDataIfMore}, Mode=TwoWay}" />
+                IsVisible="{Binding CryptoKeyList, Converter={StaticResource HasDataIfMore}, Mode=TwoWay}" />
 
         </StackLayout>
 
         <!--  Actions  -->
         <CollectionView
             HeightRequest="140"
-            IsVisible="{Binding PixKeyList, Converter={StaticResource HasDataConverter}}"
+            IsVisible="{Binding CryptoKeyList, Converter={StaticResource HasDataConverter}}"
             ItemsSource="{Binding CurrentPixKeyActions}">
 
             <CollectionView.ItemsLayout>
@@ -180,7 +180,7 @@
             </CollectionView.ItemsLayout>
 
             <CollectionView.ItemTemplate>
-                <DataTemplate x:DataType="models:PixKeyAction">
+                <DataTemplate x:DataType="models:CryptoKeyAction">
                     <StackLayout Padding="8,0,0,0">
                         <StackLayout.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding Command}" />

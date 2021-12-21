@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PixQrCodeGeneratorOffline.Style.Resources.FontTypeResource">
+<ResourceDictionary
+    x:Class="PixQrCodeGeneratorOffline.Style.Resources.FontTypeResource"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
     <x:String x:Key="FontBold">FontPoppinsBold</x:String>
     <x:String x:Key="FontSemiBold">FontPoppinsSemiBold</x:String>

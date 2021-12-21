@@ -1,28 +1,15 @@
-﻿using PixQrCodeGeneratorOffline.Models.Base;
+﻿using PixQrCodeGeneratorOffline.Models.Viewer.PaymentMethods.Base;
 
 namespace PixQrCodeGeneratorOffline.Models.Viewer
 {
-    public class PixKeyViewer : NotifyObjectBase
+    public class PixKeyViewer : KeyViewerBase
     {
         public string NameAndCity { get; set; }
 
         public string NamePresentation { get; set; }
 
-        public string KeyPresentation { get; set; }
-
-        public string InstitutionPresentation { get; set; }
-
-        public string InstitutionAndKey { get; set; }
-
         public string BankAndKey { get; set; }
 
         public string Initial { get; set; }
-
-        private bool _isHideValue;
-        public bool IsHideValue
-        {
-            get => _isHideValue;
-            set => SetProperty(ref _isHideValue, value);
-        }
     }
 }

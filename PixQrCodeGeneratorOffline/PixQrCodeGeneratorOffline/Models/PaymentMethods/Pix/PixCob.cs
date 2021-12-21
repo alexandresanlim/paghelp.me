@@ -1,4 +1,5 @@
 ﻿using PixQrCodeGeneratorOffline.Models.Base;
+using PixQrCodeGeneratorOffline.Models.PaymentMethods.Base;
 using PixQrCodeGeneratorOffline.Models.Validation;
 using PixQrCodeGeneratorOffline.Models.Validation.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Models.Viewer;
@@ -7,7 +8,7 @@ using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix
 {
-    public class PixCob : NotifyObjectBase
+    public class PixCob : CobBase
     {
         private readonly IPixCobViewerService _pixCobViewerService;
 
@@ -17,20 +18,6 @@ namespace PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix
         {
             _pixCobViewerService = DependencyService.Get<IPixCobViewerService>();
             _pixCobValidationService = DependencyService.Get<IPixCobValidationService>();
-        }
-
-        private string _value;
-        public string Value
-        {
-            set { SetProperty(ref _value, value); }
-            get { return _value; }
-        }
-
-        private string _description;
-        public string Description
-        {
-            set { SetProperty(ref _description, value); }
-            get { return _description; }
         }
 
         public PixCobViewer Viewer => _pixCobViewerService?.Create(this) ?? new PixCobViewer();

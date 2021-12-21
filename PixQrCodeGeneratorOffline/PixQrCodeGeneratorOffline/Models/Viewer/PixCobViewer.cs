@@ -1,9 +1,9 @@
-﻿namespace PixQrCodeGeneratorOffline.Models.Viewer
-{
-    public class PixCobViewer
-    {
-        public string ValueFormatter { get; set; }
+﻿using PixQrCodeGeneratorOffline.Models.PaymentMethods.Base;
 
-        public string ValuePresentation { get; set; }
+namespace PixQrCodeGeneratorOffline.Models.Viewer
+{
+    public class PixCobViewer : CobViewerBase
+    {
+        
     }
 }

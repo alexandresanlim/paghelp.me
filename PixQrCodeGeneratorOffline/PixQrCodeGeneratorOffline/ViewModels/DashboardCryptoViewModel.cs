@@ -1,10 +1,10 @@
-﻿using AsyncAwaitBestPractices.MVVM;
+﻿using AsyncAwaitBestPractices;
+using AsyncAwaitBestPractices.MVVM;
 using PixQrCodeGeneratorOffline.Base.ViewModels;
 using PixQrCodeGeneratorOffline.Extention;
-using PixQrCodeGeneratorOffline.Models;
 using PixQrCodeGeneratorOffline.Models.PaymentMethods.Crypto;
-using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Essentials;
@@ -16,26 +16,72 @@ namespace PixQrCodeGeneratorOffline.ViewModels
     {
         #region Commands
 
-        public ICommand ChangeSelectPixKeyCommand => new Command<CryptoKey>(async (pixkey) => await ChangeSelectedPixKey(pixkey));
+        public ICommand ChangeSelectCryptoKeyCommand => new Command<CryptoKey>(async (pixkey) => await ChangeSelectedCryptoKey(pixkey));
 
         public IAsyncCommand NavigateToAddNewKeyPageCommand => new AsyncCommand(async () => await _cryptoKeyService.NavigateToAdd());
 
+        public IAsyncCommand LoadDataCommand => new AsyncCommand(LoadData);
+
         #endregion
+
+        public DashboardCryptoViewModel()
+        {
+            LoadDataCommand.ExecuteAsync().SafeFireAndForget();
+
+            //Connectivity.ConnectivityChanged += Connectivity_ConnectivityChanged;
+
+            //DashboardVM = this;
+        }
+
+        public async Task LoadData()
+        {
+            try
+            {
+                IsBusy = true;
+
+                await LoadPixKey();
+
+                //await LoadPixKeyContact();
+
+                //await LoadBilling();
+
+                //await LoadCurrentPixKey();
+
+                //await CheckHasAKeyOnClipboard();
+
+                //await LoadNews();
+
+                //await NavigateToBenefitsPage();
+            }
+            catch (System.Exception e)
+            {
+                e.SendToLog();
+            }
+            finally
+            {
+                IsBusy = false;
+            }
+        }
+
+        public async Task LoadPixKey()
+        {
+            CryptoKeyList = _cryptoKeyService?.GetAll()?.OrderBy(x => x?.FinancialInstitution?.Name)?.ToObservableCollection() ?? new ObservableCollection<CryptoKey>();
+        }
 
         #region Props
 
-        private ObservableCollection<CryptoKey> _pixKeyList;
-        public ObservableCollection<CryptoKey> PixKeyList
+        private ObservableCollection<CryptoKey> _cryptoKeyList;
+        public ObservableCollection<CryptoKey> CryptoKeyList
         {
-            set => SetProperty(ref _pixKeyList, value);
-            get => _pixKeyList;
+            set => SetProperty(ref _cryptoKeyList, value);
+            get => _cryptoKeyList;
         }
 
-        private CryptoKey _currentPixKey;
-        public CryptoKey CurrentPixKey
+        private CryptoKey _currentCryptoKey;
+        public CryptoKey CurrentCryptoKey
         {
-            set => SetProperty(ref _currentPixKey, value);
-            get => _currentPixKey;
+            set => SetProperty(ref _currentCryptoKey, value);
+            get => _currentCryptoKey;
         }
 
         private ObservableCollection<CryptoKeyAction> _currentPixKeyActions;
@@ -47,13 +93,13 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         #endregion
 
-        private async Task ChangeSelectedPixKey(CryptoKey pixkey)
+        private async Task ChangeSelectedCryptoKey(CryptoKey pixkey)
         {
             MainThread.BeginInvokeOnMainThread(() =>
             {
-                CurrentPixKey = pixkey;
+                CurrentCryptoKey = pixkey;
                 //_statusBar.SetStatusBarColor(pixkey.FinancialInstitution.Institution.MaterialColor.PrimaryDark);
-                //CurrentPixKeyActions = pixkey?.Actions?.ToObservableCollection() ?? new ObservableCollection<PixKeyAction>();
+                CurrentPixKeyActions = pixkey?.Actions?.ToObservableCollection() ?? new ObservableCollection<CryptoKeyAction>();
             });
         }
     }

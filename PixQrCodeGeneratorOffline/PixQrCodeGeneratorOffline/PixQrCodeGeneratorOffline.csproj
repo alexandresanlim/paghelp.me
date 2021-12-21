@@ -193,4 +193,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\Viewer\PaymentMethods\Interfaces\" />
+    <Folder Include="Models\Viewer\PaymentMethods\Pix\" />
+  </ItemGroup>
 </Project>
