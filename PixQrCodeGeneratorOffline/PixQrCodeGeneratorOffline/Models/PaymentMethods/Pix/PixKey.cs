@@ -30,6 +30,7 @@ namespace PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix
             _pixPayloadService = DependencyService.Get<IPixPayloadService>();
             _pixKeyCommand = DependencyService.Get<IPixKeyCommand>();
             _pixKeyValidationService = DependencyService.Get<IPixKeyValidationService>();
+            Type = KeyType.Pix;
         }
 
         public string Name { get; set; }

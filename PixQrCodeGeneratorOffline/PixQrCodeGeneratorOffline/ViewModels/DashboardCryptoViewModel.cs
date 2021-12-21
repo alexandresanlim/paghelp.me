@@ -18,7 +18,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public ICommand ChangeSelectPixKeyCommand => new Command<CryptoKey>(async (pixkey) => await ChangeSelectedPixKey(pixkey));
 
-        public IAsyncCommand NavigateToAddNewKeyPageCommand => new AsyncCommand(async () => await _pixKeyService.NavigateToAdd());
+        public IAsyncCommand NavigateToAddNewKeyPageCommand => new AsyncCommand(async () => await _cryptoKeyService.NavigateToAdd());
 
         #endregion
 

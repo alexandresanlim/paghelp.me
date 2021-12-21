@@ -2,11 +2,17 @@
 using PixQrCodeGeneratorOffline.Models.Commands.Interfaces;
 using PixQrCodeGeneratorOffline.Models.Repository;
 using PixQrCodeGeneratorOffline.Models.Repository.Interfaces;
+using PixQrCodeGeneratorOffline.Models.Repository.PaymentMethods.Crypto;
+using PixQrCodeGeneratorOffline.Models.Repository.PaymentMethods.Crypto.Interfaces;
 using PixQrCodeGeneratorOffline.Models.Services;
 using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
+using PixQrCodeGeneratorOffline.Models.Services.PaymentMethods.Crypto;
+using PixQrCodeGeneratorOffline.Models.Services.PaymentMethods.Crypto.Interfaces;
 using PixQrCodeGeneratorOffline.Models.Services.Viewer;
 using PixQrCodeGeneratorOffline.Models.Validation.Services;
 using PixQrCodeGeneratorOffline.Models.Validation.Services.Interfaces;
+using PixQrCodeGeneratorOffline.Models.Validation.Services.Interfaces.PaymentMethods.Crypto;
+using PixQrCodeGeneratorOffline.Models.Validation.Services.PaymentMethods.Crypto;
 using PixQrCodeGeneratorOffline.Models.Viewer.Services;
 using PixQrCodeGeneratorOffline.Models.Viewer.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Services;
@@ -51,8 +57,10 @@ namespace PixQrCodeGeneratorOffline
         private void RegisterDependencyService()
         {
             DependencyService.Register<IFinancialInstitutionService, FinancialInstitutionService>();
+            DependencyService.Register<IFinancialInstitutionCryptoService, FinancialInstitutionCryptoService>();
             DependencyService.Register<IGuideService, GuideService>();
             DependencyService.Register<IPixKeyService, PixKeyService>();
+            DependencyService.Register<ICryptoKeyService, CryptoKeyService>();
             DependencyService.Register<IPixCobService, PixCobService>();
             DependencyService.Register<IPixPayloadService, PixPayloadService>();
             DependencyService.Register<IMaterialColorService, MaterialColorService>();
@@ -65,6 +73,7 @@ namespace PixQrCodeGeneratorOffline
         private void RegisterDependencyRepository()
         {
             DependencyService.Register<IPixKeyRepository, PixKeyRepository>();
+            DependencyService.Register<ICryptoKeyRepository, CryptoKeyRepository>();
             DependencyService.Register<IPixPayloadRepository, PixPayloadRepository>();
         }
 
@@ -72,6 +81,7 @@ namespace PixQrCodeGeneratorOffline
         {
             DependencyService.Register<IFeedValidationService, FeedValidationService>();
             DependencyService.Register<IPixKeyValidationService, PixKeyValidationService>();
+            DependencyService.Register<ICryptoKeyValidationService, CryptoKeyValidationService>();
             DependencyService.Register<IPixCobValidationService, PixCobValidationService>();
         }
 

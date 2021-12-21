@@ -31,6 +31,8 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public ICommand InputNextCommand => new Command(InputNext);
 
+        public ICommand CurrentInputChangedCommand => new Command(CurrentInputChanged);
+
         #endregion
 
         public AddPixKeyViewModel(PixKey pixKey = null, bool isContact = false)
@@ -351,8 +353,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 e.SendToLog();
             }
         }
-
-        public ICommand CurrentInputChangedCommand => new Command(CurrentInputChanged);
 
         private void CurrentInputChanged()
         {

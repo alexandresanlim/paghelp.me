@@ -7,16 +7,29 @@ using PixQrCodeGeneratorOffline.Models.PaymentMethods.Crypto;
 using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix.Extentions;
 using PixQrCodeGeneratorOffline.ViewModels.Helpers;
 using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using Xamarin.Essentials;
+using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.ViewModels.PaymentMethods.Crypto
 {
     public class AddCryptoKeyViewModel : ViewModelBase
     {
         public IAsyncCommand LoadDataCommand => new AsyncCommand(LoadData);
+
+        public ICommand InputNextCommand => new Command(InputNext);
+
+        public IAsyncCommand SaveCommand => new AsyncCommand(Save);
+
+        public IAsyncCommand DeleteCommand => new AsyncCommand(Delete);
+
+        public ICommand SelectedInstitutionCommand => new Command(SelectedInstitution);
+
+        public ICommand CurrentInputChangedCommand => new Command(CurrentInputChanged);
 
         public AddCryptoKeyViewModel(CryptoKey pixKey = null, bool isContact = false)
         {
@@ -53,14 +66,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels.PaymentMethods.Crypto
                         {
                             InputList[CurrentInputValues.Institution.Index].Placeholder = "Toque para selecionar";
                         }
-
-                        var firstKey = _pixKeyService.GetAll().LastOrDefault();
-
-                        if (firstKey != null && firstKey.Id > 0)
-                        {
-                            InputList[CurrentInputValues.Name.Index].Value = firstKey.Name;
-                            InputList[CurrentInputValues.City.Index].Value = firstKey.City;
-                        }
                     }
 
                     if (Clipboard.HasText)
@@ -88,9 +93,279 @@ namespace PixQrCodeGeneratorOffline.ViewModels.PaymentMethods.Crypto
             }
         }
 
+        private async Task Save()
+        {
+            CurrentCryptoKey.Key = CurrentInputValues?.Key?.Value;
+            CurrentCryptoKey.FinancialInstitution = SelectedFinancialInstitution;
+
+            if (!await ValidateSave())
+                return;
+
+            try
+            {
+                SetIsLoading(true);
+
+                await Task.Delay(500);
+
+                var success = false;
+
+                if (IsEdit)
+                {
+                    success = _cryptoKeyService.Update(CurrentCryptoKey);
+
+                    var l = CurrentCryptoKey.IsContact ? CurrentDashboard.PixKeyListContact.FirstOrDefault(x => x.Id.Equals(CurrentCryptoKey.Id)) : CurrentDashboard.PixKeyList.FirstOrDefault(x => x.Id.Equals(CurrentCryptoKey.Id));
+
+                    if (l != null)
+                    {
+                        int index = CurrentCryptoKey.IsContact ? CurrentDashboard.PixKeyListContact.IndexOf(l) : CurrentDashboard.PixKeyList.IndexOf(l);
+
+                        //Atualiza dashboard
+
+                        //if (index != -1)
+                        //{
+                        //    if (CurrentCryptoKey.IsContact)
+                        //        CurrentDashboard.PixKeyListContact[index] = CurrentPixKey;
+
+                        //    else
+                        //        CurrentDashboard.PixKeyList[index] = CurrentPixKey;
+                        //}
+                    }
+                }
+
+                else
+                {
+                    success = _cryptoKeyService.Insert(CurrentCryptoKey);
+
+                    // Atualiza dashboard
+
+                    //if (CurrentCryptoKey.IsContact)
+                    //{
+                    //    if (CurrentDashboard.PixKeyListContact.Count == 0)
+                    //    {
+                    //        CurrentDashboard.PixKeyListContact = new ObservableCollection<CryptoKey>
+                    //        {
+                    //            CurrentCryptoKey
+                    //        };
+                    //    }
+
+                    //    else
+                    //        CurrentDashboard.PixKeyListContact.Add(CurrentPixKey);
+                    //}
+
+                    //else
+                    //{
+                    //    if (CurrentDashboard.PixKeyList.Count == 0)
+                    //    {
+                    //        CurrentDashboard.PixKeyList = new ObservableCollection<CryptoKey>
+                    //        {
+                    //            CurrentPixKey
+                    //        };
+                    //    }
+
+                    //    else
+                    //    {
+                    //        CurrentDashboard.PixKeyList.Add(CurrentPixKey);
+                    //    }
+
+                    //    CurrentDashboard.CurrentPixKey = CurrentPixKey;
+                    //}
+                }
+
+                if (success)
+                {
+                    DialogService.Toast("Chave salva com sucesso");
+                    NavigateBack();
+                }
+
+                else
+                {
+                    DialogService.Toast("Algo de errado aconteceu, tente novamente mais tarde ou atualize o app");
+                }
+            }
+            catch (Exception e)
+            {
+                e.SendToLog();
+            }
+            finally
+            {
+                SetIsLoading(false);
+            }
+        }
+
+        private async Task Delete()
+        {
+            var confirm = await DialogService.ConfirmAsync("Tem certeza que deseja excluir a chave " + CurrentCryptoKey.Key + "?", "Confirmação", "Sim", "Cancelar");
+
+            if (!confirm)
+                return;
+
+            try
+            {
+                SetIsLoading(true);
+
+                await Task.Delay(500);
+
+                var success = _cryptoKeyService.Remove(CurrentCryptoKey);
+
+                if (success)
+                {
+                    //Atualiza dashboar
+
+                    //int index = CurrentCryptoKey.IsContact ?
+                    //CurrentDashboard.PixKeyListContact.IndexOf(CurrentDashboard.PixKeyListContact.FirstOrDefault(x => x.Id == CurrentPixKey.Id)) :
+                    //CurrentDashboard.PixKeyList.IndexOf(CurrentDashboard.PixKeyList.FirstOrDefault(x => x.Id == CurrentPixKey.Id));
+
+                    //if (index != -1)
+                    //{
+                    //    if (CurrentPixKey.IsContact)
+                    //    {
+                    //        CurrentDashboard.PixKeyListContact.RemoveAt(index);
+                    //    }
+
+                    //    else
+                    //    {
+                    //        CurrentDashboard.PixKeyList.RemoveAt(index);
+                    //        CurrentDashboard.CurrentPixKey = CurrentDashboard?.PixKeyList?.FirstOrDefault() ?? new PixKey();
+                    //    }
+                    //}
+
+                    //if (CurrentDashboard.PixKeyList.Count == 0)
+                    //{
+                    //    CurrentDashboard.PixKeyList = new ObservableCollection<PixKey>();
+                    //}
+
+                    //if (CurrentDashboard.PixKeyListContact.Count == 0)
+                    //{
+                    //    CurrentDashboard.PixKeyListContact = new ObservableCollection<PixKey>();
+                    //}
+
+                    DialogService.Toast("Chave removida com sucesso");
+
+                    NavigateBack();
+                }
+
+                else
+                {
+                    DialogService.Toast("Algo de errado aconteceu, tente novamente mais tarde ou atualize o app");
+                }
+            }
+            catch (Exception e)
+            {
+                e.SendToLog();
+            }
+            finally
+            {
+                SetIsLoading(false);
+            }
+
+        }
+
+        private async Task<bool> ValidateSave()
+        {
+            if (!CurrentCryptoKey.Validation.HasKey)
+            {
+                DialogService.Toast("Ops! Chave não informada");
+                ActualInputNextPosition = CurrentInputValues.Key.Index;
+                return false;
+            }
+
+            return true;
+        }
+
+        private void InputNext()
+        {
+            try
+            {
+                if (ShowSaveButton)
+                    return;
+
+                ActualInputNextPosition++;
+            }
+            catch (System.Exception e)
+            {
+                e.SendToLog();
+            }
+        }
+
+        private void CurrentInputChanged()
+        {
+            ShowSaveButton = CurrentInput == LastInput;
+        }
+
+        private void SelectedInstitution()
+        {
+            try
+            {
+                var options = new List<Acr.UserDialogs.ActionSheetOption>();
+
+                var intitutionList = _financialInstitutionCryptoService.GetList();
+
+                foreach (var item in intitutionList)
+                {
+                    options.Add(new Acr.UserDialogs.ActionSheetOption(item.Name, () =>
+                    {
+                        SetNewInstitution(item);
+                    }));
+                }
+
+                DialogService.ActionSheet(new Acr.UserDialogs.ActionSheetConfig
+                {
+                    Title = "Selecione um instituição",
+                    Message = "Caso sua instituição não esteja na lista, toque em adicionar nova",
+                    Options = options,
+                    //UseBottomSheet = true,
+                    Destructive = new Acr.UserDialogs.ActionSheetOption("ADICIONAR NOVA", async () =>
+                    {
+                        var newInstitution = await DialogService.PromptAsync(new Acr.UserDialogs.PromptConfig
+                        {
+                            CancelText = "Cancelar",
+                            InputType = Acr.UserDialogs.InputType.Name,
+                            OkText = "Adicionar",
+                            Title = "Instituição: ",
+                            Placeholder = "Digite o nome da instituição",
+                        });
+
+                        if (!newInstitution.Ok)
+                            return;
+
+                        var institution = new FinancialInstitutionCrypto
+                        {
+                            Name = newInstitution.Text,
+                            Type = FinancialInstitutionCryptoType.None
+                        };
+
+                        SetNewInstitution(institution);
+                    }),
+                    Cancel = new Acr.UserDialogs.ActionSheetOption("Cancelar", () =>
+                    {
+                        return;
+                    })
+                });
+            }
+            catch (Exception e)
+            {
+                e.SendToLog();
+            }
+        }
+
+        private void SetNewInstitution(FinancialInstitutionCrypto institution)
+        {
+
+            SelectedFinancialInstitution = institution;
+
+            InputList[CurrentInputValues.Institution.Index].Placeholder = institution.Name;
+            InputList[CurrentInputValues.Institution.Index].Value = institution.Name;
+            InputList[CurrentInputValues.Institution.Index].Title = institution.Name;
+
+            if (SelectedFinancialInstitution.Type != FinancialInstitutionCryptoType.None)
+                InputList[CurrentInputValues.Key.Index].Placeholder = CurrenKeyPlaceholderDefaultValue + " no(a) " + SelectedFinancialInstitution?.Name;
+
+            ActualInputNextPosition = 1;
+        }
+
         private async Task LoadInputList()
         {
-            InputList = AddPixInput.GetList(false);
+            InputList = AddCryptoInput.GetList(false);
             InputPhasesCount = InputList?.Count - 1 ?? 0;
         }
 
@@ -100,7 +375,9 @@ namespace PixQrCodeGeneratorOffline.ViewModels.PaymentMethods.Crypto
 
         public DashboardViewModel CurrentDashboard { get; set; }
 
-        private InputValues CurrentInputValues => new InputValues(InputList);
+        private InputCryptoValues CurrentInputValues => new InputCryptoValues(InputList);
+
+        private AddCryptoInput LastInput => InputList?.LastOrDefault() ?? new AddCryptoInput();
 
         private int _inputPhasesCount;
         public int InputPhasesCount
@@ -123,8 +400,29 @@ namespace PixQrCodeGeneratorOffline.ViewModels.PaymentMethods.Crypto
             get => _isEdit;
         }
 
-        private ObservableCollection<AddPixInput> _inputList;
-        public ObservableCollection<AddPixInput> InputList
+        private int _actualInputNextPosition;
+        public int ActualInputNextPosition
+        {
+            set => SetProperty(ref _actualInputNextPosition, value);
+            get => _actualInputNextPosition;
+        }
+
+        private bool _showSaveButton;
+        public bool ShowSaveButton
+        {
+            set => SetProperty(ref _showSaveButton, value);
+            get => _showSaveButton;
+        }
+
+        private AddCryptoInput _currentInput;
+        public AddCryptoInput CurrentInput
+        {
+            set => SetProperty(ref _currentInput, value);
+            get => _currentInput;
+        }
+
+        private ObservableCollection<AddCryptoInput> _inputList;
+        public ObservableCollection<AddCryptoInput> InputList
         {
             set => SetProperty(ref _inputList, value);
             get => _inputList;

@@ -9,7 +9,8 @@
     xmlns:models="clr-namespace:PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix"
     xmlns:qr="clr-namespace:Xam.Forms;assembly=Xam.Forms.QRCode"
     xmlns:templates="clr-namespace:PixQrCodeGeneratorOffline.Templates"
-    xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels">
+    xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
+    x:DataType="vm:DashboardCryptoViewModel">
     <Grid.Resources>
         <ResourceDictionary>
             <Style x:Key="styleActionText" TargetType="Label">

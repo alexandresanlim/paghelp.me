@@ -1,6 +1,7 @@
 ﻿using Acr.UserDialogs;
 using PixQrCodeGeneratorOffline.Models;
 using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
+using PixQrCodeGeneratorOffline.Models.Services.PaymentMethods.Crypto.Interfaces;
 using PixQrCodeGeneratorOffline.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Style.Interfaces;
 using PixQrCodeGeneratorOffline.ViewModels;
@@ -21,6 +22,8 @@ namespace PixQrCodeGeneratorOffline.Base.ViewModels
         protected readonly IFinancialInstitutionCryptoService _financialInstitutionCryptoService;
 
         protected readonly IPixKeyService _pixKeyService;
+
+        protected readonly ICryptoKeyService _cryptoKeyService;
 
         //public readonly IStatusBar _statusBarService;
 
@@ -43,6 +46,7 @@ namespace PixQrCodeGeneratorOffline.Base.ViewModels
             _financialInstitutionService = DependencyService.Get<IFinancialInstitutionService>();
             _financialInstitutionCryptoService = DependencyService.Get<IFinancialInstitutionCryptoService>();
             _pixKeyService = DependencyService.Get<IPixKeyService>();
+            _cryptoKeyService = DependencyService.Get<ICryptoKeyService>();
             //_statusBarService = DependencyService.Get<IStatusBar>();
             _materialColorService = DependencyService.Get<IMaterialColorService>();
             _pixPayloadService = DependencyService.Get<IPixPayloadService>();

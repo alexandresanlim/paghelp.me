@@ -13,6 +13,7 @@ namespace PixQrCodeGeneratorOffline.Models.PaymentMethods.Crypto
         public CryptoKey()
         {
             _cryptoKeyValidationService = DependencyService.Get<ICryptoKeyValidationService>();
+            Type = KeyType.Crypto;
         }
 
         [LiteDB.BsonIgnore]
