@@ -5,6 +5,7 @@ using PixQrCodeGeneratorOffline.Models.PaymentMethods.Crypto;
 using PixQrCodeGeneratorOffline.Models.Services.PaymentMethods.Crypto.Interfaces;
 using PixQrCodeGeneratorOffline.Services;
 using PixQrCodeGeneratorOffline.Services.Interfaces;
+using PixQrCodeGeneratorOffline.Views;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -36,15 +37,15 @@ namespace PixQrCodeGeneratorOffline.Models.Commands.PaymentMethods.Crypto
 
         public ICommand ShareOnWhatsCommand { get; private set; }
 
-        public ICommand NavigateToCreateBillingPageCommand { get; private set; }
+        //public ICommand NavigateToCreateBillingPageCommand { get; private set; }
 
         public ICommand NavigateToPaymentPageCommand { get; private set; }
 
-        public ICommand NavigateToDownloadQrCodeCommand { get; private set; }
+        //public ICommand NavigateToDownloadQrCodeCommand { get; private set; }
 
         public ICommand EditKeyCommand { get; private set; }
 
-        public ICommand NavigateToBillingCommand { get; private set; }
+        // public ICommand NavigateToBillingCommand { get; private set; }
 
         public CryptoKeyCommand Create(CryptoKey pixKey)
         {
@@ -54,7 +55,7 @@ namespace PixQrCodeGeneratorOffline.Models.Commands.PaymentMethods.Crypto
                 ShareKeyCommand = GetShareKeyCommand(pixKey),
                 ShareOnWhatsCommand = GetShareKeyOnWhatsCommand(pixKey),
                 //NavigateToCreateBillingPageCommand = GetNavigateToCreateBillingCommand(pixKey),
-                //NavigateToPaymentPageCommand = GetNavigateToPaymentPageCommand(pixKey),
+                NavigateToPaymentPageCommand = GetNavigateToPaymentPageCommand(pixKey),
                 EditKeyCommand = GetEdityKeyCommand(pixKey),
                 //NavigateToBillingCommand = GetNavigateToBillingCommand(pixKey),
                 //NavigateToDownloadQrCodeCommand = GetNavigateToDownloadQrCodeCommand(pixKey),
@@ -119,6 +120,42 @@ namespace PixQrCodeGeneratorOffline.Models.Commands.PaymentMethods.Crypto
         private Command GetEdityKeyCommand(CryptoKey pixKey)
         {
             return new Command(async () => await _cryptoKeyService.NavigateToEdit(pixKey, isContact: pixKey.IsContact));
+        }
+
+        public bool IsLoad { get; set; } = false;
+
+        private Command GetNavigateToPaymentPageCommand(CryptoKey pixKey)
+        {
+            return new Command(async () =>
+            {
+                try
+                {
+                    if (IsLoad)
+                        return;
+
+                    IsLoad = true;
+
+                    DialogService.ShowLoading("");
+
+                    await Task.Delay(500);
+
+                    var pixPaylod = _cryptoPayloadService.Create(pixKey);
+
+                    await Shell.Current.Navigation.PushAsync(new PaymentPage(pixPaylod));
+                }
+                catch (System.Exception e)
+                {
+                    e.SendToLog();
+                }
+                finally
+                {
+                    _eventService.SendEvent("Navegou para pagina de pagamento a partir da dashboard", EventType.NAVIGATION);
+
+                    DialogService.HideLoading();
+
+                    IsLoad = false;
+                }
+            });
         }
     }
 }

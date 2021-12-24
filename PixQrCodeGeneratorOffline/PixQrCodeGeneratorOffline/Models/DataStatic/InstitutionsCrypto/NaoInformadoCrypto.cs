@@ -18,5 +18,9 @@ namespace PixQrCodeGeneratorOffline.Models.DataStatic.InstitutionsCrypto
             PrimaryLight = Color.FromHex("#60748b"),
             TextOnPrimary = Color.FromHex("#ffffff")
         };
+
+        public string Code => string.Empty;
+
+        public string LinkToWallet => string.Empty;
     }
 }

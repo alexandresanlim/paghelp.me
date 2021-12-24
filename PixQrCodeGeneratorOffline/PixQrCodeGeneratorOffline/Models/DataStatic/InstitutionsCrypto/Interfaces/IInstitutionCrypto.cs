@@ -6,6 +6,10 @@
 
         string Name { get; }
 
+        string Code { get; }
+
+        string LinkToWallet { get; }
+
         MaterialColor MaterialColor { get; }
     }
 }

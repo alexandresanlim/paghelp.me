@@ -11,47 +11,47 @@ namespace PixQrCodeGeneratorOffline.Models.PaymentMethods.Crypto
         {
             return new List<CryptoKeyAction>
             {
-                new CryptoKeyAction
-                {
-                    Title = "Criar Cobrança",
-                    Icon = FontAwesomeSolid.HandHoldingUsd,
-                    //Command = pixKey?.Command?.NavigateToCreateBillingPageCommand,
-                    Colors = pixKey?.FinancialInstitution?.Institution?.MaterialColor
-                },
+                //new CryptoKeyAction
+                //{
+                //    Title = "Criar Cobrança",
+                //    Icon = FontAwesomeSolid.HandHoldingUsd,
+                //    //Command = pixKey?.Command?.NavigateToCreateBillingPageCommand,
+                //    Colors = pixKey?.FinancialInstitution?.Institution?.MaterialColor
+                //},
                 new CryptoKeyAction
                 {
                     Title = "Copiar Chave",
                     Icon = FontAwesomeSolid.Copy,
-                    //Command = pixKey?.Command?.CopyKeyCommand,
+                    Command = pixKey?.Command?.CopyKeyCommand,
                     Colors = pixKey?.FinancialInstitution?.Institution?.MaterialColor
                 },
                 new CryptoKeyAction
                 {
                     Title = "Compartilhar Chave",
                     Icon = FontAwesomeSolid.ShareAlt,
-                    //Command = pixKey?.Command?.ShareKeyCommand,
+                    Command = pixKey?.Command?.ShareKeyCommand,
                     Colors = pixKey?.FinancialInstitution?.Institution?.MaterialColor
                 },
                 new CryptoKeyAction
                 {
                     Title = "Compartilhar no WhatsApp",
                     Icon = FontAwesomeBrands.Whatsapp,
-                    //Command = pixKey?.Command?.ShareOnWhatsCommand,
+                    Command = pixKey?.Command?.ShareOnWhatsCommand,
                     Colors = pixKey?.FinancialInstitution?.Institution?.MaterialColor,
                     IconType = FontAwesomeType.brand
                 },
-                new CryptoKeyAction
-                {
-                    Title = "Cobranças Salvas",
-                    Icon = FontAwesomeSolid.HandHoldingUsd,
-                    //Command = pixKey?.Command?.NavigateToBillingCommand,
-                    Colors = pixKey?.FinancialInstitution?.Institution?.MaterialColor
-                },
+                //new CryptoKeyAction
+                //{
+                //    Title = "Cobranças Salvas",
+                //    Icon = FontAwesomeSolid.HandHoldingUsd,
+                //    //Command = pixKey?.Command?.NavigateToBillingCommand,
+                //    Colors = pixKey?.FinancialInstitution?.Institution?.MaterialColor
+                //},
                 new CryptoKeyAction
                 {
                     Title = "Ver Qr Code",
                     Icon = FontAwesomeSolid.Qrcode,
-                    //Command = pixKey?.Command?.NavigateToPaymentPageCommand,
+                    Command = pixKey?.Command?.NavigateToPaymentPageCommand,
                     Colors = pixKey?.FinancialInstitution?.Institution?.MaterialColor
                 },
                 //new PixKeyAction
@@ -65,7 +65,7 @@ namespace PixQrCodeGeneratorOffline.Models.PaymentMethods.Crypto
                 {
                     Title = "Editar Chave",
                     Icon = FontAwesomeSolid.Pen,
-                    //Command = pixKey?.Command?.EditKeyCommand,
+                    Command = pixKey?.Command?.EditKeyCommand,
                     Colors = pixKey?.FinancialInstitution?.Institution?.MaterialColor
                 },
                 

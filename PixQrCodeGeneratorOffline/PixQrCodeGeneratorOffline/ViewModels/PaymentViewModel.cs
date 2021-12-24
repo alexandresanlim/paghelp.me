@@ -1,6 +1,9 @@
 ﻿using AsyncAwaitBestPractices.MVVM;
 using PixQrCodeGeneratorOffline.Base.ViewModels;
 using PixQrCodeGeneratorOffline.Extention;
+using PixQrCodeGeneratorOffline.Models;
+using PixQrCodeGeneratorOffline.Models.PaymentMethods.Base;
+using PixQrCodeGeneratorOffline.Models.PaymentMethods.Crypto;
 using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix;
 using System;
 using System.Collections.Generic;
@@ -20,9 +23,20 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         #endregion
 
-        public ICommand LoadDataCommand => new Command<PixPayload>((pixPaylod) =>
+        public ICommand LoadDataCommand => new Command<PayloadBase>((payloadParameter) =>
         {
-            CurrentPixPaylod = pixPaylod;
+            CurrentPaylodBase = payloadParameter;
+
+            if (payloadParameter is PixPayload pixPayload)
+            { 
+                CurrentPixPaylod = pixPayload;
+                CurrentColor = pixPayload.PixKey.FinancialInstitution.Institution.MaterialColor;
+            }
+
+            else if(payloadParameter is CryptoPayload cryptoPayload)
+            {
+                CurrentColor = cryptoPayload.CryptoKey.FinancialInstitution.Institution.MaterialColor;
+            }
 
             //SaveButtonVisible = !(CurrentPixPaylod.Id > 0) && CurrentPixPaylod?.PixCob != null && CurrentPixPaylod.PixCob.Validation.HasValue;
         });
@@ -105,11 +119,25 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             get => _currentPixPaylod;
         }
 
+        private PayloadBase _currentPaylodBase;
+        public PayloadBase CurrentPaylodBase
+        {
+            set => SetProperty(ref _currentPaylodBase, value);
+            get => _currentPaylodBase;
+        }
+
         private bool _saveButtonVisible;
         public bool SaveButtonVisible
         {
             set => SetProperty(ref _saveButtonVisible, value);
             get => _saveButtonVisible;
+        }
+
+        private MaterialColor _currentColor;
+        public MaterialColor CurrentColor
+        {
+            set => SetProperty(ref _currentColor, value);
+            get => _currentColor;
         }
     }
 }

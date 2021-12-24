@@ -10,7 +10,7 @@
     x:DataType="vm:PaymentViewModel"
     BackgroundColor="{DynamicResource background_page}"
     NavigationPage.HasNavigationBar="True"
-    Shell.BackgroundColor="{Binding CurrentPixPaylod.PixKey.FinancialInstitution.Institution.MaterialColor.Primary}">
+    Shell.BackgroundColor="{Binding CurrentColor.Primary}">
 
     <ContentPage.Content>
 
@@ -26,7 +26,7 @@
             </Grid.Background>-->
 
             <ScrollView Grid.Row="0" Padding="15,0">
-                <StackLayout VerticalOptions="Start">
+                <StackLayout VerticalOptions="StartAndExpand">
 
                     <StackLayout Orientation="Horizontal">
 
@@ -65,7 +65,7 @@
 
                         <qr:QRCode
                             BackgroundColor="White"
-                            Content="{Binding CurrentPixPaylod.QrCode}"
+                            Content="{Binding CurrentPaylodBase.QrCode}"
                             HeightRequest="300"
                             HorizontalOptions="CenterAndExpand"
                             Level="H"
@@ -113,7 +113,7 @@
             <StackLayout
                 Grid.Row="1"
                 Padding="10"
-                BackgroundColor="{Binding CurrentPixPaylod.PixKey.FinancialInstitution.Institution.MaterialColor.Primary}">
+                BackgroundColor="{Binding CurrentColor.Primary}">
                 <StackLayout.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:PaymentViewModel}}, Path=SharePayloadCommand}" />
                 </StackLayout.GestureRecognizers>
@@ -122,11 +122,11 @@
                     FontFamily="{DynamicResource FontBold}"
                     FontSize="{DynamicResource FontSizeSmall}"
                     Text="Código copia e cola"
-                    TextColor="{Binding CurrentPixPaylod.PixKey.FinancialInstitution.Institution.MaterialColor.TextOnPrimary}" />
+                    TextColor="{Binding CurrentColor.TextOnPrimary}" />
 
                 <Frame
                     Padding="15"
-                    BackgroundColor="{Binding CurrentPixPaylod.PixKey.FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
+                    BackgroundColor="{Binding CurrentColor.PrimaryDark}"
                     CornerRadius="10">
                     <Grid ColumnDefinitions="*, auto">
                         <Label
@@ -134,13 +134,13 @@
                             FontSize="{StaticResource FontSizeMicro}"
                             LineBreakMode="TailTruncation"
                             MaxLines="2"
-                            Text="{Binding CurrentPixPaylod.QrCode}"
-                            TextColor="{Binding CurrentPixPaylod.PixKey.FinancialInstitution.Institution.MaterialColor.TextOnPrimary}" />
+                            Text="{Binding CurrentPaylodBase.QrCode}"
+                            TextColor="{Binding CurrentColor.TextOnPrimary}" />
                         <controls:CustomIcon
                             Grid.Column="1"
                             FontSize="{StaticResource FontSizeMedium}"
                             Glyph="{x:Static icons:FontAwesomeSolid.ShareSquare}"
-                            TextColor="{Binding CurrentPixPaylod.PixKey.FinancialInstitution.Institution.MaterialColor.TextOnPrimary}"
+                            TextColor="{Binding CurrentColor.TextOnPrimary}"
                             VerticalOptions="CenterAndExpand" />
                     </Grid>
                 </Frame>

@@ -16,5 +16,13 @@ namespace PixQrCodeGeneratorOffline.Models.PaymentMethods.Base
             set { SetProperty(ref _qrCode, value); }
             get { return _qrCode; }
         }
+
+        public PayloadType Type { get; set; }
+    }
+
+    public enum PayloadType
+    {
+        Pix,
+        Crypto
     }
 }

@@ -177,7 +177,7 @@ namespace PixQrCodeGeneratorOffline.Models.Services.PaymentMethods.Crypto
 
                 await Task.Delay(500);
 
-                //await Shell.Current.Navigation.PushAsync(new AddPixKeyPage(pixKey, isContact));
+                await Shell.Current.Navigation.PushAsync(new AddCryptoKeyPage(pixKey, isContact));
             }
             catch (System.Exception e)
             {

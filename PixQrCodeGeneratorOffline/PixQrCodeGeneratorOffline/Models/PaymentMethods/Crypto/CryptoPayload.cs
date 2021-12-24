@@ -12,6 +12,7 @@ namespace PixQrCodeGeneratorOffline.Models.PaymentMethods.Crypto
         public CryptoPayload()
         {
             _pixPayloadCommand = DependencyService.Get<ICryptoPayloadCommand>();
+            Type = PayloadType.Crypto;
         }
 
         public CryptoKey CryptoKey { get; set; }

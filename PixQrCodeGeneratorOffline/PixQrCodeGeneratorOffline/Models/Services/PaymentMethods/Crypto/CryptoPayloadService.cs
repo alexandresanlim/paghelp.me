@@ -83,7 +83,7 @@ namespace PixQrCodeGeneratorOffline.Models.Services.PaymentMethods.Crypto
     {
         public static string GenerateStringToQrCode(this CryptoPayload cryptoPayload)
         {
-            var payload = $"bitcoin:{cryptoPayload.CryptoKey}";
+            var payload = $"bitcoin:{cryptoPayload?.CryptoKey?.Key}";
 
             if(!string.IsNullOrWhiteSpace(cryptoPayload?.Amount))
             {

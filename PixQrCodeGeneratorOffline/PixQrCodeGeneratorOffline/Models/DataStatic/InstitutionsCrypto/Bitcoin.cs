@@ -8,6 +8,8 @@ namespace PixQrCodeGeneratorOffline.Models.DataStatic.InstitutionsCrypto
     {
         public string Name => "Bitcoin";
 
+        public string LinkToWallet => "bitcoin:";
+
         public FinancialInstitutionCryptoType Type => FinancialInstitutionCryptoType.Bitcoin;
 
         public MaterialColor MaterialColor => new MaterialColor()
@@ -18,5 +20,7 @@ namespace PixQrCodeGeneratorOffline.Models.DataStatic.InstitutionsCrypto
             PrimaryLight = Color.FromHex("#ffcd4e"),
             TextOnPrimary = Color.FromHex("#ffffff")
         };
+
+        public string Code => "BTC";
     }
 }
