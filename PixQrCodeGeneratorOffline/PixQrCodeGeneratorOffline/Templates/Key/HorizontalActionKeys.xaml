@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<StackLayout
+    x:Class="PixQrCodeGeneratorOffline.Templates.Key.HorizontalActionKeys"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
+    xmlns:key="clr-namespace:PixQrCodeGeneratorOffline.Templates.Key"
+    Padding="8,0,0,0"
+    x:DataType="key:HorizontalActionKeys">
+
+    <Frame
+        BackgroundColor="{DynamicResource foreground_page}"
+        CornerRadius="5"
+        VerticalOptions="FillAndExpand"
+        WidthRequest="150">
+
+        <Grid>
+
+            <BoxView
+                x:Name="xBoxView"
+                CornerRadius="5,0,0,55"
+                HeightRequest="65"
+                HorizontalOptions="Start"
+                VerticalOptions="Start"
+                WidthRequest="65" />
+
+            <StackLayout Padding="10">
+                <controls:CustomIcon
+                    x:Name="xIcon"
+                    FontSize="{DynamicResource FontSizeLarge}"
+                    HorizontalOptions="Start"
+                    TextColor="{DynamicResource textPrimary}" />
+
+                <Label
+                    x:Name="xTitle"
+                    FontFamily="{DynamicResource FontBold}"
+                    FontSize="{DynamicResource FontSizeSmall}"
+                    TextColor="{DynamicResource textPrimary}"
+                    VerticalOptions="EndAndExpand" />
+
+            </StackLayout>
+        </Grid>
+    </Frame>
+</StackLayout>

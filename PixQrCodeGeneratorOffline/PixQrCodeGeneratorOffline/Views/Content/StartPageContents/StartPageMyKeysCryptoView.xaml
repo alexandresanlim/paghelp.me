@@ -6,6 +6,7 @@
     xmlns:content="clr-namespace:PixQrCodeGeneratorOffline.Views.Content"
     xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
     xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon"
+    xmlns:key="clr-namespace:PixQrCodeGeneratorOffline.Templates.Key"
     xmlns:models="clr-namespace:PixQrCodeGeneratorOffline.Models.PaymentMethods.Crypto"
     xmlns:qr="clr-namespace:Xam.Forms;assembly=Xam.Forms.QRCode"
     xmlns:templates="clr-namespace:PixQrCodeGeneratorOffline.Templates"
@@ -59,104 +60,14 @@
                 <CarouselView.ItemTemplate>
                     <DataTemplate x:DataType="models:CryptoKey">
 
-
-                        <StackLayout Padding="5,0">
-                            <Frame Padding="15" CornerRadius="10">
-                                <Grid ColumnDefinitions="auto,*">
-
-                                    <BoxView
-                                        Grid.Column="0"
-                                        BackgroundColor="{Binding FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
-                                        CornerRadius="15"
-                                        WidthRequest="8" />
-
-                                    <StackLayout
-                                        Grid.Column="1"
-                                        Padding="10,15"
-                                        Spacing="15">
-
-
-                                        <Grid ColumnDefinitions="auto,*" ColumnSpacing="15">
-
-                                            <Grid.GestureRecognizers>
-                                                <TapGestureRecognizer Command="{Binding Command.NavigateToPaymentPageCommand}" />
-                                            </Grid.GestureRecognizers>
-
-                                            <qr:QRCode
-                                                Grid.Column="0"
-                                                BackgroundColor="White"
-                                                Content="{Binding Payload.QrCode}"
-                                                HeightRequest="80"
-                                                Level="H"
-                                                VerticalOptions="Center"
-                                                WidthRequest="80"
-                                                Color="#000000" />
-
-                                            <Grid
-                                                Grid.Column="1"
-                                                ColumnDefinitions="auto, *"
-                                                RowDefinitions="auto, auto"
-                                                RowSpacing="0"
-                                                VerticalOptions="Center">
-
-                                                <controls:CustomIcon
-                                                    Grid.Row="0"
-                                                    Grid.Column="0"
-                                                    Glyph="{x:Static icons:FontAwesomeSolid.University}"
-                                                    Style="{DynamicResource styleActionIcon}" />
-                                                <Label
-                                                    Grid.Row="0"
-                                                    Grid.Column="1"
-                                                    Style="{DynamicResource styleActionText}"
-                                                    Text="{Binding Viewer.InstitutionPresentation}" />
-
-                                                <!--<controls:CustomIcon Grid.Row="1" Grid.Column="0" Glyph="{x:Static icons:FontAwesomeSolid.UserAlt }" Style="{DynamicResource styleActionIcon}" />
-                                                        <Label Grid.Row="1" Grid.Column="1" Text="{Binding Viewer.NamePresentation}" Style="{DynamicResource styleActionText}" />-->
-
-                                                <controls:CustomIcon
-                                                    Grid.Row="1"
-                                                    Grid.Column="0"
-                                                    Glyph="{x:Static icons:FontAwesomeSolid.Key}"
-                                                    Style="{DynamicResource styleActionIcon}" />
-
-
-                                                <Label
-                                                    Grid.Row="1"
-                                                    Grid.Column="1"
-                                                    LineBreakMode="MiddleTruncation"
-                                                    MaxLines="1"
-                                                    Style="{DynamicResource styleActionText}"
-                                                    Text="{Binding Viewer.KeyPresentation}" />
-
-                                                <!--<StackLayout
-                                                    Grid.Row="1"
-                                                    Grid.Column="1"
-                                                    BackgroundColor="Red"
-                                                    HorizontalOptions="FillAndExpand"
-                                                    IsVisible="{Binding Viewer.IsHideValue}" />-->
-
-
-
-                                            </Grid>
-
-                                            <!--<StackLayout Grid.Column="2" Padding="30,5,0,15" VerticalOptions="Start">
-                                                        <StackLayout.GestureRecognizers>
-                                                            <TapGestureRecognizer Command="{Binding Command.EditKeyCommand}" />
-                                                        </StackLayout.GestureRecognizers>
-
-                                                        <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Edit }" IconColor="{DynamicResource textSecondary}"/>
-
-                                                        <Label Text="Editar" Style="{DynamicResource styleTextOnButtonActionList}" TextColor="{DynamicResource textSecondary}"/>
-                                                    </StackLayout>-->
-
-                                        </Grid>
-
-
-                                    </StackLayout>
-                                </Grid>
-                            </Frame>
-                        </StackLayout>
-
+                        <key:HorizontalKeys
+                            BoxColor="{Binding FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
+                            IconInstitution="{x:Static icons:FontAwesomeSolid.Coins}"
+                            IconKey="{x:Static icons:FontAwesomeSolid.Key}"
+                            InstitutionValue="{Binding Viewer.InstitutionPresentation}"
+                            KeyValue="{Binding Viewer.KeyPresentation}"
+                            QrCode="{Binding Payload.QrCode}"
+                            TapCommand="{Binding Command.NavigateToPaymentPageCommand}" />
 
                     </DataTemplate>
                 </CarouselView.ItemTemplate>
@@ -181,50 +92,13 @@
 
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="models:CryptoKeyAction">
-                    <StackLayout Padding="8,0,0,0">
-                        <StackLayout.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding Command}" />
-                        </StackLayout.GestureRecognizers>
+                    <key:HorizontalActionKeys
+                        Title="{Binding Title}"
+                        BoxColor="{Binding Colors.PrimaryDark}"
+                        Icon="{Binding Icon}"
+                        IconType="{Binding IconType}"
+                        TapCommand="{Binding Command}" />
 
-                        <Frame
-                            BackgroundColor="{DynamicResource foreground_page}"
-                            CornerRadius="5"
-                            VerticalOptions="FillAndExpand"
-                            WidthRequest="150">
-
-                            <Grid>
-
-                                <BoxView
-                                    BackgroundColor="{Binding Colors.PrimaryDark}"
-                                    CornerRadius="5,0,0,55"
-                                    HeightRequest="65"
-                                    HorizontalOptions="Start"
-                                    VerticalOptions="Start"
-                                    WidthRequest="65" />
-
-                                <StackLayout Padding="10">
-                                    <controls:CustomIcon
-                                        FontSize="{DynamicResource FontSizeLarge}"
-                                        Glyph="{Binding Icon}"
-                                        HorizontalOptions="Start"
-                                        IconType="{Binding IconType}"
-                                        TextColor="{DynamicResource textPrimary}" />
-
-                                    <Label
-                                        FontFamily="{DynamicResource FontBold}"
-                                        FontSize="{DynamicResource FontSizeSmall}"
-                                        Text="{Binding Title}"
-                                        TextColor="{DynamicResource textPrimary}"
-                                        VerticalOptions="EndAndExpand" />
-
-                                </StackLayout>
-                            </Grid>
-
-
-                        </Frame>
-
-
-                    </StackLayout>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
 

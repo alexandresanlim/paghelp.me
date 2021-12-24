@@ -139,12 +139,19 @@ namespace PixQrCodeGeneratorOffline.Models.Commands
             });
         }
 
+        public bool IsLoad { get; set; } = false;
+
         private Command GetNavigateToPaymentPageCommand(PixKey pixKey)
         {
             return new Command(async () =>
             {
                 try
                 {
+                    if (IsLoad)
+                        return;
+
+                    IsLoad = true;
+
                     DialogService.ShowLoading("");
 
                     await Task.Delay(500);
@@ -162,6 +169,8 @@ namespace PixQrCodeGeneratorOffline.Models.Commands
                     _eventService.SendEvent("Navegou para pagina de pagamento a partir da dashboard", EventType.NAVIGATION);
 
                     DialogService.HideLoading();
+
+                    IsLoad = false;
                 }
             });
         }
