@@ -75,7 +75,7 @@
                                     Text="{Binding Viewer.KeyPresentation}"
                                     TextColor="{DynamicResource textPrimary}" />
 
-                                <content:DivisionView />
+                                <content:DivisionView BackgroundColor="{DynamicResource textSecondary}" />
 
                                 <Grid ColumnDefinitions="*,*" VerticalOptions="EndAndExpand">
                                     <StackLayout Grid.Column="0">

@@ -84,11 +84,11 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             get => _currentCryptoKey;
         }
 
-        private ObservableCollection<CryptoKeyAction> _currentPixKeyActions;
-        public ObservableCollection<CryptoKeyAction> CurrentPixKeyActions
+        private ObservableCollection<CryptoKeyAction> _currentCryptoKeyActions;
+        public ObservableCollection<CryptoKeyAction> CurrentCryptoKeyActions
         {
-            set => SetProperty(ref _currentPixKeyActions, value);
-            get => _currentPixKeyActions;
+            set => SetProperty(ref _currentCryptoKeyActions, value);
+            get => _currentCryptoKeyActions;
         }
 
         #endregion
@@ -99,7 +99,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             {
                 CurrentCryptoKey = pixkey;
                 //_statusBar.SetStatusBarColor(pixkey.FinancialInstitution.Institution.MaterialColor.PrimaryDark);
-                CurrentPixKeyActions = pixkey?.Actions?.ToObservableCollection() ?? new ObservableCollection<CryptoKeyAction>();
+                CurrentCryptoKeyActions = pixkey?.Actions?.ToObservableCollection() ?? new ObservableCollection<CryptoKeyAction>();
             });
         }
     }

@@ -61,7 +61,7 @@ namespace PixQrCodeGeneratorOffline.Models.Commands
 
         private Command GetCopyKeyCommand(PixKey pixKey)
         {
-            return new Command(async () => await _externalActionService.CopyText(pixKey?.Key, "Chave copiada com sucesso!"));
+            return new Command(async () => await _externalActionService.CopyText(pixKey?.Key, $"Chave {pixKey?.Key} em {pixKey?.FinancialInstitution?.Institution?.Name} copiada.", pixKey?.FinancialInstitution?.Institution?.MaterialColor?.PrimaryDark, pixKey?.FinancialInstitution?.Institution?.MaterialColor?.TextOnPrimary));
         }
 
         private Command GetShareKeyCommand(PixKey pixKey)

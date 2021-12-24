@@ -4,6 +4,7 @@ using System;
 using System.IO;
 using System.Threading.Tasks;
 using Xamarin.Essentials;
+using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.Services
 {
@@ -45,7 +46,7 @@ namespace PixQrCodeGeneratorOffline.Services
                 await Launcher.OpenAsync(new Uri("https://api.whatsapp.com/" + textAndPhone));
         }
 
-        public async Task CopyText(string text, string textSuccess = "Copiado com sucesso!")
+        public async Task CopyText(string text, string textSuccess = "Copiado com sucesso!", Color? backgroundToast = null, Color? foregroundToast = null)
         {
             if (string.IsNullOrWhiteSpace(text))
             {
@@ -54,7 +55,13 @@ namespace PixQrCodeGeneratorOffline.Services
             }
 
             await Clipboard.SetTextAsync(text);
-            DialogService.Toast(textSuccess);
+            //DialogService.Toast(textSuccess);
+
+            DialogService.Toast(new ToastConfig(textSuccess)
+            {
+                BackgroundColor = backgroundToast ?? App.ThemeColors.PrimaryDark,
+                MessageTextColor = foregroundToast ?? App.ThemeColors.TextOnPrimary,
+            });
         }
 
         public string GenerateTxtFile(string contents, string fileName)

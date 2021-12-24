@@ -203,5 +203,33 @@ namespace PixQrCodeGeneratorOffline.Templates.Key
                 Command = (ICommand)newValue,
             });
         }
+
+
+        public static readonly BindableProperty HideValueProperty =
+           BindableProperty.Create(
+               propertyName: nameof(HideValue),
+               returnType: typeof(bool),
+               declaringType: typeof(HorizontalKeys),
+               defaultValue: false,
+               defaultBindingMode: BindingMode.Default,
+               validateValue: null,
+               propertyChanged: HideValuePropertyChanged);
+
+        public bool HideValue
+        {
+            get => (bool)GetValue(HideValueProperty);
+            set => SetValue(HideValueProperty, value);
+        }
+
+        static void HideValuePropertyChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            if (newValue == null)
+                return;
+
+            var template = (HorizontalKeys)bindable;
+            bool value = (bool)newValue;
+
+            template.xKeyValue.Text = "*****";
+        }
     }
 }

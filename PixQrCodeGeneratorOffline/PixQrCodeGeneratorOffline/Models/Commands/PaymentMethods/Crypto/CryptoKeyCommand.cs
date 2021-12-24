@@ -64,7 +64,7 @@ namespace PixQrCodeGeneratorOffline.Models.Commands.PaymentMethods.Crypto
 
         private Command GetCopyKeyCommand(CryptoKey pixKey)
         {
-            return new Command(async () => await _externalActionService.CopyText(pixKey?.Key, "Chave copiada com sucesso!"));
+            return new Command(async () => await _externalActionService.CopyText(pixKey?.Key, $"Chave {pixKey?.Key} de {pixKey?.FinancialInstitution?.Institution?.Name} copiada", pixKey?.FinancialInstitution?.Institution?.MaterialColor?.PrimaryDark, pixKey?.FinancialInstitution?.Institution?.MaterialColor?.TextOnPrimary));
         }
 
         private Command GetShareKeyCommand(CryptoKey pixKey)
