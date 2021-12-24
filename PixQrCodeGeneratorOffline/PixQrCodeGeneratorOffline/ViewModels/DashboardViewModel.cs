@@ -145,9 +145,9 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             {
                 CurrentDashboardLoadInfo.IsLoadBilling = true;
 
-                BillingSaveList = _pixPayloadService?.GetAll()?.ToObservableCollection() ?? new ObservableCollection<PixPayload>();
-
                 await Task.Delay(500);
+
+                BillingSaveList = _pixPayloadService?.GetAll()?.ToObservableCollection() ?? new ObservableCollection<PixPayload>();
             }
             catch (System.Exception e)
             {
