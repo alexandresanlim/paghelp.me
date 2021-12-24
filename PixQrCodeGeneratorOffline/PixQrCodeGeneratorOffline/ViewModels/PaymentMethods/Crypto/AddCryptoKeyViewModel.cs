@@ -36,7 +36,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels.PaymentMethods.Crypto
             CurrentCryptoKey = pixKey ?? new CryptoKey();
             CurrentCryptoKey.IsContact = isContact;
 
-            CurrentDashboard = DashboardVM; //CurrentPixKey.IsContact ? DashboardContactVM : (DashboardViewModelBase)DashboardVM;
+            CurrentDashboard = DashboardCryptoVM; //CurrentPixKey.IsContact ? DashboardContactVM : (DashboardViewModelBase)DashboardVM;
 
             LoadDataCommand.ExecuteAsync().SafeFireAndForget();
         }
@@ -113,22 +113,28 @@ namespace PixQrCodeGeneratorOffline.ViewModels.PaymentMethods.Crypto
                 {
                     success = _cryptoKeyService.Update(CurrentCryptoKey);
 
-                    var l = CurrentCryptoKey.IsContact ? CurrentDashboard.PixKeyListContact.FirstOrDefault(x => x.Id.Equals(CurrentCryptoKey.Id)) : CurrentDashboard.PixKeyList.FirstOrDefault(x => x.Id.Equals(CurrentCryptoKey.Id));
+                    //var l = CurrentCryptoKey.IsContact ? CurrentDashboard.PixKeyListContact.FirstOrDefault(x => x.Id.Equals(CurrentCryptoKey.Id)) : CurrentDashboard.CryptoKeyList.FirstOrDefault(x => x.Id.Equals(CurrentCryptoKey.Id));
+
+                    var l = CurrentDashboard.CryptoKeyList.FirstOrDefault(x => x.Id.Equals(CurrentCryptoKey.Id));
 
                     if (l != null)
                     {
-                        int index = CurrentCryptoKey.IsContact ? CurrentDashboard.PixKeyListContact.IndexOf(l) : CurrentDashboard.PixKeyList.IndexOf(l);
+                        //int index = CurrentCryptoKey.IsContact ? CurrentDashboard.PixKeyListContact.IndexOf(l) : CurrentDashboard.CryptoKeyList.IndexOf(l);
+
+                        int index = CurrentDashboard.CryptoKeyList.IndexOf(l);
 
                         //Atualiza dashboard
 
-                        //if (index != -1)
-                        //{
-                        //    if (CurrentCryptoKey.IsContact)
-                        //        CurrentDashboard.PixKeyListContact[index] = CurrentPixKey;
+                        if (index != -1)
+                        {
+                            if (CurrentCryptoKey.IsContact)
+                            {   //CurrentDashboard.PixKeyListContact[index] = CurrentCryptoKey;
+                            }
 
-                        //    else
-                        //        CurrentDashboard.PixKeyList[index] = CurrentPixKey;
-                        //}
+
+                            else
+                                CurrentDashboard.CryptoKeyList[index] = CurrentCryptoKey;
+                        }
                     }
                 }
 
@@ -138,37 +144,37 @@ namespace PixQrCodeGeneratorOffline.ViewModels.PaymentMethods.Crypto
 
                     // Atualiza dashboard
 
-                    //if (CurrentCryptoKey.IsContact)
-                    //{
-                    //    if (CurrentDashboard.PixKeyListContact.Count == 0)
-                    //    {
-                    //        CurrentDashboard.PixKeyListContact = new ObservableCollection<CryptoKey>
-                    //        {
-                    //            CurrentCryptoKey
-                    //        };
-                    //    }
+                    if (CurrentCryptoKey.IsContact)
+                    {
+                        //if (CurrentDashboard.PixKeyListContact.Count == 0)
+                        //{
+                        //    CurrentDashboard.PixKeyListContact = new ObservableCollection<CryptoKey>
+                        //    {
+                        //        CurrentCryptoKey
+                        //    };
+                        //}
 
-                    //    else
-                    //        CurrentDashboard.PixKeyListContact.Add(CurrentPixKey);
-                    //}
+                        //else
+                        //    CurrentDashboard.PixKeyListContact.Add(CurrentPixKey);
+                    }
 
-                    //else
-                    //{
-                    //    if (CurrentDashboard.PixKeyList.Count == 0)
-                    //    {
-                    //        CurrentDashboard.PixKeyList = new ObservableCollection<CryptoKey>
-                    //        {
-                    //            CurrentPixKey
-                    //        };
-                    //    }
+                    else
+                    {
+                        if (CurrentDashboard.CryptoKeyList.Count == 0)
+                        {
+                            CurrentDashboard.CryptoKeyList = new ObservableCollection<CryptoKey>
+                            {
+                                CurrentCryptoKey
+                            };
+                        }
 
-                    //    else
-                    //    {
-                    //        CurrentDashboard.PixKeyList.Add(CurrentPixKey);
-                    //    }
+                        else
+                        {
+                            CurrentDashboard.CryptoKeyList.Add(CurrentCryptoKey);
+                        }
 
-                    //    CurrentDashboard.CurrentPixKey = CurrentPixKey;
-                    //}
+                        CurrentDashboard.CurrentCryptoKey = CurrentCryptoKey;
+                    }
                 }
 
                 if (success)
@@ -209,34 +215,34 @@ namespace PixQrCodeGeneratorOffline.ViewModels.PaymentMethods.Crypto
 
                 if (success)
                 {
-                    //Atualiza dashboar
-
                     //int index = CurrentCryptoKey.IsContact ?
-                    //CurrentDashboard.PixKeyListContact.IndexOf(CurrentDashboard.PixKeyListContact.FirstOrDefault(x => x.Id == CurrentPixKey.Id)) :
+                    //CurrentDashboard.CryptoKeyListContact.IndexOf(CurrentDashboard.PixKeyListContact.FirstOrDefault(x => x.Id == CurrentPixKey.Id)) :
                     //CurrentDashboard.PixKeyList.IndexOf(CurrentDashboard.PixKeyList.FirstOrDefault(x => x.Id == CurrentPixKey.Id));
 
-                    //if (index != -1)
-                    //{
-                    //    if (CurrentPixKey.IsContact)
-                    //    {
-                    //        CurrentDashboard.PixKeyListContact.RemoveAt(index);
-                    //    }
+                    var index = CurrentDashboard.CryptoKeyList.IndexOf(CurrentDashboard.CryptoKeyList.FirstOrDefault(x => x.Id == CurrentCryptoKey.Id));
 
-                    //    else
-                    //    {
-                    //        CurrentDashboard.PixKeyList.RemoveAt(index);
-                    //        CurrentDashboard.CurrentPixKey = CurrentDashboard?.PixKeyList?.FirstOrDefault() ?? new PixKey();
-                    //    }
-                    //}
+                    if (index != -1)
+                    {
+                        if (CurrentCryptoKey.IsContact)
+                        {
+                            //CurrentDashboard.CryptoKeyListContact.RemoveAt(index);
+                        }
 
-                    //if (CurrentDashboard.PixKeyList.Count == 0)
-                    //{
-                    //    CurrentDashboard.PixKeyList = new ObservableCollection<PixKey>();
-                    //}
+                        else
+                        {
+                            CurrentDashboard.CryptoKeyList.RemoveAt(index);
+                            CurrentDashboard.CurrentCryptoKey = CurrentDashboard?.CryptoKeyList?.FirstOrDefault() ?? new CryptoKey();
+                        }
+                    }
+
+                    if (CurrentDashboard.CryptoKeyList.Count == 0)
+                    {
+                        CurrentDashboard.CryptoKeyList = new ObservableCollection<CryptoKey>();
+                    }
 
                     //if (CurrentDashboard.PixKeyListContact.Count == 0)
                     //{
-                    //    CurrentDashboard.PixKeyListContact = new ObservableCollection<PixKey>();
+                    //    CurrentDashboard.PixKeyListContact = new ObservableCollection<CryptoKey>();
                     //}
 
                     DialogService.Toast("Chave removida com sucesso");
@@ -373,7 +379,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels.PaymentMethods.Crypto
 
         public FinancialInstitutionCrypto SelectedFinancialInstitution { get; set; }
 
-        public DashboardViewModel CurrentDashboard { get; set; }
+        public DashboardCryptoViewModel CurrentDashboard { get; set; }
 
         private InputCryptoValues CurrentInputValues => new InputCryptoValues(InputList);
 

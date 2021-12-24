@@ -63,6 +63,8 @@ namespace PixQrCodeGeneratorOffline.Base.ViewModels
 
         public static DashboardViewModel DashboardVM { get; set; }
 
+        public static DashboardCryptoViewModel DashboardCryptoVM { get; set; }
+
         public static DashboardContactViewModel DashboardContactVM { get; set; }
 
         //private void Current_RequestedThemeChanged(object sender, AppThemeChangedEventArgs e)

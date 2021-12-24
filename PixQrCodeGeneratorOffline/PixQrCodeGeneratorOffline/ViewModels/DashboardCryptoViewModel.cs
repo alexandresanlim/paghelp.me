@@ -30,7 +30,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
             //Connectivity.ConnectivityChanged += Connectivity_ConnectivityChanged;
 
-            //DashboardVM = this;
+            DashboardCryptoVM = this;
         }
 
         public async Task LoadData()
