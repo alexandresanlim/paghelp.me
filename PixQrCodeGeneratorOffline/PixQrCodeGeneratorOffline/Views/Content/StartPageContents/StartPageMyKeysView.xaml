@@ -37,14 +37,13 @@
 
     <StackLayout>
 
-        <StackLayout Spacing="0">
+        <StackLayout IsVisible="{Binding PixKeyList, Converter={StaticResource HasDataConverter}, Mode=TwoWay}" Spacing="0">
             <CarouselView
                 CurrentItem="{Binding CurrentPixKey}"
                 CurrentItemChangedCommand="{Binding ChangeSelectPixKeyCommand}"
                 CurrentItemChangedCommandParameter="{Binding Source={RelativeSource Self}, Path=CurrentItem}"
                 HeightRequest="142"
                 IndicatorView="indicatorView"
-                IsVisible="{Binding PixKeyList, Converter={StaticResource HasDataConverter}}"
                 ItemsSource="{Binding PixKeyList}"
                 PeekAreaInsets="20,0">
 
@@ -76,7 +75,10 @@
         <CollectionView
             HeightRequest="140"
             IsVisible="{Binding PixKeyList, Converter={StaticResource HasDataConverter}}"
-            ItemsSource="{Binding CurrentPixKeyActions}">
+            ItemsSource="{Binding CurrentPixKeyActions}"
+            SelectedItem="{Binding SelectedAction}"
+            SelectionChangedCommand="{Binding ExecuteActionCommand}"
+            SelectionMode="Single">
 
             <CollectionView.ItemsLayout>
                 <LinearItemsLayout Orientation="Horizontal" />
@@ -86,11 +88,11 @@
                 <DataTemplate x:DataType="models:PixKeyAction">
                     <key:HorizontalActionKeys
                         Title="{Binding Title}"
-                        BoxColor="{Binding Colors.PrimaryDark}"
+                        BoxColor="{Binding Source={RelativeSource AncestorType={x:Type vm:DashboardViewModel}}, Path=CurrentPixKey.FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
                         Icon="{Binding Icon}"
-                        IconColor="{Binding Colors.TextOnPrimary}"
-                        IconType="{Binding IconType}"
-                        TapCommand="{Binding Command}" />
+                        IconColor="{Binding Source={RelativeSource AncestorType={x:Type vm:DashboardViewModel}}, Path=CurrentPixKey.FinancialInstitution.Institution.MaterialColor.TextOnPrimary}"
+                        IconType="{Binding IconType}" />
+
                 </DataTemplate>
             </CollectionView.ItemTemplate>
 

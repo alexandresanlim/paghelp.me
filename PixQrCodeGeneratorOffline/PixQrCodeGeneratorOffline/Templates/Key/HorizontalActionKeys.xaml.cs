@@ -89,7 +89,7 @@ namespace PixQrCodeGeneratorOffline.Templates.Key
             var b = (HorizontalActionKeys)bindable;
             b.GestureRecognizers.Add(new TapGestureRecognizer
             {
-                Command = (ICommand)newValue,
+                Command = (ICommand)newValue
             });
         }
 
@@ -132,8 +132,8 @@ namespace PixQrCodeGeneratorOffline.Templates.Key
 
         public FontAwesomeType IconType
         {
-            get => (FontAwesomeType)GetValue(IconProperty);
-            set => SetValue(IconProperty, value);
+            get => (FontAwesomeType)GetValue(IconTypeProperty);
+            set => SetValue(IconTypeProperty, value);
         }
 
         private static void IconTypePropertyChanged(BindableObject bindable, object oldValue, object newValue)
@@ -149,7 +149,7 @@ namespace PixQrCodeGeneratorOffline.Templates.Key
 
         public static readonly BindableProperty IconColorProperty =
           BindableProperty.Create(
-              propertyName: nameof(IconType),
+              propertyName: nameof(IconColor),
               returnType: typeof(Color),
               declaringType: typeof(HorizontalActionKeys),
               defaultValue: Color.White,
@@ -159,8 +159,8 @@ namespace PixQrCodeGeneratorOffline.Templates.Key
 
         public Color IconColor
         {
-            get => (Color)GetValue(IconProperty);
-            set => SetValue(IconProperty, value);
+            get => (Color)GetValue(IconColorProperty);
+            set => SetValue(IconColorProperty, value);
         }
 
         private static void IconColorPropertyChanged(BindableObject bindable, object oldValue, object newValue)

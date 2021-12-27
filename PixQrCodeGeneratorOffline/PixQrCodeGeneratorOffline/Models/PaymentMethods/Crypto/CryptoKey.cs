@@ -36,9 +36,6 @@ namespace PixQrCodeGeneratorOffline.Models.PaymentMethods.Crypto
         public CryptoKeyValidation Validation => _cryptoKeyValidationService?.Create(this) ?? new CryptoKeyValidation();
 
         [LiteDB.BsonIgnore]
-        public List<CryptoKeyAction> Actions => CryptoKeyAction.GetList(this);
-
-        [LiteDB.BsonIgnore]
         public CryptoPayload Payload => _cryptoPayloadService?.Create(this) ?? new CryptoPayload();
 
         [LiteDB.BsonIgnore]

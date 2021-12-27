@@ -2,59 +2,69 @@
 using PixQrCodeGeneratorOffline.Models.PaymentMethods.Base;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
+using System.Windows.Input;
+using Xamarin.Forms;
 using static PixQrCodeGeneratorOffline.Extention.IconExtention;
 
 namespace PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix
 {
     public class PixKeyAction : ActionBase
     {
-        public static List<PixKeyAction> GetList(PixKey pixKey)
+        public static ObservableCollection<PixKeyAction> GetList(PixKey pixKey = null, ICommand command = null)
         {
-            return new List<PixKeyAction>
+            return new ObservableCollection<PixKeyAction>
             {
                 new PixKeyAction
                 {
                     Title = "Criar Cobrança",
                     Icon = FontAwesomeSolid.HandHoldingUsd,
-                    Command = pixKey?.Command?.NavigateToCreateBillingPageCommand,
-                    Colors = pixKey?.FinancialInstitution?.Institution?.MaterialColor
+                    Type = KeyActionType.CreateBilling,
+                    //Command = command
+                    //Command = pixKey?.Command?.NavigateToCreateBillingPageCommand,
+                    //Colors = pixKey?.FinancialInstitution?.Institution?.MaterialColor
                 },
                 new PixKeyAction
                 {
                     Title = "Copiar Chave",
                     Icon = FontAwesomeSolid.Copy,
-                    Command = pixKey?.Command?.CopyKeyCommand,
-                    Colors = pixKey?.FinancialInstitution?.Institution?.MaterialColor
+                    Type = KeyActionType.CopyKey
+                    //Command = pixKey?.Command?.CopyKeyCommand,
+                    //Colors = pixKey?.FinancialInstitution?.Institution?.MaterialColor
                 },
                 new PixKeyAction
                 {
                     Title = "Compartilhar Chave",
                     Icon = FontAwesomeSolid.ShareAlt,
-                    Command = pixKey?.Command?.ShareKeyCommand,
-                    Colors = pixKey?.FinancialInstitution?.Institution?.MaterialColor
+                    Type = KeyActionType.ShareKey
+                    //Command = pixKey?.Command?.ShareKeyCommand,
+                    //Colors = pixKey?.FinancialInstitution?.Institution?.MaterialColor
                 },
                 new PixKeyAction
                 {
                     Title = "Compartilhar no WhatsApp",
                     Icon = FontAwesomeBrands.Whatsapp,
-                    Command = pixKey?.Command?.ShareOnWhatsCommand,
-                    Colors = pixKey?.FinancialInstitution?.Institution?.MaterialColor,
+                    Type = KeyActionType.ShareOnWhatsApp,
+                    //Command = pixKey?.Command?.ShareOnWhatsCommand,
+                    //Colors = pixKey?.FinancialInstitution?.Institution?.MaterialColor,
                     IconType = FontAwesomeType.brand
                 },
                 new PixKeyAction
                 {
                     Title = "Cobranças Salvas",
                     Icon = FontAwesomeSolid.HandHoldingUsd,
-                    Command = pixKey?.Command?.NavigateToBillingCommand,
-                    Colors = pixKey?.FinancialInstitution?.Institution?.MaterialColor
+                    Type = KeyActionType.BillingList,
+                    //Command = pixKey?.Command?.NavigateToBillingCommand,
+                    //Colors = pixKey?.FinancialInstitution?.Institution?.MaterialColor
                 },
                 new PixKeyAction
                 {
                     Title = "Ver Qr Code",
                     Icon = FontAwesomeSolid.Qrcode,
-                    Command = pixKey?.Command?.NavigateToPaymentPageCommand,
-                    Colors = pixKey?.FinancialInstitution?.Institution?.MaterialColor
+                    Type = KeyActionType.PaymentPage,
+                    //Command = pixKey?.Command?.NavigateToPaymentPageCommand,
+                    //Colors = pixKey?.FinancialInstitution?.Institution?.MaterialColor
                 },
                 //new PixKeyAction
                 //{
@@ -67,8 +77,9 @@ namespace PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix
                 {
                     Title = "Editar Chave",
                     Icon = FontAwesomeSolid.Pen,
-                    Command = pixKey?.Command?.EditKeyCommand,
-                    Colors = pixKey?.FinancialInstitution?.Institution?.MaterialColor
+                    Type = KeyActionType.Edit
+                    //Command = pixKey?.Command?.EditKeyCommand,
+                    //Colors = pixKey?.FinancialInstitution?.Institution?.MaterialColor
                 },
                 
                 //new PixKeyAction
@@ -80,6 +91,18 @@ namespace PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix
                 //}
             };
         }
+    }
+
+    public enum KeyActionType
+    {
+        None,
+        CreateBilling,
+        CopyKey,
+        ShareKey,
+        ShareOnWhatsApp,
+        BillingList,
+        PaymentPage,
+        Edit
     }
 
 }

@@ -34,6 +34,8 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public IAsyncCommand AuthenticationCommand => new AsyncCommand(Authentication);
 
+        public ICommand ExecuteActionCommand => new Command(async () => await ExecuteAction());
+
         public ICommand ChangeSelectPixKeyCommand => new Command<PixKey>(async (pixkey) => await ChangeSelectedPixKey(pixkey));
 
         public IAsyncCommand ShareAllCommand => new AsyncCommand(async () => await _pixKeyService.NavigateToShareAllKeys(PixKeyList));
@@ -87,6 +89,8 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 await NavigateToBenefitsPage();
 
                 LoadHideValue();
+
+                CurrentPixKeyActions = PixKeyAction.GetList();
             }
             catch (System.Exception e)
             {
@@ -314,8 +318,44 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             {
                 CurrentPixKey = pixkey;
                 //_statusBar.SetStatusBarColor(pixkey.FinancialInstitution.Institution.MaterialColor.PrimaryDark);
-                CurrentPixKeyActions = pixkey?.Actions?.ToObservableCollection() ?? new ObservableCollection<PixKeyAction>();
+                //CurrentPixKeyActions = pixkey?.Actions?.ToObservableCollection() ?? new ObservableCollection<PixKeyAction>();
             });
+        }
+
+        private async Task ExecuteAction()
+        {
+            if (SelectedAction.Type == KeyActionType.None)
+                return;
+
+            switch (SelectedAction.Type)
+            {
+                case KeyActionType.CreateBilling:
+                    CurrentPixKey.Command.NavigateToCreateBillingPageCommand.Execute(null);
+                    break;
+                case KeyActionType.CopyKey:
+                    CurrentPixKey.Command.CopyKeyCommand.Execute(null);
+                    break;
+                case KeyActionType.ShareKey:
+                    CurrentPixKey.Command.ShareKeyCommand.Execute(null);
+                    break;
+                case KeyActionType.ShareOnWhatsApp:
+                    CurrentPixKey.Command.ShareOnWhatsCommand.Execute(null);
+                    break;
+                case KeyActionType.BillingList:
+                    CurrentPixKey.Command.NavigateToBillingCommand.Execute(null);
+                    break;
+                case KeyActionType.PaymentPage:
+                    CurrentPixKey.Command.NavigateToPaymentPageCommand.Execute(null);
+                    break;
+                case KeyActionType.Edit:
+                    CurrentPixKey.Command.EditKeyCommand.Execute(null);
+                    break;
+                case KeyActionType.None:
+                default:
+                    break;
+            }
+
+            SelectedAction = new PixKeyAction();
         }
 
         private async Task RemoveAllKeys()
@@ -398,6 +438,13 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         {
             get => _currentDashboardCustomInfo;
             set => SetProperty(ref _currentDashboardCustomInfo, value);
+        }
+
+        private PixKeyAction _selectedAction;
+        public PixKeyAction SelectedAction
+        {
+            set => SetProperty(ref _selectedAction, value);
+            get => _selectedAction;
         }
 
         #endregion

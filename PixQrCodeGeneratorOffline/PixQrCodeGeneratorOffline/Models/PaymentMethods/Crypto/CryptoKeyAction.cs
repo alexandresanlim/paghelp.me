@@ -1,15 +1,16 @@
 ﻿using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models.PaymentMethods.Base;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using static PixQrCodeGeneratorOffline.Extention.IconExtention;
 
 namespace PixQrCodeGeneratorOffline.Models.PaymentMethods.Crypto
 {
     public class CryptoKeyAction : ActionBase
     {
-        public static List<CryptoKeyAction> GetList(CryptoKey pixKey)
+        public static ObservableCollection<CryptoKeyAction> GetList()
         {
-            return new List<CryptoKeyAction>
+            return new ObservableCollection<CryptoKeyAction>
             {
                 //new CryptoKeyAction
                 //{
@@ -22,22 +23,19 @@ namespace PixQrCodeGeneratorOffline.Models.PaymentMethods.Crypto
                 {
                     Title = "Copiar Chave",
                     Icon = FontAwesomeSolid.Copy,
-                    Command = pixKey?.Command?.CopyKeyCommand,
-                    Colors = pixKey?.FinancialInstitution?.Institution?.MaterialColor
+                    Type = Pix.KeyActionType.CopyKey
                 },
                 new CryptoKeyAction
                 {
                     Title = "Compartilhar Chave",
                     Icon = FontAwesomeSolid.ShareAlt,
-                    Command = pixKey?.Command?.ShareKeyCommand,
-                    Colors = pixKey?.FinancialInstitution?.Institution?.MaterialColor
+                    Type = Pix.KeyActionType.ShareKey
                 },
                 new CryptoKeyAction
                 {
                     Title = "Compartilhar no WhatsApp",
                     Icon = FontAwesomeBrands.Whatsapp,
-                    Command = pixKey?.Command?.ShareOnWhatsCommand,
-                    Colors = pixKey?.FinancialInstitution?.Institution?.MaterialColor,
+                    Type = Pix.KeyActionType.ShareOnWhatsApp,
                     IconType = FontAwesomeType.brand
                 },
                 //new CryptoKeyAction
@@ -51,8 +49,7 @@ namespace PixQrCodeGeneratorOffline.Models.PaymentMethods.Crypto
                 {
                     Title = "Ver Qr Code",
                     Icon = FontAwesomeSolid.Qrcode,
-                    Command = pixKey?.Command?.NavigateToPaymentPageCommand,
-                    Colors = pixKey?.FinancialInstitution?.Institution?.MaterialColor
+                    Type = Pix.KeyActionType.PaymentPage
                 },
                 //new PixKeyAction
                 //{
@@ -65,8 +62,7 @@ namespace PixQrCodeGeneratorOffline.Models.PaymentMethods.Crypto
                 {
                     Title = "Editar Chave",
                     Icon = FontAwesomeSolid.Pen,
-                    Command = pixKey?.Command?.EditKeyCommand,
-                    Colors = pixKey?.FinancialInstitution?.Institution?.MaterialColor
+                    Type = Pix.KeyActionType.Edit
                 },
                 
                 //new PixKeyAction

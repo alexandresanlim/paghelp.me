@@ -92,7 +92,7 @@
                             Grid.Column="1"
                             Padding="30,15,15,15"
                             BackgroundColor="{Binding CurrentPixKey.FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
-                            IsVisible="True">
+                            IsVisible="{Binding PixKeyList, Mode=TwoWay, Converter={StaticResource HasDataConverter}}">
                             <controls:CustomIcon TextColor="{Binding CurrentPixKey.FinancialInstitution.Institution.MaterialColor.TextOnPrimary}">
                                 <controls:CustomIcon.Triggers>
                                     <DataTrigger

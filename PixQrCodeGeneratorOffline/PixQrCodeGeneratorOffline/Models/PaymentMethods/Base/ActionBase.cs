@@ -1,4 +1,5 @@
-﻿using static PixQrCodeGeneratorOffline.Extention.IconExtention;
+﻿using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix;
+using static PixQrCodeGeneratorOffline.Extention.IconExtention;
 
 namespace PixQrCodeGeneratorOffline.Models.PaymentMethods.Base
 {
@@ -8,10 +9,10 @@ namespace PixQrCodeGeneratorOffline.Models.PaymentMethods.Base
 
         public string Title { get; set; }
 
-        public System.Windows.Input.ICommand Command { get; set; }
-
         public MaterialColor Colors { get; set; }
 
         public FontAwesomeType IconType { get; set; } = FontAwesomeType.solid;
+
+        public KeyActionType Type { get; set; }
     }
 }

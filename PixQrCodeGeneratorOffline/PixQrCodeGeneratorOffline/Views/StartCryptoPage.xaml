@@ -25,7 +25,8 @@
                     <StackLayout
                         Grid.Column="1"
                         Padding="30,15,15,15"
-                        BackgroundColor="{Binding CurrentCryptoKey.FinancialInstitution.Institution.MaterialColor.PrimaryDark}">
+                        BackgroundColor="{Binding CurrentCryptoKey.FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
+                        IsVisible="{Binding CryptoKeyList, Converter={StaticResource HasDataConverter}}">
                         <controls:CustomIcon TextColor="{Binding CurrentCryptoKey.FinancialInstitution.Institution.MaterialColor.TextOnPrimary}">
                             <controls:CustomIcon.Triggers>
                                 <DataTrigger

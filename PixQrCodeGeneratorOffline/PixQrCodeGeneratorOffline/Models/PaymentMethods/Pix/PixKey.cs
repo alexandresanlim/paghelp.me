@@ -50,8 +50,5 @@ namespace PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix
 
         [LiteDB.BsonIgnore]
         public PixKeyCommand Command => _pixKeyCommand?.Create(this) ?? new PixKeyCommand();
-
-        [LiteDB.BsonIgnore]
-        public List<PixKeyAction> Actions => PixKeyAction.GetList(this);
     }
 }

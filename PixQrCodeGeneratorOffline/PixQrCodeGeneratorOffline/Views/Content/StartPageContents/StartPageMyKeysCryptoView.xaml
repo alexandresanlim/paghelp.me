@@ -83,7 +83,10 @@
         <CollectionView
             HeightRequest="140"
             IsVisible="{Binding CryptoKeyList, Converter={StaticResource HasDataConverter}}"
-            ItemsSource="{Binding CurrentCryptoKeyActions}">
+            ItemsSource="{Binding CurrentCryptoKeyActions}"
+            SelectedItem="{Binding SelectedAction}"
+            SelectionChangedCommand="{Binding ExecuteActionCommand}"
+            SelectionMode="Single">
 
             <CollectionView.ItemsLayout>
                 <LinearItemsLayout Orientation="Horizontal" />
@@ -93,11 +96,10 @@
                 <DataTemplate x:DataType="models:CryptoKeyAction">
                     <key:HorizontalActionKeys
                         Title="{Binding Title}"
-                        BoxColor="{Binding Colors.PrimaryDark}"
+                        BoxColor="{Binding Source={RelativeSource AncestorType={x:Type vm:DashboardCryptoViewModel}}, Path=CurrentCryptoKey.FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
                         Icon="{Binding Icon}"
-                        IconColor="{Binding Colors.TextOnPrimary}"
-                        IconType="{Binding IconType}"
-                        TapCommand="{Binding Command}" />
+                        IconColor="{Binding Source={RelativeSource AncestorType={x:Type vm:DashboardCryptoViewModel}}, Path=CurrentCryptoKey.FinancialInstitution.Institution.MaterialColor.TextOnPrimary}"
+                        IconType="{Binding IconType}" />
 
                 </DataTemplate>
             </CollectionView.ItemTemplate>
