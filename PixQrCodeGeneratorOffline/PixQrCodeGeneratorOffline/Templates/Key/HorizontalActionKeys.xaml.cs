@@ -28,7 +28,7 @@ namespace PixQrCodeGeneratorOffline.Templates.Key
             set => SetValue(TitleProperty, value);
         }
 
-        static void TitlePropertyChanged(BindableObject bindable, object oldValue, object newValue)
+        private static void TitlePropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
             if (newValue == null)
                 return;
@@ -55,7 +55,7 @@ namespace PixQrCodeGeneratorOffline.Templates.Key
             set => SetValue(BoxColorProperty, value);
         }
 
-        static void BoxColorPropertyChanged(BindableObject bindable, object oldValue, object newValue)
+        private static void BoxColorPropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
             if (newValue == null)
                 return;
@@ -109,7 +109,7 @@ namespace PixQrCodeGeneratorOffline.Templates.Key
             set => SetValue(IconProperty, value);
         }
 
-        static void IconPropertyChanged(BindableObject bindable, object oldValue, object newValue)
+        private static void IconPropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
             if (newValue == null)
                 return;
@@ -136,7 +136,7 @@ namespace PixQrCodeGeneratorOffline.Templates.Key
             set => SetValue(IconProperty, value);
         }
 
-        static void IconTypePropertyChanged(BindableObject bindable, object oldValue, object newValue)
+        private static void IconTypePropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
             if (newValue == null)
                 return;
@@ -145,6 +145,33 @@ namespace PixQrCodeGeneratorOffline.Templates.Key
             FontAwesomeType value = (FontAwesomeType)newValue;
 
             template.xIcon.IconType = value;
+        }
+
+        public static readonly BindableProperty IconColorProperty =
+          BindableProperty.Create(
+              propertyName: nameof(IconType),
+              returnType: typeof(Color),
+              declaringType: typeof(HorizontalActionKeys),
+              defaultValue: Color.White,
+              defaultBindingMode: BindingMode.Default,
+              validateValue: null,
+              propertyChanged: IconColorPropertyChanged);
+
+        public Color IconColor
+        {
+            get => (Color)GetValue(IconProperty);
+            set => SetValue(IconProperty, value);
+        }
+
+        private static void IconColorPropertyChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            if (newValue == null)
+                return;
+
+            var template = (HorizontalActionKeys)bindable;
+            Color value = (Color)newValue;
+
+            template.xIcon.TextColor = value;
         }
     }
 }

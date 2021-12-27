@@ -92,8 +92,23 @@
                             Grid.Column="1"
                             Padding="30,15,15,15"
                             BackgroundColor="{Binding CurrentPixKey.FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
-                            IsVisible="False">
-                            <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Eye}" TextColor="{DynamicResource textPrimary}" />
+                            IsVisible="True">
+                            <controls:CustomIcon TextColor="{Binding CurrentPixKey.FinancialInstitution.Institution.MaterialColor.TextOnPrimary}">
+                                <controls:CustomIcon.Triggers>
+                                    <DataTrigger
+                                        Binding="{Binding IsHideValue}"
+                                        TargetType="controls:CustomIcon"
+                                        Value="False">
+                                        <Setter Property="Glyph" Value="{x:Static icons:FontAwesomeSolid.Eye}" />
+                                    </DataTrigger>
+                                    <DataTrigger
+                                        Binding="{Binding IsHideValue}"
+                                        TargetType="controls:CustomIcon"
+                                        Value="True">
+                                        <Setter Property="Glyph" Value="{x:Static icons:FontAwesomeSolid.EyeSlash}" />
+                                    </DataTrigger>
+                                </controls:CustomIcon.Triggers>
+                            </controls:CustomIcon>
                             <StackLayout.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding HideValueCommand}" />
                             </StackLayout.GestureRecognizers>

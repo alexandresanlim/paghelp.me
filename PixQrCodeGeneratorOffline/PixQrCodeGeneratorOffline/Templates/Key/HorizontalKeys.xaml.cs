@@ -1,4 +1,5 @@
 ﻿
+using PixQrCodeGeneratorOffline.Services;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -210,7 +211,7 @@ namespace PixQrCodeGeneratorOffline.Templates.Key
                propertyName: nameof(HideValue),
                returnType: typeof(bool),
                declaringType: typeof(HorizontalKeys),
-               defaultValue: false,
+               defaultValue: Preference.HideData,
                defaultBindingMode: BindingMode.Default,
                validateValue: null,
                propertyChanged: HideValuePropertyChanged);
@@ -229,7 +230,7 @@ namespace PixQrCodeGeneratorOffline.Templates.Key
             var template = (HorizontalKeys)bindable;
             bool value = (bool)newValue;
 
-            template.xKeyValue.Text = "*****";
+            template.xHidePanel.IsVisible = value;
         }
     }
 }

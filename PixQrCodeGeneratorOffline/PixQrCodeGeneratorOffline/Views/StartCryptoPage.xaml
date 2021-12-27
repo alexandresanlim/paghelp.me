@@ -4,6 +4,7 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:contentStart="clr-namespace:PixQrCodeGeneratorOffline.Views.Content.StartPageContents"
+    xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
     xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon"
     xmlns:templates="clr-namespace:PixQrCodeGeneratorOffline.Templates"
     xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
@@ -21,16 +22,30 @@
                         IconColor="{Binding CurrentCryptoKey.FinancialInstitution.Institution.MaterialColor.TextOnPrimary}"
                         TitleColor="{Binding CurrentCryptoKey.FinancialInstitution.Institution.MaterialColor.TextOnPrimary}" />
 
-                    <!--<StackLayout
+                    <StackLayout
                         Grid.Column="1"
                         Padding="30,15,15,15"
-                        BackgroundColor="{Binding CurrentPixKey.FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
-                        IsVisible="False">
-                        <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Eye}" TextColor="{DynamicResource textPrimary}" />
+                        BackgroundColor="{Binding CurrentCryptoKey.FinancialInstitution.Institution.MaterialColor.PrimaryDark}">
+                        <controls:CustomIcon TextColor="{Binding CurrentCryptoKey.FinancialInstitution.Institution.MaterialColor.TextOnPrimary}">
+                            <controls:CustomIcon.Triggers>
+                                <DataTrigger
+                                    Binding="{Binding IsHideValue}"
+                                    TargetType="controls:CustomIcon"
+                                    Value="False">
+                                    <Setter Property="Glyph" Value="{x:Static icons:FontAwesomeSolid.Eye}" />
+                                </DataTrigger>
+                                <DataTrigger
+                                    Binding="{Binding IsHideValue}"
+                                    TargetType="controls:CustomIcon"
+                                    Value="True">
+                                    <Setter Property="Glyph" Value="{x:Static icons:FontAwesomeSolid.EyeSlash}" />
+                                </DataTrigger>
+                            </controls:CustomIcon.Triggers>
+                        </controls:CustomIcon>
                         <StackLayout.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding HideValueCommand}" />
                         </StackLayout.GestureRecognizers>
-                    </StackLayout>-->
+                    </StackLayout>
                 </Grid>
 
                 <contentStart:StartPageMyKeysCryptoView />

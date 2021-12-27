@@ -60,6 +60,7 @@
 
                         <key:HorizontalKeys
                             BoxColor="{Binding FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
+                            HideValue="{Binding Source={RelativeSource AncestorType={x:Type vm:DashboardCryptoViewModel}}, Path=IsHideValue}"
                             IconInstitution="{x:Static icons:FontAwesomeSolid.Coins}"
                             IconKey="{x:Static icons:FontAwesomeSolid.Key}"
                             InstitutionValue="{Binding Viewer.InstitutionPresentation}"
@@ -94,6 +95,7 @@
                         Title="{Binding Title}"
                         BoxColor="{Binding Colors.PrimaryDark}"
                         Icon="{Binding Icon}"
+                        IconColor="{Binding Colors.TextOnPrimary}"
                         IconType="{Binding IconType}"
                         TapCommand="{Binding Command}" />
 

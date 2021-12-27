@@ -1,8 +1,8 @@
 ﻿using AsyncAwaitBestPractices;
 using AsyncAwaitBestPractices.MVVM;
-using PixQrCodeGeneratorOffline.Base.ViewModels;
 using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models.PaymentMethods.Crypto;
+using PixQrCodeGeneratorOffline.ViewModels.Base;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
@@ -12,7 +12,7 @@ using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.ViewModels
 {
-    public class DashboardCryptoViewModel : ViewModelBase
+    public class DashboardCryptoViewModel : DashboardViewModelBase
     {
         #region Commands
 
@@ -52,6 +52,8 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 //await LoadNews();
 
                 //await NavigateToBenefitsPage();
+
+                LoadHideValue();
             }
             catch (System.Exception e)
             {

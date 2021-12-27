@@ -2,6 +2,7 @@
 using PixQrCodeGeneratorOffline.Base.ViewModels;
 using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models;
+using PixQrCodeGeneratorOffline.Models.Base;
 using PixQrCodeGeneratorOffline.Models.PaymentMethods.Base;
 using PixQrCodeGeneratorOffline.Models.PaymentMethods.Crypto;
 using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix;
@@ -21,25 +22,45 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public IAsyncCommand SaveCommand => new AsyncCommand(Save);
 
+        public ICommand LoadDataCommand => new Command<PayloadBase>((payloadParameter) => LoadData(payloadParameter));
+
         #endregion
 
-        public ICommand LoadDataCommand => new Command<PayloadBase>((payloadParameter) =>
+        private void LoadData(PayloadBase payloadParameter)
         {
             CurrentPaylodBase = payloadParameter;
+            CurrentInfo = new PaymentViewModelInfo();
 
             if (payloadParameter is PixPayload pixPayload)
-            { 
+            {
                 CurrentPixPaylod = pixPayload;
-                CurrentColor = pixPayload.PixKey.FinancialInstitution.Institution.MaterialColor;
+                CurrentInfo.Color = pixPayload.PixKey?.FinancialInstitution?.Institution?.MaterialColor;
+                CurrentInfo.Value = pixPayload.PixCob?.Viewer?.ValuePresentation;
+                CurrentInfo.Name = pixPayload.PixKey?.Viewer?.NamePresentation;
+                CurrentInfo.Institution = $"Instituição: {pixPayload?.PixKey?.Viewer?.InstitutionPresentation}";
+                CurrentInfo.Key = $"Chave: {pixPayload?.PixKey?.Viewer?.KeyPresentation}";
             }
 
-            else if(payloadParameter is CryptoPayload cryptoPayload)
+            else if (payloadParameter is CryptoPayload cryptoPayload)
             {
-                CurrentColor = cryptoPayload.CryptoKey.FinancialInstitution.Institution.MaterialColor;
+                CurrentCryptoPaylod = cryptoPayload;
+                CurrentInfo.Color = cryptoPayload?.CryptoKey?.FinancialInstitution?.Institution?.MaterialColor;
+                CurrentInfo.Institution = $"Criptomoeda: {cryptoPayload?.CryptoKey?.Viewer?.InstitutionPresentation}";
+                CurrentInfo.Key = $"Chave: {cryptoPayload?.CryptoKey?.Viewer?.KeyPresentation}";
             }
 
             //SaveButtonVisible = !(CurrentPixPaylod.Id > 0) && CurrentPixPaylod?.PixCob != null && CurrentPixPaylod.PixCob.Validation.HasValue;
-        });
+
+            LoadHelpPhrase();
+        }
+
+        private void LoadHelpPhrase()
+        {
+            var paymentType = CurrentPaylodBase.Type == PayloadType.Crypto ? "Cripto" : "Pix";
+
+            CurrentInfo.HelpPhrase =
+                $"O pagador precisa abir o app que vai fazer a transferência {paymentType} e escanear este QR Code ou colar o código copia e cola.";
+        }
 
         private void SharePayload()
         {
@@ -119,6 +140,13 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             get => _currentPixPaylod;
         }
 
+        private CryptoPayload _currentCryptoPaylod;
+        public CryptoPayload CurrentCryptoPaylod
+        {
+            set => SetProperty(ref _currentCryptoPaylod, value);
+            get => _currentCryptoPaylod;
+        }
+
         private PayloadBase _currentPaylodBase;
         public PayloadBase CurrentPaylodBase
         {
@@ -133,11 +161,56 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             get => _saveButtonVisible;
         }
 
-        private MaterialColor _currentColor;
-        public MaterialColor CurrentColor
+        private PaymentViewModelInfo _currentInfo;
+        public PaymentViewModelInfo CurrentInfo
         {
-            set => SetProperty(ref _currentColor, value);
-            get => _currentColor;
+            set => SetProperty(ref _currentInfo, value);
+            get => _currentInfo;
+        }
+    }
+
+    public class PaymentViewModelInfo : NotifyObjectBase
+    {
+        private string _helpPhrase;
+        public string HelpPhrase
+        {
+            set => SetProperty(ref _helpPhrase, value);
+            get => _helpPhrase;
+        }
+
+        private string _value;
+        public string Value
+        {
+            set => SetProperty(ref _value, value);
+            get => _value;
+        }
+
+        private string _name;
+        public string Name
+        {
+            set => SetProperty(ref _name, value);
+            get => _name;
+        }
+
+        private string _institution;
+        public string Institution
+        {
+            set => SetProperty(ref _institution, value);
+            get => _institution;
+        }
+
+        private string _key;
+        public string Key
+        {
+            set => SetProperty(ref _key, value);
+            get => _key;
+        }
+
+        private MaterialColor _color;
+        public MaterialColor Color
+        {
+            set => SetProperty(ref _color, value);
+            get => _color;
         }
     }
 }

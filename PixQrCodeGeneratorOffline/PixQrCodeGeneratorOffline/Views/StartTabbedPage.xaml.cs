@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PixQrCodeGeneratorOffline.ViewModels.Base;
+using System;
 
 using Xamarin.Forms;
 
@@ -13,13 +14,13 @@ namespace PixQrCodeGeneratorOffline.Views
 
         private void TabbedPage_CurrentPageChanged(object sender, EventArgs e)
         {
-            //var tabbed = (TabbedPage)sender;
+            var tabbed = (TabbedPage)sender;
 
-            //if (tabbed.CurrentPage is DashboardPage)
-            //{
-            //    var vm = (DashboardViewModel)tabbed.CurrentPage.BindingContext;
-            //    vm.SetStatusFromCurrentPixColor();
-            //}
+            if (tabbed.CurrentPage is StartCryptoPage || tabbed.CurrentPage is StartPage)
+            {
+                var vm = (DashboardViewModelBase)tabbed.CurrentPage.BindingContext;
+                vm.LoadHideValue();
+            }
 
             //else
             //{
