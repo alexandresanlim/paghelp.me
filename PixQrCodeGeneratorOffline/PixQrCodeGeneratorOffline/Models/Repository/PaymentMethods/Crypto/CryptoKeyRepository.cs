@@ -25,7 +25,7 @@ namespace PixQrCodeGeneratorOffline.Models.Repository.PaymentMethods.Crypto
             {
                 return _cryptoCollection.Find(predicate).ToList();
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return new List<CryptoKey>();
             }
@@ -37,7 +37,7 @@ namespace PixQrCodeGeneratorOffline.Models.Repository.PaymentMethods.Crypto
             {
                 return _cryptoCollection.FindAll().ToList();
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return new List<CryptoKey>();
             }
@@ -49,7 +49,7 @@ namespace PixQrCodeGeneratorOffline.Models.Repository.PaymentMethods.Crypto
             {
                 return _cryptoCollection.FindById(id);
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return new CryptoKey();
             }
@@ -61,7 +61,7 @@ namespace PixQrCodeGeneratorOffline.Models.Repository.PaymentMethods.Crypto
             {
                 return _cryptoCollection.Update(item);
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return false;
             }
@@ -73,7 +73,7 @@ namespace PixQrCodeGeneratorOffline.Models.Repository.PaymentMethods.Crypto
             {
                 return _cryptoCollection.Insert(item) > 0;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return false;
             }

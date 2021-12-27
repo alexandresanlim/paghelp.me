@@ -24,7 +24,7 @@ namespace PixQrCodeGeneratorOffline.Models.Repository
             {
                 return _collection.FindById(id);
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return new PixPayload();
             }
@@ -36,7 +36,7 @@ namespace PixQrCodeGeneratorOffline.Models.Repository
             {
                 return predicate == null ? _collection.FindAll().ToList() : _collection.Find(predicate).ToList();
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return new List<PixPayload>();
             }
@@ -48,7 +48,7 @@ namespace PixQrCodeGeneratorOffline.Models.Repository
             {
                 return _collection.Insert(item) > 0;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return false;
             }

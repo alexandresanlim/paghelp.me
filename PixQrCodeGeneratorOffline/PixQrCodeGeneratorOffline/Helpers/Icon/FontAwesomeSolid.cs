@@ -2,8 +2,8 @@
 {
     public class FontAwesomeSolid
     {
-        public static string GlassMartini { get { return "\uf000"; } }
-        public static string Music { get { return "\uf001"; } }
+        public static string GlassMartini => "\uf000";
+        public static string Music => "\uf001";
         public static string Search { get { return "\uf002"; } }
         public static string Heart { get { return "\uf004"; } }
         public static string Star { get { return "\uf005"; } }

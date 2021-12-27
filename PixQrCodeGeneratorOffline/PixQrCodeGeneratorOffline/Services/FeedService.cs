@@ -80,7 +80,7 @@ namespace PixQrCodeGeneratorOffline.Services
                     return img;
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return "";
             }
