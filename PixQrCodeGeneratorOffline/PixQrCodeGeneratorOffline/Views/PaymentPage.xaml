@@ -10,7 +10,8 @@
     x:DataType="vm:PaymentViewModel"
     BackgroundColor="{DynamicResource background_page}"
     NavigationPage.HasNavigationBar="True"
-    Shell.BackgroundColor="{Binding CurrentInfo.Color.Primary}">
+    Shell.BackgroundColor="{Binding CurrentInfo.Color.Primary}"
+    Shell.NavBarIsVisible="True">
 
     <ContentPage.Content>
 

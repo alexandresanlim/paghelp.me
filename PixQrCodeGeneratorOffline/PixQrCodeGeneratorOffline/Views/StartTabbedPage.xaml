@@ -5,12 +5,13 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:views="clr-namespace:PixQrCodeGeneratorOffline.Views"
     BarBackgroundColor="{DynamicResource primaryDark}"
-    Shell.NavBarIsVisible="False" CurrentPageChanged="TabbedPage_CurrentPageChanged">
+    CurrentPageChanged="TabbedPage_CurrentPageChanged"
+    Shell.NavBarIsVisible="False">
     <!--  Pages can be added as references or inline  -->
 
 
     <views:StartPage Title="Pix" />
-    <views:StartCryptoPage Title="Cripto" />
+    <!--<views:StartCryptoPage Title="Cripto" />-->
     <views:StartMorePage Title="Mais" />
 
 </TabbedPage>
