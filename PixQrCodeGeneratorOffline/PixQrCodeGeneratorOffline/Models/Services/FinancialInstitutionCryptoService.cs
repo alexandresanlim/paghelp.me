@@ -48,6 +48,11 @@ namespace PixQrCodeGeneratorOffline.Models.Services
             return institution.Type;
         }
 
+        public string GetLinkToWallet(IInstitutionCrypto institution)
+        {
+            return institution.LinkToWallet;
+        }
+
         private string GetNameByType(FinancialInstitutionCryptoType financialInstitutionType)
         {
             switch (financialInstitutionType)
@@ -75,6 +80,7 @@ namespace PixQrCodeGeneratorOffline.Models.Services
             {
                 Name = GetName(institution),
                 Type = GetType(institution),
+                LinkToWallet = GetLinkToWallet(institution),
                 MaterialColor = GetMaterialColor(institution)
             };
         }

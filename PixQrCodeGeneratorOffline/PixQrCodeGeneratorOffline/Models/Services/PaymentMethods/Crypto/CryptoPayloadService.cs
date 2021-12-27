@@ -83,9 +83,9 @@ namespace PixQrCodeGeneratorOffline.Models.Services.PaymentMethods.Crypto
     {
         public static string GenerateStringToQrCode(this CryptoPayload cryptoPayload)
         {
-            var payload = $"bitcoin:{cryptoPayload?.CryptoKey?.Key}";
+            var payload = cryptoPayload.CryptoKey.FinancialInstitution.Institution.LinkToWallet + cryptoPayload?.CryptoKey?.Key;
 
-            if(!string.IsNullOrWhiteSpace(cryptoPayload?.Amount))
+            if (!string.IsNullOrWhiteSpace(cryptoPayload?.Amount))
             {
                 payload += "?amount=.01%26label=Moloch.net%26message=Donation";
             }

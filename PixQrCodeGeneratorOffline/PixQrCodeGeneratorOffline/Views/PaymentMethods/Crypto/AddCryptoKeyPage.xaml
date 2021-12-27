@@ -8,7 +8,7 @@
     xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon"
     xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels.PaymentMethods.Crypto"
     x:DataType="vm:AddCryptoKeyViewModel"
-    BackgroundColor="{DynamicResource foreground_page}">
+    BackgroundColor="{DynamicResource background_page}">
     <ContentPage.Resources>
         <ResourceDictionary>
 
