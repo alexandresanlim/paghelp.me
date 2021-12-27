@@ -1,10 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using PixQrCodeGeneratorOffline.Models.DataStatic.Institutions.Base;
+using PixQrCodeGeneratorOffline.Models.DataStatic.InstitutionsCrypto.Interfaces;
+using System;
+using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.Models.DataStatic.InstitutionsCrypto
 {
-    internal class Litecoin
+    public class Litecoin : InstitutionBase, IInstitutionCrypto
     {
+        public FinancialInstitutionCryptoType Type => FinancialInstitutionCryptoType.Litecoin;
+
+        public string Name => "Litecoin";
+
+        public string Code => "LTC";
+
+        public string LinkToWallet => "litecoin";
+
+        public MaterialColor MaterialColor => new MaterialColor()
+        {
+            Name = "litecoin",
+            Primary = Color.FromHex("#f39c12"),
+            PrimaryDark = Color.FromHex("#bb6e00"),
+            PrimaryLight = Color.FromHex("#ffcd4e"),
+            TextOnPrimary = Color.FromHex("#ffffff")
+        };
     }
 }

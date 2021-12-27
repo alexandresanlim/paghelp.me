@@ -316,7 +316,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels.PaymentMethods.Crypto
 
                 DialogService.ActionSheet(new Acr.UserDialogs.ActionSheetConfig
                 {
-                    Title = "Selecione um instituição",
+                    Title = "Selecione uma cripto",
                     Message = "Caso sua instituição não esteja na lista, toque em adicionar nova",
                     Options = options,
                     //UseBottomSheet = true,
@@ -327,8 +327,8 @@ namespace PixQrCodeGeneratorOffline.ViewModels.PaymentMethods.Crypto
                             CancelText = "Cancelar",
                             InputType = Acr.UserDialogs.InputType.Name,
                             OkText = "Adicionar",
-                            Title = "Instituição: ",
-                            Placeholder = "Digite o nome da instituição",
+                            Title = "Criptomoeda: ",
+                            Placeholder = "Digite o nome da criptomoeda",
                         });
 
                         if (!newInstitution.Ok)
@@ -364,7 +364,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels.PaymentMethods.Crypto
             InputList[CurrentInputValues.Institution.Index].Title = institution.Name;
 
             if (SelectedFinancialInstitution.Type != FinancialInstitutionCryptoType.None)
-                InputList[CurrentInputValues.Key.Index].Placeholder = CurrenKeyPlaceholderDefaultValue + " no(a) " + SelectedFinancialInstitution?.Name;
+                InputList[CurrentInputValues.Key.Index].Placeholder = CurrenKeyPlaceholderDefaultValue + " " + SelectedFinancialInstitution?.Name;
 
             ActualInputNextPosition = 1;
         }

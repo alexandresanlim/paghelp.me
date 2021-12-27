@@ -23,6 +23,9 @@ namespace PixQrCodeGeneratorOffline.Models
     public enum FinancialInstitutionCryptoType
     {
         Bitcoin,
+        Binancecoin,
+        Ethereum,
+        Litecoin,
         None
     }
 }
