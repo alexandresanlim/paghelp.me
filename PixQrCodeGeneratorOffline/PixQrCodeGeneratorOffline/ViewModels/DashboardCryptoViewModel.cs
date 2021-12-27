@@ -53,7 +53,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 //await NavigateToBenefitsPage();
 
-                LoadHideValue();
+                //LoadHideValue();
             }
             catch (System.Exception e)
             {
