@@ -14,10 +14,15 @@
 
     <ContentPage.Resources>
         <ResourceDictionary>
-            <local:CurrencyConverter x:Key="CurrencyConverter" />
 
-            <Style x:Key="styleKeyboardBilling" TargetType="Label">
-                <Setter Property="TextColor" Value="{DynamicResource textSecondary}" />
+            <Style x:Key="StyleTextOnButton" TargetType="Label">
+                <Setter Property="TextColor" Value="{DynamicResource textPrimary}" />
+            </Style>
+
+            <Style
+                x:Key="styleKeyboardBilling"
+                BasedOn="{StaticResource StyleTextOnButton}"
+                TargetType="Label">
                 <Setter Property="FontSize" Value="35" />
                 <Setter Property="FontFamily" Value="{DynamicResource FontSemiBold}" />
                 <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
@@ -27,7 +32,7 @@
             <Style x:Key="styleButtonKeyboard" TargetType="Frame">
                 <Setter Property="Padding" Value="0" />
                 <Setter Property="BackgroundColor" Value="{DynamicResource foreground_page}" />
-                <Setter Property="CornerRadius" Value="15" />
+                <Setter Property="CornerRadius" Value="10" />
             </Style>
 
             <Style x:Key="styleSymbolValueText" TargetType="Label">
@@ -48,13 +53,15 @@
                 <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
                 <Setter Property="FontFamily" Value="{DynamicResource FontBold}" />
                 <Setter Property="FontSize" Value="{DynamicResource FontSizeLarge}" />
-                <Setter Property="TextColor" Value="{DynamicResource textSecondary}" />
+
             </Style>
 
-            <Style x:Key="styleActionIcon" TargetType="controls:CustomIcon">
+            <Style
+                x:Key="styleActionIcon"
+                BasedOn="{StaticResource StyleTextOnButton}"
+                TargetType="controls:CustomIcon">
                 <Setter Property="FontSize" Value="{DynamicResource FontSizeLarge}" />
                 <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
-                <Setter Property="TextColor" Value="{DynamicResource textSecondary}" />
             </Style>
 
 

@@ -10,6 +10,7 @@
     xmlns:models="clr-namespace:PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix"
     xmlns:templates="clr-namespace:PixQrCodeGeneratorOffline.Templates"
     xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
+    xmlns:vmBase="clr-namespace:PixQrCodeGeneratorOffline.ViewModels.Base"
     x:DataType="vm:DashboardViewModel">
 
     <Grid.Resources>
@@ -52,7 +53,8 @@
 
                         <key:HorizontalKeys
                             BoxColor="{Binding FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
-                            HideValue="{Binding Source={RelativeSource AncestorType={x:Type vm:DashboardViewModel}}, Path=IsHideValue}"
+                            HidePanelColor="{Binding FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
+                            HideValue="{Binding Source={RelativeSource AncestorType={x:Type vmBase:DashboardViewModelBase}}, Path=IsHideValue}"
                             IconInstitution="{x:Static icons:FontAwesomeSolid.University}"
                             IconKey="{x:Static icons:FontAwesomeSolid.Key}"
                             InstitutionValue="{Binding Viewer.InstitutionPresentation}"
@@ -90,7 +92,6 @@
                         Title="{Binding Title}"
                         BoxColor="{Binding Source={RelativeSource AncestorType={x:Type vm:DashboardViewModel}}, Path=CurrentPixKey.FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
                         Icon="{Binding Icon}"
-                        IconColor="{Binding Source={RelativeSource AncestorType={x:Type vm:DashboardViewModel}}, Path=CurrentPixKey.FinancialInstitution.Institution.MaterialColor.TextOnPrimary}"
                         IconType="{Binding IconType}" />
 
                 </DataTemplate>

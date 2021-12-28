@@ -56,7 +56,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 //await NavigateToBenefitsPage();
 
-                LoadHideValue();
+                //LoadHideValue();
 
                 CurrentCryptoKeyActions = CryptoKeyAction.GetList();
             }

@@ -29,13 +29,12 @@
                     x:Name="xIcon"
                     FontSize="{DynamicResource FontSizeLarge}"
                     HorizontalOptions="Start"
-                    TextColor="{DynamicResource textPrimary}" />
+                    TextColor="White" />
 
                 <Label
                     x:Name="xTitle"
                     FontFamily="{DynamicResource FontBold}"
                     FontSize="{DynamicResource FontSizeSmall}"
-                    TextColor="{DynamicResource textPrimary}"
                     VerticalOptions="EndAndExpand" />
 
             </StackLayout>

@@ -1,4 +1,5 @@
-﻿using PixQrCodeGeneratorOffline.ViewModels.Base;
+﻿using AsyncAwaitBestPractices;
+using PixQrCodeGeneratorOffline.ViewModels.Base;
 using System;
 
 using Xamarin.Forms;
@@ -19,7 +20,7 @@ namespace PixQrCodeGeneratorOffline.Views
             if (tabbed.CurrentPage is StartCryptoPage || tabbed.CurrentPage is StartPage)
             {
                 var vm = (DashboardViewModelBase)tabbed.CurrentPage.BindingContext;
-                vm.LoadHideValue();
+                vm.LoadHideValue().SafeFireAndForget();
             }
 
             //else

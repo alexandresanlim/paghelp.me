@@ -1,4 +1,5 @@
 ﻿using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix;
+using Xamarin.Forms;
 using static PixQrCodeGeneratorOffline.Extention.IconExtention;
 
 namespace PixQrCodeGeneratorOffline.Models.PaymentMethods.Base

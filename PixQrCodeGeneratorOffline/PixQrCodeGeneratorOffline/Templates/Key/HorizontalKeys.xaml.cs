@@ -10,6 +10,7 @@ namespace PixQrCodeGeneratorOffline.Templates.Key
         public HorizontalKeys()
         {
             InitializeComponent();
+            xHidePanel.IsVisible = Preference.HideData;
         }
 
         public static readonly BindableProperty QrCodeProperty =
@@ -222,7 +223,7 @@ namespace PixQrCodeGeneratorOffline.Templates.Key
             set => SetValue(HideValueProperty, value);
         }
 
-        static void HideValuePropertyChanged(BindableObject bindable, object oldValue, object newValue)
+        private static void HideValuePropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
             if (newValue == null)
                 return;
@@ -231,6 +232,33 @@ namespace PixQrCodeGeneratorOffline.Templates.Key
             bool value = (bool)newValue;
 
             template.xHidePanel.IsVisible = value;
+        }
+
+        public static readonly BindableProperty HidePanelColorProperty =
+           BindableProperty.Create(
+               propertyName: nameof(HidePanelColor),
+               returnType: typeof(Color),
+               declaringType: typeof(HorizontalKeys),
+               defaultValue: Color.White,
+               defaultBindingMode: BindingMode.Default,
+               validateValue: null,
+               propertyChanged: HidePanelColorPropertyChanged);
+
+        public Color HidePanelColor
+        {
+            get => (Color)GetValue(HidePanelColorProperty);
+            set => SetValue(HidePanelColorProperty, value);
+        }
+
+        private static void HidePanelColorPropertyChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            if (newValue == null)
+                return;
+
+            var template = (HorizontalKeys)bindable;
+            Color value = (Color)newValue;
+
+            template.xHidePanel.BackgroundColor = value;
         }
     }
 }

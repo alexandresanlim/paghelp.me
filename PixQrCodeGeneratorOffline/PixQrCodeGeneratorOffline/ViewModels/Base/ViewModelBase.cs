@@ -192,15 +192,25 @@ namespace PixQrCodeGeneratorOffline.Base.ViewModels
         }
 
         #region INotifyPropertyChanged
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected void OnPropertyChanged([CallerMemberName] string propertyName = "")
-        {
-            var changed = PropertyChanged;
-            if (changed == null)
-                return;
+        //public event PropertyChangedEventHandler PropertyChanged;
+        //protected void OnPropertyChanged([CallerMemberName] string propertyName = "")
+        //{
+        //    var changed = PropertyChanged;
+        //    if (changed == null)
+        //        return;
 
-            changed.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        //    changed.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        //}
+
+
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private void OnPropertyChanged(string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
         #endregion
     }
 }

@@ -1,18 +1,16 @@
-﻿using PixQrCodeGeneratorOffline.Base.ViewModels;
-using PixQrCodeGeneratorOffline.Models;
+﻿using AsyncAwaitBestPractices.MVVM;
+using PixQrCodeGeneratorOffline.Base.ViewModels;
 using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix;
 using PixQrCodeGeneratorOffline.Services;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Windows.Input;
-using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.ViewModels.Base
 {
     public class DashboardViewModelBase : ViewModelBase
     {
-        public ICommand HideValueCommand => new Command(HideValue);
+        public IAsyncCommand HideValueCommand => new AsyncCommand(HideValue);
 
         public async Task LoadCurrentPixKey(PixKey pixKeySelected = null)
         {
@@ -31,13 +29,13 @@ namespace PixQrCodeGeneratorOffline.ViewModels.Base
             //}
         }
 
-        private void HideValue()
+        private async Task HideValue()
         {
             Preference.HideData = !Preference.HideData;
-            LoadHideValue();
+            await LoadHideValue();
         }
 
-        public void LoadHideValue()
+        public async Task LoadHideValue()
         {
             IsHideValue = Preference.HideData;
         }

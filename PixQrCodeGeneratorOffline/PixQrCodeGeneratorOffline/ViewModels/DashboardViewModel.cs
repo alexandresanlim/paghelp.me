@@ -88,11 +88,11 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 await NavigateToBenefitsPage();
 
-                LoadHideValue();
+                //LoadHideValue();
 
                 CurrentPixKeyActions = PixKeyAction.GetList();
             }
-            catch (System.Exception e)
+            catch (Exception e)
             {
                 e.SendToLog();
             }
@@ -113,7 +113,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 PixKeyList = _pixKeyService?.GetAll()?.OrderBy(x => x?.FinancialInstitution?.Name)?.ToObservableCollection() ?? new ObservableCollection<PixKey>();
 
             }
-            catch (System.Exception e)
+            catch (Exception e)
             {
                 e.SendToLog();
             }
@@ -133,7 +133,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 PixKeyListContact = _pixKeyService?.GetAll(isContact: true)?.OrderBy(x => x?.Name)?.ToObservableCollection() ?? new ObservableCollection<PixKey>();
             }
-            catch (System.Exception e)
+            catch (Exception e)
             {
                 e.SendToLog();
             }
@@ -153,7 +153,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 BillingSaveList = _pixPayloadService?.GetAll()?.ToObservableCollection() ?? new ObservableCollection<PixPayload>();
             }
-            catch (System.Exception e)
+            catch (Exception e)
             {
                 e.SendToLog();
             }
@@ -224,7 +224,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 CurrentFeedList = FeedFromService?.ToObservableCollection();
             }
-            catch (System.Exception e)
+            catch (Exception e)
             {
                 e.SendToLog();
             }
@@ -267,7 +267,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 await NavigateAsync(new BenefitsPage());
             }
-            catch (System.Exception e)
+            catch (Exception e)
             {
                 e.SendToLog();
             }
@@ -306,7 +306,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                     DialogService.Toast("Não autenticado");
                 }
             }
-            catch (System.Exception e)
+            catch (Exception e)
             {
                 e.SendToLog();
             }

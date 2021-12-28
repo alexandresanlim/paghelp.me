@@ -45,7 +45,7 @@
                                 <Grid>
                                     <BoxView
                                         BackgroundColor="{DynamicResource primaryDark}"
-                                        CornerRadius="60"
+                                        CornerRadius="35"
                                         HeightRequest="70"
                                         HorizontalOptions="Center"
                                         WidthRequest="70" />
@@ -75,9 +75,12 @@
                                     Text="{Binding Viewer.KeyPresentation}"
                                     TextColor="{DynamicResource textPrimary}" />
 
-                                <content:DivisionView BackgroundColor="{DynamicResource textSecondary}" />
+                                <content:DivisionView BackgroundColor="{DynamicResource textSecondary}" HeightRequest="1" />
 
-                                <Grid ColumnDefinitions="*,*" VerticalOptions="EndAndExpand">
+                                <Grid
+                                    Padding="0,5,0,0"
+                                    ColumnDefinitions="*,*"
+                                    VerticalOptions="EndAndExpand">
                                     <StackLayout Grid.Column="0">
                                         <StackLayout.GestureRecognizers>
                                             <TapGestureRecognizer Command="{Binding Command.CopyKeyCommand}" />

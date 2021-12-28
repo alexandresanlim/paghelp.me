@@ -96,13 +96,13 @@
                             <controls:CustomIcon TextColor="{Binding CurrentPixKey.FinancialInstitution.Institution.MaterialColor.TextOnPrimary}">
                                 <controls:CustomIcon.Triggers>
                                     <DataTrigger
-                                        Binding="{Binding IsHideValue}"
+                                        Binding="{Binding IsHideValue, Mode=TwoWay}"
                                         TargetType="controls:CustomIcon"
                                         Value="False">
                                         <Setter Property="Glyph" Value="{x:Static icons:FontAwesomeSolid.Eye}" />
                                     </DataTrigger>
                                     <DataTrigger
-                                        Binding="{Binding IsHideValue}"
+                                        Binding="{Binding IsHideValue, Mode=TwoWay}"
                                         TargetType="controls:CustomIcon"
                                         Value="True">
                                         <Setter Property="Glyph" Value="{x:Static icons:FontAwesomeSolid.EyeSlash}" />
