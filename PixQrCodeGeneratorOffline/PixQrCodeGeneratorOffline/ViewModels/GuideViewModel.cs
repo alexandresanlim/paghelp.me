@@ -84,7 +84,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
             finally
             {
-                _eventService.SendEvent("Viu uma resposta do Guia Pix", Services.EventType.SEE, new Dictionary<string, string> { { "Guia: ", guide?.Answer } });
+                _eventService.SendEvent("Viu uma resposta do Guia Pix", Services.EventType.SEE, nameof(GuideViewModel), new Dictionary<string, string> { { "Guia: ", guide?.Answer } });
             }
         });
 

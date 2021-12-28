@@ -124,7 +124,7 @@ namespace PixQrCodeGeneratorOffline.Models.Commands
 
                     await Task.Delay(500);
 
-                    await Shell.Current.Navigation.PushModalAsync(new CreateBillingTabbedPage(pixKey));
+                    await Shell.Current.Navigation.PushAsync(new CreateBillingTabbedPage(pixKey));
                 }
                 catch (System.Exception e)
                 {

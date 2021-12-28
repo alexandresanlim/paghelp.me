@@ -1,6 +1,5 @@
 ﻿using PixQrCodeGeneratorOffline.Base.ViewModels;
 using PixQrCodeGeneratorOffline.Extention;
-using PixQrCodeGeneratorOffline.Models;
 using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix;
 using System.Collections.ObjectModel;
 
@@ -8,7 +7,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 {
     public class BillingSaveListViewModel : ViewModelBase
     {
-        public BillingSaveListViewModel(Models.PaymentMethods.Pix.PixKey pixKey = null)
+        public BillingSaveListViewModel(PixKey pixKey = null)
         {
             CurrentPixKey = pixKey ?? new PixKey();
 

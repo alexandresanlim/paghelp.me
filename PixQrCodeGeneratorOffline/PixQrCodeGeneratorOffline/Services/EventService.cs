@@ -6,8 +6,16 @@ namespace PixQrCodeGeneratorOffline.Services
 {
     public class EventService : IEventService
     {
-        public void SendEvent(string text, EventType eventType = EventType.OUTHER, IDictionary<string, string> properties = null)
+        public void SendEvent(string text, EventType eventType = EventType.OUTHER, string fromClass = "", IDictionary<string, string> properties = null)
         {
+            if(!string.IsNullOrWhiteSpace(fromClass))
+            {
+                properties = new Dictionary<string, string>
+                {
+                    { "Class", fromClass }
+                };
+            }
+
             Analytics.TrackEvent($"[{eventType}] {text}", properties);
         }
     }

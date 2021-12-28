@@ -3,10 +3,12 @@
     x:Class="PixQrCodeGeneratorOffline.Views.CreateBillingTabbedPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pix="clr-namespace:PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix"
     xmlns:views="clr-namespace:PixQrCodeGeneratorOffline.Views"
     x:Name="tb"
+    x:DataType="pix:PixKey"
     CurrentPageChanged="TabbedPage_CurrentPageChanged"
-    NavigationPage.HasNavigationBar="False">
+    Shell.NavBarIsVisible="False">
 
     <!--  Pages can be added as references or inline  -->
 

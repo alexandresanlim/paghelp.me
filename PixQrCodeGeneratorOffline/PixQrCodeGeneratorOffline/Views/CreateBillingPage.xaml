@@ -5,12 +5,10 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
     xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon"
-    xmlns:local="clr-namespace:PixQrCodeGeneratorOffline.Converters"
     xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
     Title="Nova Cobrança"
     x:DataType="vm:CreateBillingViewModel"
-    BackgroundColor="{DynamicResource background_page}"
-    NavigationPage.HasNavigationBar="False">
+    BackgroundColor="{DynamicResource background_page}">
 
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -36,14 +34,14 @@
             </Style>
 
             <Style x:Key="styleSymbolValueText" TargetType="Label">
-                <Setter Property="TextColor" Value="{Binding CurrentStyleFromKey.Primary}" />
+                <Setter Property="TextColor" Value="{Binding CurrentStyleFromKey.PrimaryDark}" />
                 <Setter Property="FontSize" Value="30" />
                 <Setter Property="FontFamily" Value="{DynamicResource FontSemiBold}" />
                 <Setter Property="Margin" Value="0,15,0,0" />
             </Style>
 
             <Style x:Key="styleValueText" TargetType="Label">
-                <Setter Property="TextColor" Value="{Binding CurrentStyleFromKey.Primary}" />
+                <Setter Property="TextColor" Value="{Binding CurrentStyleFromKey.PrimaryDark}" />
                 <Setter Property="FontSize" Value="60" />
                 <Setter Property="FontFamily" Value="{DynamicResource FontSemiBold}" />
             </Style>
@@ -91,8 +89,8 @@
 
                     <Frame
                         Padding="10"
-                        BackgroundColor="{Binding CurrentStyleFromKey.Primary}"
-                        CornerRadius="10">
+                        BackgroundColor="{Binding CurrentStyleFromKey.PrimaryDark}"
+                        CornerRadius="5">
                         <Frame.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding SetDescriptionCommand}" />
                         </Frame.GestureRecognizers>
@@ -102,11 +100,13 @@
                                 FontFamily="{DynamicResource FontBold}"
                                 FontSize="{DynamicResource FontSizeSmall}"
                                 Text="{Binding CurrentDescription}"
-                                TextColor="{Binding CurrentStyleFromKey.TextOnPrimary}" />
+                                TextColor="{Binding CurrentStyleFromKey.TextOnPrimary}"
+                                VerticalOptions="CenterAndExpand" />
                             <controls:CustomIcon
-                                FontSize="{DynamicResource FontSizeMicro}"
+                                FontSize="{DynamicResource FontSizeSmall}"
                                 Glyph="{x:Static icons:FontAwesomeSolid.Edit}"
-                                TextColor="{Binding CurrentStyleFromKey.TextOnPrimary}" />
+                                TextColor="{Binding CurrentStyleFromKey.TextOnPrimary}"
+                                VerticalOptions="CenterAndExpand" />
                         </StackLayout>
                     </Frame>
                 </StackLayout>

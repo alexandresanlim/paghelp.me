@@ -1,16 +1,10 @@
 ﻿using PixQrCodeGeneratorOffline.ViewModels;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace PixQrCodeGeneratorOffline.Views
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CreateBillingTabbedPage : TabbedPage
     {
         private static Models.PaymentMethods.Pix.PixKey PixKey { get; set; }
@@ -19,12 +13,14 @@ namespace PixQrCodeGeneratorOffline.Views
         {
             PixKey = pixKey;
 
-            //App.StatusBarService.SetStatusBarColor(pixKey.FinancialInstitution.Institution.MaterialColor.Primary);
-
             InitializeComponent();
 
-            tb.BarBackgroundColor = PixKey?.FinancialInstitution?.Institution?.MaterialColor?.Primary ?? App.ThemeColors.Primary;
+            var primaryDark = PixKey?.FinancialInstitution?.Institution?.MaterialColor?.PrimaryDark ?? App.ThemeColors.PrimaryDark;
+
+            tb.BarBackgroundColor = primaryDark;
             tb.SelectedTabColor = PixKey?.FinancialInstitution?.Institution?.MaterialColor?.TextOnPrimary ?? App.ThemeColors.TextOnPrimary;
+
+            App.StatusBarService.SetStatusBarColor(primaryDark);
         }
 
         private void TabbedPage_CurrentPageChanged(object sender, EventArgs e)
@@ -52,15 +48,15 @@ namespace PixQrCodeGeneratorOffline.Views
             }
         }
 
-        //protected override bool OnBackButtonPressed()
-        //{
-        //    ReloadStatusBar();
-        //    return base.OnBackButtonPressed();
-        //}
+        protected override bool OnBackButtonPressed()
+        {
+            ReloadStatusBar();
+            return base.OnBackButtonPressed();
+        }
 
-        //private void ReloadStatusBar()
-        //{
-        //    App.StatusBarService.SetStatusBarColor(App.ThemeColors.PrimaryDark);
-        //}
+        private void ReloadStatusBar()
+        {
+            App.StatusBarService.SetStatusBarColor(App.ThemeColors.PrimaryDark);
+        }
     }
 }

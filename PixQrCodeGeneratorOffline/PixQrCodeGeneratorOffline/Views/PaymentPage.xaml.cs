@@ -18,8 +18,6 @@ namespace PixQrCodeGeneratorOffline.Views
 
             _pixPaylod = paylod;
 
-            //App.StatusBarService.SetStatusBarColor(paylod.PixKey.FinancialInstitution.Institution.MaterialColor.Primary);
-
             BindingContext = _paymentViewModel = new PaymentViewModel();
         }
 
@@ -28,10 +26,15 @@ namespace PixQrCodeGeneratorOffline.Views
             _paymentViewModel.LoadDataCommand.Execute(_pixPaylod);
 
             if (!(_paymentViewModel?.CurrentPixPaylod?.Id > 0) && _paymentViewModel?.CurrentPixPaylod?.PixCob != null && _paymentViewModel.CurrentPixPaylod.PixCob.Validation.HasValue)
+            {
                 ToolbarItems.Add(new ToolbarItem
                 {
+                    Text = "Salvar",
                     Command = _paymentViewModel.SaveCommand,
                 });
+            }
+
+            //App.StatusBarService.SetStatusBarColor(_paymentViewModel.CurrentInfo.Color.PrimaryDark);
         }
 
         //private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
@@ -42,7 +45,7 @@ namespace PixQrCodeGeneratorOffline.Views
 
         //protected override bool OnBackButtonPressed()
         //{
-        //    //ReloadStatusBar();
+        //    ReloadStatusBar();
         //    return base.OnBackButtonPressed();
         //}
 

@@ -142,7 +142,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 if (contact.Ok && string.IsNullOrWhiteSpace(contact?.Text))
                     dic.Add("Contato", contact.Text);
 
-                _eventService.SendEvent("Sugestão: ", Services.EventType.FEEDBACK, dic);
+                _eventService.SendEvent("Sugestão: ", Services.EventType.FEEDBACK, nameof(AboutViewModel), dic);
 
                 DialogService.Toast("Mensagem enviada com sucesso! Obrigado.");
             }

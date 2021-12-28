@@ -58,7 +58,7 @@ namespace PixQrCodeGeneratorOffline.Models.Commands
                 }
                 finally
                 {
-                    _eventService.SendEvent("Viu uma notícia", EventType.SEE, new Dictionary<string, string> { { "Título: ", feed?.Title } });
+                    _eventService.SendEvent("Viu uma notícia", EventType.SEE, nameof(FeedCommand), new Dictionary<string, string> { { "Título: ", feed?.Title } });
 
                     DialogService.HideLoading();
                 }
@@ -90,7 +90,7 @@ namespace PixQrCodeGeneratorOffline.Models.Commands
                 }
                 finally
                 {
-                    _eventService.SendEvent("Compartilhou uma notícia: " + feed?.Title, EventType.SHARE, new Dictionary<string, string> { { "Título: ", feed?.Title } });
+                    _eventService.SendEvent("Compartilhou uma notícia: " + feed?.Title, EventType.SHARE, nameof(FeedCommand), new Dictionary<string, string> { { "Título: ", feed?.Title } });
 
                     DialogService.HideLoading();
                 }

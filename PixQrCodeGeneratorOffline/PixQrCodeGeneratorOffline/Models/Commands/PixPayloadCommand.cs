@@ -1,4 +1,5 @@
-﻿using PixQrCodeGeneratorOffline.Extention;
+﻿using AsyncAwaitBestPractices.MVVM;
+using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models.Commands.Base;
 using PixQrCodeGeneratorOffline.Models.Commands.Interfaces;
 using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix;
@@ -12,7 +13,7 @@ namespace PixQrCodeGeneratorOffline.Models.Commands
 {
     public class PixPayloadCommand : CommandBase, IPixPayloadCommand
     {
-        public ICommand NavigateToPaymentPageCommand { get; private set; }
+        public IAsyncCommand NavigateToPaymentPageCommand { get; private set; }
 
         public PixPayloadCommand Create(PixPayload pixPayload)
         {
@@ -22,9 +23,9 @@ namespace PixQrCodeGeneratorOffline.Models.Commands
             };
         }
 
-        private Command GetNavigateToPaymentPageCommand(PixPayload pixPayload)
+        private AsyncCommand GetNavigateToPaymentPageCommand(PixPayload pixPayload)
         {
-            return new Command(async () =>
+            return new AsyncCommand(async () =>
             {
                 try
                 {
@@ -40,7 +41,7 @@ namespace PixQrCodeGeneratorOffline.Models.Commands
                 }
                 finally
                 {
-                    _eventService.SendEvent("Navegou para página de pagamento a partir do PixPaylodCommand", EventType.NAVIGATION);
+                    _eventService.SendEvent("Navegou para página de pagamento a partir do PixPaylodCommand", EventType.NAVIGATION, nameof(PixPayloadCommand));
 
                     DialogService.HideLoading();
                 }
