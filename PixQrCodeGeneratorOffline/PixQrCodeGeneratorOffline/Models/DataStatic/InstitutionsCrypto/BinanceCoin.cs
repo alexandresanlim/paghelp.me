@@ -20,9 +20,9 @@ namespace PixQrCodeGeneratorOffline.Models.DataStatic.InstitutionsCrypto
         public MaterialColor MaterialColor => new MaterialColor()
         {
             Name = "binance",
-            Primary = Color.FromHex("#f39c12"),
-            PrimaryDark = Color.FromHex("#bb6e00"),
-            PrimaryLight = Color.FromHex("#ffcd4e"),
+            Primary = Color.FromHex("#f1c40f"),
+            PrimaryDark = Color.FromHex("#ba9400"),
+            PrimaryLight = Color.FromHex("#fff653"),
             TextOnPrimary = Color.FromHex("#ffffff")
         };
     }

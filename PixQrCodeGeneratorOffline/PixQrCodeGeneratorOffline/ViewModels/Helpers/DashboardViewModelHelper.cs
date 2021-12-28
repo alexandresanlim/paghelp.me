@@ -46,10 +46,9 @@ namespace PixQrCodeGeneratorOffline.ViewModels.Helpers
                 {
                     Emoji = FontAwesomeSolid.Cogs,
                     Title = "Customizável",
-                    Description = "Exiba em formato de carrossel ou lista, com suporte a dark e light mode,",
+                    Description = "Suporte a dark e light mode",
                     Unconnection = true
                 },
-
                 new DashboardWelcome
                 {
                     Emoji = FontAwesomeSolid.Save,
@@ -59,9 +58,16 @@ namespace PixQrCodeGeneratorOffline.ViewModels.Helpers
                 },
                 new DashboardWelcome
                 {
+                    Emoji = FontAwesomeSolid.ShieldAlt,
+                    Title = "Anti-Roubo",
+                    Description = "Você não precisa mais carregar com você o app do seu banco para gerar cobranças, previnindo-se de quadrilhas e assaltos.",
+                    Unconnection = true
+                },
+                new DashboardWelcome
+                {
                     Emoji = FontAwesomeSolid.ExclamationTriangle,
                     Title = "IMPORTANTE!",
-                    Description = "- Para sua segurança, não fazemos conexão direta com o seu banco, sendo assim não será possível ver saldo ou realizar transferências, para isso use o app oficial do mesmo e jamais forneça esse tipo de acesso para terceiros. \n\n - Não temos quaisquer relação com o governo federal do Brasil, porém seguimos a risca, todos manuais e recomendações de padronização e segurança disponibilizados pela instituição."
+                    Description = "- Para sua segurança, não fazemos conexão direta com o seu banco, sendo assim não será possível ver saldo ou retirar valores do seu banco, para isso use o app oficial do mesmo e jamais forneça esse tipo de acesso para terceiros. \n\n"
                 }
             };
         }

@@ -33,6 +33,8 @@ namespace PixQrCodeGeneratorOffline.Models.Services
                 Create(GetType(new BinanceCoin())),
                 Create(GetType(new Ethereum())),
                 Create(GetType(new Litecoin())),
+                Create(GetType(new Dash())),
+                Create(GetType(new Theter())),
             };
         }
 
@@ -72,6 +74,12 @@ namespace PixQrCodeGeneratorOffline.Models.Services
                 case FinancialInstitutionCryptoType.Litecoin:
                     return GetName(new Litecoin());
 
+                case FinancialInstitutionCryptoType.Dash:
+                    return GetName(new Dash());
+
+                case FinancialInstitutionCryptoType.Theter:
+                    return GetName(new Theter());
+
                 case FinancialInstitutionCryptoType.None:
                 default:
                     return "Não Informado";
@@ -85,7 +93,9 @@ namespace PixQrCodeGeneratorOffline.Models.Services
                 new Bitcoin(),
                 new BinanceCoin(),
                 new Ethereum(),
-                new Litecoin()
+                new Litecoin(),
+                new Dash(),
+                new Theter(),
             };
         }
 

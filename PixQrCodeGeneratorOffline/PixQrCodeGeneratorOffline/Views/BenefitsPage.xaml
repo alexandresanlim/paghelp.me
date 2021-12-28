@@ -4,7 +4,6 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:content="clr-namespace:PixQrCodeGeneratorOffline.Views.Content"
-    xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
     xmlns:helpers="clr-namespace:PixQrCodeGeneratorOffline.ViewModels.Helpers"
     xmlns:preferences="clr-namespace:PixQrCodeGeneratorOffline.Templates.Preferences"
     xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"

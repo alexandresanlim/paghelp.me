@@ -9,6 +9,7 @@
     xmlns:models="clr-namespace:PixQrCodeGeneratorOffline.Models.PaymentMethods.Crypto"
     xmlns:templates="clr-namespace:PixQrCodeGeneratorOffline.Templates"
     xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
+    xmlns:vmBase="clr-namespace:PixQrCodeGeneratorOffline.ViewModels.Base"
     x:DataType="vm:DashboardCryptoViewModel">
     <Grid.Resources>
         <ResourceDictionary>
@@ -35,15 +36,6 @@
 
     <StackLayout>
 
-        <!--<Grid>
-                    <Grid RowDefinitions="*,*">
-                        <BoxView Grid.Row="0" BackgroundColor="{DynamicResource background_page}"/>
-                        <BoxView Grid.Row="1"/>
-                    </Grid>
-
-
-                </Grid>-->
-
         <StackLayout Spacing="0">
             <CarouselView
                 CurrentItem="{Binding CurrentCryptoKey}"
@@ -60,7 +52,8 @@
 
                         <key:HorizontalKeys
                             BoxColor="{Binding FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
-                            HideValue="{Binding Source={RelativeSource AncestorType={x:Type vm:DashboardCryptoViewModel}}, Path=IsHideValue}"
+                            HidePanelColor="{Binding FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
+                            HideValue="{Binding Source={RelativeSource AncestorType={x:Type vmBase:DashboardViewModelBase}}, Path=IsHideValue}"
                             IconInstitution="{x:Static icons:FontAwesomeSolid.Coins}"
                             IconKey="{x:Static icons:FontAwesomeSolid.Key}"
                             InstitutionValue="{Binding Viewer.InstitutionPresentation}"

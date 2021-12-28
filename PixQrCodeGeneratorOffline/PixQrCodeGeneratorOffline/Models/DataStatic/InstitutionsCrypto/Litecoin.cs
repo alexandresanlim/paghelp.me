@@ -18,9 +18,9 @@ namespace PixQrCodeGeneratorOffline.Models.DataStatic.InstitutionsCrypto
         public MaterialColor MaterialColor => new MaterialColor()
         {
             Name = "litecoin",
-            Primary = Color.FromHex("#f39c12"),
-            PrimaryDark = Color.FromHex("#bb6e00"),
-            PrimaryLight = Color.FromHex("#ffcd4e"),
+            Primary = Color.FromHex("#949494"),
+            PrimaryDark = Color.FromHex("#666666"),
+            PrimaryLight = Color.FromHex("#c4c4c4"),
             TextOnPrimary = Color.FromHex("#ffffff")
         };
     }

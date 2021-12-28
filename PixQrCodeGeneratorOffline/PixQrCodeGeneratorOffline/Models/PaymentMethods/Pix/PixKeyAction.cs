@@ -12,13 +12,13 @@ namespace PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix
 {
     public class PixKeyAction : ActionBase
     {
-        public static ObservableCollection<PixKeyAction> GetList(PixKey pixKey = null, ICommand command = null)
+        public static ObservableCollection<PixKeyAction> GetList()
         {
             return new ObservableCollection<PixKeyAction>
             {
                 new PixKeyAction
                 {
-                    Title = "Criar Cobrança",
+                    Title = "Criar Cobrança Estática",
                     Icon = FontAwesomeSolid.HandHoldingUsd,
                     Type = KeyActionType.CreateBilling,
                     //Command = command
