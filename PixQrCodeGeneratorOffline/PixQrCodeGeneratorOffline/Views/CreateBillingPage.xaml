@@ -81,11 +81,12 @@
                     </StackLayout>
 
                     <Label
+                        FontFamily="{StaticResource FontSemiBold}"
                         HorizontalOptions="Center"
                         LineBreakMode="TailTruncation"
                         MaxLines="1"
                         Text="{Binding CurrentPixKey.Viewer.BankAndKey}"
-                        TextColor="{DynamicResource textSecondary}" />
+                        TextColor="{DynamicResource textPrimary}" />
 
                     <Frame
                         Padding="10"

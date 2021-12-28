@@ -86,7 +86,10 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                         if (text.IsAKey())
                         {
-                            InputList[CurrentInputValues.Key.Index].Value = text;
+                            var exists = _pixKeyService.GetAll(x => x.Key == text);
+
+                            if (exists == null && !(exists.FirstOrDefault().Id > 0))
+                                InputList[CurrentInputValues.Key.Index].Value = text;
                         }
                     }
                 }

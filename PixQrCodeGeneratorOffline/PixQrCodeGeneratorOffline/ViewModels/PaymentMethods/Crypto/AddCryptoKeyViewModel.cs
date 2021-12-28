@@ -68,15 +68,18 @@ namespace PixQrCodeGeneratorOffline.ViewModels.PaymentMethods.Crypto
                         }
                     }
 
-                    if (Clipboard.HasText)
-                    {
-                        var text = await Clipboard.GetTextAsync();
+                    //if (Clipboard.HasText)
+                    //{
+                    //    var text = await Clipboard.GetTextAsync();
 
-                        if (text.IsAKey())
-                        {
-                            InputList[CurrentInputValues.Key.Index].Value = text;
-                        }
-                    }
+                    //    if (text.IsAKey())
+                    //    {
+                    //        var exists = _cryptoKeyService.GetAll(x => x.Key == text);
+
+                    //        if (exists != null && exists.FirstOrDefault().Id > 0)
+                    //            InputList[CurrentInputValues.Key.Index].Value = text;
+                    //    }
+                    //}
                 }
 
                 else

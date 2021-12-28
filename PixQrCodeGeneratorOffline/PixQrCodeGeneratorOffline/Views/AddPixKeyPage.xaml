@@ -91,13 +91,13 @@
                                     FontSize="{DynamicResource FontSizeLarge}"
                                     Glyph="{Binding Icon}"
                                     HorizontalOptions="CenterAndExpand"
-                                    TextColor="{DynamicResource textSecondary}" />
+                                    TextColor="{DynamicResource textPrimary}" />
                                 <Label
                                     FontFamily="{StaticResource FontBold}"
                                     FontSize="{DynamicResource FontSizeLarge}"
                                     HorizontalTextAlignment="Center"
                                     Text="{Binding Title}"
-                                    TextColor="{DynamicResource textSecondary}"
+                                    TextColor="{DynamicResource textPrimary}"
                                     Visual="Material" />
                             </StackLayout>
                             <Frame
