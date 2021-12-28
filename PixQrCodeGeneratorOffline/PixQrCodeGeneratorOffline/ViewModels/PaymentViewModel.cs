@@ -1,13 +1,10 @@
 ﻿using AsyncAwaitBestPractices.MVVM;
 using PixQrCodeGeneratorOffline.Base.ViewModels;
-using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models;
 using PixQrCodeGeneratorOffline.Models.Base;
 using PixQrCodeGeneratorOffline.Models.PaymentMethods.Base;
 using PixQrCodeGeneratorOffline.Models.PaymentMethods.Crypto;
 using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix;
-using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -18,11 +15,11 @@ namespace PixQrCodeGeneratorOffline.ViewModels
     {
         #region Commands
 
-        public ICommand SharePayloadCommand => new Command(SharePayload);
-
         public IAsyncCommand SaveCommand => new AsyncCommand(Save);
 
         public ICommand LoadDataCommand => new Command<PayloadBase>((payloadParameter) => LoadData(payloadParameter));
+
+        public ICommand ChangeIsActionVisibleCommand => new Command(ChangeIsActionVisible);
 
         #endregion
 
@@ -51,6 +48,8 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
             //SaveButtonVisible = !(CurrentPixPaylod.Id > 0) && CurrentPixPaylod?.PixCob != null && CurrentPixPaylod.PixCob.Validation.HasValue;
 
+            IsActionVisible = false;
+
             LoadHelpPhrase();
         }
 
@@ -60,43 +59,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
             CurrentInfo.HelpPhrase =
                 $"O pagador precisa abir o app que vai fazer a transferência {paymentType} e escanear este QR Code ou colar o código copia e cola.";
-        }
-
-        private void SharePayload()
-        {
-            try
-            {
-                var options = new List<Acr.UserDialogs.ActionSheetOption>
-                {
-                    new Acr.UserDialogs.ActionSheetOption("Copiar Código", async () =>
-                    {
-                       await _externalActionService.CopyText(CurrentPixPaylod?.QrCode, "Código copiado com sucesso!");
-                    }),
-                    new Acr.UserDialogs.ActionSheetOption("Compartilhar Código", async () =>
-                    {
-                        await _externalActionService.ShareText(CurrentPixPaylod?.QrCode);
-                    }),
-                };
-
-                DialogService.ActionSheet(new Acr.UserDialogs.ActionSheetConfig
-                {
-                    Title = "O que deseja fazer?",
-                    //UseBottomSheet = true,
-                    Options = options,
-                    Cancel = new Acr.UserDialogs.ActionSheetOption("Cancelar", () =>
-                    {
-                        return;
-                    })
-                });
-            }
-            catch (Exception e)
-            {
-                e.SendToLog();
-            }
-            finally
-            {
-                _eventService.SendEvent("Compartilhou um payload", Services.EventType.SHARE);
-            }
         }
 
         private async Task Save()
@@ -133,6 +95,11 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
         }
 
+        private void ChangeIsActionVisible()
+        {
+            IsActionVisible = !IsActionVisible;
+        }
+
         private PixPayload _currentPixPaylod;
         public PixPayload CurrentPixPaylod
         {
@@ -154,11 +121,11 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             get => _currentPaylodBase;
         }
 
-        private bool _saveButtonVisible;
-        public bool SaveButtonVisible
+        private bool _isActionVisible;
+        public bool IsActionVisible
         {
-            set => SetProperty(ref _saveButtonVisible, value);
-            get => _saveButtonVisible;
+            set => SetProperty(ref _isActionVisible, value);
+            get => _isActionVisible;
         }
 
         private PaymentViewModelInfo _currentInfo;
