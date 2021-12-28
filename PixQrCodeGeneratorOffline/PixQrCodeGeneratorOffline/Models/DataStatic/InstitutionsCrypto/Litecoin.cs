@@ -13,7 +13,7 @@ namespace PixQrCodeGeneratorOffline.Models.DataStatic.InstitutionsCrypto
 
         public string Code => "LTC";
 
-        public string LinkToWallet => "litecoin";
+        public string LinkToWallet => "litecoin:";
 
         public MaterialColor MaterialColor => new MaterialColor()
         {

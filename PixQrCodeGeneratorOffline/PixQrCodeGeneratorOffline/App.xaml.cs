@@ -1,4 +1,5 @@
 ﻿using PixQrCodeGeneratorOffline.Models.Commands;
+using PixQrCodeGeneratorOffline.Models.Commands.Base;
 using PixQrCodeGeneratorOffline.Models.Commands.Interfaces;
 using PixQrCodeGeneratorOffline.Models.Commands.PaymentMethods.Crypto;
 using PixQrCodeGeneratorOffline.Models.Commands.PaymentMethods.Crypto.Interfaces;
@@ -102,6 +103,7 @@ namespace PixQrCodeGeneratorOffline
             DependencyService.Register<IPixKeyCommand, PixKeyCommand>();
             DependencyService.Register<ICryptoKeyCommand, CryptoKeyCommand>();
             DependencyService.Register<IPixPayloadCommand, PixPayloadCommand>();
+            DependencyService.Register<IPayloadCommandBase, PayloadCommandBase>();
             DependencyService.Register<ICryptoPayloadCommand, CryptoPayloadCommand>();
             DependencyService.Register<IFeedCommand, FeedCommand>();
         }

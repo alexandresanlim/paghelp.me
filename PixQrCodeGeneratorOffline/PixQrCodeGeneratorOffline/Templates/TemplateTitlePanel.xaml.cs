@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using static PixQrCodeGeneratorOffline.Extention.IconExtention;
 
 namespace PixQrCodeGeneratorOffline.Templates
 {
@@ -19,7 +20,7 @@ namespace PixQrCodeGeneratorOffline.Templates
 
         public static readonly BindableProperty TitleProperty =
            BindableProperty.Create(nameof(Title),
-               typeof(string), 
+               typeof(string),
                typeof(TemplateTitlePanel),
                string.Empty,
                BindingMode.Default,
@@ -99,6 +100,33 @@ namespace PixQrCodeGeneratorOffline.Templates
         {
             var b = (TemplateTitlePanel)bindable;
             b.xIcon.TextColor = (Color)newValue;
+        }
+
+        public static readonly BindableProperty IconTypeProperty =
+          BindableProperty.Create(
+              propertyName: nameof(IconType),
+              returnType: typeof(FontAwesomeType),
+              declaringType: typeof(TemplateTitlePanel),
+              defaultValue: FontAwesomeType.solid,
+              defaultBindingMode: BindingMode.Default,
+              validateValue: null,
+              propertyChanged: IconTypePropertyChanged);
+
+        public FontAwesomeType IconType
+        {
+            get => (FontAwesomeType)GetValue(IconTypeProperty);
+            set => SetValue(IconTypeProperty, value);
+        }
+
+        private static void IconTypePropertyChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            if (newValue == null)
+                return;
+
+            var template = (TemplateTitlePanel)bindable;
+            FontAwesomeType value = (FontAwesomeType)newValue;
+
+            template.xIcon.IconType = value;
         }
     }
 }

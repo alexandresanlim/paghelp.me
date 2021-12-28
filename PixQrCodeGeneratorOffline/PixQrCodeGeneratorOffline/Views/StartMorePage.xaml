@@ -6,6 +6,8 @@
     xmlns:content="clr-namespace:PixQrCodeGeneratorOffline.Views.Content"
     xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon"
     xmlns:templates="clr-namespace:PixQrCodeGeneratorOffline.Templates"
+    xmlns:viewmodels="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
+    x:DataType="viewmodels:StartMoreViewModel"
     BackgroundColor="{DynamicResource background_page}">
     <ContentPage.Content>
         <StackLayout>
@@ -42,7 +44,38 @@
 
             <!--  //////////////////////////////////////////////////////////////////////////////////////////////////////////////  -->
 
-            <Grid Padding="0,0,10,0" ColumnDefinitions="*, auto">
+            <templates:TemplateTitlePanel
+                Title="Enviar Mensagem"
+                Margin="0,0,10,0"
+                Icon="{x:Static icons:FontAwesomeSolid.PaperPlane}">
+                <templates:TemplateTitlePanel.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding SendAMessageCommand}" />
+                </templates:TemplateTitlePanel.GestureRecognizers>
+            </templates:TemplateTitlePanel>
+
+
+            <content:DivisionView />
+
+            <!--  //////////////////////////////////////////////////////////////////////////////////////////////////////////////  -->
+
+            <templates:TemplateTitlePanel
+                Title="{Binding CurrentStore}"
+                Margin="0,0,10,0"
+                Icon="{Binding CurrentStoreIcon}"
+                IconType="brand">
+
+                <templates:TemplateTitlePanel.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding OpenStoreCommand}" />
+                </templates:TemplateTitlePanel.GestureRecognizers>
+
+            </templates:TemplateTitlePanel>
+
+
+            <content:DivisionView />
+
+            <!--  //////////////////////////////////////////////////////////////////////////////////////////////////////////////  -->
+
+            <!--<Grid Padding="0,0,10,0" ColumnDefinitions="*, auto">
 
                 <Grid.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding NavigateToAboutCommand}" />
@@ -51,7 +84,15 @@
                 <templates:TemplateTitlePanel Title="Sobre o App" Icon="{x:Static icons:FontAwesomeSolid.MobileAlt}" />
 
                 <content:ChevronRightView Grid.Column="1" />
-            </Grid>
+            </Grid>-->
+
+            <Label
+                Margin="5"
+                FontFamily="{StaticResource FontSemiBold}"
+                HorizontalOptions="End"
+                Text="{Binding CurrentVersion, StringFormat='Versão: {0}'}"
+                TextColor="{DynamicResource textSecondary}"
+                VerticalOptions="EndAndExpand" />
 
         </StackLayout>
     </ContentPage.Content>

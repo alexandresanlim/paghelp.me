@@ -15,7 +15,7 @@ namespace PixQrCodeGeneratorOffline.Models.DataStatic.InstitutionsCrypto
 
         public string Code => "BNB";
 
-        public string LinkToWallet => "binance:";
+        public string LinkToWallet => "binancecoin:";
 
         public MaterialColor MaterialColor => new MaterialColor()
         {

@@ -237,6 +237,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels.PaymentMethods.Crypto
 
                     if (CurrentDashboard.CryptoKeyList.Count == 0)
                     {
+                        //CurrentDashboard.CryptoKeyList.Clear();
                         CurrentDashboard.CryptoKeyList = new ObservableCollection<CryptoKey>();
                     }
 

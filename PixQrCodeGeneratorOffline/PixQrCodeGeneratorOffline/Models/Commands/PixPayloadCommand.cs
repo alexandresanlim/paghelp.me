@@ -15,20 +15,11 @@ namespace PixQrCodeGeneratorOffline.Models.Commands
     {
         public IAsyncCommand NavigateToPaymentPageCommand { get; private set; }
 
-        public IAsyncCommand ShareCommand { get; private set; }
-
-        public IAsyncCommand CopyCommand { get; private set; }
-
-        public IAsyncCommand ShareOnWhatsAppCommand { get; private set; }
-
         public PixPayloadCommand Create(PixPayload pixPayload)
         {
             return new PixPayloadCommand
             {
                 NavigateToPaymentPageCommand = GetNavigateToPaymentPageCommand(pixPayload),
-                ShareCommand = GetShareCommand(pixPayload),
-                CopyCommand = GetCopyCommand(pixPayload),
-                ShareOnWhatsAppCommand = GetShareOnWhatsAppCommand(pixPayload),
             };
         }
 
@@ -54,30 +45,6 @@ namespace PixQrCodeGeneratorOffline.Models.Commands
 
                     DialogService.HideLoading();
                 }
-            });
-        }
-
-        private AsyncCommand GetShareCommand(PixPayload pixPayload)
-        {
-            return new AsyncCommand(async () =>
-            {
-                await _externalActionService.ShareText(pixPayload?.QrCode);
-            });
-        }
-
-        private AsyncCommand GetCopyCommand(PixPayload pixPayload)
-        {
-            return new AsyncCommand(async () =>
-            {
-                await _externalActionService.CopyText(pixPayload?.QrCode, "Código copiado com sucesso!", pixPayload?.PixKey?.FinancialInstitution?.Institution?.MaterialColor?.PrimaryDark);
-            });
-        }
-
-        private AsyncCommand GetShareOnWhatsAppCommand(PixPayload pixPayload)
-        {
-            return new AsyncCommand(async () =>
-            {
-                await _externalActionService.ShareOnWhats(pixPayload?.QrCode);
             });
         }
     }

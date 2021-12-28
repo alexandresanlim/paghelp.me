@@ -24,7 +24,7 @@
             </Style>
             <Style x:Key="StyleActionTitle" TargetType="Label">
                 <Setter Property="FontSize" Value="{StaticResource FontSizeSmall}" />
-                <Setter Property="FontFamily" Value="{StaticResource FontBold}" />
+                <Setter Property="FontFamily" Value="{StaticResource FontSemiBold}" />
                 <Setter Property="TextColor" Value="{Binding CurrentInfo.Color.TextOnPrimary}" />
                 <Setter Property="VerticalOptions" Value="EndAndExpand" />
                 <Setter Property="Margin" Value="0,5,0,0" />
@@ -151,7 +151,7 @@
                     <Frame Grid.Column="0" Style="{StaticResource StyleActionFrame}">
 
                         <Frame.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding CurrentPixPaylod.Commands.ShareCommand}" />
+                            <TapGestureRecognizer Command="{Binding CurrentPaylodBase.Commands.ShareCommand}" />
                         </Frame.GestureRecognizers>
 
                         <StackLayout Padding="10">
@@ -165,7 +165,7 @@
                     <Frame Grid.Column="1" Style="{StaticResource StyleActionFrame}">
 
                         <Frame.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding CurrentPixPaylod.Commands.ShareOnWhatsAppCommand}" />
+                            <TapGestureRecognizer Command="{Binding CurrentPaylodBase.Commands.ShareOnWhatsAppCommand}" />
                         </Frame.GestureRecognizers>
 
                         <StackLayout Padding="10">
@@ -182,7 +182,7 @@
                     <Frame Grid.Column="2" Style="{StaticResource StyleActionFrame}">
 
                         <Frame.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding CurrentPixPaylod.Commands.CopyCommand}" />
+                            <TapGestureRecognizer Command="{Binding CurrentPaylodBase.Commands.CopyCommand}" />
                         </Frame.GestureRecognizers>
 
                         <StackLayout Padding="10">

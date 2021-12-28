@@ -42,10 +42,10 @@
                                     IconColor="{DynamicResource textSecondary}"
                                     VerticalOptions="Center" />-->
 
-                                <Grid>
+                                <Grid HorizontalOptions="Center">
                                     <BoxView
                                         BackgroundColor="{DynamicResource primaryDark}"
-                                        CornerRadius="35"
+                                        CornerRadius="40"
                                         HeightRequest="70"
                                         HorizontalOptions="Center"
                                         WidthRequest="70" />
@@ -70,6 +70,7 @@
                                     TextColor="{DynamicResource textPrimary}" />
 
                                 <Label
+                                    FontFamily="{StaticResource FontSemiBold}"
                                     LineBreakMode="MiddleTruncation"
                                     MaxLines="1"
                                     Text="{Binding Viewer.KeyPresentation}"

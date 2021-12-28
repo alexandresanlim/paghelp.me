@@ -1,4 +1,5 @@
 ﻿
+using AsyncAwaitBestPractices;
 using PixQrCodeGeneratorOffline.ViewModels;
 using Xamarin.Forms;
 
@@ -12,6 +13,11 @@ namespace PixQrCodeGeneratorOffline.Views
         {
             InitializeComponent();
             BindingContext = moreViewModel = new StartMoreViewModel();
+        }
+
+        protected override void OnAppearing()
+        {
+            moreViewModel.LoadDataCommand.ExecuteAsync().SafeFireAndForget();
         }
     }
 }
