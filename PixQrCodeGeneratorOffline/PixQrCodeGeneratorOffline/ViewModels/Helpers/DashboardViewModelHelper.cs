@@ -23,6 +23,13 @@ namespace PixQrCodeGeneratorOffline.ViewModels.Helpers
             {
                 new DashboardWelcome
                 {
+                    Emoji = FontAwesomeSolid.Plane,
+                    Title = "Offline",
+                    Description = "Não preocupa-se com a sua conexão, aqui a maioria das funcionalidades são offline (sem conexão com a internet).",
+                    Unconnection = true
+                },
+                new DashboardWelcome
+                {
                     Emoji = FontAwesomeSolid.Lock,
                     Title = "Seguro",
                     Description = "Guarde suas chaves localmente de maneira criptografada e sem conexão com a internet, com suporte a autenticação biométrica se disponível pelo seu aparelho.",
