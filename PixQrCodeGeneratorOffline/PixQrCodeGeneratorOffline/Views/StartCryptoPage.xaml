@@ -10,6 +10,7 @@
     xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
     x:DataType="vm:DashboardCryptoViewModel"
     BackgroundColor="{DynamicResource background_page}">
+    
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Spacing="0">

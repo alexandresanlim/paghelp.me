@@ -12,7 +12,6 @@
     x:DataType="vm:DashboardViewModel"
     BackgroundColor="{DynamicResource background_page}">
 
-
     <ContentPage.Resources>
         <ResourceDictionary>
 
