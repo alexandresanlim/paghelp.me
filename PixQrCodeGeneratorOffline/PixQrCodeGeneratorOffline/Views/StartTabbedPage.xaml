@@ -42,19 +42,9 @@
         </Grid>
     </Shell.TitleView>
 
-
-
     <!--  Pages can be added as references or inline  -->
 
-
     <views:StartPage Title="Pix" />
-
-    <!--<NavigationPage Title="Crypto" IconImageSource="icon.png">
-        <x:Arguments>
-            <views:StartCryptoPage />
-        </x:Arguments>
-    </NavigationPage>-->
-
     <views:StartCryptoPage Title="Cripto" />
     <views:StartMorePage Title="Mais" IconImageSource="icon.png" />
 
