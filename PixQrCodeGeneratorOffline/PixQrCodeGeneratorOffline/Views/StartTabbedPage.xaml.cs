@@ -1,7 +1,8 @@
 ﻿using AsyncAwaitBestPractices;
+using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.ViewModels.Base;
 using System;
-
+using System.Reflection;
 using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.Views
@@ -11,6 +12,9 @@ namespace PixQrCodeGeneratorOffline.Views
         public StartTabbedPage()
         {
             InitializeComponent();
+
+            xTitle.Text = DateTimeExtention.GetDashboardTitleFromPeriod();
+            xSubTitle.Text = DateTimeExtention.GetDashboardSubtitleFromDayOfWeed();
         }
 
         private void TabbedPage_CurrentPageChanged(object sender, EventArgs e)

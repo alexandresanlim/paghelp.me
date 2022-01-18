@@ -14,6 +14,7 @@
     <None Remove="Fonts\Poppins-Medium.ttf" />
     <None Remove="Fonts\Poppins-Regular.ttf" />
     <None Remove="Fonts\Poppins-SemiBold.ttf" />
+    <None Remove="title_icon.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -25,6 +26,7 @@
     <EmbeddedResource Include="Fonts\Poppins-Medium.ttf" />
     <EmbeddedResource Include="Fonts\Poppins-Regular.ttf" />
     <EmbeddedResource Include="Fonts\Poppins-SemiBold.ttf" />
+    <EmbeddedResource Include="title_icon.png" />
   </ItemGroup>
 
   <ItemGroup>

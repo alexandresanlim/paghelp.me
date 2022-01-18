@@ -3,12 +3,43 @@
     x:Class="PixQrCodeGeneratorOffline.Views.StartTabbedPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:PixQrCodeGeneratorOffline.Extention;assembly=PixQrCodeGeneratorOffline"
     xmlns:views="clr-namespace:PixQrCodeGeneratorOffline.Views"
     BarBackgroundColor="{DynamicResource primaryDark}"
     CurrentPageChanged="TabbedPage_CurrentPageChanged">
 
     <Shell.TitleView>
-        <Label Text="Hello fora" TextColor="White" />
+        <Grid
+            Padding="0,5,0,0"
+            ColumnDefinitions="auto,*"
+            ColumnSpacing="10">
+            <Image
+                Grid.Column="0"
+                Margin="0,3,0,0"
+                Source="{local:ImageResource PixQrCodeGeneratorOffline.title_icon.png}"
+                VerticalOptions="StartAndExpand"
+                WidthRequest="35" />
+
+            <StackLayout
+                Grid.Column="1"
+                Orientation="Vertical"
+                Spacing="0"
+                VerticalOptions="StartAndExpand">
+                <Label
+                    x:Name="xTitle"
+                    FontFamily="{StaticResource FontBold}"
+                    FontSize="{StaticResource FontSizeSmall}"
+                    TextColor="{StaticResource textOnPrimary}"
+                    VerticalOptions="StartAndExpand" />
+
+                <Label
+                    x:Name="xSubTitle"
+                    FontFamily="{StaticResource FontSemiBold}"
+                    FontSize="{StaticResource FontSizeMicro}"
+                    TextColor="{StaticResource textOnPrimary}"
+                    VerticalOptions="StartAndExpand" />
+            </StackLayout>
+        </Grid>
     </Shell.TitleView>
 
 
