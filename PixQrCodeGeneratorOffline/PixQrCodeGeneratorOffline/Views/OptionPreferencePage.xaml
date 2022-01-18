@@ -88,6 +88,21 @@
                     Toggled="Switch_Theme" />
             </Grid>
 
+            <content:DivisionView />
+
+            <Grid Style="{StaticResource styleGrid}">
+                <preferences:PreferencePanelTemplate
+                    Title="Cryptomoedas"
+                    Grid.Column="0"
+                    Description="Use a mesma esperiência para criar cobranças Pix para criar cobranças para Cryptos"
+                    Icon="{Binding ThemeIcon}" />
+
+                <Switch
+                    Grid.Column="1"
+                    IsToggled="{Binding IsCryptoAble}"
+                    Toggled="Switch_Cypto" />
+            </Grid>
+
         </StackLayout>
 
     </ContentPage.Content>

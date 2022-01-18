@@ -91,5 +91,12 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             set => SetProperty(ref _themeIcon, value);
             get => _themeIcon;
         }
+
+        private bool _isCryptoAble;
+        public bool IsCryptoAble
+        {
+            set => SetProperty(ref _isCryptoAble, value);
+            get => _isCryptoAble;
+        }
     }
 }

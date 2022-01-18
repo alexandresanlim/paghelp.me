@@ -74,5 +74,10 @@ namespace PixQrCodeGeneratorOffline.Views
 
             await _optionPreferenceViewModel.OptionTheme();
         }
+
+        private void Switch_Cypto(object sender, ToggledEventArgs e)
+        {
+
+        }
     }
 }
