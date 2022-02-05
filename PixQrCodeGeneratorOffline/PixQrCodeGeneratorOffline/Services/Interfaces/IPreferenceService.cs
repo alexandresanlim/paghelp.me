@@ -13,10 +13,12 @@ namespace PixQrCodeGeneratorOffline.Services.Interfaces
 
         Task<bool> ChangeFingerPrint();
 
-        Task ChangePDVMode();
+        void ChangePDVMode();
 
-        Task ChangeShowNewsMode();
+        void ChangeShowNewsMode();
 
-        Task ChangeTheme();
+        void ChangeTheme();
+
+        void ChangeCrypto();
     }
 }

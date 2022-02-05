@@ -13,11 +13,25 @@
         HorizontalOptions="Start"
         TextColor="{DynamicResource textPrimary}" />
 
-    <Label
-        x:Name="xTitle"
-        FontFamily="{DynamicResource FontBold}"
-        FontSize="{DynamicResource FontSizeMedium}"
-        TextColor="{DynamicResource textPrimary}" />
+    <StackLayout Orientation="Horizontal" Spacing="10">
+        <Label
+            x:Name="xTitle"
+            FontFamily="{DynamicResource FontBold}"
+            FontSize="{DynamicResource FontSizeMedium}"
+            TextColor="{DynamicResource textPrimary}" />
+
+        <Frame
+            x:Name="xBetaInfo"
+            Padding="5,0"
+            BackgroundColor="Yellow"
+            IsVisible="False"
+            VerticalOptions="Center">
+            <Label
+                FontFamily="{StaticResource FontBold}"
+                Text="Beta"
+                TextColor="Black" />
+        </Frame>
+    </StackLayout>
 
     <Label x:Name="xDescription" TextColor="{DynamicResource textSecondary}" />
 

@@ -69,7 +69,7 @@ namespace PixQrCodeGeneratorOffline.Services
             }
         }
 
-        public async Task ChangePDVMode()
+        public void ChangePDVMode()
         {
             try
             {
@@ -86,7 +86,7 @@ namespace PixQrCodeGeneratorOffline.Services
             }
         }
 
-        public async Task ChangeShowNewsMode()
+        public void ChangeShowNewsMode()
         {
             try
             {
@@ -102,7 +102,7 @@ namespace PixQrCodeGeneratorOffline.Services
             }
         }
 
-        public async Task ChangeTheme()
+        public void ChangeTheme()
         {
             try
             {
@@ -110,6 +110,19 @@ namespace PixQrCodeGeneratorOffline.Services
                 App.LoadTheme();
 
                 _eventService.SendEvent($"Mudou tema, {nameof(Preference.ThemeIsDark)} : {Preference.ThemeIsDark}", EventType.PREFERENCE);
+            }
+            catch (Exception e)
+            {
+                e.SendToLog();
+            }
+        }
+
+        public void ChangeCrypto()
+        {
+            try
+            {
+                Preference.CryptoAble = !Preference.CryptoAble;
+                _eventService.SendEvent($"Mudou crypto habilitado, {nameof(Preference.CryptoAble)} : {Preference.CryptoAble}", EventType.PREFERENCE);
             }
             catch (Exception e)
             {

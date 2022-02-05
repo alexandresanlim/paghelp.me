@@ -94,8 +94,9 @@
                 <preferences:PreferencePanelTemplate
                     Title="Cryptomoedas"
                     Grid.Column="0"
-                    Description="Use a mesma esperiência para criar cobranças Pix para criar cobranças para Cryptos"
-                    Icon="{Binding ThemeIcon}" />
+                    Description="Use a mesma esperiência para criar cobranças Pix para criar cobranças de Crypto, essa função está em beta e pode apresentar falhas."
+                    Icon="{x:Static icons:FontAwesomeSolid.Coins}"
+                    IsBeta="True" />
 
                 <Switch
                     Grid.Column="1"

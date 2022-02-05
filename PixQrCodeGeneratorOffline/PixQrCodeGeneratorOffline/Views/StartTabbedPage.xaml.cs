@@ -2,7 +2,6 @@
 using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.ViewModels.Base;
 using System;
-using System.Reflection;
 using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.Views
@@ -15,6 +14,24 @@ namespace PixQrCodeGeneratorOffline.Views
 
             xTitle.Text = DateTimeExtention.GetDashboardTitleFromPeriod();
             xSubTitle.Text = DateTimeExtention.GetDashboardSubtitleFromDayOfWeed();
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            AddPages();
+        }
+
+        private void AddPages()
+        {
+            Children.Clear();
+
+            Children.Add(new StartPage { Title = "Pix" });
+
+            if (Services.Preference.CryptoAble)
+                Children.Add(new StartCryptoPage { Title = "Cripto (Beta)" });
+
+            Children.Add(new StartMorePage { Title = "Mais" });
         }
 
         private void TabbedPage_CurrentPageChanged(object sender, EventArgs e)

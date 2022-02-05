@@ -13,6 +13,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             IsPreferenceNews = Preference.ShowNews;
             IsPreferncePdvMode = Preference.IsPDVMode;
             IsThemeDark = Preference.ThemeIsDark;
+            IsCryptoAble = Preference.CryptoAble;
             LoadThemeIcon();
         }
 
@@ -32,22 +33,28 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         }
 
-        public async Task OptionPDV()
+        public void OptionPDV()
         {
-            await _preferenceService.ChangePDVMode();
+            _preferenceService.ChangePDVMode();
             LoadData();
         }
 
-        public async Task OptionShowNews()
+        public void OptionShowNews()
         {
-            await _preferenceService.ChangeShowNewsMode();
+            _preferenceService.ChangeShowNewsMode();
             LoadData();
-            await DashboardVM.LoadNews();
+            //await DashboardVM.LoadNews();
         }
 
-        public async Task OptionTheme()
+        public void OptionTheme()
         {
-            await _preferenceService.ChangeTheme();
+            _preferenceService.ChangeTheme();
+            LoadData();
+        }
+
+        public void ChangeCrypto()
+        {
+            _preferenceService.ChangeCrypto();
             LoadData();
         }
 
