@@ -6,6 +6,8 @@ using PixQrCodeGeneratorOffline.ViewModels.Base;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.ViewModels
 {
@@ -13,7 +15,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
     {
         #region Commands
 
-        public IAsyncCommand LoadDataCommand => new AsyncCommand(LoadData);
+        public ICommand LoadDataCommand => new Command(LoadData);
 
         public IAsyncCommand NavigateToAddNewKeyPageCommand => new AsyncCommand(async () => await _pixKeyService.NavigateToAdd(isContact: true));
 
@@ -21,12 +23,12 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public DashboardContactViewModel()
         {
-            LoadDataCommand.ExecuteAsync().SafeFireAndForget();
+            LoadDataCommand.Execute(null);
 
             DashboardContactVM = this;
         }
 
-        public async Task LoadData()
+        public void LoadData()
         {
             try
             {
@@ -34,7 +36,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 PixKeyList = list?.OrderBy(x => x?.Name)?.ToObservableCollection() ?? new ObservableCollection<PixKey>();
 
-                await LoadCurrentPixKey();
+                LoadCurrentPixKey();
             }
             catch (System.Exception e)
             {

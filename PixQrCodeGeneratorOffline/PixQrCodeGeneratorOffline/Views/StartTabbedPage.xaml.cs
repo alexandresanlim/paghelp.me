@@ -41,7 +41,7 @@ namespace PixQrCodeGeneratorOffline.Views
             if (tabbed.CurrentPage is StartCryptoPage || tabbed.CurrentPage is StartPage)
             {
                 var vm = (DashboardViewModelBase)tabbed.CurrentPage.BindingContext;
-                vm.LoadHideValue().SafeFireAndForget();
+                vm.LoadHideValue();
             }
 
             //else

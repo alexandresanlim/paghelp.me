@@ -86,5 +86,5 @@
         </CollectionView.ItemTemplate>
     </CollectionView>
 
-    <content:PanelLoadView IsVisible="{Binding CurrentDashboardLoadInfo.IsLoadNews}" />
+    <!--<content:PanelLoadView IsVisible="{Binding CurrentDashboardLoadInfo.IsLoadNews}" />-->
 </Grid>

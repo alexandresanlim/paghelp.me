@@ -24,6 +24,6 @@
     </StackLayout>
 
 
-    <content:PanelLoadView IsVisible="{Binding CurrentDashboardLoadInfo.IsLoadBilling}" />
+    <!--<content:PanelLoadView IsVisible="{Binding CurrentDashboardLoadInfo.IsLoadBilling}" />-->
 
 </Grid>

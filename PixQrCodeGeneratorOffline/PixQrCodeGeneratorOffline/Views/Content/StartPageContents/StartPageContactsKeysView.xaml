@@ -128,5 +128,5 @@
 
     </StackLayout>
 
-    <content:PanelLoadView IsVisible="{Binding CurrentDashboardLoadInfo.IsLoadContactKeys}" />
+    <!--<content:PanelLoadView IsVisible="{Binding CurrentDashboardLoadInfo.IsLoadContactKeys}" />-->
 </Grid>

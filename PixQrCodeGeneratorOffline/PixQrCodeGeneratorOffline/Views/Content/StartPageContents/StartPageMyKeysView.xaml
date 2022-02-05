@@ -127,5 +127,5 @@
                 </Grid>-->
     </StackLayout>
 
-    <content:PanelLoadView IsVisible="{Binding CurrentDashboardLoadInfo.IsLoadMyKeys}" />
+    <!--<content:PanelLoadView IsVisible="{Binding CurrentDashboardLoadInfo.IsLoadMyKeys}" />-->
 </Grid>
