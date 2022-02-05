@@ -179,32 +179,32 @@ namespace PixQrCodeGeneratorOffline.Templates.Key
             template.xKeyValue.Text = value;
         }
 
-        public static readonly BindableProperty TapCommandProperty =
-            BindableProperty.Create(nameof(TapCommand),
-                typeof(ICommand),
-                typeof(HorizontalKeys),
-                null,
-                BindingMode.Default,
-                null,
-                propertyChanged: TapPropertyChanged);
+        //public static readonly BindableProperty TapCommandProperty =
+        //    BindableProperty.Create(nameof(TapCommand),
+        //        typeof(ICommand),
+        //        typeof(HorizontalKeys),
+        //        null,
+        //        BindingMode.Default,
+        //        null,
+        //        propertyChanged: TapPropertyChanged);
 
-        public ICommand TapCommand
-        {
-            get => (ICommand)GetValue(TapCommandProperty);
-            set => SetValue(TapCommandProperty, value);
-        }
+        //public ICommand TapCommand
+        //{
+        //    get => (ICommand)GetValue(TapCommandProperty);
+        //    set => SetValue(TapCommandProperty, value);
+        //}
 
-        static void TapPropertyChanged(BindableObject bindable, object oldValue, object newValue)
-        {
-            if (newValue == null)
-                return;
+        //static void TapPropertyChanged(BindableObject bindable, object oldValue, object newValue)
+        //{
+        //    if (newValue == null)
+        //        return;
 
-            var b = (HorizontalKeys)bindable;
-            b.GestureRecognizers.Add(new TapGestureRecognizer
-            {
-                Command = (ICommand)newValue,
-            });
-        }
+        //    var b = (HorizontalKeys)bindable;
+        //    b.GestureRecognizers.Add(new TapGestureRecognizer
+        //    {
+        //        Command = (ICommand)newValue,
+        //    });
+        //}
 
 
         public static readonly BindableProperty HideValueProperty =
