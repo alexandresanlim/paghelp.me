@@ -3,9 +3,10 @@
     x:Class="PixQrCodeGeneratorOffline.Views.StartTabbedPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
     xmlns:local="clr-namespace:PixQrCodeGeneratorOffline.Extention;assembly=PixQrCodeGeneratorOffline"
-    xmlns:views="clr-namespace:PixQrCodeGeneratorOffline.Views"
     BarBackgroundColor="{DynamicResource primaryDark}"
+    android:TabbedPage.IsSwipePagingEnabled="False"
     CurrentPageChanged="TabbedPage_CurrentPageChanged">
 
     <Shell.TitleView>
