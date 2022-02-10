@@ -88,7 +88,7 @@ namespace PixQrCodeGeneratorOffline.Models.Repository
             {
                 return _collection.Update(item);
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return false;
             }

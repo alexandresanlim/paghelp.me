@@ -15,15 +15,12 @@ namespace PixQrCodeGeneratorOffline.Models.Commands
 {
     public class PixKeyCommand : CommandBase, IPixKeyCommand
     {
-        private readonly IExternalActionService _externalActionService;
-
         private readonly IPixPayloadService _pixPayloadService;
 
         private readonly IPixKeyService _pixKeyService;
 
         public PixKeyCommand()
         {
-            _externalActionService = DependencyService.Get<IExternalActionService>();
             _pixPayloadService = DependencyService.Get<IPixPayloadService>();
             _pixKeyService = DependencyService.Get<IPixKeyService>();
         }

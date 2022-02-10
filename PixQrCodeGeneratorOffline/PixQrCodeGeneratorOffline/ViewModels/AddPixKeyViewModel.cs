@@ -47,7 +47,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         private async Task LoadData()
         {
-            await LoadInputList();
+            LoadInputList();
 
             await ResetProps();
         }
@@ -103,8 +103,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                     InputList[CurrentInputValues.City.Index].Value = CurrentPixKey.City;
                     InputList[CurrentInputValues.Key.Index].Value = CurrentPixKey.Key;
                 }
-
-                SetStatusFromCurrentPixColor();
             }
             catch (Exception e)
             {
@@ -112,7 +110,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
         }
 
-        private async Task LoadInputList()
+        private void LoadInputList()
         {
             InputList = AddPixInput.GetList(CurrentPixKey.IsContact);
             InputPhasesCount = InputList?.Count - 1 ?? 0;
@@ -125,7 +123,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             CurrentPixKey.Name = CurrentInputValues?.Name?.Value;
             CurrentPixKey.FinancialInstitution = SelectedFinancialInstitution;
 
-            if (!await ValidateSave())
+            if (!ValidateSave())
                 return;
 
             try
@@ -375,23 +373,10 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 InputList[CurrentInputValues.Key.Index].Placeholder = CurrenKeyPlaceholderDefaultValue + " no(a) " + SelectedFinancialInstitution?.Name;
 
             ActualInputNextPosition = 1;
-
-            SetStatusFromCurrentPixColor();
         }
 
-        public void SetStatusFromCurrentPixColor()
-        {
-            return;
 
-            if (SelectedFinancialInstitution?.Institution?.MaterialColor == null)
-                return;
-
-            CurrenStyle = SelectedFinancialInstitution?.Institution?.MaterialColor;
-
-            //_statusBarService.SetStatusBarColor(SelectedFinancialInstitution.Institution.MaterialColor.Primary);
-        }
-
-        private async Task<bool> ValidateSave()
+        private bool ValidateSave()
         {
 
             if (!CurrentPixKey.Validation.HasKey)

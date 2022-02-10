@@ -47,7 +47,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             //    App.LoadTheme(CurrentStyleFromKey);
         }
 
-        public Command<string> InputTextCommand => new Command<string>(async (text) =>
+        public Command<string> InputTextCommand => new Command<string>((text) =>
         {
             try
             {
@@ -125,7 +125,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
         });
 
-        public ICommand SetDescriptionCommand => new Command(async () =>
+        public ICommand SetDescriptionCommand => new Command(() =>
         {
             try
             {

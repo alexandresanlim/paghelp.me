@@ -20,7 +20,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public IAsyncCommand NavigateBenefitsCommand => new AsyncCommand(async () => await NavigateAsync(new BenefitsPage(true)));
 
-        public IAsyncCommand LoadDataCommand => new AsyncCommand(LoadData);
+        public ICommand LoadDataCommand => new Command(LoadData);
 
         public IAsyncCommand SendAMessageCommand => new AsyncCommand(SendAMessageAsync);
 
@@ -28,7 +28,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         #endregion
 
-        private async Task LoadData()
+        private void LoadData()
         {
             if (App.DeviceInfo.IsAndroid)
             {

@@ -6,7 +6,6 @@ using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix;
 using PixQrCodeGeneratorOffline.ViewModels.Base;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -17,32 +16,32 @@ namespace PixQrCodeGeneratorOffline.ViewModels
     {
         #region Commands
 
-        public ICommand ChangeSelectCryptoKeyCommand => new Command<CryptoKey>(async (pixkey) => await ChangeSelectedCryptoKey(pixkey));
+        public ICommand ChangeSelectCryptoKeyCommand => new Command<CryptoKey>(ChangeSelectedCryptoKey);
 
         public IAsyncCommand NavigateToAddNewKeyPageCommand => new AsyncCommand(async () => await _cryptoKeyService.NavigateToAdd());
 
-        public ICommand ExecuteActionCommand => new Command(async () => await ExecuteAction());
+        public ICommand ExecuteActionCommand => new Command(ExecuteAction);
 
-        public IAsyncCommand LoadDataCommand => new AsyncCommand(LoadData);
+        public ICommand LoadDataCommand => new Command(LoadData);
 
         #endregion
 
         public DashboardCryptoViewModel()
         {
-            LoadDataCommand.ExecuteAsync().SafeFireAndForget();
+            LoadDataCommand.Execute(null);
 
             //Connectivity.ConnectivityChanged += Connectivity_ConnectivityChanged;
 
             DashboardCryptoVM = this;
         }
 
-        public async Task LoadData()
+        public void LoadData()
         {
             try
             {
                 IsBusy = true;
 
-                await LoadPixKey();
+                LoadPixKey();
 
                 //await LoadPixKeyContact();
 
@@ -70,12 +69,12 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
         }
 
-        public async Task LoadPixKey()
+        public void LoadPixKey()
         {
             CryptoKeyList = _cryptoKeyService?.GetAll()?.OrderBy(x => x?.FinancialInstitution?.Name)?.ToObservableCollection() ?? new ObservableCollection<CryptoKey>();
         }
 
-        private async Task ExecuteAction()
+        private void ExecuteAction()
         {
             if (SelectedAction.Type == KeyActionType.None)
                 return;
@@ -143,7 +142,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         #endregion
 
-        private async Task ChangeSelectedCryptoKey(CryptoKey pixkey)
+        private void ChangeSelectedCryptoKey(CryptoKey pixkey)
         {
             MainThread.BeginInvokeOnMainThread(() =>
             {

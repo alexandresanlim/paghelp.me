@@ -1,4 +1,5 @@
-﻿using PixQrCodeGeneratorOffline.Base.ViewModels;
+﻿using AsyncAwaitBestPractices.MVVM;
+using PixQrCodeGeneratorOffline.Base.ViewModels;
 using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models;
 using PixQrCodeGeneratorOffline.Services;
@@ -13,7 +14,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 {
     public class NewsViewModel : ViewModelBase
     {
-        public async Task Navigating()
+        public void Navigating()
         {
             try
             {
@@ -29,10 +30,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
         }
 
-        public ICommand LoadDataCommand => new Command(async () =>
-        {
-            await LoadData();
-        });
+        public IAsyncCommand LoadDataCommand => new AsyncCommand(LoadData);
 
         public List<Feed> FeedFromService { get; set; }
 

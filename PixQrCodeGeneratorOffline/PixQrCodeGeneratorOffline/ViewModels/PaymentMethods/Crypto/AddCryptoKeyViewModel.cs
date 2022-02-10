@@ -19,7 +19,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels.PaymentMethods.Crypto
 {
     public class AddCryptoKeyViewModel : ViewModelBase
     {
-        public IAsyncCommand LoadDataCommand => new AsyncCommand(LoadData);
+        public ICommand LoadDataCommand => new Command(LoadData);
 
         public ICommand InputNextCommand => new Command(InputNext);
 
@@ -38,17 +38,17 @@ namespace PixQrCodeGeneratorOffline.ViewModels.PaymentMethods.Crypto
 
             CurrentDashboard = DashboardCryptoVM; //CurrentPixKey.IsContact ? DashboardContactVM : (DashboardViewModelBase)DashboardVM;
 
-            LoadDataCommand.ExecuteAsync().SafeFireAndForget();
+            LoadDataCommand.Execute(null);
         }
 
-        private async Task LoadData()
+        private void LoadData()
         {
-            await LoadInputList();
+            LoadInputList();
 
-            await ResetProps();
+            ResetProps();
         }
 
-        private async Task ResetProps()
+        private void ResetProps()
         {
             try
             {
@@ -101,7 +101,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels.PaymentMethods.Crypto
             CurrentCryptoKey.Key = CurrentInputValues?.Key?.Value;
             CurrentCryptoKey.FinancialInstitution = SelectedFinancialInstitution;
 
-            if (!await ValidateSave())
+            if (!ValidateSave())
                 return;
 
             try
@@ -270,7 +270,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels.PaymentMethods.Crypto
 
         }
 
-        private async Task<bool> ValidateSave()
+        private bool ValidateSave()
         {
             if (!CurrentCryptoKey.Validation.HasKey)
             {
@@ -373,7 +373,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels.PaymentMethods.Crypto
             ActualInputNextPosition = 1;
         }
 
-        private async Task LoadInputList()
+        private void LoadInputList()
         {
             InputList = AddCryptoInput.GetList(false);
             InputPhasesCount = InputList?.Count - 1 ?? 0;

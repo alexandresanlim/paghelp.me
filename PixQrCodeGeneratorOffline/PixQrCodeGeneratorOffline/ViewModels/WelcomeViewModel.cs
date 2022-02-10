@@ -26,7 +26,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             //NavigateBack();
         });
 
-        public ICommand WelcomeNextCommand => new Command(async () =>
+        public ICommand WelcomeNextCommand => new Command(() =>
         {
             try
             {
@@ -41,7 +41,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
         });
 
-        public ICommand SkipWelcomeCommand => new Command(async () =>
+        public ICommand SkipWelcomeCommand => new Command(() =>
         {
             try
             {

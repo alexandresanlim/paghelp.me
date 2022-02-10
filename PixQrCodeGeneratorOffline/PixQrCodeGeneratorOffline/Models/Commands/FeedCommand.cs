@@ -2,7 +2,6 @@
 using PixQrCodeGeneratorOffline.Models.Commands.Base;
 using PixQrCodeGeneratorOffline.Models.Commands.Interfaces;
 using PixQrCodeGeneratorOffline.Services;
-using PixQrCodeGeneratorOffline.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Views.Shared;
 using System;
 using System.Collections.Generic;
@@ -17,13 +16,6 @@ namespace PixQrCodeGeneratorOffline.Models.Commands
         public ICommand NavigateToWebViewCommand { get; private set; }
 
         public ICommand ShareCommand { get; private set; }
-
-        protected readonly IExternalActionService _externalActionService;
-
-        public FeedCommand()
-        {
-            _externalActionService = DependencyService.Get<IExternalActionService>();
-        }
 
         public FeedCommand Create(Feed feed)
         {

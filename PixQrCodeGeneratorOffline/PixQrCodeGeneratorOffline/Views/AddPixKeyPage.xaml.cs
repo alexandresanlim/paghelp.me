@@ -1,5 +1,4 @@
 ﻿using PixQrCodeGeneratorOffline.ViewModels;
-using System;
 
 using Xamarin.Forms;
 

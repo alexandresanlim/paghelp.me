@@ -4,11 +4,7 @@ using PixQrCodeGeneratorOffline.Models.Commands.PaymentMethods.Crypto.Interfaces
 using PixQrCodeGeneratorOffline.Models.PaymentMethods.Crypto;
 using PixQrCodeGeneratorOffline.Models.Services.PaymentMethods.Crypto.Interfaces;
 using PixQrCodeGeneratorOffline.Services;
-using PixQrCodeGeneratorOffline.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Views;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -17,16 +13,12 @@ namespace PixQrCodeGeneratorOffline.Models.Commands.PaymentMethods.Crypto
 {
     public class CryptoKeyCommand : CommandBase, ICryptoKeyCommand
     {
-
-        private readonly IExternalActionService _externalActionService;
-
         private readonly ICryptoPayloadService _cryptoPayloadService;
 
         private readonly ICryptoKeyService _cryptoKeyService;
 
         public CryptoKeyCommand()
         {
-            _externalActionService = DependencyService.Get<IExternalActionService>();
             _cryptoPayloadService = DependencyService.Get<ICryptoPayloadService>();
             _cryptoKeyService = DependencyService.Get<ICryptoKeyService>();
         }

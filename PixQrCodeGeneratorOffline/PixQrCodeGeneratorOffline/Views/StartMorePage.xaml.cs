@@ -1,6 +1,4 @@
-﻿
-using AsyncAwaitBestPractices;
-using PixQrCodeGeneratorOffline.ViewModels;
+﻿using PixQrCodeGeneratorOffline.ViewModels;
 using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.Views
@@ -17,7 +15,7 @@ namespace PixQrCodeGeneratorOffline.Views
 
         protected override void OnAppearing()
         {
-            moreViewModel.LoadDataCommand.ExecuteAsync().SafeFireAndForget();
+            moreViewModel.LoadDataCommand.Execute(null);
         }
     }
 }
