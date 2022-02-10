@@ -28,9 +28,10 @@
 
     <ContentPage.Content>
 
-        <StackLayout>
+        <ScrollView>
+            <StackLayout>
 
-            <!--<Grid Style="{StaticResource styleGrid}">
+                <!--<Grid Style="{StaticResource styleGrid}">
                 <preferences:PreferencePanelTemplate
                     Title="Exibir Notícias"
                     Grid.Column="0"
@@ -45,65 +46,66 @@
 
             <content:DivisionView />-->
 
-            <Grid Style="{StaticResource styleGrid}">
-                <preferences:PreferencePanelTemplate
-                    Title="Biometria"
-                    Grid.Column="0"
-                    Description="Na próxima vez que você entrar no app, será preciso autenticar para ver suas chaves."
-                    Icon="{x:Static icons:FontAwesomeSolid.Fingerprint}" />
+                <Grid Style="{StaticResource styleGrid}">
+                    <preferences:PreferencePanelTemplate
+                        Title="Biometria"
+                        Grid.Column="0"
+                        Description="Na próxima vez que você entrar no app, será preciso autenticar para ver suas chaves."
+                        Icon="{x:Static icons:FontAwesomeSolid.Fingerprint}" />
 
-                <Switch
-                    Grid.Column="1"
-                    IsToggled="{Binding IsPreferenceFingerPrint}"
-                    Toggled="Switch_FingerPrint" />
-            </Grid>
+                    <Switch
+                        Grid.Column="1"
+                        IsToggled="{Binding IsPreferenceFingerPrint}"
+                        Toggled="Switch_FingerPrint" />
+                </Grid>
 
-            <content:DivisionView />
+                <content:DivisionView />
 
-            <Grid Style="{StaticResource styleGrid}">
-                <preferences:PreferencePanelTemplate
-                    Title="Modo PDV"
-                    Grid.Column="0"
-                    Description="O app abrirá em tela cheia e se manterá ligada. Ideal para locais com alta recorrência de vendas."
-                    Icon="{x:Static icons:FontAwesomeSolid.CashRegister}" />
+                <Grid Style="{StaticResource styleGrid}">
+                    <preferences:PreferencePanelTemplate
+                        Title="Modo PDV"
+                        Grid.Column="0"
+                        Description="O app abrirá em tela cheia e se manterá ligada. Ideal para locais com alta recorrência de vendas."
+                        Icon="{x:Static icons:FontAwesomeSolid.CashRegister}" />
 
-                <Switch
-                    Grid.Column="1"
-                    IsToggled="{Binding IsPreferncePdvMode}"
-                    Toggled="Switch_PdvMode" />
-            </Grid>
+                    <Switch
+                        Grid.Column="1"
+                        IsToggled="{Binding IsPreferncePdvMode}"
+                        Toggled="Switch_PdvMode" />
+                </Grid>
 
-            <content:DivisionView />
+                <content:DivisionView />
 
-            <Grid Style="{StaticResource styleGrid}">
-                <preferences:PreferencePanelTemplate
-                    Title="Dark Mode"
-                    Grid.Column="0"
-                    Description="Use o tema da sua preferência"
-                    Icon="{Binding ThemeIcon}" />
+                <Grid Style="{StaticResource styleGrid}">
+                    <preferences:PreferencePanelTemplate
+                        Title="Dark Mode"
+                        Grid.Column="0"
+                        Description="Use o tema da sua preferência"
+                        Icon="{Binding ThemeIcon}" />
 
-                <Switch
-                    Grid.Column="1"
-                    IsToggled="{Binding IsThemeDark}"
-                    Toggled="Switch_Theme" />
-            </Grid>
+                    <Switch
+                        Grid.Column="1"
+                        IsToggled="{Binding IsThemeDark}"
+                        Toggled="Switch_Theme" />
+                </Grid>
 
-            <content:DivisionView />
+                <content:DivisionView />
 
-            <Grid Style="{StaticResource styleGrid}">
-                <preferences:PreferencePanelTemplate
-                    Title="Criptomoedas"
-                    Grid.Column="0"
-                    Description="Use a mesma esperiência para criar cobranças Pix para criar cobranças para Cryptos"
-                    Icon="{Binding ThemeIcon}" />
+                <Grid Style="{StaticResource styleGrid}">
+                    <preferences:PreferencePanelTemplate
+                        Title="Criptomoedas"
+                        Grid.Column="0"
+                        Description="Use a mesma esperiência para criar cobranças Pix para criar cobranças para Cryptos"
+                        Icon="{Binding ThemeIcon}" />
 
-                <Switch
-                    Grid.Column="1"
-                    IsToggled="{Binding IsCryptoAble}"
-                    Toggled="Switch_Cypto" />
-            </Grid>
+                    <Switch
+                        Grid.Column="1"
+                        IsToggled="{Binding IsCryptoAble}"
+                        Toggled="Switch_Cypto" />
+                </Grid>
 
-        </StackLayout>
+            </StackLayout>
 
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
