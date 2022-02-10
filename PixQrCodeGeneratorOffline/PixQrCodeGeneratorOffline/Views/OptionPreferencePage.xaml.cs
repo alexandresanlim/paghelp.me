@@ -43,12 +43,12 @@ namespace PixQrCodeGeneratorOffline.Views
             }
         }
 
-        private async void Switch_News(object sender, ToggledEventArgs e)
+        private void Switch_News(object sender, ToggledEventArgs e)
         {
             if (IsOppearing)
                 return;
 
-            await _optionPreferenceViewModel.OptionShowNews();
+            _optionPreferenceViewModel.OptionShowNews();
         }
 
         private async void Switch_FingerPrint(object sender, ToggledEventArgs e)
@@ -59,25 +59,28 @@ namespace PixQrCodeGeneratorOffline.Views
             await _optionPreferenceViewModel.OptionFingerPrint();
         }
 
-        private async void Switch_PdvMode(object sender, ToggledEventArgs e)
+        private void Switch_PdvMode(object sender, ToggledEventArgs e)
         {
             if (IsOppearing)
                 return;
 
-            await _optionPreferenceViewModel.OptionPDV();
+            _optionPreferenceViewModel.OptionPDV();
         }
 
-        private async void Switch_Theme(object sender, ToggledEventArgs e)
+        private void Switch_Theme(object sender, ToggledEventArgs e)
         {
             if (IsOppearing)
                 return;
 
-            await _optionPreferenceViewModel.OptionTheme();
+            _optionPreferenceViewModel.OptionTheme();
         }
 
         private void Switch_Cypto(object sender, ToggledEventArgs e)
         {
+            if (IsOppearing)
+                return;
 
+            _optionPreferenceViewModel.ChangeCrypto();
         }
     }
 }

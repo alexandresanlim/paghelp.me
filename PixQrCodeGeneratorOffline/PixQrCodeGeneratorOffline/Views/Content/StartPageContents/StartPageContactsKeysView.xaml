@@ -14,6 +14,7 @@
     <StackLayout>
 
         <CollectionView
+            Margin="2.5,0,0,0"
             HeightRequest="230"
             IsVisible="{Binding PixKeyListContact, Converter={StaticResource HasDataConverter}}"
             ItemsSource="{Binding PixKeyListContact}">
@@ -25,14 +26,15 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="models:PixKey">
 
-                    <StackLayout Padding="5,0,0,0">
+                    <StackLayout Spacing="0">
                         <Frame
+                            Margin="2.5,0"
                             Padding="15"
                             BackgroundColor="{DynamicResource foreground_page}"
-                            CornerRadius="10"
+                            CornerRadius="5"
                             VerticalOptions="FillAndExpand"
                             WidthRequest="150">
-                            <StackLayout HorizontalOptions="FillAndExpand">
+                            <StackLayout HorizontalOptions="FillAndExpand" Spacing="0">
 
                                 <!--<controls:CustomIcon
                                     Grid.Column="0"
@@ -42,14 +44,15 @@
                                     IconColor="{DynamicResource textSecondary}"
                                     VerticalOptions="Center" />-->
 
-                                <Grid HorizontalOptions="Center">
-                                    <BoxView
-                                        BackgroundColor="{DynamicResource primaryDark}"
-                                        CornerRadius="40"
-                                        HeightRequest="70"
-                                        HorizontalOptions="Center"
-                                        WidthRequest="70" />
-
+                                <Frame
+                                    BackgroundColor="{DynamicResource primaryDark}"
+                                    CornerRadius="50"
+                                    HasShadow="False"
+                                    HeightRequest="60"
+                                    HorizontalOptions="Center"
+                                    IsClippedToBounds="True"
+                                    VerticalOptions="Center"
+                                    WidthRequest="60">
                                     <Label
                                         FontFamily="{StaticResource FontBold}"
                                         FontSize="25"
@@ -60,7 +63,7 @@
                                         TextColor="{StaticResource textOnPrimary}"
                                         TextTransform="Uppercase"
                                         VerticalOptions="Center" />
-                                </Grid>
+                                </Frame>
 
 
                                 <Label
@@ -75,8 +78,6 @@
                                     MaxLines="1"
                                     Text="{Binding Viewer.KeyPresentation}"
                                     TextColor="{DynamicResource textPrimary}" />
-
-                                <content:DivisionView BackgroundColor="{DynamicResource textSecondary}" HeightRequest="1" />
 
                                 <Grid
                                     Padding="0,5,0,0"
@@ -127,5 +128,5 @@
 
     </StackLayout>
 
-    <content:PanelLoadView IsVisible="{Binding CurrentDashboardLoadInfo.IsLoadContactKeys}" />
+    <!--<content:PanelLoadView IsVisible="{Binding CurrentDashboardLoadInfo.IsLoadContactKeys}" />-->
 </Grid>

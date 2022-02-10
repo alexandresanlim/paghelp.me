@@ -86,7 +86,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
             if (success)
             {
-                await DashboardVM.LoadBilling();
+                DashboardVM.LoadBilling();
             }
 
             else

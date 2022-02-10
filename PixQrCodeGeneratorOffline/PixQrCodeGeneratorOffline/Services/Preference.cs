@@ -75,5 +75,17 @@ namespace PixQrCodeGeneratorOffline.Services
                 Preferences.Set(nameof(ThemeIsDark), value);
             }
         }
+
+        public static bool CryptoAble
+        {
+            get => Preferences.Get(nameof(CryptoAble), false);
+            set
+            {
+                if (CryptoAble == value)
+                    return;
+
+                Preferences.Set(nameof(CryptoAble), value);
+            }
+        }
     }
 }

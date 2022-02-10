@@ -34,9 +34,9 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public IAsyncCommand AuthenticationCommand => new AsyncCommand(Authentication);
 
-        public ICommand ExecuteActionCommand => new Command(async () => await ExecuteAction());
+        public ICommand ExecuteActionCommand => new Command(ExecuteAction);
 
-        public ICommand ChangeSelectPixKeyCommand => new Command<PixKey>(async (pixkey) => await ChangeSelectedPixKey(pixkey));
+        public ICommand ChangeSelectPixKeyCommand => new Command<PixKey>(ChangeSelectedPixKey);
 
         public IAsyncCommand ShareAllCommand => new AsyncCommand(async () => await _pixKeyService.NavigateToShareAllKeys(PixKeyList));
 
@@ -70,17 +70,17 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             {
                 IsBusy = true;
 
-                await ResetProps();
+                ResetProps();
 
                 await LoadDashboardCustomInfo();
 
-                await LoadPixKey();
+                LoadPixKey();
 
-                await LoadPixKeyContact();
+                LoadPixKeyContact();
 
-                await LoadBilling();
+                LoadBilling();
 
-                await LoadCurrentPixKey();
+                LoadCurrentPixKey();
 
                 await CheckHasAKeyOnClipboard();
 
@@ -102,65 +102,62 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
         }
 
-        public async Task LoadPixKey()
+        public void LoadPixKey() => PixKeyList = _pixKeyService?.GetAll()?.OrderBy(x => x?.FinancialInstitution?.Name)?.ToObservableCollection() ?? new ObservableCollection<PixKey>();
+
+        public void LoadPixKeyContact() => PixKeyListContact = _pixKeyService?.GetAll(isContact: true)?.OrderBy(x => x?.Name)?.ToObservableCollection() ?? new ObservableCollection<PixKey>();
+
+        public void LoadBilling() => BillingSaveList = _pixPayloadService?.GetAll()?.ToObservableCollection() ?? new ObservableCollection<PixPayload>();
+
+        private void ResetProps()
         {
-            try
-            {
-                CurrentDashboardLoadInfo.IsLoadMyKeys = true;
-
-                await Task.Delay(500);
-
-                PixKeyList = _pixKeyService?.GetAll()?.OrderBy(x => x?.FinancialInstitution?.Name)?.ToObservableCollection() ?? new ObservableCollection<PixKey>();
-
-            }
-            catch (Exception e)
-            {
-                e.SendToLog();
-            }
-            finally
-            {
-                CurrentDashboardLoadInfo.IsLoadMyKeys = false;
-            }
+            CurrentDashboardLoadInfo = new DashboardLoadInfo();
+            CurrentDashboardCustomInfo = new DashboardCustomInfo();
         }
 
-        public async Task LoadPixKeyContact()
+        private void ChangeSelectedPixKey(PixKey pixkey)
         {
-            try
+            MainThread.BeginInvokeOnMainThread(() =>
             {
-                CurrentDashboardLoadInfo.IsLoadContactKeys = true;
-
-                await Task.Delay(500);
-
-                PixKeyListContact = _pixKeyService?.GetAll(isContact: true)?.OrderBy(x => x?.Name)?.ToObservableCollection() ?? new ObservableCollection<PixKey>();
-            }
-            catch (Exception e)
-            {
-                e.SendToLog();
-            }
-            finally
-            {
-                CurrentDashboardLoadInfo.IsLoadContactKeys = false;
-            }
+                CurrentPixKey = pixkey;
+                //_statusBar.SetStatusBarColor(pixkey.FinancialInstitution.Institution.MaterialColor.PrimaryDark);
+                //CurrentPixKeyActions = pixkey?.Actions?.ToObservableCollection() ?? new ObservableCollection<PixKeyAction>();
+            });
         }
 
-        public async Task LoadBilling()
+        private void ExecuteAction()
         {
-            try
-            {
-                CurrentDashboardLoadInfo.IsLoadBilling = true;
+            if (SelectedAction.Type == KeyActionType.None)
+                return;
 
-                await Task.Delay(500);
+            switch (SelectedAction.Type)
+            {
+                case KeyActionType.CreateBilling:
+                    CurrentPixKey.Command.NavigateToCreateBillingPageCommand.Execute(null);
+                    break;
+                case KeyActionType.CopyKey:
+                    CurrentPixKey.Command.CopyKeyCommand.Execute(null);
+                    break;
+                case KeyActionType.ShareKey:
+                    CurrentPixKey.Command.ShareKeyCommand.Execute(null);
+                    break;
+                case KeyActionType.ShareOnWhatsApp:
+                    CurrentPixKey.Command.ShareOnWhatsCommand.Execute(null);
+                    break;
+                case KeyActionType.BillingList:
+                    CurrentPixKey.Command.NavigateToBillingCommand.Execute(null);
+                    break;
+                case KeyActionType.PaymentPage:
+                    CurrentPixKey.Command.NavigateToPaymentPageCommand.Execute(null);
+                    break;
+                case KeyActionType.Edit:
+                    CurrentPixKey.Command.EditKeyCommand.Execute(null);
+                    break;
+                case KeyActionType.None:
+                default:
+                    break;
+            }
 
-                BillingSaveList = _pixPayloadService?.GetAll()?.ToObservableCollection() ?? new ObservableCollection<PixPayload>();
-            }
-            catch (Exception e)
-            {
-                e.SendToLog();
-            }
-            finally
-            {
-                CurrentDashboardLoadInfo.IsLoadBilling = false;
-            }
+            SelectedAction = new PixKeyAction();
         }
 
         private async Task CheckHasAKeyOnClipboard()
@@ -282,12 +279,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         //    CurrentDashboardCustomInfo.ConnectionIcon = Connectivity.NetworkAccess == NetworkAccess.Internet ? FontAwesomeSolid.Wifi : FontAwesomeSolid.Plane;
         //}
 
-        private async Task ResetProps()
-        {
-            CurrentDashboardLoadInfo = new DashboardLoadInfo();
-            CurrentDashboardCustomInfo = new DashboardCustomInfo();
-        }
-
         private async Task Authentication()
         {
             try
@@ -310,52 +301,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             {
                 e.SendToLog();
             }
-        }
-
-        private async Task ChangeSelectedPixKey(PixKey pixkey)
-        {
-            MainThread.BeginInvokeOnMainThread(() =>
-            {
-                CurrentPixKey = pixkey;
-                //_statusBar.SetStatusBarColor(pixkey.FinancialInstitution.Institution.MaterialColor.PrimaryDark);
-                //CurrentPixKeyActions = pixkey?.Actions?.ToObservableCollection() ?? new ObservableCollection<PixKeyAction>();
-            });
-        }
-
-        private async Task ExecuteAction()
-        {
-            if (SelectedAction.Type == KeyActionType.None)
-                return;
-
-            switch (SelectedAction.Type)
-            {
-                case KeyActionType.CreateBilling:
-                    CurrentPixKey.Command.NavigateToCreateBillingPageCommand.Execute(null);
-                    break;
-                case KeyActionType.CopyKey:
-                    CurrentPixKey.Command.CopyKeyCommand.Execute(null);
-                    break;
-                case KeyActionType.ShareKey:
-                    CurrentPixKey.Command.ShareKeyCommand.Execute(null);
-                    break;
-                case KeyActionType.ShareOnWhatsApp:
-                    CurrentPixKey.Command.ShareOnWhatsCommand.Execute(null);
-                    break;
-                case KeyActionType.BillingList:
-                    CurrentPixKey.Command.NavigateToBillingCommand.Execute(null);
-                    break;
-                case KeyActionType.PaymentPage:
-                    CurrentPixKey.Command.NavigateToPaymentPageCommand.Execute(null);
-                    break;
-                case KeyActionType.Edit:
-                    CurrentPixKey.Command.EditKeyCommand.Execute(null);
-                    break;
-                case KeyActionType.None:
-                default:
-                    break;
-            }
-
-            SelectedAction = new PixKeyAction();
         }
 
         private async Task RemoveAllKeys()
@@ -390,11 +335,11 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
             if (success)
             {
-                await LoadBilling();
+                LoadBilling();
             }
         }
 
-        #region Nova Dash
+        #region Props
 
         private ObservableCollection<PixKeyAction> _currentPixKeyActions;
         public ObservableCollection<PixKeyAction> CurrentPixKeyActions

@@ -28,11 +28,10 @@ namespace PixQrCodeGeneratorOffline.Templates.Preferences
 
         static void TitlePropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
-            if (newValue == null)
-                return;
-
-            var template = (PreferencePanelTemplate)bindable;
-            template.xTitle.Text = (string)newValue;
+            if(bindable is PreferencePanelTemplate control && newValue != null && newValue is string value)
+            {
+                control.xTitle.Text = value;
+            }            
         }
 
 
@@ -54,13 +53,11 @@ namespace PixQrCodeGeneratorOffline.Templates.Preferences
 
         static void DescriptionPropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
-            if (newValue == null)
-                return;
-
-            var template = (PreferencePanelTemplate)bindable;
-            template.xDescription.Text = (string)newValue;
+            if (bindable is PreferencePanelTemplate control && newValue != null && newValue is string value)
+            {
+                control.xDescription.Text = value;
+            }
         }
-
 
         public static readonly BindableProperty IconProperty =
            BindableProperty.Create(
@@ -80,11 +77,34 @@ namespace PixQrCodeGeneratorOffline.Templates.Preferences
 
         static void IconPropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
-            if (newValue == null)
-                return;
+            if (bindable is PreferencePanelTemplate control && newValue != null && newValue is string value)
+            {
+                control.xIcon.Glyph = value;
+            }            
+        }
 
-            var template = (PreferencePanelTemplate)bindable;
-            template.xIcon.Glyph = (string)newValue;
+        public static readonly BindableProperty IsBetaProperty =
+           BindableProperty.Create(
+               propertyName: nameof(IsBeta),
+               returnType: typeof(bool),
+               declaringType: typeof(PreferencePanelTemplate),
+               defaultValue: false,
+               defaultBindingMode: BindingMode.Default,
+               validateValue: null,
+               propertyChanged: IsBetaPropertyChanged);
+
+        public bool IsBeta
+        {
+            get => (bool)GetValue(IsBetaProperty);
+            set => SetValue(IsBetaProperty, value);
+        }
+
+        static void IsBetaPropertyChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            if (bindable is PreferencePanelTemplate control && newValue != null && newValue is bool value)
+            {
+                control.xBetaInfo.IsVisible = value;
+            }
         }
     }
 }

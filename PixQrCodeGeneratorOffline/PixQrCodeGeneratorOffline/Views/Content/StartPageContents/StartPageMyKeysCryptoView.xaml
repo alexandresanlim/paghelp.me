@@ -58,8 +58,13 @@
                             IconKey="{x:Static icons:FontAwesomeSolid.Key}"
                             InstitutionValue="{Binding Viewer.InstitutionPresentation}"
                             KeyValue="{Binding Viewer.KeyPresentation}"
-                            QrCode="{Binding Payload.QrCode}"
-                            TapCommand="{Binding Command.NavigateToPaymentPageCommand}" />
+                            QrCode="{Binding Payload.QrCode}">
+                            <key:HorizontalKeys.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Command.NavigateToPaymentPageCommand}" NumberOfTapsRequired="1" />
+                                <TapGestureRecognizer Command="{Binding Command.CopyKeyCommand}" NumberOfTapsRequired="2" />
+                                <TapGestureRecognizer Command="{Binding Command.ShareKeyCommand}" NumberOfTapsRequired="3" />
+                            </key:HorizontalKeys.GestureRecognizers>
+                        </key:HorizontalKeys>
 
                     </DataTemplate>
                 </CarouselView.ItemTemplate>

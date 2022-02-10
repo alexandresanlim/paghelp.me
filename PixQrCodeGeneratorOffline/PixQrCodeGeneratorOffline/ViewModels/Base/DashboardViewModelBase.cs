@@ -5,14 +5,16 @@ using PixQrCodeGeneratorOffline.Services;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.ViewModels.Base
 {
     public class DashboardViewModelBase : ViewModelBase
     {
-        public IAsyncCommand HideValueCommand => new AsyncCommand(HideValue);
+        public ICommand HideValueCommand => new Command(HideValue);
 
-        public async Task LoadCurrentPixKey(PixKey pixKeySelected = null)
+        public void LoadCurrentPixKey(PixKey pixKeySelected = null)
         {
             CurrentPixKey = pixKeySelected ?? PixKeyList.FirstOrDefault();
 
@@ -29,13 +31,13 @@ namespace PixQrCodeGeneratorOffline.ViewModels.Base
             //}
         }
 
-        private async Task HideValue()
+        private void HideValue()
         {
             Preference.HideData = !Preference.HideData;
-            await LoadHideValue();
+            LoadHideValue();
         }
 
-        public async Task LoadHideValue()
+        public void LoadHideValue()
         {
             IsHideValue = Preference.HideData;
         }
