@@ -8,8 +8,6 @@ using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix.Extentions;
 using PixQrCodeGeneratorOffline.Services;
 using PixQrCodeGeneratorOffline.ViewModels.Base;
 using PixQrCodeGeneratorOffline.Views;
-using Plugin.Fingerprint;
-using Plugin.Fingerprint.Abstractions;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -31,8 +29,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         public IAsyncCommand NavigateToAddNewKeyPageCommand => new AsyncCommand(async () => await _pixKeyService.NavigateToAdd());
 
         public IAsyncCommand NavigateToAddNewKeyPageContactCommand => new AsyncCommand(async () => await _pixKeyService.NavigateToAdd(isContact: true));
-
-        public IAsyncCommand AuthenticationCommand => new AsyncCommand(Authentication);
 
         public ICommand ExecuteActionCommand => new Command(ExecuteAction);
 
@@ -71,8 +67,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 IsBusy = true;
 
                 ResetProps();
-
-                await LoadDashboardCustomInfo();
 
                 LoadPixKey();
 
@@ -239,18 +233,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
         }
 
-        private async Task LoadDashboardCustomInfo()
-        {
-            CurrentDashboardCustomInfo = new DashboardCustomInfo
-            {
-                IsVisibleFingerPrint = Preference.FingerPrint && await CrossFingerprint.Current.IsAvailableAsync(),
-                //WelcomeText = DateTimeExtention.GetDashboardTitleFromPeriod(),
-                //WelcomeSubtitleText = DateTimeExtention.GetDashboardSubtitleFromDayOfWeed(),
-            };
-
-            //LoadConnectionIcon();
-        }
-
         private async Task NavigateToBenefitsPage()
         {
             if (PixKeyList.Count > 0)
@@ -278,30 +260,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         //{
         //    CurrentDashboardCustomInfo.ConnectionIcon = Connectivity.NetworkAccess == NetworkAccess.Internet ? FontAwesomeSolid.Wifi : FontAwesomeSolid.Plane;
         //}
-
-        private async Task Authentication()
-        {
-            try
-            {
-                var request = new AuthenticationRequestConfiguration("Autenticação", "Atentique-se para continuar e ver suas chaves");
-
-                var result = await CrossFingerprint.Current.AuthenticateAsync(request);
-
-                if (result.Authenticated)
-                {
-                    CurrentDashboardCustomInfo.IsVisibleFingerPrint = false;
-                    DialogService.Toast("Autenticado com sucesso!");
-                }
-                else
-                {
-                    DialogService.Toast("Não autenticado");
-                }
-            }
-            catch (Exception e)
-            {
-                e.SendToLog();
-            }
-        }
 
         private async Task RemoveAllKeys()
         {
@@ -429,13 +387,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
     public class DashboardCustomInfo : Models.Base.NotifyObjectBase
     {
-        private bool _isVisibleFingerPrint = false;
-        public bool IsVisibleFingerPrint
-        {
-            set => SetProperty(ref _isVisibleFingerPrint, value);
-            get => _isVisibleFingerPrint;
-        }
-
         private string _connectionIcon;
         public string ConnectionIcon
         {

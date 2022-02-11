@@ -37,10 +37,12 @@
         <Grid RowDefinitions="*,auto">
 
             <ScrollView Grid.Row="0" Padding="15,0">
-                <StackLayout VerticalOptions="StartAndExpand">
+                <StackLayout Spacing="15" VerticalOptions="StartAndExpand">
                     <Label
+                        Margin="0,15,0,0"
                         FontFamily="{DynamicResource FontBold}"
                         FontSize="{DynamicResource FontSizeMedium}"
+                        HorizontalTextAlignment="Center"
                         Text="Mostre o QR Code ou campartilhe o código copia e cola"
                         TextColor="{DynamicResource textPrimary}" />
 

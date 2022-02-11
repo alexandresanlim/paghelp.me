@@ -34,7 +34,7 @@ namespace PixQrCodeGeneratorOffline.Views
                 });
             }
 
-            //App.StatusBarService.SetStatusBarColor(_paymentViewModel.CurrentInfo.Color.PrimaryDark);
+            App.StatusBarService.SetStatusBarColor(_paymentViewModel.CurrentInfo.Color.PrimaryDark);
         }
 
         //private void TapGestureRecognizer_Tapped(object sender, EventArgs e)

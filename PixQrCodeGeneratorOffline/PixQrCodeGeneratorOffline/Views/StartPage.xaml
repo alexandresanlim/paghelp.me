@@ -8,6 +8,7 @@
     xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
     xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon"
     xmlns:templates="clr-namespace:PixQrCodeGeneratorOffline.Templates"
+    xmlns:templates1="clr-namespace:PixQrCodeGeneratorOffline.Views.Templates"
     xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
     x:DataType="vm:DashboardViewModel"
     BackgroundColor="{DynamicResource background_page}">
@@ -179,45 +180,7 @@
                 </StackLayout>
             </ScrollView>
 
-
-
-            <StackLayout
-                BackgroundColor="{DynamicResource background_page}"
-                HorizontalOptions="FillAndExpand"
-                IsVisible="{Binding CurrentDashboardCustomInfo.IsVisibleFingerPrint}"
-                VerticalOptions="FillAndExpand">
-                <StackLayout
-                    Padding="15,0"
-                    HorizontalOptions="CenterAndExpand"
-                    VerticalOptions="CenterAndExpand">
-                    <controls:CustomIcon
-                        FontSize="50"
-                        Glyph="{x:Static icons:FontAwesomeSolid.EyeSlash}"
-                        HorizontalOptions="Center"
-                        TextColor="{DynamicResource textPrimary}" />
-
-                    <Label
-                        Margin="0,30,0,0"
-                        FontFamily="{StaticResource FontSemiBold}"
-                        FontSize="{StaticResource FontSizeMedium}"
-                        HorizontalOptions="Center"
-                        Text="Autentique-se para continuar"
-                        TextColor="{DynamicResource textPrimary}" />
-                    <Label
-                        Margin="10,0"
-                        FontSize="{StaticResource FontSizeSmall}"
-                        HorizontalOptions="Center"
-                        Text="É preciso autenticar-se para ver suas chaves e fazer operações."
-                        TextColor="{DynamicResource textSecondary}" />
-
-                    <Button
-                        Margin="0,15,0,0"
-                        Command="{Binding AuthenticationCommand}"
-                        Text="Autenticar Agora" />
-                </StackLayout>
-            </StackLayout>
-
-
+            <templates1:AutenticationTemplate />
 
             <content:PanelLoadView IsVisible="{Binding IsBusy}" />
 

@@ -1,10 +1,16 @@
 ﻿using Acr.UserDialogs;
+using AsyncAwaitBestPractices;
+using AsyncAwaitBestPractices.MVVM;
+using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models;
 using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Models.Services.PaymentMethods.Crypto.Interfaces;
+using PixQrCodeGeneratorOffline.Services;
 using PixQrCodeGeneratorOffline.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Style.Interfaces;
 using PixQrCodeGeneratorOffline.ViewModels;
+using Plugin.Fingerprint;
+using Plugin.Fingerprint.Abstractions;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -41,6 +47,8 @@ namespace PixQrCodeGeneratorOffline.Base.ViewModels
 
         protected readonly IStatusBar _statusBar;
 
+        private static bool IsAuthenticated { get; set; }
+
         public ViewModelBase()
         {
             _financialInstitutionService = DependencyService.Get<IFinancialInstitutionService>();
@@ -58,8 +66,13 @@ namespace PixQrCodeGeneratorOffline.Base.ViewModels
 
             ShowAds = false;
 
+            if (!IsAuthenticated)
+                LoadDashboardCustomInfo().SafeFireAndForget();
+
             //Application.Current.RequestedThemeChanged += Current_RequestedThemeChanged;
         }
+
+        public IAsyncCommand AuthenticationCommand => new AsyncCommand(Authentication);
 
         public static DashboardViewModel DashboardVM { get; set; }
 
@@ -100,6 +113,11 @@ namespace PixQrCodeGeneratorOffline.Base.ViewModels
         }
 
         #endregion
+
+        private async Task LoadDashboardCustomInfo()
+        {
+            IsVisibleFingerPrint = Preference.FingerPrint && await CrossFingerprint.Current.IsAvailableAsync();
+        }
 
         public async Task DisplayAlert(string title, string message, string cancel)
         {
@@ -145,6 +163,31 @@ namespace PixQrCodeGeneratorOffline.Base.ViewModels
 
         #endregion
 
+        private async Task Authentication()
+        {
+            try
+            {
+                var request = new AuthenticationRequestConfiguration("Autenticação", "Atentique-se para continuar e ver suas chaves");
+
+                var result = await CrossFingerprint.Current.AuthenticateAsync(request);
+
+                if (result.Authenticated)
+                {
+                    IsVisibleFingerPrint = false;
+                    IsAuthenticated = true;
+                    DialogService.Toast("Autenticado com sucesso!");
+                }
+                else
+                {
+                    DialogService.Toast("Não autenticado");
+                }
+            }
+            catch (Exception e)
+            {
+                e.SendToLog();
+            }
+        }
+
         public ICommand CloseAdsCommand => new Command(() =>
         {
             ShowAds = false;
@@ -176,6 +219,13 @@ namespace PixQrCodeGeneratorOffline.Base.ViewModels
         {
             set => SetProperty(ref _currentStyleFromKey, value);
             get => _currentStyleFromKey;
+        }
+
+        private bool _isVisibleFingerPrint = false;
+        public bool IsVisibleFingerPrint
+        {
+            set => SetProperty(ref _isVisibleFingerPrint, value);
+            get => _isVisibleFingerPrint;
         }
 
         protected bool SetProperty<T>(ref T backingStore, T value,

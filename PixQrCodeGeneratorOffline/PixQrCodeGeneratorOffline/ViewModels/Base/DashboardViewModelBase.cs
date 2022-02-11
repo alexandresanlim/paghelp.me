@@ -1,10 +1,8 @@
-﻿using AsyncAwaitBestPractices.MVVM;
-using PixQrCodeGeneratorOffline.Base.ViewModels;
+﻿using PixQrCodeGeneratorOffline.Base.ViewModels;
 using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix;
 using PixQrCodeGeneratorOffline.Services;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
