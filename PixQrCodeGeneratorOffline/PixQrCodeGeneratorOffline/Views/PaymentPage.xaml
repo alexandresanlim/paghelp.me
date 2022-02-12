@@ -7,6 +7,7 @@
     xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon"
     xmlns:qr="clr-namespace:Xam.Forms;assembly=Xam.Forms.QRCode"
     xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
+    Title="Cobrança"
     x:DataType="vm:PaymentViewModel"
     BackgroundColor="{DynamicResource background_page}"
     Shell.BackgroundColor="{Binding CurrentInfo.Color.PrimaryDark}">
@@ -14,8 +15,7 @@
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Key="StyleActionFrame" TargetType="Frame">
-                <Setter Property="BackgroundColor" Value="{Binding CurrentInfo.Color.PrimaryDark}" />
-                <Setter Property="CornerRadius" Value="5" />
+                <Setter Property="BackgroundColor" Value="{Binding CurrentInfo.Color.Primary}" />
             </Style>
             <Style x:Key="StyleActionIcon" TargetType="controls:CustomIcon">
                 <Setter Property="FontSize" Value="{StaticResource FontSizeMedium}" />
@@ -23,7 +23,7 @@
                 <Setter Property="TextColor" Value="{Binding CurrentInfo.Color.TextOnPrimary}" />
             </Style>
             <Style x:Key="StyleActionTitle" TargetType="Label">
-                <Setter Property="FontSize" Value="{StaticResource FontSizeSmall}" />
+                <Setter Property="FontSize" Value="{StaticResource FontSizeMicro}" />
                 <Setter Property="FontFamily" Value="{StaticResource FontSemiBold}" />
                 <Setter Property="TextColor" Value="{Binding CurrentInfo.Color.TextOnPrimary}" />
                 <Setter Property="VerticalOptions" Value="EndAndExpand" />
@@ -88,10 +88,11 @@
                         TextColor="{DynamicResource textPrimary}" />
 
                     <Label
-                        FontSize="{DynamicResource FontSizeSmall}"
+                        FontFamily="{StaticResource FontBold}"
+                        FontSize="{DynamicResource FontSizeMedium}"
                         HorizontalOptions="Center"
                         Text="{Binding CurrentInfo.Institution}"
-                        TextColor="{DynamicResource textPrimary}" />
+                        TextColor="{Binding CurrentInfo.Color.PrimaryDark}" />
 
                     <Label
                         FontSize="{DynamicResource FontSizeMicro}"
@@ -104,7 +105,7 @@
             <StackLayout
                 Grid.Row="1"
                 Padding="10"
-                BackgroundColor="{Binding CurrentInfo.Color.Primary}">
+                BackgroundColor="{Binding CurrentInfo.Color.PrimaryDark}">
 
                 <StackLayout.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding ChangeIsActionVisibleCommand}" />
@@ -134,14 +135,8 @@
                     </controls:CustomIcon>
                 </StackLayout>
 
-
-
-                <Frame
-                    Padding="15"
-                    BackgroundColor="{Binding CurrentInfo.Color.PrimaryDark}"
-                    CornerRadius="10">
+                <Frame Padding="10" BackgroundColor="{Binding CurrentInfo.Color.Primary}">
                     <Label
-                        Grid.Column="0"
                         FontSize="{StaticResource FontSizeMicro}"
                         LineBreakMode="TailTruncation"
                         MaxLines="2"

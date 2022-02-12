@@ -22,6 +22,7 @@
     <Style TargetType="Frame">
         <Setter Property="HasShadow" Value="False" />
         <Setter Property="Padding" Value="0" />
+        <Setter Property="CornerRadius" Value="5" />
         <Setter Property="Visual" Value="Material" />
         <Setter Property="BackgroundColor" Value="{DynamicResource foreground_page}" />
     </Style>

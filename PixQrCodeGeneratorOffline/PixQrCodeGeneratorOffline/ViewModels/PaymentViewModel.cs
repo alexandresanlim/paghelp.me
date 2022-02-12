@@ -34,7 +34,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 CurrentInfo.Color = pixPayload.PixKey?.FinancialInstitution?.Institution?.MaterialColor;
                 CurrentInfo.Value = pixPayload.PixCob?.Viewer?.ValuePresentation;
                 CurrentInfo.Name = pixPayload.PixKey?.Viewer?.NamePresentation;
-                CurrentInfo.Institution = $"Instituição: {pixPayload?.PixKey?.Viewer?.InstitutionPresentation}";
+                CurrentInfo.Institution = pixPayload?.PixKey?.Viewer?.InstitutionPresentation;
                 CurrentInfo.Key = $"Chave: {pixPayload?.PixKey?.Viewer?.KeyPresentation}";
             }
 

@@ -56,7 +56,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         {
             try
             {
-                IsEdit = CurrentPixKey.Id > 0;
+                IsEdit = CurrentPixKey?.Id > 0;
 
                 SelectedFinancialInstitution = !IsEdit ? _financialInstitutionService.Create(FinancialInstitutionType.None) : CurrentPixKey.FinancialInstitution;
 

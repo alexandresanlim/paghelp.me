@@ -35,7 +35,7 @@
                     <TapGestureRecognizer Command="{Binding NavigateBenefitsCommand}" />
                 </Grid.GestureRecognizers>
 
-                <templates:TemplateTitlePanel Title="Por quê Paghelp.me?" Icon="{x:Static icons:FontAwesomeSolid.InfoCircle}" />
+                <templates:TemplateTitlePanel Title="Vantagens Paghelp.me!" Icon="{x:Static icons:FontAwesomeSolid.InfoCircle}" />
 
                 <content:ChevronRightView Grid.Column="1" />
             </Grid>

@@ -71,8 +71,10 @@ namespace PixQrCodeGeneratorOffline.Droid
                 //CurrentWindow.ClearFlags(Android.Views.WindowManagerFlags.TranslucentStatus);
                 CurrentWindow.SetStatusBarColor(statusBar.ToPlatformColor());
 
-                if (navigationBar.HasValue)
-                    CurrentWindow.SetNavigationBarColor(navigationBar.Value.ToPlatformColor());
+                //if (navigationBar.HasValue)
+                //    CurrentWindow.SetNavigationBarColor(navigationBar.Value.ToPlatformColor());
+
+                CurrentWindow.SetNavigationBarColor(statusBar.ToPlatformColor());
             }
         }
 
