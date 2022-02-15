@@ -37,7 +37,7 @@
         <Grid RowDefinitions="*,auto">
 
             <ScrollView Grid.Row="0" Padding="15,0">
-                <StackLayout Spacing="15" VerticalOptions="StartAndExpand">
+                <StackLayout Spacing="0" VerticalOptions="StartAndExpand">
                     <Label
                         Margin="0,15,0,0"
                         FontFamily="{DynamicResource FontBold}"
@@ -80,6 +80,7 @@
                         TextColor="{DynamicResource textPrimary}" />
 
                     <Label
+                        Margin="0,15,0,0"
                         FontFamily="{DynamicResource FontBold}"
                         FontSize="{DynamicResource FontSizeMedium}"
                         HorizontalOptions="Center"
@@ -89,7 +90,7 @@
 
                     <Label
                         FontFamily="{StaticResource FontBold}"
-                        FontSize="{DynamicResource FontSizeMedium}"
+                        FontSize="{DynamicResource FontSizeLarge}"
                         HorizontalOptions="Center"
                         Text="{Binding CurrentInfo.Institution}"
                         TextColor="{Binding CurrentInfo.Color.PrimaryDark}" />

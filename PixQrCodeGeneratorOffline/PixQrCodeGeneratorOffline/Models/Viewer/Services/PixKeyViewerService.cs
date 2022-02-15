@@ -35,7 +35,7 @@ namespace PixQrCodeGeneratorOffline.Models.Viewer.Services
         {
             var name = pixKey?.Name;
 
-            if (string.IsNullOrWhiteSpace(name))
+            if (!pixKey.IsContact || string.IsNullOrWhiteSpace(name))
                 return "";
 
             string first = name.Substring(0, 1);
@@ -44,7 +44,7 @@ namespace PixQrCodeGeneratorOffline.Models.Viewer.Services
             if (!(name.Length > 1))
                 last = first;
 
-            else if (!(name.Contains(" ")))
+            else if (!name.Contains(" "))
                 last = name.Substring(1, 1);
 
             else
