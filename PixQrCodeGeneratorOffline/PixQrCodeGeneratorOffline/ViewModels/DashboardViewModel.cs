@@ -80,7 +80,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 //await LoadNews();
 
-                await NavigateToBenefitsPage();
+                //await NavigateToBenefitsPage();
 
                 //LoadHideValue();
 
