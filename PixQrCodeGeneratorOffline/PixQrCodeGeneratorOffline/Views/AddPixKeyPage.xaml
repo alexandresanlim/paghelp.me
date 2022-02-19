@@ -55,8 +55,8 @@
             <StackLayout Grid.Row="1" Spacing="0">
                 <BoxView
                     BackgroundColor="{DynamicResource foreground_page}"
-                    CornerRadius="5,5,0,0"
-                    HeightRequest="5" />
+                    CornerRadius="10,10,0,0"
+                    HeightRequest="10" />
 
                 <StackLayout BackgroundColor="{DynamicResource foreground_page}" Spacing="0">
 

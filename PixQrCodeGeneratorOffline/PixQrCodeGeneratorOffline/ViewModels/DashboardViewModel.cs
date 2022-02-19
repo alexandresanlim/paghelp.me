@@ -96,11 +96,16 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
         }
 
-        public void LoadPixKey() => PixKeyList = _pixKeyService?.GetAll()?.OrderBy(x => x?.FinancialInstitution?.Name)?.ToObservableCollection() ?? new ObservableCollection<PixKey>();
+        public void LoadPixKey() => PixKeyList = _pixKeyService?
+            .GetAll()?.OrderBy(x => x?.FinancialInstitution?.Name)?
+            .ToObservableCollection() ?? new ObservableCollection<PixKey>();
 
-        public void LoadPixKeyContact() => PixKeyListContact = _pixKeyService?.GetAll(isContact: true)?.OrderBy(x => x?.Name)?.ToObservableCollection() ?? new ObservableCollection<PixKey>();
+        public void LoadPixKeyContact() => PixKeyListContact = _pixKeyService?
+            .GetAll(isContact: true)?.OrderBy(x => x?.Name)?
+            .ToObservableCollection() ?? new ObservableCollection<PixKey>();
 
-        public void LoadBilling() => BillingSaveList = _pixPayloadService?.GetAll()?.ToObservableCollection() ?? new ObservableCollection<PixPayload>();
+        public void LoadBilling() => BillingSaveList = _pixPayloadService?
+            .GetAll()?.ToObservableCollection() ?? new ObservableCollection<PixPayload>();
 
         private void ResetProps()
         {
@@ -225,28 +230,28 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
         }
 
-        private async Task NavigateToBenefitsPage()
-        {
-            if (PixKeyList.Count > 0)
-                return;
+        //private async Task NavigateToBenefitsPage()
+        //{
+        //    if (PixKeyList.Count > 0)
+        //        return;
 
-            try
-            {
-                DialogService.ShowLoading();
+        //    try
+        //    {
+        //        DialogService.ShowLoading();
 
-                await Task.Delay(500);
+        //        await Task.Delay(500);
 
-                await NavigateAsync(new BenefitsPage());
-            }
-            catch (Exception e)
-            {
-                e.SendToLog();
-            }
-            finally
-            {
-                DialogService.HideLoading();
-            }
-        }
+        //        await NavigateAsync(new BenefitsPage());
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        e.SendToLog();
+        //    }
+        //    finally
+        //    {
+        //        DialogService.HideLoading();
+        //    }
+        //}
 
         //private void LoadConnectionIcon()
         //{
