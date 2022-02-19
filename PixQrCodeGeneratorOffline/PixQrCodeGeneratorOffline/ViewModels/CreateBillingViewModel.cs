@@ -137,6 +137,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                     Message = "Digite o texto que aparecerá para o pagador",
                     Placeholder = "Pedido 1",
                     Text = !CurrentDescription.Equals(AddDescriptionValue) ? CurrentDescription : "",
+                    MaxLength = 140,
                     OnAction = new Action<Acr.UserDialogs.PromptResult>((result) =>
                     {
                         if (!result.Ok)

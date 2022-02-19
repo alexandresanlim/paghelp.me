@@ -80,7 +80,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 //await LoadNews();
 
-                await NavigateToBenefitsPage();
+                //await NavigateToBenefitsPage();
 
                 //LoadHideValue();
 
@@ -108,15 +108,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             CurrentDashboardCustomInfo = new DashboardCustomInfo();
         }
 
-        private void ChangeSelectedPixKey(PixKey pixkey)
-        {
-            MainThread.BeginInvokeOnMainThread(() =>
-            {
-                CurrentPixKey = pixkey;
-                //_statusBar.SetStatusBarColor(pixkey.FinancialInstitution.Institution.MaterialColor.PrimaryDark);
-                //CurrentPixKeyActions = pixkey?.Actions?.ToObservableCollection() ?? new ObservableCollection<PixKeyAction>();
-            });
-        }
+        private void ChangeSelectedPixKey(PixKey pixkey) => CurrentPixKey = pixkey;
 
         private void ExecuteAction()
         {

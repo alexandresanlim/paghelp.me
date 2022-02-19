@@ -3,13 +3,23 @@
     x:Class="PixQrCodeGeneratorOffline.Views.Content.StartPageContents.StartPageContactsKeysView"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:content="clr-namespace:PixQrCodeGeneratorOffline.Views.Content"
     xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
     xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon"
     xmlns:models="clr-namespace:PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix"
     xmlns:templates="clr-namespace:PixQrCodeGeneratorOffline.Templates"
     xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
     x:DataType="vm:DashboardViewModel">
+
+    <Grid.Resources>
+        <ResourceDictionary>
+            <Style x:Key="StyleInfos" TargetType="Label">
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="LineBreakMode" Value="MiddleTruncation" />
+                <Setter Property="MaxLines" Value="1" />
+                <Setter Property="TextColor" Value="{DynamicResource textPrimary}" />
+            </Style>
+        </ResourceDictionary>
+    </Grid.Resources>
 
     <StackLayout>
 
@@ -67,18 +77,17 @@
 
 
                                 <Label
-                                    Margin="0,5,0,0"
+                                    Margin="0,8,0,0"
                                     FontFamily="{DynamicResource FontBold}"
-                                    FontSize="{StaticResource FontSizeMedium}"
-                                    Text="{Binding Viewer.NamePresentation}"
-                                    TextColor="{DynamicResource textPrimary}" />
+                                    FontSize="{StaticResource FontSizeSmall}"
+                                    Style="{StaticResource StyleInfos}"
+                                    Text="{Binding Viewer.NamePresentation}" />
 
                                 <Label
                                     FontFamily="{StaticResource FontSemiBold}"
-                                    LineBreakMode="MiddleTruncation"
-                                    MaxLines="1"
-                                    Text="{Binding Viewer.KeyPresentation}"
-                                    TextColor="{DynamicResource textPrimary}" />
+                                    FontSize="{StaticResource FontSizeSmall}"
+                                    Style="{StaticResource StyleInfos}"
+                                    Text="{Binding Viewer.KeyPresentation}" />
 
                                 <Grid
                                     Padding="0,5,0,0"
