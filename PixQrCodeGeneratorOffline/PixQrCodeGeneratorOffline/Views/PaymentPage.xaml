@@ -49,6 +49,7 @@
 
                     <StackLayout Spacing="15">
                         <Label
+                            Margin="0,10,0,0"
                             FontSize="{DynamicResource FontSizeSmall}"
                             Text="{Binding CurrentInfo.HelpPhrase}"
                             TextColor="{DynamicResource textSecondary}" />

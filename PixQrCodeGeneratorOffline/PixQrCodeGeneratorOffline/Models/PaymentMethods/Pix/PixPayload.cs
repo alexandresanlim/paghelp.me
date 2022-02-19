@@ -1,5 +1,4 @@
-﻿using PixQrCodeGeneratorOffline.Models.Base;
-using PixQrCodeGeneratorOffline.Models.Commands;
+﻿using PixQrCodeGeneratorOffline.Models.Commands;
 using PixQrCodeGeneratorOffline.Models.Commands.Interfaces;
 using PixQrCodeGeneratorOffline.Models.PaymentMethods.Base;
 using Xamarin.Forms;
