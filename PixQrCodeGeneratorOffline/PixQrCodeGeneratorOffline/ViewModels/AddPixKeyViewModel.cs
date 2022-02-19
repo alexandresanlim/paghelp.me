@@ -349,16 +349,13 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 ActualInputNextPosition++;
             }
-            catch (System.Exception e)
+            catch (Exception e)
             {
                 e.SendToLog();
             }
         }
 
-        private void CurrentInputChanged()
-        {
-            ShowSaveButton = CurrentInput == LastInput;
-        }
+        private void CurrentInputChanged() => ShowSaveButton = CurrentInput == LastInput;
 
         private void SetNewInstitution(FinancialInstitution institution)
         {

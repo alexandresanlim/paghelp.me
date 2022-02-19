@@ -27,7 +27,12 @@ namespace PixQrCodeGeneratorOffline.ViewModels.Helpers
 
         public AddPixInputType Type { get; set; }
 
-        public ReturnType ReturnType { get; set; }
+        private ReturnType _returnType;
+        public ReturnType ReturnType
+        {
+            set => SetProperty(ref _returnType, value);
+            get => _returnType;
+        }
 
         public bool IsInstitution => Type == AddPixInputType.Institution;
 

@@ -9,15 +9,17 @@
     xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
     Title="Editar Chave"
     x:DataType="vm:AddPixKeyViewModel"
-    BackgroundColor="{DynamicResource background_page}">
+    BackgroundColor="#99000000"
+    Shell.PresentationMode="ModalAnimated">
 
     <ContentPage.Resources>
         <ResourceDictionary>
 
             <Style x:Key="styleInputFrame" TargetType="Frame">
-                <Setter Property="BackgroundColor" Value="{DynamicResource foreground_page}" />
-                <Setter Property="Padding" Value="10,5" />
-                <Setter Property="CornerRadius" Value="10" />
+                <Setter Property="BackgroundColor" Value="{DynamicResource primaryDark}" />
+                <Setter Property="Padding" Value="15,0" />
+                <Setter Property="CornerRadius" Value="5" />
+                <Setter Property="VerticalOptions" Value="FillAndExpand" />
             </Style>
 
             <Style x:Key="styleInputTitle" TargetType="Label">
@@ -27,133 +29,159 @@
                 <Setter Property="TextColor" Value="{DynamicResource textPrimary}" />
             </Style>
 
+
         </ResourceDictionary>
     </ContentPage.Resources>
 
     <ContentPage.Content>
 
-        <StackLayout Padding="0,15,0,0" Spacing="0">
+        <Grid RowDefinitions="*, auto, 250" RowSpacing="0">
 
-            <controls:CustomProgress
-                Margin="20,15,20,0"
-                ColorLess="{DynamicResource staticAccentPrimaryLight}"
-                ColorMore="{DynamicResource staticAccentPrimaryDark}"
-                CurrentPhase="{Binding ActualInputNextPosition}"
-                Phases="{Binding InputPhasesCount}" />
+            <StackLayout Grid.Row="0" BackgroundColor="Transparent">
 
-            <StackLayout
-                HorizontalOptions="End"
-                IsVisible="{Binding IsEdit}"
-                Orientation="Horizontal">
-                <StackLayout Padding="20,15,10,0">
-                    <StackLayout.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding DeleteCommand}" />
-                    </StackLayout.GestureRecognizers>
-                    <controls:CustomIcon
-                        FontSize="{StaticResource FontSizeMedium}"
-                        Glyph="{x:Static icons:FontAwesomeSolid.TrashAlt}"
-                        HorizontalOptions="Center"
-                        TextColor="{DynamicResource textPrimary}" />
-                    <Label
-                        FontFamily="{DynamicResource FontBold}"
-                        Text="Excluir"
-                        TextColor="{DynamicResource textPrimary}" />
-                </StackLayout>
-                <StackLayout Padding="10,15,10,0">
-                    <StackLayout.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding SaveCommand}" />
-                    </StackLayout.GestureRecognizers>
-                    <controls:CustomIcon
-                        FontSize="{StaticResource FontSizeMedium}"
-                        Glyph="{x:Static icons:FontAwesomeSolid.Save}"
-                        HorizontalOptions="Center"
-                        TextColor="{DynamicResource textPrimary}" />
-                    <Label
-                        FontFamily="{DynamicResource FontBold}"
-                        Text="Salvar"
-                        TextColor="{DynamicResource textPrimary}" />
-                </StackLayout>
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding NavigateBackCommand}" />
+                </StackLayout.GestureRecognizers>
+
+                <controls:CustomIcon
+                    Margin="10"
+                    Glyph="{x:Static icons:FontAwesomeSolid.TimesCircle}"
+                    HorizontalOptions="End"
+                    TextColor="White"
+                    VerticalOptions="EndAndExpand" />
+
             </StackLayout>
 
-            <CarouselView
-                CurrentItem="{Binding CurrentInput}"
-                CurrentItemChangedCommand="{Binding CurrentInputChangedCommand}"
-                HeightRequest="250"
-                ItemsSource="{Binding InputList}"
-                PeekAreaInsets="25"
-                Position="{Binding ActualInputNextPosition}">
+            <StackLayout Grid.Row="1" Spacing="0">
+                <BoxView
+                    BackgroundColor="{DynamicResource foreground_page}"
+                    CornerRadius="5,5,0,0"
+                    HeightRequest="5" />
 
-                <CarouselView.ItemTemplate>
-                    <DataTemplate x:DataType="helpers:AddPixInput">
-                        <StackLayout Padding="5,15,5,0">
-                            <StackLayout Padding="0,15,0,0" Spacing="15">
-                                <controls:CustomIcon
-                                    FontSize="{DynamicResource FontSizeLarge}"
-                                    Glyph="{Binding Icon}"
-                                    HorizontalOptions="CenterAndExpand"
-                                    TextColor="{DynamicResource textPrimary}" />
-                                <Label
-                                    FontFamily="{StaticResource FontBold}"
-                                    FontSize="{DynamicResource FontSizeLarge}"
-                                    HorizontalTextAlignment="Center"
-                                    Text="{Binding Title}"
-                                    TextColor="{DynamicResource textPrimary}"
-                                    Visual="Material" />
-                            </StackLayout>
-                            <Frame
-                                Padding="15"
-                                BackgroundColor="{DynamicResource foreground_page}"
-                                CornerRadius="10"
-                                IsVisible="{Binding IsInstitution, Converter={StaticResource InvertedBooleanConverter}}">
-                                <Entry
-                                    Placeholder="{Binding Placeholder}"
-                                    ReturnCommand="{Binding Source={RelativeSource AncestorType={x:Type vm:AddPixKeyViewModel}}, Path=InputNextCommand}"
-                                    Text="{Binding Value}" />
-                            </Frame>
+                <StackLayout BackgroundColor="{DynamicResource foreground_page}" Spacing="0">
 
-                            <Frame
-                                Padding="15"
-                                BackgroundColor="{DynamicResource foreground_page}"
-                                CornerRadius="5"
-                                IsVisible="{Binding IsInstitution}">
-                                <Frame.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:AddPixKeyViewModel}}, Path=SelectedInstitutionCommand}" />
-                                </Frame.GestureRecognizers>
-                                <StackLayout Orientation="Horizontal">
-                                    <Label
-                                        FontFamily="{DynamicResource FontBold}"
-                                        FontSize="{DynamicResource FontSizeMedium}"
-                                        HorizontalOptions="FillAndExpand"
-                                        Text="{Binding Placeholder}"
-                                        TextColor="{DynamicResource textSecondary}" />
-                                    <controls:CustomIcon
-                                        FontSize="{DynamicResource FontSizeLarge}"
-                                        Glyph="{x:Static icons:FontAwesomeSolid.ChevronDown}"
-                                        TextColor="{DynamicResource textSecondary}" />
-                                </StackLayout>
+                    <controls:CustomProgress
+                        Margin="20,15,20,0"
+                        ColorLess="{DynamicResource staticAccentPrimaryLight}"
+                        ColorMore="{DynamicResource staticAccentPrimaryDark}"
+                        CurrentPhase="{Binding ActualInputNextPosition}"
+                        Phases="{Binding InputPhasesCount}" />
 
-                            </Frame>
+                    <StackLayout
+                        HorizontalOptions="End"
+                        IsVisible="{Binding IsEdit}"
+                        Orientation="Horizontal">
+
+                        <StackLayout Padding="20,15,10,0">
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding DeleteCommand}" />
+                            </StackLayout.GestureRecognizers>
+                            <controls:CustomIcon
+                                FontSize="{StaticResource FontSizeMedium}"
+                                Glyph="{x:Static icons:FontAwesomeSolid.TrashAlt}"
+                                HorizontalOptions="Center"
+                                TextColor="{DynamicResource textPrimary}" />
+                            <Label
+                                FontFamily="{DynamicResource FontBold}"
+                                Text="Excluir"
+                                TextColor="{DynamicResource textPrimary}" />
                         </StackLayout>
 
-                    </DataTemplate>
-                </CarouselView.ItemTemplate>
-            </CarouselView>
+                        <StackLayout Padding="10,15,10,0">
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding SaveCommand}" />
+                            </StackLayout.GestureRecognizers>
+                            <controls:CustomIcon
+                                FontSize="{StaticResource FontSizeMedium}"
+                                Glyph="{x:Static icons:FontAwesomeSolid.Save}"
+                                HorizontalOptions="Center"
+                                TextColor="{DynamicResource textPrimary}" />
+                            <Label
+                                FontFamily="{DynamicResource FontBold}"
+                                Text="Salvar"
+                                TextColor="{DynamicResource textPrimary}" />
+                        </StackLayout>
 
-            <StackLayout>
+                    </StackLayout>
 
-                <Button
-                    Command="{Binding InputNextCommand}"
-                    IsVisible="{Binding ShowSaveButton, Converter={StaticResource InvertedBooleanConverter}}"
-                    Text="Próximo" />
-                <Button
-                    Command="{Binding SaveCommand}"
-                    IsVisible="{Binding ShowSaveButton}"
-                    Text="Salvar" />
+                    <CarouselView
+                        CurrentItem="{Binding CurrentInput}"
+                        CurrentItemChangedCommand="{Binding CurrentInputChangedCommand}"
+                        HeightRequest="210"
+                        ItemsSource="{Binding InputList}"
+                        PeekAreaInsets="25"
+                        Position="{Binding ActualInputNextPosition}">
+
+                        <CarouselView.ItemTemplate>
+                            <DataTemplate x:DataType="helpers:AddPixInput">
+                                <StackLayout Padding="5,15">
+
+                                    <StackLayout Padding="0,15,0,0" Spacing="15">
+                                        <controls:CustomIcon
+                                            FontSize="{DynamicResource FontSizeLarge}"
+                                            Glyph="{Binding Icon}"
+                                            HorizontalOptions="CenterAndExpand"
+                                            TextColor="{DynamicResource textPrimary}" />
+                                        <Label
+                                            FontFamily="{StaticResource FontBold}"
+                                            FontSize="{DynamicResource FontSizeLarge}"
+                                            HorizontalTextAlignment="Center"
+                                            Text="{Binding Title}"
+                                            TextColor="{DynamicResource textPrimary}"
+                                            Visual="Material" />
+                                    </StackLayout>
+
+                                    <Frame IsVisible="{Binding IsInstitution, Converter={StaticResource InvertedBooleanConverter}}" Style="{StaticResource styleInputFrame}">
+                                        <Entry
+                                            Placeholder="{Binding Placeholder}"
+                                            ReturnCommand="{Binding Source={RelativeSource AncestorType={x:Type vm:AddPixKeyViewModel}}, Path=InputNextCommand}"
+                                            Text="{Binding Value}" />
+                                    </Frame>
+
+                                    <Frame IsVisible="{Binding IsInstitution}" Style="{StaticResource styleInputFrame}">
+                                        <Frame.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:AddPixKeyViewModel}}, Path=SelectedInstitutionCommand}" />
+                                        </Frame.GestureRecognizers>
+                                        <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                                            <Label
+                                                FontSize="{DynamicResource FontSizeMedium}"
+                                                HorizontalOptions="FillAndExpand"
+                                                Text="{Binding Placeholder}"
+                                                TextColor="{DynamicResource textSecondary}"
+                                                VerticalOptions="CenterAndExpand" />
+                                            <controls:CustomIcon
+                                                FontSize="{DynamicResource FontSizeMedium}"
+                                                Glyph="{x:Static icons:FontAwesomeSolid.ChevronDown}"
+                                                TextColor="{DynamicResource textSecondary}"
+                                                VerticalOptions="CenterAndExpand" />
+                                        </StackLayout>
+                                    </Frame>
+
+                                </StackLayout>
+
+                            </DataTemplate>
+                        </CarouselView.ItemTemplate>
+                    </CarouselView>
+
+                    <StackLayout>
+
+                        <Button
+                            Command="{Binding InputNextCommand}"
+                            IsVisible="{Binding ShowSaveButton, Converter={StaticResource InvertedBooleanConverter}}"
+                            Text="Próximo" />
+                        <Button
+                            Command="{Binding SaveCommand}"
+                            IsVisible="{Binding ShowSaveButton}"
+                            Text="Salvar" />
+
+                    </StackLayout>
+
+                </StackLayout>
 
             </StackLayout>
 
-
-        </StackLayout>
+            <BoxView Grid.Row="2" BackgroundColor="{DynamicResource foreground_page}" />
+        </Grid>
 
     </ContentPage.Content>
 </ContentPage>

@@ -189,27 +189,7 @@ namespace PixQrCodeGeneratorOffline.Models.Services
             }
         }
 
-        public async Task NavigateToAdd(bool isContact = false)
-        {
-            try
-            {
-                DialogService.ShowLoading("");
-
-                await Task.Delay(500);
-
-                await Shell.Current.Navigation.PushAsync(new AddPixKeyPage(null, isContact));
-            }
-            catch (System.Exception e)
-            {
-                e.SendToLog();
-            }
-            finally
-            {
-                _eventService.SendEvent("Navegou para adicionar nova chave", EventType.NAVIGATION);
-
-                DialogService.HideLoading();
-            }
-        }
+        public async Task NavigateToAdd(bool isContact = false) => await Shell.Current.Navigation.PushAsync(new AddPixKeyPage(null, isContact));
 
         //public async Task NavigateToAction(PixKey pixKey)
         //{
