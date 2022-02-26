@@ -206,6 +206,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Models\Validation\Services\PaymentMethods\Crypto\" />
     <Folder Include="Models\Viewer\PaymentMethods\Interfaces\" />
     <Folder Include="Models\Viewer\PaymentMethods\Pix\" />
   </ItemGroup>

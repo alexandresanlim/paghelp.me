@@ -272,7 +272,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels.PaymentMethods.Crypto
 
         private bool ValidateSave()
         {
-            if (!CurrentCryptoKey.Validation.HasKey)
+            if (!CurrentCryptoKey.HasKey())
             {
                 DialogService.Toast("Ops! Chave não informada");
                 ActualInputNextPosition = CurrentInputValues.Key.Index;
@@ -291,7 +291,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels.PaymentMethods.Crypto
 
                 ActualInputNextPosition++;
             }
-            catch (System.Exception e)
+            catch (Exception e)
             {
                 e.SendToLog();
             }

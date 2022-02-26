@@ -34,6 +34,12 @@ namespace PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix.Extentions
             }
         }
 
-        public static bool IsValid(this PixKey pixKey) => !string.IsNullOrWhiteSpace(pixKey?.Key);
+        public static bool IsValid(this PixKey pixKey) => pixKey != null && !string.IsNullOrWhiteSpace(pixKey?.Key);
+
+        public static bool HasKey(this PixKey pixkey) => !string.IsNullOrWhiteSpace(pixkey?.Key);
+
+        public static bool HasName(this PixKey pixKey) => !string.IsNullOrWhiteSpace(pixKey?.Name);
+
+        public static bool IsEdit(this PixKey pixKey) => !string.IsNullOrEmpty(pixKey?.Key);
     }
 }

@@ -3,6 +3,8 @@ using AsyncAwaitBestPractices;
 using AsyncAwaitBestPractices.MVVM;
 using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models;
+using PixQrCodeGeneratorOffline.Models.Base;
+using PixQrCodeGeneratorOffline.Models.Commands.Interfaces;
 using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Models.Services.PaymentMethods.Crypto.Interfaces;
 using PixQrCodeGeneratorOffline.Models.Viewer.Services.Interfaces;
@@ -13,16 +15,13 @@ using PixQrCodeGeneratorOffline.ViewModels;
 using Plugin.Fingerprint;
 using Plugin.Fingerprint.Abstractions;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.Base.ViewModels
 {
-    public class ViewModelBase : INotifyPropertyChanged
+    public class ViewModelBase : NotifyObjectBase
     {
         protected readonly IFinancialInstitutionService _financialInstitutionService;
 
@@ -50,6 +49,8 @@ namespace PixQrCodeGeneratorOffline.Base.ViewModels
 
         protected readonly IPixKeyViewerService _pixKeyViewerService;
 
+        protected readonly IPixKeyCommand _pixKeyCommand;
+
         private static bool IsAuthenticated { get; set; }
 
         public ViewModelBase()
@@ -67,6 +68,7 @@ namespace PixQrCodeGeneratorOffline.Base.ViewModels
             _feedService = DependencyService.Get<IFeedService>();
             _statusBar = DependencyService.Get<IStatusBar>();
             _pixKeyViewerService = DependencyService.Get<IPixKeyViewerService>();
+            _pixKeyCommand = DependencyService.Get<IPixKeyCommand>();
 
             ShowAds = false;
 
@@ -231,40 +233,5 @@ namespace PixQrCodeGeneratorOffline.Base.ViewModels
             set => SetProperty(ref _isVisibleFingerPrint, value);
             get => _isVisibleFingerPrint;
         }
-
-        protected bool SetProperty<T>(ref T backingStore, T value,
-            [CallerMemberName] string propertyName = "",
-            Action onChanged = null)
-        {
-            if (EqualityComparer<T>.Default.Equals(backingStore, value))
-                return false;
-
-            backingStore = value;
-            onChanged?.Invoke();
-            OnPropertyChanged(propertyName);
-            return true;
-        }
-
-        #region INotifyPropertyChanged
-        //public event PropertyChangedEventHandler PropertyChanged;
-        //protected void OnPropertyChanged([CallerMemberName] string propertyName = "")
-        //{
-        //    var changed = PropertyChanged;
-        //    if (changed == null)
-        //        return;
-
-        //    changed.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        //}
-
-
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        private void OnPropertyChanged(string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-        #endregion
     }
 }

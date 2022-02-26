@@ -38,7 +38,7 @@
 
     <StackLayout>
 
-        <StackLayout IsVisible="{Binding PixKeyList, Converter={StaticResource HasDataConverter}, Mode=TwoWay}" Spacing="0">
+        <StackLayout Spacing="0">
             <CarouselView
                 CurrentItem="{Binding CurrentPixKey}"
                 CurrentItemChangedCommand="{Binding ChangeSelectPixKeyCommand}"
@@ -63,7 +63,6 @@
                             <key:HorizontalKeys.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding Command.NavigateToPaymentPageCommand}" NumberOfTapsRequired="1" />
                                 <TapGestureRecognizer Command="{Binding Command.CopyKeyCommand}" NumberOfTapsRequired="2" />
-                                <TapGestureRecognizer Command="{Binding Command.ShareKeyCommand}" NumberOfTapsRequired="3" />
                             </key:HorizontalKeys.GestureRecognizers>
                         </key:HorizontalKeys>
 

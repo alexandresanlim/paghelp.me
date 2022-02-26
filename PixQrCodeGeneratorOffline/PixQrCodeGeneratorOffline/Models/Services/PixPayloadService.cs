@@ -20,10 +20,6 @@ namespace PixQrCodeGeneratorOffline.Models.Services
 {
     public class PixPayloadService : ServiceBase, IPixPayloadService
     {
-        //private readonly IPixKeyService _pixKeyService;
-
-        private readonly IPixCobService _pixKCobService;
-
         private readonly IPixPayloadRepository _pixPayloadRepository;
 
         private readonly IPixPayloadCommand _pixPayloadCommand;
@@ -32,8 +28,6 @@ namespace PixQrCodeGeneratorOffline.Models.Services
 
         public PixPayloadService()
         {
-            //_pixKeyService = DependencyService.Get<IPixKeyService>();
-            _pixKCobService = DependencyService.Get<IPixCobService>();
             _pixPayloadRepository = DependencyService.Get<IPixPayloadRepository>();
             _pixPayloadCommand = DependencyService.Get<IPixPayloadCommand>();
             _pixKeyViewerService = DependencyService.Get<IPixKeyViewerService>();
@@ -58,6 +52,8 @@ namespace PixQrCodeGeneratorOffline.Models.Services
                 pixPaylod.QrCode = pixPaylod.Payload?.GenerateStringToQrCode();
             });
 
+            pixPaylod.Commands = _pixPayloadCommand.Create(pixPaylod);
+
             return pixPaylod;
         }
 
@@ -69,7 +65,7 @@ namespace PixQrCodeGeneratorOffline.Models.Services
             var pixPaylod = new PixPayload
             {
                 PixKey = pixKey,
-                PixCob = pixCob
+                PixCob = pixCob,
             };
 
             Xamarin.Essentials.MainThread.BeginInvokeOnMainThread(() =>
@@ -88,12 +84,16 @@ namespace PixQrCodeGeneratorOffline.Models.Services
                 pixPaylod.QrCode = pixPaylod.Payload?.GenerateStringToQrCode();
             });
 
+            pixPaylod.Commands = _pixPayloadCommand.Create(pixPaylod);
+
             return pixPaylod;
         }
 
         public bool Save(PixPayload pixPaylod)
         {
             var success = _pixPayloadRepository.Insert(pixPaylod);
+
+            pixPaylod.Commands = _pixPayloadCommand.Create(pixPaylod);
 
             DialogService.Toast("Cobrança salva com sucesso!");
 
@@ -135,8 +135,6 @@ namespace PixQrCodeGeneratorOffline.Models.Services
             try
             {
                 DialogService.ShowLoading("Aguarde...");
-
-                await Task.Delay(500);
 
                 var success = _pixPayloadRepository.RemoveAll(predicate);
 

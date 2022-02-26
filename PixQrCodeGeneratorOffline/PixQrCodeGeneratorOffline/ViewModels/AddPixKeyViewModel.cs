@@ -2,6 +2,7 @@
 using AsyncAwaitBestPractices.MVVM;
 using PixQrCodeGeneratorOffline.Base.ViewModels;
 using PixQrCodeGeneratorOffline.Extention;
+using PixQrCodeGeneratorOffline.Helpers;
 using PixQrCodeGeneratorOffline.Models;
 using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix;
 using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix.Extentions;
@@ -122,7 +123,9 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             CurrentPixKey.Key = CurrentInputValues?.Key?.Value;
             CurrentPixKey.Name = CurrentInputValues?.Name?.Value;
             CurrentPixKey.FinancialInstitution = SelectedFinancialInstitution;
-            CurrentPixKey.Viewer = _pixKeyViewerService.Create(CurrentPixKey);
+
+            if (string.IsNullOrWhiteSpace(CurrentPixKey?.City))
+                CurrentPixKey.City = Constants.INPUT_CITY_TEXT;
 
             if (!ValidateSave())
                 return;
@@ -131,12 +134,9 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             {
                 SetIsLoading(true);
 
-                await Task.Delay(500);
-
-                if (string.IsNullOrEmpty(CurrentPixKey?.City))
-                {
-                    CurrentPixKey.City = "Cidade";
-                }
+                CurrentPixKey.Viewer = _pixKeyViewerService.Create(CurrentPixKey);
+                CurrentPixKey.Payload = _pixPayloadService.Create(CurrentPixKey);
+                CurrentPixKey.Command = _pixKeyCommand.Create(CurrentPixKey);
 
                 var success = false;
 
@@ -168,32 +168,17 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                     if (CurrentPixKey.IsContact)
                     {
                         if (CurrentDashboard.PixKeyListContact.Count == 0)
-                        {
-                            CurrentDashboard.PixKeyListContact = new ObservableCollection<PixKey>
-                            {
-                                CurrentPixKey
-                            };
-                        }
+                            CurrentDashboard.PixKeyListContact = new ObservableCollection<PixKey>();
 
-                        else
-                            CurrentDashboard.PixKeyListContact.Add(CurrentPixKey);
+                        CurrentDashboard.PixKeyListContact.Add(CurrentPixKey);
                     }
 
                     else
                     {
                         if (CurrentDashboard.PixKeyList.Count == 0)
-                        {
-                            CurrentDashboard.PixKeyList = new ObservableCollection<PixKey>
-                            {
-                                CurrentPixKey
-                            };
-                        }
+                            CurrentDashboard.PixKeyList = new ObservableCollection<PixKey>();
 
-                        else
-                        {
-                            CurrentDashboard.PixKeyList.Add(CurrentPixKey);
-                        }
-
+                        CurrentDashboard.PixKeyList.Add(CurrentPixKey);
                         CurrentDashboard.CurrentPixKey = CurrentPixKey;
                     }
                 }
@@ -377,14 +362,14 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         private bool ValidateSave()
         {
 
-            if (!CurrentPixKey.Validation.HasKey)
+            if (!CurrentPixKey.HasKey())
             {
                 DialogService.Toast("Ops! Chave não informada");
                 ActualInputNextPosition = CurrentInputValues.Key.Index;
                 return false;
             }
 
-            if (!CurrentPixKey.Validation.HasName)
+            if (!CurrentPixKey.HasName())
             {
                 ActualInputNextPosition = CurrentInputValues.Name.Index;
                 DialogService.Toast("Ops! Nome não informado");

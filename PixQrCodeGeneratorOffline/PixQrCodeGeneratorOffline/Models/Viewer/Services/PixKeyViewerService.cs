@@ -1,4 +1,5 @@
 ﻿using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix;
+using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix.Extentions;
 using PixQrCodeGeneratorOffline.Models.Viewer.Services.Interfaces;
 
 namespace PixQrCodeGeneratorOffline.Models.Viewer.Services
@@ -7,7 +8,7 @@ namespace PixQrCodeGeneratorOffline.Models.Viewer.Services
     {
         public PixKeyViewer Create(PixKey pixKey)
         {
-            return pixKey.Validation.IsValid ? new PixKeyViewer
+            return pixKey.IsValid() ? new PixKeyViewer
             {
                 NameAndCity = GetNameAndCity(pixKey),
                 NamePresentation = GetNamePresentation(pixKey),

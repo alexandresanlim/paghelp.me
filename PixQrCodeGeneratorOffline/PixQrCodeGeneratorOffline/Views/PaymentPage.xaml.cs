@@ -1,5 +1,6 @@
 ﻿using PixQrCodeGeneratorOffline.Models.PaymentMethods.Base;
 using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix;
+using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix.Extentions;
 using PixQrCodeGeneratorOffline.ViewModels;
 
 using Xamarin.Forms;
@@ -25,7 +26,7 @@ namespace PixQrCodeGeneratorOffline.Views
         {
             _paymentViewModel.LoadDataCommand.Execute(_pixPaylod);
 
-            if (!(_paymentViewModel?.CurrentPixPaylod?.Id > 0) && _paymentViewModel?.CurrentPixPaylod?.PixCob != null && _paymentViewModel.CurrentPixPaylod.PixCob.Validation.HasValue)
+            if (!(_paymentViewModel?.CurrentPixPaylod?.Id > 0) && _paymentViewModel?.CurrentPixPaylod?.PixCob != null && _paymentViewModel.CurrentPixPaylod.PixCob.HasValue())
             {
                 ToolbarItems.Add(new ToolbarItem
                 {

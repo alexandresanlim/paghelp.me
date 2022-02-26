@@ -13,14 +13,11 @@ namespace PixQrCodeGeneratorOffline.Models
     {
         private readonly IFeedViewerService _feedViewerService;
 
-        private readonly IFeedValidationService _feedValidationService;
-
         private readonly IFeedCommand _feedCommand;
 
         public Feed()
         {
             _feedViewerService = DependencyService.Get<IFeedViewerService>();
-            _feedValidationService = DependencyService.Get<IFeedValidationService>();
             _feedCommand = DependencyService.Get<IFeedCommand>();
 
             Image = new UriImageSource { CachingEnabled = true, Uri = new Uri("https://img.olhardigital.com.br/wp-content/uploads/2021/04/PIX-2.jpg") };
@@ -41,8 +38,6 @@ namespace PixQrCodeGeneratorOffline.Models
         public DateTimeOffset? PublishDateLocal => PublishDate?.ToLocalTime();
 
         public TimeSpan PublishDuration => PublishDateLocal.HasValue ? (DateTimeOffset.Now - PublishDateLocal.Value) : TimeSpan.MaxValue;
-
-        public FeedValidation Validation => _feedValidationService?.Create(this) ?? new FeedValidation();
 
         public FeedViewer Viewer => _feedViewerService?.Create(this) ?? new FeedViewer();
 

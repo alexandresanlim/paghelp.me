@@ -2,6 +2,7 @@
 using PixQrCodeGeneratorOffline.Models.Commands.Base;
 using PixQrCodeGeneratorOffline.Models.Commands.PaymentMethods.Crypto.Interfaces;
 using PixQrCodeGeneratorOffline.Models.PaymentMethods.Crypto;
+using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix.Extentions;
 using PixQrCodeGeneratorOffline.Models.Services.PaymentMethods.Crypto.Interfaces;
 using PixQrCodeGeneratorOffline.Services;
 using PixQrCodeGeneratorOffline.Views;
@@ -39,16 +40,16 @@ namespace PixQrCodeGeneratorOffline.Models.Commands.PaymentMethods.Crypto
 
         // public ICommand NavigateToBillingCommand { get; private set; }
 
-        public CryptoKeyCommand Create(CryptoKey pixKey)
+        public CryptoKeyCommand Create(CryptoKey cryptoKey)
         {
-            return pixKey.Validation.IsValid ? new CryptoKeyCommand
+            return cryptoKey.IsValid() ? new CryptoKeyCommand
             {
-                CopyKeyCommand = GetCopyKeyCommand(pixKey),
-                ShareKeyCommand = GetShareKeyCommand(pixKey),
-                ShareOnWhatsCommand = GetShareKeyOnWhatsCommand(pixKey),
+                CopyKeyCommand = GetCopyKeyCommand(cryptoKey),
+                ShareKeyCommand = GetShareKeyCommand(cryptoKey),
+                ShareOnWhatsCommand = GetShareKeyOnWhatsCommand(cryptoKey),
                 //NavigateToCreateBillingPageCommand = GetNavigateToCreateBillingCommand(pixKey),
-                NavigateToPaymentPageCommand = GetNavigateToPaymentPageCommand(pixKey),
-                EditKeyCommand = GetEdityKeyCommand(pixKey),
+                NavigateToPaymentPageCommand = GetNavigateToPaymentPageCommand(cryptoKey),
+                EditKeyCommand = GetEdityKeyCommand(cryptoKey),
                 //NavigateToBillingCommand = GetNavigateToBillingCommand(pixKey),
                 //NavigateToDownloadQrCodeCommand = GetNavigateToDownloadQrCodeCommand(pixKey),
             } : new CryptoKeyCommand();

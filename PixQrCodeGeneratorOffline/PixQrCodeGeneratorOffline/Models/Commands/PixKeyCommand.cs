@@ -3,6 +3,7 @@ using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models.Commands.Base;
 using PixQrCodeGeneratorOffline.Models.Commands.Interfaces;
 using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix;
+using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix.Extentions;
 using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Services;
 using PixQrCodeGeneratorOffline.Views;
@@ -42,7 +43,7 @@ namespace PixQrCodeGeneratorOffline.Models.Commands
 
         public PixKeyCommand Create(PixKey pixKey)
         {
-            return pixKey.Validation.IsValid ? new PixKeyCommand
+            return pixKey.IsValid() ? new PixKeyCommand
             {
                 CopyKeyCommand = GetCopyKeyCommand(pixKey),
                 ShareKeyCommand = GetShareKeyCommand(pixKey),
@@ -81,7 +82,7 @@ namespace PixQrCodeGeneratorOffline.Models.Commands
 
         public async Task NavigateToEdit(PixKey pixKey, bool isContact = false)
         {
-            if (!pixKey.Validation.IsValid)
+            if (!pixKey.IsValid())
                 return;
 
             try

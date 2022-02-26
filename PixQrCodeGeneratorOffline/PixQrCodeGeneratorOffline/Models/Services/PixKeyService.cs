@@ -81,36 +81,14 @@ namespace PixQrCodeGeneratorOffline.Models.Services
             return _pixKeyRepository.Remove(item);
         }
 
-        public async Task NavigateToShareAllKeys(ObservableCollection<PixKey> pixkeyList)
-        {
-            try
-            {
-                DialogService.ShowLoading("");
-
-                await Task.Delay(500);
-
-                await Shell.Current.Navigation.PushAsync(new ShareKeyPage(pixkeyList));
-            }
-            catch (System.Exception e)
-            {
-                e.SendToLog();
-            }
-            finally
-            {
-                _eventService.SendEvent("Navegou para página de compartilhar todas as chaves", EventType.NAVIGATION);
-
-                DialogService.HideLoading();
-            }
-        }
+        public async Task NavigateToShareAllKeys(ObservableCollection<PixKey> pixkeyList) =>
+            await Shell.Current.Navigation.PushAsync(new ShareKeyPage(pixkeyList));
 
         public async Task ShareAllKeys(string info)
         {
             try
             {
                 DialogService.ShowLoading("");
-
-                await Task.Delay(500);
-
 
                 var options = new List<ActionSheetOption>()
                     {
@@ -184,31 +162,6 @@ namespace PixQrCodeGeneratorOffline.Models.Services
         }
 
         public async Task NavigateToAdd(bool isContact = false) => await Shell.Current.Navigation.PushAsync(new AddPixKeyPage(null, isContact));
-
-        //public async Task NavigateToAction(PixKey pixKey)
-        //{
-        //    if (!pixKey.Validation.IsValid)
-        //        return;
-
-        //    try
-        //    {
-        //        DialogService.ShowLoading("");
-
-        //        await Task.Delay(500);
-
-        //        await Shell.Current.Navigation.PushModalAsync(new PixKeyActionPage(pixKey));
-        //    }
-        //    catch (System.Exception e)
-        //    {
-        //        e.SendToLog();
-        //    }
-        //    finally
-        //    {
-        //        _eventService.SendEvent("Navegou para ação", EventType.NAVIGATION);
-
-        //        DialogService.HideLoading();
-        //    }
-        //}
 
         private bool HasKeysValidated(List<PixKey> pisKeyList)
         {

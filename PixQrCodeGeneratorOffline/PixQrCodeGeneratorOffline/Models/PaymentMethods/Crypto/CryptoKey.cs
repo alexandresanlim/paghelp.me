@@ -15,15 +15,12 @@ namespace PixQrCodeGeneratorOffline.Models.PaymentMethods.Crypto
     {
         private readonly ICryptoKeyViewerService _cryptoKeyViewerService;
 
-        private readonly ICryptoKeyValidationService _cryptoKeyValidationService;
-
         private readonly ICryptoPayloadService _cryptoPayloadService;
 
         private readonly ICryptoKeyCommand _pixKeyCommand;
 
         public CryptoKey()
         {
-            _cryptoKeyValidationService = DependencyService.Get<ICryptoKeyValidationService>();
             _cryptoPayloadService = DependencyService.Get<ICryptoPayloadService>();
             _pixKeyCommand = DependencyService.Get<ICryptoKeyCommand>();
             _cryptoKeyViewerService = DependencyService.Get<ICryptoKeyViewerService>();
@@ -31,9 +28,6 @@ namespace PixQrCodeGeneratorOffline.Models.PaymentMethods.Crypto
         }
 
         public FinancialInstitutionCrypto FinancialInstitution { get; set; }
-
-        [LiteDB.BsonIgnore]
-        public CryptoKeyValidation Validation => _cryptoKeyValidationService?.Create(this) ?? new CryptoKeyValidation();
 
         [LiteDB.BsonIgnore]
         public CryptoPayload Payload => _cryptoPayloadService?.Create(this) ?? new CryptoPayload();
