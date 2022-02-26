@@ -27,7 +27,9 @@ namespace PixQrCodeGeneratorOffline.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             //global::Xamarin.Forms.Forms.SetFlags("CollectionView_Experimental");
+   
             global::Xamarin.Forms.Forms.Init();
+
             MobileAds.SharedInstance.Start(CompletionHandler);
             //Lottie.Forms.iOS.Renderers.AnimationViewRenderer.Init();
             //ZXing.Net.Mobile.Forms.iOS.Platform.Init();

@@ -5,6 +5,7 @@ using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models;
 using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Models.Services.PaymentMethods.Crypto.Interfaces;
+using PixQrCodeGeneratorOffline.Models.Viewer.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Services;
 using PixQrCodeGeneratorOffline.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Style.Interfaces;
@@ -47,6 +48,8 @@ namespace PixQrCodeGeneratorOffline.Base.ViewModels
 
         protected readonly IStatusBar _statusBar;
 
+        protected readonly IPixKeyViewerService _pixKeyViewerService;
+
         private static bool IsAuthenticated { get; set; }
 
         public ViewModelBase()
@@ -63,6 +66,7 @@ namespace PixQrCodeGeneratorOffline.Base.ViewModels
             _eventService = DependencyService.Get<IEventService>();
             _feedService = DependencyService.Get<IFeedService>();
             _statusBar = DependencyService.Get<IStatusBar>();
+            _pixKeyViewerService = DependencyService.Get<IPixKeyViewerService>();
 
             ShowAds = false;
 

@@ -96,9 +96,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
         }
 
-        public void LoadPixKey() => PixKeyList = _pixKeyService?
-            .GetAll()?.OrderBy(x => x?.FinancialInstitution?.Name)?
-            .ToObservableCollection() ?? new ObservableCollection<PixKey>();
+        public void LoadPixKey() => PixKeyList = _pixKeyService?.GetAll().ToObservableCollection() ?? new ObservableCollection<PixKey>();
 
         public void LoadPixKeyContact() => PixKeyListContact = _pixKeyService?
             .GetAll(isContact: true)?.OrderBy(x => x?.Name)?
@@ -113,7 +111,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             CurrentDashboardCustomInfo = new DashboardCustomInfo();
         }
 
-        private void ChangeSelectedPixKey(PixKey pixkey) => CurrentPixKey = pixkey;
+        private void ChangeSelectedPixKey(PixKey pixkey) => MainThread.BeginInvokeOnMainThread(() => CurrentPixKey = pixkey);
 
         private void ExecuteAction()
         {

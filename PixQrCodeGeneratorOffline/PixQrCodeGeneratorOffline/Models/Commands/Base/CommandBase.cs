@@ -1,4 +1,5 @@
 ﻿using Acr.UserDialogs;
+using PixQrCodeGeneratorOffline.Models.Commands.Interfaces;
 using PixQrCodeGeneratorOffline.Services.Interfaces;
 using Xamarin.Forms;
 
@@ -12,10 +13,13 @@ namespace PixQrCodeGeneratorOffline.Models.Commands.Base
 
         protected readonly IExternalActionService _externalActionService;
 
+        protected readonly ICustomAsyncCommand _customAsyncCommand;
+
         public CommandBase()
         {
             _eventService = DependencyService.Get<IEventService>();
             _externalActionService = DependencyService.Get<IExternalActionService>();
+            _customAsyncCommand = DependencyService.Get<ICustomAsyncCommand>();
         }
     }
 }

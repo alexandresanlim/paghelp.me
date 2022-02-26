@@ -33,27 +33,34 @@ namespace PixQrCodeGeneratorOffline.Models.Viewer.Services
 
         private string GetInitial(PixKey pixKey)
         {
-            var name = pixKey?.Name;
-
-            if (!pixKey.IsContact || string.IsNullOrWhiteSpace(name))
-                return "";
-
-            string first = name.Substring(0, 1);
-            string last;
-
-            if (!(name.Length > 1))
-                last = first;
-
-            else if (!name.Contains(" "))
-                last = name.Substring(1, 1);
-
-            else
+            try
             {
-                var split = name.Split(' ');
-                last = split[1].Substring(0, 1);
-            }
+                var name = pixKey?.Name;
 
-            return first + last;
+                if (!pixKey.IsContact || string.IsNullOrWhiteSpace(name))
+                    return "";
+
+                string first = name.Substring(0, 1);
+                string last;
+
+                if (!(name.Length > 1))
+                    last = first;
+
+                else if (!name.Contains(" "))
+                    last = name.Substring(1, 1);
+
+                else
+                {
+                    var split = name.Split(' ');
+                    last = split[1].Substring(0, 1);
+                }
+
+                return first + last;
+            }
+            catch (System.Exception)
+            {
+                return "**";
+            }
         }
     }
 }

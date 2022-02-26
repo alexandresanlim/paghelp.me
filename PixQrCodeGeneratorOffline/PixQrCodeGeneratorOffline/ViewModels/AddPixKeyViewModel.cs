@@ -122,6 +122,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             CurrentPixKey.Key = CurrentInputValues?.Key?.Value;
             CurrentPixKey.Name = CurrentInputValues?.Name?.Value;
             CurrentPixKey.FinancialInstitution = SelectedFinancialInstitution;
+            CurrentPixKey.Viewer = _pixKeyViewerService.Create(CurrentPixKey);
 
             if (!ValidateSave())
                 return;

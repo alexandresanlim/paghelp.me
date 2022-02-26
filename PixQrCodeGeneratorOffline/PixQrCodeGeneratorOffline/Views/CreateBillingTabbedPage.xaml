@@ -8,7 +8,8 @@
     x:Name="tb"
     x:DataType="pix:PixKey"
     CurrentPageChanged="TabbedPage_CurrentPageChanged"
-    Shell.NavBarIsVisible="False">
+    Shell.NavBarIsVisible="False"
+    Shell.PresentationMode="ModalAnimated">
 
     <!--  Pages can be added as references or inline  -->
 

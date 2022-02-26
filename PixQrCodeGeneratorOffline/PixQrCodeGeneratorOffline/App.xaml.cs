@@ -106,6 +106,7 @@ namespace PixQrCodeGeneratorOffline
             DependencyService.Register<IPayloadCommandBase, PayloadCommandBase>();
             DependencyService.Register<ICryptoPayloadCommand, CryptoPayloadCommand>();
             DependencyService.Register<IFeedCommand, FeedCommand>();
+            DependencyService.Register<ICustomAsyncCommand, CustomAsyncCommand>();
         }
 
         protected override void OnStart()

@@ -9,8 +9,6 @@ namespace PixQrCodeGeneratorOffline.Models.Services.Interfaces
 {
     public interface IPixKeyService
     {
-        bool IsValid(PixKey pixKey);
-
         List<PixKey> GetAll(bool isContact = false);
 
         List<PixKey> GetAll(Expression<Func<PixKey, bool>> predicate);
@@ -28,8 +26,6 @@ namespace PixQrCodeGeneratorOffline.Models.Services.Interfaces
         Task ShareAllKeys(string info);
 
         Task<bool> RemoveAll(bool isContact = false);
-
-        Task NavigateToEdit(PixKey pixKey, bool isContact = false);
 
         Task NavigateToAdd(bool isContact = false);
 

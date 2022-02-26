@@ -10,27 +10,38 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix.Extentions;
+using PixQrCodeGeneratorOffline.Models.Commands.Interfaces;
+using PixQrCodeGeneratorOffline.Models.Commands;
+using PixQrCodeGeneratorOffline.Models.Viewer.Services.Interfaces;
+using PixQrCodeGeneratorOffline.Models.Viewer;
 
 namespace PixQrCodeGeneratorOffline.Models.Services
 {
     public class PixPayloadService : ServiceBase, IPixPayloadService
     {
-        private readonly IPixKeyService _pixKeyService;
+        //private readonly IPixKeyService _pixKeyService;
 
         private readonly IPixCobService _pixKCobService;
 
         private readonly IPixPayloadRepository _pixPayloadRepository;
 
+        private readonly IPixPayloadCommand _pixPayloadCommand;
+
+        private readonly IPixKeyViewerService _pixKeyViewerService;
+
         public PixPayloadService()
         {
-            _pixKeyService = DependencyService.Get<IPixKeyService>();
+            //_pixKeyService = DependencyService.Get<IPixKeyService>();
             _pixKCobService = DependencyService.Get<IPixCobService>();
             _pixPayloadRepository = DependencyService.Get<IPixPayloadRepository>();
+            _pixPayloadCommand = DependencyService.Get<IPixPayloadCommand>();
+            _pixKeyViewerService = DependencyService.Get<IPixKeyViewerService>();
         }
 
         public PixPayload Create(PixKey pixKey)
         {
-            if (!_pixKeyService.IsValid(pixKey))
+            if (!pixKey.IsValid())
                 return new PixPayload();
 
             var pixPaylod = new PixPayload
@@ -52,7 +63,7 @@ namespace PixQrCodeGeneratorOffline.Models.Services
 
         public PixPayload Create(PixKey pixKey, PixCob pixCob)
         {
-            if (!_pixKeyService.IsValid(pixKey) || !_pixKCobService.IsValid(pixCob))
+            if (!pixKey.IsValid() || !pixCob.IsValid())
                 return new PixPayload();
 
             var pixPaylod = new PixPayload
@@ -91,7 +102,15 @@ namespace PixQrCodeGeneratorOffline.Models.Services
 
         public List<PixPayload> GetAll(Expression<Func<PixPayload, bool>> predicate = null)
         {
-            return _pixPayloadRepository.GetAll(predicate);
+            var list = _pixPayloadRepository.GetAll(predicate);
+
+            foreach (var item in list)
+            {
+                item.Commands = _pixPayloadCommand?.Create(item) ?? new PixPayloadCommand();
+                item.PixKey.Viewer = _pixKeyViewerService?.Create(item?.PixKey) ?? new PixKeyViewer();
+            }
+
+           return list;
         }
 
         public async Task<bool> RemoveAll(Expression<Func<PixPayload, bool>> predicate = null)

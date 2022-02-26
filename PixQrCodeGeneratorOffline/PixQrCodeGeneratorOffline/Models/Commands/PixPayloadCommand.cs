@@ -6,7 +6,6 @@ using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix;
 using PixQrCodeGeneratorOffline.Services;
 using PixQrCodeGeneratorOffline.Views;
 using System.Threading.Tasks;
-using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.Models.Commands

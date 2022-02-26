@@ -56,7 +56,7 @@
                 <BoxView
                     BackgroundColor="{DynamicResource foreground_page}"
                     CornerRadius="10,10,0,0"
-                    HeightRequest="10" />
+                    HeightRequest="15" />
 
                 <StackLayout BackgroundColor="{DynamicResource foreground_page}" Spacing="0">
 

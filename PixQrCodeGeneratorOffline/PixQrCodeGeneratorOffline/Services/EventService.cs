@@ -32,6 +32,7 @@ namespace PixQrCodeGeneratorOffline.Services
         READ,
         UPDATE,
         DELETE,
-        TAP
+        TAP,
+        COMMAND
     }
 }

@@ -20,7 +20,9 @@ namespace PixQrCodeGeneratorOffline.Views
         {
             base.OnAppearing();
             AddPages();
-            App.StatusBarService.SetStatusBarColor(App.ThemeColors.PrimaryDark);
+
+            if (App.StatusBarService != null && App.ThemeColors?.PrimaryDark != null)
+                App.StatusBarService.SetStatusBarColor(App.ThemeColors.PrimaryDark);
         }
 
         private void AddPages()
@@ -28,7 +30,7 @@ namespace PixQrCodeGeneratorOffline.Views
             if (Children.Count.Equals(2) && Services.Preference.CryptoAble || (Children.Count.Equals(3) && !Services.Preference.CryptoAble))
                 Children.Clear();
 
-            if(Children.Count.Equals(0))
+            if (Children.Count.Equals(0))
             {
                 Children.Add(new StartPage { Title = "Pix" });
 
