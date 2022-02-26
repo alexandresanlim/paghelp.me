@@ -173,5 +173,27 @@ namespace PixQrCodeGeneratorOffline.Templates.Key
 
             template.xIcon.TextColor = value;
         }
+
+        public static readonly BindableProperty RequiresInternetProperty =
+           BindableProperty.Create(
+               propertyName: nameof(RequiresInternet),
+               returnType: typeof(bool),
+               declaringType: typeof(HorizontalActionKeys),
+               defaultValue: false,
+               defaultBindingMode: BindingMode.Default,
+               validateValue: null,
+               propertyChanged: RequiresInternetPropertyChanged);
+
+        public bool RequiresInternet
+        {
+            get => (bool)GetValue(RequiresInternetProperty);
+            set => SetValue(RequiresInternetProperty, value);
+        }
+
+        private static void RequiresInternetPropertyChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            if (bindable is HorizontalActionKeys control && newValue != null && newValue is bool value)
+                control.xIconRequiresInternet.IsVisible = value;
+        }
     }
 }

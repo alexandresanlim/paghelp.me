@@ -13,5 +13,7 @@ namespace PixQrCodeGeneratorOffline.Models.PaymentMethods.Base
         public FontAwesomeType IconType { get; set; } = FontAwesomeType.solid;
 
         public KeyActionType Type { get; set; }
+
+        public bool RequiresInternet { get; set; } = false;
     }
 }

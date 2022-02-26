@@ -3,7 +3,6 @@
     x:Class="PixQrCodeGeneratorOffline.Views.Content.StartPageContents.StartPageMyKeysView"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:content="clr-namespace:PixQrCodeGeneratorOffline.Views.Content"
     xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
     xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon"
     xmlns:key="clr-namespace:PixQrCodeGeneratorOffline.Templates.Key"
@@ -96,7 +95,8 @@
                         Title="{Binding Title}"
                         BoxColor="{Binding Source={RelativeSource AncestorType={x:Type vm:DashboardViewModel}}, Path=CurrentPixKey.FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
                         Icon="{Binding Icon}"
-                        IconType="{Binding IconType}" />
+                        IconType="{Binding IconType}"
+                        RequiresInternet="{Binding RequiresInternet}" />
 
                 </DataTemplate>
             </CollectionView.ItemTemplate>

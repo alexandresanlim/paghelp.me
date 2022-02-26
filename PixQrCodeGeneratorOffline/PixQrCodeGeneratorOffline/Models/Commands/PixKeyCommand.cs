@@ -7,7 +7,7 @@ using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix.Extentions;
 using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Services;
 using PixQrCodeGeneratorOffline.Views;
-using PixQrCodeGeneratorOffline.Views.Shared;
+using System;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
@@ -17,12 +17,9 @@ namespace PixQrCodeGeneratorOffline.Models.Commands
     {
         private readonly IPixPayloadService _pixPayloadService;
 
-        //private readonly IPixKeyService _pixKeyService;
-
         public PixKeyCommand()
         {
             _pixPayloadService = DependencyService.Get<IPixPayloadService>();
-            //_pixKeyService = DependencyService.Get<IPixKeyService>();
         }
 
         public IAsyncCommand CopyKeyCommand { get; private set; }
@@ -34,8 +31,6 @@ namespace PixQrCodeGeneratorOffline.Models.Commands
         public IAsyncCommand NavigateToCreateBillingPageCommand { get; private set; }
 
         public IAsyncCommand NavigateToPaymentPageCommand { get; private set; }
-
-        public IAsyncCommand NavigateToDownloadQrCodeCommand { get; private set; }
 
         public IAsyncCommand EditKeyCommand { get; private set; }
 
@@ -51,8 +46,7 @@ namespace PixQrCodeGeneratorOffline.Models.Commands
                 NavigateToCreateBillingPageCommand = GetNavigateToCreateBillingCommand(pixKey),
                 NavigateToPaymentPageCommand = GetNavigateToPaymentPageCommand(pixKey),
                 EditKeyCommand = GetEdityKeyCommand(pixKey),
-                NavigateToBillingCommand = GetNavigateToBillingCommand(pixKey),
-                NavigateToDownloadQrCodeCommand = GetNavigateToDownloadQrCodeCommand(pixKey),
+                NavigateToBillingCommand = GetNavigateToBillingCommand(pixKey)
             } : new PixKeyCommand();
         }
 
@@ -77,9 +71,6 @@ namespace PixQrCodeGeneratorOffline.Models.Commands
         private IAsyncCommand GetNavigateToPaymentPageCommand(PixKey pixKey) =>
             _customAsyncCommand.Create(async () => await Shell.Current.Navigation.PushAsync(new PaymentPage(_pixPayloadService.Create(pixKey))));
 
-        private IAsyncCommand GetNavigateToDownloadQrCodeCommand(PixKey pixKey) =>
-            _customAsyncCommand.Create(async () => await Shell.Current.Navigation.PushAsync(new WebViewPage(new System.Uri("https://chart.googleapis.com/chart?chs=400x400&cht=qr&chl=" + pixKey?.Payload?.QrCode))));
-
         public async Task NavigateToEdit(PixKey pixKey, bool isContact = false)
         {
             if (!pixKey.IsValid())
@@ -91,7 +82,7 @@ namespace PixQrCodeGeneratorOffline.Models.Commands
 
                 _eventService.SendEvent("Editou chave", EventType.UPDATE);
             }
-            catch (System.Exception e)
+            catch (Exception e)
             {
                 e.SendToLog();
             }

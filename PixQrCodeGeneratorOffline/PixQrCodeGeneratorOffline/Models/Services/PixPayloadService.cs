@@ -1,20 +1,20 @@
 ﻿using pix_payload_generator.net.Models.CobrancaModels;
 using pix_payload_generator.net.Models.PayloadModels;
 using PixQrCodeGeneratorOffline.Extention;
+using PixQrCodeGeneratorOffline.Models.Commands;
+using PixQrCodeGeneratorOffline.Models.Commands.Interfaces;
 using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix;
+using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix.Extentions;
 using PixQrCodeGeneratorOffline.Models.Repository.Interfaces;
 using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
+using PixQrCodeGeneratorOffline.Models.Viewer;
+using PixQrCodeGeneratorOffline.Models.Viewer.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 using Xamarin.Forms;
-using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix.Extentions;
-using PixQrCodeGeneratorOffline.Models.Commands.Interfaces;
-using PixQrCodeGeneratorOffline.Models.Commands;
-using PixQrCodeGeneratorOffline.Models.Viewer.Services.Interfaces;
-using PixQrCodeGeneratorOffline.Models.Viewer;
 
 namespace PixQrCodeGeneratorOffline.Models.Services
 {

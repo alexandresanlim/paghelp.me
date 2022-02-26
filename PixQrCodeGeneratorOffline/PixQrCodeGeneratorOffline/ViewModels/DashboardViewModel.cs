@@ -124,22 +124,25 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                     CurrentPixKey.Command.NavigateToCreateBillingPageCommand.Execute(null);
                     break;
                 case KeyActionType.CopyKey:
-                    CurrentPixKey.Command.CopyKeyCommand.Execute(null);
+                    CurrentPixKey.Command.CopyKeyCommand.ExecuteAsync();
                     break;
                 case KeyActionType.ShareKey:
-                    CurrentPixKey.Command.ShareKeyCommand.Execute(null);
+                    CurrentPixKey.Command.ShareKeyCommand.ExecuteAsync();
                     break;
                 case KeyActionType.ShareOnWhatsApp:
-                    CurrentPixKey.Command.ShareOnWhatsCommand.Execute(null);
+                    CurrentPixKey.Command.ShareOnWhatsCommand.ExecuteAsync();
                     break;
                 case KeyActionType.BillingList:
-                    CurrentPixKey.Command.NavigateToBillingCommand.Execute(null);
+                    CurrentPixKey.Command.NavigateToBillingCommand.ExecuteAsync();
                     break;
                 case KeyActionType.PaymentPage:
-                    CurrentPixKey.Command.NavigateToPaymentPageCommand.Execute(null);
+                    CurrentPixKey.Command.NavigateToPaymentPageCommand.ExecuteAsync();
                     break;
                 case KeyActionType.Edit:
-                    CurrentPixKey.Command.EditKeyCommand.Execute(null);
+                    CurrentPixKey.Command.EditKeyCommand.ExecuteAsync();
+                    break;
+                case KeyActionType.DownloadQRCode:
+                    CurrentPixKey.Payload.Commands.DownloadQrCodeCommand.ExecuteAsync();
                     break;
                 case KeyActionType.None:
                 default:
