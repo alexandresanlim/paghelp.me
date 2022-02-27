@@ -55,14 +55,11 @@
                             TextColor="{DynamicResource textSecondary}" />
 
                         <qr:QRCode
-                            BackgroundColor="White"
                             Content="{Binding CurrentPaylodBase.QrCode}"
                             HeightRequest="300"
                             HorizontalOptions="CenterAndExpand"
-                            Level="H"
                             VerticalOptions="CenterAndExpand"
-                            WidthRequest="300"
-                            Color="#000000">
+                            WidthRequest="300">
 
                             <qr:QRCode.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:PaymentViewModel}}, Path=SharePayloadCommand}" />

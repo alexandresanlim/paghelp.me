@@ -24,7 +24,7 @@
     <StackLayout>
 
         <CollectionView
-            Margin="2.5,0,0,0"
+            Margin="4,0,0,0"
             HeightRequest="230"
             IsVisible="{Binding PixKeyListContact, Converter={StaticResource HasDataConverter}}"
             ItemsSource="{Binding PixKeyListContact}">

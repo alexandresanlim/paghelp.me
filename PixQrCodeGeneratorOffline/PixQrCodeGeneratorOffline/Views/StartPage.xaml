@@ -115,7 +115,12 @@
                         </StackLayout>
                     </Grid>
 
-                    <contentStart:StartPageMyKeysView />
+                    <contentStart:StartPageMyKeysView IsVisible="{Binding PixKeyList, Converter={StaticResource HasDataConverter}}" />
+
+                    <templates:TemplateAction
+                        Title="Adicionar Nova"
+                        Icon="{x:Static icons:FontAwesomeSolid.PlusCircle}"
+                        TapCommand="{Binding NavigateToAddNewKeyPageCommand}" />
 
                     <content:DivisionView Margin="0,10,0,0" />
 

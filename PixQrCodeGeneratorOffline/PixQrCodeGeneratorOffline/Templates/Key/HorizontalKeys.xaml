@@ -50,13 +50,10 @@
                 <qr:QRCode
                     x:Name="xQrCode"
                     Grid.Column="0"
-                    BackgroundColor="White"
                     Content="QrCodeContent"
                     HeightRequest="80"
-                    Level="H"
                     VerticalOptions="Center"
-                    WidthRequest="80"
-                    Color="#000000" />
+                    WidthRequest="80" />
 
                 <Grid
                     Grid.Column="1"

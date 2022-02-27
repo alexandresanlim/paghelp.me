@@ -25,7 +25,7 @@
                 VerticalOptions="Start"
                 WidthRequest="65" />
 
-            <StackLayout Padding="10">
+            <StackLayout Padding="8">
                 <StackLayout Orientation="Horizontal">
                     <controls:CustomIcon
                         x:Name="xIcon"
@@ -46,6 +46,8 @@
                     x:Name="xTitle"
                     FontFamily="{DynamicResource FontBold}"
                     FontSize="{DynamicResource FontSizeSmall}"
+                    LineBreakMode="TailTruncation"
+                    MaxLines="2"
                     VerticalOptions="EndAndExpand" />
 
             </StackLayout>

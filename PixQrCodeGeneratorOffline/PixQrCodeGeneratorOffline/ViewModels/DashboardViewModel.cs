@@ -264,14 +264,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             var success = await _pixKeyService.RemoveAll();
 
             if (success)
-            {
-                //await LoadPixKey();
-                //PixKeyList.Clear();
-                //CurrentPixKey = new PixKey();
                 PixKeyList = new ObservableCollection<PixKey>();
-
-                //await LoadCurrentPixKey(null);
-            }
         }
 
         private async Task RemoveAllContactKeys()
@@ -279,10 +272,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             var success = await _pixKeyService.RemoveAll(isContact: true);
 
             if (success)
-            {
                 PixKeyListContact = new ObservableCollection<PixKey>();
-                //await LoadPixKeyContact();
-            }
         }
 
         private async Task RemoveAllBilling()

@@ -66,12 +66,15 @@
                             <Grid ColumnDefinitions="auto,*">
                                 <BoxView
                                     Grid.Column="0"
-                                    Margin="10"
+                                    Margin="8"
                                     BackgroundColor="{Binding PixKey.FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
                                     CornerRadius="15"
                                     WidthRequest="8" />
 
-                                <StackLayout Grid.Column="1" VerticalOptions="Center">
+                                <StackLayout
+                                    Grid.Column="1"
+                                    Padding="0,0,8,0"
+                                    VerticalOptions="Center">
                                     <Label
                                         Grid.Row="0"
                                         FontFamily="{DynamicResource FontSemiBold}"

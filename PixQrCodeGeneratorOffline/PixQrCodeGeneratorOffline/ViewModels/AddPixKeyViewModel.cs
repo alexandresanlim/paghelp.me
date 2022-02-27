@@ -24,7 +24,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public IAsyncCommand LoadDataCommand => new AsyncCommand(LoadData);
 
-        public IAsyncCommand SaveCommand => new AsyncCommand(Save);
+        public ICommand SaveCommand => new Command(Save);
 
         public IAsyncCommand DeleteCommand => new AsyncCommand(Delete);
 
@@ -117,7 +117,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             InputPhasesCount = InputList?.Count - 1 ?? 0;
         }
 
-        private async Task Save()
+        private void Save()
         {
             CurrentPixKey.City = CurrentInputValues?.City.Value;
             CurrentPixKey.Key = CurrentInputValues?.Key?.Value;
@@ -168,17 +168,20 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                     if (CurrentPixKey.IsContact)
                     {
                         if (CurrentDashboard.PixKeyListContact.Count == 0)
-                            CurrentDashboard.PixKeyListContact = new ObservableCollection<PixKey>();
+                            CurrentDashboard.PixKeyListContact = new ObservableCollection<PixKey>(new List<PixKey> { CurrentPixKey });
 
-                        CurrentDashboard.PixKeyListContact.Add(CurrentPixKey);
+                        else
+                            CurrentDashboard.PixKeyListContact.Add(CurrentPixKey);
                     }
 
                     else
                     {
                         if (CurrentDashboard.PixKeyList.Count == 0)
-                            CurrentDashboard.PixKeyList = new ObservableCollection<PixKey>();
+                            CurrentDashboard.PixKeyList = new ObservableCollection<PixKey>(new List<PixKey> { CurrentPixKey });
 
-                        CurrentDashboard.PixKeyList.Add(CurrentPixKey);
+                        else
+                            CurrentDashboard.PixKeyList.Add(CurrentPixKey);
+
                         CurrentDashboard.CurrentPixKey = CurrentPixKey;
                     }
                 }
@@ -214,8 +217,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             try
             {
                 SetIsLoading(true);
-
-                await Task.Delay(500);
 
                 var success = _pixKeyService.Remove(CurrentPixKey);
 

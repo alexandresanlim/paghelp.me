@@ -37,49 +37,46 @@
 
     <StackLayout>
 
-        <StackLayout Spacing="0">
-            <CarouselView
-                CurrentItem="{Binding CurrentPixKey}"
-                CurrentItemChangedCommand="{Binding ChangeSelectPixKeyCommand}"
-                CurrentItemChangedCommandParameter="{Binding Source={RelativeSource Self}, Path=CurrentItem}"
-                HeightRequest="142"
-                IndicatorView="indicatorView"
-                ItemsSource="{Binding PixKeyList}"
-                PeekAreaInsets="20,0">
+        <CarouselView
+            CurrentItem="{Binding CurrentPixKey}"
+            CurrentItemChangedCommand="{Binding ChangeSelectPixKeyCommand}"
+            CurrentItemChangedCommandParameter="{Binding Source={RelativeSource Self}, Path=CurrentItem}"
+            HeightRequest="142"
+            IndicatorView="indicatorView"
+            ItemsSource="{Binding PixKeyList}"
+            PeekAreaInsets="20,0">
 
-                <CarouselView.ItemTemplate>
-                    <DataTemplate x:DataType="models:PixKey">
+            <CarouselView.ItemTemplate>
+                <DataTemplate x:DataType="models:PixKey">
 
-                        <key:HorizontalKeys
-                            BoxColor="{Binding FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
-                            HidePanelColor="{Binding FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
-                            HideValue="{Binding Source={RelativeSource AncestorType={x:Type vmBase:DashboardViewModelBase}}, Path=IsHideValue}"
-                            IconInstitution="{x:Static icons:FontAwesomeSolid.University}"
-                            IconKey="{x:Static icons:FontAwesomeSolid.Key}"
-                            InstitutionValue="{Binding Viewer.InstitutionPresentation}"
-                            KeyValue="{Binding Viewer.KeyPresentation}"
-                            QrCode="{Binding Payload.QrCode}">
-                            <key:HorizontalKeys.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding Command.NavigateToPaymentPageCommand}" NumberOfTapsRequired="1" />
-                                <TapGestureRecognizer Command="{Binding Command.CopyKeyCommand}" NumberOfTapsRequired="2" />
-                            </key:HorizontalKeys.GestureRecognizers>
-                        </key:HorizontalKeys>
+                    <key:HorizontalKeys
+                        BoxColor="{Binding FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
+                        HidePanelColor="{Binding FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
+                        HideValue="{Binding Source={RelativeSource AncestorType={x:Type vmBase:DashboardViewModelBase}}, Path=IsHideValue}"
+                        IconInstitution="{x:Static icons:FontAwesomeSolid.University}"
+                        IconKey="{x:Static icons:FontAwesomeSolid.Key}"
+                        InstitutionValue="{Binding Viewer.InstitutionPresentation}"
+                        KeyValue="{Binding Viewer.KeyPresentation}"
+                        QrCode="{Binding Payload.QrCode}">
+                        <key:HorizontalKeys.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding Command.NavigateToPaymentPageCommand}" NumberOfTapsRequired="1" />
+                            <TapGestureRecognizer Command="{Binding Command.CopyKeyCommand}" NumberOfTapsRequired="2" />
+                        </key:HorizontalKeys.GestureRecognizers>
+                    </key:HorizontalKeys>
 
-                    </DataTemplate>
-                </CarouselView.ItemTemplate>
-            </CarouselView>
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
 
-            <IndicatorView
-                x:Name="indicatorView"
-                Margin="5"
-                IsVisible="{Binding PixKeyList, Converter={StaticResource HasDataIfMore}, Mode=TwoWay}" />
+        <IndicatorView
+            x:Name="indicatorView"
+            Margin="5"
+            IsVisible="{Binding PixKeyList, Converter={StaticResource HasDataIfMore}}" />
 
-        </StackLayout>
 
         <!--  Actions  -->
         <CollectionView
             HeightRequest="140"
-            IsVisible="{Binding PixKeyList, Converter={StaticResource HasDataConverter}}"
             ItemsSource="{Binding CurrentPixKeyActions}"
             SelectedItem="{Binding SelectedAction}"
             SelectionChangedCommand="{Binding ExecuteActionCommand}"
@@ -103,21 +100,13 @@
 
         </CollectionView>
 
-        <StackLayout>
 
+        <templates:TemplateAction
+            Title="Compartilhar Todas"
+            Icon="{x:Static icons:FontAwesomeSolid.Share}"
+            IsVisible="{Binding PixKeyList, Converter={StaticResource HasDataConverter}}"
+            TapCommand="{Binding ShareAllCommand}" />
 
-            <templates:TemplateAction
-                Title="Adicionar Nova"
-                Icon="{x:Static icons:FontAwesomeSolid.PlusCircle}"
-                TapCommand="{Binding NavigateToAddNewKeyPageCommand}" />
-
-            <templates:TemplateAction
-                Title="Compartilhar Todas"
-                Icon="{x:Static icons:FontAwesomeSolid.Share}"
-                IsVisible="{Binding PixKeyList, Converter={StaticResource HasDataConverter}}"
-                TapCommand="{Binding ShareAllCommand}" />
-
-        </StackLayout>
         <!--<Grid Style="{DynamicResource styleGridActionChevronRight}" IsVisible="{Binding PixKeyList, Converter={StaticResource HasDataConverter}}">
 
                     <Grid.GestureRecognizers>
