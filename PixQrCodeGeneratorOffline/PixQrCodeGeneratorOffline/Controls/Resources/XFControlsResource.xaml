@@ -65,7 +65,7 @@
     </Style>
 
     <Style TargetType="StackLayout">
-        <Setter Property="Spacing" Value="0" />
+        <Setter Property="Spacing" Value="8" />
     </Style>
 
 </ResourceDictionary>

@@ -4,13 +4,12 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:collections="clr-namespace:PixQrCodeGeneratorOffline.Views.Collections"
-    xmlns:content="clr-namespace:PixQrCodeGeneratorOffline.Views.Content"
     xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon"
     xmlns:templates="clr-namespace:PixQrCodeGeneratorOffline.Templates"
     xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
     x:DataType="vm:DashboardViewModel">
 
-    <StackLayout>
+    <StackLayout Spacing="0">
 
         <collections:BillingSaveHorizontalCollectionView />
 
@@ -21,8 +20,5 @@
             TapCommand="{Binding RemoveAllBillingCommand}" />
 
     </StackLayout>
-
-
-    <!--<content:PanelLoadView IsVisible="{Binding CurrentDashboardLoadInfo.IsLoadBilling}" />-->
 
 </Grid>

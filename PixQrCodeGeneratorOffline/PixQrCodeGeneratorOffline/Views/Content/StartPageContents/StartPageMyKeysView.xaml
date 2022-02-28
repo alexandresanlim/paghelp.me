@@ -35,7 +35,7 @@
         HeightRequest="50"
         VerticalOptions="Start" />
 
-    <StackLayout>
+    <StackLayout Spacing="0">
 
         <CarouselView
             CurrentItem="{Binding CurrentPixKey}"

@@ -1,5 +1,4 @@
-﻿using AsyncAwaitBestPractices;
-using PixQrCodeGeneratorOffline.Extention;
+﻿using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.ViewModels.Base;
 using System;
 using Xamarin.Forms;
@@ -50,11 +49,6 @@ namespace PixQrCodeGeneratorOffline.Views
                 var vm = (DashboardViewModelBase)tabbed.CurrentPage.BindingContext;
                 vm.LoadHideValue();
             }
-
-            //else
-            //{
-            //    App.LoadTheme();
-            //}
         }
     }
 }

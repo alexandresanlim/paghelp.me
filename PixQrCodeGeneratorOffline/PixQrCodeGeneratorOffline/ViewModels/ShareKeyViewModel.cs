@@ -12,7 +12,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
     {
         public ICommand LoadDataCommand => new Command(() => LoadData());
 
-        public IAsyncCommand ShareCommand => new AsyncCommand(Share);
+        public ICommand ShareCommand => new Command(Share);
 
         public IAsyncCommand CopyCommand => new AsyncCommand(Copy);
 
@@ -49,16 +49,9 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
         }
 
-        private async Task Share()
-        {
-            await _pixKeyService.ShareAllKeys(PreviewText);
-            //await _externalActionService.ShareText(PreviewText);
-        }
+        private void Share() => _pixKeyService.ShareAllKeys(PreviewText);
 
-        private async Task Copy()
-        {
-            await _externalActionService.CopyText(PreviewText);
-        }
+        private async Task Copy() => await _externalActionService.CopyText(PreviewText);
 
         private ObservableCollection<PixKey> _pixKeyList;
         public ObservableCollection<PixKey> PixKeyList

@@ -84,7 +84,7 @@ namespace PixQrCodeGeneratorOffline.Models.Services
         public async Task NavigateToShareAllKeys(ObservableCollection<PixKey> pixkeyList) =>
             await Shell.Current.Navigation.PushAsync(new ShareKeyPage(pixkeyList));
 
-        public async Task ShareAllKeys(string info)
+        public void ShareAllKeys(string info)
         {
             try
             {

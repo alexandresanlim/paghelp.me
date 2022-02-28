@@ -14,10 +14,5 @@ namespace PixQrCodeGeneratorOffline.Views
 
             BindingContext = _viewModel = new DashboardViewModel();
         }
-
-        //protected override void OnAppearing()
-        //{
-        //    _viewModel.LoadDataCommand.ExecuteAsync().SafeFireAndForget();
-        //}
     }
 }

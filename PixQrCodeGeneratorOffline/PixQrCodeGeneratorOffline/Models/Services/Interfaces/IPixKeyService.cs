@@ -23,7 +23,7 @@ namespace PixQrCodeGeneratorOffline.Models.Services.Interfaces
 
         Task NavigateToShareAllKeys(ObservableCollection<PixKey> pixkeyList);
 
-        Task ShareAllKeys(string info);
+        void ShareAllKeys(string info);
 
         Task<bool> RemoveAll(bool isContact = false);
 
