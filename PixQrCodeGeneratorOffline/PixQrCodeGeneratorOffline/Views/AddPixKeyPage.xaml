@@ -35,7 +35,7 @@
 
     <ContentPage.Content>
 
-        <Grid RowDefinitions="*, auto, 250" RowSpacing="0">
+        <Grid RowDefinitions="*, auto, 300" RowSpacing="0">
 
             <StackLayout Grid.Row="0" BackgroundColor="Transparent">
 

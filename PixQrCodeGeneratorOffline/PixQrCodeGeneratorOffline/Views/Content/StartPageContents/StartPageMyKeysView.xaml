@@ -44,7 +44,8 @@
             HeightRequest="142"
             IndicatorView="indicatorView"
             ItemsSource="{Binding PixKeyList}"
-            PeekAreaInsets="20,0">
+            PeekAreaInsets="20,0"
+            PropertyChanged="CarouselView_PropertyChanged">
 
             <CarouselView.ItemTemplate>
                 <DataTemplate x:DataType="models:PixKey">
@@ -70,12 +71,11 @@
 
         <IndicatorView
             x:Name="indicatorView"
-            Margin="5"
+            Margin="8"
             IsVisible="{Binding PixKeyList, Converter={StaticResource HasDataIfMore}}" />
 
-
         <!--  Actions  -->
-        <CollectionView
+        <controls:CustomCollectionView
             HeightRequest="140"
             ItemsSource="{Binding CurrentPixKeyActions}"
             SelectedItem="{Binding SelectedAction}"
@@ -98,13 +98,12 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
 
-        </CollectionView>
+        </controls:CustomCollectionView>
 
 
         <templates:TemplateAction
             Title="Compartilhar Todas"
             Icon="{x:Static icons:FontAwesomeSolid.Share}"
-            IsVisible="{Binding PixKeyList, Converter={StaticResource HasDataConverter}}"
             TapCommand="{Binding ShareAllCommand}" />
 
         <!--<Grid Style="{DynamicResource styleGridActionChevronRight}" IsVisible="{Binding PixKeyList, Converter={StaticResource HasDataConverter}}">

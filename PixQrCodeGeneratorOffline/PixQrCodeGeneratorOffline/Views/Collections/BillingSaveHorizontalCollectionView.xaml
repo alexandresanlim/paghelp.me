@@ -53,10 +53,10 @@
 
             <controls:CustomCollectionView.ItemTemplate>
                 <DataTemplate x:DataType="models:PixPayload">
-                    <StackLayout Padding="5,0,0,0">
+                    <StackLayout Padding="4,0,0,0">
                         <Frame
                             BackgroundColor="{DynamicResource foreground_page}"
-                            CornerRadius="5"
+                            CornerRadius="4"
                             VerticalOptions="FillAndExpand"
                             WidthRequest="225">
                             <Frame.GestureRecognizers>
@@ -73,8 +73,9 @@
 
                                 <StackLayout
                                     Grid.Column="1"
-                                    Padding="0,0,8,0"
-                                    VerticalOptions="Center">
+                                    Padding="0,16,8,4"
+                                    VerticalOptions="FillAndExpand">
+
                                     <Label
                                         Grid.Row="0"
                                         FontFamily="{DynamicResource FontSemiBold}"
@@ -108,6 +109,7 @@
                                             Grid.Column="0"
                                             Glyph="{x:Static icons:FontAwesomeSolid.Key}"
                                             Style="{DynamicResource styleActionIcon}" />
+
                                         <Label
                                             Grid.Row="1"
                                             Grid.Column="1"
@@ -115,6 +117,7 @@
                                             MaxLines="1"
                                             Style="{DynamicResource styleActionText}"
                                             Text="{Binding PixKey.Viewer.KeyPresentation}" />
+
                                     </Grid>
 
                                     <Label
@@ -124,7 +127,8 @@
                                         FontFamily="{DynamicResource FontBold}"
                                         FontSize="{DynamicResource FontSizeLarge}"
                                         Text="{Binding PixCob.Viewer.ValuePresentation}"
-                                        TextColor="{Binding PixKey.FinancialInstitution.Institution.MaterialColor.PrimaryDark}" />
+                                        TextColor="{Binding PixKey.FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
+                                        VerticalOptions="EndAndExpand" />
 
                                 </StackLayout>
                             </Grid>

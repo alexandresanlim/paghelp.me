@@ -11,7 +11,7 @@
 
     <Frame
         BackgroundColor="{DynamicResource foreground_page}"
-        CornerRadius="5"
+        CornerRadius="4"
         VerticalOptions="FillAndExpand"
         WidthRequest="150">
 
@@ -19,7 +19,7 @@
 
             <BoxView
                 x:Name="xBoxView"
-                CornerRadius="5,0,0,55"
+                CornerRadius="4,0,0,55"
                 HeightRequest="65"
                 HorizontalOptions="Start"
                 VerticalOptions="Start"

@@ -115,13 +115,13 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         private void ExecuteAction()
         {
-            if (SelectedAction.Type == KeyActionType.None)
+            if (SelectedAction?.Type == KeyActionType.None)
                 return;
 
             switch (SelectedAction.Type)
             {
                 case KeyActionType.CreateBilling:
-                    CurrentPixKey.Command.NavigateToCreateBillingPageCommand.Execute(null);
+                    CurrentPixKey.Command.NavigateToCreateBillingPageCommand.ExecuteAsync();
                     break;
                 case KeyActionType.CopyKey:
                     CurrentPixKey.Command.CopyKeyCommand.ExecuteAsync();

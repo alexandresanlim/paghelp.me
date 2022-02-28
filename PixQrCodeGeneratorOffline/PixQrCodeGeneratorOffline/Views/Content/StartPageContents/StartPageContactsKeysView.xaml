@@ -21,9 +21,9 @@
         </ResourceDictionary>
     </Grid.Resources>
 
-    <StackLayout>
+    <StackLayout Spacing="0">
 
-        <CollectionView
+        <controls:CustomCollectionView
             Margin="4,0,0,0"
             HeightRequest="230"
             IsVisible="{Binding PixKeyListContact, Converter={StaticResource HasDataConverter}}"
@@ -38,7 +38,7 @@
 
                     <StackLayout Spacing="0">
                         <Frame
-                            Margin="2.5,0"
+                            Margin="4,0"
                             Padding="15"
                             BackgroundColor="{DynamicResource foreground_page}"
                             CornerRadius="5"
@@ -118,23 +118,21 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
 
-        </CollectionView>
-
-        <StackLayout>
-
-            <templates:TemplateAction
-                Title="Adicionar Nova"
-                Icon="{x:Static icons:FontAwesomeSolid.PlusCircle}"
-                TapCommand="{Binding NavigateToAddNewKeyPageContactCommand}" />
+        </controls:CustomCollectionView>
 
 
-            <templates:TemplateAction
-                Title="Excluir Todas"
-                Icon="{x:Static icons:FontAwesomeSolid.Trash}"
-                IsVisible="{Binding PixKeyListContact, Converter={StaticResource HasDataConverter}}"
-                TapCommand="{Binding RemoveAllKeyContactCommand}" />
 
-        </StackLayout>
+        <templates:TemplateAction
+            Title="Adicionar Nova"
+            Icon="{x:Static icons:FontAwesomeSolid.PlusCircle}"
+            TapCommand="{Binding NavigateToAddNewKeyPageContactCommand}" />
+
+
+        <templates:TemplateAction
+            Title="Excluir Todas"
+            Icon="{x:Static icons:FontAwesomeSolid.Trash}"
+            IsVisible="{Binding PixKeyListContact, Converter={StaticResource HasDataConverter}}"
+            TapCommand="{Binding RemoveAllKeyContactCommand}" />
 
     </StackLayout>
 

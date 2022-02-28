@@ -10,7 +10,9 @@
     Title="Cobrança"
     x:DataType="vm:PaymentViewModel"
     BackgroundColor="{DynamicResource background_page}"
-    Shell.BackgroundColor="{Binding CurrentInfo.Color.PrimaryDark}">
+    Shell.BackgroundColor="{Binding CurrentInfo.Color.PrimaryDark}"
+    Shell.NavBarIsVisible="True"
+    Shell.TabBarIsVisible="True">
 
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -27,7 +29,7 @@
                 <Setter Property="FontFamily" Value="{StaticResource FontSemiBold}" />
                 <Setter Property="TextColor" Value="{Binding CurrentInfo.Color.TextOnPrimary}" />
                 <Setter Property="VerticalOptions" Value="EndAndExpand" />
-                <Setter Property="Margin" Value="0,5,0,0" />
+                <Setter Property="Margin" Value="0,4,0,0" />
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
@@ -54,18 +56,24 @@
                             Text="{Binding CurrentInfo.HelpPhrase}"
                             TextColor="{DynamicResource textSecondary}" />
 
-                        <qr:QRCode
-                            Content="{Binding CurrentPaylodBase.QrCode}"
-                            HeightRequest="300"
+                        <Frame
+                            Padding="16"
+                            BorderColor="{Binding CurrentInfo.Color.PrimaryDark}"
                             HorizontalOptions="CenterAndExpand"
-                            VerticalOptions="CenterAndExpand"
-                            WidthRequest="300">
+                            IsClippedToBounds="True"
+                            VerticalOptions="CenterAndExpand">
 
-                            <qr:QRCode.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:PaymentViewModel}}, Path=SharePayloadCommand}" />
-                            </qr:QRCode.GestureRecognizers>
+                            <qr:QRCode
+                                Content="{Binding CurrentPaylodBase.QrCode}"
+                                HeightRequest="300"
+                                WidthRequest="300">
 
-                        </qr:QRCode>
+                                <qr:QRCode.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:PaymentViewModel}}, Path=SharePayloadCommand}" />
+                                </qr:QRCode.GestureRecognizers>
+
+                            </qr:QRCode>
+                        </Frame>
 
                     </StackLayout>
 
@@ -103,8 +111,9 @@
 
             <StackLayout
                 Grid.Row="1"
-                Padding="10"
-                BackgroundColor="{Binding CurrentInfo.Color.PrimaryDark}">
+                Padding="8"
+                BackgroundColor="{Binding CurrentInfo.Color.PrimaryDark}"
+                Spacing="8">
 
                 <StackLayout.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding ChangeIsActionVisibleCommand}" />
@@ -134,7 +143,7 @@
                     </controls:CustomIcon>
                 </StackLayout>
 
-                <Frame Padding="10" BackgroundColor="{Binding CurrentInfo.Color.Primary}">
+                <Frame Padding="8" BackgroundColor="{Binding CurrentInfo.Color.Primary}">
                     <Label
                         FontSize="{StaticResource FontSizeMicro}"
                         LineBreakMode="TailTruncation"
@@ -150,7 +159,7 @@
                             <TapGestureRecognizer Command="{Binding CurrentPaylodBase.Commands.ShareCommand}" />
                         </Frame.GestureRecognizers>
 
-                        <StackLayout Padding="10">
+                        <StackLayout Padding="8">
                             <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.ShareSquare}" Style="{StaticResource StyleActionIcon}" />
 
                             <Label Style="{StaticResource StyleActionTitle}" Text="Compartilhar" />
@@ -164,7 +173,7 @@
                             <TapGestureRecognizer Command="{Binding CurrentPaylodBase.Commands.ShareOnWhatsAppCommand}" />
                         </Frame.GestureRecognizers>
 
-                        <StackLayout Padding="10">
+                        <StackLayout Padding="8">
                             <controls:CustomIcon
                                 Glyph="{x:Static icons:FontAwesomeBrands.Whatsapp}"
                                 IconType="brand"
@@ -181,7 +190,7 @@
                             <TapGestureRecognizer Command="{Binding CurrentPaylodBase.Commands.CopyCommand}" />
                         </Frame.GestureRecognizers>
 
-                        <StackLayout Padding="10">
+                        <StackLayout Padding="8">
                             <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Copy}" Style="{StaticResource StyleActionIcon}" />
 
                             <Label Style="{StaticResource StyleActionTitle}" Text="Copiar" />

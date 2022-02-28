@@ -119,10 +119,11 @@
 
                     <templates:TemplateAction
                         Title="Adicionar Nova"
+                        Margin="8,8,8,0"
                         Icon="{x:Static icons:FontAwesomeSolid.PlusCircle}"
                         TapCommand="{Binding NavigateToAddNewKeyPageCommand}" />
 
-                    <content:DivisionView Margin="0,10,0,0" />
+                    <content:DivisionView Margin="0,8,0,0" />
 
                     <!--  //////////////////////////////////////////////////////////////////////////////////////////////////////////////  -->
 
@@ -168,7 +169,7 @@
 
                     <!--  //////////////////////////////////////////////////////////////////////////////////////////////////////////////  -->
 
-                    <Grid Padding="0,0,10,0" ColumnDefinitions="*, auto">
+                    <Grid Padding="0,0,8,0" ColumnDefinitions="*, auto">
 
                         <Grid.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding NavigateToGuidCommand}" />

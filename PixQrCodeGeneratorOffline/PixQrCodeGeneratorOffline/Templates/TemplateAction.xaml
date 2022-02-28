@@ -5,7 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:content="clr-namespace:PixQrCodeGeneratorOffline.Views.Content"
     xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
-    Margin="5,0"
+    Margin="8,8,8,0"
     Padding="10"
     BackgroundColor="{DynamicResource foreground_page}"
     CornerRadius="5">
@@ -15,8 +15,8 @@
 
             <Style x:Key="styleGridActionChevronRight" TargetType="Grid">
                 <Setter Property="ColumnDefinitions" Value="auto,*, auto" />
-                <Setter Property="Padding" Value="10" />
-                <Setter Property="ColumnSpacing" Value="15" />
+                <Setter Property="Padding" Value="8" />
+                <Setter Property="ColumnSpacing" Value="16" />
             </Style>
 
             <Style x:Key="styleGridActionChevronIcon" TargetType="controls:CustomIcon">
@@ -42,13 +42,13 @@
 
     <Grid Style="{DynamicResource styleGridActionChevronRight}">
 
-
-
         <controls:CustomIcon x:Name="xIcon" Style="{DynamicResource styleGridActionChevronIcon}" />
+
         <Label
             x:Name="xTitle"
             Style="{DynamicResource styleGridActionTitle}"
             Text="Adicionar Nova" />
+
         <content:ChevronRightView Grid.Column="2" />
 
     </Grid>

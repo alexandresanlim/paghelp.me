@@ -15,8 +15,7 @@
         <collections:BillingSaveHorizontalCollectionView />
 
         <templates:TemplateAction
-            Title="Apagar Todas"
-            Margin="5,0"
+            Title="Excluir Todas"
             Icon="{x:Static icons:FontAwesomeSolid.Trash}"
             IsVisible="{Binding BillingSaveList, Converter={StaticResource HasDataConverter}}"
             TapCommand="{Binding RemoveAllBillingCommand}" />
