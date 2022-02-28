@@ -52,7 +52,7 @@
         <Setter Property="Margin" Value="10,0,10,10" />
         <Setter Property="BackgroundColor" Value="{DynamicResource primaryDark}" />
         <Setter Property="BorderColor" Value="Transparent" />
-        <Setter Property="CornerRadius" Value="5" />
+        <Setter Property="CornerRadius" Value="4" />
         <Setter Property="TextColor" Value="{DynamicResource textOnPrimary}" />
         <Setter Property="FontFamily" Value="{DynamicResource FontBold}" />
         <Setter Property="Visual" Value="Material" />
