@@ -24,7 +24,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public IAsyncCommand SendAMessageCommand => new AsyncCommand(SendAMessageAsync);
 
-        public IAsyncCommand OpenStoreCommand => new AsyncCommand(OpenStoreAsync);
+        public ICommand OpenStoreCommand => new Command(OpenStoreAsync);
 
         #endregion
 
@@ -65,11 +65,11 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
         }
 
-        private async Task OpenStoreAsync()
+        private void OpenStoreAsync()
         {
             try
             {
-                await App.OpenAppInStore();
+                App.OpenAppInStore();
             }
             catch (Exception e)
             {

@@ -1,4 +1,5 @@
 ﻿using PixQrCodeGeneratorOffline.Style;
+using Plugin.StoreReview;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -92,19 +93,7 @@ namespace PixQrCodeGeneratorOffline
 #endif
         }
 
-        public static async Task OpenAppInStore()
-        {
-            var supportsUri = await Launcher.CanOpenAsync("market://");
-
-            if (supportsUri)
-                await Launcher.OpenAsync(new Uri("market://details?id=" + Info.PackageName));
-
-            else
-            {
-                var storeLink = Device.RuntimePlatform == Device.Android ? Info.GooglePlayLink : Info.AppStoreLink;
-                await Launcher.OpenAsync(new Uri(storeLink));
-            }
-        }
+        public static void OpenAppInStore() => CrossStoreReview.Current.OpenStoreReviewPage(Info.PackageName);
 
         public static async Task OpenAppIntagram()
         {

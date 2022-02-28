@@ -8,6 +8,7 @@ using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix.Extentions;
 using PixQrCodeGeneratorOffline.Services;
 using PixQrCodeGeneratorOffline.ViewModels.Base;
 using PixQrCodeGeneratorOffline.Views;
+using Plugin.StoreReview;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -85,6 +86,8 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 //LoadHideValue();
 
                 CurrentPixKeyActions = PixKeyAction.GetList();
+
+                await CrossStoreReview.Current.RequestReview(false);
             }
             catch (Exception e)
             {

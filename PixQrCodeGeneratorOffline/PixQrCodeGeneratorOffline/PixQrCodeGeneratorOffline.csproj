@@ -38,6 +38,7 @@
     <PackageReference Include="Microsoft.AppCenter.Crashes" Version="4.5.0" />
     <PackageReference Include="pix-payload-generator.net" Version="1.0.18" />
     <PackageReference Include="Plugin.Fingerprint" Version="2.1.5" />
+    <PackageReference Include="Plugin.StoreReview" Version="3.3.0" />
     <PackageReference Include="Xam.Forms.QRCode" Version="0.5.0" />  
     <PackageReference Include="Xamarin.Essentials" Version="1.7.1" />  
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2337" />
