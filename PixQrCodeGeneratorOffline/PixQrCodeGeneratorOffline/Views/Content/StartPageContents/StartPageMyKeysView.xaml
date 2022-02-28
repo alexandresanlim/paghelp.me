@@ -44,8 +44,7 @@
             HeightRequest="142"
             IndicatorView="indicatorView"
             ItemsSource="{Binding PixKeyList}"
-            PeekAreaInsets="20,0"
-            PropertyChanged="CarouselView_PropertyChanged">
+            PeekAreaInsets="20,0">
 
             <CarouselView.ItemTemplate>
                 <DataTemplate x:DataType="models:PixKey">
