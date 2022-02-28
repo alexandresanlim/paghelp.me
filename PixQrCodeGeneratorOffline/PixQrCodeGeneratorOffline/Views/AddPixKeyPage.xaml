@@ -134,8 +134,10 @@
                                     <Frame IsVisible="{Binding IsInstitution, Converter={StaticResource InvertedBooleanConverter}}" Style="{StaticResource styleInputFrame}">
                                         <Entry
                                             Placeholder="{Binding Placeholder}"
+                                            PlaceholderColor="{DynamicResource textOnPrimary}"
                                             ReturnCommand="{Binding Source={RelativeSource AncestorType={x:Type vm:AddPixKeyViewModel}}, Path=InputNextCommand}"
-                                            Text="{Binding Value}" />
+                                            Text="{Binding Value}"
+                                            TextColor="{DynamicResource textOnPrimary}" />
                                     </Frame>
 
                                     <Frame IsVisible="{Binding IsInstitution}" Style="{StaticResource styleInputFrame}">
@@ -147,12 +149,12 @@
                                                 FontSize="{DynamicResource FontSizeMedium}"
                                                 HorizontalOptions="FillAndExpand"
                                                 Text="{Binding Placeholder}"
-                                                TextColor="{DynamicResource textSecondary}"
+                                                TextColor="{DynamicResource textOnPrimary}"
                                                 VerticalOptions="CenterAndExpand" />
                                             <controls:CustomIcon
                                                 FontSize="{DynamicResource FontSizeMedium}"
                                                 Glyph="{x:Static icons:FontAwesomeSolid.ChevronDown}"
-                                                TextColor="{DynamicResource textSecondary}"
+                                                TextColor="{DynamicResource textOnPrimary}"
                                                 VerticalOptions="CenterAndExpand" />
                                         </StackLayout>
                                     </Frame>
@@ -163,18 +165,16 @@
                         </CarouselView.ItemTemplate>
                     </CarouselView>
 
-                    <StackLayout>
 
-                        <Button
-                            Command="{Binding InputNextCommand}"
-                            IsVisible="{Binding ShowSaveButton, Converter={StaticResource InvertedBooleanConverter}}"
-                            Text="Próximo" />
-                        <Button
-                            Command="{Binding SaveCommand}"
-                            IsVisible="{Binding ShowSaveButton}"
-                            Text="Salvar" />
+                    <Button
+                        Command="{Binding InputNextCommand}"
+                        IsVisible="{Binding ShowSaveButton, Converter={StaticResource InvertedBooleanConverter}}"
+                        Text="Próximo" />
+                    <Button
+                        Command="{Binding SaveCommand}"
+                        IsVisible="{Binding ShowSaveButton}"
+                        Text="Salvar" />
 
-                    </StackLayout>
 
                 </StackLayout>
 
