@@ -36,6 +36,9 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 };
 
                 _eventService.SendEvent("Sugestão", Services.EventType.FEEDBACK, nameof(LikingViewModel), dic);
+
+                await CrossStoreReview.Current.RequestReview(true);
+
                 DialogService.Toast("Agradecemos o seu feedback! Mensagem enviada para os desenvolvedores.", _secondsToToast);
             }
 
