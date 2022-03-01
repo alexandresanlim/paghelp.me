@@ -120,9 +120,6 @@
     <EmbeddedResource Update="Views\BillingSaveListPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Collections\BillingSaveHorizontalCollectionView.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Update="Views\Content\BillingSaveListView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -163,6 +160,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\GuidePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\LikingPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\PaymentMethods\Crypto\AddCryptoKeyPage.xaml">
@@ -210,5 +210,6 @@
     <Folder Include="Models\Validation\Services\PaymentMethods\Crypto\" />
     <Folder Include="Models\Viewer\PaymentMethods\Interfaces\" />
     <Folder Include="Models\Viewer\PaymentMethods\Pix\" />
+    <Folder Include="Views\Collections\" />
   </ItemGroup>
 </Project>

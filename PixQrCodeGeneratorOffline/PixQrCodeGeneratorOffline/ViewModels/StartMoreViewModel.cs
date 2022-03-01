@@ -3,8 +3,6 @@ using PixQrCodeGeneratorOffline.Base.ViewModels;
 using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Views;
 using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -22,7 +20,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public ICommand LoadDataCommand => new Command(LoadData);
 
-        public IAsyncCommand SendAMessageCommand => new AsyncCommand(SendAMessageAsync);
+        public IAsyncCommand SendAMessageCommand => new AsyncCommand(NavigateToLikingPage);
 
         public ICommand OpenStoreCommand => new Command(OpenStoreAsync);
 
@@ -40,28 +38,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             {
                 CurrentStore = "Avaliar na App Store";
                 CurrentStoreIcon = FontAwesomeBrands.AppStore;
-            }
-        }
-
-        private async Task SendAMessageAsync()
-        {
-            var text = await DialogService.PromptAsync("Sugestão, elogio ou crítica? Fale para nós o que você está achando:", "Feedback", "Enviar", "Cancelar");
-
-            if (text.Ok && !string.IsNullOrWhiteSpace(text?.Text))
-            {
-                var dic = new Dictionary<string, string>
-                {
-                    { "Texto: ", text.Text }
-                };
-
-                var contact = await DialogService.PromptAsync("Queremos te responder :)", "Qual o seu e-mail?", "Enviar", "Não quero informar");
-
-                if (contact.Ok && !string.IsNullOrWhiteSpace(contact?.Text))
-                    dic.Add("Contato", contact.Text);
-
-                _eventService.SendEvent("Sugestão: ", Services.EventType.FEEDBACK, nameof(StartMoreViewModel), dic);
-
-                DialogService.Toast("Mensagem enviada com sucesso! Obrigado.");
             }
         }
 

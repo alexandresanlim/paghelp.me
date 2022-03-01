@@ -2,13 +2,13 @@
 using AsyncAwaitBestPractices;
 using AsyncAwaitBestPractices.MVVM;
 using PixQrCodeGeneratorOffline.Extention;
+using PixQrCodeGeneratorOffline.Helpers;
 using PixQrCodeGeneratorOffline.Models;
 using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix;
 using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix.Extentions;
 using PixQrCodeGeneratorOffline.Services;
 using PixQrCodeGeneratorOffline.ViewModels.Base;
 using PixQrCodeGeneratorOffline.Views;
-using Plugin.StoreReview;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -51,23 +51,14 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         {
             LoadDataCommand.ExecuteAsync().SafeFireAndForget();
 
-            //Connectivity.ConnectivityChanged += Connectivity_ConnectivityChanged;
-
             DashboardVM = this;
         }
 
-        //private void Connectivity_ConnectivityChanged(object sender, ConnectivityChangedEventArgs e)
-        //{
-        //    LoadConnectionIcon();
-        //}
-
-        public async Task LoadData()
+        private async Task LoadData()
         {
             try
             {
                 IsBusy = true;
-
-                ResetProps();
 
                 LoadPixKey();
 
@@ -79,15 +70,13 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 await CheckHasAKeyOnClipboard();
 
-                //await LoadNews();
-
-                //await NavigateToBenefitsPage();
-
-                //LoadHideValue();
-
                 CurrentPixKeyActions = PixKeyAction.GetList();
 
-                await CrossStoreReview.Current.RequestReview(false);
+                if (!Preference.LikingAppMsgWasShowed && (PixKeyList?.Count > 0 || PixKeyListContact?.Count > 0) && Preference.AreYouLikingAppMsgCount >= Constants.COUNTER_TO_SHOWED_LIKING_PAGE)
+                {
+                    _preferenceService.ChangeLikingAppMsgWasShowed(true);
+                    await WaitAndExecute(5000, async () => await NavigateToLikingPage());
+                }
             }
             catch (Exception e)
             {
@@ -107,12 +96,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public void LoadBilling() => BillingSaveList = _pixPayloadService?
             .GetAll()?.ToObservableCollection() ?? new ObservableCollection<PixPayload>();
-
-        private void ResetProps()
-        {
-            CurrentDashboardLoadInfo = new DashboardLoadInfo();
-            CurrentDashboardCustomInfo = new DashboardCustomInfo();
-        }
 
         private void ChangeSelectedPixKey(PixKey pixkey) => MainThread.BeginInvokeOnMainThread(() => CurrentPixKey = pixkey);
 
@@ -203,15 +186,12 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         {
             if (!Preference.ShowNews || Connectivity.NetworkAccess != NetworkAccess.Internet)
             {
-                CurrentDashboardLoadInfo.IsLoadNews = false;
                 CurrentFeedList = new ObservableCollection<Feed>();
                 return;
             }
 
             try
             {
-                CurrentDashboardLoadInfo.IsLoadNews = true;
-
                 FeedFromService = FeedFromService?.Count > 0 ? FeedFromService : await _feedService.Get("https://news.google.com/rss/search?q=pix%20-fraude%20-golpista%20-golpistas%20-erro&hl=pt-BR&gl=BR&ceid=BR%3Apt-419");
 
                 CurrentFeedList = FeedFromService?.ToObservableCollection();
@@ -222,8 +202,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
             finally
             {
-                CurrentDashboardLoadInfo.IsLoadNews = false;
-
                 foreach (var item in CurrentFeedList)
                 {
                     var uri = await item.Link.GetImage();
@@ -233,29 +211,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 }
             }
         }
-
-        //private async Task NavigateToBenefitsPage()
-        //{
-        //    if (PixKeyList.Count > 0)
-        //        return;
-
-        //    try
-        //    {
-        //        DialogService.ShowLoading();
-
-        //        await Task.Delay(500);
-
-        //        await NavigateAsync(new BenefitsPage());
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        e.SendToLog();
-        //    }
-        //    finally
-        //    {
-        //        DialogService.HideLoading();
-        //    }
-        //}
 
         //private void LoadConnectionIcon()
         //{
@@ -320,20 +275,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             set => SetProperty(ref _currentFeedList, value);
         }
 
-        private DashboardLoadInfo _currentDashboardLoadInfo;
-        public DashboardLoadInfo CurrentDashboardLoadInfo
-        {
-            get => _currentDashboardLoadInfo;
-            set => SetProperty(ref _currentDashboardLoadInfo, value);
-        }
-
-        private DashboardCustomInfo _currentDashboardCustomInfo;
-        public DashboardCustomInfo CurrentDashboardCustomInfo
-        {
-            get => _currentDashboardCustomInfo;
-            set => SetProperty(ref _currentDashboardCustomInfo, value);
-        }
-
         private PixKeyAction _selectedAction;
         public PixKeyAction SelectedAction
         {
@@ -343,60 +284,5 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         #endregion
 
-    }
-
-    public class DashboardLoadInfo : Models.Base.NotifyObjectBase
-    {
-        private bool _isLoadMyKeys = true;
-        public bool IsLoadMyKeys
-        {
-            get => _isLoadMyKeys;
-            set => SetProperty(ref _isLoadMyKeys, value);
-        }
-
-        private bool _isLoadContactKeys = true;
-        public bool IsLoadContactKeys
-        {
-            get => _isLoadContactKeys;
-            set => SetProperty(ref _isLoadContactKeys, value);
-        }
-
-        private bool _isLoadBilling = true;
-        public bool IsLoadBilling
-        {
-            get => _isLoadBilling;
-            set => SetProperty(ref _isLoadBilling, value);
-        }
-
-        private bool _isLoadNews = true;
-        public bool IsLoadNews
-        {
-            get => _isLoadNews;
-            set => SetProperty(ref _isLoadNews, value);
-        }
-    }
-
-    public class DashboardCustomInfo : Models.Base.NotifyObjectBase
-    {
-        private string _connectionIcon;
-        public string ConnectionIcon
-        {
-            set => SetProperty(ref _connectionIcon, value);
-            get => _connectionIcon;
-        }
-
-        //private string _welcomeText;
-        //public string WelcomeText
-        //{
-        //    set => SetProperty(ref _welcomeText, value);
-        //    get => _welcomeText;
-        //}
-
-        //private string _welcomeSubtitleText;
-        //public string WelcomeSubtitleText
-        //{
-        //    set => SetProperty(ref _welcomeSubtitleText, value);
-        //    get => _welcomeSubtitleText;
-        //}
     }
 }

@@ -58,7 +58,9 @@
 
                         <Frame
                             Padding="16"
+                            BackgroundColor="{StaticResource background_page}"
                             BorderColor="{Binding CurrentInfo.Color.PrimaryDark}"
+                            CornerRadius="16"
                             HorizontalOptions="CenterAndExpand"
                             IsClippedToBounds="True"
                             VerticalOptions="CenterAndExpand">

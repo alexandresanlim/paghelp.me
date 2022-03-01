@@ -44,7 +44,8 @@
                 </StackLayout.GestureRecognizers>
 
                 <controls:CustomIcon
-                    Margin="10"
+                    Margin="16"
+                    FontSize="{StaticResource FontSizeLarge}"
                     Glyph="{x:Static icons:FontAwesomeSolid.TimesCircle}"
                     HorizontalOptions="End"
                     TextColor="White"

@@ -12,6 +12,7 @@ using PixQrCodeGeneratorOffline.Services;
 using PixQrCodeGeneratorOffline.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Style.Interfaces;
 using PixQrCodeGeneratorOffline.ViewModels;
+using PixQrCodeGeneratorOffline.Views;
 using Plugin.Fingerprint;
 using Plugin.Fingerprint.Abstractions;
 using System;
@@ -192,6 +193,13 @@ namespace PixQrCodeGeneratorOffline.Base.ViewModels
             {
                 e.SendToLog();
             }
+        }
+
+        public async Task NavigateToLikingPage() => await NavigateAsync(new LikingPage());
+
+        public async Task WaitAndExecute(int milisec, Action actionToExecute) 
+        { 
+            await Task.Delay(milisec); actionToExecute(); 
         }
 
         public ICommand CloseAdsCommand => new Command(() =>

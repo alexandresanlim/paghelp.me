@@ -26,7 +26,6 @@ namespace PixQrCodeGeneratorOffline
 {
     public partial class App : Application
     {
-
         public App()
         {
             InitializeComponent();
@@ -98,6 +97,7 @@ namespace PixQrCodeGeneratorOffline
         private void LoadConfig()
         {
             LoadPtBrCultureInfo();
+            LoadChangeAreYouLikingAppMsgCount();
             //LoadStatusBar();
             LoadPDVMode();
             LoadStyle();
@@ -123,6 +123,12 @@ namespace PixQrCodeGeneratorOffline
         private void LoadStyle()
         {
             App.LoadTheme();
+        }
+
+        private void LoadChangeAreYouLikingAppMsgCount()
+        {
+            var service = DependencyService.Get<IPreferenceService>();
+            service.ChangeAreYouLikingAppMsgCount();
         }
 
         protected override void OnSleep()
