@@ -20,15 +20,16 @@ namespace PixQrCodeGeneratorOffline.Droid
         protected override void OnResume()
         {
             base.OnResume();
-            Task startupWork = new Task(() => { StartApp(); });
-            startupWork.Start();
+            //Task startupWork = new Task(() => { StartApp(); });
+            //startupWork.Start();
+            StartApp();
         }
 
         // Prevent the back button from canceling the startup process
         public override void OnBackPressed() { }
 
         // Simulates background work that happens behind the splash screen
-        void StartApp()
+        private void StartApp()
         {
             //Log.Debug(TAG, "Performing some startup work that takes a bit of time.");
 

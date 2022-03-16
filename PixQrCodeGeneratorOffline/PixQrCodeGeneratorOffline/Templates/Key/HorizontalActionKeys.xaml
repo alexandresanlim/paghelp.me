@@ -39,7 +39,7 @@
                         Glyph="{x:Static icons:FontAwesomeSolid.Wifi}"
                         HorizontalOptions="EndAndExpand"
                         IsVisible="False"
-                        TextColor="White" />
+                        TextColor="{DynamicResource textPrimary}" />
                 </StackLayout>
 
                 <Label

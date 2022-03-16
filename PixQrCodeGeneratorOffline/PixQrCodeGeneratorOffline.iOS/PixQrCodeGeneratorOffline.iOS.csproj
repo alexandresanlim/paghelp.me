@@ -155,7 +155,7 @@
       <Version>2.1.5</Version>
     </PackageReference>
     <PackageReference Include="Plugin.StoreReview">
-      <Version>3.3.0</Version>
+      <Version>3.3.1</Version>
     </PackageReference>
     <PackageReference Include="Xam.Forms.QRCode">
       <Version>0.5.0</Version>

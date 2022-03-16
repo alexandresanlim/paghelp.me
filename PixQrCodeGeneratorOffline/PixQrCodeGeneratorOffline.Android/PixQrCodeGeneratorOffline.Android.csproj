@@ -82,7 +82,7 @@
       <Version>2.1.5</Version>
     </PackageReference>
     <PackageReference Include="Plugin.StoreReview">
-      <Version>3.3.0</Version>
+      <Version>3.3.1</Version>
     </PackageReference>
     <PackageReference Include="Xam.Forms.QRCode">
       <Version>0.5.0</Version>
@@ -167,7 +167,7 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties TriggeredFromHotReload="False" XamarinHotReloadUnhandledDeviceExceptionPixQrCodeGeneratorOfflineAndroidHideInfoBar="True" />
+      <UserProperties XamarinHotReloadUnhandledDeviceExceptionPixQrCodeGeneratorOfflineAndroidHideInfoBar="True" TriggeredFromHotReload="False" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>
