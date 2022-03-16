@@ -38,8 +38,13 @@ namespace PixQrCodeGeneratorOffline.Droid
             Acr.UserDialogs.UserDialogs.Init(this);
             MobileAds.Initialize(ApplicationContext);
             CrossFingerprint.SetCurrentActivityResolver(() => Platform.CurrentActivity);
-
+            ConfigureWindow();
             AppCenter.Start(App.Ids.AppCenter, typeof(Analytics), typeof(Crashes));
+        }
+
+        private void ConfigureWindow()
+        {
+            Window.SetSoftInputMode(Android.Views.SoftInput.AdjustResize);
         }
 
         private void StartAndroidDependency()
