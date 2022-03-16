@@ -1,8 +1,5 @@
 ﻿using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix.Enums;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix.Extentions
 {
@@ -36,5 +33,13 @@ namespace PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix.Extentions
                 return PixKeyType.NotFound;
             }
         }
+
+        public static bool IsValid(this PixKey pixKey) => pixKey != null && !string.IsNullOrWhiteSpace(pixKey?.Key);
+
+        public static bool HasKey(this PixKey pixkey) => !string.IsNullOrWhiteSpace(pixkey?.Key);
+
+        public static bool HasName(this PixKey pixKey) => !string.IsNullOrWhiteSpace(pixKey?.Name);
+
+        public static bool IsEdit(this PixKey pixKey) => !string.IsNullOrEmpty(pixKey?.Key);
     }
 }

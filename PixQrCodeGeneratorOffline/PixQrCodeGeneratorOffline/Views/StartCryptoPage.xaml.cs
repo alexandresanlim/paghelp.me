@@ -11,6 +11,7 @@ namespace PixQrCodeGeneratorOffline.Views
         public StartCryptoPage()
         {
             InitializeComponent();
+
             BindingContext = dashboardCryptoViewModel = new DashboardCryptoViewModel();
         }
     }

@@ -1,6 +1,7 @@
 ﻿using Acr.UserDialogs;
 using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models.PaymentMethods.Crypto;
+using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix.Extentions;
 using PixQrCodeGeneratorOffline.Models.Repository.PaymentMethods.Crypto.Interfaces;
 using PixQrCodeGeneratorOffline.Models.Services.PaymentMethods.Crypto.Interfaces;
 using PixQrCodeGeneratorOffline.Services;
@@ -166,20 +167,18 @@ namespace PixQrCodeGeneratorOffline.Models.Services.PaymentMethods.Crypto
             }
         }
 
-        public async Task NavigateToEdit(CryptoKey pixKey, bool isContact = false)
+        public async Task NavigateToEdit(CryptoKey cryptoKey, bool isContact = false)
         {
-            if (!pixKey.Validation.IsValid)
+            if (!cryptoKey.IsValid())
                 return;
 
             try
             {
                 DialogService.ShowLoading("");
 
-                await Task.Delay(500);
-
-                await Shell.Current.Navigation.PushAsync(new AddCryptoKeyPage(pixKey, isContact));
+                await Shell.Current.Navigation.PushAsync(new AddCryptoKeyPage(cryptoKey, isContact));
             }
-            catch (System.Exception e)
+            catch (Exception e)
             {
                 e.SendToLog();
             }

@@ -82,8 +82,8 @@ namespace PixQrCodeGeneratorOffline.Models.Services
                 //Secondary = Color.FromHex("#00796b"),
                 TextOnPrimary = Color.FromHex("#ffffff"),
                 //TextOnSecondary = Color.FromHex("#00000"),
-                BackgroundPage = Color.FromHex("#000000"),
-                ForegroundPage = Color.FromHex("#121212"),
+                BackgroundPage = Color.FromHex("#121212"),
+                ForegroundPage = Color.FromHex("#222222"),
 
                 TextPrimary = Color.FromHex("#ffffff"),
                 TextSecondary = Color.WhiteSmoke,

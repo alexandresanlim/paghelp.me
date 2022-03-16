@@ -1,14 +1,19 @@
 ﻿using Acr.UserDialogs;
 using PixQrCodeGeneratorOffline.Extention;
+using PixQrCodeGeneratorOffline.Models.Commands;
+using PixQrCodeGeneratorOffline.Models.Commands.Interfaces;
 using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix;
 using PixQrCodeGeneratorOffline.Models.Repository.Interfaces;
 using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
+using PixQrCodeGeneratorOffline.Models.Viewer;
+using PixQrCodeGeneratorOffline.Models.Viewer.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Services;
 using PixQrCodeGeneratorOffline.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Views;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 using Xamarin.Forms;
@@ -21,20 +26,34 @@ namespace PixQrCodeGeneratorOffline.Models.Services
 
         private readonly IExternalActionService _externalActionService;
 
+        private readonly IPixKeyViewerService _pixKeyViewerService;
+
+        private readonly IPixPayloadService _pixPayloadService;
+
+        private readonly IPixKeyCommand _pixKeyCommand;
+
         public PixKeyService()
         {
             _pixKeyRepository = DependencyService.Get<IPixKeyRepository>();
             _externalActionService = DependencyService.Get<IExternalActionService>();
-        }
-
-        public bool IsValid(PixKey pixKey)
-        {
-            return !string.IsNullOrWhiteSpace(pixKey?.Key);
+            _pixKeyViewerService = DependencyService.Get<IPixKeyViewerService>();
+            _pixPayloadService = DependencyService.Get<IPixPayloadService>();
+            _pixKeyCommand = DependencyService.Get<IPixKeyCommand>();
         }
 
         public List<PixKey> GetAll(bool isContact = false)
         {
-            return _pixKeyRepository.GetAll(x => x.IsContact == isContact);
+            var list = _pixKeyRepository.GetAll(x => x.IsContact == isContact)
+                .OrderBy(x => x?.FinancialInstitution?.Name);
+
+            foreach (var pixKey in list)
+            {
+                pixKey.Viewer = _pixKeyViewerService?.Create(pixKey) ?? new PixKeyViewer();
+                pixKey.Payload = _pixPayloadService?.Create(pixKey) ?? new PixPayload();
+                pixKey.Command = _pixKeyCommand?.Create(pixKey) ?? new PixKeyCommand();
+            }
+
+            return list.ToList();
         }
 
         public List<PixKey> GetAll(Expression<Func<PixKey, bool>> predicate)
@@ -62,36 +81,14 @@ namespace PixQrCodeGeneratorOffline.Models.Services
             return _pixKeyRepository.Remove(item);
         }
 
-        public async Task NavigateToShareAllKeys(ObservableCollection<PixKey> pixkeyList)
+        public async Task NavigateToShareAllKeys(ObservableCollection<PixKey> pixkeyList) =>
+            await Shell.Current.Navigation.PushAsync(new ShareKeyPage(pixkeyList));
+
+        public void ShareAllKeys(string info)
         {
             try
             {
                 DialogService.ShowLoading("");
-
-                await Task.Delay(500);
-
-                await Shell.Current.Navigation.PushAsync(new ShareKeyPage(pixkeyList));
-            }
-            catch (System.Exception e)
-            {
-                e.SendToLog();
-            }
-            finally
-            {
-                _eventService.SendEvent("Navegou para página de compartilhar todas as chaves", EventType.NAVIGATION);
-
-                DialogService.HideLoading();
-            }
-        }
-
-        public async Task ShareAllKeys(string info)
-        {
-            try
-            {
-                DialogService.ShowLoading("");
-
-                await Task.Delay(500);
-
 
                 var options = new List<ActionSheetOption>()
                     {
@@ -164,77 +161,7 @@ namespace PixQrCodeGeneratorOffline.Models.Services
             }
         }
 
-        public async Task NavigateToEdit(PixKey pixKey, bool isContact = false)
-        {
-            if (!pixKey.Validation.IsValid)
-                return;
-
-            try
-            {
-                DialogService.ShowLoading("");
-
-                await Task.Delay(500);
-
-                await Shell.Current.Navigation.PushAsync(new AddPixKeyPage(pixKey, isContact));
-            }
-            catch (System.Exception e)
-            {
-                e.SendToLog();
-            }
-            finally
-            {
-                _eventService.SendEvent("Editou chave", EventType.UPDATE);
-
-                DialogService.HideLoading();
-            }
-        }
-
-        public async Task NavigateToAdd(bool isContact = false)
-        {
-            try
-            {
-                DialogService.ShowLoading("");
-
-                await Task.Delay(500);
-
-                await Shell.Current.Navigation.PushAsync(new AddPixKeyPage(null, isContact));
-            }
-            catch (System.Exception e)
-            {
-                e.SendToLog();
-            }
-            finally
-            {
-                _eventService.SendEvent("Navegou para adicionar nova chave", EventType.NAVIGATION);
-
-                DialogService.HideLoading();
-            }
-        }
-
-        //public async Task NavigateToAction(PixKey pixKey)
-        //{
-        //    if (!pixKey.Validation.IsValid)
-        //        return;
-
-        //    try
-        //    {
-        //        DialogService.ShowLoading("");
-
-        //        await Task.Delay(500);
-
-        //        await Shell.Current.Navigation.PushModalAsync(new PixKeyActionPage(pixKey));
-        //    }
-        //    catch (System.Exception e)
-        //    {
-        //        e.SendToLog();
-        //    }
-        //    finally
-        //    {
-        //        _eventService.SendEvent("Navegou para ação", EventType.NAVIGATION);
-
-        //        DialogService.HideLoading();
-        //    }
-        //}
+        public async Task NavigateToAdd(bool isContact = false) => await Shell.Current.Navigation.PushAsync(new AddPixKeyPage(null, isContact));
 
         private bool HasKeysValidated(List<PixKey> pisKeyList)
         {

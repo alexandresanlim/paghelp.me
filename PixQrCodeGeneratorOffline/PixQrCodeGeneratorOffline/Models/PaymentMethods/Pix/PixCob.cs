@@ -12,16 +12,11 @@ namespace PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix
     {
         private readonly IPixCobViewerService _pixCobViewerService;
 
-        private readonly IPixCobValidationService _pixCobValidationService;
-
         public PixCob()
         {
             _pixCobViewerService = DependencyService.Get<IPixCobViewerService>();
-            _pixCobValidationService = DependencyService.Get<IPixCobValidationService>();
         }
 
         public PixCobViewer Viewer => _pixCobViewerService?.Create(this) ?? new PixCobViewer();
-
-        public PixCobValidation Validation => _pixCobValidationService?.Create(this) ?? new PixCobValidation();
     }
 }

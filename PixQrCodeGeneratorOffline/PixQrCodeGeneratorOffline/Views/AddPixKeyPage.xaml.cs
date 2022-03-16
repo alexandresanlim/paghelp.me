@@ -14,17 +14,5 @@ namespace PixQrCodeGeneratorOffline.Views
 
             BindingContext = _viewModel = new AddPixKeyViewModel(pixKey, isContact);
         }
-
-        //protected override bool OnBackButtonPressed()
-        //{
-        //    _viewModel.BackButtonPressed();
-
-        //    return base.OnBackButtonPressed();
-        //}
-
-        //private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
-        //{
-        //    Shell.Current.SendBackButtonPressed();
-        //}
     }
 }

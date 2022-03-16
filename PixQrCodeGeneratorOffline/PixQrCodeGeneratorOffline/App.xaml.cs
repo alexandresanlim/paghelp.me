@@ -12,10 +12,6 @@ using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Models.Services.PaymentMethods.Crypto;
 using PixQrCodeGeneratorOffline.Models.Services.PaymentMethods.Crypto.Interfaces;
 using PixQrCodeGeneratorOffline.Models.Services.Viewer;
-using PixQrCodeGeneratorOffline.Models.Validation.Services;
-using PixQrCodeGeneratorOffline.Models.Validation.Services.Interfaces;
-using PixQrCodeGeneratorOffline.Models.Validation.Services.Interfaces.PaymentMethods.Crypto;
-using PixQrCodeGeneratorOffline.Models.Validation.Services.PaymentMethods.Crypto;
 using PixQrCodeGeneratorOffline.Models.Viewer.PaymentMethods.Crypto.Services;
 using PixQrCodeGeneratorOffline.Models.Viewer.PaymentMethods.Crypto.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Models.Viewer.Services;
@@ -30,7 +26,6 @@ namespace PixQrCodeGeneratorOffline
 {
     public partial class App : Application
     {
-
         public App()
         {
             InitializeComponent();
@@ -47,8 +42,6 @@ namespace PixQrCodeGeneratorOffline
             RegisterDependencyService();
             RegisterDependencyViewer();
             RegisterDependencyRepository();
-            RegisterDependencyValidation();
-            RegisterViewModelDependency();
             RegisterCommandDependency();
         }
 
@@ -85,19 +78,6 @@ namespace PixQrCodeGeneratorOffline
             DependencyService.Register<IPixPayloadRepository, PixPayloadRepository>();
         }
 
-        private void RegisterDependencyValidation()
-        {
-            DependencyService.Register<IFeedValidationService, FeedValidationService>();
-            DependencyService.Register<IPixKeyValidationService, PixKeyValidationService>();
-            DependencyService.Register<ICryptoKeyValidationService, CryptoKeyValidationService>();
-            DependencyService.Register<IPixCobValidationService, PixCobValidationService>();
-        }
-
-        private void RegisterViewModelDependency()
-        {
-            //DependencyService.RegisterSingleton<DashboardViewModel>(new DashboardViewModel());
-        }
-
         private void RegisterCommandDependency()
         {
             DependencyService.Register<IPixKeyCommand, PixKeyCommand>();
@@ -106,6 +86,7 @@ namespace PixQrCodeGeneratorOffline
             DependencyService.Register<IPayloadCommandBase, PayloadCommandBase>();
             DependencyService.Register<ICryptoPayloadCommand, CryptoPayloadCommand>();
             DependencyService.Register<IFeedCommand, FeedCommand>();
+            DependencyService.Register<ICustomAsyncCommand, CustomAsyncCommand>();
         }
 
         protected override void OnStart()
@@ -116,6 +97,7 @@ namespace PixQrCodeGeneratorOffline
         private void LoadConfig()
         {
             LoadPtBrCultureInfo();
+            LoadChangeAreYouLikingAppMsgCount();
             //LoadStatusBar();
             LoadPDVMode();
             LoadStyle();
@@ -141,6 +123,12 @@ namespace PixQrCodeGeneratorOffline
         private void LoadStyle()
         {
             App.LoadTheme();
+        }
+
+        private void LoadChangeAreYouLikingAppMsgCount()
+        {
+            var service = DependencyService.Get<IPreferenceService>();
+            service.ChangeAreYouLikingAppMsgCount();
         }
 
         protected override void OnSleep()

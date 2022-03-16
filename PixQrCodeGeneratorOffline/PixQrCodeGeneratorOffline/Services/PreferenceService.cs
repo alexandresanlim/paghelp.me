@@ -1,4 +1,5 @@
 ﻿using PixQrCodeGeneratorOffline.Extention;
+using PixQrCodeGeneratorOffline.Helpers;
 using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Services.Interfaces;
 using Plugin.Fingerprint;
@@ -123,6 +124,35 @@ namespace PixQrCodeGeneratorOffline.Services
             {
                 Preference.CryptoAble = !Preference.CryptoAble;
                 _eventService.SendEvent($"Mudou crypto habilitado, {nameof(Preference.CryptoAble)} : {Preference.CryptoAble}", EventType.PREFERENCE);
+            }
+            catch (Exception e)
+            {
+                e.SendToLog();
+            }
+        }
+
+        public void ChangeAreYouLikingAppMsgCount()
+        {
+            if (Preference.AreYouLikingAppMsgCount >= Constants.COUNTER_TO_SHOWED_LIKING_PAGE)
+                return;
+
+            try
+            {
+                Preference.AreYouLikingAppMsgCount++;
+                _eventService.SendEvent($"Contador para mostrar msg de gostando, {nameof(Preference.AreYouLikingAppMsgCount)} : {Preference.AreYouLikingAppMsgCount}", EventType.OUTHER);
+            }
+            catch (Exception e)
+            {
+                e.SendToLog();
+            }
+        }
+
+        public void ChangeLikingAppMsgWasShowed(bool value)
+        {
+            try
+            {
+                Preference.LikingAppMsgWasShowed = value;
+                _eventService.SendEvent($"Mensagem de gostanto alterada, {nameof(Preference.LikingAppMsgWasShowed)} : {Preference.LikingAppMsgWasShowed}", EventType.OUTHER);
             }
             catch (Exception e)
             {

@@ -30,7 +30,7 @@
             <Style x:Key="styleButtonKeyboard" TargetType="Frame">
                 <Setter Property="Padding" Value="0" />
                 <Setter Property="BackgroundColor" Value="{DynamicResource foreground_page}" />
-                <Setter Property="CornerRadius" Value="10" />
+                <Setter Property="CornerRadius" Value="8" />
             </Style>
 
             <Style x:Key="styleSymbolValueText" TargetType="Label">
@@ -69,11 +69,11 @@
     <ContentPage.Content>
         <ScrollView>
             <Grid
-                Padding="15,10"
+                Padding="8"
                 RowDefinitions="auto,*"
-                RowSpacing="15">
+                RowSpacing="16">
 
-                <StackLayout Grid.Row="0">
+                <StackLayout Grid.Row="0" Spacing="8">
 
                     <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
                         <Label Style="{DynamicResource styleSymbolValueText}" Text="R$" />
@@ -89,7 +89,7 @@
                         TextColor="{DynamicResource textPrimary}" />
 
                     <Frame
-                        Padding="10"
+                        Padding="8"
                         BackgroundColor="{Binding CurrentStyleFromKey.PrimaryDark}"
                         CornerRadius="5">
                         <Frame.GestureRecognizers>

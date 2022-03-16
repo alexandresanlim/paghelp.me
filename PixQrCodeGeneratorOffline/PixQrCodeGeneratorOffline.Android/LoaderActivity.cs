@@ -28,7 +28,7 @@ namespace PixQrCodeGeneratorOffline.Droid
         public override void OnBackPressed() { }
 
         // Simulates background work that happens behind the splash screen
-        async void StartApp()
+        void StartApp()
         {
             //Log.Debug(TAG, "Performing some startup work that takes a bit of time.");
 

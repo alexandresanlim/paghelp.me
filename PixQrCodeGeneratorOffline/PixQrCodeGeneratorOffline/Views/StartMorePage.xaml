@@ -45,7 +45,7 @@
             <!--  //////////////////////////////////////////////////////////////////////////////////////////////////////////////  -->
 
             <templates:TemplateTitlePanel
-                Title="Enviar Mensagem"
+                Title="Está gostando do App?"
                 Margin="0,0,10,0"
                 Icon="{x:Static icons:FontAwesomeSolid.PaperPlane}">
                 <templates:TemplateTitlePanel.GestureRecognizers>

@@ -1,6 +1,7 @@
 ﻿using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models.Commands.Base;
 using PixQrCodeGeneratorOffline.Models.Commands.Interfaces;
+using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix.Extentions;
 using PixQrCodeGeneratorOffline.Services;
 using PixQrCodeGeneratorOffline.Views.Shared;
 using System;
@@ -19,7 +20,7 @@ namespace PixQrCodeGeneratorOffline.Models.Commands
 
         public FeedCommand Create(Feed feed)
         {
-            return feed.Validation.IsValid ? new FeedCommand
+            return feed.IsValid() ? new FeedCommand
             {
                 NavigateToWebViewCommand = GetNavigateToWebViewCommand(feed),
                 ShareCommand = GetShareCommand(feed),
@@ -30,7 +31,7 @@ namespace PixQrCodeGeneratorOffline.Models.Commands
         {
             return new Command(async () =>
             {
-                if (!feed.Validation.IsValid)
+                if (!feed.IsValid())
                 {
                     DialogService.Toast("Link para notícia não encontrado.");
                     return;
@@ -61,7 +62,7 @@ namespace PixQrCodeGeneratorOffline.Models.Commands
         {
             return new Command(async () =>
             {
-                if (!feed.Validation.IsValid)
+                if (!feed.IsValid())
                 {
                     DialogService.Toast("Link para notícia não encontrado.");
                     return;

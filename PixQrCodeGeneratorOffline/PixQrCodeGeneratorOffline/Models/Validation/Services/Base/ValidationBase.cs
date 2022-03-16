@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace PixQrCodeGeneratorOffline.Models.Validation.Services.Base
+﻿namespace PixQrCodeGeneratorOffline.Models.Validation.Services.Base
 {
     public class ValidationBase
     {

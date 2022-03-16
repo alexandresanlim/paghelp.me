@@ -1,9 +1,14 @@
 ﻿using pix_payload_generator.net.Models.CobrancaModels;
 using pix_payload_generator.net.Models.PayloadModels;
 using PixQrCodeGeneratorOffline.Extention;
+using PixQrCodeGeneratorOffline.Models.Commands;
+using PixQrCodeGeneratorOffline.Models.Commands.Interfaces;
 using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix;
+using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix.Extentions;
 using PixQrCodeGeneratorOffline.Models.Repository.Interfaces;
 using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
+using PixQrCodeGeneratorOffline.Models.Viewer;
+using PixQrCodeGeneratorOffline.Models.Viewer.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Services;
 using System;
 using System.Collections.Generic;
@@ -15,22 +20,22 @@ namespace PixQrCodeGeneratorOffline.Models.Services
 {
     public class PixPayloadService : ServiceBase, IPixPayloadService
     {
-        private readonly IPixKeyService _pixKeyService;
-
-        private readonly IPixCobService _pixKCobService;
-
         private readonly IPixPayloadRepository _pixPayloadRepository;
+
+        private readonly IPixPayloadCommand _pixPayloadCommand;
+
+        private readonly IPixKeyViewerService _pixKeyViewerService;
 
         public PixPayloadService()
         {
-            _pixKeyService = DependencyService.Get<IPixKeyService>();
-            _pixKCobService = DependencyService.Get<IPixCobService>();
             _pixPayloadRepository = DependencyService.Get<IPixPayloadRepository>();
+            _pixPayloadCommand = DependencyService.Get<IPixPayloadCommand>();
+            _pixKeyViewerService = DependencyService.Get<IPixKeyViewerService>();
         }
 
         public PixPayload Create(PixKey pixKey)
         {
-            if (!_pixKeyService.IsValid(pixKey))
+            if (!pixKey.IsValid())
                 return new PixPayload();
 
             var pixPaylod = new PixPayload
@@ -47,18 +52,20 @@ namespace PixQrCodeGeneratorOffline.Models.Services
                 pixPaylod.QrCode = pixPaylod.Payload?.GenerateStringToQrCode();
             });
 
+            pixPaylod.Commands = _pixPayloadCommand.Create(pixPaylod);
+
             return pixPaylod;
         }
 
         public PixPayload Create(PixKey pixKey, PixCob pixCob)
         {
-            if (!_pixKeyService.IsValid(pixKey) || !_pixKCobService.IsValid(pixCob))
+            if (!pixKey.IsValid() || !pixCob.IsValid())
                 return new PixPayload();
 
             var pixPaylod = new PixPayload
             {
                 PixKey = pixKey,
-                PixCob = pixCob
+                PixCob = pixCob,
             };
 
             Xamarin.Essentials.MainThread.BeginInvokeOnMainThread(() =>
@@ -77,12 +84,16 @@ namespace PixQrCodeGeneratorOffline.Models.Services
                 pixPaylod.QrCode = pixPaylod.Payload?.GenerateStringToQrCode();
             });
 
+            pixPaylod.Commands = _pixPayloadCommand.Create(pixPaylod);
+
             return pixPaylod;
         }
 
         public bool Save(PixPayload pixPaylod)
         {
             var success = _pixPayloadRepository.Insert(pixPaylod);
+
+            pixPaylod.Commands = _pixPayloadCommand.Create(pixPaylod);
 
             DialogService.Toast("Cobrança salva com sucesso!");
 
@@ -91,7 +102,15 @@ namespace PixQrCodeGeneratorOffline.Models.Services
 
         public List<PixPayload> GetAll(Expression<Func<PixPayload, bool>> predicate = null)
         {
-            return _pixPayloadRepository.GetAll(predicate);
+            var list = _pixPayloadRepository.GetAll(predicate);
+
+            foreach (var item in list)
+            {
+                item.Commands = _pixPayloadCommand?.Create(item) ?? new PixPayloadCommand();
+                item.PixKey.Viewer = _pixKeyViewerService?.Create(item?.PixKey) ?? new PixKeyViewer();
+            }
+
+           return list;
         }
 
         public async Task<bool> RemoveAll(Expression<Func<PixPayload, bool>> predicate = null)
@@ -116,8 +135,6 @@ namespace PixQrCodeGeneratorOffline.Models.Services
             try
             {
                 DialogService.ShowLoading("Aguarde...");
-
-                await Task.Delay(500);
 
                 var success = _pixPayloadRepository.RemoveAll(predicate);
 

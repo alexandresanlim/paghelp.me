@@ -10,6 +10,7 @@ namespace PixQrCodeGeneratorOffline.Views
         public StartMorePage()
         {
             InitializeComponent();
+
             BindingContext = moreViewModel = new StartMoreViewModel();
         }
 

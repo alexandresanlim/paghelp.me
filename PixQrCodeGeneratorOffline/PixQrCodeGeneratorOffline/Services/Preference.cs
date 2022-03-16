@@ -87,5 +87,30 @@ namespace PixQrCodeGeneratorOffline.Services
                 Preferences.Set(nameof(CryptoAble), value);
             }
         }
+
+        public static int AreYouLikingAppMsgCount
+        {
+            get => Preferences.Get(nameof(AreYouLikingAppMsgCount), 0);
+            set
+            {
+                if (AreYouLikingAppMsgCount == value)
+                    return;
+
+                Preferences.Set(nameof(AreYouLikingAppMsgCount), value);
+            }
+        }
+
+        public static bool LikingAppMsgWasShowed
+        {
+            get => Preferences.Get(nameof(LikingAppMsgWasShowed), false);
+            set
+            {
+                if (LikingAppMsgWasShowed == value)
+                    return;
+
+                Preferences.Set(nameof(LikingAppMsgWasShowed), value);
+            }
+        }
+
     }
 }

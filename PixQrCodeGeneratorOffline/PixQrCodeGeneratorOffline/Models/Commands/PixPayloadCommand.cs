@@ -3,10 +3,11 @@ using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models.Commands.Base;
 using PixQrCodeGeneratorOffline.Models.Commands.Interfaces;
 using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix;
-using PixQrCodeGeneratorOffline.Services;
 using PixQrCodeGeneratorOffline.Views;
-using System.Threading.Tasks;
-using System.Windows.Input;
+using System;
+using System.IO;
+using System.Net.Http;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.Models.Commands
@@ -15,37 +16,60 @@ namespace PixQrCodeGeneratorOffline.Models.Commands
     {
         public IAsyncCommand NavigateToPaymentPageCommand { get; private set; }
 
+        public IAsyncCommand DownloadQrCodeCommand { get; private set; }
+
         public PixPayloadCommand Create(PixPayload pixPayload)
         {
             return new PixPayloadCommand
             {
                 NavigateToPaymentPageCommand = GetNavigateToPaymentPageCommand(pixPayload),
+                DownloadQrCodeCommand = GetDownloadQrCodeCommand(pixPayload)
             };
         }
 
-        private AsyncCommand GetNavigateToPaymentPageCommand(PixPayload pixPayload)
-        {
-            return new AsyncCommand(async () =>
+        private IAsyncCommand GetNavigateToPaymentPageCommand(PixPayload pixPayload) =>
+            _customAsyncCommand.Create(async () => await Shell.Current.Navigation.PushAsync(new PaymentPage(pixPayload)));
+
+        private IAsyncCommand GetDownloadQrCodeCommand(PixPayload pixPayload) =>
+            _customAsyncCommand.Create(async () =>
             {
+                if (Connectivity.NetworkAccess != NetworkAccess.Internet)
+                { 
+                    DialogService.Toast("Ops! No momento está função está disponível somente conectado a internet", TimeSpan.FromSeconds(4));
+                    return;
+                }
+
                 try
                 {
                     DialogService.ShowLoading("");
 
-                    await Task.Delay(500);
+                    var url = "https://chart.googleapis.com/chart?chs=400x400&cht=qr&chl=" + pixPayload.QrCode;
 
-                    await Shell.Current.Navigation.PushAsync(new PaymentPage(pixPayload));
+                    using (var webClient = new HttpClient())
+                    {
+                        var imageBytes = webClient.GetByteArrayAsync(url).Result;
+
+                        var stream1 = new MemoryStream(imageBytes);
+                        string path = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+                        string filename = Path.Combine(path, pixPayload?.PixKey?.Key + "QRCode.png");
+
+                        File.WriteAllBytes(filename, imageBytes);
+
+                        await Share.RequestAsync(new ShareFileRequest
+                        {
+                            Title = "Para onde deseja enviar o QR Code?",
+                            File = new ShareFile(filename)
+                        });
+                    }
                 }
-                catch (System.Exception e)
+                catch (Exception e)
                 {
                     e.SendToLog();
                 }
                 finally
                 {
-                    _eventService.SendEvent("Navegou para página de pagamento a partir do PixPaylodCommand", EventType.NAVIGATION, nameof(PixPayloadCommand));
-
                     DialogService.HideLoading();
                 }
             });
-        }
     }
 }

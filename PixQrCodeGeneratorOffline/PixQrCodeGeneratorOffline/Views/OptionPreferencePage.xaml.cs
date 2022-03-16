@@ -25,6 +25,7 @@ namespace PixQrCodeGeneratorOffline.Views
                 IsOppearing = true;
 
                 _optionPreferenceViewModel.LoadData();
+
                 base.OnAppearing();
             }
             catch (Exception)

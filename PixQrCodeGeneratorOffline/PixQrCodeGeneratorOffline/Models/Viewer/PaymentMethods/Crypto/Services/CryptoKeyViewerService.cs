@@ -1,8 +1,6 @@
 ﻿using PixQrCodeGeneratorOffline.Models.PaymentMethods.Crypto;
+using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix.Extentions;
 using PixQrCodeGeneratorOffline.Models.Viewer.PaymentMethods.Crypto.Services.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace PixQrCodeGeneratorOffline.Models.Viewer.PaymentMethods.Crypto.Services
 {
@@ -10,7 +8,7 @@ namespace PixQrCodeGeneratorOffline.Models.Viewer.PaymentMethods.Crypto.Services
     {
         public CryptoKeyViewer Create(CryptoKey pixKey)
         {
-            return pixKey.Validation.IsValid ? new CryptoKeyViewer
+            return pixKey.IsValid() ? new CryptoKeyViewer
             {
                 KeyPresentation = GetKeyPresentation(pixKey),
                 InstitutionPresentation = GetInstitutionPresentation(pixKey),

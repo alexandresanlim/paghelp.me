@@ -20,5 +20,9 @@ namespace PixQrCodeGeneratorOffline.Services.Interfaces
         void ChangeTheme();
 
         void ChangeCrypto();
+
+        void ChangeAreYouLikingAppMsgCount();
+
+        void ChangeLikingAppMsgWasShowed(bool value);
     }
 }

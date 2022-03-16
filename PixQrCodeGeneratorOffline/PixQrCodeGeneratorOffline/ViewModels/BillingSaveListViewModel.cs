@@ -1,6 +1,7 @@
 ﻿using PixQrCodeGeneratorOffline.Base.ViewModels;
 using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix;
+using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix.Extentions;
 using System.Collections.ObjectModel;
 
 namespace PixQrCodeGeneratorOffline.ViewModels
@@ -16,7 +17,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         private void LoadPixPayloadSave()
         {
-            BillingSaveList = CurrentPixKey.Validation.IsValid ?
+            BillingSaveList = CurrentPixKey.IsValid() ?
                 _pixPayloadService?.GetAll(x => x.PixKey.Id == CurrentPixKey.Id)?.ToObservableCollection() ?? new ObservableCollection<PixPayload>() :
                 _pixPayloadService?.GetAll()?.ToObservableCollection() ?? new ObservableCollection<PixPayload>();
         }

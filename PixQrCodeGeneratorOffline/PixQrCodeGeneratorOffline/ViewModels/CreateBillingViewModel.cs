@@ -1,4 +1,5 @@
-﻿using PixQrCodeGeneratorOffline.Base.ViewModels;
+﻿using AsyncAwaitBestPractices.MVVM;
+using PixQrCodeGeneratorOffline.Base.ViewModels;
 using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix;
 using System;
@@ -93,27 +94,25 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
             d = valueLong / 100m;
 
-            var finalString = System.Convert.ToDecimal(d, new System.Globalization.CultureInfo("en-US")).ToString("N");
+            var finalString = Convert.ToDecimal(d, new System.Globalization.CultureInfo("en-US")).ToString("N");
 
             CurrentCob.Value = finalString;
         }
 
         public string ValueInput { get; set; }
 
-        public ICommand NavigateToPaymentPageCommand => new Command(async () =>
+        public IAsyncCommand NavigateToPaymentPageCommand => new AsyncCommand(async () =>
         {
             try
             {
                 SetIsLoading(true);
-
-                await Task.Delay(500);
 
                 var pixPaylod = _pixPayloadService.Create(CurrentPixKey, CurrentCob);
 
                 if (!_pixPayloadService.IsValid(pixPaylod))
                     return;
 
-                pixPaylod.Commands.NavigateToPaymentPageCommand.Execute(null);
+                await pixPaylod.Commands.NavigateToPaymentPageCommand.ExecuteAsync();
             }
             catch (Exception e)
             {
