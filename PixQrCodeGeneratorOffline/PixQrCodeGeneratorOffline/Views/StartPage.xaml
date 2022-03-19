@@ -77,7 +77,7 @@
         <Grid>
 
             <ScrollView>
-                <StackLayout Spacing="0">
+                <StackLayout CompressedLayout.IsHeadless="True" Spacing="0">
 
                     <Grid ColumnDefinitions="*, auto" ColumnSpacing="0">
                         <templates:TemplateTitlePanel

@@ -94,8 +94,13 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             .GetAll(isContact: true)?.OrderBy(x => x?.Name)?
             .ToObservableCollection() ?? new ObservableCollection<PixKey>();
 
-        public void LoadBilling() => BillingSaveList = _pixPayloadService?
+        public void LoadBilling()
+        {
+            BillingSaveList = new ObservableCollection<PixPayload>();
+
+            BillingSaveList = _pixPayloadService?
             .GetAll()?.ToObservableCollection() ?? new ObservableCollection<PixPayload>();
+        }
 
         private void ChangeSelectedPixKey(PixKey pixkey) => MainThread.BeginInvokeOnMainThread(() => CurrentPixKey = pixkey);
 
