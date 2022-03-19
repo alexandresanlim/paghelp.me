@@ -33,6 +33,7 @@ namespace PixQrCodeGeneratorOffline.Services
         UPDATE,
         DELETE,
         TAP,
-        COMMAND
+        COMMAND,
+        FLOW
     }
 }

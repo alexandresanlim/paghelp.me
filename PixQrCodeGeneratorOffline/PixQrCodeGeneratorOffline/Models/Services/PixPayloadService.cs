@@ -1,4 +1,5 @@
-﻿using pix_payload_generator.net.Models.CobrancaModels;
+﻿using pix_payload_generator.net.Models.Attributes;
+using pix_payload_generator.net.Models.CobrancaModels;
 using pix_payload_generator.net.Models.PayloadModels;
 using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models.Commands;
@@ -43,15 +44,20 @@ namespace PixQrCodeGeneratorOffline.Models.Services
                 PixKey = pixKey
             };
 
-            Xamarin.Essentials.MainThread.BeginInvokeOnMainThread(() =>
+
+            Cobranca cobranca = new Cobranca(_chave: pixKey?.Key);
+
+            var cobrancaIsValid = cobranca.IsValid();
+
+            if (!cobrancaIsValid)
             {
-                Cobranca cobranca = new Cobranca(_chave: pixKey.Key);
+                DialogService.Toast("Cobrança inválida.");
+                _eventService.SendEvent("Cobrança inválida", EventType.FLOW, nameof(PixPayloadService), cobranca.IsValidString());
+                return null;
+            }
 
-                pixPaylod.Payload = cobranca?.ToPayload("PAGHELPME" + Guid.NewGuid().ToString("N").Substring(0, 10), new Merchant(pixKey?.Name, pixKey?.City));
-
-                pixPaylod.QrCode = pixPaylod.Payload?.GenerateStringToQrCode();
-            });
-
+            pixPaylod.Payload = cobranca?.ToPayload("PAGHELPME" + Guid.NewGuid().ToString("N").Substring(0, 10), new Merchant(pixKey?.Name, pixKey?.City));
+            pixPaylod.QrCode = pixPaylod.Payload?.GenerateStringToQrCode();
             pixPaylod.Commands = _pixPayloadCommand.Create(pixPaylod);
 
             return pixPaylod;
@@ -110,7 +116,7 @@ namespace PixQrCodeGeneratorOffline.Models.Services
                 item.PixKey.Viewer = _pixKeyViewerService?.Create(item?.PixKey) ?? new PixKeyViewer();
             }
 
-           return list;
+            return list;
         }
 
         public async Task<bool> RemoveAll(Expression<Func<PixPayload, bool>> predicate = null)
