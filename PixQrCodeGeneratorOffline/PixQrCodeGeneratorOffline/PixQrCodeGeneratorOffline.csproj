@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netstandard2.1</TargetFramework>
     <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
   </PropertyGroup>
 
@@ -60,13 +60,13 @@
     <Compile Update="Style\Resources\FontTypeResource.xaml.cs">
       <DependentUpon>FontTypeResource.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\BillingSaveListPage.xaml.cs">
+    <Compile Update="Flow\Pix\Billing\Pages\BillingSaveListPage.xaml.cs">
       <DependentUpon>BillingSaveListPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\StartMorePage.xaml.cs">
+    <Compile Update="Flow\Core\Start\Pages\StartMorePage.xaml.cs">
       <DependentUpon>StartMorePage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\ShareKeyPage.xaml.cs">
+    <Compile Update="Flow\Pix\Key\Pages\ShareKeyPage.xaml.cs">
       <DependentUpon>ShareKeyPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -111,16 +111,16 @@
     <EmbeddedResource Update="Templates\TemplateTitlePanel.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\AddPixKeyPage.xaml">
+    <EmbeddedResource Update="Flow\Pix\Key\Pages\AddPixKeyPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\BenefitsPage.xaml">
+    <EmbeddedResource Update="Flow\Core\Benefits\Pages\BenefitsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\BillingSaveListPage.xaml">
+    <EmbeddedResource Update="Flow\Pix\Billing\Pages\BillingSaveListPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Content\BillingSaveListView.xaml">
+    <EmbeddedResource Update="Flow\Pix\Billing\Pages\BillingSaveListView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Content\ChevronRightView.xaml">
@@ -132,52 +132,52 @@
     <EmbeddedResource Update="Views\Content\PanelLoadView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Content\StartPageContents\StartPageBillingSaveView.xaml">
+    <EmbeddedResource Update="Flow\Pix\Billing\Pages\StartPageBillingSaveView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Content\StartPageContents\StartPageContactsKeysView.xaml">
+    <EmbeddedResource Update="Flow\Pix\Contact\Pages\StartPageContactsKeysView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Content\StartPageContents\StartPageMyKeysCryptoView.xaml">
+    <EmbeddedResource Update="Flow\Crypto\Key\Pages\StartPageMyKeysCryptoView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Content\StartPageContents\StartPageMyKeysView.xaml">
+    <EmbeddedResource Update="Flow\Pix\Key\Pages\StartPageMyKeysView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Content\StartPageContents\StartPageNewsView.xaml">
+    <EmbeddedResource Update="Flow\Core\News\Pages\StartPageNewsView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\CreateBillingPage.xaml">
+    <EmbeddedResource Update="Flow\Pix\Billing\Pages\CreateBillingPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\CreateBillingSavePage.xaml">
+    <EmbeddedResource Update="Flow\Pix\Billing\Pages\CreateBillingSavePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\CreateBillingTabbedPage.xaml">
+    <EmbeddedResource Update="Flow\Pix\Billing\Pages\CreateBillingTabbedPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\DashboardContactPage.xaml">
+    <EmbeddedResource Update="Flow\Pix\Contact\Pages\DashboardContactPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\GuidePage.xaml">
+    <EmbeddedResource Update="Flow\Core\Guide\Pages\GuidePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\LikingPage.xaml">
+    <EmbeddedResource Update="Flow\Core\Liking\Pages\LikingPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\PaymentMethods\Crypto\AddCryptoKeyPage.xaml">
+    <EmbeddedResource Update="Flow\Crypto\Key\Pages\AddCryptoKeyPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\StartMorePage.xaml">
+    <EmbeddedResource Update="Flow\Core\Start\Pages\StartMorePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\NewsPage.xaml">
+    <EmbeddedResource Update="Flow\Core\News\Pages\NewsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\OptionPreferencePage.xaml">
+    <EmbeddedResource Update="Flow\Core\Preference\Pages\OptionPreferencePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\PaymentPage.xaml">
+    <EmbeddedResource Update="Flow\Pix\Payment\Pages\PaymentPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Shared\AdsView.xaml">
@@ -189,16 +189,16 @@
     <EmbeddedResource Update="Views\Shared\WebViewPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\ShareKeyPage.xaml">
+    <EmbeddedResource Update="Flow\Pix\Key\Pages\ShareKeyPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\StartCryptoPage.xaml">
+    <EmbeddedResource Update="Flow\Crypto\Dashboard\Pages\StartCryptoPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\StartPage.xaml">
+    <EmbeddedResource Update="Flow\Pix\Start\StartPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\StartTabbedPage.xaml">
+    <EmbeddedResource Update="Flow\Core\Start\Pages\StartTabbedPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Templates\AutenticationTemplate.xaml">
@@ -207,9 +207,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\Validation\Services\PaymentMethods\Crypto\" />
-    <Folder Include="Models\Viewer\PaymentMethods\Interfaces\" />
-    <Folder Include="Models\Viewer\PaymentMethods\Pix\" />
-    <Folder Include="Views\Collections\" />
+    <Folder Include="Flow\Core\Dashboard\Pages\" />
+    <Folder Include="Flow\Core\More\Pages\" />
+    <Folder Include="Flow\Core\WebView\Pages\" />
+    <Folder Include="Flow\Core\Welcome\Pages\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\QrCodeGeneratorOffline.Client.System.Crypto\QrCodeGeneratorOffline.Client.System.Crypto.csproj" />
+    <ProjectReference Include="..\..\QrCodeGeneratorOffline.Client.System.Pix\QrCodeGeneratorOffline.Client.System.Pix.csproj" />
   </ItemGroup>
 </Project>
