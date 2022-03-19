@@ -21,7 +21,7 @@
         </ResourceDictionary>
     </Grid.Resources>
 
-    <StackLayout Spacing="0">
+    <StackLayout CompressedLayout.IsHeadless="True" Spacing="0">
 
         <controls:CustomCollectionView
             Margin="4,0,0,0"
@@ -36,7 +36,7 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="models:PixKey">
 
-                    <StackLayout Spacing="0">
+                    <StackLayout CompressedLayout.IsHeadless="True" Spacing="0">
                         <Frame
                             Margin="4,0"
                             Padding="15"

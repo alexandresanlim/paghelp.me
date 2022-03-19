@@ -40,7 +40,7 @@
 
             <controls:CustomCollectionView.EmptyView>
 
-                <StackLayout>
+                <StackLayout CompressedLayout.IsHeadless="True">
                     <StackLayout VerticalOptions="CenterAndExpand">
                         <controls:CustomIcon
                             FontSize="50"

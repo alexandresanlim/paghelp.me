@@ -34,9 +34,9 @@
         HeightRequest="50"
         VerticalOptions="Start" />
 
-    <StackLayout>
+    <StackLayout Spacing="0">
 
-        <StackLayout Spacing="0">
+        <StackLayout CompressedLayout.IsHeadless="True" Spacing="0">
             <CarouselView
                 CurrentItem="{Binding CurrentCryptoKey}"
                 CurrentItemChangedCommand="{Binding ChangeSelectCryptoKeyCommand}"
@@ -104,32 +104,11 @@
 
         </CollectionView>
 
-        <StackLayout>
+        <templates:TemplateAction
+            Title="Adicionar Nova"
+            Icon="{x:Static icons:FontAwesomeSolid.PlusCircle}"
+            TapCommand="{Binding NavigateToAddNewKeyPageCommand}" />
 
-
-            <templates:TemplateAction
-                Title="Adicionar Nova"
-                Icon="{x:Static icons:FontAwesomeSolid.PlusCircle}"
-                TapCommand="{Binding NavigateToAddNewKeyPageCommand}" />
-
-            <!--<templates:TemplateAction
-                Title="Compartilhar Todas"
-                Icon="{x:Static icons:FontAwesomeSolid.Share}"
-                IsVisible="{Binding PixKeyList, Converter={StaticResource HasDataConverter}}"
-                TapCommand="{Binding ShareAllCommand}" />-->
-
-        </StackLayout>
-        <!--<Grid Style="{DynamicResource styleGridActionChevronRight}" IsVisible="{Binding PixKeyList, Converter={StaticResource HasDataConverter}}">
-
-                    <Grid.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding RemoveAllCommand}" />
-                    </Grid.GestureRecognizers>
-
-                    <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Trash }" Style="{DynamicResource styleGridActionChevronIcon}" />
-                    <Label Text="Excluir Todas" Style="{DynamicResource styleGridActionTitle}" />
-                    <content:ChevronRightView Grid.Column="2" />
-
-                </Grid>-->
     </StackLayout>
 
     <!--<content:PanelLoadView IsVisible="{Binding CurrentDashboardLoadInfo.IsLoadMyKeys}" />-->
