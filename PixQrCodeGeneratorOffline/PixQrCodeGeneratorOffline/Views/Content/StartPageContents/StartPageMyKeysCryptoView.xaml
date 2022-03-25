@@ -79,6 +79,7 @@
 
         <!--  Actions  -->
         <CollectionView
+            Margin="8,0,0,0"
             HeightRequest="140"
             IsVisible="{Binding CryptoKeyList, Converter={StaticResource HasDataConverter}}"
             ItemsSource="{Binding CurrentCryptoKeyActions}"
@@ -87,7 +88,7 @@
             SelectionMode="Single">
 
             <CollectionView.ItemsLayout>
-                <LinearItemsLayout Orientation="Horizontal" />
+                <LinearItemsLayout ItemSpacing="8" Orientation="Horizontal" />
             </CollectionView.ItemsLayout>
 
             <CollectionView.ItemTemplate>

@@ -75,6 +75,7 @@
 
         <!--  Actions  -->
         <controls:CustomCollectionView
+            Margin="8,0,0,0"
             HeightRequest="140"
             ItemsSource="{Binding CurrentPixKeyActions}"
             SelectedItem="{Binding SelectedAction}"
@@ -82,7 +83,7 @@
             SelectionMode="Single">
 
             <CollectionView.ItemsLayout>
-                <LinearItemsLayout Orientation="Horizontal" />
+                <LinearItemsLayout ItemSpacing="8" Orientation="Horizontal" />
             </CollectionView.ItemsLayout>
 
             <CollectionView.ItemTemplate>

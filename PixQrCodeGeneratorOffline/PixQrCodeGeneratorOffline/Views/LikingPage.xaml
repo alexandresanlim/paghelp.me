@@ -54,7 +54,7 @@
                         Spacing="16">
 
                         <Frame
-                            Padding="32"
+                            Padding="25"
                             BorderColor="{DynamicResource primaryDark}"
                             CornerRadius="50"
                             IsClippedToBounds="True">
@@ -71,7 +71,7 @@
                         </Frame>
 
                         <Frame
-                            Padding="32"
+                            Padding="25"
                             BorderColor="{DynamicResource primaryDark}"
                             CornerRadius="50"
                             IsClippedToBounds="True">

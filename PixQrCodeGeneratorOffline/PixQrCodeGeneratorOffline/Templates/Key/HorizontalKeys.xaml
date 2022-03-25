@@ -30,7 +30,7 @@
 
     <Frame
         x:Name="xMainFrame"
-        Padding="15"
+        Padding="12"
         CornerRadius="10">
         <Grid ColumnDefinitions="auto,*">
 
