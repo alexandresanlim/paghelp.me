@@ -32,5 +32,7 @@
     <Color x:Key="staticAccentPrimaryLight">#48a999</Color>
     <Color x:Key="staticAccentPrimaryDark">#004c40</Color>
     <Color x:Key="staticAccentTextOnPrimary">#ffffff</Color>
+    <Color x:Key="staticTextPrimary">#212121</Color>
+    <Color x:Key="staticTextSecondary">#757575</Color>
 
 </ResourceDictionary>

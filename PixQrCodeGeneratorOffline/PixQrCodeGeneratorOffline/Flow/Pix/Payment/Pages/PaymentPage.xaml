@@ -96,9 +96,9 @@
                         TextColor="{DynamicResource textSecondary}" />
 
                     <Frame
-                        Padding="16"
-                        BorderColor="{Binding CurrentInfo.Color.PrimaryDark}"
-                        CornerRadius="16"
+                        Padding="8"
+                        BackgroundColor="{Binding CurrentInfo.Color.PrimaryDark}"
+                        CornerRadius="8"
                         HorizontalOptions="CenterAndExpand"
                         IsClippedToBounds="True"
                         VerticalOptions="CenterAndExpand">
@@ -139,7 +139,7 @@
                     FontSize="{DynamicResource FontSizeLarge}"
                     HorizontalOptions="Center"
                     Text="{Binding CurrentInfo.Institution}"
-                    TextColor="{Binding CurrentInfo.Color.PrimaryDark}" />
+                    TextColor="{DynamicResource textPrimary}" />
 
                 <Label
                     FontSize="{DynamicResource FontSizeMicro}"

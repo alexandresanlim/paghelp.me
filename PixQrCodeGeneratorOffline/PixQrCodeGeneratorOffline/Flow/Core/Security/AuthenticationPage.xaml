@@ -29,7 +29,6 @@
     <StackLayout
         Padding="16,32"
         BackgroundColor="{StaticResource background_page}"
-        HorizontalOptions="CenterAndExpand"
         Spacing="16"
         VerticalOptions="End">
         <controls:CustomIcon

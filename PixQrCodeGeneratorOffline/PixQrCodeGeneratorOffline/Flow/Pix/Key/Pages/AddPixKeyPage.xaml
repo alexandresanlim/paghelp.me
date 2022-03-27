@@ -39,11 +39,11 @@
                 <Setter Property="FontSize" Value="{DynamicResource FontSizeMedium}" />
                 <Setter Property="FontFamily" Value="{DynamicResource FontSemiBold}" />
                 <Setter Property="Margin" Value="10,0,0,0" />
-                <Setter Property="TextColor" Value="#212121" />
+                <Setter Property="TextColor" Value="{StaticResource staticTextPrimary}" />
             </Style>
 
             <Style x:Key="styleForegroundText" TargetType="Label">
-                <Setter Property="TextColor" Value="#212121" />
+                <Setter Property="TextColor" Value="{StaticResource staticTextPrimary}" />
             </Style>
 
             <Style
