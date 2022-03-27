@@ -60,17 +60,56 @@ namespace PixQrCodeGeneratorOffline.Models.Commands
         private IAsyncCommand GetShareKeyOnWhatsCommand(PixKey pixKey) =>
             _customAsyncCommand.Create(async () => await _externalActionService.ShareOnWhats(pixKey?.Key));
 
-        private IAsyncCommand GetNavigateToCreateBillingCommand(PixKey pixKey) =>
-            _customAsyncCommand.Create(async () => await Shell.Current.Navigation.PushAsync(new CreateBillingTabbedPage(pixKey)));
+        private IAsyncCommand GetNavigateToCreateBillingCommand(PixKey pixKey) 
+        {
+            return _customAsyncCommand.Create(async () => 
+            { 
+                SetIsLoading(); 
+                
+                await Shell.Current.Navigation.PushAsync(new CreateBillingTabbedPage(pixKey)); 
+                
+                SetIsLoading(false); 
+            });
+        }
 
-        private IAsyncCommand GetNavigateToBillingCommand(PixKey pixKey) =>
-            _customAsyncCommand.Create(async () => await Shell.Current.Navigation.PushAsync(new BillingSaveListPage(pixKey)));
+        private IAsyncCommand GetNavigateToBillingCommand(PixKey pixKey)
+        {
+            return _customAsyncCommand.Create(async () =>
+            {
+                SetIsLoading();
 
-        private IAsyncCommand GetEdityKeyCommand(PixKey pixKey) =>
-            _customAsyncCommand.Create(async () => await NavigateToEdit(pixKey, isContact: pixKey.IsContact));
+                await Shell.Current.Navigation.PushAsync(new BillingSaveListPage(pixKey));
 
-        private IAsyncCommand GetNavigateToPaymentPageCommand(PixKey pixKey) =>
-            _customAsyncCommand.Create(async () => await Shell.Current.Navigation.PushPopupAsync(new PaymentPage(_pixPayloadService.Create(pixKey))));
+                SetIsLoading(false);
+            });
+        }
+           
+
+        private IAsyncCommand GetEdityKeyCommand(PixKey pixKey)
+        {
+            return _customAsyncCommand.Create(async () =>
+            {
+                SetIsLoading();
+
+                await NavigateToEdit(pixKey, isContact: pixKey.IsContact);
+
+                SetIsLoading(false);
+            });
+        }
+            
+
+        private IAsyncCommand GetNavigateToPaymentPageCommand(PixKey pixKey)
+        {
+            return _customAsyncCommand.Create(async () =>
+            {
+                SetIsLoading();
+
+                await Shell.Current.Navigation.PushPopupAsync(new PaymentPage(_pixPayloadService.Create(pixKey)));
+
+                SetIsLoading(false);
+            });
+        }
+            
 
         public async Task NavigateToEdit(PixKey pixKey, bool isContact = false)
         {
