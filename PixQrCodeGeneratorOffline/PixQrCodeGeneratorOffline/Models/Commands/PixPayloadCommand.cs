@@ -4,6 +4,7 @@ using PixQrCodeGeneratorOffline.Models.Commands.Base;
 using PixQrCodeGeneratorOffline.Models.Commands.Interfaces;
 using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix;
 using PixQrCodeGeneratorOffline.Views;
+using Rg.Plugins.Popup.Extensions;
 using System;
 using System.IO;
 using System.Net.Http;
@@ -28,7 +29,7 @@ namespace PixQrCodeGeneratorOffline.Models.Commands
         }
 
         private IAsyncCommand GetNavigateToPaymentPageCommand(PixPayload pixPayload) =>
-            _customAsyncCommand.Create(async () => await Shell.Current.Navigation.PushAsync(new PaymentPage(pixPayload)));
+            _customAsyncCommand.Create(async () => await Shell.Current.Navigation.PushPopupAsync(new PaymentPage(pixPayload)));
 
         private IAsyncCommand GetDownloadQrCodeCommand(PixPayload pixPayload) =>
             _customAsyncCommand.Create(async () =>

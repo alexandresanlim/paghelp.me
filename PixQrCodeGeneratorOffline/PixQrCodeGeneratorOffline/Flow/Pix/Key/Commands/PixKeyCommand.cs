@@ -70,7 +70,7 @@ namespace PixQrCodeGeneratorOffline.Models.Commands
             _customAsyncCommand.Create(async () => await NavigateToEdit(pixKey, isContact: pixKey.IsContact));
 
         private IAsyncCommand GetNavigateToPaymentPageCommand(PixKey pixKey) =>
-            _customAsyncCommand.Create(async () => await Shell.Current.Navigation.PushAsync(new PaymentPage(_pixPayloadService.Create(pixKey))));
+            _customAsyncCommand.Create(async () => await Shell.Current.Navigation.PushPopupAsync(new PaymentPage(_pixPayloadService.Create(pixKey))));
 
         public async Task NavigateToEdit(PixKey pixKey, bool isContact = false)
         {

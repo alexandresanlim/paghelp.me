@@ -1,12 +1,12 @@
 ﻿using PixQrCodeGeneratorOffline.Models.PaymentMethods.Base;
 using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix.Extentions;
 using PixQrCodeGeneratorOffline.ViewModels;
-
+using Rg.Plugins.Popup.Pages;
 using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.Views
 {
-    public partial class PaymentPage : ContentPage
+    public partial class PaymentPage : PopupPage
     {
         PaymentViewModel _paymentViewModel;
 
@@ -27,14 +27,15 @@ namespace PixQrCodeGeneratorOffline.Views
 
             if (!(_paymentViewModel?.CurrentPixPaylod?.Id > 0) && _paymentViewModel?.CurrentPixPaylod?.PixCob != null && _paymentViewModel.CurrentPixPaylod.PixCob.HasValue())
             {
-                ToolbarItems.Add(new ToolbarItem
-                {
-                    Text = "Salvar",
-                    Command = _paymentViewModel.SaveCommand,
-                });
+                btnSave.IsVisible = true;
+                //ToolbarItems.Add(new ToolbarItem
+                //{
+                //    Text = "Salvar",
+                //    Command = _paymentViewModel.SaveCommand,
+                //});
             }
 
-            App.StatusBarService.SetStatusBarColor(_paymentViewModel.CurrentInfo.Color.PrimaryDark);
+           // App.StatusBarService.SetStatusBarColor(_paymentViewModel.CurrentInfo.Color.PrimaryDark);
         }
     }
 }

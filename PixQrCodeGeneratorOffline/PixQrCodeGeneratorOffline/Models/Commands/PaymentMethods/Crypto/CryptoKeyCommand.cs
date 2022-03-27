@@ -6,6 +6,7 @@ using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix.Extentions;
 using PixQrCodeGeneratorOffline.Models.Services.PaymentMethods.Crypto.Interfaces;
 using PixQrCodeGeneratorOffline.Services;
 using PixQrCodeGeneratorOffline.Views;
+using Rg.Plugins.Popup.Extensions;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -134,7 +135,7 @@ namespace PixQrCodeGeneratorOffline.Models.Commands.PaymentMethods.Crypto
 
                     var pixPaylod = _cryptoPayloadService.Create(pixKey);
 
-                    await Shell.Current.Navigation.PushAsync(new PaymentPage(pixPaylod));
+                    await Shell.Current.Navigation.PushPopupAsync(new PaymentPage(pixPaylod));
                 }
                 catch (System.Exception e)
                 {

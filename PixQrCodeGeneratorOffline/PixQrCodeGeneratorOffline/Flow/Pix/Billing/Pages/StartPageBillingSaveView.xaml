@@ -62,7 +62,7 @@
                     BackgroundColor="{DynamicResource foreground_page}"
                     CornerRadius="4"
                     VerticalOptions="FillAndExpand"
-                    WidthRequest="225">
+                    WidthRequest="200">
                     <Frame.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding Commands.NavigateToPaymentPageCommand}" />
                     </Frame.GestureRecognizers>
