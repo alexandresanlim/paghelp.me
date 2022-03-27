@@ -15,6 +15,8 @@ namespace PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix
 
         public string City { get; set; }
 
+        public bool IsPin { get; set; }
+
         public FinancialInstitution FinancialInstitution { get; set; }
 
         [LiteDB.BsonIgnore]

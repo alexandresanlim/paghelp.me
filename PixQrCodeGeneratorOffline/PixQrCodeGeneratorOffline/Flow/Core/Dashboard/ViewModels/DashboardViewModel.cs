@@ -156,32 +156,17 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                         if (success)
                         {
-                            int index = CurrentPixKey.IsContact ?
-                            PixKeyListContact.IndexOf(PixKeyListContact.FirstOrDefault(x => x.Id == CurrentPixKey.Id)) :
-                            PixKeyList.IndexOf(PixKeyList.FirstOrDefault(x => x.Id == CurrentPixKey.Id));
+                            int index = PixKeyList.IndexOf(PixKeyList.FirstOrDefault(x => x.Id == CurrentPixKey.Id));
 
                             if (index != -1)
                             {
-                                if (CurrentPixKey.IsContact)
-                                {
-                                    PixKeyListContact.RemoveAt(index);
-                                }
-
-                                else
-                                {
-                                    PixKeyList.RemoveAt(index);
-                                    CurrentPixKey = PixKeyList?.FirstOrDefault() ?? new PixKey();
-                                }
+                                PixKeyList.RemoveAt(index);
+                                CurrentPixKey = PixKeyList?.FirstOrDefault() ?? new PixKey();
                             }
 
                             if (PixKeyList.Count == 0)
                             {
                                 PixKeyList = new ObservableCollection<PixKey>();
-                            }
-
-                            if (PixKeyListContact.Count == 0)
-                            {
-                                PixKeyListContact = new ObservableCollection<PixKey>();
                             }
 
                             DialogService.Toast("Chave removida com sucesso");
@@ -311,7 +296,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         private async Task DeleteContactKey(PixKey contactKey)
         {
-            var confirm = await DialogService.ConfirmAsync("Tem certeza que deseja excluir a chave de " + contactKey?.Name + "?", "Confirmação", "Sim", "Cancelar");
+            var confirm = await DialogService.ConfirmAsync("Tem certeza que deseja excluir a chave do contato " + contactKey?.Name + "?", "Confirmação", "Sim", "Cancelar");
 
             if (!confirm)
                 return;
