@@ -10,9 +10,22 @@ namespace PixQrCodeGeneratorOffline.Services
 
         protected readonly IEventService _eventService;
 
+        private bool _isLoading;
+
         public ServiceBase()
         {
             _eventService = DependencyService.Get<IEventService>();
+        }
+
+        public void SetIsLoading(bool isLoading = true, string title = "")
+        {
+            _isLoading = isLoading;
+
+            if (_isLoading)
+                DialogService.ShowLoading(title);
+
+            else
+                DialogService.HideLoading();
         }
     }
 }

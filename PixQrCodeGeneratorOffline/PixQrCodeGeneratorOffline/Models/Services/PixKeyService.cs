@@ -166,7 +166,14 @@ namespace PixQrCodeGeneratorOffline.Models.Services
             }
         }
 
-        public async Task NavigateToAdd(bool isContact = false) => await Shell.Current.Navigation.PushPopupAsync(new AddPixKeyPage(null, isContact));
+        public async Task NavigateToAdd(bool isContact = false)
+        {
+            SetIsLoading(true);
+
+            await Shell.Current.Navigation.PushPopupAsync(new AddPixKeyPage(null, isContact));
+
+            SetIsLoading(false);
+        }
 
         private bool HasKeysValidated(List<PixKey> pisKeyList)
         {
