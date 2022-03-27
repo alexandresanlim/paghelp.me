@@ -62,6 +62,12 @@ namespace PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix
                     Icon = FontAwesomeSolid.Pen,
                     Type = KeyActionType.Edit
                 },
+                new PixKeyAction
+                {
+                    Title = "Excluir Chave",
+                    Icon = FontAwesomeSolid.Trash,
+                    Type = KeyActionType.Delete
+                },
                 
                 //new PixKeyAction
                 //{
@@ -84,7 +90,8 @@ namespace PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix
         BillingList,
         PaymentPage,
         Edit,
-        DownloadQRCode
+        DownloadQRCode,
+        Delete
     }
 
 }

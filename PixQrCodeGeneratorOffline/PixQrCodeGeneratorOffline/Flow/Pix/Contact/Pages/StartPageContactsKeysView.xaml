@@ -80,7 +80,7 @@
                             Style="{StaticResource StyleInfos}"
                             Text="{Binding Viewer.KeyPresentation}" />
 
-                        <Grid ColumnDefinitions="*,*" VerticalOptions="EndAndExpand">
+                        <Grid ColumnDefinitions="*,*,*" VerticalOptions="EndAndExpand">
                             <StackLayout Grid.Column="0" Padding="0,5,0,0">
                                 <StackLayout.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding Command.CopyKeyCommand}" />
@@ -97,6 +97,14 @@
 
                                 <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Pen}" Style="{DynamicResource styleIconActionListContact}" />
                                 <Label Style="{DynamicResource styleTextOnButtonActionListContact}" Text="Editar" />
+                            </StackLayout>
+                            <StackLayout Grid.Column="2" Padding="0,5,0,0">
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:DashboardViewModel}}, Path=DeleteContactKeyCommand}" CommandParameter="{Binding .}" />
+                                </StackLayout.GestureRecognizers>
+
+                                <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Trash}" Style="{DynamicResource styleIconActionListContact}" />
+                                <Label Style="{DynamicResource styleTextOnButtonActionListContact}" Text="Excluir" />
                             </StackLayout>
                         </Grid>
                     </StackLayout>

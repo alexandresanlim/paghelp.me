@@ -75,7 +75,7 @@
 
         <StackLayout
             Padding="0,16"
-            BackgroundColor="White"
+            BackgroundColor="{StaticResource staticBackgroundPage}"
             Spacing="0">
 
             <controls:CustomProgress
@@ -84,29 +84,6 @@
                 ColorMore="{DynamicResource staticAccentPrimaryDark}"
                 CurrentPhase="{Binding ActualInputNextPosition}"
                 Phases="{Binding InputPhasesCount}" />
-
-            <StackLayout
-                HorizontalOptions="End"
-                IsVisible="{Binding IsEdit}"
-                Orientation="Horizontal">
-
-                <StackLayout Padding="20,15,10,0">
-                    <StackLayout.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding DeleteCommand}" />
-                    </StackLayout.GestureRecognizers>
-                    <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.TrashAlt}" Style="{StaticResource styleActionIcon}" />
-                    <Label Style="{StaticResource styleActionText}" Text="Excluir" />
-                </StackLayout>
-
-                <StackLayout Padding="10,15,10,0">
-                    <StackLayout.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding SaveCommand}" />
-                    </StackLayout.GestureRecognizers>
-                    <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Save}" Style="{StaticResource styleActionIcon}" />
-                    <Label Style="{StaticResource styleActionText}" Text="Salvar" />
-                </StackLayout>
-
-            </StackLayout>
 
             <CarouselView
                 CurrentItem="{Binding CurrentInput}"

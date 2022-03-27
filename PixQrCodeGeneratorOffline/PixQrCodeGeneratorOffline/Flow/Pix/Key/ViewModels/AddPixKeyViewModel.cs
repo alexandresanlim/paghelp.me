@@ -26,8 +26,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public IAsyncCommand SaveCommand => new AsyncCommand(Save);
 
-        public IAsyncCommand DeleteCommand => new AsyncCommand(Delete);
-
         public ICommand SelectedInstitutionCommand => new Command(SelectedInstitution);
 
         public ICommand InputNextCommand => new Command(InputNext);
@@ -57,13 +55,13 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         {
             try
             {
-                IsEdit = CurrentPixKey?.Id > 0;
+                _isEdit = CurrentPixKey?.Id > 0;
 
-                SelectedFinancialInstitution = !IsEdit ? _financialInstitutionService.Create(FinancialInstitutionType.None) : CurrentPixKey.FinancialInstitution;
+                SelectedFinancialInstitution = !_isEdit ? _financialInstitutionService.Create(FinancialInstitutionType.None) : CurrentPixKey.FinancialInstitution;
 
                 CurrenKeyPlaceholder = CurrenKeyPlaceholderDefaultValue;
 
-                if (!IsEdit)
+                if (!_isEdit)
                 {
                     if (!CurrentPixKey.IsContact)
                     {
@@ -140,7 +138,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 var success = false;
 
-                if (IsEdit)
+                if (_isEdit)
                 {
                     success = _pixKeyService.Update(CurrentPixKey);
 
@@ -205,70 +203,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             {
                 SetIsLoading(false);
             }
-        }
-
-        private async Task Delete()
-        {
-            var confirm = await DialogService.ConfirmAsync("Tem certeza que deseja excluir a chave " + CurrentPixKey.Key + "?", "Confirmação", "Sim", "Cancelar");
-
-            if (!confirm)
-                return;
-
-            try
-            {
-                SetIsLoading(true);
-
-                var success = _pixKeyService.Remove(CurrentPixKey);
-
-                if (success)
-                {
-                    int index = CurrentPixKey.IsContact ?
-                    CurrentDashboard.PixKeyListContact.IndexOf(CurrentDashboard.PixKeyListContact.FirstOrDefault(x => x.Id == CurrentPixKey.Id)) :
-                    CurrentDashboard.PixKeyList.IndexOf(CurrentDashboard.PixKeyList.FirstOrDefault(x => x.Id == CurrentPixKey.Id));
-
-                    if (index != -1)
-                    {
-                        if (CurrentPixKey.IsContact)
-                        {
-                            CurrentDashboard.PixKeyListContact.RemoveAt(index);
-                        }
-
-                        else
-                        {
-                            CurrentDashboard.PixKeyList.RemoveAt(index);
-                            CurrentDashboard.CurrentPixKey = CurrentDashboard?.PixKeyList?.FirstOrDefault() ?? new PixKey();
-                        }
-                    }
-
-                    if (CurrentDashboard.PixKeyList.Count == 0)
-                    {
-                        CurrentDashboard.PixKeyList = new ObservableCollection<PixKey>();
-                    }
-
-                    if (CurrentDashboard.PixKeyListContact.Count == 0)
-                    {
-                        CurrentDashboard.PixKeyListContact = new ObservableCollection<PixKey>();
-                    }
-
-                    DialogService.Toast("Chave removida com sucesso");
-
-                    NavigateBack();
-                }
-
-                else
-                {
-                    DialogService.Toast("Algo de errado aconteceu, tente novamente mais tarde ou atualize o app");
-                }
-            }
-            catch (Exception e)
-            {
-                e.SendToLog();
-            }
-            finally
-            {
-                SetIsLoading(false);
-            }
-
         }
 
         private void SelectedInstitution()
@@ -380,21 +314,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             return true;
         }
 
-        //public void BackButtonPressed()
-        //{
-        //    if (!CurrentPixKey.IsContact)
-        //        DashboardVM.SetStatusFromCurrentPixColor();
-
-        //    else
-        //        App.LoadTheme();
-        //}
-
         private bool _isEdit;
-        public bool IsEdit
-        {
-            set => SetProperty(ref _isEdit, value);
-            get => _isEdit;
-        }
 
         private PixKey _currentPixKey;
         public PixKey CurrentPixKey

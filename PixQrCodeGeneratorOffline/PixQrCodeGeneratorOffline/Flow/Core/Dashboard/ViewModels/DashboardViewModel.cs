@@ -31,7 +31,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public IAsyncCommand NavigateToAddNewKeyPageContactCommand => new AsyncCommand(async () => await _pixKeyService.NavigateToAdd(isContact: true));
 
-        public ICommand ExecuteActionCommand => new Command(ExecuteAction);
+        public IAsyncCommand ExecuteActionCommand => new AsyncCommand(ExecuteAction);
 
         public ICommand ChangeSelectPixKeyCommand => new Command<PixKey>(ChangeSelectedPixKey);
 
@@ -44,6 +44,8 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         public IAsyncCommand RemoveAllBillingCommand => new AsyncCommand(RemoveAllBilling);
 
         public IAsyncCommand LoadDataCommand => new AsyncCommand(LoadData);
+
+        public ICommand DeleteContactKeyCommand => new AsyncCommand<PixKey>(DeleteContactKey);
 
         #endregion
 
@@ -112,7 +114,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         private void ChangeSelectedPixKey(PixKey pixkey) => MainThread.BeginInvokeOnMainThread(() => CurrentPixKey = pixkey);
 
-        private void ExecuteAction()
+        private async Task ExecuteAction()
         {
             if (SelectedAction?.Type == KeyActionType.None)
                 return;
@@ -120,28 +122,87 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             switch (SelectedAction.Type)
             {
                 case KeyActionType.CreateBilling:
-                    CurrentPixKey.Command.NavigateToCreateBillingPageCommand.ExecuteAsync();
+                    await CurrentPixKey.Command.NavigateToCreateBillingPageCommand.ExecuteAsync();
                     break;
                 case KeyActionType.CopyKey:
-                    CurrentPixKey.Command.CopyKeyCommand.ExecuteAsync();
+                    await CurrentPixKey.Command.CopyKeyCommand.ExecuteAsync();
                     break;
                 case KeyActionType.ShareKey:
-                    CurrentPixKey.Command.ShareKeyCommand.ExecuteAsync();
+                    await CurrentPixKey.Command.ShareKeyCommand.ExecuteAsync();
                     break;
                 case KeyActionType.ShareOnWhatsApp:
-                    CurrentPixKey.Command.ShareOnWhatsCommand.ExecuteAsync();
+                    await CurrentPixKey.Command.ShareOnWhatsCommand.ExecuteAsync();
                     break;
                 case KeyActionType.BillingList:
-                    CurrentPixKey.Command.NavigateToBillingCommand.ExecuteAsync();
+                    await CurrentPixKey.Command.NavigateToBillingCommand.ExecuteAsync();
                     break;
                 case KeyActionType.PaymentPage:
-                    CurrentPixKey.Command.NavigateToPaymentPageCommand.ExecuteAsync();
+                    await CurrentPixKey.Command.NavigateToPaymentPageCommand.ExecuteAsync();
                     break;
                 case KeyActionType.Edit:
-                    CurrentPixKey.Command.EditKeyCommand.ExecuteAsync();
+                    await CurrentPixKey.Command.EditKeyCommand.ExecuteAsync();
+                    break;
+                case KeyActionType.Delete:
+                    var confirm = await DialogService.ConfirmAsync("Tem certeza que deseja excluir a chave " + CurrentPixKey.Key + "?", "Confirmação", "Sim", "Cancelar");
+
+                    if (!confirm)
+                        return;
+
+                    try
+                    {
+                        SetIsLoading(true);
+
+                        var success = _pixKeyService.Remove(CurrentPixKey);
+
+                        if (success)
+                        {
+                            int index = CurrentPixKey.IsContact ?
+                            PixKeyListContact.IndexOf(PixKeyListContact.FirstOrDefault(x => x.Id == CurrentPixKey.Id)) :
+                            PixKeyList.IndexOf(PixKeyList.FirstOrDefault(x => x.Id == CurrentPixKey.Id));
+
+                            if (index != -1)
+                            {
+                                if (CurrentPixKey.IsContact)
+                                {
+                                    PixKeyListContact.RemoveAt(index);
+                                }
+
+                                else
+                                {
+                                    PixKeyList.RemoveAt(index);
+                                    CurrentPixKey = PixKeyList?.FirstOrDefault() ?? new PixKey();
+                                }
+                            }
+
+                            if (PixKeyList.Count == 0)
+                            {
+                                PixKeyList = new ObservableCollection<PixKey>();
+                            }
+
+                            if (PixKeyListContact.Count == 0)
+                            {
+                                PixKeyListContact = new ObservableCollection<PixKey>();
+                            }
+
+                            DialogService.Toast("Chave removida com sucesso");
+                        }
+
+                        else
+                        {
+                            DialogService.Toast("Algo de errado aconteceu, tente novamente mais tarde ou atualize o app");
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        e.SendToLog();
+                    }
+                    finally
+                    {
+                        SetIsLoading(false);
+                    }
                     break;
                 case KeyActionType.DownloadQRCode:
-                    CurrentPixKey.Payload.Commands.DownloadQrCodeCommand.ExecuteAsync();
+                    await CurrentPixKey.Payload.Commands.DownloadQrCodeCommand.ExecuteAsync();
                     break;
                 case KeyActionType.None:
                 default:
@@ -238,6 +299,8 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 PixKeyList = new ObservableCollection<PixKey>();
         }
 
+        #region Contact
+
         private async Task RemoveAllContactKeys()
         {
             var success = await _pixKeyService.RemoveAll(isContact: true);
@@ -245,6 +308,49 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             if (success)
                 PixKeyListContact = new ObservableCollection<PixKey>();
         }
+
+        private async Task DeleteContactKey(PixKey contactKey)
+        {
+            var confirm = await DialogService.ConfirmAsync("Tem certeza que deseja excluir a chave de " + contactKey?.Name + "?", "Confirmação", "Sim", "Cancelar");
+
+            if (!confirm)
+                return;
+
+            try
+            {
+                SetIsLoading(true);
+
+                var success = _pixKeyService.Remove(contactKey);
+
+                if (success)
+                {
+                    int index = PixKeyListContact.IndexOf(PixKeyListContact.FirstOrDefault(x => x.Id == contactKey.Id));
+
+                    if (index != -1)
+                        PixKeyListContact.RemoveAt(index);
+
+                    if (PixKeyListContact.Count == 0)
+                    {
+                        PixKeyListContact = new ObservableCollection<PixKey>();
+                    }
+
+                    DialogService.Toast("Chave removida com sucesso");
+                }
+
+                else
+                    ShowToastErrorMessage();
+            }
+            catch (Exception e)
+            {
+                e.SendToLog();
+            }
+            finally
+            {
+                SetIsLoading(false);
+            }
+        }
+
+        #endregion
 
         private async Task RemoveAllBilling()
         {

@@ -34,5 +34,6 @@
     <Color x:Key="staticAccentTextOnPrimary">#ffffff</Color>
     <Color x:Key="staticTextPrimary">#212121</Color>
     <Color x:Key="staticTextSecondary">#757575</Color>
+    <Color x:Key="staticBackgroundPage">#ffffff</Color>
 
 </ResourceDictionary>

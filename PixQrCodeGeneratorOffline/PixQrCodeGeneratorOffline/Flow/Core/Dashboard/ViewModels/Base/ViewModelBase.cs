@@ -138,6 +138,11 @@ namespace PixQrCodeGeneratorOffline.Base.ViewModels
             return await Application.Current.MainPage.DisplayAlert(title, message, accept, cancel);
         }
 
+        public void ShowToastErrorMessage()
+        {
+            DialogService.Toast("Algo de errado aconteceu, tente novamente mais tarde ou atualize o app");
+        }
+
         #region Navigate
 
         public Command NavigateBackCommand => new Command(() =>
