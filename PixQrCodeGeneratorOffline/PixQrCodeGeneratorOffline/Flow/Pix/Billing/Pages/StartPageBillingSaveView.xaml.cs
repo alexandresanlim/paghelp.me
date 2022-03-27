@@ -3,7 +3,7 @@ using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.Views.Content.StartPageContents
 {
-    public partial class StartPageBillingSaveView : Grid
+    public partial class StartPageBillingSaveView : StackLayout
     {
         public StartPageBillingSaveView()
         {

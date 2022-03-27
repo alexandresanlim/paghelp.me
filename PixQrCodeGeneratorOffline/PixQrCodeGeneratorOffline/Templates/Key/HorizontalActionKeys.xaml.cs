@@ -5,7 +5,7 @@ using static PixQrCodeGeneratorOffline.Extention.IconExtention;
 
 namespace PixQrCodeGeneratorOffline.Templates.Key
 {
-    public partial class HorizontalActionKeys : StackLayout
+    public partial class HorizontalActionKeys : Frame
     {
         public HorizontalActionKeys()
         {
