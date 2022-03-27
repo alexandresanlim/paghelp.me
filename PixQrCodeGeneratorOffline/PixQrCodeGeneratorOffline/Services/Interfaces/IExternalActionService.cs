@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using PixQrCodeGeneratorOffline.Models.DataStatic.Files.Base;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
@@ -14,8 +12,8 @@ namespace PixQrCodeGeneratorOffline.Services.Interfaces
 
         Task CopyText(string text, string textSuccess = "Copiado com sucesso!", Color? backgroundToast = null, Color? foregroundToast = null);
 
-        string GenerateTxtFile(string contents, string fileName);
+        string BuildPathFile(string contents, string fileName, IFileExtension extension);
 
-        Task ShareFile(string path);
+        Task ShareFile(string path, IFileExtension extension);
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Acr.UserDialogs;
+using PixQrCodeGeneratorOffline.Models.DataStatic.Files.Base;
 using PixQrCodeGeneratorOffline.Services.Interfaces;
 using System;
 using System.IO;
@@ -64,22 +65,22 @@ namespace PixQrCodeGeneratorOffline.Services
             });
         }
 
-        public string GenerateTxtFile(string contents, string fileName)
+        public string BuildPathFile(string contents, string fileName, IFileExtension extension)
         {
-            if (string.IsNullOrWhiteSpace(contents) || string.IsNullOrWhiteSpace(fileName))
+            if (string.IsNullOrWhiteSpace(contents) || string.IsNullOrWhiteSpace(fileName) || extension == null)
             {
                 DialogService.Toast("Não foi possível garar o arquivo");
                 return "";
             }
 
-            var path = Path.Combine(FileSystem.CacheDirectory, fileName + ".txt");
+            var path = Path.Combine(FileSystem.CacheDirectory, fileName + extension.SetOnFileName);
 
             File.WriteAllText(path, contents);
 
             return path;
         }
 
-        public async Task ShareFile(string path)
+        public async Task ShareFile(string path, IFileExtension extension)
         {
             if (string.IsNullOrWhiteSpace(path))
             {
@@ -90,7 +91,7 @@ namespace PixQrCodeGeneratorOffline.Services
             await Share.RequestAsync(new ShareFileRequest
             {
                 Title = "Compartilhar Arquivo",
-                File = new ShareFile(path)
+                File = new ShareFile(path, extension.ContentType)
             });
         }
     }

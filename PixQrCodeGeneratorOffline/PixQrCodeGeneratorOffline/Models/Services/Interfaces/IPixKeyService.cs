@@ -29,6 +29,8 @@ namespace PixQrCodeGeneratorOffline.Models.Services.Interfaces
 
         Task NavigateToAdd(bool isContact = false);
 
+        Task ExportToFile(ObservableCollection<PixKey> pixkeyList);
+
         //Task NavigateToAction(PixKey pixKey);
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Acr.UserDialogs;
 using PixQrCodeGeneratorOffline.Extention;
+using PixQrCodeGeneratorOffline.Models.DataStatic.Files;
 using PixQrCodeGeneratorOffline.Models.PaymentMethods.Crypto;
 using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix.Extentions;
 using PixQrCodeGeneratorOffline.Models.Repository.PaymentMethods.Crypto.Interfaces;
@@ -104,8 +105,8 @@ namespace PixQrCodeGeneratorOffline.Models.Services.PaymentMethods.Crypto
                         }),
                         new ActionSheetOption("Salvar em .txt e compartilhar", async () =>
                         {
-                            var path = _externalActionService.GenerateTxtFile(info, "ChavesPix");
-                            await _externalActionService.ShareFile(path);
+                            var path = _externalActionService.BuildPathFile(info, "ChavesPix", _txtFile);
+                            await _externalActionService.ShareFile(path, _txtFile);
                         }),
                     };
 

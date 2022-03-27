@@ -9,7 +9,7 @@ namespace PixQrCodeGeneratorOffline.Models.Base
         [LiteDB.BsonId]
         public int Id { get; set; }
 
-        public bool IsFavorite { get; set; }
+        public bool IsPin { get; set; }
 
         public bool IsContact { get; set; }
 

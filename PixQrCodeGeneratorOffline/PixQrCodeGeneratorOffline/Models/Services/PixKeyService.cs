@@ -1,7 +1,10 @@
 ﻿using Acr.UserDialogs;
+using CsvHelper;
+using CsvHelper.Configuration;
 using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models.Commands;
 using PixQrCodeGeneratorOffline.Models.Commands.Interfaces;
+using PixQrCodeGeneratorOffline.Models.DataStatic.Files;
 using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix;
 using PixQrCodeGeneratorOffline.Models.Repository.Interfaces;
 using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
@@ -14,9 +17,12 @@ using Rg.Plugins.Popup.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.Models.Services
@@ -99,8 +105,8 @@ namespace PixQrCodeGeneratorOffline.Models.Services
                         }),
                         new ActionSheetOption("Salvar em .txt e compartilhar", async () =>
                         {
-                            var path = _externalActionService.GenerateTxtFile(info, "ChavesPix");
-                            await _externalActionService.ShareFile(path);
+                            var path = _externalActionService.BuildPathFile(info, "ChavesPix", _txtFile);
+                            await _externalActionService.ShareFile(path, _txtFile);
                         }),
                     };
 
@@ -124,6 +130,68 @@ namespace PixQrCodeGeneratorOffline.Models.Services
 
                 DialogService.HideLoading();
             }
+        }
+
+        public async Task ExportToFile(ObservableCollection<PixKey> pixkeyList)
+        {
+            using (var mem = new MemoryStream())
+            using (var writer = new StreamWriter(mem))
+            using (var csvWriter = new CsvWriter(writer, new CsvConfiguration(System.Globalization.CultureInfo.InvariantCulture)
+            {
+                Delimiter = ";",
+                HasHeaderRecord = true,
+            }))
+            {
+                csvWriter.WriteField("Nome");
+                csvWriter.WriteField("Cidade");
+                csvWriter.WriteField("Chave");
+                csvWriter.WriteField("CodigoCopiaECola");
+                csvWriter.NextRecord();
+
+                foreach (var key in pixkeyList)
+                {
+                    csvWriter.WriteField(string.IsNullOrWhiteSpace(key?.Name) ? "Não informado" : key.Name);
+                    csvWriter.WriteField(string.IsNullOrWhiteSpace(key?.City) ? "Não informado" : key.City);
+                    csvWriter.WriteField(key.Key);
+                    csvWriter.WriteField(string.IsNullOrWhiteSpace(key?.Payload?.QrCode) ? "Não encontrado" : key.Payload.QrCode);
+                    csvWriter.NextRecord();
+                }
+
+                await writer.FlushAsync();
+
+                var result = Encoding.UTF8.GetString(mem.ToArray());
+
+                BuildPathAndShareKeys(result);
+            }
+        }
+
+        private void BuildPathAndShareKeys(string result)
+        {
+            var fileName = $"chaves-pix-{DateTime.Now.ToString("dd-MM-yy-HH-mm")}";
+
+            var options = new List<ActionSheetOption>()
+            {
+                new ActionSheetOption("CSV", async () =>
+                {
+                    var path = _externalActionService.BuildPathFile(result, fileName, _csvFile);
+                    await _externalActionService.ShareFile(path, _csvFile);
+                }),
+                new ActionSheetOption("TXT", async () =>
+                {
+                    var path = _externalActionService.BuildPathFile(result, fileName, _txtFile);
+                    await _externalActionService.ShareFile(path, _txtFile);
+                }),
+            };
+
+            DialogService.ActionSheet(new ActionSheetConfig
+            {
+                Title = "Seu arquivo está pronto, em que formato deseja exportar?",
+                Options = options,
+                Cancel = new ActionSheetOption("Cancelar", () =>
+                {
+                    return;
+                })
+            });
         }
 
         public async Task<bool> RemoveAll(bool isContact = false)

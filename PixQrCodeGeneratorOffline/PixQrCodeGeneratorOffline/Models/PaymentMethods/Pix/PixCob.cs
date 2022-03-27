@@ -1,7 +1,4 @@
-﻿using PixQrCodeGeneratorOffline.Models.Base;
-using PixQrCodeGeneratorOffline.Models.PaymentMethods.Base;
-using PixQrCodeGeneratorOffline.Models.Validation;
-using PixQrCodeGeneratorOffline.Models.Validation.Services.Interfaces;
+﻿using PixQrCodeGeneratorOffline.Models.PaymentMethods.Base;
 using PixQrCodeGeneratorOffline.Models.Viewer;
 using PixQrCodeGeneratorOffline.Models.Viewer.Services.Interfaces;
 using Xamarin.Forms;

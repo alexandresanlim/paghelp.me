@@ -47,6 +47,8 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public ICommand DeleteContactKeyCommand => new AsyncCommand<PixKey>(DeleteContactKey);
 
+        public IAsyncCommand ExportToFileCommand => new AsyncCommand(() => _pixKeyService.ExportToFile(PixKeyList));
+
         #endregion
 
         public DashboardViewModel()

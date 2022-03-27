@@ -1,4 +1,5 @@
 ﻿using Acr.UserDialogs;
+using PixQrCodeGeneratorOffline.Models.DataStatic.Files;
 using PixQrCodeGeneratorOffline.Services.Interfaces;
 using Xamarin.Forms;
 
@@ -11,6 +12,10 @@ namespace PixQrCodeGeneratorOffline.Services
         protected readonly IEventService _eventService;
 
         private bool _isLoading;
+
+        protected readonly TxtFile _txtFile = new TxtFile();
+
+        protected readonly CsvFile _csvFile = new CsvFile();
 
         public ServiceBase()
         {
