@@ -85,6 +85,9 @@
     <EmbeddedResource Update="Converters\Resources\ConverterResource.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Flow\Core\Security\AuthenticationPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Style\Resources\ColorsResource.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -202,9 +205,6 @@
     <EmbeddedResource Update="Flow\Core\Start\Pages\StartTabbedPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Templates\AutenticationTemplate.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
   </ItemGroup>
 
   <ItemGroup>
@@ -212,6 +212,7 @@
     <Folder Include="Flow\Core\More\Pages\" />
     <Folder Include="Flow\Core\WebView\Pages\" />
     <Folder Include="Flow\Core\Welcome\Pages\" />
+    <Folder Include="Views\Templates\" />
   </ItemGroup>
 
   <ItemGroup>

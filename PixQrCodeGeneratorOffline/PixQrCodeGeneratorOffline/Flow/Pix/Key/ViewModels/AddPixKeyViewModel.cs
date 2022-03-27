@@ -24,7 +24,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public IAsyncCommand LoadDataCommand => new AsyncCommand(LoadData);
 
-        public ICommand SaveCommand => new Command(Save);
+        public IAsyncCommand SaveCommand => new AsyncCommand(Save);
 
         public IAsyncCommand DeleteCommand => new AsyncCommand(Delete);
 
@@ -117,7 +117,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             InputPhasesCount = InputList?.Count - 1 ?? 0;
         }
 
-        private void Save()
+        private async Task Save()
         {
             CurrentPixKey.City = CurrentInputValues?.City.Value;
             CurrentPixKey.Key = CurrentInputValues?.Key?.Value;
@@ -189,7 +189,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 if (success)
                 {
                     DialogService.Toast("Chave salva com sucesso");
-                    NavigateBack();
+                    await NavigateBackPopupAsync();
                 }
 
                 else

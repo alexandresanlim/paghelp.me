@@ -60,7 +60,7 @@
                 HorizontalOptions="Start"
                 TextColor="White">
                 <controls:CustomIcon.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding NavigateBackCommand}" />
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
                 </controls:CustomIcon.GestureRecognizers>
             </controls:CustomIcon>
             <controls:CustomIcon

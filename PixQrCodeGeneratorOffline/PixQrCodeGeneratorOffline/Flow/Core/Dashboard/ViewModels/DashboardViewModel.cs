@@ -56,43 +56,51 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         private async Task LoadData()
         {
-            try
+            await LoadAuthenticationPage(async () =>
             {
-                IsBusy = true;
-
-                LoadPixKey();
-
-                LoadPixKeyContact();
-
-                LoadBilling();
-
-                LoadCurrentPixKey();
-
-                await CheckHasAKeyOnClipboard();
-
-                CurrentPixKeyActions = PixKeyAction.GetList();
-
-                if (!Preference.LikingAppMsgWasShowed && (PixKeyList?.Count > 0 || PixKeyListContact?.Count > 0) && Preference.AreYouLikingAppMsgCount >= Constants.COUNTER_TO_SHOWED_LIKING_PAGE)
+                try
                 {
-                    _preferenceService.ChangeLikingAppMsgWasShowed(true);
-                    await WaitAndExecute(5000, async () => await NavigateToLikingPage());
+                    IsBusy = true;
+
+                    LoadPixKey();
+
+                    LoadPixKeyContact();
+
+                    LoadBilling();
+
+                    LoadCurrentPixKey();
+
+                    await CheckHasAKeyOnClipboard().ConfigureAwait(false);
+
+                    CurrentPixKeyActions = PixKeyAction.GetList();
+
+                    if (!Preference.LikingAppMsgWasShowed && (PixKeyList?.Count > 0 || PixKeyListContact?.Count > 0) && Preference.AreYouLikingAppMsgCount >= Constants.COUNTER_TO_SHOWED_LIKING_PAGE)
+                    {
+                        _preferenceService.ChangeLikingAppMsgWasShowed(true);
+                        await WaitAndExecute(5000, async () => await NavigateToLikingPage());
+                    }
                 }
-            }
-            catch (Exception e)
-            {
-                e.SendToLog();
-            }
-            finally
-            {
-                IsBusy = false;
-            }
+                catch (Exception e)
+                {
+                    e.SendToLog();
+                }
+                finally
+                {
+                    IsBusy = false;
+                }
+            });
         }
 
         public void LoadPixKey() => PixKeyList = _pixKeyService?.GetAll().ToObservableCollection() ?? new ObservableCollection<PixKey>();
 
-        public void LoadPixKeyContact() => PixKeyListContact = _pixKeyService?
+        public void LoadPixKeyContact()
+        {
+            PixKeyListContact = new ObservableCollection<PixKey>();
+
+            PixKeyListContact = _pixKeyService?
             .GetAll(isContact: true)?.OrderBy(x => x?.Name)?
             .ToObservableCollection() ?? new ObservableCollection<PixKey>();
+        }
 
         public void LoadBilling()
         {

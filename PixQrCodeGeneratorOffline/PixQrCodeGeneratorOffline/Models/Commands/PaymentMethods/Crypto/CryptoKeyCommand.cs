@@ -129,10 +129,6 @@ namespace PixQrCodeGeneratorOffline.Models.Commands.PaymentMethods.Crypto
 
                     IsLoad = true;
 
-                    DialogService.ShowLoading("");
-
-                    await Task.Delay(500);
-
                     var pixPaylod = _cryptoPayloadService.Create(pixKey);
 
                     await Shell.Current.Navigation.PushPopupAsync(new PaymentPage(pixPaylod));

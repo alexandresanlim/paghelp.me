@@ -1,6 +1,9 @@
-﻿using PixQrCodeGeneratorOffline.Models.PaymentMethods.Base;
+﻿using AsyncAwaitBestPractices;
+using PixQrCodeGeneratorOffline.Extention;
+using PixQrCodeGeneratorOffline.Models.PaymentMethods.Base;
 using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix.Extentions;
 using PixQrCodeGeneratorOffline.ViewModels;
+using Rg.Plugins.Popup.Extensions;
 using Rg.Plugins.Popup.Pages;
 using Xamarin.Forms;
 
@@ -36,6 +39,11 @@ namespace PixQrCodeGeneratorOffline.Views
             }
 
            // App.StatusBarService.SetStatusBarColor(_paymentViewModel.CurrentInfo.Color.PrimaryDark);
+        }
+
+        private void TapGestureRecognizer_Tapped(object sender, System.EventArgs e)
+        {
+            Shell.Current.Navigation.PopPopupAsync().SafeFireAndForget(x => x.SendToLog());
         }
     }
 }

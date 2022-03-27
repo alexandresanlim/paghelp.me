@@ -9,7 +9,6 @@
     xmlns:templates="clr-namespace:PixQrCodeGeneratorOffline.Templates"
     xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
     x:DataType="vm:DashboardViewModel"
-    CompressedLayout.IsHeadless="True"
     Spacing="0">
 
     <StackLayout.Resources>
