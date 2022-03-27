@@ -133,7 +133,11 @@ namespace PixQrCodeGeneratorOffline.Models.Services
             if (!HasKeysValidated(pisKeyList))
                 return false;
 
-            var confirm = await DialogService.ConfirmAsync("Tem certeza que deseja excluir todas as " + pisKeyList.Count + " chaves?", "Confirmação", "Sim, tenho certeza", "Cancelar");
+            var title = pisKeyList.Count.Equals(1) ?
+                "Tem certeza que deseja excluir a última chave?" :
+                "Tem certeza que deseja excluir todas as " + pisKeyList.Count + " chaves?";
+
+            var confirm = await DialogService.ConfirmAsync(title, "Confirmação", "Sim, tenho certeza", "Cancelar");
 
             if (!confirm)
                 return false;
@@ -143,7 +147,7 @@ namespace PixQrCodeGeneratorOffline.Models.Services
                 var success = _pixKeyRepository.RemoveAll(x => x.IsContact == isContact);
 
                 if (success)
-                    DialogService.Toast("Todas as chaves foram removidas com sucesso!");
+                    DialogService.Toast("Chaves removidas com sucesso!");
 
                 else
                     DialogService.Toast("Algo de errado aconteceu, tente novamente mais tarde ou atualize o app");

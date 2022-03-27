@@ -14,9 +14,13 @@ namespace PixQrCodeGeneratorOffline.Converters
 
             var v = (IList)value;
 
-            if (parameter == null && parameter is int)
+            if (parameter != null)
             {
-                return v.Count > (int)parameter;
+                if (parameter is int parameterInt)
+                    return v.Count > parameterInt;
+
+                if (parameter is string parameterString && int.TryParse(parameterString, out int stringConvert))
+                    return v.Count > stringConvert;
             }
 
             return v.Count > 1;

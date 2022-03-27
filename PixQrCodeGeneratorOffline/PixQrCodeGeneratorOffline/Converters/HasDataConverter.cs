@@ -12,16 +12,16 @@ namespace PixQrCodeGeneratorOffline.Converters
             if (value == null)
                 return false;
 
-            if (value is string)
-                return !string.IsNullOrWhiteSpace((string)value);
+            if (value is string valueString)
+                return !string.IsNullOrWhiteSpace(valueString);
 
-            if (value is IList)
-                return ((IList)value).Count > 0;
+            if (value is IList valueList)
+                return valueList.Count > 0;
 
             return true;
         }
 
-        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             return value;
         }
