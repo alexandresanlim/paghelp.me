@@ -38,14 +38,15 @@ namespace PixQrCodeGeneratorOffline.Droid
             Acr.UserDialogs.UserDialogs.Init(this);
             MobileAds.Initialize(ApplicationContext);
             CrossFingerprint.SetCurrentActivityResolver(() => Platform.CurrentActivity);
-            ConfigureWindow();
+            Rg.Plugins.Popup.Popup.Init(this);
+            //ConfigureWindow();
             AppCenter.Start(App.Ids.AppCenter, typeof(Analytics), typeof(Crashes));
         }
 
-        private void ConfigureWindow()
-        {
-            Window.SetSoftInputMode(Android.Views.SoftInput.AdjustResize);
-        }
+        //private void ConfigureWindow()
+        //{
+        //    Window.SetSoftInputMode(Android.Views.SoftInput.AdjustResize);
+        //}
 
         private void StartAndroidDependency()
         {
@@ -57,6 +58,12 @@ namespace PixQrCodeGeneratorOffline.Droid
         {
             Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
+
+        public override void OnBackPressed()
+        {
+            //base.OnBackPressed();
+            Rg.Plugins.Popup.Popup.SendBackPressed(base.OnBackPressed);
         }
 
         public class StatusBarChanger : IStatusBar

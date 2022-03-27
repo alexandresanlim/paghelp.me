@@ -15,6 +15,7 @@ using PixQrCodeGeneratorOffline.ViewModels;
 using PixQrCodeGeneratorOffline.Views;
 using Plugin.Fingerprint;
 using Plugin.Fingerprint.Abstractions;
+using Rg.Plugins.Popup.Extensions;
 using System;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -161,6 +162,7 @@ namespace PixQrCodeGeneratorOffline.Base.ViewModels
         public void NavigateBack()
         {
             Shell.Current.SendBackButtonPressed();
+            Shell.Current.Navigation.PopPopupAsync().SafeFireAndForget(x => x.SendToLog());
         }
 
         public async Task NavigateToRootAsync()

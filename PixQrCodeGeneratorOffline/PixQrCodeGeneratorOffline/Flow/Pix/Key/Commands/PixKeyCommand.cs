@@ -7,6 +7,7 @@ using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix.Extentions;
 using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Services;
 using PixQrCodeGeneratorOffline.Views;
+using Rg.Plugins.Popup.Extensions;
 using System;
 using System.Threading.Tasks;
 using Xamarin.Forms;
@@ -78,7 +79,7 @@ namespace PixQrCodeGeneratorOffline.Models.Commands
 
             try
             {
-                await Shell.Current.Navigation.PushAsync(new AddPixKeyPage(pixKey, isContact));
+                await Shell.Current.Navigation.PushPopupAsync(new AddPixKeyPage(pixKey, isContact));
 
                 _eventService.SendEvent("Editou chave", EventType.UPDATE);
             }

@@ -10,6 +10,7 @@ using PixQrCodeGeneratorOffline.Models.Viewer.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Services;
 using PixQrCodeGeneratorOffline.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Views;
+using Rg.Plugins.Popup.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -161,7 +162,7 @@ namespace PixQrCodeGeneratorOffline.Models.Services
             }
         }
 
-        public async Task NavigateToAdd(bool isContact = false) => await Shell.Current.Navigation.PushAsync(new AddPixKeyPage(null, isContact));
+        public async Task NavigateToAdd(bool isContact = false) => await Shell.Current.Navigation.PushPopupAsync(new AddPixKeyPage(null, isContact));
 
         private bool HasKeysValidated(List<PixKey> pisKeyList)
         {

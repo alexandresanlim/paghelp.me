@@ -69,9 +69,6 @@
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <BundleResource Include="Resources\keys.json" />
-    <BundleResource Include="Resources\arrow_up_left.json" />
-    <BundleResource Include="Resources\not-found.json" />
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
@@ -156,6 +153,9 @@
     </PackageReference>
     <PackageReference Include="Plugin.StoreReview">
       <Version>3.3.1</Version>
+    </PackageReference>
+    <PackageReference Include="Rg.Plugins.Popup">
+      <Version>2.1.0</Version>
     </PackageReference>
     <PackageReference Include="Xam.Forms.QRCode">
       <Version>0.5.0</Version>

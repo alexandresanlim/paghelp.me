@@ -28,6 +28,7 @@ namespace PixQrCodeGeneratorOffline.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             //global::Xamarin.Forms.Forms.SetFlags("CollectionView_Experimental");
+            Rg.Plugins.Popup.Popup.Init();
             global::Xamarin.Forms.Forms.Init();
             KeyboardOverlapRenderer.Init();
             MobileAds.SharedInstance.Start(CompletionHandler);
