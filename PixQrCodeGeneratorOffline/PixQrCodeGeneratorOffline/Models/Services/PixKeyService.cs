@@ -169,15 +169,31 @@ namespace PixQrCodeGeneratorOffline.Models.Services
 
             var options = new List<ActionSheetOption>()
             {
-                new ActionSheetOption("CSV", async () =>
+                new ActionSheetOption(_csvFile.Display, async () =>
                 {
-                    var path = _externalActionService.BuildPathFile(result, fileName, _csvFile);
-                    await _externalActionService.ShareFile(path, _csvFile);
+                    try
+                    {
+                        var path = _externalActionService.BuildPathFile(result, fileName, _csvFile);
+                        await _externalActionService.ShareFile(path, _csvFile);
+                        _eventService.SendEvent("Exportou minhas chaves em " + _csvFile.Display, EventType.GENERATEFILE, nameof(PixKeyService));
+                    }
+                    catch (Exception e)
+                    {
+                        e.SendToLog();
+                    }
                 }),
-                new ActionSheetOption("TXT", async () =>
+                new ActionSheetOption(_txtFile.Display, async () =>
                 {
-                    var path = _externalActionService.BuildPathFile(result, fileName, _txtFile);
-                    await _externalActionService.ShareFile(path, _txtFile);
+                    try
+                    {
+                        var path = _externalActionService.BuildPathFile(result, fileName, _txtFile);
+                        await _externalActionService.ShareFile(path, _txtFile);
+                        _eventService.SendEvent("Exportou minhas chaves em " + _txtFile.Display, EventType.GENERATEFILE, nameof(PixKeyService));
+                    }
+                    catch (Exception e)
+                    {
+                        e.SendToLog();
+                    }
                 }),
             };
 

@@ -31,6 +31,7 @@ namespace PixQrCodeGeneratorOffline.Services
         DELETE,
         TAP,
         COMMAND,
-        FLOW
+        FLOW,
+        GENERATEFILE
     }
 }
