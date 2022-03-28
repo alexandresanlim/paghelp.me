@@ -142,17 +142,15 @@ namespace PixQrCodeGeneratorOffline.Models.Services
                 HasHeaderRecord = true,
             }))
             {
-                csvWriter.WriteField("Nome");
-                csvWriter.WriteField("Cidade");
                 csvWriter.WriteField("Chave");
+                csvWriter.WriteField("Instituicao");
                 csvWriter.WriteField("CodigoCopiaECola");
                 csvWriter.NextRecord();
 
                 foreach (var key in pixkeyList)
                 {
-                    csvWriter.WriteField(string.IsNullOrWhiteSpace(key?.Name) ? "Não informado" : key.Name);
-                    csvWriter.WriteField(string.IsNullOrWhiteSpace(key?.City) ? "Não informado" : key.City);
                     csvWriter.WriteField(key.Key);
+                    csvWriter.WriteField(string.IsNullOrWhiteSpace(key?.FinancialInstitution?.Name) ? "Não informado" : key.FinancialInstitution.Name);
                     csvWriter.WriteField(string.IsNullOrWhiteSpace(key?.Payload?.QrCode) ? "Não encontrado" : key.Payload.QrCode);
                     csvWriter.NextRecord();
                 }
@@ -167,7 +165,7 @@ namespace PixQrCodeGeneratorOffline.Models.Services
 
         private void BuildPathAndShareKeys(string result)
         {
-            var fileName = $"chaves-pix-{DateTime.Now.ToString("dd-MM-yy-HH-mm")}";
+            var fileName = $"minhas-chaves-pix-{DateTime.Now.ToString("dd-MM-yy-HH-mm")}";
 
             var options = new List<ActionSheetOption>()
             {

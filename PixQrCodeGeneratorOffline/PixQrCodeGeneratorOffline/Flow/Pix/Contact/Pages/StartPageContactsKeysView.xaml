@@ -40,7 +40,7 @@
                     BackgroundColor="{DynamicResource foreground_page}"
                     CornerRadius="5"
                     VerticalOptions="FillAndExpand"
-                    WidthRequest="150">
+                    WidthRequest="170">
 
                     <StackLayout HorizontalOptions="FillAndExpand" Spacing="0">
 
