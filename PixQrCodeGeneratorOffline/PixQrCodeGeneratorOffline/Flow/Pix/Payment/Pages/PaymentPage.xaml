@@ -97,7 +97,8 @@
 
                     <Frame
                         Padding="8"
-                        BackgroundColor="{Binding CurrentInfo.Color.PrimaryDark}"
+                        BackgroundColor="Transparent"
+                        BorderColor="{Binding CurrentInfo.Color.PrimaryDark}"
                         CornerRadius="8"
                         HorizontalOptions="CenterAndExpand"
                         IsClippedToBounds="True"
