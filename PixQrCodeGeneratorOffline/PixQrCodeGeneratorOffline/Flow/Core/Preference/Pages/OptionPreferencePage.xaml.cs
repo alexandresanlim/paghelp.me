@@ -1,4 +1,5 @@
-﻿using PixQrCodeGeneratorOffline.ViewModels;
+﻿using AsyncAwaitBestPractices;
+using PixQrCodeGeneratorOffline.ViewModels;
 using System;
 
 using Xamarin.Forms;
@@ -24,7 +25,7 @@ namespace PixQrCodeGeneratorOffline.Views
             {
                 IsOppearing = true;
 
-                _optionPreferenceViewModel.LoadData();
+                _optionPreferenceViewModel.LoadData().SafeFireAndForget();
 
                 base.OnAppearing();
             }

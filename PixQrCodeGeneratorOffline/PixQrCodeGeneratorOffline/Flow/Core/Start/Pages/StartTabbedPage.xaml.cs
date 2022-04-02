@@ -50,5 +50,10 @@ namespace PixQrCodeGeneratorOffline.Views
                 vm.LoadHideValue();
             }
         }
+
+        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+            Shell.Current.Navigation.PushAsync(new OptionPreferencePage(), true);
+        }
     }
 }

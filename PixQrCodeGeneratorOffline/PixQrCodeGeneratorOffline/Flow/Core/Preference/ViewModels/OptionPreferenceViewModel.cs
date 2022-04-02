@@ -1,15 +1,17 @@
-﻿using PixQrCodeGeneratorOffline.Base.ViewModels;
+﻿using AsyncAwaitBestPractices;
+using PixQrCodeGeneratorOffline.Base.ViewModels;
 using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Services;
+using Plugin.Fingerprint;
 using System.Threading.Tasks;
 
 namespace PixQrCodeGeneratorOffline.ViewModels
 {
     public class OptionPreferenceViewModel : ViewModelBase
     {
-        public void LoadData()
+        public async Task LoadData()
         {
-            IsPreferenceFingerPrint = Preference.FingerPrint;
+            IsPreferenceFingerPrint = Preference.FingerPrint && await CrossFingerprint.Current.IsAvailableAsync();
             IsPreferenceNews = Preference.ShowNews;
             IsPreferncePdvMode = Preference.IsPDVMode;
             IsThemeDark = Preference.ThemeIsDark;
@@ -23,7 +25,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
             if (success)
             {
-                LoadData();
+                await LoadData();
             }
 
             else
@@ -33,29 +35,29 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         }
 
-        public void OptionPDV()
+        public async Task OptionPDV()
         {
             _preferenceService.ChangePDVMode();
-            LoadData();
+            await LoadData();
         }
 
-        public void OptionShowNews()
+        public async Task OptionShowNews()
         {
             _preferenceService.ChangeShowNewsMode();
-            LoadData();
+            await LoadData();
             //await DashboardVM.LoadNews();
         }
 
-        public void OptionTheme()
+        public async Task OptionTheme()
         {
             _preferenceService.ChangeTheme();
-            LoadData();
+            await LoadData();
         }
 
-        public void ChangeCrypto()
+        public async Task ChangeCrypto()
         {
             _preferenceService.ChangeCrypto();
-            LoadData();
+            await LoadData();
         }
 
         private void LoadThemeIcon()

@@ -24,7 +24,7 @@ namespace PixQrCodeGeneratorOffline.Models.Commands.Base
 
         private AsyncCommand GetShareCommand(PayloadBase pixPayload)
         {
-            return new AsyncCommand(async () =>
+            return _customAsyncCommand.Create(async () =>
             {
                 await _externalActionService.ShareText(pixPayload?.QrCode);
             });
@@ -32,7 +32,7 @@ namespace PixQrCodeGeneratorOffline.Models.Commands.Base
 
         private AsyncCommand GetCopyCommand(PayloadBase pixPayload)
         {
-            return new AsyncCommand(async () =>
+            return _customAsyncCommand.Create(async () =>
             {
                 await _externalActionService.CopyText(pixPayload?.QrCode, "Código copiado com sucesso!");
             });
@@ -40,7 +40,7 @@ namespace PixQrCodeGeneratorOffline.Models.Commands.Base
 
         private AsyncCommand GetShareOnWhatsAppCommand(PayloadBase pixPayload)
         {
-            return new AsyncCommand(async () =>
+            return _customAsyncCommand.Create(async () =>
             {
                 await _externalActionService.ShareOnWhats(pixPayload?.QrCode);
             });

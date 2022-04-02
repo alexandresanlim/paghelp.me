@@ -51,11 +51,10 @@ namespace PixQrCodeGeneratorOffline.Services
         {
             if (string.IsNullOrWhiteSpace(text))
             {
-                DialogService.Toast("Texto a ser copiado é inválido");
+                DialogService.Toast("Texto inválido");
                 return;
             }
 
-            await Clipboard.SetTextAsync(text);
             //DialogService.Toast(textSuccess);
 
             DialogService.Toast(new ToastConfig(textSuccess)
@@ -63,6 +62,8 @@ namespace PixQrCodeGeneratorOffline.Services
                 BackgroundColor = backgroundToast ?? App.ThemeColors.PrimaryDark,
                 MessageTextColor = foregroundToast ?? App.ThemeColors.TextOnPrimary,
             });
+
+            await Clipboard.SetTextAsync(text);
         }
 
         public string BuildPathFile(string contents, string fileName, IFileExtension extension)
