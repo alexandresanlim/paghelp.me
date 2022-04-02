@@ -34,14 +34,14 @@
             </Style>
 
             <Style x:Key="styleSymbolValueText" TargetType="Label">
-                <Setter Property="TextColor" Value="{Binding CurrentStyleFromKey.PrimaryDark}" />
+                <Setter Property="TextColor" Value="{DynamicResource textPrimary}" />
                 <Setter Property="FontSize" Value="30" />
                 <Setter Property="FontFamily" Value="{DynamicResource FontSemiBold}" />
                 <Setter Property="Margin" Value="0,15,0,0" />
             </Style>
 
             <Style x:Key="styleValueText" TargetType="Label">
-                <Setter Property="TextColor" Value="{Binding CurrentStyleFromKey.PrimaryDark}" />
+                <Setter Property="TextColor" Value="{DynamicResource textPrimary}" />
                 <Setter Property="FontSize" Value="60" />
                 <Setter Property="FontFamily" Value="{DynamicResource FontSemiBold}" />
             </Style>

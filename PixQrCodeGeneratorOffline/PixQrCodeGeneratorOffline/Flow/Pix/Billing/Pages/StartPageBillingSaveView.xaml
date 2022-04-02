@@ -120,7 +120,7 @@
                                 FontFamily="{DynamicResource FontBold}"
                                 FontSize="{DynamicResource FontSizeLarge}"
                                 Text="{Binding PixCob.Viewer.ValuePresentation}"
-                                TextColor="{Binding PixKey.FinancialInstitution.Institution.MaterialColor.PrimaryDark}" />
+                                TextColor="{DynamicResource textPrimary}" />
 
                         </StackLayout>
                     </StackLayout>
