@@ -2,6 +2,7 @@
 using CsvHelper;
 using CsvHelper.Configuration;
 using PixQrCodeGeneratorOffline.Extention;
+using PixQrCodeGeneratorOffline.Helpers;
 using PixQrCodeGeneratorOffline.Models.Commands;
 using PixQrCodeGeneratorOffline.Models.Commands.Interfaces;
 using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix;
@@ -171,9 +172,14 @@ namespace PixQrCodeGeneratorOffline.Models.Services
             BuildPathAndShareKeysContact(result);
         }
 
+        const EventType EXPORT_EVENT_TYPE = EventType.GENERATEFILE;
+        const string EXPORT_EVENT_CLASS = nameof(PixKeyService);
+
         private void BuildPathAndShareKeys(string result)
         {
             var fileName = $"minhas-chaves-pix-{DateTime.Now.ToString("dd-MM-yy-HH-mm")}";
+
+            const string EXPORT_EVENT_TITLE = "Exportou minhas chaves em ";
 
             var options = new List<ActionSheetOption>()
             {
@@ -183,7 +189,7 @@ namespace PixQrCodeGeneratorOffline.Models.Services
                     {
                         var path = _externalActionService.BuildPathFile(result, fileName, _csvFile);
                         await _externalActionService.ShareFile(path, _csvFile);
-                        _eventService.SendEvent("Exportou minhas chaves em " + _csvFile.Display, EventType.GENERATEFILE, nameof(PixKeyService));
+                        _eventService.SendEvent(EXPORT_EVENT_TITLE + _csvFile.Display, EXPORT_EVENT_TYPE, EXPORT_EVENT_CLASS);
                     }
                     catch (Exception e)
                     {
@@ -196,7 +202,7 @@ namespace PixQrCodeGeneratorOffline.Models.Services
                     {
                         var path = _externalActionService.BuildPathFile(result, fileName, _txtFile);
                         await _externalActionService.ShareFile(path, _txtFile);
-                        _eventService.SendEvent("Exportou minhas chaves em " + _txtFile.Display, EventType.GENERATEFILE, nameof(PixKeyService));
+                        _eventService.SendEvent(EXPORT_EVENT_TITLE + _txtFile.Display, EXPORT_EVENT_TYPE, EXPORT_EVENT_CLASS);
                     }
                     catch (Exception e)
                     {
@@ -207,7 +213,7 @@ namespace PixQrCodeGeneratorOffline.Models.Services
 
             DialogService.ActionSheet(new ActionSheetConfig
             {
-                Title = "Seu arquivo está pronto, em que formato deseja exportar?",
+                Title = Constants.EXPORT_FILE_READY_SELECT_FORMAT,
                 Options = options,
                 Cancel = new ActionSheetOption("Cancelar", () =>
                 {
@@ -218,6 +224,8 @@ namespace PixQrCodeGeneratorOffline.Models.Services
 
         private void BuildPathAndShareKeysContact(string result)
         {
+            const string EXPORT_EVENT_TITLE = "Exportou chaves de contatos em ";
+
             var fileName = $"contatos-chaves-pix-{DateTime.Now.ToString("dd-MM-yy-HH-mm")}";
 
             var options = new List<ActionSheetOption>()
@@ -228,7 +236,7 @@ namespace PixQrCodeGeneratorOffline.Models.Services
                     {
                         var path = _externalActionService.BuildPathFile(result, fileName, _csvFile);
                         await _externalActionService.ShareFile(path, _csvFile);
-                        _eventService.SendEvent("Exportou chaves de contatos em " + _csvFile.Display, EventType.GENERATEFILE, nameof(PixKeyService));
+                        _eventService.SendEvent( EXPORT_EVENT_TITLE+ _csvFile.Display, EXPORT_EVENT_TYPE, EXPORT_EVENT_CLASS);
                     }
                     catch (Exception e)
                     {
@@ -241,7 +249,7 @@ namespace PixQrCodeGeneratorOffline.Models.Services
                     {
                         var path = _externalActionService.BuildPathFile(result, fileName, _txtFile);
                         await _externalActionService.ShareFile(path, _txtFile);
-                        _eventService.SendEvent("Exportou chaves de contatos em " + _txtFile.Display, EventType.GENERATEFILE, nameof(PixKeyService));
+                        _eventService.SendEvent(EXPORT_EVENT_TITLE + _txtFile.Display, EXPORT_EVENT_TYPE, EXPORT_EVENT_CLASS);
                     }
                     catch (Exception e)
                     {
@@ -252,7 +260,7 @@ namespace PixQrCodeGeneratorOffline.Models.Services
 
             DialogService.ActionSheet(new ActionSheetConfig
             {
-                Title = "Seu arquivo está pronto, em que formato deseja exportar?",
+                Title = Constants.EXPORT_FILE_READY_SELECT_FORMAT,
                 Options = options,
                 Cancel = new ActionSheetOption("Cancelar", () =>
                 {

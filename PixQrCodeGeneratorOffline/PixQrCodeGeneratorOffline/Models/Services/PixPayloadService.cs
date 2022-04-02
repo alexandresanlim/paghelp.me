@@ -209,7 +209,7 @@ namespace PixQrCodeGeneratorOffline.Models.Services
 
             const string EXPORT_EVENT_TITLE = "Exportou cobranças salvas em ";
             const EventType EXPORT_EVENT_TYPE = EventType.GENERATEFILE;
-            const string EXPORT_EVENT_CLASS = nameof(PixKeyService);
+            const string EXPORT_EVENT_CLASS = nameof(PixPayloadService);
 
             var options = new List<ActionSheetOption>()
             {
@@ -243,7 +243,7 @@ namespace PixQrCodeGeneratorOffline.Models.Services
 
             DialogService.ActionSheet(new ActionSheetConfig
             {
-                Title = Constants.EXPORT_FILE_READY_SELECT_CSV_OR_TXT,
+                Title = Constants.EXPORT_FILE_READY_SELECT_FORMAT,
                 Options = options,
                 Cancel = new ActionSheetOption(Constants.CANCEL, () =>
                 {
