@@ -4,7 +4,6 @@ using CsvHelper.Configuration;
 using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models.Commands;
 using PixQrCodeGeneratorOffline.Models.Commands.Interfaces;
-using PixQrCodeGeneratorOffline.Models.DataStatic.Files;
 using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix;
 using PixQrCodeGeneratorOffline.Models.Repository.Interfaces;
 using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
@@ -22,7 +21,6 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
-using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.Models.Services
@@ -30,8 +28,6 @@ namespace PixQrCodeGeneratorOffline.Models.Services
     public class PixKeyService : ServiceBase, IPixKeyService
     {
         private readonly IPixKeyRepository _pixKeyRepository;
-
-        private readonly IExternalActionService _externalActionService;
 
         private readonly IPixKeyViewerService _pixKeyViewerService;
 
@@ -42,7 +38,6 @@ namespace PixQrCodeGeneratorOffline.Models.Services
         public PixKeyService()
         {
             _pixKeyRepository = DependencyService.Get<IPixKeyRepository>();
-            _externalActionService = DependencyService.Get<IExternalActionService>();
             _pixKeyViewerService = DependencyService.Get<IPixKeyViewerService>();
             _pixPayloadService = DependencyService.Get<IPixPayloadService>();
             _pixKeyCommand = DependencyService.Get<IPixKeyCommand>();
@@ -132,35 +127,48 @@ namespace PixQrCodeGeneratorOffline.Models.Services
             }
         }
 
-        public async Task ExportToFile(ObservableCollection<PixKey> pixkeyList)
+        public async Task ExportToFile(IList<PixKey> pixkeyList)
         {
-            using (var mem = new MemoryStream())
-            using (var writer = new StreamWriter(mem))
-            using (var csvWriter = new CsvWriter(writer, new CsvConfiguration(System.Globalization.CultureInfo.InvariantCulture)
+            _csvWriter.WriteField("Chave");
+            _csvWriter.WriteField("Instituicao");
+            _csvWriter.WriteField("CodigoCopiaECola");
+            _csvWriter.NextRecord();
+
+            foreach (var key in pixkeyList)
             {
-                Delimiter = ";",
-                HasHeaderRecord = true,
-            }))
-            {
-                csvWriter.WriteField("Chave");
-                csvWriter.WriteField("Instituicao");
-                csvWriter.WriteField("CodigoCopiaECola");
-                csvWriter.NextRecord();
-
-                foreach (var key in pixkeyList)
-                {
-                    csvWriter.WriteField(key.Key);
-                    csvWriter.WriteField(string.IsNullOrWhiteSpace(key?.FinancialInstitution?.Name) ? "Não informado" : key.FinancialInstitution.Name);
-                    csvWriter.WriteField(string.IsNullOrWhiteSpace(key?.Payload?.QrCode) ? "Não encontrado" : key.Payload.QrCode);
-                    csvWriter.NextRecord();
-                }
-
-                await writer.FlushAsync();
-
-                var result = Encoding.UTF8.GetString(mem.ToArray());
-
-                BuildPathAndShareKeys(result);
+                _csvWriter.WriteField(key.Key);
+                _csvWriter.WriteField(string.IsNullOrWhiteSpace(key?.FinancialInstitution?.Name) ? "Não informado" : key.FinancialInstitution.Name);
+                _csvWriter.WriteField(string.IsNullOrWhiteSpace(key?.Payload?.QrCode) ? "Não encontrado" : key.Payload.QrCode);
+                _csvWriter.NextRecord();
             }
+
+            await _csvWriter.FlushAsync();
+
+            var result = Encoding.UTF8.GetString(_mem.ToArray());
+
+            BuildPathAndShareKeys(result);
+        }
+
+        public async Task ExportToFileContact(IList<PixKey> contactPixkeyList)
+        {
+            _csvWriter.WriteField("Nome");
+            _csvWriter.WriteField("Chave");
+            _csvWriter.WriteField("Cidade");
+            _csvWriter.NextRecord();
+
+            foreach (var key in contactPixkeyList)
+            {
+                _csvWriter.WriteField(string.IsNullOrWhiteSpace(key?.Name) ? "Não informado" : key.Name);
+                _csvWriter.WriteField(key?.Key);
+                _csvWriter.WriteField(string.IsNullOrWhiteSpace(key?.City) ? "Não informado" : key.City);
+                _csvWriter.NextRecord();
+            }
+
+            await _csvWriter.FlushAsync();
+
+            var result = Encoding.UTF8.GetString(_mem.ToArray());
+
+            BuildPathAndShareKeysContact(result);
         }
 
         private void BuildPathAndShareKeys(string result)
@@ -189,6 +197,51 @@ namespace PixQrCodeGeneratorOffline.Models.Services
                         var path = _externalActionService.BuildPathFile(result, fileName, _txtFile);
                         await _externalActionService.ShareFile(path, _txtFile);
                         _eventService.SendEvent("Exportou minhas chaves em " + _txtFile.Display, EventType.GENERATEFILE, nameof(PixKeyService));
+                    }
+                    catch (Exception e)
+                    {
+                        e.SendToLog();
+                    }
+                }),
+            };
+
+            DialogService.ActionSheet(new ActionSheetConfig
+            {
+                Title = "Seu arquivo está pronto, em que formato deseja exportar?",
+                Options = options,
+                Cancel = new ActionSheetOption("Cancelar", () =>
+                {
+                    return;
+                })
+            });
+        }
+
+        private void BuildPathAndShareKeysContact(string result)
+        {
+            var fileName = $"contatos-chaves-pix-{DateTime.Now.ToString("dd-MM-yy-HH-mm")}";
+
+            var options = new List<ActionSheetOption>()
+            {
+                new ActionSheetOption(_csvFile.Display, async () =>
+                {
+                    try
+                    {
+                        var path = _externalActionService.BuildPathFile(result, fileName, _csvFile);
+                        await _externalActionService.ShareFile(path, _csvFile);
+                        _eventService.SendEvent("Exportou chaves de contatos em " + _csvFile.Display, EventType.GENERATEFILE, nameof(PixKeyService));
+                    }
+                    catch (Exception e)
+                    {
+                        e.SendToLog();
+                    }
+                }),
+                new ActionSheetOption(_txtFile.Display, async () =>
+                {
+                    try
+                    {
+                        var path = _externalActionService.BuildPathFile(result, fileName, _txtFile);
+                        await _externalActionService.ShareFile(path, _txtFile);
+                        _eventService.SendEvent("Exportou chaves de contatos em " + _txtFile.Display, EventType.GENERATEFILE, nameof(PixKeyService));
                     }
                     catch (Exception e)
                     {

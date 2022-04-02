@@ -1,7 +1,11 @@
-﻿using pix_payload_generator.net.Models.Attributes;
+﻿using Acr.UserDialogs;
+using CsvHelper;
+using CsvHelper.Configuration;
+using pix_payload_generator.net.Models.Attributes;
 using pix_payload_generator.net.Models.CobrancaModels;
 using pix_payload_generator.net.Models.PayloadModels;
 using PixQrCodeGeneratorOffline.Extention;
+using PixQrCodeGeneratorOffline.Helpers;
 using PixQrCodeGeneratorOffline.Models.Commands;
 using PixQrCodeGeneratorOffline.Models.Commands.Interfaces;
 using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix;
@@ -13,7 +17,10 @@ using PixQrCodeGeneratorOffline.Models.Viewer.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Services;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq.Expressions;
+using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
@@ -168,6 +175,81 @@ namespace PixQrCodeGeneratorOffline.Models.Services
         public bool IsValid(PixPayload pixPayload)
         {
             return !string.IsNullOrEmpty(pixPayload?.QrCode);
+        }
+
+        public async Task ExportToFile(IList<PixPayload> saveBillingList)
+        {
+            _csvWriter.WriteField("Identificador");
+            _csvWriter.WriteField("Instituicao");
+            _csvWriter.WriteField("Chave");
+            _csvWriter.WriteField("ValorCobranca");
+            _csvWriter.WriteField("CodigoCopiaECola");
+            _csvWriter.NextRecord();
+
+            foreach (var billing in saveBillingList)
+            {
+                _csvWriter.WriteField(billing?.Identity);
+                _csvWriter.WriteField(string.IsNullOrWhiteSpace(billing?.PixKey?.FinancialInstitution?.Name) ? "Não informado" : billing.PixKey.FinancialInstitution.Name);
+                _csvWriter.WriteField(string.IsNullOrWhiteSpace(billing?.PixKey?.Key) ? "Não encontrado" : billing.PixKey.Key);
+                _csvWriter.WriteField(string.IsNullOrWhiteSpace(billing?.PixCob?.Viewer?.ValuePresentation) ? "Não encontrado" : billing.PixCob.Viewer.ValuePresentation);
+                _csvWriter.WriteField(string.IsNullOrWhiteSpace(billing?.QrCode) ? "Não encontrado" : billing.QrCode);
+                _csvWriter.NextRecord();
+            }
+
+            await _csvWriter.FlushAsync();
+
+            var result = Encoding.UTF8.GetString(_mem.ToArray());
+
+            BuildPathAndShareBilling(result);
+        }
+
+        private void BuildPathAndShareBilling(string result)
+        {
+            var fileName = $"cobranças-salvas-pix-{DateTime.Now.ToString("dd-MM-yy-HH-mm")}";
+
+            const string EXPORT_EVENT_TITLE = "Exportou cobranças salvas em ";
+            const EventType EXPORT_EVENT_TYPE = EventType.GENERATEFILE;
+            const string EXPORT_EVENT_CLASS = nameof(PixKeyService);
+
+            var options = new List<ActionSheetOption>()
+            {
+                new ActionSheetOption(_csvFile.Display, async () =>
+                {
+                    try
+                    {
+                        var path = _externalActionService.BuildPathFile(result, fileName, _csvFile);
+                        await _externalActionService.ShareFile(path, _csvFile);
+                        _eventService.SendEvent(EXPORT_EVENT_TITLE + _csvFile.Display, EXPORT_EVENT_TYPE , EXPORT_EVENT_CLASS);
+                    }
+                    catch (Exception e)
+                    {
+                        e.SendToLog();
+                    }
+                }),
+                new ActionSheetOption(_txtFile.Display, async () =>
+                {
+                    try
+                    {
+                        var path = _externalActionService.BuildPathFile(result, fileName, _txtFile);
+                        await _externalActionService.ShareFile(path, _txtFile);
+                        _eventService.SendEvent(EXPORT_EVENT_TITLE + _txtFile.Display, EXPORT_EVENT_TYPE, EXPORT_EVENT_CLASS);
+                    }
+                    catch (Exception e)
+                    {
+                        e.SendToLog();
+                    }
+                }),
+            };
+
+            DialogService.ActionSheet(new ActionSheetConfig
+            {
+                Title = Constants.EXPORT_FILE_READY_SELECT_CSV_OR_TXT,
+                Options = options,
+                Cancel = new ActionSheetOption(Constants.CANCEL, () =>
+                {
+                    return;
+                })
+            });
         }
     }
 }

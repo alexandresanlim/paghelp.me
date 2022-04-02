@@ -25,7 +25,6 @@
     <controls:CustomCollectionView
         Margin="8,0,0,0"
         HeightRequest="230"
-        IsVisible="{Binding PixKeyListContact, Converter={StaticResource HasDataConverter}}"
         ItemsSource="{Binding PixKeyListContact}">
 
         <CollectionView.ItemsLayout>
@@ -116,14 +115,14 @@
     </controls:CustomCollectionView>
 
     <templates:TemplateAction
-        Title="Adicionar Nova"
-        Icon="{x:Static icons:FontAwesomeSolid.PlusCircle}"
-        TapCommand="{Binding NavigateToAddNewKeyPageContactCommand}" />
+        Title="Exportar Todas"
+        Icon="{x:Static icons:FontAwesomeSolid.FileCsv}"
+        IsNew="True"
+        TapCommand="{Binding ExportToFileContactCommand}" />
 
     <templates:TemplateAction
         Title="Excluir Todas"
         Icon="{x:Static icons:FontAwesomeSolid.Trash}"
-        IsVisible="{Binding PixKeyListContact, Converter={StaticResource HasDataConverter}}"
         TapCommand="{Binding RemoveAllKeyContactCommand}" />
 
 </StackLayout>

@@ -75,5 +75,26 @@ namespace PixQrCodeGeneratorOffline.Templates
                 Command = (ICommand)newValue,
             });
         }
+
+        public static readonly BindableProperty IsNewProperty =
+           BindableProperty.Create(propertyName: nameof(IsNew),
+                               returnType: typeof(bool),
+                               declaringType: typeof(TemplateAction),
+                               defaultValue: false,
+                               defaultBindingMode: BindingMode.Default,
+                               propertyChanged: IsNewPropertyChanged);
+        public bool IsNew
+        {
+            get => (bool)GetValue(IsNewProperty);
+            set => SetValue(IsNewProperty, value);
+        }
+
+        static void IsNewPropertyChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            if (bindable is TemplateAction control && newValue is bool value)
+            {
+                control.tagNew.IsVisible = value;
+            }
+        } 
     }
 }

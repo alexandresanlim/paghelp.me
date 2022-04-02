@@ -20,7 +20,12 @@
             FontSize="{DynamicResource FontSizeMedium}"
             TextColor="{DynamicResource textPrimary}" />
 
-        <Frame
+        <controls:TagInfo
+            x:Name="xBetaInfo"
+            IsVisible="False"
+            Type="Beta" />
+
+        <!--<Frame
             x:Name="xBetaInfo"
             Padding="5,0"
             BackgroundColor="Yellow"
@@ -30,7 +35,7 @@
                 FontFamily="{StaticResource FontBold}"
                 Text="Beta"
                 TextColor="Black" />
-        </Frame>
+        </Frame>-->
     </StackLayout>
 
     <Label x:Name="xDescription" TextColor="{DynamicResource textSecondary}" />

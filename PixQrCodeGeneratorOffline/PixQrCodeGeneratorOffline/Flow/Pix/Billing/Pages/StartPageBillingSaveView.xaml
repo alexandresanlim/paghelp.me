@@ -131,9 +131,14 @@
     </controls:CustomCollectionView>
 
     <templates:TemplateAction
+        Title="Exportar todas"
+        Icon="{x:Static icons:FontAwesomeSolid.FileCsv}"
+        IsNew="True"
+        TapCommand="{Binding ExportToFileBillingCommand}" />
+
+    <templates:TemplateAction
         Title="Excluir Todas"
         Icon="{x:Static icons:FontAwesomeSolid.Trash}"
-        IsVisible="{Binding BillingSaveList, Converter={StaticResource HasDataConverter}}"
         TapCommand="{Binding RemoveAllBillingCommand}" />
 
 </StackLayout>

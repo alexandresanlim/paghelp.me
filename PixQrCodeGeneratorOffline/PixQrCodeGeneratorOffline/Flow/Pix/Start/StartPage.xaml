@@ -8,7 +8,6 @@
     xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
     xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon"
     xmlns:templates="clr-namespace:PixQrCodeGeneratorOffline.Templates"
-    xmlns:templates1="clr-namespace:PixQrCodeGeneratorOffline.Views.Templates"
     xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
     x:DataType="vm:DashboardViewModel"
     BackgroundColor="{DynamicResource background_page}">
@@ -144,7 +143,12 @@
                     Margin="0,8,0,0"
                     Icon="{x:Static icons:FontAwesomeSolid.Users}" />
 
-                <contentStart:StartPageContactsKeysView />
+                <contentStart:StartPageContactsKeysView IsVisible="{Binding PixKeyListContact, Converter={StaticResource HasDataConverter}}" />
+
+                <templates:TemplateAction
+                    Title="Adicionar Nova"
+                    Icon="{x:Static icons:FontAwesomeSolid.PlusCircle}"
+                    TapCommand="{Binding NavigateToAddNewKeyPageContactCommand}" />
 
                 <!--<content:DivisionView />
 

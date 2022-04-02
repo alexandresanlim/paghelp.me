@@ -49,6 +49,10 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public IAsyncCommand ExportToFileCommand => new AsyncCommand(() => _pixKeyService.ExportToFile(PixKeyList));
 
+        public IAsyncCommand ExportToFileContactCommand => new AsyncCommand(() => _pixKeyService.ExportToFileContact(PixKeyListContact));
+
+        public IAsyncCommand ExportToFileBillingCommand => new AsyncCommand(() => _pixPayloadService.ExportToFile(BillingSaveList));
+
         #endregion
 
         public DashboardViewModel()

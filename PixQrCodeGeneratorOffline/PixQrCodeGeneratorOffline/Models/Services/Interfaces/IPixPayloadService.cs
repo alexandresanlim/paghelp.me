@@ -1,6 +1,7 @@
 ﻿using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
@@ -19,5 +20,7 @@ namespace PixQrCodeGeneratorOffline.Models.Services.Interfaces
         List<PixPayload> GetAll(Expression<Func<PixPayload, bool>> predicate = null);
 
         Task<bool> RemoveAll(Expression<Func<PixPayload, bool>> predicate = null);
+
+        Task ExportToFile(IList<PixPayload> saveBillingList);
     }
 }

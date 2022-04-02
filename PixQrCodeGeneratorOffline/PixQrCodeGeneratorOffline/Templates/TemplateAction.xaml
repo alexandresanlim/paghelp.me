@@ -6,50 +6,37 @@
     xmlns:content="clr-namespace:PixQrCodeGeneratorOffline.Views.Content"
     xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
     Margin="8,8,8,0"
-    Padding="10"
+    Padding="16"
     BackgroundColor="{DynamicResource foreground_page}"
-    CornerRadius="5">
-
-    <Frame.Resources>
-        <ResourceDictionary>
-
-            <Style x:Key="styleGridActionChevronRight" TargetType="Grid">
-                <Setter Property="ColumnDefinitions" Value="auto,*, auto" />
-                <Setter Property="Padding" Value="8" />
-                <Setter Property="ColumnSpacing" Value="16" />
-            </Style>
-
-            <Style x:Key="styleGridActionChevronIcon" TargetType="controls:CustomIcon">
-                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
-                <Setter Property="FontSize" Value="{DynamicResource FontSizeMedium}" />
-                <Setter Property="TextColor" Value="{DynamicResource textPrimary}" />
-                <Setter Property="Grid.Column" Value="0" />
-            </Style>
-
-            <Style x:Key="styleGridActionTitle" TargetType="Label">
-                <Setter Property="FontSize" Value="{DynamicResource FontSizeSmall}" />
-                <Setter Property="TextColor" Value="{DynamicResource textPrimary}" />
-                <Setter Property="Grid.Column" Value="1" />
-                <Setter Property="FontFamily" Value="{DynamicResource FontSemiBold}" />
-            </Style>
-
-        </ResourceDictionary>
-    </Frame.Resources>
+    CornerRadius="4">
 
     <!--<Frame.GestureRecognizers>
         <TapGestureRecognizer x:Name="xTapCommand" />
     </Frame.GestureRecognizers>-->
 
-    <Grid Style="{DynamicResource styleGridActionChevronRight}">
+    <StackLayout
+        HorizontalOptions="FillAndExpand"
+        Orientation="Horizontal"
+        Spacing="8">
 
-        <controls:CustomIcon x:Name="xIcon" Style="{DynamicResource styleGridActionChevronIcon}" />
+        <controls:CustomIcon
+            x:Name="xIcon"
+            FontSize="{StaticResource FontSizeMedium}"
+            TextColor="{DynamicResource textPrimary}" />
 
         <Label
             x:Name="xTitle"
-            Style="{DynamicResource styleGridActionTitle}"
-            Text="Adicionar Nova" />
+            FontFamily="{StaticResource FontSemiBold}"
+            FontSize="{StaticResource FontSizeSmall}"
+            Text="Adicionar Nova"
+            TextColor="{DynamicResource textPrimary}" />
 
-        <content:ChevronRightView Grid.Column="2" />
+        <controls:TagInfo
+            x:Name="tagNew"
+            IsVisible="False"
+            Type="New" />
 
-    </Grid>
+        <content:ChevronRightView HorizontalOptions="EndAndExpand" />
+
+    </StackLayout>
 </Frame>
