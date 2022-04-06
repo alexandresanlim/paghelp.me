@@ -58,7 +58,7 @@
                 FontSize="{StaticResource FontSizeLarge}"
                 Glyph="{x:Static icons:FontAwesomeSolid.ChevronLeft}"
                 HorizontalOptions="Start"
-                TextColor="White">
+                TextColor="{DynamicResource textPrimary}">
                 <controls:CustomIcon.GestureRecognizers>
                     <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
                 </controls:CustomIcon.GestureRecognizers>
@@ -70,7 +70,7 @@
                 Glyph="{x:Static icons:FontAwesomeSolid.Save}"
                 HorizontalOptions="EndAndExpand"
                 IsVisible="False"
-                TextColor="White">
+                TextColor="{DynamicResource textPrimary}">
                 <controls:CustomIcon.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding SaveCommand}" />
                 </controls:CustomIcon.GestureRecognizers>

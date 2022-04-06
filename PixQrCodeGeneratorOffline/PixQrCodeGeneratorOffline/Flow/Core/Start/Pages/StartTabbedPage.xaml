@@ -7,6 +7,7 @@
     xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
     xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon"
     xmlns:local="clr-namespace:PixQrCodeGeneratorOffline.Extention;assembly=PixQrCodeGeneratorOffline"
+    xmlns:views="clr-namespace:PixQrCodeGeneratorOffline.Views"
     android:TabbedPage.IsSwipePagingEnabled="False"
     BarBackgroundColor="{DynamicResource primaryDark}"
     CurrentPageChanged="TabbedPage_CurrentPageChanged">
@@ -61,11 +62,11 @@
 
     <!--  Pages can be added as references or inline  -->
 
-    <!--<views:StartPage Title="Pix" />
-    <views:StartCryptoPage
+    <views:StartPage Title="Pix" />
+    <!--<views:StartCryptoPage
         x:Name="xCryptoTab"
         Title="Cripto"
-        IsVisible="False" />
-    <views:StartMorePage Title="Mais" IconImageSource="icon.png" />-->
+        IsVisible="False" />-->
+    <views:StartMorePage Title="Mais" />
 
 </TabbedPage>

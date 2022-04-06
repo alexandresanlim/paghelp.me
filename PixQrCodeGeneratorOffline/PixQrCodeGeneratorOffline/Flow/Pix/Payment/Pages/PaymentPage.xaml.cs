@@ -28,22 +28,21 @@ namespace PixQrCodeGeneratorOffline.Views
         {
             _paymentViewModel.LoadDataCommand.Execute(_pixPaylod);
 
-            if (!(_paymentViewModel?.CurrentPixPaylod?.Id > 0) && _paymentViewModel?.CurrentPixPaylod?.PixCob != null && _paymentViewModel.CurrentPixPaylod.PixCob.HasValue())
-            {
-                btnSave.IsVisible = true;
-                //ToolbarItems.Add(new ToolbarItem
-                //{
-                //    Text = "Salvar",
-                //    Command = _paymentViewModel.SaveCommand,
-                //});
-            }
+            SetStatusBarColor(_paymentViewModel.CurrentInfo.Color.PrimaryDark);
 
-           // App.StatusBarService.SetStatusBarColor(_paymentViewModel.CurrentInfo.Color.PrimaryDark);
+            if (!(_paymentViewModel?.CurrentPixPaylod?.Id > 0) && _paymentViewModel?.CurrentPixPaylod?.PixCob != null && _paymentViewModel.CurrentPixPaylod.PixCob.HasValue())
+                btnSave.IsVisible = true;
         }
 
         private void TapGestureRecognizer_Tapped(object sender, System.EventArgs e)
         {
+            SetStatusBarColor(App.ThemeColors.PrimaryDark);
             Shell.Current.Navigation.PopPopupAsync().SafeFireAndForget(x => x.SendToLog());
+        }
+
+        private void SetStatusBarColor(Color color)
+        {
+            App.StatusBarService.SetStatusBarColor(color);
         }
     }
 }

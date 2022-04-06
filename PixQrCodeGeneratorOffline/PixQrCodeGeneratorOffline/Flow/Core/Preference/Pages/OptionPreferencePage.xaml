@@ -92,7 +92,7 @@
 
                 <content:DivisionView />
 
-                <Grid Style="{StaticResource styleGrid}">
+                <Grid IsVisible="False" Style="{StaticResource styleGrid}">
                     <preferences:PreferencePanelTemplate
                         Title="Criptomoedas"
                         Grid.Column="0"
