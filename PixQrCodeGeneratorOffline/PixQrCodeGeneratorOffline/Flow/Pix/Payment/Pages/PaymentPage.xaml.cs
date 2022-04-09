@@ -28,7 +28,7 @@ namespace PixQrCodeGeneratorOffline.Views
         {
             _paymentViewModel.LoadDataCommand.Execute(_pixPaylod);
 
-            SetStatusBarColor(_paymentViewModel.CurrentInfo.Color.PrimaryDark);
+            //SetStatusBarColor(_paymentViewModel.CurrentInfo.Color.PrimaryDark);
 
             if (!(_paymentViewModel?.CurrentPixPaylod?.Id > 0) && _paymentViewModel?.CurrentPixPaylod?.PixCob != null && _paymentViewModel.CurrentPixPaylod.PixCob.HasValue())
                 btnSave.IsVisible = true;
@@ -36,7 +36,7 @@ namespace PixQrCodeGeneratorOffline.Views
 
         private void TapGestureRecognizer_Tapped(object sender, System.EventArgs e)
         {
-            SetStatusBarColor(App.ThemeColors.PrimaryDark);
+            //SetStatusBarColor(App.ThemeColors.PrimaryDark);
             Shell.Current.Navigation.PopPopupAsync().SafeFireAndForget(x => x.SendToLog());
         }
 
