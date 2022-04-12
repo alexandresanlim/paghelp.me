@@ -3,7 +3,6 @@ using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.ViewModels;
 using Rg.Plugins.Popup.Extensions;
 using Rg.Plugins.Popup.Pages;
-using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.Views
 {

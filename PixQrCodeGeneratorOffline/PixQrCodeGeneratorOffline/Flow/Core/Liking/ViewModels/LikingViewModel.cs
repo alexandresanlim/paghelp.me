@@ -1,5 +1,6 @@
 ﻿using AsyncAwaitBestPractices.MVVM;
 using PixQrCodeGeneratorOffline.Base.ViewModels;
+using PixQrCodeGeneratorOffline.Extention;
 using Plugin.StoreReview;
 using System;
 using System.Collections.Generic;
@@ -17,32 +18,46 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         private async Task Like()
         {
-            await CrossStoreReview.Current.RequestReview(false);
+            try
+            {
+                await CrossStoreReview.Current.RequestReview(false);
 
-            DialogService.Toast("Agradecemos o seu feedback! Nossa missão é melhorar-mos cada vez mais.", _secondsToToast);
+                DialogService.Toast("Agradecemos o seu feedback! Nossa missão é melhorar-mos cada vez mais.", _secondsToToast);
 
-            NavigateBack();
+                NavigateBack();
+            }
+            catch (Exception e)
+            {
+                e.SendToLog();
+            }
         }
 
         private async Task Unlike()
         {
-            var msg = await DialogService.PromptAsync("Para você, em que precisamos melhorar?", "Que pena :/", "Enviar", "Não quero informar agora");
-
-            if (msg.Ok && !string.IsNullOrWhiteSpace(msg?.Text))
+            try
             {
-                var dic = new Dictionary<string, string>
+                var msg = await DialogService.PromptAsync("Para você, em que precisamos melhorar?", "Que pena :/", "Enviar", "Não quero informar agora");
+
+                if (msg.Ok && !string.IsNullOrWhiteSpace(msg?.Text))
+                {
+                    var dic = new Dictionary<string, string>
                 {
                     { "Texto: ", msg?.Text }
                 };
 
-                _eventService.SendEvent("Sugestão", Services.EventType.FEEDBACK, nameof(LikingViewModel), dic);
+                    _eventService.SendEvent("Sugestão", Services.EventType.FEEDBACK, nameof(LikingViewModel), dic);
 
-                await CrossStoreReview.Current.RequestReview(false);
+                    await CrossStoreReview.Current.RequestReview(false);
 
-                DialogService.Toast("Agradecemos o seu feedback! Mensagem enviada para os desenvolvedores.", _secondsToToast);
+                    DialogService.Toast("Agradecemos o seu feedback! Mensagem enviada para os desenvolvedores.", _secondsToToast);
+                }
+
+                NavigateBack();
             }
-
-            NavigateBack();
+            catch (Exception e)
+            {
+                e.SendToLog();
+            }
         }
     }
 }
