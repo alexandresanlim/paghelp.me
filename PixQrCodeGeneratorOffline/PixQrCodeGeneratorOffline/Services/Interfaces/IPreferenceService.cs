@@ -24,5 +24,7 @@ namespace PixQrCodeGeneratorOffline.Services.Interfaces
         void ChangeAreYouLikingAppMsgCount();
 
         void ChangeLikingAppMsgWasShowed(bool value);
+
+        Task RequireAuthenticationToAction(Action execute, bool checkPreference = true);
     }
 }

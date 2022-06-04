@@ -21,18 +21,20 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public async Task OptionFingerPrint()
         {
-            var success = await _preferenceService.ChangeFingerPrint();
-
-            if (success)
+            await _preferenceService.RequireAuthenticationToAction(async () =>
             {
-                await LoadData();
-            }
+                var success = await _preferenceService.ChangeFingerPrint();
 
-            else
-            {
-                IsPreferenceFingerPrint = false;
-            }
+                if (success)
+                {
+                    await LoadData();
+                }
 
+                else
+                {
+                    IsPreferenceFingerPrint = false;
+                }
+            }, false);
         }
 
         public async Task OptionPDV()

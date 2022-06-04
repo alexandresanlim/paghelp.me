@@ -1,7 +1,4 @@
 ﻿using Acr.UserDialogs;
-using AsyncAwaitBestPractices;
-using AsyncAwaitBestPractices.MVVM;
-using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Flow.Core.Security;
 using PixQrCodeGeneratorOffline.Models;
 using PixQrCodeGeneratorOffline.Models.Base;
@@ -15,7 +12,6 @@ using PixQrCodeGeneratorOffline.Style.Interfaces;
 using PixQrCodeGeneratorOffline.ViewModels;
 using PixQrCodeGeneratorOffline.Views;
 using Plugin.Fingerprint;
-using Plugin.Fingerprint.Abstractions;
 using Rg.Plugins.Popup.Extensions;
 using System;
 using System.Threading.Tasks;

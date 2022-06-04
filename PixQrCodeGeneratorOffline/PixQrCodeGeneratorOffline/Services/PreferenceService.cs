@@ -1,8 +1,10 @@
 ﻿using PixQrCodeGeneratorOffline.Extention;
+using PixQrCodeGeneratorOffline.Flow.Core.Security;
 using PixQrCodeGeneratorOffline.Helpers;
 using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Services.Interfaces;
 using Plugin.Fingerprint;
+using Rg.Plugins.Popup.Extensions;
 using System;
 using System.Threading.Tasks;
 using Xamarin.Forms;
@@ -59,7 +61,7 @@ namespace PixQrCodeGeneratorOffline.Services
 
                 DialogService.Toast("Preferência de entrada, salva com sucesso!");
 
-                _eventService.SendEvent($"Mudou entrada por fingerprint, {nameof(Preference.FingerPrint)} : {Preference.FingerPrint}", EventType.PREFERENCE);
+                _eventService.SendEvent($"Adicionou firger print nas preferências, {nameof(Preference.FingerPrint)} : {Preference.FingerPrint}", EventType.PREFERENCE);
 
                 return true;
             }
@@ -158,6 +160,20 @@ namespace PixQrCodeGeneratorOffline.Services
             {
                 e.SendToLog();
             }
+        }
+
+        public async Task RequireAuthenticationToAction(Action execute, bool checkPreference = true)
+        {
+            var byPreference = checkPreference ? Preference.FingerPrint : true;
+
+            var isVisibleFingerPrint = byPreference && await CrossFingerprint.Current.IsAvailableAsync();
+
+            if (isVisibleFingerPrint)
+            {
+                await Shell.Current.Navigation.PushPopupAsync(new AuthenticationPage(execute));
+            }
+            else
+                execute.Invoke();
         }
     }
 }
