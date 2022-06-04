@@ -4,13 +4,14 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+    xmlns:content="clr-namespace:PixQrCodeGeneratorOffline.Views.Content"
     xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
     xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon"
     xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
     xmlns:qr="clr-namespace:Xam.Forms;assembly=Xam.Forms.QRCode"
     xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
     x:DataType="vm:PaymentViewModel"
-    BackgroundColor="{DynamicResource foreground_page}"
+    BackgroundColor="{DynamicResource background_page}"
     CloseWhenBackgroundIsClicked="True">
 
     <pages:PopupPage.Animation>
@@ -29,7 +30,7 @@
     <pages:PopupPage.Resources>
         <ResourceDictionary>
             <Style x:Key="StyleActionFrame" TargetType="Frame">
-                <Setter Property="BackgroundColor" Value="{Binding CurrentInfo.Color.Primary}" />
+                <Setter Property="BackgroundColor" Value="{DynamicResource foreground_page}" />
                 <Setter Property="Padding" Value="0" />
             </Style>
             <Style x:Key="StyleActionIcon" TargetType="controls:CustomIcon">
@@ -153,12 +154,14 @@
         <StackLayout
             Grid.Row="2"
             Padding="8"
-            BackgroundColor="{Binding CurrentInfo.Color.PrimaryDark}"
+            BackgroundColor="{DynamicResource background_page}"
             Spacing="8">
 
             <StackLayout.GestureRecognizers>
                 <TapGestureRecognizer Command="{Binding ChangeIsActionVisibleCommand}" />
             </StackLayout.GestureRecognizers>
+
+            <content:DivisionView />
 
             <StackLayout Orientation="Horizontal">
                 <Label
@@ -184,7 +187,7 @@
                 </controls:CustomIcon>
             </StackLayout>
 
-            <Frame Padding="8" BackgroundColor="{Binding CurrentInfo.Color.Primary}">
+            <Frame Padding="8" BackgroundColor="{DynamicResource foreground_page}">
                 <Label
                     FontSize="{StaticResource FontSizeMicro}"
                     LineBreakMode="TailTruncation"
