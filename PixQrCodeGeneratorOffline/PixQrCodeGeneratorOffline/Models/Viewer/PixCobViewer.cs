@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using PixQrCodeGeneratorOffline.Models.PaymentMethods.Base;
 
 namespace PixQrCodeGeneratorOffline.Models.Viewer
 {
-    public class PixCobViewer
+    public class PixCobViewer : CobViewerBase
     {
-        public string ValueFormatter { get; set; }
-
-        public string ValuePresentation { get; set; }
+        
     }
 }

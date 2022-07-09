@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using PixQrCodeGeneratorOffline.Models.DataStatic.Files.Base;
 using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.Services.Interfaces
 {
@@ -9,10 +8,12 @@ namespace PixQrCodeGeneratorOffline.Services.Interfaces
     {
         Task ShareText(string text);
 
-        Task CopyText(string text, string textSuccess = "Copiado com sucesso!");
+        Task ShareOnWhats(string text, string phoneNumber = null);
 
-        string GenerateTxtFile(string contents, string fileName);
+        Task CopyText(string text, string textSuccess = "Copiado com sucesso!", Color? backgroundToast = null, Color? foregroundToast = null);
 
-        Task ShareFile(string path);
+        string BuildPathFile(string contents, string fileName, IFileExtension extension);
+
+        Task ShareFile(string path, IFileExtension extension);
     }
 }

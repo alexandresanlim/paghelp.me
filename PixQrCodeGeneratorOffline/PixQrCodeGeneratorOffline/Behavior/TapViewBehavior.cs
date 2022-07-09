@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AsyncAwaitBestPractices.MVVM;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,10 +11,10 @@ namespace PixQrCodeGeneratorOffline.Behavior
     public class TapViewBehavior : Behavior<View>
     {
         public static readonly BindableProperty CommandProperty =
-            BindableProperty.Create(nameof(Command), typeof(ICommand), typeof(TapViewBehavior), null, BindingMode.Default, null, propertyChanged: (BindableObject bindable, object oldValue, object newValue) =>
+            BindableProperty.Create(nameof(Command), typeof(IAsyncCommand), typeof(TapViewBehavior), null, BindingMode.Default, null, propertyChanged: (BindableObject bindable, object oldValue, object newValue) =>
             {
                 var control = (TapViewBehavior)bindable;
-                control.Command = (Command)newValue;
+                control.Command = (AsyncCommand)newValue;
             });
 
         public static readonly BindableProperty CommandParameterProperty =

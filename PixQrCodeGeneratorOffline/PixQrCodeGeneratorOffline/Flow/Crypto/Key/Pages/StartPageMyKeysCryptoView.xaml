@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Grid
+    x:Class="PixQrCodeGeneratorOffline.Views.Content.StartPageContents.StartPageMyKeysCryptoView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
+    xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon"
+    xmlns:key="clr-namespace:PixQrCodeGeneratorOffline.Templates.Key"
+    xmlns:models="clr-namespace:PixQrCodeGeneratorOffline.Models.PaymentMethods.Crypto"
+    xmlns:templates="clr-namespace:PixQrCodeGeneratorOffline.Templates"
+    xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
+    xmlns:vmBase="clr-namespace:PixQrCodeGeneratorOffline.ViewModels.Base"
+    x:DataType="vm:DashboardCryptoViewModel">
+    <Grid.Resources>
+        <ResourceDictionary>
+            <Style x:Key="styleActionText" TargetType="Label">
+                <Setter Property="FontSize" Value="{DynamicResource FontSizeSmall}" />
+                <Setter Property="TextColor" Value="{DynamicResource textPrimary}" />
+                <Setter Property="FontFamily" Value="{DynamicResource FontSemiBold}" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+            </Style>
+
+            <Style x:Key="styleActionIcon" TargetType="controls:CustomIcon">
+                <Setter Property="FontSize" Value="{DynamicResource FontSizeSmall}" />
+                <Setter Property="TextColor" Value="{DynamicResource textPrimary}" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                <Setter Property="FontSize" Value="{StaticResource FontSizeSmall}" />
+            </Style>
+        </ResourceDictionary>
+    </Grid.Resources>
+
+    <BoxView
+        BackgroundColor="{Binding CurrentCryptoKey.FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
+        HeightRequest="50"
+        VerticalOptions="Start" />
+
+    <StackLayout Spacing="0">
+
+        <StackLayout CompressedLayout.IsHeadless="True" Spacing="0">
+            <CarouselView
+                CurrentItem="{Binding CurrentCryptoKey}"
+                CurrentItemChangedCommand="{Binding ChangeSelectCryptoKeyCommand}"
+                CurrentItemChangedCommandParameter="{Binding Source={RelativeSource Self}, Path=CurrentItem}"
+                HeightRequest="142"
+                IndicatorView="indicatorView"
+                IsVisible="{Binding CryptoKeyList, Converter={StaticResource HasDataConverter}}"
+                ItemsSource="{Binding CryptoKeyList}"
+                PeekAreaInsets="20,0">
+
+                <CarouselView.ItemTemplate>
+                    <DataTemplate x:DataType="models:CryptoKey">
+
+                        <key:HorizontalKeys
+                            BoxColor="{Binding FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
+                            HidePanelColor="{Binding FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
+                            HideValue="{Binding Source={RelativeSource AncestorType={x:Type vmBase:DashboardViewModelBase}}, Path=IsHideValue}"
+                            IconInstitution="{x:Static icons:FontAwesomeSolid.Coins}"
+                            IconKey="{x:Static icons:FontAwesomeSolid.Key}"
+                            InstitutionValue="{Binding Viewer.InstitutionPresentation}"
+                            KeyValue="{Binding Viewer.KeyPresentation}"
+                            QrCode="{Binding Payload.QrCode}">
+                            <key:HorizontalKeys.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Command.NavigateToPaymentPageCommand}" NumberOfTapsRequired="1" />
+                                <TapGestureRecognizer Command="{Binding Command.CopyKeyCommand}" NumberOfTapsRequired="2" />
+                                <TapGestureRecognizer Command="{Binding Command.ShareKeyCommand}" NumberOfTapsRequired="3" />
+                            </key:HorizontalKeys.GestureRecognizers>
+                        </key:HorizontalKeys>
+
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+
+            <IndicatorView
+                x:Name="indicatorView"
+                Margin="5"
+                IsVisible="{Binding CryptoKeyList, Converter={StaticResource HasDataIfMore}, Mode=TwoWay}" />
+
+        </StackLayout>
+
+        <!--  Actions  -->
+        <CollectionView
+            Margin="8,0,0,0"
+            HeightRequest="140"
+            IsVisible="{Binding CryptoKeyList, Converter={StaticResource HasDataConverter}}"
+            ItemsSource="{Binding CurrentCryptoKeyActions}"
+            SelectedItem="{Binding SelectedAction}"
+            SelectionChangedCommand="{Binding ExecuteActionCommand}"
+            SelectionMode="Single">
+
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout ItemSpacing="8" Orientation="Horizontal" />
+            </CollectionView.ItemsLayout>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:CryptoKeyAction">
+                    <key:HorizontalActionKeys
+                        Title="{Binding Title}"
+                        BoxColor="{Binding Source={RelativeSource AncestorType={x:Type vm:DashboardCryptoViewModel}}, Path=CurrentCryptoKey.FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
+                        Icon="{Binding Icon}"
+                        IconColor="{Binding Source={RelativeSource AncestorType={x:Type vm:DashboardCryptoViewModel}}, Path=CurrentCryptoKey.FinancialInstitution.Institution.MaterialColor.TextOnPrimary}"
+                        IconType="{Binding IconType}" />
+
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+        </CollectionView>
+
+        <templates:TemplateAction
+            Title="Adicionar Nova"
+            Icon="{x:Static icons:FontAwesomeSolid.PlusCircle}"
+            TapCommand="{Binding NavigateToAddNewKeyPageCommand}" />
+
+    </StackLayout>
+
+    <!--<content:PanelLoadView IsVisible="{Binding CurrentDashboardLoadInfo.IsLoadMyKeys}" />-->
+</Grid>

@@ -1,16 +1,9 @@
-﻿using PixQrCodeGeneratorOffline.Base.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace PixQrCodeGeneratorOffline.Views.Shared
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ContentPageWithNavBar : ContentPage
     {
         public ContentPageWithNavBar()

@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="PixQrCodeGeneratorOffline.Views.ShareKeyPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
+    xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
+    Title="Compartilhar Chaves"
+    x:DataType="vm:ShareKeyViewModel"
+    BackgroundColor="{DynamicResource background_page}">
+
+    <ContentPage.Resources>
+
+        <ResourceDictionary>
+
+            <Style x:Key="styleGrid" TargetType="Grid">
+                <Setter Property="ColumnDefinitions" Value="*,auto" />
+                <Setter Property="ColumnSpacing" Value="0" />
+                <Setter Property="BackgroundColor" Value="{StaticResource foreground_page}" />
+                <Setter Property="Padding" Value="10,15" />
+                <Setter Property="Margin" Value="10,0" />
+            </Style>
+
+        </ResourceDictionary>
+
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <Grid RowDefinitions="*,auto, auto">
+
+            <ScrollView Grid.Row="0" Padding="10">
+                <ScrollView.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding CopyCommand}" />
+                </ScrollView.GestureRecognizers>
+                <Label Text="{Binding PreviewText}" />
+            </ScrollView>
+
+            <StackLayout Grid.Row="1">
+                <Grid Style="{StaticResource styleGrid}">
+                    <Label
+                        Grid.Column="0"
+                        FontFamily="{StaticResource FontSemiBold}"
+                        Text="Adicionar Instituição" />
+
+                    <Switch
+                        Grid.Column="1"
+                        ClassId="AddInst"
+                        Toggled="Switch_Toggled" />
+                </Grid>
+                <Grid Style="{StaticResource styleGrid}">
+                    <Label
+                        Grid.Column="0"
+                        FontFamily="{StaticResource FontSemiBold}"
+                        Text="Separar por ponto e virgula" />
+
+                    <Switch
+                        Grid.Column="1"
+                        ClassId="Point"
+                        Toggled="Switch_Toggled" />
+                </Grid>
+                <Grid Style="{StaticResource styleGrid}">
+                    <Label
+                        Grid.Column="0"
+                        FontFamily="{StaticResource FontSemiBold}"
+                        Text="Na mesma linha" />
+
+                    <Switch
+                        Grid.Column="1"
+                        ClassId="SameLine"
+                        Toggled="Switch_Toggled" />
+                </Grid>
+                <Grid Style="{StaticResource styleGrid}">
+                    <Label
+                        Grid.Column="0"
+                        FontFamily="{StaticResource FontSemiBold}"
+                        Text="Adicionar Separador" />
+
+                    <Switch
+                        Grid.Column="1"
+                        ClassId="AddSeparator"
+                        Toggled="Switch_Toggled" />
+                </Grid>
+                <Grid Style="{StaticResource styleGrid}">
+                    <Label
+                        Grid.Column="0"
+                        FontFamily="{StaticResource FontSemiBold}"
+                        Text="Adicionar Descrição" />
+
+                    <Switch
+                        Grid.Column="1"
+                        ClassId="AddDescription"
+                        Toggled="Switch_Toggled" />
+                </Grid>
+            </StackLayout>
+
+
+
+            <Button
+                Grid.Row="2"
+                Command="{Binding ShareCommand}"
+                Text="Compartilhar" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

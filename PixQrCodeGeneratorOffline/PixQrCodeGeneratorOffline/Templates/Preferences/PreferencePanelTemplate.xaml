@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<StackLayout
+    x:Class="PixQrCodeGeneratorOffline.Templates.Preferences.PreferencePanelTemplate"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
+    Padding="15"
+    Spacing="15">
+
+    <controls:CustomIcon
+        x:Name="xIcon"
+        FontSize="{DynamicResource FontSizeMedium}"
+        HorizontalOptions="Start"
+        TextColor="{DynamicResource textPrimary}" />
+
+    <StackLayout Orientation="Horizontal" Spacing="10">
+        <Label
+            x:Name="xTitle"
+            FontFamily="{DynamicResource FontBold}"
+            FontSize="{DynamicResource FontSizeMedium}"
+            TextColor="{DynamicResource textPrimary}" />
+
+        <controls:TagInfo
+            x:Name="xBetaInfo"
+            IsVisible="False"
+            Type="Beta" />
+
+        <!--<Frame
+            x:Name="xBetaInfo"
+            Padding="5,0"
+            BackgroundColor="Yellow"
+            IsVisible="False"
+            VerticalOptions="Center">
+            <Label
+                FontFamily="{StaticResource FontBold}"
+                Text="Beta"
+                TextColor="Black" />
+        </Frame>-->
+    </StackLayout>
+
+    <Label x:Name="xDescription" TextColor="{DynamicResource textSecondary}" />
+
+</StackLayout>

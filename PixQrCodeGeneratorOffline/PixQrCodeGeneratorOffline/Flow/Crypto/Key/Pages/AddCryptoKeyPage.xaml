@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="PixQrCodeGeneratorOffline.Views.PaymentMethods.Crypto.AddCryptoKeyPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
+    xmlns:helpers="clr-namespace:PixQrCodeGeneratorOffline.ViewModels.Helpers"
+    xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon"
+    xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels.PaymentMethods.Crypto"
+    x:DataType="vm:AddCryptoKeyViewModel"
+    BackgroundColor="{DynamicResource background_page}">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <Style x:Key="styleInputFrame" TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="{DynamicResource foreground_page}" />
+                <Setter Property="Padding" Value="10,5" />
+                <Setter Property="CornerRadius" Value="10" />
+            </Style>
+
+            <Style x:Key="styleInputTitle" TargetType="Label">
+                <Setter Property="FontSize" Value="{DynamicResource FontSizeMedium}" />
+                <Setter Property="FontFamily" Value="{DynamicResource FontSemiBold}" />
+                <Setter Property="Margin" Value="10,0,0,0" />
+                <Setter Property="TextColor" Value="{DynamicResource textPrimary}" />
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+
+        <StackLayout Padding="0,15,0,0" Spacing="0">
+
+            <controls:CustomProgress
+                Margin="20,15,20,0"
+                ColorLess="{DynamicResource staticAccentPrimaryLight}"
+                ColorMore="{DynamicResource staticAccentPrimaryDark}"
+                CurrentPhase="{Binding ActualInputNextPosition}"
+                Phases="{Binding InputPhasesCount}" />
+
+            <StackLayout
+                HorizontalOptions="End"
+                IsVisible="{Binding IsEdit}"
+                Orientation="Horizontal">
+                <StackLayout Padding="20,15,10,0">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding DeleteCommand}" />
+                    </StackLayout.GestureRecognizers>
+                    <controls:CustomIcon
+                        FontSize="{StaticResource FontSizeMedium}"
+                        Glyph="{x:Static icons:FontAwesomeSolid.TrashAlt}"
+                        HorizontalOptions="Center"
+                        TextColor="{DynamicResource textPrimary}" />
+                    <Label
+                        FontFamily="{DynamicResource FontBold}"
+                        Text="Excluir"
+                        TextColor="{DynamicResource textPrimary}" />
+                </StackLayout>
+                <StackLayout Padding="10,15,10,0">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding SaveCommand}" />
+                    </StackLayout.GestureRecognizers>
+                    <controls:CustomIcon
+                        FontSize="{StaticResource FontSizeMedium}"
+                        Glyph="{x:Static icons:FontAwesomeSolid.Save}"
+                        HorizontalOptions="Center"
+                        TextColor="{DynamicResource textPrimary}" />
+                    <Label
+                        FontFamily="{DynamicResource FontBold}"
+                        Text="Salvar"
+                        TextColor="{DynamicResource textPrimary}" />
+                </StackLayout>
+            </StackLayout>
+
+            <CarouselView
+                CurrentItem="{Binding CurrentInput}"
+                CurrentItemChangedCommand="{Binding CurrentInputChangedCommand}"
+                HeightRequest="250"
+                ItemsSource="{Binding InputList}"
+                PeekAreaInsets="25"
+                Position="{Binding ActualInputNextPosition}">
+
+                <CarouselView.ItemTemplate>
+                    <DataTemplate x:DataType="helpers:AddCryptoInput">
+                        <StackLayout Padding="5,15,5,0">
+                            <StackLayout Padding="0,15,0,0" Spacing="15">
+                                <controls:CustomIcon
+                                    FontSize="{DynamicResource FontSizeLarge}"
+                                    Glyph="{Binding Icon}"
+                                    HorizontalOptions="CenterAndExpand"
+                                    TextColor="{DynamicResource textPrimary}" />
+                                <Label
+                                    FontFamily="{StaticResource FontBold}"
+                                    FontSize="{DynamicResource FontSizeLarge}"
+                                    HorizontalTextAlignment="Center"
+                                    Text="{Binding Title}"
+                                    TextColor="{DynamicResource textPrimary}"
+                                    Visual="Material" />
+                            </StackLayout>
+                            <Frame
+                                Padding="15"
+                                BackgroundColor="{DynamicResource foreground_page}"
+                                CornerRadius="10"
+                                IsVisible="{Binding IsInstitution, Converter={StaticResource InvertedBooleanConverter}}">
+                                <Entry
+                                    Placeholder="{Binding Placeholder}"
+                                    ReturnCommand="{Binding Source={RelativeSource AncestorType={x:Type vm:AddCryptoKeyViewModel}}, Path=InputNextCommand}"
+                                    Text="{Binding Value}" />
+                            </Frame>
+
+                            <Frame
+                                Padding="15"
+                                BackgroundColor="{DynamicResource foreground_page}"
+                                CornerRadius="5"
+                                IsVisible="{Binding IsInstitution}">
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:AddCryptoKeyViewModel}}, Path=SelectedInstitutionCommand}" />
+                                </Frame.GestureRecognizers>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label
+                                        FontFamily="{DynamicResource FontBold}"
+                                        FontSize="{DynamicResource FontSizeMedium}"
+                                        HorizontalOptions="FillAndExpand"
+                                        Text="{Binding Placeholder}"
+                                        TextColor="{DynamicResource textSecondary}" />
+                                    <controls:CustomIcon
+                                        FontSize="{DynamicResource FontSizeLarge}"
+                                        Glyph="{x:Static icons:FontAwesomeSolid.ChevronDown}"
+                                        TextColor="{DynamicResource textSecondary}" />
+                                </StackLayout>
+
+                            </Frame>
+                        </StackLayout>
+
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+
+            <StackLayout>
+
+                <Button
+                    Command="{Binding InputNextCommand}"
+                    IsVisible="{Binding ShowSaveButton, Converter={StaticResource InvertedBooleanConverter}}"
+                    Text="Próximo" />
+                <Button
+                    Command="{Binding SaveCommand}"
+                    IsVisible="{Binding ShowSaveButton}"
+                    Text="Salvar" />
+
+            </StackLayout>
+
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

@@ -1,11 +1,11 @@
 ﻿using LiteDB;
+using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix;
 using PixQrCodeGeneratorOffline.Models.Repository.Base;
 using PixQrCodeGeneratorOffline.Models.Repository.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
 
 namespace PixQrCodeGeneratorOffline.Models.Repository
 {
@@ -24,7 +24,7 @@ namespace PixQrCodeGeneratorOffline.Models.Repository
             {
                 return _collection.FindById(id);
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return new PixPayload();
             }
@@ -36,7 +36,7 @@ namespace PixQrCodeGeneratorOffline.Models.Repository
             {
                 return predicate == null ? _collection.FindAll().ToList() : _collection.Find(predicate).ToList();
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return new List<PixPayload>();
             }
@@ -46,9 +46,9 @@ namespace PixQrCodeGeneratorOffline.Models.Repository
         {
             try
             {
-                return _collection.Insert(item);
+                return _collection.Insert(item) > 0;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return false;
             }
@@ -88,7 +88,7 @@ namespace PixQrCodeGeneratorOffline.Models.Repository
             {
                 return _collection.Update(item);
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return false;
             }

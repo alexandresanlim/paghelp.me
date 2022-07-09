@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<StackLayout
+    x:Class="PixQrCodeGeneratorOffline.Views.Content.StartPageContents.StartPageContactsKeysView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
+    xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon"
+    xmlns:models="clr-namespace:PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix"
+    xmlns:templates="clr-namespace:PixQrCodeGeneratorOffline.Templates"
+    xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
+    x:DataType="vm:DashboardViewModel"
+    Spacing="0">
+
+    <StackLayout.Resources>
+        <ResourceDictionary>
+            <Style x:Key="StyleInfos" TargetType="Label">
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="LineBreakMode" Value="MiddleTruncation" />
+                <Setter Property="MaxLines" Value="1" />
+                <Setter Property="TextColor" Value="{DynamicResource textPrimary}" />
+            </Style>
+        </ResourceDictionary>
+    </StackLayout.Resources>
+
+    <controls:CustomCollectionView
+        Margin="8,0,0,0"
+        HeightRequest="230"
+        ItemsSource="{Binding PixKeyListContact}">
+
+        <CollectionView.ItemsLayout>
+            <LinearItemsLayout ItemSpacing="8" Orientation="Horizontal" />
+        </CollectionView.ItemsLayout>
+
+        <CollectionView.ItemTemplate>
+            <DataTemplate x:DataType="models:PixKey">
+
+                <Frame
+                    Margin="4,0"
+                    BackgroundColor="{DynamicResource foreground_page}"
+                    CornerRadius="5"
+                    VerticalOptions="FillAndExpand"
+                    WidthRequest="170">
+
+                    <StackLayout HorizontalOptions="FillAndExpand" Spacing="0">
+
+                        <Frame
+                            Padding="4"
+                            BackgroundColor="{DynamicResource primaryDark}"
+                            CornerRadius="50"
+                            HasShadow="False"
+                            HeightRequest="60"
+                            HorizontalOptions="Center"
+                            IsClippedToBounds="True"
+                            VerticalOptions="Center"
+                            WidthRequest="60">
+                            <Label
+                                FontFamily="{StaticResource FontBold}"
+                                FontSize="25"
+                                HorizontalOptions="Center"
+                                LineBreakMode="TailTruncation"
+                                MaxLines="1"
+                                Text="{Binding Viewer.Initial}"
+                                TextColor="{StaticResource textOnPrimary}"
+                                TextTransform="Uppercase"
+                                VerticalOptions="Center" />
+                        </Frame>
+
+
+                        <Label
+                            Margin="0,8,0,0"
+                            FontFamily="{DynamicResource FontBold}"
+                            FontSize="{StaticResource FontSizeSmall}"
+                            Style="{StaticResource StyleInfos}"
+                            Text="{Binding Viewer.NamePresentation}" />
+
+                        <Label
+                            FontFamily="{StaticResource FontSemiBold}"
+                            FontSize="{StaticResource FontSizeSmall}"
+                            Style="{StaticResource StyleInfos}"
+                            Text="{Binding Viewer.KeyPresentation}" />
+
+                        <Grid ColumnDefinitions="*,*,*" VerticalOptions="EndAndExpand">
+                            <StackLayout Grid.Column="0" Padding="0,5,0,0">
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding Command.CopyKeyCommand}" />
+                                </StackLayout.GestureRecognizers>
+
+                                <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Copy}" Style="{DynamicResource styleIconActionListContact}" />
+                                <Label Style="{DynamicResource styleTextOnButtonActionListContact}" Text="Copiar" />
+                            </StackLayout>
+
+                            <StackLayout Grid.Column="1" Padding="0,5,0,0">
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding Command.EditKeyCommand}" />
+                                </StackLayout.GestureRecognizers>
+
+                                <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Pen}" Style="{DynamicResource styleIconActionListContact}" />
+                                <Label Style="{DynamicResource styleTextOnButtonActionListContact}" Text="Editar" />
+                            </StackLayout>
+                            <StackLayout Grid.Column="2" Padding="0,5,0,0">
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:DashboardViewModel}}, Path=DeleteContactKeyCommand}" CommandParameter="{Binding .}" />
+                                </StackLayout.GestureRecognizers>
+
+                                <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Trash}" Style="{DynamicResource styleIconActionListContact}" />
+                                <Label Style="{DynamicResource styleTextOnButtonActionListContact}" Text="Excluir" />
+                            </StackLayout>
+                        </Grid>
+                    </StackLayout>
+                </Frame>
+
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+
+    </controls:CustomCollectionView>
+
+    <templates:TemplateAction
+        Title="Exportar Todas"
+        Icon="{x:Static icons:FontAwesomeSolid.FileCsv}"
+        IsNew="True"
+        TapCommand="{Binding ExportToFileContactCommand}" />
+
+    <templates:TemplateAction
+        Title="Excluir Todas"
+        Icon="{x:Static icons:FontAwesomeSolid.Trash}"
+        TapCommand="{Binding RemoveAllKeyContactCommand}" />
+
+</StackLayout>

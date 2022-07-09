@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Frame
+    x:Class="PixQrCodeGeneratorOffline.Controls.TagInfo"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Name="this"
+    Padding="8,0"
+    BackgroundColor="Yellow"
+    VerticalOptions="Center">
+
+    <Label
+        x:Name="lbTitle"
+        FontFamily="{StaticResource FontBold}"
+        FontSize="{StaticResource FontSizeMicro}"
+        Text="Beta"
+        TextColor="Black" />
+
+</Frame>

@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Grid
+    x:Class="PixQrCodeGeneratorOffline.Views.Content.StartPageContents.StartPageMyKeysView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
+    xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon"
+    xmlns:key="clr-namespace:PixQrCodeGeneratorOffline.Templates.Key"
+    xmlns:models="clr-namespace:PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix"
+    xmlns:templates="clr-namespace:PixQrCodeGeneratorOffline.Templates"
+    xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
+    xmlns:vmBase="clr-namespace:PixQrCodeGeneratorOffline.ViewModels.Base"
+    x:DataType="vm:DashboardViewModel">
+
+    <Grid.Resources>
+        <ResourceDictionary>
+            <Style x:Key="styleActionText" TargetType="Label">
+                <Setter Property="FontSize" Value="{DynamicResource FontSizeSmall}" />
+                <Setter Property="TextColor" Value="{DynamicResource textPrimary}" />
+                <Setter Property="FontFamily" Value="{DynamicResource FontSemiBold}" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+            </Style>
+
+            <Style x:Key="styleActionIcon" TargetType="controls:CustomIcon">
+                <Setter Property="FontSize" Value="{DynamicResource FontSizeSmall}" />
+                <Setter Property="TextColor" Value="{DynamicResource textPrimary}" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                <Setter Property="FontSize" Value="{StaticResource FontSizeSmall}" />
+            </Style>
+        </ResourceDictionary>
+    </Grid.Resources>
+
+    <BoxView
+        BackgroundColor="{Binding CurrentPixKey.FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
+        HeightRequest="50"
+        VerticalOptions="Start" />
+
+    <StackLayout Spacing="0">
+
+        <CarouselView
+            CurrentItem="{Binding CurrentPixKey}"
+            CurrentItemChangedCommand="{Binding ChangeSelectPixKeyCommand}"
+            CurrentItemChangedCommandParameter="{Binding Source={RelativeSource Self}, Path=CurrentItem}"
+            HeightRequest="142"
+            IndicatorView="indicatorView"
+            ItemsSource="{Binding PixKeyList}"
+            PeekAreaInsets="20,0">
+
+            <CarouselView.ItemTemplate>
+                <DataTemplate x:DataType="models:PixKey">
+
+                    <key:HorizontalKeys
+                        BoxColor="{Binding FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
+                        HidePanelColor="{Binding FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
+                        HideValue="{Binding Source={RelativeSource AncestorType={x:Type vmBase:DashboardViewModelBase}}, Path=IsHideValue}"
+                        IconInstitution="{x:Static icons:FontAwesomeSolid.University}"
+                        IconKey="{x:Static icons:FontAwesomeSolid.Key}"
+                        InstitutionValue="{Binding Viewer.InstitutionPresentation}"
+                        KeyValue="{Binding Viewer.KeyPresentation}"
+                        QrCode="{Binding Payload.QrCode}">
+                        <key:HorizontalKeys.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding Command.NavigateToPaymentPageCommand}" NumberOfTapsRequired="1" />
+                            <TapGestureRecognizer Command="{Binding Command.CopyKeyCommand}" NumberOfTapsRequired="2" />
+                        </key:HorizontalKeys.GestureRecognizers>
+                    </key:HorizontalKeys>
+
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
+
+        <IndicatorView
+            x:Name="indicatorView"
+            Margin="8"
+            IsVisible="{Binding PixKeyList, Converter={StaticResource HasDataIfMore}}" />
+
+        <!--  Actions  -->
+        <controls:CustomCollectionView
+            Margin="8,0,0,0"
+            HeightRequest="140"
+            ItemsSource="{Binding CurrentPixKeyActions}"
+            SelectedItem="{Binding SelectedAction}"
+            SelectionChangedCommand="{Binding ExecuteActionCommand}"
+            SelectionMode="Single">
+
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout ItemSpacing="8" Orientation="Horizontal" />
+            </CollectionView.ItemsLayout>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:PixKeyAction">
+                    <key:HorizontalActionKeys
+                        Title="{Binding Title}"
+                        BoxColor="{Binding Source={RelativeSource AncestorType={x:Type vm:DashboardViewModel}}, Path=CurrentPixKey.FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
+                        Icon="{Binding Icon}"
+                        IconType="{Binding IconType}"
+                        RequiresInternet="{Binding RequiresInternet}" />
+
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+        </controls:CustomCollectionView>
+
+
+        <templates:TemplateAction
+            Title="Compartilhar Todas"
+            Icon="{x:Static icons:FontAwesomeSolid.Share}"
+            TapCommand="{Binding ShareAllCommand}" />
+
+        <templates:TemplateAction
+            Title="Exportar Todas"
+            Icon="{x:Static icons:FontAwesomeSolid.FileCsv}"
+            IsNew="True"
+            TapCommand="{Binding ExportToFileCommand}" />
+
+        <!--<Grid Style="{DynamicResource styleGridActionChevronRight}" IsVisible="{Binding PixKeyList, Converter={StaticResource HasDataConverter}}">
+
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding RemoveAllCommand}" />
+                    </Grid.GestureRecognizers>
+
+                    <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Trash }" Style="{DynamicResource styleGridActionChevronIcon}" />
+                    <Label Text="Excluir Todas" Style="{DynamicResource styleGridActionTitle}" />
+                    <content:ChevronRightView Grid.Column="2" />
+
+                </Grid>-->
+    </StackLayout>
+
+    <!--<content:PanelLoadView IsVisible="{Binding CurrentDashboardLoadInfo.IsLoadMyKeys}" />-->
+</Grid>

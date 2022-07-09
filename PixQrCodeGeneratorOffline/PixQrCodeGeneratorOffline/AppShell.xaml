@@ -1,13 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Shell xmlns="http://xamarin.com/schemas/2014/forms" 
-       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-       xmlns:local="clr-namespace:PixQrCodeGeneratorOffline.Views"
-       Title="PixQrCodeGeneratorOffline"
-       x:Class="PixQrCodeGeneratorOffline.AppShell">
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="PixQrCodeGeneratorOffline.AppShell"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:PixQrCodeGeneratorOffline.Views"
+    Title="PixQrCodeGeneratorOffline">
 
     <!--
         The overall app visual hierarchy is defined here, along with navigation.
-    
+        
         https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell/
     -->
 
@@ -20,20 +21,23 @@
                 <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
                 <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
                 <Setter Property="Shell.TabBarBackgroundColor" Value="{DynamicResource primaryDark}" />
-                <Setter Property="Shell.TabBarForegroundColor" Value="{DynamicResource textOnPrimary}"/>
-                <Setter Property="Shell.TabBarUnselectedColor" Value="{DynamicResource primaryLight}"/>
-                <Setter Property="Shell.TabBarTitleColor" Value="{DynamicResource textOnPrimary}"/>
+                <Setter Property="Shell.TabBarForegroundColor" Value="{DynamicResource textOnPrimary}" />
+                <Setter Property="Shell.TabBarUnselectedColor" Value="{DynamicResource primaryLight}" />
+                <Setter Property="Shell.TabBarTitleColor" Value="{DynamicResource textOnPrimary}" />
             </Style>
-            <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
-            <Style TargetType="FlyoutItem" BasedOn="{StaticResource BaseStyle}" />
+            <Style BasedOn="{StaticResource BaseStyle}" TargetType="TabBar" />
+            <Style BasedOn="{StaticResource BaseStyle}" TargetType="FlyoutItem" />
         </ResourceDictionary>
     </Shell.Resources>
 
     <TabBar>
-        <ShellContent Title="Chaves" Icon="icon_key.png" ContentTemplate="{DataTemplate local:DashboardTabbedPage}" />
-        <ShellContent Title="Notícias" Icon="icon_feed.png" ContentTemplate="{DataTemplate local:NewsPage}" />
-        <ShellContent Title="Guia PIX" Icon="icon_help.png" ContentTemplate="{DataTemplate local:GuidePage}" />
-        <ShellContent Title="Sobre" Icon="icon_about.png" ContentTemplate="{DataTemplate local:AboutPage}" />
+        <ShellContent
+            Title="Pix"
+            ContentTemplate="{DataTemplate local:StartTabbedPage}"
+            Icon="icon_key.png" />
+        <!--<ShellContent Title="Notícias" Icon="icon_feed.png" ContentTemplate="{DataTemplate local:NewsPage}" />-->
+        <!--<ShellContent Title="Guia PIX" Icon="icon_help.png" ContentTemplate="{DataTemplate local:GuidePage}" />
+        <ShellContent Title="Sobre" Icon="icon_about.png" ContentTemplate="{DataTemplate local:AboutPage}" />-->
     </TabBar>
 
     <!--

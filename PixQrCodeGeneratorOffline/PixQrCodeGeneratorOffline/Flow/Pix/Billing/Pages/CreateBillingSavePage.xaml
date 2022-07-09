@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="PixQrCodeGeneratorOffline.Views.CreateBillingSavePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:content="clr-namespace:PixQrCodeGeneratorOffline.Views.Content"
+    xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
+    x:DataType="vm:CreateBillingSaveViewModel"
+    BackgroundColor="{DynamicResource background_page}">
+    <ContentPage.Content>
+        <StackLayout Padding="5,5,5,0">
+            <content:BillingSaveListView />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

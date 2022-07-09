@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="PixQrCodeGeneratorOffline.Views.BenefitsPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:content="clr-namespace:PixQrCodeGeneratorOffline.Views.Content"
+    xmlns:helpers="clr-namespace:PixQrCodeGeneratorOffline.ViewModels.Helpers"
+    xmlns:preferences="clr-namespace:PixQrCodeGeneratorOffline.Templates.Preferences"
+    xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
+    Title="Vantagens Paghelp.me!"
+    x:DataType="vm:BenefitsViewModel"
+    BackgroundColor="{DynamicResource background_page}">
+    <ContentPage.Content>
+
+        <Grid RowDefinitions="*,auto">
+            <CollectionView Grid.Row="0" ItemsSource="{Binding DashboardWelcomenList}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="helpers:DashboardWelcome">
+                        <StackLayout>
+                            <preferences:PreferencePanelTemplate
+                                Title="{Binding Title}"
+                                Description="{Binding Description}"
+                                Icon="{Binding Emoji}" />
+
+                            <content:DivisionView />
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <Button
+                x:Name="xBtAddKey"
+                Grid.Row="1"
+                Command="{Binding NavigateToAddNewKeyPageCommand}"
+                Text="Adicionar minha primeira chave" />
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

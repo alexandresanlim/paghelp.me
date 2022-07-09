@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<controls:CustomCollectionView
+    x:Class="PixQrCodeGeneratorOffline.Views.Content.BillingSaveListView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
+    xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon"
+    xmlns:models="clr-namespace:PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix"
+    xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
+    x:DataType="vm:BillingSaveListViewModel"
+    BackgroundColor="{DynamicResource background_page}"
+    HorizontalOptions="FillAndExpand"
+    ItemsSource="{Binding BillingSaveList}"
+    VerticalOptions="FillAndExpand">
+
+    <controls:CustomCollectionView.Resources>
+        <ResourceDictionary>
+            <Style x:Key="StyleTextValue" TargetType="Label">
+                <Setter Property="TextColor" Value="{DynamicResource textPrimary}" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                <Setter Property="FontSize" Value="{StaticResource FontSizeSmall}" />
+                <Setter Property="FontFamily" Value="{StaticResource FontSemiBold}" />
+            </Style>
+            <Style x:Key="StyleIcon" TargetType="controls:CustomIcon">
+                <Setter Property="TextColor" Value="{DynamicResource textPrimary}" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+            </Style>
+        </ResourceDictionary>
+    </controls:CustomCollectionView.Resources>
+
+    <controls:CustomCollectionView.EmptyView>
+
+        <StackLayout>
+            <StackLayout VerticalOptions="CenterAndExpand">
+                <controls:CustomIcon
+                    FontSize="50"
+                    Glyph="{x:Static icons:FontAwesomeSolid.Wind}"
+                    HorizontalOptions="CenterAndExpand"
+                    TextColor="{DynamicResource textPrimary}" />
+                <Label
+                    HorizontalOptions="CenterAndExpand"
+                    Text="Ainda não há nada por aqui."
+                    TextColor="{DynamicResource textPrimary}" />
+            </StackLayout>
+        </StackLayout>
+
+    </controls:CustomCollectionView.EmptyView>
+
+    <controls:CustomCollectionView.ItemTemplate>
+        <DataTemplate x:DataType="models:PixPayload">
+            <StackLayout Padding="8,4">
+                <Frame BackgroundColor="{DynamicResource foreground_page}" CornerRadius="5">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding Commands.NavigateToPaymentPageCommand}" />
+                    </Frame.GestureRecognizers>
+
+                    <Grid ColumnDefinitions="auto,*">
+                        <BoxView
+                            Grid.Column="0"
+                            Margin="10"
+                            BackgroundColor="{Binding PixKey.FinancialInstitution.Institution.MaterialColor.Primary}"
+                            CornerRadius="5"
+                            WidthRequest="8" />
+
+                        <StackLayout Grid.Column="1" Padding="0,15,15,15">
+                            <Label
+                                Grid.Row="0"
+                                FontSize="{StaticResource FontSizeMedium}"
+                                LineBreakMode="TailTruncation"
+                                MaxLines="2"
+                                Style="{StaticResource StyleTextValue}"
+                                Text="{Binding Identity, StringFormat='ID: {0}'}" />
+
+                            <Grid ColumnDefinitions="auto, *" RowDefinitions="auto, auto">
+                                <controls:CustomIcon
+                                    Grid.Row="0"
+                                    Grid.Column="0"
+                                    Glyph="{x:Static icons:FontAwesomeSolid.UserAlt}"
+                                    Style="{StaticResource StyleIcon}" />
+                                <Label
+                                    Grid.Row="0"
+                                    Grid.Column="1"
+                                    Style="{StaticResource StyleTextValue}"
+                                    Text="{Binding PixKey.Viewer.NamePresentation}" />
+
+                                <controls:CustomIcon
+                                    Grid.Row="1"
+                                    Grid.Column="0"
+                                    Glyph="{x:Static icons:FontAwesomeSolid.Key}"
+                                    Style="{StaticResource StyleIcon}" />
+                                <Label
+                                    Grid.Row="1"
+                                    Grid.Column="1"
+                                    Style="{StaticResource StyleTextValue}"
+                                    Text="{Binding PixKey.Viewer.KeyPresentation}" />
+                            </Grid>
+
+                            <Label
+                                Grid.Row="2"
+                                Grid.Column="1"
+                                FontFamily="{DynamicResource FontBold}"
+                                FontSize="{DynamicResource FontSizeLarge}"
+                                Text="{Binding PixCob.Viewer.ValuePresentation}"
+                                TextColor="{Binding PixKey.FinancialInstitution.Institution.MaterialColor.Primary}" />
+
+                        </StackLayout>
+                    </Grid>
+                </Frame>
+            </StackLayout>
+        </DataTemplate>
+    </controls:CustomCollectionView.ItemTemplate>
+</controls:CustomCollectionView>

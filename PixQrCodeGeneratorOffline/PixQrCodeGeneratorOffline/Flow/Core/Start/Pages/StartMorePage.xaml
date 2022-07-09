@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="PixQrCodeGeneratorOffline.Views.StartMorePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:content="clr-namespace:PixQrCodeGeneratorOffline.Views.Content"
+    xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon"
+    xmlns:templates="clr-namespace:PixQrCodeGeneratorOffline.Templates"
+    xmlns:viewmodels="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
+    x:DataType="viewmodels:StartMoreViewModel"
+    BackgroundColor="{DynamicResource background_page}">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid Padding="0,0,10,0" ColumnDefinitions="*, auto">
+
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding NavigateToPreferencesCommand}" />
+                </Grid.GestureRecognizers>
+
+                <templates:TemplateTitlePanel
+                    Title="Preferências"
+                    Grid.Column="0"
+                    Icon="{x:Static icons:FontAwesomeSolid.UserCog}" />
+
+                <content:ChevronRightView Grid.Column="1" />
+            </Grid>
+
+            <content:DivisionView />
+
+            <!--  //////////////////////////////////////////////////////////////////////////////////////////////////////////////  -->
+
+            <Grid Padding="0,0,10,0" ColumnDefinitions="*, auto">
+
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding NavigateBenefitsCommand}" />
+                </Grid.GestureRecognizers>
+
+                <templates:TemplateTitlePanel Title="Vantagens Paghelp.me!" Icon="{x:Static icons:FontAwesomeSolid.InfoCircle}" />
+
+                <content:ChevronRightView Grid.Column="1" />
+            </Grid>
+
+            <content:DivisionView />
+
+            <!--  //////////////////////////////////////////////////////////////////////////////////////////////////////////////  -->
+
+            <templates:TemplateTitlePanel
+                Title="Está gostando do App?"
+                Margin="0,0,10,0"
+                Icon="{x:Static icons:FontAwesomeSolid.PaperPlane}">
+                <templates:TemplateTitlePanel.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding SendAMessageCommand}" />
+                </templates:TemplateTitlePanel.GestureRecognizers>
+            </templates:TemplateTitlePanel>
+
+
+            <content:DivisionView />
+
+            <!--  //////////////////////////////////////////////////////////////////////////////////////////////////////////////  -->
+
+            <templates:TemplateTitlePanel
+                Title="{Binding CurrentStore}"
+                Margin="0,0,10,0"
+                Icon="{Binding CurrentStoreIcon}"
+                IconType="brand">
+
+                <templates:TemplateTitlePanel.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding OpenStoreCommand}" />
+                </templates:TemplateTitlePanel.GestureRecognizers>
+
+            </templates:TemplateTitlePanel>
+
+
+            <content:DivisionView />
+
+            <!--  //////////////////////////////////////////////////////////////////////////////////////////////////////////////  -->
+
+            <!--<Grid Padding="0,0,10,0" ColumnDefinitions="*, auto">
+
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding NavigateToAboutCommand}" />
+                </Grid.GestureRecognizers>
+
+                <templates:TemplateTitlePanel Title="Sobre o App" Icon="{x:Static icons:FontAwesomeSolid.MobileAlt}" />
+
+                <content:ChevronRightView Grid.Column="1" />
+            </Grid>-->
+
+            <Label
+                Margin="5"
+                FontFamily="{StaticResource FontSemiBold}"
+                HorizontalOptions="End"
+                Text="{Binding CurrentVersion, StringFormat='Versão: {0}'}"
+                TextColor="{DynamicResource textSecondary}"
+                VerticalOptions="EndAndExpand" />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

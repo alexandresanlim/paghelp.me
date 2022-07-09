@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="PixQrCodeGeneratorOffline.Views.GuidePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:content="clr-namespace:PixQrCodeGeneratorOffline.Views.Content"
+    xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
+    xmlns:models="clr-namespace:PixQrCodeGeneratorOffline.Models"
+    xmlns:share="clr-namespace:PixQrCodeGeneratorOffline.Views.Shared"
+    xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
+    Title="Guia Pix"
+    x:DataType="vm:GuideViewModel"
+    BackgroundColor="{StaticResource background_page}">
+    <ContentPage.Content>
+        <!--<controls:CustomFrame>
+            <controls:CustomFrame.Background>
+                <LinearGradientBrush EndPoint="0,1">
+                    <GradientStop Color="{DynamicResource primary}"
+                          Offset="0.1" />
+                    <GradientStop Color="{DynamicResource primaryDark}"
+                          Offset="1.0" />
+                </LinearGradientBrush>
+            </controls:CustomFrame.Background>-->
+
+        <Grid
+            Padding="10,10,10,0"
+            RowDefinitions="*, auto"
+            RowSpacing="0">
+
+            <controls:CustomCollectionView Grid.Row="0" ItemsSource="{Binding GuideList}">
+
+                <controls:CustomCollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="models:Guide">
+
+                        <StackLayout HeightRequest="100" Spacing="0">
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:GuideViewModel}}, Path=OpenAnswerGuideCommand}" CommandParameter="{Binding .}" />
+                            </StackLayout.GestureRecognizers>
+
+                            <Grid
+                                Padding="10,0"
+                                ColumnDefinitions="*, auto"
+                                ColumnSpacing="15"
+                                VerticalOptions="CenterAndExpand">
+
+                                <Label
+                                    Grid.Column="0"
+                                    FontFamily="{DynamicResource FontSemiBold}"
+                                    FontSize="{DynamicResource FontSizeSmall}"
+                                    Text="{Binding Question}"
+                                    TextColor="{DynamicResource textPrimary}" />
+                                <content:ChevronRightView Grid.Column="1" />
+
+                            </Grid>
+
+                            <content:DivisionView />
+
+                        </StackLayout>
+
+
+
+                    </DataTemplate>
+                </controls:CustomCollectionView.ItemTemplate>
+            </controls:CustomCollectionView>
+
+            <share:AdsView Grid.Row="1" />
+        </Grid>
+
+        <!--</controls:CustomFrame>-->
+
+
+    </ContentPage.Content>
+</ContentPage>

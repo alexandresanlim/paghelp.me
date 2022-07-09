@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary
+    x:Class="PixQrCodeGeneratorOffline.Style.Resources.ColorsResource"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <Color x:Key="primary">#00796b</Color>
+    <Color x:Key="primaryLight">#48a999</Color>
+    <Color x:Key="primaryDark">#004c40</Color>
+
+    <Color x:Key="secondary">#50000000</Color>
+    <Color x:Key="secondaryLight">#48a999</Color>
+    <Color x:Key="secondaryDark">#004c40</Color>
+
+    <Color x:Key="textOnPrimary">#ffffff</Color>
+    <Color x:Key="textOnSecondary">#ffffff</Color>
+
+    <Color x:Key="textPrimary">#212121</Color>
+    <Color x:Key="textSecondary">#757575</Color>
+
+    <Color x:Key="backgroundTransparent">#25000000</Color>
+    <Color x:Key="textOnBackgroundTransparent">#ffffff</Color>
+
+    <Color x:Key="backgroundTransparentDashboard">#99000000</Color>
+
+    <!--<Color x:Key="background_page">#0c143c</Color>-->
+
+    <Color x:Key="background_page">#ffffff</Color>
+    <Color x:Key="foreground_page">#f0f1f5</Color>
+
+    <Color x:Key="staticAccentPrimary">#00796b</Color>
+    <Color x:Key="staticAccentPrimaryLight">#48a999</Color>
+    <Color x:Key="staticAccentPrimaryDark">#004c40</Color>
+    <Color x:Key="staticAccentTextOnPrimary">#ffffff</Color>
+    <Color x:Key="staticTextPrimary">#212121</Color>
+    <Color x:Key="staticTextSecondary">#757575</Color>
+    <Color x:Key="staticBackgroundPage">#ffffff</Color>
+
+</ResourceDictionary>

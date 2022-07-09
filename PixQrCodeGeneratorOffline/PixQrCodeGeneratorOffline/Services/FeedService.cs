@@ -1,10 +1,10 @@
 ﻿using PixQrCodeGeneratorOffline.Models;
+using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix.Extentions;
 using PixQrCodeGeneratorOffline.Services.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
-using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Xml.Linq;
@@ -34,7 +34,7 @@ namespace PixQrCodeGeneratorOffline.Services
                                        Source = ((string)x.Element("source"))
                                    });
 
-                return RSSFeedData?.Where(x => x.Validation.IsValid)?.OrderByDescending(x => x.PublishDate)?.ToList();
+                return RSSFeedData?.Where(x => x.IsValid())?.Take(5)?.OrderByDescending(x => x.PublishDate)?.ToList();
             }
             catch (Exception)
             {
@@ -81,7 +81,7 @@ namespace PixQrCodeGeneratorOffline.Services
                     return img;
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return "";
             }

@@ -1,13 +1,9 @@
-﻿//using System;
-//using System.Collections.Generic;
-//using System.Text;
+﻿namespace PixQrCodeGeneratorOffline.Style.Interfaces
+{
+    public interface IStatusBar
+    {
+        void SetColor();
 
-//namespace PixQrCodeGeneratorOffline.Style.Interfaces
-//{
-//    public interface IStatusBar
-//    {
-//        void SetByStyleListColor();
-
-//        void SetStatusBarColor(System.Drawing.Color color);
-//    }
-//}
+        void SetStatusBarColor(System.Drawing.Color statusBar, System.Drawing.Color? navigationBar = null);
+    }
+}

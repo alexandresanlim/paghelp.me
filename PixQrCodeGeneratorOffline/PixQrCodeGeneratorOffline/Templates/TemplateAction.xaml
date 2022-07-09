@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Frame
+    x:Class="PixQrCodeGeneratorOffline.Templates.TemplateAction"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:content="clr-namespace:PixQrCodeGeneratorOffline.Views.Content"
+    xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
+    Margin="8,8,8,0"
+    Padding="16"
+    BackgroundColor="{DynamicResource foreground_page}"
+    CornerRadius="4">
+
+    <!--<Frame.GestureRecognizers>
+        <TapGestureRecognizer x:Name="xTapCommand" />
+    </Frame.GestureRecognizers>-->
+
+    <StackLayout
+        HorizontalOptions="FillAndExpand"
+        Orientation="Horizontal"
+        Spacing="8">
+
+        <controls:CustomIcon
+            x:Name="xIcon"
+            FontSize="{StaticResource FontSizeMedium}"
+            TextColor="{DynamicResource textPrimary}" />
+
+        <Label
+            x:Name="xTitle"
+            FontFamily="{StaticResource FontSemiBold}"
+            FontSize="{StaticResource FontSizeSmall}"
+            Text="Adicionar Nova"
+            TextColor="{DynamicResource textPrimary}" />
+
+        <controls:TagInfo
+            x:Name="tagNew"
+            IsVisible="False"
+            Type="New" />
+
+        <content:ChevronRightView HorizontalOptions="EndAndExpand" />
+
+    </StackLayout>
+</Frame>

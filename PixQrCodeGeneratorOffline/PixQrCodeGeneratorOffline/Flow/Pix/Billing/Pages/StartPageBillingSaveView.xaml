@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<StackLayout
+    x:Class="PixQrCodeGeneratorOffline.Views.Content.StartPageContents.StartPageBillingSaveView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
+    xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon"
+    xmlns:models="clr-namespace:PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix"
+    xmlns:templates="clr-namespace:PixQrCodeGeneratorOffline.Templates"
+    xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
+    x:DataType="vm:DashboardViewModel"
+    CompressedLayout.IsHeadless="True"
+    Spacing="0">
+
+    <StackLayout.Resources>
+        <ResourceDictionary>
+            <Style x:Key="styleActionIcon" TargetType="controls:CustomIcon">
+                <Setter Property="FontSize" Value="{DynamicResource FontSizeSmall}" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                <Setter Property="TextColor" Value="{DynamicResource textPrimary}" />
+            </Style>
+            <Style x:Key="styleActionText" TargetType="Label">
+                <Setter Property="FontFamily" Value="{DynamicResource FontSemiBold}" />
+                <Setter Property="FontSize" Value="{DynamicResource FontSizeSmall}" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                <Setter Property="TextColor" Value="{DynamicResource textPrimary}" />
+            </Style>
+        </ResourceDictionary>
+    </StackLayout.Resources>
+
+    <controls:CustomCollectionView
+        Margin="8,0"
+        HeightRequest="170"
+        HorizontalOptions="FillAndExpand"
+        ItemsSource="{Binding BillingSaveList}">
+
+        <controls:CustomCollectionView.ItemsLayout>
+            <LinearItemsLayout ItemSpacing="8" Orientation="Horizontal" />
+        </controls:CustomCollectionView.ItemsLayout>
+
+        <controls:CustomCollectionView.EmptyView>
+
+            <StackLayout CompressedLayout.IsHeadless="True">
+                <StackLayout VerticalOptions="CenterAndExpand">
+                    <controls:CustomIcon
+                        FontSize="50"
+                        Glyph="{x:Static icons:FontAwesomeSolid.Wind}"
+                        HorizontalOptions="Center"
+                        TextColor="{DynamicResource textPrimary}" />
+                    <Label
+                        HorizontalOptions="CenterAndExpand"
+                        Text="Ainda não há nada por aqui."
+                        TextColor="{DynamicResource textPrimary}" />
+                </StackLayout>
+            </StackLayout>
+
+        </controls:CustomCollectionView.EmptyView>
+
+        <controls:CustomCollectionView.ItemTemplate>
+            <DataTemplate x:DataType="models:PixPayload">
+                <Frame
+                    BackgroundColor="{DynamicResource foreground_page}"
+                    CornerRadius="4"
+                    VerticalOptions="FillAndExpand"
+                    WidthRequest="200">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding Commands.NavigateToPaymentPageCommand}" />
+                    </Frame.GestureRecognizers>
+
+                    <StackLayout Orientation="Horizontal" Spacing="12">
+                        <BoxView
+                            BackgroundColor="{Binding PixKey.FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
+                            CornerRadius="15"
+                            WidthRequest="8" />
+
+                        <StackLayout
+                            Grid.Column="1"
+                            Spacing="0"
+                            VerticalOptions="CenterAndExpand">
+
+                            <Label
+                                FontFamily="{DynamicResource FontBold}"
+                                FontSize="{StaticResource FontSizeMedium}"
+                                LineBreakMode="TailTruncation"
+                                MaxLines="1"
+                                Text="{Binding Identity}"
+                                TextColor="{DynamicResource textPrimary}" />
+
+                            <Grid ColumnDefinitions="16, *" RowSpacing="0">
+
+                                <controls:CustomIcon
+                                    Grid.Row="0"
+                                    Grid.Column="0"
+                                    Glyph="{x:Static icons:FontAwesomeSolid.University}"
+                                    Style="{DynamicResource styleActionIcon}" />
+
+                                <Label
+                                    Grid.Row="0"
+                                    Grid.Column="1"
+                                    Style="{DynamicResource styleActionText}"
+                                    Text="{Binding PixKey.Viewer.InstitutionPresentation}" />
+
+                                <controls:CustomIcon
+                                    Grid.Row="1"
+                                    Grid.Column="0"
+                                    Glyph="{x:Static icons:FontAwesomeSolid.Key}"
+                                    Style="{DynamicResource styleActionIcon}" />
+
+                                <Label
+                                    Grid.Row="1"
+                                    Grid.Column="1"
+                                    LineBreakMode="MiddleTruncation"
+                                    MaxLines="1"
+                                    Style="{DynamicResource styleActionText}"
+                                    Text="{Binding PixKey.Viewer.KeyPresentation}" />
+
+                            </Grid>
+
+                            <Label
+                                FontFamily="{DynamicResource FontBold}"
+                                FontSize="{DynamicResource FontSizeLarge}"
+                                Text="{Binding PixCob.Viewer.ValuePresentation}"
+                                TextColor="{DynamicResource textPrimary}" />
+
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+            </DataTemplate>
+        </controls:CustomCollectionView.ItemTemplate>
+
+    </controls:CustomCollectionView>
+
+    <templates:TemplateAction
+        Title="Exportar todas"
+        Icon="{x:Static icons:FontAwesomeSolid.FileCsv}"
+        IsNew="True"
+        TapCommand="{Binding ExportToFileBillingCommand}" />
+
+    <templates:TemplateAction
+        Title="Excluir Todas"
+        Icon="{x:Static icons:FontAwesomeSolid.Trash}"
+        TapCommand="{Binding RemoveAllBillingCommand}" />
+
+</StackLayout>

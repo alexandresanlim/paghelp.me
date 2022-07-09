@@ -1,21 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using PixQrCodeGeneratorOffline.Models.Viewer.PaymentMethods.Base;
 
 namespace PixQrCodeGeneratorOffline.Models.Viewer
 {
-    public class PixKeyViewer
+    public class PixKeyViewer : KeyViewerBase
     {
         public string NameAndCity { get; set; }
 
         public string NamePresentation { get; set; }
 
-        public string KeyPresentation { get; set; }
-
-        public string InstitutionPresentation { get; set; }
-
-        public string InstitutionAndKey { get; set; }
-
         public string BankAndKey { get; set; }
+
+        public string Initial { get; set; }
     }
 }

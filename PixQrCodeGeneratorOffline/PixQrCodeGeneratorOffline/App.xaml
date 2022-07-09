@@ -1,143 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Application xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PixQrCodeGeneratorOffline.App"
-             xmlns:adscontrols="clr-namespace:MarcTron.Plugin.Controls;assembly=Plugin.MtAdmob" 
-             xmlns:converters="clr-namespace:PixQrCodeGeneratorOffline.Converters">
+<Application
+    x:Class="PixQrCodeGeneratorOffline.App"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controlsResorces="clr-namespace:PixQrCodeGeneratorOffline.Controls.Resources"
+    xmlns:converterResources="clr-namespace:PixQrCodeGeneratorOffline.Converters.Resources"
+    xmlns:styleResorces="clr-namespace:PixQrCodeGeneratorOffline.Style.Resources">
     <!--
         Define global resources and styles here, that apply to all pages in your app.
     -->
     <Application.Resources>
 
-        <Color x:Key="primary">#00796b</Color>
-        <Color x:Key="primaryLight">#48a999</Color>
-        <Color x:Key="primaryDark">#004c40</Color>
-
-        <Color x:Key="secondary">#50000000</Color>
-        <Color x:Key="secondaryLight">#48a999</Color>
-        <Color x:Key="secondaryDark">#004c40</Color>
-
-        <Color x:Key="textOnPrimary">#ffffff</Color>
-        <Color x:Key="textOnSecondary">#ffffff</Color>
-
-        <Color x:Key="textPrimary">#212121</Color>
-        <Color x:Key="textSecondary">#757575</Color>
-
-        <Color x:Key="backgroundTransparent">#25000000</Color>
-        <Color x:Key="textOnBackgroundTransparent">#ffffff</Color>
-
-        <Color x:Key="backgroundTransparentDashboard">#99000000</Color>
-
-        <!--<Color x:Key="background_page">#0c143c</Color>-->
-
-        <Color x:Key="background_page">#ecf0f1</Color>
-        <Color x:Key="foreground_page">#ecf0f1</Color>
-
-        <Color x:Key="staticAccentPrimary">#00796b</Color>
-        <Color x:Key="staticAccentPrimaryLight">#48a999</Color>
-        <Color x:Key="staticAccentPrimaryDark">#004c40</Color>
-        <Color x:Key="staticAccentTextOnPrimary">#ffffff</Color>
-
-        <Style TargetType="adscontrols:MTAdView">
-            <Setter Property="HeightRequest">
-                <Setter.Value>
-                    <x:OnIdiom Phone="90" Tablet="130"/>
-                </Setter.Value>
-            </Setter>
-            <!--<Setter Property="WidthRequest">
-                <Setter.Value>
-                    <x:OnIdiom Phone="320" Tablet="320"/>
-                </Setter.Value>
-            </Setter>-->
-        </Style>
-
-        <x:Double x:Key="FontSizeLarge">25</x:Double>
-        <x:Double x:Key="FontSizeMedium">20</x:Double>
-        <x:Double x:Key="FontSizeSmall">15</x:Double>
-        <x:Double x:Key="FontSizeMicro">10</x:Double>
-
-        <x:String x:Key="FontBold">FontPoppinsBold</x:String>
-        <x:String x:Key="FontSemiBold">FontPoppinsSemiBold</x:String>
-
-        <Style TargetType="Label">
-            <Setter Property="FontFamily" Value="FontPoppinsRegular"/>
-            <Setter Property="TextColor" Value="{DynamicResource textPrimary}" />
-        </Style>
-
-        <Style TargetType="Entry">
-            <Setter Property="FontFamily" Value="FontPoppinsRegular"/>
-            <Setter Property="ClearButtonVisibility" Value="WhileEditing"/>
-            <Setter Property="PlaceholderColor" Value="{DynamicResource textSecondary}" />
-            <Setter Property="TextColor" Value="{DynamicResource textPrimary}" />
-        </Style>
-
-        <Style TargetType="Frame">
-            <Setter Property="HasShadow" Value="False"/>
-            <Setter Property="Padding" Value="0"/>
-        </Style>
-
-        <Style TargetType="CarouselView">
-            <Setter Property="Loop" Value="False"/>
-            <Setter Property="IsScrollAnimated" Value="True"/>
-        </Style>
-
-        <Style TargetType="ActivityIndicator">
-            <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
-            <Setter Property="IsRunning" Value="True"/>
-        </Style>
-
         <ResourceDictionary>
 
-            <converters:HasDataConverter x:Key="HasDataConverter" />
-            <converters:HasDataConverterInverted x:Key="HasDataConverterInverted" />
-            <converters:InvertedBooleanConverter x:Key="InvertedBooleanConverter" />
-
-            <Style x:Key="styleFrameMenuAbout" TargetType="Frame">
-                <Setter Property="BackgroundColor" Value="{DynamicResource foreground_page}" />
-                <Setter Property="Padding" Value="30,15" />
-                <Setter Property="CornerRadius" Value="30" />
-            </Style>
-
-            <Style x:Key="titleStyle" TargetType="Label">
-                <Setter Property="Margin" Value="15,0,0,0"/>
-                <Setter Property="FontSize" Value="{DynamicResource FontSizeLarge}" />
-                <Setter Property="TextColor" Value="{DynamicResource textPrimary}"/>
-                <Setter Property="FontFamily" Value="FontPoppinsBold"/>
-            </Style>
-
-            <Style x:Key="optionTitle" TargetType="Label">
-                <Setter Property="FontSize" Value="50" />
-                <Setter Property="TextColor" Value="{DynamicResource staticAccentPrimaryLight}"/>
-                <Setter Property="FontFamily" Value="FontPoppinsBold"/>
-            </Style>
-
-            <Style x:Key="subOptionTitle" TargetType="Label">
-                <Setter Property="FontSize" Value="30" />
-                <Setter Property="TextColor" Value="{DynamicResource staticAccentTextOnPrimary}"/>
-                <Setter Property="FontFamily" Value="FontPoppinsSemiBold"/>
-            </Style>
-
-            <Style x:Key="paddingPageGrid" TargetType="Grid">
-                <Setter Property="Padding" Value="0,25,0,0" />
-                <!--<Setter Property="Padding" Value="0,25,0,50" />-->
-            </Style>
-
-            <Style x:Key="paddingPageStackLayout" TargetType="StackLayout">
-                <Setter Property="Padding" Value="0,25,0,0" />
-                <!--<Setter Property="Padding" Value="0,25,0,50" />-->
-            </Style>
-
-            <!--<Style x:Key="iconMenuStyle" TargetType="controls:CustomIcon">
-                <Setter Property="IconSize" Value="Medium" />
-                <Setter Property="IconColor" Value="{DynamicResource textOnSecondary}"/>
-            </Style>
-
-            <Style x:Key="frameMenuStyle" TargetType="Frame">
-                <Setter Property="CornerRadius" Value="15" />
-                <Setter Property="BackgroundColor" Value="#25000000"/>
-                <Setter Property="WidthRequest" Value="80"/>
-                <Setter Property="Padding" Value="15,25"/>
-            </Style>-->
+            <ResourceDictionary.MergedDictionaries>
+                <converterResources:ConverterResource />
+                <styleResorces:ColorsResource />
+                <styleResorces:FontSizeResource />
+                <styleResorces:FontTypeResource />
+                <controlsResorces:XFControlsResource />
+                <controlsResorces:XFCustomControlResource />
+                <controlsResorces:StyleControlResource />
+            </ResourceDictionary.MergedDictionaries>
 
         </ResourceDictionary>
 

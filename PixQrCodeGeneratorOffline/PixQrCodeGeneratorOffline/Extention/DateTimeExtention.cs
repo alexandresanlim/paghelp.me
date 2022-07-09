@@ -1,75 +1,86 @@
-﻿//using System;
-//using System.Collections.Generic;
-//using System.Linq;
-//using System.Text;
+﻿using System;
 
-//namespace PixQrCodeGeneratorOffline.Extention
-//{
-//    public class DateTimeExtention
-//    {
-//        public static string GetAGreatingToCurrentDate()
-//        {
-//            var currentDateTime = DateTime.Now;
+namespace PixQrCodeGeneratorOffline.Extention
+{
+    public class DateTimeExtention
+    {
+        public static string GetDashboardTitleFromPeriod()
+        {
+            var currentDateTime = DateTime.Now;
 
-//            var period = currentDateTime.Hour;
+            var period = currentDateTime.Hour;
 
-//            var msg = "";
+            var msg = "Olá, ";
 
-//            if (period > 12 && period < 18)
-//                msg += "Boa tarde e ";
+            if (period > 12 && period < 18)
+                msg += "Boa tarde";
 
-//            else if (period >= 18)
-//                msg += "Boa noite e ";
+            else if (period >= 18)
+                msg += "Boa noite";
 
-//            else
-//                msg += "Bom dia e ";
+            else
+                msg += "Bom dia";
 
-//            var dayOfWeed = currentDateTime.DayOfWeek;
+            msg += "!";
 
-//            switch (dayOfWeed)
-//            {
-//                case DayOfWeek.Friday:
-//                    msg += "#Sextou! ótimo fim de semana.";
-//                    break;
+            return msg;
+        }
 
-//                case DayOfWeek.Saturday:
-//                    msg += "ótimo fim de semana";
-//                    break;
-//                case DayOfWeek.Sunday:
-//                    msg += "ótimo domingo";
-//                    break;
+        public static string GetDashboardSubtitleFromDayOfWeed()
+        {
+            var currentDateTime = DateTime.Now;
 
-//                case DayOfWeek.Monday:
-//                case DayOfWeek.Tuesday:
-//                    msg += "ótimo começo de semana";
-//                    break;
+            var msg = "";
 
-//                case DayOfWeek.Thursday:
-//                    msg += "excelente quinta-feira";
-//                    break;
-//                case DayOfWeek.Wednesday:
-//                    msg += "boa quarta-feira";
-//                    break;
-//            }
+            var dayOfWeed = currentDateTime.DayOfWeek;
 
-//            msg += ".";
+            switch (dayOfWeed)
+            {
+                case DayOfWeek.Friday:
+                    msg += "e ótimo fim de semana.";
+                    break;
 
-//            return msg;
-//        }
+                case DayOfWeek.Saturday:
+                    msg += "e ótimo sábado";
+                    break;
+                case DayOfWeek.Sunday:
+                    msg += "e ótimo domingo";
+                    break;
 
-//        //public static string GetHolidayToCurrentDate()
-//        //{
-//        //    var holiday = Holidays.NationalHolidays.From("br").OfYear(DateTime.Today.Year).FirstOrDefault(x => x.Value.Date.Equals(DateTime.Today)).Key;
+                case DayOfWeek.Monday:
+                    msg += "e ótimo começo de semana";
+                    break;
 
-//        //    if (string.IsNullOrEmpty(holiday))
-//        //        return "";
+                case DayOfWeek.Tuesday:
+                    msg += "e ótima terça-feira";
+                    break;
 
-//        //    return "Bom Feriado! " + holiday;
-//        //}
+                case DayOfWeek.Thursday:
+                    msg += "e excelente quinta-feira";
+                    break;
+                case DayOfWeek.Wednesday:
+                    msg += "e boa quarta-feira";
+                    break;
+            }
 
-//        //public static bool TodayIsHoliday()
-//        //{
-//        //    return !string.IsNullOrEmpty(GetHolidayToCurrentDate());
-//        //}
-//    }
-//}
+            msg += ".";
+
+            return msg;
+        }
+
+        //public static string GetHolidayToCurrentDate()
+        //{
+        //    var holiday = Holidays.NationalHolidays.From("br").OfYear(DateTime.Today.Year).FirstOrDefault(x => x.Value.Date.Equals(DateTime.Today)).Key;
+
+        //    if (string.IsNullOrEmpty(holiday))
+        //        return "";
+
+        //    return "Bom Feriado! " + holiday;
+        //}
+
+        //public static bool TodayIsHoliday()
+        //{
+        //    return !string.IsNullOrEmpty(GetHolidayToCurrentDate());
+        //}
+    }
+}

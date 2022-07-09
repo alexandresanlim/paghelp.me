@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage
+    x:Class="PixQrCodeGeneratorOffline.Flow.Core.Security.AuthenticationPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+    xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
+    xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon"
+    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+    xmlns:viewmodels="clr-namespace:PixQrCodeGeneratorOffline.Base.ViewModels"
+    x:DataType="viewmodels:ViewModelBase"
+    CloseWhenBackgroundIsClicked="False">
+
+
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation
+            DurationIn="400"
+            DurationOut="300"
+            EasingIn="SinOut"
+            EasingOut="SinIn"
+            HasBackgroundAnimation="True"
+            PositionIn="Center"
+            PositionOut="Center"
+            ScaleIn="1.2"
+            ScaleOut="0.8" />
+    </pages:PopupPage.Animation>
+
+
+    <StackLayout
+        Padding="16,32"
+        BackgroundColor="{StaticResource background_page}"
+        Spacing="16"
+        VerticalOptions="End">
+        <controls:CustomIcon
+            FontSize="50"
+            Glyph="{x:Static icons:FontAwesomeSolid.EyeSlash}"
+            HorizontalOptions="Center"
+            TextColor="{StaticResource textPrimary}" />
+
+        <Label
+            FontFamily="{StaticResource FontSemiBold}"
+            FontSize="{StaticResource FontSizeMedium}"
+            HorizontalOptions="Center"
+            Text="Autentique-se para continuar"
+            TextColor="{StaticResource textPrimary}" />
+        <Label
+            FontSize="{StaticResource FontSizeSmall}"
+            HorizontalOptions="Center"
+            HorizontalTextAlignment="Center"
+            Text="É preciso autenticar-se para ver suas chaves e fazer operações."
+            TextColor="{StaticResource textSecondary}" />
+
+        <Button Clicked="Button_Clicked" Text="Autenticar Agora" />
+    </StackLayout>
+
+</pages:PopupPage>

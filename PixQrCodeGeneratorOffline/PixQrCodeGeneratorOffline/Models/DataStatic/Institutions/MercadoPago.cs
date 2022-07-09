@@ -1,13 +1,10 @@
 ﻿using PixQrCodeGeneratorOffline.Models.DataStatic.Institutions.Base;
 using PixQrCodeGeneratorOffline.Models.DataStatic.Institutions.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.Models.DataStatic.Institutions
 {
-    public class MercadoPago : InstitutionBase, IInstitution
+    public class MercadoPago : InstitutionBase, IInstitutionBank
     {
         public string Name => "Mercado Pago";
 

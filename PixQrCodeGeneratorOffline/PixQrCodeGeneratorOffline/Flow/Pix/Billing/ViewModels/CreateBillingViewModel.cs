@@ -1,0 +1,188 @@
+﻿using AsyncAwaitBestPractices.MVVM;
+using PixQrCodeGeneratorOffline.Base.ViewModels;
+using PixQrCodeGeneratorOffline.Extention;
+using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix;
+using System;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
+using System.Windows.Input;
+using Xamarin.Forms;
+
+namespace PixQrCodeGeneratorOffline.ViewModels
+{
+    public class CreateBillingViewModel : ViewModelBase
+    {
+        public string AddDescriptionValue => "Adicionar Descrição";
+
+        private void ResetCurrentValue()
+        {
+            ValueInput = "";
+            CurrentDescription = AddDescriptionValue;
+            CurrentCob = new PixCob();
+            SetValueCurrencyFormat();
+        }
+
+        public Command<PixKey> LoadDataCommand => new Command<PixKey>((pixKey) =>
+        {
+            try
+            {
+                CurrentPixKey = pixKey;
+
+                ResetCurrentValue();
+
+                LoadStyle();
+            }
+            catch (Exception e)
+            {
+                e.SendToLog();
+            }
+        });
+
+        private void LoadStyle()
+        {
+            CurrentStyleFromKey = CurrentPixKey?.FinancialInstitution?.Institution?.MaterialColor;
+
+            //return;
+
+            //if (CurrentStyleFromKey != null)
+            //    App.LoadTheme(CurrentStyleFromKey);
+        }
+
+        public Command<string> InputTextCommand => new Command<string>((text) =>
+        {
+            try
+            {
+                try { Xamarin.Essentials.HapticFeedback.Perform(Xamarin.Essentials.HapticFeedbackType.Click); } catch (Exception) { }
+
+                if (string.IsNullOrEmpty(text))
+                    ValueInput = ValueInput.RemoveLastChar();
+
+                else
+                {
+                    if (ValueInput.Length < 7)
+                        ValueInput += text;
+                }
+
+                SetValueCurrencyFormat();
+            }
+            catch (Exception e)
+            {
+                e.SendToLog();
+            }
+        });
+
+        public ICommand ResetCurrentValueCommand => new Command(() =>
+        {
+            ResetCurrentValue();
+        });
+
+        private void SetValueCurrencyFormat()
+        {
+            string valueFromString = Regex.Replace(ValueInput, @"\D", "");
+
+            decimal d;
+
+            if (valueFromString.Length <= 0)
+                d = 0m;
+
+            long valueLong;
+            if (!long.TryParse(valueFromString, out valueLong))
+                d = 0m;
+
+            if (valueLong <= 0)
+                d = 0m;
+
+            d = valueLong / 100m;
+
+            var finalString = Convert.ToDecimal(d, new System.Globalization.CultureInfo("en-US")).ToString("N");
+
+            CurrentCob.Value = finalString;
+        }
+
+        public string ValueInput { get; set; }
+
+        public IAsyncCommand NavigateToPaymentPageCommand => new AsyncCommand(async () =>
+        {
+            try
+            {
+                SetIsLoading(true);
+
+                var pixPaylod = _pixPayloadService.Create(CurrentPixKey, CurrentCob);
+
+                if (!_pixPayloadService.IsValid(pixPaylod))
+                    return;
+
+                await pixPaylod.Commands.NavigateToPaymentPageCommand.ExecuteAsync();
+            }
+            catch (Exception e)
+            {
+                e.SendToLog();
+            }
+            finally
+            {
+                SetIsLoading(false);
+            }
+        });
+
+        public ICommand SetDescriptionCommand => new Command(() =>
+        {
+            try
+            {
+                var promptConfig = new Acr.UserDialogs.PromptConfig
+                {
+                    CancelText = "Cancelar",
+                    OkText = "Ok",
+                    Title = "Descrição",
+                    Message = "Digite o texto que aparecerá para o pagador",
+                    Placeholder = "Pedido 1",
+                    Text = !CurrentDescription.Equals(AddDescriptionValue) ? CurrentDescription : "",
+                    MaxLength = 140,
+                    OnAction = new Action<Acr.UserDialogs.PromptResult>((result) =>
+                    {
+                        if (!result.Ok)
+                            return;
+
+                        var text = result?.Text;
+
+                        if (string.IsNullOrEmpty(text))
+                        {
+                            CurrentDescription = AddDescriptionValue;
+                            CurrentCob.Description = "";
+                            return;
+                        }
+
+                        CurrentDescription = text;
+                        CurrentCob.Description = text;
+                    })
+                };
+
+                DialogService.Prompt(promptConfig);
+            }
+            catch (Exception e)
+            {
+                e.SendToLog();
+            }
+        });
+
+        private PixKey _currentPixKey;
+        public PixKey CurrentPixKey
+        {
+            set => SetProperty(ref _currentPixKey, value);
+            get => _currentPixKey;
+        }
+
+        private PixCob _currentCob;
+        public PixCob CurrentCob
+        {
+            set => SetProperty(ref _currentCob, value);
+            get => _currentCob;
+        }
+
+        private string _currentDescription;
+        public string CurrentDescription
+        {
+            set => SetProperty(ref _currentDescription, value);
+            get => _currentDescription;
+        }
+    }
+}

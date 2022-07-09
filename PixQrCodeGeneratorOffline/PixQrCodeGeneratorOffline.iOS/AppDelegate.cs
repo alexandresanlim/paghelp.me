@@ -4,6 +4,7 @@ using System.Linq;
 
 using Foundation;
 using Google.MobileAds;
+using KeyboardOverlap.Forms.Plugin.iOSUnified;
 using Microsoft.AppCenter;
 using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
@@ -27,7 +28,9 @@ namespace PixQrCodeGeneratorOffline.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             //global::Xamarin.Forms.Forms.SetFlags("CollectionView_Experimental");
+            Rg.Plugins.Popup.Popup.Init();
             global::Xamarin.Forms.Forms.Init();
+            KeyboardOverlapRenderer.Init();
             MobileAds.SharedInstance.Start(CompletionHandler);
             //Lottie.Forms.iOS.Renderers.AnimationViewRenderer.Init();
             //ZXing.Net.Mobile.Forms.iOS.Platform.Init();

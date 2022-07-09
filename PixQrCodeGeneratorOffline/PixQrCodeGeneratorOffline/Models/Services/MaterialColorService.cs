@@ -1,9 +1,7 @@
 ﻿using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
-using System;
 using System.Collections.Generic;
-using System.Text;
-using Xamarin.Essentials;
+using System.Linq;
 using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.Models.Services
@@ -65,7 +63,7 @@ namespace PixQrCodeGeneratorOffline.Models.Services
                 TextOnPrimary = Color.FromHex("#ffffff"),
                 //TextOnSecondary = Color.FromHex("#ffffff"),
                 BackgroundPage = Color.FromHex("#ffffff"),
-                ForegroundPage = Color.FromHex("#ecf0f1"),
+                ForegroundPage = Color.FromHex("#f0f1f5"),
 
                 TextPrimary = Color.FromHex("#212121"),
                 TextSecondary = Color.FromHex("#757575"),
@@ -84,8 +82,8 @@ namespace PixQrCodeGeneratorOffline.Models.Services
                 //Secondary = Color.FromHex("#00796b"),
                 TextOnPrimary = Color.FromHex("#ffffff"),
                 //TextOnSecondary = Color.FromHex("#00000"),
-                BackgroundPage = Color.FromHex("#000000"),
-                ForegroundPage = Color.FromHex("#121212"),
+                BackgroundPage = Color.FromHex("#121212"),
+                ForegroundPage = Color.FromHex("#222222"),
 
                 TextPrimary = Color.FromHex("#ffffff"),
                 TextSecondary = Color.WhiteSmoke,
@@ -104,7 +102,6 @@ namespace PixQrCodeGeneratorOffline.Models.Services
             App.Current.Resources["secondaryLight"] = colors.SecondaryLight;
             App.Current.Resources["secondaryDark"] = colors.SecondaryDark;
 
-
             App.Current.Resources["textOnPrimary"] = colors.TextOnPrimary;
             App.Current.Resources["textOnSecondary"] = (colors?.TextOnSecondary == Color.FromRgba(0, 0, 0, 0)) ? Color.White : colors.TextOnSecondary;
 
@@ -121,27 +118,29 @@ namespace PixQrCodeGeneratorOffline.Models.Services
         {
             return new MaterialColor
             {
-                Primary = (Color)App.Current.Resources["primary"],
-                PrimaryLight = (Color)App.Current.Resources["primaryLight"],
-                PrimaryDark = (Color)App.Current.Resources["primaryDark"],
+                Primary = (Color)App.Resorces.Colors["primary"],
+                PrimaryLight = (Color)App.Resorces.Colors["primaryLight"],
+                PrimaryDark = (Color)App.Resorces.Colors["primaryDark"],
 
-                Secondary = (Color)App.Current.Resources["secondary"],
-                SecondaryLight = (Color)App.Current.Resources["secondaryLight"],
-                SecondaryDark = (Color)App.Current.Resources["secondaryDark"],
+                Secondary = (Color)App.Resorces.Colors["secondary"],
+                SecondaryLight = (Color)App.Resorces.Colors["secondaryLight"],
+                SecondaryDark = (Color)App.Resorces.Colors["secondaryDark"],
 
-                TextOnPrimary = (Color)App.Current.Resources["textOnPrimary"],
-                TextOnSecondary = (Color)App.Current.Resources["textOnSecondary"],
-                BackgroundPage = (Color)App.Current.Resources["background_page"],
-                ForegroundPage = (Color)App.Current.Resources["foreground_page"],
+                TextOnPrimary = (Color)App.Resorces.Colors["textOnPrimary"],
+                TextOnSecondary = (Color)App.Resorces.Colors["textOnSecondary"],
+                BackgroundPage = (Color)App.Resorces.Colors["background_page"],
+                ForegroundPage = (Color)App.Resorces.Colors["foreground_page"],
 
-                TextPrimary = (Color)App.Current.Resources["textPrimary"],
-                TextSecondary = (Color)App.Current.Resources["textSecondary"],
+                TextPrimary = (Color)App.Resorces.Colors["textPrimary"],
+                TextSecondary = (Color)App.Resorces.Colors["textSecondary"],
             };
         }
 
         public MaterialColor GetByCurrentDeviceTheme()
         {
-            return (AppInfo.RequestedTheme == AppTheme.Light || AppInfo.RequestedTheme == AppTheme.Unspecified) ? GetLightColors() : GetDarkColors();
+            //return (AppInfo.RequestedTheme == AppTheme.Light || AppInfo.RequestedTheme == AppTheme.Unspecified) ? GetLightColors() : GetDarkColors();
+
+            return PixQrCodeGeneratorOffline.Services.Preference.ThemeIsDark ? GetDarkColors() : GetLightColors();
         }
     }
 }

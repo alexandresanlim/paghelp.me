@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="PixQrCodeGeneratorOffline.Views.LikingPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
+    xmlns:helpers="clr-namespace:PixQrCodeGeneratorOffline.ViewModels.Helpers"
+    xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon"
+    xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
+    x:DataType="vm:LikingViewModel"
+    BackgroundColor="#99000000"
+    Shell.PresentationMode="ModalAnimated">
+
+    <ContentPage.Content>
+        <Grid RowDefinitions="*, auto" RowSpacing="0">
+
+            <StackLayout Grid.Row="0" BackgroundColor="Transparent">
+
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding NavigateBackCommand}" />
+                </StackLayout.GestureRecognizers>
+
+                <controls:CustomIcon
+                    Margin="16"
+                    FontSize="{StaticResource FontSizeLarge}"
+                    Glyph="{x:Static icons:FontAwesomeSolid.TimesCircle}"
+                    HorizontalOptions="End"
+                    TextColor="White"
+                    VerticalOptions="EndAndExpand" />
+
+            </StackLayout>
+
+            <StackLayout Grid.Row="1" Spacing="0">
+                <BoxView
+                    BackgroundColor="{DynamicResource foreground_page}"
+                    CornerRadius="16,16,0,0"
+                    HeightRequest="16" />
+
+                <StackLayout
+                    Padding="0,16,0,32"
+                    BackgroundColor="{DynamicResource foreground_page}"
+                    Spacing="32">
+
+                    <Label
+                        FontFamily="{StaticResource FontBold}"
+                        FontSize="{StaticResource FontSizeLarge}"
+                        HorizontalOptions="Center"
+                        HorizontalTextAlignment="Center"
+                        Text="Está gostando do app?" />
+
+                    <StackLayout
+                        HorizontalOptions="CenterAndExpand"
+                        Orientation="Horizontal"
+                        Spacing="16">
+
+                        <Frame
+                            Padding="25"
+                            BorderColor="{DynamicResource primaryDark}"
+                            CornerRadius="50"
+                            IsClippedToBounds="True">
+
+                            <controls:CustomIcon
+                                FontSize="{StaticResource FontSizeExtraLarge}"
+                                Glyph="{x:Static icons:FontAwesomeSolid.ThumbsDown}"
+                                TextColor="{DynamicResource primaryDark}" />
+
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding UnlikeCommand}" />
+                            </Frame.GestureRecognizers>
+
+                        </Frame>
+
+                        <Frame
+                            Padding="25"
+                            BorderColor="{DynamicResource primaryDark}"
+                            CornerRadius="50"
+                            IsClippedToBounds="True">
+                            <controls:CustomIcon
+                                FontSize="{StaticResource FontSizeExtraLarge}"
+                                Glyph="{x:Static icons:FontAwesomeSolid.ThumbsUp}"
+                                TextColor="{DynamicResource primaryDark}" />
+
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding LikeCommand}" />
+                            </Frame.GestureRecognizers>
+                        </Frame>
+                    </StackLayout>
+
+                    <Label
+                        Margin="8,0"
+                        FontSize="{StaticResource FontSizeSmall}"
+                        HorizontalOptions="Center"
+                        HorizontalTextAlignment="Center"
+                        Text="A sua opinião é muito importante para nós." />
+
+
+                </StackLayout>
+
+            </StackLayout>
+
+            <!--<BoxView Grid.Row="2" BackgroundColor="{DynamicResource foreground_page}" />-->
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

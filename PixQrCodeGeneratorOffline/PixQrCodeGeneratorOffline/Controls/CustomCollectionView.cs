@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Text;
+﻿using System.ComponentModel;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
@@ -16,10 +13,8 @@ namespace PixQrCodeGeneratorOffline.Controls
 
         private void CollectionView_PropertyChanged(object sender, PropertyChangedEventArgs e)
         {
-            if (e.PropertyName.Equals(nameof(CollectionView.ItemsSource)))
+            if (sender is CollectionView c && e.PropertyName.Equals(nameof(CollectionView.ItemsSource)))
             {
-                var c = (CollectionView)sender;
-
                 Task.Run(async () =>
                 {
                     c.Opacity = 0;

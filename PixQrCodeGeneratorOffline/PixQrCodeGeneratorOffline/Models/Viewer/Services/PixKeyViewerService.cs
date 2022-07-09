@@ -1,7 +1,6 @@
-﻿using PixQrCodeGeneratorOffline.Models.Viewer.Services.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix;
+using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix.Extentions;
+using PixQrCodeGeneratorOffline.Models.Viewer.Services.Interfaces;
 
 namespace PixQrCodeGeneratorOffline.Models.Viewer.Services
 {
@@ -9,14 +8,15 @@ namespace PixQrCodeGeneratorOffline.Models.Viewer.Services
     {
         public PixKeyViewer Create(PixKey pixKey)
         {
-            return pixKey.Validation.IsValid ? new PixKeyViewer
+            return pixKey.IsValid() ? new PixKeyViewer
             {
                 NameAndCity = GetNameAndCity(pixKey),
                 NamePresentation = GetNamePresentation(pixKey),
                 KeyPresentation = GetKeyPresentation(pixKey),
                 InstitutionPresentation = GetInstitutionPresentation(pixKey),
                 InstitutionAndKey = GetInstitutionAndKey(pixKey),
-                BankAndKey = GetBankAndKey(pixKey)
+                BankAndKey = GetBankAndKey(pixKey),
+                Initial = GetInitial(pixKey),
             } : new PixKeyViewer();
         }
 
@@ -31,5 +31,37 @@ namespace PixQrCodeGeneratorOffline.Models.Viewer.Services
         private string GetInstitutionAndKey(PixKey pixKey) => "Instituição: " + (!string.IsNullOrEmpty(pixKey?.FinancialInstitution?.Name) ? pixKey?.FinancialInstitution?.Name : "Não informado") + " | Chave: " + pixKey?.Key;
 
         private string GetBankAndKey(PixKey pixKey) => (!string.IsNullOrEmpty(pixKey?.FinancialInstitution?.Name) ? pixKey?.FinancialInstitution?.Name : "Não informado") + " | " + pixKey?.Key;
+
+        private string GetInitial(PixKey pixKey)
+        {
+            try
+            {
+                var name = pixKey?.Name;
+
+                if (!pixKey.IsContact || string.IsNullOrWhiteSpace(name))
+                    return "";
+
+                string first = name.Substring(0, 1);
+                string last;
+
+                if (!(name.Length > 1))
+                    last = first;
+
+                else if (!name.Contains(" "))
+                    last = name.Substring(1, 1);
+
+                else
+                {
+                    var split = name.Split(' ');
+                    last = split[1].Substring(0, 1);
+                }
+
+                return first + last;
+            }
+            catch (System.Exception)
+            {
+                return "**";
+            }
+        }
     }
 }

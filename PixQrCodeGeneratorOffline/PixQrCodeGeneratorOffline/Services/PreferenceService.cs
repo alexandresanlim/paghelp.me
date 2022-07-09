@@ -1,11 +1,11 @@
-﻿using Acr.UserDialogs;
-using PixQrCodeGeneratorOffline.Extention;
+﻿using PixQrCodeGeneratorOffline.Extention;
+using PixQrCodeGeneratorOffline.Flow.Core.Security;
+using PixQrCodeGeneratorOffline.Helpers;
 using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Services.Interfaces;
 using Plugin.Fingerprint;
+using Rg.Plugins.Popup.Extensions;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
@@ -14,12 +14,10 @@ namespace PixQrCodeGeneratorOffline.Services
     public class PreferenceService : ServiceBase, IPreferenceService
     {
         protected readonly IPixKeyService _pixKeyService;
-        protected readonly IEventService _eventService;
 
         public PreferenceService()
         {
             _pixKeyService = DependencyService.Get<IPixKeyService>();
-            _eventService = DependencyService.Get<IEventService>();
         }
 
         public void ChangeHideData()
@@ -49,42 +47,41 @@ namespace PixQrCodeGeneratorOffline.Services
             }
         }
 
-        public async Task ChangeFingerPrint()
+        public async Task<bool> ChangeFingerPrint()
         {
             if (!await CrossFingerprint.Current.IsAvailableAsync())
             {
                 DialogService.Toast("Está função esta desativa ou não disponível para o seu dispositivo");
-                return;
+                return false;
             }
 
             try
             {
-                var options = new List<ActionSheetOption>
-                {
-                    new ActionSheetOption((Preference.FingerPrint ? "Remover" : "Adicionar") + " autenticação biométrica", async () =>
-                    {
-                         var confirmMsg = "Tem certeza que deseja " + (Preference.FingerPrint ? "remover" : "adicionar") + " autenticação biométrica? Na próxima vez que você entrar, " + (Preference.FingerPrint ? "não será" : "será") + " necessário se autenticar para realizar quaisquer ações.";
+                Preference.FingerPrint = !Preference.FingerPrint;
 
-                        if (!await DialogService.ConfirmAsync(confirmMsg, "Confirmação", "Confirmar", "Cancelar"))
-                            return;
+                DialogService.Toast("Preferência de entrada, salva com sucesso!");
 
-                        Preference.FingerPrint = !Preference.FingerPrint;
+                _eventService.SendEvent($"Adicionou firger print nas preferências, {nameof(Preference.FingerPrint)} : {Preference.FingerPrint}", EventType.PREFERENCE);
 
-                        DialogService.Toast("Preferência de entrada, salva com sucesso!");
+                return true;
+            }
+            catch (Exception e)
+            {
+                e.SendToLog();
+                return false;
+            }
+        }
 
-                        _eventService.SendEvent($"Mudou entrada por fingerprint, {nameof(Preference.FingerPrint)} : {Preference.FingerPrint}", EventType.PREFERENCE);
-                    })
-                };
+        public void ChangePDVMode()
+        {
+            try
+            {
+                Preference.IsPDVMode = !Preference.IsPDVMode;
 
-                DialogService.ActionSheet(new ActionSheetConfig
-                {
-                    Title = "Proteção por biometria",
-                    Options = options,
-                    Cancel = new ActionSheetOption("Cancelar", () =>
-                    {
-                        return;
-                    })
-                });
+                DialogService.Toast("Preferência do modo PDV, salvo com sucesso!");
+
+                _eventService.SendEvent($"Mudou modo PDV, {nameof(Preference.IsPDVMode)} : {Preference.IsPDVMode}", EventType.PREFERENCE);
+
             }
             catch (Exception e)
             {
@@ -92,41 +89,91 @@ namespace PixQrCodeGeneratorOffline.Services
             }
         }
 
-        public async Task ChangePDVMode()
+        public void ChangeShowNewsMode()
         {
             try
             {
-                var options = new List<ActionSheetOption>
-                {
-                    new ActionSheetOption((Preference.IsPDVMode ? "Desativar" : "Ativar") + " modo PDV", async () =>
-                    {
-                         var confirmMsg = "Tem certeza que deseja " + (Preference.IsPDVMode ? "desativar" : "ativar") + " o modo PDV? Na próxima vez que você entrar, o app " + (Preference.IsPDVMode ? "não será" : "será") + " aberto em tela cheia e se manterá ligado. Ideal para locais com alto recorrência de vendas.";
+                Preference.ShowNews = !Preference.ShowNews;
 
-                        if (!await DialogService.ConfirmAsync(confirmMsg, "Confirmação", "Sim", "Cancelar"))
-                            return;
+                DialogService.Toast("Preferência de exibir notícias, salvo com sucesso!");
 
-                        Preference.IsPDVMode = !Preference.IsPDVMode;
-
-                        DialogService.Toast("Preferência do modo PDV, salvo com sucesso!");
-
-                        _eventService.SendEvent($"Mudou modo PDV, {nameof(Preference.IsPDVMode)} : {Preference.IsPDVMode}", EventType.PREFERENCE);
-                    })
-                };
-
-                DialogService.ActionSheet(new ActionSheetConfig
-                {
-                    Title = "Modo PDV",
-                    Options = options,
-                    Cancel = new ActionSheetOption("Cancelar", () =>
-                    {
-                        return;
-                    })
-                });
+                _eventService.SendEvent($"Mudou exibir notícias, {nameof(Preference.ShowNews)} : {Preference.ShowNews}", EventType.PREFERENCE);
             }
             catch (Exception e)
             {
                 e.SendToLog();
             }
+        }
+
+        public void ChangeTheme()
+        {
+            try
+            {
+                Preference.ThemeIsDark = !Preference.ThemeIsDark;
+                App.LoadTheme();
+
+                _eventService.SendEvent($"Mudou tema, {nameof(Preference.ThemeIsDark)} : {Preference.ThemeIsDark}", EventType.PREFERENCE);
+            }
+            catch (Exception e)
+            {
+                e.SendToLog();
+            }
+        }
+
+        public void ChangeCrypto()
+        {
+            try
+            {
+                Preference.CryptoAble = !Preference.CryptoAble;
+                _eventService.SendEvent($"Mudou crypto habilitado, {nameof(Preference.CryptoAble)} : {Preference.CryptoAble}", EventType.PREFERENCE);
+            }
+            catch (Exception e)
+            {
+                e.SendToLog();
+            }
+        }
+
+        public void ChangeAreYouLikingAppMsgCount()
+        {
+            if (Preference.AreYouLikingAppMsgCount >= Constants.COUNTER_TO_SHOWED_LIKING_PAGE)
+                return;
+
+            try
+            {
+                Preference.AreYouLikingAppMsgCount++;
+                _eventService.SendEvent($"Contador para mostrar msg de gostando, {nameof(Preference.AreYouLikingAppMsgCount)} : {Preference.AreYouLikingAppMsgCount}", EventType.OUTHER);
+            }
+            catch (Exception e)
+            {
+                e.SendToLog();
+            }
+        }
+
+        public void ChangeLikingAppMsgWasShowed(bool value)
+        {
+            try
+            {
+                Preference.LikingAppMsgWasShowed = value;
+                _eventService.SendEvent($"Mensagem de gostanto alterada, {nameof(Preference.LikingAppMsgWasShowed)} : {Preference.LikingAppMsgWasShowed}", EventType.OUTHER);
+            }
+            catch (Exception e)
+            {
+                e.SendToLog();
+            }
+        }
+
+        public async Task RequireAuthenticationToAction(Action execute, bool checkPreference = true)
+        {
+            var byPreference = checkPreference ? Preference.FingerPrint : true;
+
+            var isVisibleFingerPrint = byPreference && await CrossFingerprint.Current.IsAvailableAsync();
+
+            if (isVisibleFingerPrint)
+            {
+                await Shell.Current.Navigation.PushPopupAsync(new AuthenticationPage(execute));
+            }
+            else
+                execute.Invoke();
         }
     }
 }

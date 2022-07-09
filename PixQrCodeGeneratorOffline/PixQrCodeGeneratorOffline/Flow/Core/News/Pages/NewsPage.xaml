@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="PixQrCodeGeneratorOffline.Views.NewsPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
+    xmlns:cv="clr-namespace:PixQrCodeGeneratorOffline.Converters"
+    xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon"
+    xmlns:models="clr-namespace:PixQrCodeGeneratorOffline.Models"
+    xmlns:share="clr-namespace:PixQrCodeGeneratorOffline.Views.Shared"
+    xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
+    Title="Notícias"
+    x:DataType="vm:NewsViewModel"
+    BackgroundColor="{DynamicResource background_page}">
+
+    <!--<ContentPage.Resources>
+        <ResourceDictionary>
+            <cv:HasDataConverter x:Key="HasDataConverter" />
+            <cv:HasDataConverterInverted x:Key="HasDataConverterInverted" />
+        </ResourceDictionary>
+    </ContentPage.Resources>-->
+
+    <ContentPage.Content>
+
+        <Grid>
+
+            <StackLayout
+                Padding="30"
+                HorizontalOptions="FillAndExpand"
+                IsVisible="{Binding NotFoundVisible}"
+                VerticalOptions="FillAndExpand">
+                <Label
+                    FontFamily="{StaticResource FontSemiBold}"
+                    FontSize="50"
+                    HorizontalOptions="Center"
+                    Text="Ops!"
+                    TextColor="{DynamicResource textOnPrimary}" />
+                <Label
+                    FontFamily="{StaticResource FontSemiBold}"
+                    FontSize="{StaticResource FontSizeSmall}"
+                    HorizontalOptions="Center"
+                    Text="Nenhuma notícia encontrada no momento"
+                    TextColor="{DynamicResource textOnPrimary}" />
+            </StackLayout>
+
+            <Grid RowDefinitions="*, auto" RowSpacing="0">
+
+                <RefreshView
+                    Grid.Row="0"
+                    Command="{Binding LoadDataCommand}"
+                    IsRefreshing="{Binding IsBusy}">
+                    <controls:CustomCollectionView
+                        IsVisible="{Binding CurrentFeedList, Converter={StaticResource HasDataConverter}}"
+                        ItemsSource="{Binding CurrentFeedList}"
+                        SelectionMode="None">
+
+                        <controls:CustomCollectionView.ItemTemplate>
+                            <DataTemplate x:DataType="models:Feed">
+                                <StackLayout Padding="8">
+
+                                    <StackLayout.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding Command.NavigateToWebViewCommand}" />
+
+                                    </StackLayout.GestureRecognizers>
+
+                                    <Frame
+                                        Padding="0"
+                                        BackgroundColor="{StaticResource foreground_page}"
+                                        CornerRadius="15">
+
+                                        <StackLayout>
+                                            <Image
+                                                Aspect="Fill"
+                                                HeightRequest="200"
+                                                Source="{Binding Image}" />
+                                            <StackLayout Padding="15">
+                                                <Label
+                                                    FontFamily="{DynamicResource FontSemiBold}"
+                                                    FontSize="{DynamicResource FontSizeSmall}"
+                                                    Text="{Binding Source}"
+                                                    TextColor="{DynamicResource textPrimary}" />
+                                                <Label
+                                                    FontSize="{DynamicResource FontSizeSmall}"
+                                                    Text="{Binding Title}"
+                                                    TextColor="{DynamicResource textSecondary}"
+                                                    VerticalOptions="FillAndExpand" />
+
+                                                <StackLayout Orientation="Horizontal">
+                                                    <Label
+                                                        FontSize="{DynamicResource FontSizeMicro}"
+                                                        HorizontalOptions="StartAndExpand"
+                                                        Text="{Binding Viewer.PublishDateDisplay}"
+                                                        TextColor="{DynamicResource textSecondary}"
+                                                        VerticalOptions="EndAndExpand" />
+                                                    <StackLayout Padding="15,15,0,0">
+                                                        <StackLayout.GestureRecognizers>
+                                                            <TapGestureRecognizer Command="{Binding Command.ShareCommand}" />
+
+                                                        </StackLayout.GestureRecognizers>
+                                                        <controls:CustomIcon
+                                                            FontSize="{DynamicResource FontSizeMedium}"
+                                                            Glyph="{x:Static icons:FontAwesomeSolid.ShareAlt}"
+                                                            HorizontalOptions="CenterAndExpand"
+                                                            TextColor="{DynamicResource textSecondary}" />
+                                                    </StackLayout>
+                                                </StackLayout>
+                                            </StackLayout>
+                                        </StackLayout>
+
+                                    </Frame>
+
+                                </StackLayout>
+                            </DataTemplate>
+                        </controls:CustomCollectionView.ItemTemplate>
+                    </controls:CustomCollectionView>
+                </RefreshView>
+
+                <share:AdsView Grid.Row="1" />
+            </Grid>
+
+            <!--<StackLayout BackgroundColor="Black" IsVisible="{Binding IsLoading}"/>-->
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>

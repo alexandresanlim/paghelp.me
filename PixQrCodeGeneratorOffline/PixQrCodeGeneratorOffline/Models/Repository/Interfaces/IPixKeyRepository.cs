@@ -1,13 +1,15 @@
-﻿using System;
+﻿using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix;
+using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
-using System.Text;
 
 namespace PixQrCodeGeneratorOffline.Models.Repository.Interfaces
 {
     public interface IPixKeyRepository
     {
         List<PixKey> GetAll(Expression<Func<PixKey, bool>> predicate);
+
+        List<PixKey> GetAll();
 
         PixKey FindById(int id);
 

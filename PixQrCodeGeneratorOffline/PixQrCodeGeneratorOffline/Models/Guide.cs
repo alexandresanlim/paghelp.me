@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace PixQrCodeGeneratorOffline.Models
+﻿namespace PixQrCodeGeneratorOffline.Models
 {
     public class Guide
     {

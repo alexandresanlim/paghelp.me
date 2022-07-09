@@ -1,23 +1,15 @@
 ﻿using PixQrCodeGeneratorOffline.Models.DataStatic.Institutions;
-using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
-using PixQrCodeGeneratorOffline.Style;
-using System.Collections.Generic;
-using Xamarin.Forms;
-using PixQrCodeGeneratorOffline.Models.DataStatic.Institutions.Interfaces;
-using System.Linq;
 using PixQrCodeGeneratorOffline.Models.DataStatic.Institutions.Base;
+using PixQrCodeGeneratorOffline.Models.DataStatic.Institutions.Interfaces;
+using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
+using System.Collections.Generic;
+using System.Linq;
+using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.Models.Services
 {
     public class FinancialInstitutionService : IFinancialInstitutionService
     {
-        private readonly IMaterialColorService _materialColorService;
-
-        public FinancialInstitutionService()
-        {
-            _materialColorService = DependencyService.Get<IMaterialColorService>();
-        }
-
         public FinancialInstitution Create(FinancialInstitutionType financialInstitutionType, bool availablePremium = false)
         {
             return new FinancialInstitution
@@ -149,16 +141,16 @@ namespace PixQrCodeGeneratorOffline.Models.Services
         //        : GetInstitutionList()?.FirstOrDefault(x => x.Name.ToLower().Equals(financialInstitution?.Name?.ToLower())) ?? new NaoInformado();
         //}
 
-        public Institution GetInstitutionInstance(FinancialInstitution financialInstitution)
+        public InstitutionBank GetInstitutionInstance(FinancialInstitution financialInstitution)
         {
             var i = GetInstitutionList()?.FirstOrDefault(x => x.Type == financialInstitution.Type || x.Name.ToLower().Equals(financialInstitution?.Name?.ToLower())) ?? new NaoInformado();
 
             return ToInstitution(i);
         }
 
-        private Institution ToInstitution(IInstitution institution)
+        private InstitutionBank ToInstitution(IInstitutionBank institution)
         {
-            return new Institution
+            return new InstitutionBank
             {
                 Name = GetName(institution),
                 Type = GetType(institution),
@@ -166,24 +158,24 @@ namespace PixQrCodeGeneratorOffline.Models.Services
             };
         }
 
-        public string GetName(IInstitution institution)
+        public string GetName(IInstitutionBank institution)
         {
             return institution.Name;
         }
 
-        public MaterialColor GetMaterialColor(IInstitution institution)
+        public MaterialColor GetMaterialColor(IInstitutionBank institution)
         {
             return institution.MaterialColor;
         }
 
-        public FinancialInstitutionType GetType(IInstitution institution)
+        public FinancialInstitutionType GetType(IInstitutionBank institution)
         {
             return institution.Type;
         }
 
-        public List<IInstitution> GetInstitutionList()
+        public List<IInstitutionBank> GetInstitutionList()
         {
-            return new List<IInstitution>
+            return new List<IInstitutionBank>
             {
                 new BancoBMG(),
                 new BancoBTGPactual(),

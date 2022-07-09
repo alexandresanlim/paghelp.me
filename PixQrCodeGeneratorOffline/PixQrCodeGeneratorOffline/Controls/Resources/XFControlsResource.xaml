@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary
+    x:Class="PixQrCodeGeneratorOffline.Controls.Resources.XFControlsResource"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core">
+
+    <Style TargetType="Label">
+        <Setter Property="FontFamily" Value="FontPoppinsRegular" />
+        <Setter Property="TextColor" Value="{DynamicResource textPrimary}" />
+    </Style>
+
+    <Style TargetType="Entry">
+        <Setter Property="FontFamily" Value="FontPoppinsRegular" />
+        <Setter Property="ClearButtonVisibility" Value="WhileEditing" />
+        <Setter Property="PlaceholderColor" Value="{DynamicResource textSecondary}" />
+        <Setter Property="TextColor" Value="{DynamicResource textPrimary}" />
+        <Setter Property="Visual" Value="Material" />
+    </Style>
+
+    <Style TargetType="Frame">
+        <Setter Property="HasShadow" Value="False" />
+        <Setter Property="Padding" Value="12" />
+        <Setter Property="CornerRadius" Value="4" />
+        <Setter Property="Visual" Value="Material" />
+        <Setter Property="BackgroundColor" Value="{DynamicResource foreground_page}" />
+    </Style>
+
+    <Style TargetType="CarouselView">
+        <Setter Property="Loop" Value="False" />
+        <Setter Property="IsScrollAnimated" Value="True" />
+    </Style>
+
+    <Style TargetType="ActivityIndicator">
+        <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+        <Setter Property="IsRunning" Value="True" />
+    </Style>
+
+    <Style TargetType="ContentPage">
+        <Setter Property="BackgroundColor" Value="{DynamicResource background_page}" />
+        <Setter Property="ios:Page.UseSafeArea" Value="True" />
+    </Style>
+
+    <Style TargetType="IndicatorView">
+        <Setter Property="IndicatorsShape" Value="Circle" />
+        <Setter Property="IndicatorColor" Value="LightGray" />
+        <Setter Property="SelectedIndicatorColor" Value="DarkGray" />
+    </Style>
+
+    <Style TargetType="Button">
+        <Setter Property="Margin" Value="10,0,10,10" />
+        <Setter Property="BackgroundColor" Value="{DynamicResource primaryDark}" />
+        <Setter Property="BorderColor" Value="Transparent" />
+        <Setter Property="CornerRadius" Value="4" />
+        <Setter Property="TextColor" Value="{DynamicResource textOnPrimary}" />
+        <Setter Property="FontFamily" Value="{DynamicResource FontBold}" />
+        <Setter Property="Visual" Value="Material" />
+    </Style>
+
+    <Style TargetType="TabbedPage">
+        <Setter Property="BackgroundColor" Value="{DynamicResource primaryDark}" />
+        <Setter Property="BarTextColor" Value="{DynamicResource textOnPrimary}" />
+        <Setter Property="BarBackgroundColor" Value="{DynamicResource primaryDark}" />
+    </Style>
+
+    <Style TargetType="StackLayout">
+        <Setter Property="Spacing" Value="8" />
+    </Style>
+
+</ResourceDictionary>
