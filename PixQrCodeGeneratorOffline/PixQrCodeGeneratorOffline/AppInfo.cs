@@ -79,7 +79,7 @@ namespace PixQrCodeGeneratorOffline
 
         public static class Ids
         {
-            public static string AppCenter => Evironment.IsDevelopment ? "18439db5-b775-4a96-bb6f-6c4612d3daab" : "b0e08456-a911-48da-b391-33daf270896c";
+            public static string AppCenter => Evironment.IsDevelopment ? "18439db5-b775-4a96-bb6f-6c4612d3daab" : "ecf1ffa0-fad8-47f3-984e-c59dcdb24c29";
 
             public static string GoogleAds => DeviceInfo.IsAndroid ?
 #if DEBUG
