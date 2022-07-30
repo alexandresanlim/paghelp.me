@@ -27,7 +27,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public IAsyncCommand NavigateToGuidCommand => new AsyncCommand(async () => await NavigateAsync(new GuidePage()));
 
-        public IAsyncCommand NavigateToAddNewKeyPageCommand => new AsyncCommand(async () => await _pixKeyService.NavigateToAdd());
+        public IAsyncCommand NavigateToAddNewKeyPageCommand => new AsyncCommand(async () => await _pixKeyService.NavigateToAdd().ConfigureAwait(false));
 
         public IAsyncCommand NavigateToAddNewKeyPageContactCommand => new AsyncCommand(async () => await _pixKeyService.NavigateToAdd(isContact: true));
 
@@ -85,7 +85,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                     if (!Preference.LikingAppMsgWasShowed && (PixKeyList?.Count > 0 || PixKeyListContact?.Count > 0) && Preference.AreYouLikingAppMsgCount >= Constants.COUNTER_TO_SHOWED_LIKING_PAGE)
                     {
                         _preferenceService.ChangeLikingAppMsgWasShowed(true);
-                        await WaitAndExecute(5000, async () => await NavigateToLikingPage());
+                        await WaitAndExecute(5000, async () => await NavigateToLikingPage().ConfigureAwait(false));
                     }
                 }
                 catch (Exception e)
@@ -95,11 +95,19 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 finally
                 {
                     IsBusy = false;
+
+                    await LoadNews().ConfigureAwait(false);
                 }
             });
         }
 
-        public void LoadPixKey() => PixKeyList = _pixKeyService?.GetAll().ToObservableCollection() ?? new ObservableCollection<PixKey>();
+        public void LoadPixKey()
+        {
+            MainThread.BeginInvokeOnMainThread(() =>
+            {
+                PixKeyList = _pixKeyService?.GetAll().ToObservableCollection() ?? new ObservableCollection<PixKey>();
+            });
+        }
 
         public void LoadPixKeyContact()
         {
@@ -128,25 +136,25 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             switch (SelectedAction.Type)
             {
                 case KeyActionType.CreateBilling:
-                    await CurrentPixKey.Command.NavigateToCreateBillingPageCommand.ExecuteAsync();
+                    await CurrentPixKey.Command.NavigateToCreateBillingPageCommand.ExecuteAsync().ConfigureAwait(false);
                     break;
                 case KeyActionType.CopyKey:
-                    await CurrentPixKey.Command.CopyKeyCommand.ExecuteAsync();
+                    await CurrentPixKey.Command.CopyKeyCommand.ExecuteAsync().ConfigureAwait(false);
                     break;
                 case KeyActionType.ShareKey:
-                    await CurrentPixKey.Command.ShareKeyCommand.ExecuteAsync();
+                    await CurrentPixKey.Command.ShareKeyCommand.ExecuteAsync().ConfigureAwait(false);
                     break;
                 case KeyActionType.ShareOnWhatsApp:
-                    await CurrentPixKey.Command.ShareOnWhatsCommand.ExecuteAsync();
+                    await CurrentPixKey.Command.ShareOnWhatsCommand.ExecuteAsync().ConfigureAwait(false);
                     break;
                 case KeyActionType.BillingList:
-                    await CurrentPixKey.Command.NavigateToBillingCommand.ExecuteAsync();
+                    await CurrentPixKey.Command.NavigateToBillingCommand.ExecuteAsync().ConfigureAwait(false);
                     break;
                 case KeyActionType.PaymentPage:
-                    await CurrentPixKey.Command.NavigateToPaymentPageCommand.ExecuteAsync();
+                    await CurrentPixKey.Command.NavigateToPaymentPageCommand.ExecuteAsync().ConfigureAwait(false);
                     break;
                 case KeyActionType.Edit:
-                    await CurrentPixKey.Command.EditKeyCommand.ExecuteAsync();
+                    await CurrentPixKey.Command.EditKeyCommand.ExecuteAsync().ConfigureAwait(false);
                     break;
                 case KeyActionType.Delete:
                     var confirm = await DialogService.ConfirmAsync("Tem certeza que deseja excluir a chave " + CurrentPixKey.Key + "?", "Confirmação", "Sim", "Cancelar");
@@ -193,7 +201,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                     }
                     break;
                 case KeyActionType.DownloadQRCode:
-                    await CurrentPixKey.Payload.Commands.DownloadQrCodeCommand.ExecuteAsync();
+                    await CurrentPixKey.Payload.Commands.DownloadQrCodeCommand.ExecuteAsync().ConfigureAwait(false);
                     break;
                 case KeyActionType.None:
                 default:
@@ -207,7 +215,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         {
             if (Clipboard.HasText)
             {
-                var text = await Clipboard.GetTextAsync();
+                var text = await Clipboard.GetTextAsync().ConfigureAwait(false);
 
                 if (text.IsAKey())
                 {
@@ -246,7 +254,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
         }
 
-        [Obsolete("Google desativou a funcionalidade de feed")]
         public async Task LoadNews()
         {
             if (!Preference.ShowNews || Connectivity.NetworkAccess != NetworkAccess.Internet)
@@ -257,6 +264,8 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
             try
             {
+                SetIsLoading();
+
                 FeedFromService = FeedFromService?.Count > 0 ? FeedFromService : await _feedService.Get("https://news.google.com/rss/search?q=pix%20-fraude%20-golpista%20-golpistas%20-erro&hl=pt-BR&gl=BR&ceid=BR%3Apt-419");
 
                 CurrentFeedList = FeedFromService?.ToObservableCollection();
@@ -267,12 +276,14 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
             finally
             {
+                SetIsLoading(false);
+
                 foreach (var item in CurrentFeedList)
                 {
-                    var uri = await item.Link.GetImage();
+                    var uri = await item.Link.GetImage().ConfigureAwait(false);
 
                     if (!string.IsNullOrEmpty(uri))
-                        item.Image = new UriImageSource { CachingEnabled = true, Uri = new System.Uri(uri) };
+                        item.Image = new UriImageSource { CachingEnabled = true, Uri = new Uri(uri), CacheValidity = TimeSpan.FromDays(3) };
                 }
             }
         }
@@ -284,7 +295,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         private async Task RemoveAllKeys()
         {
-            var success = await _pixKeyService.RemoveAll();
+            var success = await _pixKeyService.RemoveAll().ConfigureAwait(false);
 
             if (success)
                 PixKeyList = new ObservableCollection<PixKey>();
@@ -345,7 +356,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         private async Task RemoveAllBilling()
         {
-            var success = await _pixPayloadService.RemoveAll();
+            var success = await _pixPayloadService.RemoveAll().ConfigureAwait(false);
 
             if (success)
             {
