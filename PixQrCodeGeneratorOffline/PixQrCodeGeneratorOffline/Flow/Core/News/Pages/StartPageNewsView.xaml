@@ -10,7 +10,7 @@
     x:DataType="vm:DashboardViewModel">
 
     <CollectionView
-        HeightRequest="1050"
+        HeightRequest="970"
         IsVisible="{Binding CurrentFeedList, Converter={StaticResource HasDataConverter}}"
         ItemsSource="{Binding CurrentFeedList}"
         SelectionMode="None">
@@ -27,7 +27,7 @@
                         Padding="0"
                         BackgroundColor="{DynamicResource foreground_page}"
                         CornerRadius="4"
-                        HeightRequest="200">
+                        HeightRequest="180">
 
 
                         <StackLayout Padding="15">
