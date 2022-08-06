@@ -264,9 +264,11 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
             try
             {
-                SetIsLoading();
+                IsBusy = true;
 
-                FeedFromService = FeedFromService?.Count > 0 ? FeedFromService : await _feedService.Get("https://news.google.com/rss/search?q=pix%20-fraude%20-golpista%20-golpistas%20-erro&hl=pt-BR&gl=BR&ceid=BR%3Apt-419");
+                FeedFromService = FeedFromService?.Count > 0 ?
+                    FeedFromService :
+                    await _feedService.Get("https://news.google.com/rss/search?q=pix%20-fraude%20-golpista%20-golpistas%20-erro&hl=pt-BR&gl=BR&ceid=BR%3Apt-419");
 
                 CurrentFeedList = FeedFromService?.ToObservableCollection();
             }
@@ -276,14 +278,16 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             }
             finally
             {
-                SetIsLoading(false);
+                IsBusy = false;
 
                 foreach (var item in CurrentFeedList)
                 {
-                    var uri = await item.Link.GetImage().ConfigureAwait(false);
+                    var uri = await item.Link.GetImage();
 
                     if (!string.IsNullOrEmpty(uri))
+                    {
                         item.Image = new UriImageSource { CachingEnabled = true, Uri = new Uri(uri), CacheValidity = TimeSpan.FromDays(3) };
+                    }
                 }
             }
         }

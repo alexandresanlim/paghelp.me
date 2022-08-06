@@ -288,7 +288,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             InputList[CurrentInputValues.Institution.Index].Title = institution.Name;
 
             if (SelectedFinancialInstitution.Type != FinancialInstitutionType.None)
-                InputList[CurrentInputValues.Key.Index].Placeholder = CurrenKeyPlaceholderDefaultValue + " no(a) " + SelectedFinancialInstitution?.Name;
+                InputList[CurrentInputValues.Key.Index].Placeholder = CurrenKeyPlaceholderDefaultValue + "no(a) " + SelectedFinancialInstitution?.Name;
 
             ActualInputNextPosition = 1;
         }
@@ -383,7 +383,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         private InputValues CurrentInputValues => new InputValues(InputList);
 
-        private string CurrenKeyPlaceholderDefaultValue => "Chave ";
+        private string CurrenKeyPlaceholderDefaultValue => "Chave Pix ";
 
         public FinancialInstitution SelectedFinancialInstitution { get; set; }
 
