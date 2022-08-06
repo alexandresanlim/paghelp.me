@@ -27,7 +27,7 @@
                         Padding="0"
                         BackgroundColor="{DynamicResource foreground_page}"
                         CornerRadius="4"
-                        HeightRequest="180">
+                        HeightRequest="185">
 
 
                         <StackLayout Padding="15">

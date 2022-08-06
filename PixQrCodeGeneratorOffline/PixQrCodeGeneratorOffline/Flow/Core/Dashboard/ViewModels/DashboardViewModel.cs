@@ -85,7 +85,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                     if (!Preference.LikingAppMsgWasShowed && (PixKeyList?.Count > 0 || PixKeyListContact?.Count > 0) && Preference.AreYouLikingAppMsgCount >= Constants.COUNTER_TO_SHOWED_LIKING_PAGE)
                     {
                         _preferenceService.ChangeLikingAppMsgWasShowed(true);
-                        await WaitAndExecute(5000, async () => await NavigateToLikingPage().ConfigureAwait(false));
+                        await WaitAndExecute(3000, async () => await NavigateToLikingPage().ConfigureAwait(false));
                     }
                 }
                 catch (Exception e)

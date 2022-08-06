@@ -1,4 +1,5 @@
 ﻿using Acr.UserDialogs;
+using AsyncAwaitBestPractices.MVVM;
 using PixQrCodeGeneratorOffline.Flow.Core.Security;
 using PixQrCodeGeneratorOffline.Models;
 using PixQrCodeGeneratorOffline.Models.Base;
@@ -16,6 +17,7 @@ using Rg.Plugins.Popup.Extensions;
 using System;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.Base.ViewModels
@@ -114,24 +116,24 @@ namespace PixQrCodeGeneratorOffline.Base.ViewModels
 
         public async Task LoadAuthenticationPage(Action execute)
         {
-            var isVisibleFingerPrint = Preference.FingerPrint && await CrossFingerprint.Current.IsAvailableAsync();
+            var isVisibleFingerPrint = Preference.FingerPrint && await CrossFingerprint.Current.IsAvailableAsync().ConfigureAwait(false);
 
             if(isVisibleFingerPrint)
             {
-                await Shell.Current.Navigation.PushPopupAsync(new AuthenticationPage(execute));
+                await Shell.Current.Navigation.PushPopupAsync(new AuthenticationPage(execute)).ConfigureAwait(false);
             }
             else
                 execute.Invoke();
         }
 
-        public async Task DisplayAlert(string title, string message, string cancel)
+        public Task DisplayAlert(string title, string message, string cancel)
         {
-            await Application.Current.MainPage.DisplayAlert(title, message, cancel);
+            return Application.Current.MainPage.DisplayAlert(title, message, cancel);
         }
 
-        public async Task<bool> DisplayAlert(string title, string message, string accept, string cancel)
+        public Task<bool> DisplayAlert(string title, string message, string accept, string cancel)
         {
-            return await Application.Current.MainPage.DisplayAlert(title, message, accept, cancel);
+            return Application.Current.MainPage.DisplayAlert(title, message, accept, cancel);
         }
 
         public void ShowToastErrorMessage()
@@ -141,24 +143,18 @@ namespace PixQrCodeGeneratorOffline.Base.ViewModels
 
         #region Navigate
 
-        public Command NavigateBackCommand => new Command(() =>
-        {
-            NavigateBack();
-        });
+        public Command NavigateBackCommand => new Command(NavigateBack);
 
-        public Command NavigateToRootCommand => new Command(async () =>
-        {
-            await NavigateToRootAsync();
-        });
+        public IAsyncCommand NavigateToRootCommand => new AsyncCommand(NavigateToRootAsync);
 
-        public async Task NavigateAsync(Page page)
+        public Task NavigateAsync(Page page)
         {
-            await Shell.Current.Navigation.PushAsync(page, true);
+            return Shell.Current.Navigation.PushAsync(page, true);
         }
 
-        public async Task NavigateModalAsync(Page page)
+        public Task NavigateModalAsync(Page page)
         {
-            await Shell.Current.Navigation.PushModalAsync(page, true);
+            return Shell.Current.Navigation.PushModalAsync(page, true);
         }
 
         public void NavigateBack()
@@ -166,23 +162,28 @@ namespace PixQrCodeGeneratorOffline.Base.ViewModels
             Shell.Current.SendBackButtonPressed();
         }
 
-        public async Task NavigateBackPopupAsync()
+        public Task NavigateBackPopupAsync()
         {
-            await Shell.Current.Navigation.PopPopupAsync();
+            return Shell.Current.Navigation.PopPopupAsync();
         }
 
-        public async Task NavigateToRootAsync()
+        public Task NavigateToRootAsync()
         {
-            await Shell.Current.Navigation.PopToRootAsync(true);
+            return Shell.Current.Navigation.PopToRootAsync(true);
         }
 
         #endregion
 
-        public async Task NavigateToLikingPage() => await NavigateAsync(new LikingPage());
+        public Task NavigateToLikingPage()
+        {
+            return NavigateAsync(new LikingPage());
+        }
 
-        public async Task WaitAndExecute(int milisec, Action actionToExecute) 
-        { 
-            await Task.Delay(milisec); actionToExecute(); 
+        public async Task WaitAndExecute(int milisec, Action actionToExecute)
+        {
+            await Task.Delay(milisec).ConfigureAwait(false); 
+
+            MainThread.BeginInvokeOnMainThread(() => actionToExecute.Invoke());
         }
 
         public ICommand CloseAdsCommand => new Command(() =>

@@ -187,7 +187,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 if (success)
                 {
                     DialogService.Toast("Chave salva com sucesso");
-                    await NavigateBackPopupAsync();
+                    await NavigateBackPopupAsync().ConfigureAwait(false);
                 }
 
                 else

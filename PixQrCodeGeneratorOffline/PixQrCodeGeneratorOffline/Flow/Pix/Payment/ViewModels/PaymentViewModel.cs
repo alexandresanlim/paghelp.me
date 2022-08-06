@@ -55,7 +55,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         private void LoadHelpPhrase()
         {
-            var paymentType = CurrentPaylodBase.Type == PayloadType.Crypto ? "Cripto" : "Pix";
+            var paymentType = (CurrentPaylodBase?.Type ?? PayloadType.Pix) == PayloadType.Crypto ? "Cripto" : "Pix";
 
             CurrentInfo.HelpPhrase =
                 $"O pagador precisa abrir o app que vai fazer a transferência {paymentType} e escanear este QR Code ou colar o código copia e cola.";

@@ -20,7 +20,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         {
             try
             {
-                await CrossStoreReview.Current.RequestReview(false);
+                await CrossStoreReview.Current.RequestReview(false).ConfigureAwait(false);
 
                 DialogService.Toast("Agradecemos o seu feedback! Nossa missão é melhorar-mos cada vez mais.", _secondsToToast);
 
