@@ -93,7 +93,14 @@ namespace PixQrCodeGeneratorOffline
 
         public static async Task RequestReview()
         {
-            await CrossStoreReview.Current.RequestReview(false);
+            try
+            {
+                await CrossStoreReview.Current.RequestReview(false);
+            }
+            catch (Exception)
+            {
+                OpenAppInStore();
+            }
         }
 
         public static async Task OpenAppIntagram()

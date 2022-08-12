@@ -14,6 +14,7 @@ using PixQrCodeGeneratorOffline.ViewModels;
 using PixQrCodeGeneratorOffline.Views;
 using Plugin.Fingerprint;
 using Rg.Plugins.Popup.Extensions;
+using Rg.Plugins.Popup.Pages;
 using System;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -152,6 +153,11 @@ namespace PixQrCodeGeneratorOffline.Base.ViewModels
             return Shell.Current.Navigation.PushAsync(page, true);
         }
 
+        public Task NavigatePopupAsync(PopupPage page)
+        {
+            return Shell.Current.Navigation.PushPopupAsync(page, true);
+        }
+
         public Task NavigateModalAsync(Page page)
         {
             return Shell.Current.Navigation.PushModalAsync(page, true);
@@ -176,7 +182,7 @@ namespace PixQrCodeGeneratorOffline.Base.ViewModels
 
         public Task NavigateToLikingPage()
         {
-            return NavigateAsync(new LikingPage());
+            return NavigatePopupAsync(new LikingPage());
         }
 
         public async Task WaitAndExecute(int milisec, Action actionToExecute)

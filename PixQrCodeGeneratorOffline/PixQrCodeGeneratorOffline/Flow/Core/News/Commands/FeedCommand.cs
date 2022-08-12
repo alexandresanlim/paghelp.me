@@ -83,7 +83,7 @@ namespace PixQrCodeGeneratorOffline.Models.Commands
                 }
                 finally
                 {
-                    _eventService.SendEvent("Compartilhou uma notícia: " + feed?.Title, EventType.SHARE, nameof(FeedCommand), new Dictionary<string, string> { { "Título: ", feed?.Title } });
+                    _eventService.SendEvent("Compartilhou uma notícia", EventType.SHARE, nameof(FeedCommand), new Dictionary<string, string> { { "Título: ", feed?.Title } });
 
                     DialogService.HideLoading();
                 }
