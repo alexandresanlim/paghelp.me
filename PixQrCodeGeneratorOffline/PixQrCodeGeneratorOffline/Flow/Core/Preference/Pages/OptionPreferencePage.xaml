@@ -17,7 +17,7 @@
         <ResourceDictionary>
 
             <Style x:Key="styleGrid" TargetType="Grid">
-                <Setter Property="ColumnDefinitions" Value="*,auto" />
+                <Setter Property="ColumnDefinitions" Value="*,45" />
                 <Setter Property="ColumnSpacing" Value="0" />
                 <Setter Property="Padding" Value="0,0,15,0" />
             </Style>
@@ -48,6 +48,7 @@
                 <content:DivisionView />
 
                 <Grid Style="{StaticResource styleGrid}">
+
                     <preferences:PreferencePanelTemplate
                         Title="Modo PDV"
                         Grid.Column="0"

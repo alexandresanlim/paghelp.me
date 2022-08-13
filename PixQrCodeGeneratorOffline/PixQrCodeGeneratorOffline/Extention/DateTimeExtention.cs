@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BrazilHolidays.Net;
+using System;
 
 namespace PixQrCodeGeneratorOffline.Extention
 {
@@ -6,20 +7,18 @@ namespace PixQrCodeGeneratorOffline.Extention
     {
         public static string GetDashboardTitleFromPeriod()
         {
-            var currentDateTime = DateTime.Now;
-
-            var period = currentDateTime.Hour;
+            var period = DateTime.Now.Hour;
 
             var msg = "Olá, ";
 
-            if (period > 12 && period < 18)
+            if (period > 6 && period < 12)
+                msg += "Bom dia";
+
+            else if (period >= 12 && period < 18)
                 msg += "Boa tarde";
 
-            else if (period >= 18)
-                msg += "Boa noite";
-
             else
-                msg += "Bom dia";
+                msg += "Boa noite";
 
             msg += "!";
 
@@ -30,11 +29,17 @@ namespace PixQrCodeGeneratorOffline.Extention
         {
             var currentDateTime = DateTime.Now;
 
+            var isHoliday = DateTime.Today.IsHoliday();
+
             var msg = "";
 
-            var dayOfWeed = currentDateTime.DayOfWeek;
+            if (isHoliday)
+            { 
+                msg += "e bom feriado.";
+                return msg;
+            }
 
-            switch (dayOfWeed)
+            switch (currentDateTime.DayOfWeek)
             {
                 case DayOfWeek.Friday:
                     msg += "e ótimo fim de semana.";
@@ -58,6 +63,7 @@ namespace PixQrCodeGeneratorOffline.Extention
                 case DayOfWeek.Thursday:
                     msg += "e excelente quinta-feira";
                     break;
+
                 case DayOfWeek.Wednesday:
                     msg += "e boa quarta-feira";
                     break;
@@ -67,20 +73,5 @@ namespace PixQrCodeGeneratorOffline.Extention
 
             return msg;
         }
-
-        //public static string GetHolidayToCurrentDate()
-        //{
-        //    var holiday = Holidays.NationalHolidays.From("br").OfYear(DateTime.Today.Year).FirstOrDefault(x => x.Value.Date.Equals(DateTime.Today)).Key;
-
-        //    if (string.IsNullOrEmpty(holiday))
-        //        return "";
-
-        //    return "Bom Feriado! " + holiday;
-        //}
-
-        //public static bool TodayIsHoliday()
-        //{
-        //    return !string.IsNullOrEmpty(GetHolidayToCurrentDate());
-        //}
     }
 }

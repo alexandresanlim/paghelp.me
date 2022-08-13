@@ -43,15 +43,15 @@ namespace PixQrCodeGeneratorOffline.Views
             if (IsOppearing)
                 return;
 
-            _optionPreferenceViewModel.OptionShowNews();
+            _optionPreferenceViewModel.OptionShowNews().SafeFireAndForget();
         }
 
-        private async void Switch_FingerPrint(object sender, ToggledEventArgs e)
+        private void Switch_FingerPrint(object sender, ToggledEventArgs e)
         {
             if (IsOppearing)
                 return;
 
-            await _optionPreferenceViewModel.OptionFingerPrint();
+            _optionPreferenceViewModel.OptionFingerPrint().SafeFireAndForget();
         }
 
         private void Switch_PdvMode(object sender, ToggledEventArgs e)
@@ -59,7 +59,7 @@ namespace PixQrCodeGeneratorOffline.Views
             if (IsOppearing)
                 return;
 
-            _optionPreferenceViewModel.OptionPDV();
+            _optionPreferenceViewModel.OptionPDV().SafeFireAndForget();
         }
 
         private void Switch_Theme(object sender, ToggledEventArgs e)
@@ -67,7 +67,7 @@ namespace PixQrCodeGeneratorOffline.Views
             if (IsOppearing)
                 return;
 
-            _optionPreferenceViewModel.OptionTheme();
+            _optionPreferenceViewModel.OptionTheme().SafeFireAndForget();
         }
 
         private void Switch_Cypto(object sender, ToggledEventArgs e)
@@ -75,7 +75,9 @@ namespace PixQrCodeGeneratorOffline.Views
             if (IsOppearing)
                 return;
 
-            _optionPreferenceViewModel.ChangeCrypto();
+            _optionPreferenceViewModel.ChangeCrypto().SafeFireAndForget();
         }
+
+        
     }
 }

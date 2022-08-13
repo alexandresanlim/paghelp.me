@@ -109,7 +109,6 @@
         <templates:TemplateAction
             Title="Exportar Todas"
             Icon="{x:Static icons:FontAwesomeSolid.FileCsv}"
-            IsNew="True"
             TapCommand="{Binding ExportToFileCommand}" />
 
         <!--<Grid Style="{DynamicResource styleGridActionChevronRight}" IsVisible="{Binding PixKeyList, Converter={StaticResource HasDataConverter}}">

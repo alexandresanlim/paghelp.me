@@ -133,7 +133,6 @@
     <templates:TemplateAction
         Title="Exportar todas"
         Icon="{x:Static icons:FontAwesomeSolid.FileCsv}"
-        IsNew="True"
         TapCommand="{Binding ExportToFileBillingCommand}" />
 
     <templates:TemplateAction

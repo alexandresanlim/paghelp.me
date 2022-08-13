@@ -11,7 +11,6 @@
     xmlns:qr="clr-namespace:Xam.Forms;assembly=Xam.Forms.QRCode"
     xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
     x:DataType="vm:PaymentViewModel"
-    BackgroundColor="{DynamicResource background_page}"
     CloseWhenBackgroundIsClicked="True">
 
     <pages:PopupPage.Animation>
@@ -21,8 +20,8 @@
             EasingIn="SinOut"
             EasingOut="SinIn"
             HasBackgroundAnimation="True"
-            PositionIn="Center"
-            PositionOut="Center"
+            PositionIn="Bottom"
+            PositionOut="Bottom"
             ScaleIn="1.2"
             ScaleOut="0.8" />
     </pages:PopupPage.Animation>
@@ -30,56 +29,42 @@
     <pages:PopupPage.Resources>
         <ResourceDictionary>
             <Style x:Key="StyleActionFrame" TargetType="Frame">
-                <Setter Property="BackgroundColor" Value="{DynamicResource foreground_page}" />
+                <Setter Property="BackgroundColor" Value="{DynamicResource background_page}" />
                 <Setter Property="Padding" Value="0" />
             </Style>
             <Style x:Key="StyleActionIcon" TargetType="controls:CustomIcon">
                 <Setter Property="FontSize" Value="{StaticResource FontSizeMedium}" />
                 <Setter Property="HorizontalOptions" Value="Start" />
-                <Setter Property="TextColor" Value="{Binding CurrentInfo.Color.TextOnPrimary}" />
+                <Setter Property="TextColor" Value="{DynamicResource textPrimary}" />
             </Style>
             <Style x:Key="StyleActionTitle" TargetType="Label">
                 <Setter Property="FontSize" Value="{StaticResource FontSizeMicro}" />
                 <Setter Property="FontFamily" Value="{StaticResource FontSemiBold}" />
-                <Setter Property="TextColor" Value="{Binding CurrentInfo.Color.TextOnPrimary}" />
+                <Setter Property="TextColor" Value="{DynamicResource textPrimary}" />
                 <Setter Property="VerticalOptions" Value="EndAndExpand" />
                 <Setter Property="Margin" Value="0,4,0,0" />
             </Style>
         </ResourceDictionary>
     </pages:PopupPage.Resources>
 
-    <Grid RowDefinitions="42,*,auto">
+    <Grid
+        RowDefinitions="8,*,auto"
+        RowSpacing="0"
+        VerticalOptions="End">
 
-        <StackLayout
+        <BoxView
             Grid.Row="0"
-            HorizontalOptions="FillAndExpand"
-            Orientation="Horizontal">
-            <controls:CustomIcon
-                Padding="16,8,32,8"
-                FontSize="{StaticResource FontSizeLarge}"
-                Glyph="{x:Static icons:FontAwesomeSolid.ChevronLeft}"
-                HorizontalOptions="Start"
-                TextColor="{DynamicResource textPrimary}">
-                <controls:CustomIcon.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
-                </controls:CustomIcon.GestureRecognizers>
-            </controls:CustomIcon>
-            <controls:CustomIcon
-                x:Name="btnSave"
-                Padding="32,8,16,8"
-                FontSize="{StaticResource FontSizeLarge}"
-                Glyph="{x:Static icons:FontAwesomeSolid.Save}"
-                HorizontalOptions="EndAndExpand"
-                IsVisible="False"
-                TextColor="{DynamicResource textPrimary}">
-                <controls:CustomIcon.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding SaveCommand}" />
-                </controls:CustomIcon.GestureRecognizers>
-            </controls:CustomIcon>
-        </StackLayout>
+            BackgroundColor="{DynamicResource foreground_page}"
+            CornerRadius="8,8,0,0"
+            HeightRequest="8"
+            HorizontalOptions="FillAndExpand" />
 
-        <ScrollView Grid.Row="1" Padding="15,0">
-            <StackLayout Spacing="0" VerticalOptions="StartAndExpand">
+        <ScrollView
+            Grid.Row="1"
+            Padding="16,16,16,0"
+            BackgroundColor="{DynamicResource foreground_page}">
+
+            <StackLayout Spacing="0" VerticalOptions="End">
 
                 <Label
                     FontFamily="{DynamicResource FontBold}"
@@ -87,7 +72,6 @@
                     HorizontalTextAlignment="Center"
                     Text="Mostre o QR Code ou campartilhe o código copia e cola"
                     TextColor="{DynamicResource textPrimary}" />
-
 
                 <StackLayout Spacing="15">
                     <Label
@@ -97,8 +81,8 @@
                         TextColor="{DynamicResource textSecondary}" />
 
                     <Frame
-                        Padding="8"
-                        BackgroundColor="Transparent"
+                        Padding="4"
+                        BackgroundColor="{DynamicResource foreground_page}"
                         BorderColor="{Binding CurrentInfo.Color.PrimaryDark}"
                         CornerRadius="8"
                         HorizontalOptions="CenterAndExpand"
@@ -127,48 +111,57 @@
                     Text="{Binding CurrentInfo.Value}"
                     TextColor="{DynamicResource textPrimary}" />
 
-                <Label
+                <!--<Label
                     Margin="0,15,0,0"
                     FontFamily="{DynamicResource FontBold}"
                     FontSize="{DynamicResource FontSizeMedium}"
                     HorizontalOptions="Center"
                     IsVisible="{Binding CurrentPixPaylod.PixKey.Viewer.NamePresentation, Converter={StaticResource HasDataConverter}}"
                     Text="{Binding CurrentPixPaylod.PixKey.Viewer.NamePresentation, StringFormat='Para: {0}'}"
-                    TextColor="{DynamicResource textPrimary}" />
+                    TextColor="{DynamicResource textPrimary}" />-->
 
-                <Label
-                    FontFamily="{StaticResource FontBold}"
-                    FontSize="{DynamicResource FontSizeLarge}"
-                    HorizontalOptions="Center"
-                    Text="{Binding CurrentInfo.Institution}"
-                    TextColor="{DynamicResource textPrimary}" />
 
-                <Label
-                    FontSize="{DynamicResource FontSizeMicro}"
-                    HorizontalOptions="Center"
-                    Text="{Binding CurrentInfo.Key}"
-                    TextColor="{DynamicResource textPrimary}" />
+
+                <StackLayout
+                    Margin="0,4,0,0"
+                    HorizontalOptions="CenterAndExpand"
+                    Orientation="Horizontal">
+
+                    <Label
+                        FontFamily="{StaticResource FontBold}"
+                        FontSize="{DynamicResource FontSizeMicro}"
+                        Text="{Binding CurrentInfo.Institution}"
+                        TextColor="{DynamicResource textPrimary}" />
+
+                    <Label
+                        FontSize="{DynamicResource FontSizeMicro}"
+                        HorizontalOptions="Center"
+                        Text="{Binding CurrentInfo.Key}"
+                        TextColor="{DynamicResource textPrimary}" />
+
+                </StackLayout>
+
             </StackLayout>
         </ScrollView>
 
         <StackLayout
             Grid.Row="2"
             Padding="8"
-            BackgroundColor="{DynamicResource background_page}"
+            BackgroundColor="{DynamicResource foreground_page}"
             Spacing="8">
 
             <StackLayout.GestureRecognizers>
                 <TapGestureRecognizer Command="{Binding ChangeIsActionVisibleCommand}" />
             </StackLayout.GestureRecognizers>
 
-            <content:DivisionView />
+            <content:DivisionView BackgroundColor="{DynamicResource background_page}" />
 
             <StackLayout Orientation="Horizontal">
                 <Label
                     FontFamily="{DynamicResource FontBold}"
                     FontSize="{DynamicResource FontSizeSmall}"
                     Text="Código copia e cola"
-                    TextColor="{Binding CurrentInfo.Color.TextOnPrimary}" />
+                    TextColor="{DynamicResource textPrimary}" />
                 <controls:CustomIcon HorizontalOptions="EndAndExpand" Style="{StaticResource StyleActionIcon}">
                     <controls:CustomIcon.Triggers>
                         <DataTrigger
@@ -187,13 +180,13 @@
                 </controls:CustomIcon>
             </StackLayout>
 
-            <Frame Padding="8" BackgroundColor="{DynamicResource foreground_page}">
+            <Frame Padding="8" BackgroundColor="{DynamicResource background_page}">
                 <Label
                     FontSize="{StaticResource FontSizeMicro}"
                     LineBreakMode="TailTruncation"
                     MaxLines="2"
                     Text="{Binding CurrentPaylodBase.QrCode}"
-                    TextColor="{Binding CurrentInfo.Color.TextOnPrimary}" />
+                    TextColor="{DynamicResource textPrimary}" />
             </Frame>
 
             <Grid ColumnDefinitions="*,*,*" IsVisible="{Binding IsActionVisible}">
@@ -211,7 +204,25 @@
                     </StackLayout>
                 </Frame>
 
+
+
                 <Frame Grid.Column="1" Style="{StaticResource StyleActionFrame}">
+
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding CurrentPaylodBase.Commands.CopyCommand}" />
+                    </Frame.GestureRecognizers>
+
+                    <StackLayout Padding="8">
+                        <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Copy}" Style="{StaticResource StyleActionIcon}" />
+
+                        <Label Style="{StaticResource StyleActionTitle}" Text="Copiar" />
+
+                    </StackLayout>
+                </Frame>
+
+
+
+                <Frame Grid.Column="2" Style="{StaticResource StyleActionFrame}">
 
                     <Frame.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding CurrentPaylodBase.Commands.ShareOnWhatsAppCommand}" />
@@ -228,16 +239,19 @@
                     </StackLayout>
                 </Frame>
 
-                <Frame Grid.Column="2" Style="{StaticResource StyleActionFrame}">
+                <Frame
+                    Grid.Column="2"
+                    IsVisible="{Binding SaveButtonIsVisible}"
+                    Style="{StaticResource StyleActionFrame}">
 
                     <Frame.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding CurrentPaylodBase.Commands.CopyCommand}" />
+                        <TapGestureRecognizer Command="{Binding SaveCommand, Mode=OneTime}" />
                     </Frame.GestureRecognizers>
 
                     <StackLayout Padding="8">
-                        <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Copy}" Style="{StaticResource StyleActionIcon}" />
+                        <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Save}" Style="{StaticResource StyleActionIcon}" />
 
-                        <Label Style="{StaticResource StyleActionTitle}" Text="Copiar" />
+                        <Label Style="{StaticResource StyleActionTitle}" Text="Salvar Cobrança" />
 
                     </StackLayout>
                 </Frame>

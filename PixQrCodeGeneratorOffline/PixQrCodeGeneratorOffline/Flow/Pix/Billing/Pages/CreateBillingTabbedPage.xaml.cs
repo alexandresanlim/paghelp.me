@@ -1,4 +1,5 @@
-﻿using PixQrCodeGeneratorOffline.ViewModels;
+﻿using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix;
+using PixQrCodeGeneratorOffline.ViewModels;
 using System;
 
 using Xamarin.Forms;
@@ -7,9 +8,9 @@ namespace PixQrCodeGeneratorOffline.Views
 {
     public partial class CreateBillingTabbedPage : TabbedPage
     {
-        private static Models.PaymentMethods.Pix.PixKey PixKey { get; set; }
+        private static PixKey PixKey { get; set; }
 
-        public CreateBillingTabbedPage(Models.PaymentMethods.Pix.PixKey pixKey)
+        public CreateBillingTabbedPage(PixKey pixKey)
         {
             PixKey = pixKey;
 
@@ -25,26 +26,22 @@ namespace PixQrCodeGeneratorOffline.Views
 
         private void TabbedPage_CurrentPageChanged(object sender, EventArgs e)
         {
-            var tabbed = (TabbedPage)sender;
-
-            if (tabbed.CurrentPage is CreateBillingPage)
+            if (sender is TabbedPage tabbed)
             {
-                var vm = (CreateBillingViewModel)tabbed.CurrentPage.BindingContext;
-
-                if (vm?.CurrentPixKey?.Id > 0)
+                if (!(PixKey?.Id > 0))
                     return;
 
-                vm.LoadDataCommand.Execute(PixKey);
-            }
-
-            if (tabbed.CurrentPage is CreateBillingSavePage)
-            {
-                var vm = (CreateBillingSaveViewModel)tabbed.CurrentPage.BindingContext;
-
-                if (vm?.CurrentPixKey?.Id > 0)
+                if (tabbed.CurrentPage is CreateBillingPage && tabbed.CurrentPage.BindingContext is CreateBillingViewModel vm)
+                {
+                    vm.LoadDataCommand.Execute(PixKey);
                     return;
+                }
 
-                vm.LoadDataCommand.Execute(PixKey);
+                if (tabbed.CurrentPage is CreateBillingSavePage && tabbed.CurrentPage.BindingContext is CreateBillingSaveViewModel saveVM)
+                {
+                    saveVM.LoadDataCommand.Execute(PixKey);
+                    return;
+                }
             }
         }
 
