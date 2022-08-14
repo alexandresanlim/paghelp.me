@@ -6,6 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="banner_chaves_contatos.png" />
+    <None Remove="banner_suas_chaves.png" />
     <None Remove="Fonts\fa-brands-400.ttf" />
     <None Remove="Fonts\fa-solid-900.ttf" />
     <None Remove="Fonts\Poppins-Bold.ttf" />
@@ -18,6 +20,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="banner_chaves_contatos.png" />
+    <EmbeddedResource Include="banner_suas_chaves.png" />
     <EmbeddedResource Include="Fonts\fa-brands-400.ttf" />
     <EmbeddedResource Include="Fonts\fa-solid-900.ttf" />
     <EmbeddedResource Include="Fonts\Poppins-Bold.ttf" />

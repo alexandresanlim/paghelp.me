@@ -7,6 +7,7 @@
     xmlns:contentStart="clr-namespace:PixQrCodeGeneratorOffline.Views.Content.StartPageContents"
     xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
     xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon"
+    xmlns:local="clr-namespace:PixQrCodeGeneratorOffline.Extention;assembly=PixQrCodeGeneratorOffline"
     xmlns:templates="clr-namespace:PixQrCodeGeneratorOffline.Templates"
     xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
     x:DataType="vm:DashboardViewModel"
@@ -70,6 +71,9 @@
         <StackLayout Spacing="0">
 
             <Grid ColumnDefinitions="*, 80" ColumnSpacing="0">
+
+                <Image Grid.ColumnSpan="2" Source="{local:ImageResource PixQrCodeGeneratorOffline.}" />
+
                 <templates:TemplateTitlePanel
                     Title="Minhas Chaves Pix"
                     Grid.Column="0"
@@ -132,9 +136,11 @@
             <templates:TemplateTitlePanel
                 Title="Chaves de Contatos"
                 Margin="0,8,0,0"
-                Icon="{x:Static icons:FontAwesomeSolid.Users}" />
+                BackgroundImage="banner_chaves_contatos.png"
+                Icon="{x:Static icons:FontAwesomeSolid.Users}"
+                SubTitle="Guarde aqui as chaves dos seus contatos,&#x0a;para nunca mais perder ou precisar &#x0a;perguntar novamente." />
 
-            <contentStart:StartPageContactsKeysView IsVisible="{Binding PixKeyListContact, Converter={StaticResource HasDataConverter}}" />
+            <contentStart:StartPageContactsKeysView Margin="0,8,0,0" IsVisible="{Binding PixKeyListContact, Converter={StaticResource HasDataConverter}}" />
 
             <templates:TemplateAction
                 Title="Adicionar Nova"

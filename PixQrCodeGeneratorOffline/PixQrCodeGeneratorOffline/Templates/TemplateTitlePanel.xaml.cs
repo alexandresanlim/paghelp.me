@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using PixQrCodeGeneratorOffline.Extention;
+using System.Reflection;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 using static PixQrCodeGeneratorOffline.Extention.IconExtention;
 
 namespace PixQrCodeGeneratorOffline.Templates
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class TemplateTitlePanel : StackLayout
+    public partial class TemplateTitlePanel : Grid
     {
         public TemplateTitlePanel()
         {
@@ -24,7 +18,6 @@ namespace PixQrCodeGeneratorOffline.Templates
                typeof(TemplateTitlePanel),
                string.Empty,
                BindingMode.Default,
-               null,
                propertyChanged: TitlePropertyChanged);
 
         public static readonly BindableProperty IconProperty =
@@ -33,7 +26,6 @@ namespace PixQrCodeGeneratorOffline.Templates
                 typeof(TemplateTitlePanel),
                 string.Empty,
                 BindingMode.Default,
-                null,
                 propertyChanged: IconPropertyChanged);
 
         public static readonly BindableProperty TitleColorProperty =
@@ -42,7 +34,6 @@ namespace PixQrCodeGeneratorOffline.Templates
                 typeof(TemplateTitlePanel),
                 App.ThemeColors.TextSecondary,
                 BindingMode.Default,
-                null,
                 propertyChanged: TitleColorPropertyChanged);
 
         public static readonly BindableProperty IconColorProperty =
@@ -51,7 +42,6 @@ namespace PixQrCodeGeneratorOffline.Templates
                 typeof(TemplateTitlePanel),
                 App.ThemeColors.TextSecondary,
                 BindingMode.Default,
-                null,
                 propertyChanged: IconColorPropertyChanged);
 
         public string Title
@@ -128,5 +118,48 @@ namespace PixQrCodeGeneratorOffline.Templates
 
             template.xIcon.IconType = value;
         }
+
+        public static readonly BindableProperty SubTitleProperty =
+           BindableProperty.Create(propertyName: nameof(SubTitle),
+                               returnType: typeof(string),
+                               declaringType: typeof(TemplateTitlePanel),
+                               defaultValue: string.Empty,
+                               defaultBindingMode: BindingMode.Default,
+                               propertyChanged: SubTitlePropertyChanged);
+        public string SubTitle
+        {
+            get => (string)GetValue(SubTitleProperty);
+            set => SetValue(SubTitleProperty, value);
+        }
+
+        static void SubTitlePropertyChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            if (bindable is TemplateTitlePanel control && newValue is string value && !string.IsNullOrWhiteSpace(value))
+            {
+                control.xSubTitle.IsVisible = true;
+                control.xSubTitle.Text = value;
+            }
+        } 
+
+        public static readonly BindableProperty BackgroundImageProperty =
+           BindableProperty.Create(propertyName: nameof(BackgroundImage),
+                               returnType: typeof(string),
+                               declaringType: typeof(TemplateTitlePanel),
+                               propertyChanged: BackgroundImagePropertyChanged);
+        public string BackgroundImage
+        {
+            get => (string)GetValue(BackgroundImageProperty);
+            set => SetValue(BackgroundImageProperty, value);
+        }
+
+        static void BackgroundImagePropertyChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            if (bindable is TemplateTitlePanel control && newValue is string value && !string.IsNullOrWhiteSpace(value))
+            {
+                control.xBackgroundImage.IsVisible = true;
+                control.xBackgroundImage.Source = ImageSource.FromResource($"PixQrCodeGeneratorOffline.{value}", typeof(TemplateTitlePanel).GetTypeInfo().Assembly);
+                control.xIcon.TextColor = control.xTitle.TextColor = control.xSubTitle.TextColor = Color.White;
+            }
+        } 
     }
 }
