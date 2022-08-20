@@ -39,7 +39,7 @@
 
         <Label
             x:Name="xSubTitle"
-            FontSize="Micro"
+            FontSize="{StaticResource FontSizeMicro}"
             IsVisible="False"
             TextColor="{DynamicResource textPrimary}" />
     </StackLayout>

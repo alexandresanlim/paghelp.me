@@ -142,7 +142,7 @@
                 Margin="0,8,0,0"
                 BackgroundImage="banner_chaves_contatos.png"
                 Icon="{x:Static icons:FontAwesomeSolid.Users}"
-                SubTitle="Guarde aqui as chaves dos seus &#x0a;contatos, para nunca mais perder &#x0a;ou precisar perguntar novamente." />
+                SubTitle="Guarde aqui as chaves dos &#x0a;seus contatos, para nunca &#x0a;mais precisar perguntar &#x0a;novamente." />
 
             <contentStart:StartPageContactsKeysView Margin="0,8,0,0" IsVisible="{Binding PixKeyListContact, Converter={StaticResource HasDataConverter}}" />
 
