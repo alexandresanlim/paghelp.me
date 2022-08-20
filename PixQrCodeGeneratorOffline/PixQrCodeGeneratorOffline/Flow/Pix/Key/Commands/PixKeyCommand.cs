@@ -66,7 +66,7 @@ namespace PixQrCodeGeneratorOffline.Models.Commands
             { 
                 SetIsLoading(); 
                 
-                await Shell.Current.Navigation.PushAsync(new CreateBillingTabbedPage(pixKey)); 
+                await Shell.Current.Navigation.PushAsync(new CreateBillingPage(pixKey)).ConfigureAwait(false); 
                 
                 SetIsLoading(false); 
             });
