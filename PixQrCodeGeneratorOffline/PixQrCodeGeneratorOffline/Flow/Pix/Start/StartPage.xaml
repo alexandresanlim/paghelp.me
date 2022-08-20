@@ -123,7 +123,11 @@
 
             <StackLayout IsVisible="{Binding BillingSaveList, Converter={StaticResource HasDataConverter}}">
 
-                <templates:TemplateTitlePanel Title="Cobranças Salvas" Icon="{x:Static icons:FontAwesomeSolid.HandHoldingUsd}" />
+                <templates:TemplateTitlePanel
+                    Title="Cobranças Salvas"
+                    BackgroundImage="banner_cobrancas_salvas.png"
+                    Icon="{x:Static icons:FontAwesomeSolid.HandHoldingUsd}"
+                    SubTitle="Suas cobranças salvas aparecerão aqui.&#x0a;Você encontrará essa opção na tela &#x0a;de criação de cobrança." />
 
                 <contentStart:StartPageBillingSaveView />
 
@@ -138,7 +142,7 @@
                 Margin="0,8,0,0"
                 BackgroundImage="banner_chaves_contatos.png"
                 Icon="{x:Static icons:FontAwesomeSolid.Users}"
-                SubTitle="Guarde aqui as chaves dos seus contatos,&#x0a;para nunca mais perder ou precisar &#x0a;perguntar novamente." />
+                SubTitle="Guarde aqui as chaves dos seus &#x0a;contatos, para nunca mais perder &#x0a;ou precisar perguntar novamente." />
 
             <contentStart:StartPageContactsKeysView Margin="0,8,0,0" IsVisible="{Binding PixKeyListContact, Converter={StaticResource HasDataConverter}}" />
 
@@ -155,7 +159,11 @@
 
             <StackLayout IsVisible="{Binding CurrentFeedList, Converter={StaticResource HasDataConverter}}">
 
-                <templates:TemplateTitlePanel Title="Notícias" Icon="{x:Static icons:FontAwesomeSolid.Rss}" />
+                <templates:TemplateTitlePanel
+                    Title="Notícias"
+                    BackgroundImage="banner_noticias.png"
+                    Icon="{x:Static icons:FontAwesomeSolid.Rss}"
+                    SubTitle="Fique por dentro das principais &#x0a;notícias diárias sobre o Pix" />
 
                 <contentStart:StartPageNewsView />
 

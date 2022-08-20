@@ -158,7 +158,7 @@ namespace PixQrCodeGeneratorOffline.Templates
             {
                 control.xBackgroundImage.IsVisible = true;
                 control.xBackgroundImage.Source = ImageSource.FromResource($"PixQrCodeGeneratorOffline.{value}", typeof(TemplateTitlePanel).GetTypeInfo().Assembly);
-                control.xIcon.TextColor = control.xTitle.TextColor = control.xSubTitle.TextColor = Color.White;
+                //control.xIcon.TextColor = control.xTitle.TextColor = control.xSubTitle.TextColor = Color.White;
             }
         } 
     }

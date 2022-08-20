@@ -11,13 +11,13 @@
 
     <StackLayout Spacing="0" VerticalOptions="End">
         <BoxView
-            BackgroundColor="{DynamicResource foreground_page}"
+            BackgroundColor="{DynamicResource background_page}"
             CornerRadius="16,16,0,0"
             HeightRequest="16" />
 
         <StackLayout
             Padding="0,16,0,32"
-            BackgroundColor="{DynamicResource foreground_page}"
+            BackgroundColor="{DynamicResource background_page}"
             Spacing="32">
 
             <Label
@@ -34,7 +34,7 @@
 
                 <Frame
                     Padding="25"
-                    BorderColor="{DynamicResource textPrimary}"
+                    BackgroundColor="{DynamicResource foreground_page}"
                     CornerRadius="50"
                     IsClippedToBounds="True">
 
@@ -51,7 +51,7 @@
 
                 <Frame
                     Padding="25"
-                    BorderColor="{DynamicResource textPrimary}"
+                    BackgroundColor="{DynamicResource foreground_page}"
                     CornerRadius="50"
                     IsClippedToBounds="True">
                     <controls:CustomIcon
@@ -71,7 +71,6 @@
                 HorizontalOptions="Center"
                 HorizontalTextAlignment="Center"
                 Text="A sua opinião é muito importante para nós." />
-
 
         </StackLayout>
 

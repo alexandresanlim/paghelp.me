@@ -23,7 +23,10 @@
         </ResourceDictionary>
     </Grid.Resources>
 
-    <Image x:Name="xBackgroundImage" IsVisible="False" />
+    <Image
+        x:Name="xBackgroundImage"
+        Margin="8,0"
+        IsVisible="False" />
 
     <StackLayout Padding="10" Spacing="0">
         <controls:CustomIcon x:Name="xIcon" Style="{DynamicResource styleTitleIcon}" />

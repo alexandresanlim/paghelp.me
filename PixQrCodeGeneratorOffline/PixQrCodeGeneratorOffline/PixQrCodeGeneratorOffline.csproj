@@ -7,6 +7,8 @@
 
   <ItemGroup>
     <None Remove="banner_chaves_contatos.png" />
+    <None Remove="banner_cobrancas_salvas.png" />
+    <None Remove="banner_noticias.png" />
     <None Remove="banner_suas_chaves.png" />
     <None Remove="Fonts\fa-brands-400.ttf" />
     <None Remove="Fonts\fa-solid-900.ttf" />
@@ -21,6 +23,8 @@
 
   <ItemGroup>
     <EmbeddedResource Include="banner_chaves_contatos.png" />
+    <EmbeddedResource Include="banner_cobrancas_salvas.png" />
+    <EmbeddedResource Include="banner_noticias.png" />
     <EmbeddedResource Include="banner_suas_chaves.png" />
     <EmbeddedResource Include="Fonts\fa-brands-400.ttf" />
     <EmbeddedResource Include="Fonts\fa-solid-900.ttf" />
