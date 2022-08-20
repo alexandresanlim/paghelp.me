@@ -102,11 +102,7 @@ namespace PixQrCodeGeneratorOffline.Models.Commands
         {
             return _customAsyncCommand.Create(async () =>
             {
-                SetIsLoading();
-
-                await Shell.Current.Navigation.PushPopupAsync(new PaymentPage(_pixPayloadService.Create(pixKey)));
-
-                SetIsLoading(false);
+                await Shell.Current.Navigation.PushPopupAsync(new PaymentPage(_pixPayloadService.Create(pixKey))).ConfigureAwait(false);
             });
         }
             

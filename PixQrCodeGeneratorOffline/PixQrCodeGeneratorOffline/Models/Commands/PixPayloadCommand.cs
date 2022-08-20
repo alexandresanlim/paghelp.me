@@ -29,7 +29,7 @@ namespace PixQrCodeGeneratorOffline.Models.Commands
         }
 
         private IAsyncCommand GetNavigateToPaymentPageCommand(PixPayload pixPayload) =>
-            _customAsyncCommand.Create(async () => await Shell.Current.Navigation.PushPopupAsync(new PaymentPage(pixPayload)));
+            _customAsyncCommand.Create(async () => await Shell.Current.Navigation.PushPopupAsync(new PaymentPage(pixPayload)).ConfigureAwait(false));
 
         private IAsyncCommand GetDownloadQrCodeCommand(PixPayload pixPayload) =>
             _customAsyncCommand.Create(async () =>
