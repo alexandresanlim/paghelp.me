@@ -12,7 +12,7 @@
 
     <CollectionView
         Margin="8,0,0,0"
-        HeightRequest="280"
+        HeightRequest="290"
         IsVisible="{Binding CurrentFeedList, Converter={StaticResource HasDataConverter}}"
         ItemsSource="{Binding CurrentFeedList}"
         SelectionMode="None">
@@ -47,8 +47,9 @@
 
                         <Label
                             Margin="8,8,8,0"
-                            FontFamily="{DynamicResource FontSemiBold}"
                             FontSize="{DynamicResource FontSizeMicro}"
+                            LineBreakMode="TailTruncation"
+                            MaxLines="1"
                             Text="{Binding Source}"
                             TextColor="{DynamicResource textSecondary}" />
 
@@ -62,7 +63,7 @@
                             VerticalOptions="FillAndExpand" />
 
                         <StackLayout
-                            Margin="8,0,8,8"
+                            Margin="8,0"
                             Orientation="Horizontal"
                             VerticalOptions="EndAndExpand">
                             <Label
@@ -70,16 +71,17 @@
                                 HorizontalOptions="StartAndExpand"
                                 Text="{Binding Viewer.PublishDateDisplay}"
                                 TextColor="{DynamicResource textSecondary}"
-                                VerticalOptions="EndAndExpand" />
-                            <StackLayout Padding="15,15,0,0">
+                                VerticalOptions="CenterAndExpand" />
+                            <StackLayout HeightRequest="42" WidthRequest="42">
                                 <StackLayout.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding Command.ShareCommand}" />
                                 </StackLayout.GestureRecognizers>
                                 <controls:CustomIcon
                                     FontSize="{DynamicResource FontSizeMedium}"
                                     Glyph="{x:Static icons:FontAwesomeSolid.ShareAlt}"
-                                    HorizontalOptions="CenterAndExpand"
-                                    TextColor="{DynamicResource textSecondary}" />
+                                    HorizontalOptions="EndAndExpand"
+                                    TextColor="{DynamicResource textSecondary}"
+                                    VerticalOptions="CenterAndExpand" />
                             </StackLayout>
                         </StackLayout>
                     </StackLayout>
