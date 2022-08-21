@@ -17,18 +17,18 @@
     <pages:PopupPage.Resources>
         <ResourceDictionary>
             <Style x:Key="StyleActionFrame" TargetType="Frame">
-                <Setter Property="BackgroundColor" Value="{DynamicResource foreground_page}" />
+                <Setter Property="BackgroundColor" Value="{DynamicResource staticForegroundPage}" />
                 <Setter Property="Padding" Value="0" />
             </Style>
             <Style x:Key="StyleActionIcon" TargetType="controls:CustomIcon">
                 <Setter Property="FontSize" Value="{StaticResource FontSizeMedium}" />
                 <Setter Property="HorizontalOptions" Value="Start" />
-                <Setter Property="TextColor" Value="{DynamicResource textPrimary}" />
+                <Setter Property="TextColor" Value="{StaticResource staticTextPrimary}" />
             </Style>
             <Style x:Key="StyleActionTitle" TargetType="Label">
                 <Setter Property="FontSize" Value="{StaticResource FontSizeMicro}" />
                 <Setter Property="FontFamily" Value="{StaticResource FontSemiBold}" />
-                <Setter Property="TextColor" Value="{DynamicResource textPrimary}" />
+                <Setter Property="TextColor" Value="{StaticResource staticTextPrimary}" />
                 <Setter Property="VerticalOptions" Value="EndAndExpand" />
                 <Setter Property="Margin" Value="0,4,0,0" />
             </Style>
@@ -41,7 +41,7 @@
         Grid.Row="0"
         Margin="8,8,8,50"
         Padding="0"
-        BackgroundColor="{DynamicResource background_page}"
+        BackgroundColor="{StaticResource staticBackgroundPage}"
         CornerRadius="8"
         VerticalOptions="Center">
 
@@ -52,22 +52,22 @@
                 <StackLayout Spacing="0" VerticalOptions="End">
 
                     <Label
-                        FontFamily="{DynamicResource FontBold}"
-                        FontSize="{DynamicResource FontSizeSmall}"
+                        FontFamily="{StaticResource FontBold}"
+                        FontSize="{StaticResource FontSizeSmall}"
                         HorizontalTextAlignment="Center"
                         Text="Mostre o QR Code ou campartilhe o código copia e cola"
-                        TextColor="{DynamicResource textPrimary}" />
+                        TextColor="{StaticResource staticTextPrimary}" />
 
                     <StackLayout Spacing="15">
                         <Label
                             Margin="0,10,0,0"
                             FontSize="{DynamicResource FontSizeMicro}"
                             Text="{Binding CurrentInfo.HelpPhrase}"
-                            TextColor="{DynamicResource textSecondary}" />
+                            TextColor="{StaticResource staticTextSecondary}" />
 
                         <Frame
                             Padding="4"
-                            BorderColor="{Binding CurrentInfo.Color.PrimaryDark}"
+                            BackgroundColor="{Binding CurrentInfo.Color.PrimaryDark}"
                             CornerRadius="8"
                             HorizontalOptions="CenterAndExpand"
                             IsClippedToBounds="True"
@@ -76,13 +76,8 @@
                             <qr:QRCode
                                 Content="{Binding CurrentPaylodBase.QrCode}"
                                 HeightRequest="300"
-                                WidthRequest="300">
+                                WidthRequest="300" />
 
-                                <qr:QRCode.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:PaymentViewModel}}, Path=SharePayloadCommand}" />
-                                </qr:QRCode.GestureRecognizers>
-
-                            </qr:QRCode>
                         </Frame>
 
                     </StackLayout>
@@ -93,7 +88,7 @@
                         HorizontalOptions="Center"
                         IsVisible="{Binding CurrentInfo.Value, Converter={StaticResource HasDataConverter}}"
                         Text="{Binding CurrentInfo.Value}"
-                        TextColor="{DynamicResource textPrimary}" />
+                        TextColor="{StaticResource staticTextPrimary}" />
 
                     <!--<Label
                     Margin="0,15,0,0"
@@ -115,7 +110,7 @@
                             FontFamily="{StaticResource FontBold}"
                             FontSize="{DynamicResource FontSizeMicro}"
                             Text="{Binding CurrentInfo.Institution}"
-                            TextColor="{DynamicResource textPrimary}" />
+                            TextColor="{StaticResource staticTextPrimary}" />
 
                         <Label
                             FontSize="{DynamicResource FontSizeMicro}"
@@ -123,7 +118,7 @@
                             LineBreakMode="TailTruncation"
                             MaxLines="1"
                             Text="{Binding CurrentInfo.Key}"
-                            TextColor="{DynamicResource textPrimary}" />
+                            TextColor="{StaticResource staticTextPrimary}" />
 
                     </StackLayout>
 
@@ -134,21 +129,21 @@
                 Grid.Row="1"
                 Margin="0,0,0,8"
                 Padding="8"
-                BackgroundColor="{DynamicResource background_page}"
+                BackgroundColor="{StaticResource staticBackgroundPage}"
                 Spacing="8">
 
                 <StackLayout.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding ChangeIsActionVisibleCommand, Mode=OneTime}" />
                 </StackLayout.GestureRecognizers>
 
-                <content:DivisionView BackgroundColor="{DynamicResource foreground_page}" />
+                <content:DivisionView BackgroundColor="{StaticResource staticForegroundPage}" />
 
                 <StackLayout Orientation="Horizontal">
                     <Label
                         FontFamily="{DynamicResource FontBold}"
                         FontSize="{DynamicResource FontSizeSmall}"
                         Text="Código copia e cola"
-                        TextColor="{DynamicResource textPrimary}" />
+                        TextColor="{StaticResource staticTextPrimary}" />
                     <controls:CustomIcon HorizontalOptions="EndAndExpand" Style="{StaticResource StyleActionIcon}">
                         <controls:CustomIcon.Triggers>
                             <DataTrigger
@@ -167,13 +162,13 @@
                     </controls:CustomIcon>
                 </StackLayout>
 
-                <Frame Padding="8" BackgroundColor="{DynamicResource foreground_page}">
+                <Frame Padding="8" BackgroundColor="{DynamicResource staticForegroundPage}">
                     <Label
                         FontSize="{StaticResource FontSizeMicro}"
                         LineBreakMode="TailTruncation"
                         MaxLines="2"
                         Text="{Binding CurrentPaylodBase.QrCode}"
-                        TextColor="{DynamicResource textPrimary}" />
+                        TextColor="{StaticResource staticTextPrimary}" />
                 </Frame>
 
                 <Grid ColumnDefinitions="*,*,*" IsVisible="{Binding IsActionVisible}">
