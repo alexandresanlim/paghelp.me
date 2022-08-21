@@ -53,6 +53,8 @@ namespace PixQrCodeGeneratorOffline.Models
 
         public Color TextSecondary { get; set; }
 
+        public Color TextLink { get; set; }
+
         public bool IsDarkOrLightTheme { get; set; }
     }
 }

@@ -48,9 +48,9 @@
                         <Label
                             Margin="8,8,8,0"
                             FontFamily="{DynamicResource FontSemiBold}"
-                            FontSize="{DynamicResource FontSizeSmall}"
+                            FontSize="{DynamicResource FontSizeMicro}"
                             Text="{Binding Source}"
-                            TextColor="{DynamicResource textPrimary}" />
+                            TextColor="{DynamicResource textSecondary}" />
 
                         <Label
                             Margin="8,0"
@@ -58,7 +58,7 @@
                             LineBreakMode="TailTruncation"
                             MaxLines="4"
                             Text="{Binding Title}"
-                            TextColor="{DynamicResource primaryDark}"
+                            TextColor="{DynamicResource textLink}"
                             VerticalOptions="FillAndExpand" />
 
                         <StackLayout
@@ -69,7 +69,7 @@
                                 FontSize="{DynamicResource FontSizeMicro}"
                                 HorizontalOptions="StartAndExpand"
                                 Text="{Binding Viewer.PublishDateDisplay}"
-                                TextColor="{DynamicResource primaryDark}"
+                                TextColor="{DynamicResource textSecondary}"
                                 VerticalOptions="EndAndExpand" />
                             <StackLayout Padding="15,15,0,0">
                                 <StackLayout.GestureRecognizers>
@@ -79,7 +79,7 @@
                                     FontSize="{DynamicResource FontSizeMedium}"
                                     Glyph="{x:Static icons:FontAwesomeSolid.ShareAlt}"
                                     HorizontalOptions="CenterAndExpand"
-                                    TextColor="{DynamicResource primaryDark}" />
+                                    TextColor="{DynamicResource textSecondary}" />
                             </StackLayout>
                         </StackLayout>
                     </StackLayout>
