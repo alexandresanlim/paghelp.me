@@ -8,12 +8,13 @@ using System.Net;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.Services
 {
     public class FeedService : IFeedService
     {
-        public async Task<List<Feed>> Get(string feedUrl)
+        public async Task<IList<Feed>> Get(string feedUrl)
         {
             try
             {
@@ -34,11 +35,23 @@ namespace PixQrCodeGeneratorOffline.Services
                                        Source = ((string)x.Element("source"))
                                    });
 
-                return RSSFeedData?.Where(x => x.IsValid())?.Take(5)?.OrderByDescending(x => x.PublishDate)?.ToList();
+                var rss = RSSFeedData?.Where(x => x.IsValid())?.Take(5)?.OrderByDescending(x => x.PublishDate).ToList();
+
+                foreach (var item in rss)
+                {
+                    var uri = await item.Link.GetImage();
+
+                    if (!string.IsNullOrWhiteSpace(uri))
+                    {
+                        item.Image = new UriImageSource { Uri = new Uri(uri), CachingEnabled = false };
+                    }
+                }
+
+                return rss;
             }
             catch (Exception)
             {
-                return new List<Feed>();
+                return null;
             }
         }
     }
@@ -51,7 +64,7 @@ namespace PixQrCodeGeneratorOffline.Services
             {
                 using (var webClient = new WebClient())
                 {
-                    string html = await webClient.DownloadStringTaskAsync(uri);
+                    string html = await webClient.DownloadStringTaskAsync(uri).ConfigureAwait(false);
 
                     html = html.Replace(" ", "");
 

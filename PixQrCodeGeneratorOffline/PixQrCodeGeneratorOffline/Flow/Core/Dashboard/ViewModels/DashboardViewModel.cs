@@ -266,9 +266,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             {
                 IsBusy = true;
 
-                FeedFromService = FeedFromService?.Count > 0 ?
-                    FeedFromService :
-                    await _feedService.Get("https://news.google.com/rss/search?q=pix%20-fraude%20-golpista%20-golpistas%20-erro%20-lula%20-bolsonaro&hl=pt-BR&gl=BR&ceid=BR%3Apt-419");
+                FeedFromService = FeedFromService ?? await _feedService.Get("https://news.google.com/rss/search?q=pix%20-fraude%20-golpista%20-golpistas%20-erro%20-lula%20-bolsonaro%20-golpe&hl=pt-BR&gl=BR&ceid=BR%3Apt-419");
 
                 CurrentFeedList = FeedFromService?.ToObservableCollection();
             }
@@ -280,15 +278,15 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             {
                 IsBusy = false;
 
-                foreach (var item in CurrentFeedList)
-                {
-                    var uri = await item.Link.GetImage();
+                //foreach (var item in CurrentFeedList)
+                //{
+                //    var uri = await item.Link.GetImage();
 
-                    if (!string.IsNullOrEmpty(uri))
-                    {
-                        item.Image = new UriImageSource { CachingEnabled = true, Uri = new Uri(uri), CacheValidity = TimeSpan.FromDays(3) };
-                    }
-                }
+                //    if (!string.IsNullOrEmpty(uri))
+                //    {
+                //        item.Image = uri;
+                //    }
+                //}
             }
         }
 
@@ -391,7 +389,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             get => _billingSaveList;
         }
 
-        public List<Feed> FeedFromService { get; set; }
+        public IList<Feed> FeedFromService { get; set; }
 
         private ObservableCollection<Feed> _currentFeedList;
         public ObservableCollection<Feed> CurrentFeedList

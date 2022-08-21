@@ -58,6 +58,7 @@
         <controls:CustomCollectionView.ItemTemplate>
             <DataTemplate x:DataType="models:PixPayload">
                 <Frame
+                    Padding="8"
                     BackgroundColor="{DynamicResource foreground_page}"
                     CornerRadius="4"
                     VerticalOptions="FillAndExpand"

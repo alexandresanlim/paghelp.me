@@ -11,75 +11,81 @@
     x:DataType="vm:DashboardViewModel">
 
     <CollectionView
-        HeightRequest="970"
+        Margin="8,0,0,0"
+        HeightRequest="280"
         IsVisible="{Binding CurrentFeedList, Converter={StaticResource HasDataConverter}}"
         ItemsSource="{Binding CurrentFeedList}"
         SelectionMode="None">
 
+        <CollectionView.ItemsLayout>
+            <LinearItemsLayout ItemSpacing="8" Orientation="Horizontal" />
+        </CollectionView.ItemsLayout>
+
         <CollectionView.ItemTemplate>
             <DataTemplate x:DataType="models:Feed">
-                <StackLayout Padding="8,0,8,8">
 
-                    <StackLayout.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding Command.NavigateToWebViewCommand}" />
-                    </StackLayout.GestureRecognizers>
+                <Frame
+                    Padding="0"
+                    BackgroundColor="{DynamicResource background_page}"
+                    BorderColor="{DynamicResource foreground_page}"
+                    CornerRadius="8"
+                    VerticalOptions="FillAndExpand"
+                    WidthRequest="230">
 
-                    <Frame
-                        Padding="0"
-                        BackgroundColor="{DynamicResource foreground_page}"
-                        CornerRadius="4"
-                        HeightRequest="185">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding Command.NavigateToWebViewCommand, Mode=OneTime}" />
+                    </Frame.GestureRecognizers>
+
+                    <StackLayout Spacing="0">
+
+                        <Image
+                            Aspect="AspectFill"
+                            HeightRequest="120"
+                            Source="{Binding Image}"
+                            VerticalOptions="Start" />
 
 
-                        <StackLayout Padding="15">
+                        <Label
+                            Margin="8,8,8,0"
+                            FontFamily="{DynamicResource FontSemiBold}"
+                            FontSize="{DynamicResource FontSizeSmall}"
+                            Text="{Binding Source}"
+                            TextColor="{DynamicResource textPrimary}" />
+
+                        <Label
+                            Margin="8,0"
+                            FontSize="{DynamicResource FontSizeMicro}"
+                            LineBreakMode="TailTruncation"
+                            MaxLines="4"
+                            Text="{Binding Title}"
+                            TextColor="{DynamicResource primaryDark}"
+                            VerticalOptions="FillAndExpand" />
+
+                        <StackLayout
+                            Margin="8"
+                            Orientation="Horizontal"
+                            VerticalOptions="EndAndExpand">
                             <Label
-                                FontFamily="{DynamicResource FontSemiBold}"
-                                FontSize="{DynamicResource FontSizeSmall}"
-                                Text="{Binding Source}"
-                                TextColor="{DynamicResource textPrimary}" />
-
-                            <Grid ColumnDefinitions="60,*" ColumnSpacing="16">
-
-                                <Image
-                                    Grid.Column="0"
-                                    Aspect="AspectFill"
-                                    HeightRequest="60"
-                                    Source="{Binding Image}"
-                                    VerticalOptions="Start" />
-
-                                <Label
-                                    Grid.Column="1"
-                                    FontSize="{DynamicResource FontSizeMicro}"
-                                    LineBreakMode="TailTruncation"
-                                    MaxLines="4"
-                                    Text="{Binding Title}"
-                                    TextColor="{DynamicResource textSecondary}"
-                                    VerticalOptions="FillAndExpand" />
-                            </Grid>
-
-                            <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand">
-                                <Label
-                                    FontSize="{DynamicResource FontSizeMicro}"
-                                    HorizontalOptions="StartAndExpand"
-                                    Text="{Binding Viewer.PublishDateDisplay}"
-                                    TextColor="{DynamicResource textSecondary}"
-                                    VerticalOptions="EndAndExpand" />
-                                <StackLayout Padding="15,15,0,0">
-                                    <StackLayout.GestureRecognizers>
-                                        <TapGestureRecognizer Command="{Binding Command.ShareCommand}" />
-                                    </StackLayout.GestureRecognizers>
-                                    <controls:CustomIcon
-                                        FontSize="{DynamicResource FontSizeMedium}"
-                                        Glyph="{x:Static icons:FontAwesomeSolid.ShareAlt}"
-                                        HorizontalOptions="CenterAndExpand"
-                                        TextColor="{DynamicResource textSecondary}" />
-                                </StackLayout>
+                                FontSize="{DynamicResource FontSizeMicro}"
+                                HorizontalOptions="StartAndExpand"
+                                Text="{Binding Viewer.PublishDateDisplay}"
+                                TextColor="{DynamicResource primaryDark}"
+                                VerticalOptions="EndAndExpand" />
+                            <StackLayout Padding="15,15,0,0">
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding Command.ShareCommand}" />
+                                </StackLayout.GestureRecognizers>
+                                <controls:CustomIcon
+                                    FontSize="{DynamicResource FontSizeMedium}"
+                                    Glyph="{x:Static icons:FontAwesomeSolid.ShareAlt}"
+                                    HorizontalOptions="CenterAndExpand"
+                                    TextColor="{DynamicResource primaryDark}" />
                             </StackLayout>
                         </StackLayout>
+                    </StackLayout>
 
-                    </Frame>
+                </Frame>
 
-                </StackLayout>
             </DataTemplate>
         </CollectionView.ItemTemplate>
     </CollectionView>

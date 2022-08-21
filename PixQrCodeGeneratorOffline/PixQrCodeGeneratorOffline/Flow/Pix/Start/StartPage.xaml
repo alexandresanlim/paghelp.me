@@ -127,7 +127,7 @@
                     Title="Cobranças Salvas"
                     BackgroundImage="banner_cobrancas_salvas.png"
                     Icon="{x:Static icons:FontAwesomeSolid.HandHoldingUsd}"
-                    SubTitle="Suas cobranças salvas aparecerão aqui.&#x0a;Você encontrará essa opção na tela &#x0a;de criação de cobrança." />
+                    SubTitle="Suas cobranças salvas aparecerão &#x0a;aqui. Você encontrará essa opção &#x0a;na tela de criação de cobrança." />
 
                 <contentStart:StartPageBillingSaveView />
 

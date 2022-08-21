@@ -110,7 +110,7 @@
                             FontFamily="{StaticResource FontBold}"
                             FontSize="{DynamicResource FontSizeMicro}"
                             Text="{Binding CurrentInfo.Institution}"
-                            TextColor="{StaticResource staticTextPrimary}" />
+                            TextColor="{Binding CurrentInfo.Color.PrimaryDark}" />
 
                         <Label
                             FontSize="{DynamicResource FontSizeMicro}"
@@ -118,7 +118,7 @@
                             LineBreakMode="TailTruncation"
                             MaxLines="1"
                             Text="{Binding CurrentInfo.Key}"
-                            TextColor="{StaticResource staticTextPrimary}" />
+                            TextColor="{Binding CurrentInfo.Color.PrimaryDark}" />
 
                     </StackLayout>
 

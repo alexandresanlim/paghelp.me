@@ -1,4 +1,5 @@
 ﻿using Acr.UserDialogs;
+using AsyncAwaitBestPractices;
 using PixQrCodeGeneratorOffline.ViewModels;
 using System;
 using System.Threading.Tasks;
@@ -7,7 +8,7 @@ using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.Views.Shared
 {
-    public partial class WebViewPage : ContentPageWithNavBar
+    public partial class WebViewPage : ContentPage
     {
         WebViewViewModel _webViewVM;
 
@@ -29,11 +30,11 @@ namespace PixQrCodeGeneratorOffline.Views.Shared
             base.OnAppearing();
         }
 
-        private async void Wv_Navigating(object sender, WebNavigatingEventArgs e)
+        private void Wv_Navigating(object sender, WebNavigatingEventArgs e)
         {
             UserDialogs.Instance.ShowLoading("");
 
-            await Task.Delay(2000);
+            Task.Delay(2000).SafeFireAndForget();
 
             UserDialogs.Instance.HideLoading();
         }

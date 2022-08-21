@@ -43,7 +43,7 @@ namespace PixQrCodeGeneratorOffline.Models.Commands
 
                     await Task.Delay(500);
 
-                    await Shell.Current.Navigation.PushModalAsync(new WebViewPage(feed.Link, feed?.Title));
+                    await Shell.Current.Navigation.PushAsync(new WebViewPage(feed.Link, feed?.Title));
                 }
                 catch (Exception e)
                 {
