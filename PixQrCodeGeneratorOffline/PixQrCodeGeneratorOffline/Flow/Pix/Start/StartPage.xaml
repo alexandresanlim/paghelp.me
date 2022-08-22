@@ -157,7 +157,7 @@
             <!--  //////////////////////////////////////////////////////////////////////////////////////////////////////////////  -->
 
 
-            <StackLayout IsVisible="{Binding CurrentFeedList, Converter={StaticResource HasDataConverter}}">
+            <StackLayout>
 
                 <templates:TemplateTitlePanel
                     Title="Notícias"
