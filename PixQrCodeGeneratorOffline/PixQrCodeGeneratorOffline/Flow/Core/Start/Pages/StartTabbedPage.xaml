@@ -15,7 +15,7 @@
     <Shell.TitleView>
         <Grid
             Padding="0,5,0,0"
-            ColumnDefinitions="60,*,60"
+            ColumnDefinitions="60,*,70"
             ColumnSpacing="10">
             <Image
                 Grid.Column="0"
@@ -26,22 +26,23 @@
 
             <StackLayout
                 Grid.Column="1"
-                Orientation="Vertical"
-                Spacing="0"
-                VerticalOptions="StartAndExpand">
+                CompressedLayout.IsHeadless="True"
+                Spacing="0">
                 <Label
                     x:Name="xTitle"
                     FontFamily="{StaticResource FontBold}"
                     FontSize="{StaticResource FontSizeSmall}"
-                    TextColor="{StaticResource textOnPrimary}"
-                    VerticalOptions="StartAndExpand" />
+                    MaxLines="1"
+                    MinimumHeightRequest="16"
+                    TextColor="{StaticResource textOnPrimary}" />
 
                 <Label
                     x:Name="xSubTitle"
                     FontFamily="{StaticResource FontSemiBold}"
                     FontSize="{StaticResource FontSizeMicro}"
-                    TextColor="{StaticResource textOnPrimary}"
-                    VerticalOptions="StartAndExpand" />
+                    MaxLines="1"
+                    MinimumHeightRequest="14"
+                    TextColor="{StaticResource textOnPrimary}" />
             </StackLayout>
 
             <controls:CustomIcon

@@ -42,13 +42,13 @@ namespace PixQrCodeGeneratorOffline.Models.Commands
 
                 try
                 {
-                    DialogService.ShowLoading("");
+                    DialogService.ShowLoading("Fazendo o download...");
 
                     var url = "https://chart.googleapis.com/chart?chs=400x400&cht=qr&chl=" + pixPayload.QrCode;
 
                     using (var webClient = new HttpClient())
                     {
-                        var imageBytes = webClient.GetByteArrayAsync(url).Result;
+                        var imageBytes = await webClient.GetByteArrayAsync(url).ConfigureAwait(false);
 
                         var stream1 = new MemoryStream(imageBytes);
                         string path = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
@@ -56,11 +56,17 @@ namespace PixQrCodeGeneratorOffline.Models.Commands
 
                         File.WriteAllBytes(filename, imageBytes);
 
+                        if (!File.Exists(filename))
+                        {
+                            DialogService.Toast("Ops! Não foi possível baixar o arquivo. Por favor, tente novamente.", TimeSpan.FromSeconds(4));
+                            return;
+                        }
+
                         await Share.RequestAsync(new ShareFileRequest
                         {
                             Title = "Para onde deseja enviar o QR Code?",
                             File = new ShareFile(filename)
-                        });
+                        }).ConfigureAwait(false);
                     }
                 }
                 catch (Exception e)

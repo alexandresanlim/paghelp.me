@@ -1,4 +1,5 @@
-﻿using Plugin.StoreReview;
+﻿using PixQrCodeGeneratorOffline.Extention;
+using Plugin.StoreReview;
 using System;
 using System.Threading.Tasks;
 using Xamarin.Essentials;
@@ -97,8 +98,9 @@ namespace PixQrCodeGeneratorOffline
             {
                 await CrossStoreReview.Current.RequestReview(false);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                ex.SendToLog();
                 OpenAppInStore();
             }
         }

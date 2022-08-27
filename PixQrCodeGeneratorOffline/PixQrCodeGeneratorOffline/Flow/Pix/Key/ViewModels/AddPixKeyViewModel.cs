@@ -192,7 +192,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 else
                 {
-                    DialogService.Toast("Algo de errado aconteceu, tente novamente mais tarde ou atualize o app");
+                    DialogService.Toast(Constants.ERROR_MSG);
                 }
             }
             catch (Exception e)

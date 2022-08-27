@@ -3,21 +3,35 @@
     x:Class="PixQrCodeGeneratorOffline.Views.LikingPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
     xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
     xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon"
     xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
     xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
     x:DataType="vm:LikingViewModel">
 
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation
+            DurationIn="400"
+            DurationOut="300"
+            EasingIn="SinOut"
+            EasingOut="SinIn"
+            HasBackgroundAnimation="False"
+            PositionIn="Bottom"
+            PositionOut="Bottom"
+            ScaleIn="1.2"
+            ScaleOut="0.8" />
+    </pages:PopupPage.Animation>
+
     <StackLayout Spacing="0" VerticalOptions="End">
         <BoxView
-            BackgroundColor="{DynamicResource background_page}"
+            BackgroundColor="{DynamicResource staticBackgroundPage}"
             CornerRadius="16,16,0,0"
             HeightRequest="16" />
 
         <StackLayout
             Padding="0,16,0,32"
-            BackgroundColor="{DynamicResource background_page}"
+            BackgroundColor="{DynamicResource staticBackgroundPage}"
             Spacing="32">
 
             <Label
@@ -25,7 +39,8 @@
                 FontSize="{StaticResource FontSizeLarge}"
                 HorizontalOptions="Center"
                 HorizontalTextAlignment="Center"
-                Text="Está gostando do app?" />
+                Text="Está gostando do app?"
+                TextColor="{StaticResource staticTextPrimary}" />
 
             <StackLayout
                 HorizontalOptions="CenterAndExpand"
@@ -34,14 +49,14 @@
 
                 <Frame
                     Padding="25"
-                    BackgroundColor="{DynamicResource foreground_page}"
+                    BackgroundColor="{StaticResource staticForegroundPage}"
                     CornerRadius="50"
                     IsClippedToBounds="True">
 
                     <controls:CustomIcon
                         FontSize="{StaticResource FontSizeExtraLarge}"
                         Glyph="{x:Static icons:FontAwesomeSolid.ThumbsDown}"
-                        TextColor="{DynamicResource textPrimary}" />
+                        TextColor="{DynamicResource staticTextPrimary}" />
 
                     <Frame.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding UnlikeCommand}" />
@@ -51,13 +66,13 @@
 
                 <Frame
                     Padding="25"
-                    BackgroundColor="{DynamicResource foreground_page}"
+                    BackgroundColor="{StaticResource staticForegroundPage}"
                     CornerRadius="50"
                     IsClippedToBounds="True">
                     <controls:CustomIcon
                         FontSize="{StaticResource FontSizeExtraLarge}"
                         Glyph="{x:Static icons:FontAwesomeSolid.ThumbsUp}"
-                        TextColor="{DynamicResource textPrimary}" />
+                        TextColor="{StaticResource staticTextPrimary}" />
 
                     <Frame.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding LikeCommand}" />
@@ -70,7 +85,8 @@
                 FontSize="{StaticResource FontSizeSmall}"
                 HorizontalOptions="Center"
                 HorizontalTextAlignment="Center"
-                Text="A sua opinião é muito importante para nós." />
+                Text="A sua opinião é muito importante para nós."
+                TextColor="{StaticResource staticTextSecondary}" />
 
         </StackLayout>
 
