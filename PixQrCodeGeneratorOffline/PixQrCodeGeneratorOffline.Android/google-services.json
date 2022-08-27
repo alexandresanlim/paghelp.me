@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "516668523314",
+    "project_id": "paghelp-ba9f7",
+    "storage_bucket": "paghelp-ba9f7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:516668523314:android:d90d857722b6f856f94d2b",
+        "android_client_info": {
+          "package_name": "io.github.paghelpme"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "516668523314-1i7l45mu067b54qig23jn1iiberbljse.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCfhtEYDcgKMa3dgqfXIEmDHXD29z-btJ4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "516668523314-1i7l45mu067b54qig23jn1iiberbljse.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
