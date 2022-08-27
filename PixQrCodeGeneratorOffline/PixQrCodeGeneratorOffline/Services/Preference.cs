@@ -54,7 +54,7 @@ namespace PixQrCodeGeneratorOffline.Services
 
         public static bool ShowNews
         {
-            get => Preferences.Get(nameof(ShowNews), true);
+            get => Preferences.Get(nameof(ShowNews), false);
             set
             {
                 if (ShowNews == value)

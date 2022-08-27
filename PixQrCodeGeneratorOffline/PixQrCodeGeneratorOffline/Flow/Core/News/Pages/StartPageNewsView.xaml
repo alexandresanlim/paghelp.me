@@ -13,7 +13,6 @@
     <CollectionView
         Margin="8,0,0,0"
         HeightRequest="290"
-        IsVisible="{Binding CurrentFeedList, Converter={StaticResource HasDataConverter}}"
         ItemsSource="{Binding CurrentFeedList}"
         SelectionMode="None">
 

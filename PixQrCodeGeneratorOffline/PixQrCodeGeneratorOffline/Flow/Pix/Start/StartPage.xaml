@@ -153,11 +153,9 @@
 
             <content:DivisionView />
 
-
             <!--  //////////////////////////////////////////////////////////////////////////////////////////////////////////////  -->
 
-
-            <StackLayout>
+            <StackLayout IsVisible="{Binding CurrentFeedList, Converter={StaticResource HasDataConverter}}">
 
                 <templates:TemplateTitlePanel
                     Title="Notícias"
@@ -172,8 +170,6 @@
             <!--  Preferences  -->
 
             <content:DivisionView Margin="0,8,0,0" />
-
-
 
             <!--  //////////////////////////////////////////////////////////////////////////////////////////////////////////////  -->
 

@@ -21,6 +21,7 @@
         <Setter Property="HasShadow" Value="False" />
         <Setter Property="Padding" Value="12" />
         <Setter Property="CornerRadius" Value="4" />
+        <Setter Property="BorderColor" Value="Transparent" />
         <Setter Property="Visual" Value="Material" />
         <Setter Property="BackgroundColor" Value="{DynamicResource foreground_page}" />
     </Style>
