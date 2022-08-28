@@ -38,4 +38,18 @@
     <Color x:Key="staticBackgroundPage">#ffffff</Color>
     <Color x:Key="staticForegroundPage">#f0f1f5</Color>
 
+
+    <Color x:Key="warning">#ffc107</Color>
+    <Color x:Key="success">#28a745</Color>
+    <Color x:Key="danger">#dc3545</Color>
+    <Color x:Key="info">#17a2b8</Color>
+
+    <Color x:Key="textOnAlert">#212529</Color>
+
+    <Color x:Key="alertWarning">#fffaed</Color>
+    <Color x:Key="alertDanger">#fcf0f1</Color>
+    <Color x:Key="alertInfo">#edfbfe</Color>
+
+
+
 </ResourceDictionary>

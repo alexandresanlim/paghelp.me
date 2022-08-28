@@ -70,9 +70,17 @@
             HeightRequest="8" />
 
         <StackLayout
-            Padding="0,16,0,0"
+            Padding="0,4,0,0"
             BackgroundColor="{StaticResource staticBackgroundPage}"
             Spacing="0">
+
+            <Frame
+                Margin="8,0,8,8"
+                Padding="16,8"
+                BackgroundColor="{StaticResource alertWarning}"
+                CornerRadius="4">
+                <Label Text="Todos os dados informados aqui, serão salvos somente no seu aparelho." TextColor="{StaticResource textOnAlert}" />
+            </Frame>
 
             <controls:CustomProgress
                 Margin="16,4,16,0"
