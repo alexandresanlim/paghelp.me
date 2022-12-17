@@ -55,15 +55,15 @@ namespace PixQrCodeGeneratorOffline.Services
                 return;
             }
 
-            //DialogService.Toast(textSuccess);
+            await Clipboard.SetTextAsync(text);
+
+            try { HapticFeedback.Perform(HapticFeedbackType.Click); } catch (Exception) { }
 
             DialogService.Toast(new ToastConfig(textSuccess)
             {
                 BackgroundColor = backgroundToast ?? App.ThemeColors.PrimaryDark,
                 MessageTextColor = foregroundToast ?? App.ThemeColors.TextOnPrimary,
             });
-
-            await Clipboard.SetTextAsync(text);
         }
 
         public string BuildPathFile(string contents, string fileName, IFileExtension extension)

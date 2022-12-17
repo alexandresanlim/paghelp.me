@@ -126,7 +126,11 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             .GetAll()?.ToObservableCollection() ?? new ObservableCollection<PixPayload>();
         }
 
-        private void ChangeSelectedPixKey(PixKey pixkey) => MainThread.BeginInvokeOnMainThread(() => CurrentPixKey = pixkey);
+        private void ChangeSelectedPixKey(PixKey pixkey) => MainThread.BeginInvokeOnMainThread(() =>
+        {
+            CurrentPixKey = pixkey;
+            try { HapticFeedback.Perform(HapticFeedbackType.Click); } catch (Exception) { }
+        });
 
         private async Task ExecuteAction()
         {

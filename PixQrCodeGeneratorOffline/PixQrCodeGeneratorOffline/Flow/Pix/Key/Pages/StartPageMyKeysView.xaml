@@ -6,7 +6,6 @@
     xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
     xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon"
     xmlns:key="clr-namespace:PixQrCodeGeneratorOffline.Templates.Key"
-    xmlns:local="clr-namespace:PixQrCodeGeneratorOffline.Extention;assembly=PixQrCodeGeneratorOffline"
     xmlns:models="clr-namespace:PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix"
     xmlns:templates="clr-namespace:PixQrCodeGeneratorOffline.Templates"
     xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
@@ -40,7 +39,7 @@
 
         <CarouselView
             CurrentItem="{Binding CurrentPixKey}"
-            CurrentItemChangedCommand="{Binding ChangeSelectPixKeyCommand}"
+            CurrentItemChangedCommand="{Binding ChangeSelectPixKeyCommand, Mode=OneTime}"
             CurrentItemChangedCommandParameter="{Binding Source={RelativeSource Self}, Path=CurrentItem}"
             HeightRequest="142"
             IndicatorView="indicatorView"

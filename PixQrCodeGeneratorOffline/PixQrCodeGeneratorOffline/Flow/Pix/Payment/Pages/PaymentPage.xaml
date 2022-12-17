@@ -181,13 +181,13 @@
                                 Binding="{Binding IsActionVisible}"
                                 TargetType="Label"
                                 Value="False">
-                                <Setter Property="Text" Value="Código Copia e Cola" />
+                                <Setter Property="Text" Value="Compartilhar Código Copia e Cola" />
                             </DataTrigger>
                             <DataTrigger
                                 Binding="{Binding IsActionVisible}"
                                 TargetType="Label"
                                 Value="True">
-                                <Setter Property="Text" Value="QR Code" />
+                                <Setter Property="Text" Value="Mostrar QR Code" />
                             </DataTrigger>
                         </Label.Triggers>
                     </Label>

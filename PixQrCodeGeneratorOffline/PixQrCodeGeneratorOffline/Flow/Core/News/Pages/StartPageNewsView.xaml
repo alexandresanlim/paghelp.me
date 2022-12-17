@@ -28,6 +28,7 @@
                     BackgroundColor="{DynamicResource background_page}"
                     BorderColor="{DynamicResource foreground_page}"
                     CornerRadius="8"
+                    IsClippedToBounds="True"
                     VerticalOptions="FillAndExpand"
                     WidthRequest="230">
 
