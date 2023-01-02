@@ -23,12 +23,9 @@ namespace PixQrCodeGeneratorOffline.Models.Services.PaymentMethods.Crypto
     {
         private readonly ICryptoKeyRepository _cryptoKeyRepository;
 
-        private readonly IExternalActionService _externalActionService;
-
         public CryptoKeyService()
         {
             _cryptoKeyRepository = DependencyService.Get<ICryptoKeyRepository>();
-            _externalActionService = DependencyService.Get<IExternalActionService>();
         }
 
         public bool IsValid(CryptoKey pixKey)
