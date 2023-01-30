@@ -8,9 +8,11 @@ namespace PixQrCodeGeneratorOffline
 {
     public partial class App
     {
-        public const string AppName = "Paghelp";
+        public const string AppName = "Pix - Paghelp.me!";
 
         public const string IconName = "pixoff";
+
+        public const string DataBaseName = "pixoff.db";
 
         public static class Info
         {
