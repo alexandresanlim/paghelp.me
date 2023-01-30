@@ -9,5 +9,7 @@
         public const string EXPORT_FILE_READY_SELECT_FORMAT = "Seu arquivo está pronto, em qual formato deseja exportar?";
 
         public const string CANCEL = "Cancelar";
+
+        public const string ERROR_MSG = "Ops! Algo de errado aconteceu. Por favor, tente novamente.";
     }
 }

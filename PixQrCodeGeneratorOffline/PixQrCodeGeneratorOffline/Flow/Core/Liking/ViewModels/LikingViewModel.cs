@@ -18,41 +18,37 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         private async Task Like()
         {
-            try
-            {
-                await CrossStoreReview.Current.RequestReview(false);
+            var confirm = await DialogService
+                    .ConfirmAsync("Deseja deixar uma avaliação?", "Agradecemos o seu feedback!", "Sim", "Talvez depois")
+                    .ConfigureAwait(false);
 
-                DialogService.Toast("Agradecemos o seu feedback! Nossa missão é melhorar-mos cada vez mais.", _secondsToToast);
+            await NavigateBackPopupAsync().ConfigureAwait(false);
 
-                NavigateBack();
-            }
-            catch (Exception e)
-            {
-                e.SendToLog();
-            }
+            if (!confirm)
+                return;
+
+            await App.RequestReview().ConfigureAwait(false);
         }
 
         private async Task Unlike()
         {
             try
             {
-                var msg = await DialogService.PromptAsync("Para você, em que precisamos melhorar?", "Que pena :/", "Enviar", "Não quero informar agora");
+                var msg = await DialogService.PromptAsync("Para você, o que precisamos melhorar?", "Obrigado pelo Feedback!", "Enviar", "Não quero informar agora");
 
                 if (msg.Ok && !string.IsNullOrWhiteSpace(msg?.Text))
                 {
                     var dic = new Dictionary<string, string>
-                {
-                    { "Texto: ", msg?.Text }
-                };
+                    {
+                        { "Texto: ", msg?.Text }
+                    };
 
                     _eventService.SendEvent("Sugestão", Services.EventType.FEEDBACK, nameof(LikingViewModel), dic);
 
-                    await CrossStoreReview.Current.RequestReview(false);
-
-                    DialogService.Toast("Agradecemos o seu feedback! Mensagem enviada para os desenvolvedores.", _secondsToToast);
+                    DialogService.Toast("Sucesso! Mensagem enviada para os nossos desenvolvedores.", _secondsToToast);
                 }
 
-                NavigateBack();
+                await NavigateBackPopupAsync().ConfigureAwait(false);
             }
             catch (Exception e)
             {

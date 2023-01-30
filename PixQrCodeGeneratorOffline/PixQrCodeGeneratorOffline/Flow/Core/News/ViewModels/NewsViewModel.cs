@@ -6,6 +6,7 @@ using PixQrCodeGeneratorOffline.Services;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -32,7 +33,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public IAsyncCommand LoadDataCommand => new AsyncCommand(LoadData);
 
-        public List<Feed> FeedFromService { get; set; }
+        public IList<Feed> FeedFromService { get; set; }
 
         public async Task LoadData()
         {
@@ -40,7 +41,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             {
                 IsBusy = true;
 
-                FeedFromService = FeedFromService?.Count > 0 ? FeedFromService : await _feedService.Get("https://news.google.com/rss/search?q=pix%20-fraude%20-golpista%20-golpistas%20-erro&hl=pt-BR&gl=BR&ceid=BR%3Apt-419");
+                FeedFromService = FeedFromService != null ? FeedFromService : await _feedService.Get("https://news.google.com/rss/search?q=pix%20-fraude%20-golpista%20-golpistas%20-erro&hl=pt-BR&gl=BR&ceid=BR%3Apt-419");
 
                 CurrentFeedList = FeedFromService?.ToObservableCollection();
 

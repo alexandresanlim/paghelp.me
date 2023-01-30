@@ -44,7 +44,7 @@
             <Grid
                 Grid.Column="1"
                 Padding="10,15"
-                ColumnDefinitions="auto,*"
+                ColumnDefinitions="80,*"
                 ColumnSpacing="15">
 
                 <qr:QRCode

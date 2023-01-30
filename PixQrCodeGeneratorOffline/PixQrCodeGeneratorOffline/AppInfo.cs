@@ -1,4 +1,5 @@
-﻿using Plugin.StoreReview;
+﻿using PixQrCodeGeneratorOffline.Extention;
+using Plugin.StoreReview;
 using System;
 using System.Threading.Tasks;
 using Xamarin.Essentials;
@@ -7,9 +8,11 @@ namespace PixQrCodeGeneratorOffline
 {
     public partial class App
     {
-        public const string AppName = "Paghelp";
+        public const string AppName = "Pix - Paghelp.me!";
 
         public const string IconName = "pixoff";
+
+        public const string DataBaseName = "pixoff.db";
 
         public static class Info
         {
@@ -79,7 +82,7 @@ namespace PixQrCodeGeneratorOffline
 
         public static class Ids
         {
-            public static string AppCenter => Evironment.IsDevelopment ? "18439db5-b775-4a96-bb6f-6c4612d3daab" : "b0e08456-a911-48da-b391-33daf270896c";
+            public static string AppCenter => Evironment.IsDevelopment ? "ecf1ffa0-fad8-47f3-984e-c59dcdb24c29" : "b0e08456-a911-48da-b391-33daf270896c";
 
             public static string GoogleAds => DeviceInfo.IsAndroid ?
 #if DEBUG
@@ -93,7 +96,15 @@ namespace PixQrCodeGeneratorOffline
 
         public static async Task RequestReview()
         {
-            await CrossStoreReview.Current.RequestReview(false);
+            try
+            {
+                await CrossStoreReview.Current.RequestReview(false);
+            }
+            catch (Exception ex)
+            {
+                ex.SendToLog();
+                OpenAppInStore();
+            }
         }
 
         public static async Task OpenAppIntagram()

@@ -8,7 +8,8 @@
     xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
     Title="Nova Cobrança"
     x:DataType="vm:CreateBillingViewModel"
-    BackgroundColor="{DynamicResource background_page}">
+    BackgroundColor="{DynamicResource background_page}"
+    Shell.BackgroundColor="{Binding CurrentStyleFromKey.PrimaryDark}">
 
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -30,7 +31,14 @@
             <Style x:Key="styleButtonKeyboard" TargetType="Frame">
                 <Setter Property="Padding" Value="0" />
                 <Setter Property="BackgroundColor" Value="{DynamicResource foreground_page}" />
-                <Setter Property="CornerRadius" Value="8" />
+                <Setter Property="CornerRadius" Value="16" />
+            </Style>
+
+            <Style
+                x:Key="styleButtonKeyboardNumber"
+                BasedOn="{StaticResource styleButtonKeyboard}"
+                TargetType="Frame">
+                <Setter Property="CornerRadius" Value="4" />
             </Style>
 
             <Style x:Key="styleSymbolValueText" TargetType="Label">
@@ -121,7 +129,7 @@
                     <Frame
                         Grid.Row="0"
                         Grid.Column="0"
-                        Style="{DynamicResource styleButtonKeyboard}">
+                        Style="{DynamicResource styleButtonKeyboardNumber}">
                         <Frame.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding InputTextCommand}" CommandParameter="1" />
                         </Frame.GestureRecognizers>
@@ -131,7 +139,7 @@
                     <Frame
                         Grid.Row="0"
                         Grid.Column="1"
-                        Style="{DynamicResource styleButtonKeyboard}">
+                        Style="{DynamicResource styleButtonKeyboardNumber}">
                         <Frame.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding InputTextCommand}" CommandParameter="2" />
                         </Frame.GestureRecognizers>
@@ -141,7 +149,7 @@
                     <Frame
                         Grid.Row="0"
                         Grid.Column="2"
-                        Style="{DynamicResource styleButtonKeyboard}">
+                        Style="{DynamicResource styleButtonKeyboardNumber}">
                         <Frame.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding InputTextCommand}" CommandParameter="3" />
                         </Frame.GestureRecognizers>
@@ -152,7 +160,7 @@
                     <Frame
                         Grid.Row="1"
                         Grid.Column="0"
-                        Style="{DynamicResource styleButtonKeyboard}">
+                        Style="{DynamicResource styleButtonKeyboardNumber}">
                         <Frame.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding InputTextCommand}" CommandParameter="4" />
                         </Frame.GestureRecognizers>
@@ -162,7 +170,7 @@
                     <Frame
                         Grid.Row="1"
                         Grid.Column="1"
-                        Style="{DynamicResource styleButtonKeyboard}">
+                        Style="{DynamicResource styleButtonKeyboardNumber}">
                         <Frame.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding InputTextCommand}" CommandParameter="5" />
                         </Frame.GestureRecognizers>
@@ -172,7 +180,7 @@
                     <Frame
                         Grid.Row="1"
                         Grid.Column="2"
-                        Style="{DynamicResource styleButtonKeyboard}">
+                        Style="{DynamicResource styleButtonKeyboardNumber}">
                         <Frame.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding InputTextCommand}" CommandParameter="6" />
                         </Frame.GestureRecognizers>
@@ -183,7 +191,7 @@
                     <Frame
                         Grid.Row="2"
                         Grid.Column="0"
-                        Style="{DynamicResource styleButtonKeyboard}">
+                        Style="{DynamicResource styleButtonKeyboardNumber}">
                         <Frame.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding InputTextCommand}" CommandParameter="7" />
                         </Frame.GestureRecognizers>
@@ -193,7 +201,7 @@
                     <Frame
                         Grid.Row="2"
                         Grid.Column="1"
-                        Style="{DynamicResource styleButtonKeyboard}">
+                        Style="{DynamicResource styleButtonKeyboardNumber}">
                         <Frame.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding InputTextCommand}" CommandParameter="8" />
                         </Frame.GestureRecognizers>
@@ -203,7 +211,7 @@
                     <Frame
                         Grid.Row="2"
                         Grid.Column="2"
-                        Style="{DynamicResource styleButtonKeyboard}">
+                        Style="{DynamicResource styleButtonKeyboardNumber}">
                         <Frame.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding InputTextCommand}" CommandParameter="9" />
                         </Frame.GestureRecognizers>
@@ -227,7 +235,7 @@
                         Grid.Row="3"
                         Grid.Column="1"
                         RowDefinitions="*,*">
-                        <Frame Grid.Row="0" Style="{DynamicResource styleButtonKeyboard}">
+                        <Frame Grid.Row="0" Style="{DynamicResource styleButtonKeyboardNumber}">
                             <Frame.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding InputTextCommand}" CommandParameter="0" />
                             </Frame.GestureRecognizers>

@@ -1,10 +1,10 @@
 ﻿
 using PixQrCodeGeneratorOffline.ViewModels;
-using Xamarin.Forms;
+using Rg.Plugins.Popup.Pages;
 
 namespace PixQrCodeGeneratorOffline.Views
 {
-    public partial class LikingPage : ContentPage
+    public partial class LikingPage : PopupPage
     {
         LikingViewModel _linkingViewModel;
 

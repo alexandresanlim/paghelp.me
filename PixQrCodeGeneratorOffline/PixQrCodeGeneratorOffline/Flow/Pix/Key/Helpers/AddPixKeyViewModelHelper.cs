@@ -57,7 +57,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels.Helpers
                 Type = AddPixInputType.Key,
                 Title = "Chave",
                 Icon = FontAwesomeSolid.Key,
-                Placeholder = "Digite a chave",
+                Placeholder = "Digite a chave Pix",
                 ReturnType = ReturnType.Next,
             });
 
@@ -66,7 +66,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels.Helpers
                 Type = AddPixInputType.Name,
                 Title = "Nome",
                 Icon = FontAwesomeSolid.User,
-                Placeholder = "Digite o nome",
+                Placeholder = "Digite o nome do responsável",
                 ReturnType = ReturnType.Next,
             });
 
@@ -75,7 +75,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels.Helpers
                 Type = AddPixInputType.City,
                 Title = "Cidade",
                 Icon = FontAwesomeSolid.MapMarkedAlt,
-                Placeholder = "Digite a cidade (não obrigatório)",
+                Placeholder = "Digite a cidade do responsável (não obrigatório)",
                 ReturnType = ReturnType.Done,
             });
 

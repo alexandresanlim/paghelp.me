@@ -67,6 +67,7 @@ namespace PixQrCodeGeneratorOffline.Models.Services
 
                 TextPrimary = Color.FromHex("#212121"),
                 TextSecondary = Color.FromHex("#757575"),
+                TextLink = Color.FromHex("#1a52c6"),
 
                 IsDarkOrLightTheme = true
             };
@@ -87,6 +88,7 @@ namespace PixQrCodeGeneratorOffline.Models.Services
 
                 TextPrimary = Color.FromHex("#ffffff"),
                 TextSecondary = Color.WhiteSmoke,
+                TextLink = Color.FromHex("#8ab4f8"),
 
                 IsDarkOrLightTheme = true
             };
@@ -104,6 +106,7 @@ namespace PixQrCodeGeneratorOffline.Models.Services
 
             App.Current.Resources["textOnPrimary"] = colors.TextOnPrimary;
             App.Current.Resources["textOnSecondary"] = (colors?.TextOnSecondary == Color.FromRgba(0, 0, 0, 0)) ? Color.White : colors.TextOnSecondary;
+            App.Current.Resources["textLink"] = colors.TextLink;
 
             if (colors.IsDarkOrLightTheme)
             {
@@ -133,6 +136,7 @@ namespace PixQrCodeGeneratorOffline.Models.Services
 
                 TextPrimary = (Color)App.Resorces.Colors["textPrimary"],
                 TextSecondary = (Color)App.Resorces.Colors["textSecondary"],
+                TextLink = (Color)App.Resorces.Colors["textLink"],
             };
         }
 

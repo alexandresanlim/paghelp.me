@@ -48,21 +48,24 @@
 
     <controls:CustomCollectionView.ItemTemplate>
         <DataTemplate x:DataType="models:PixPayload">
-            <StackLayout Padding="8,4">
-                <Frame BackgroundColor="{DynamicResource foreground_page}" CornerRadius="5">
+            <StackLayout Padding="8">
+                <Frame
+                    Padding="0"
+                    BackgroundColor="{DynamicResource foreground_page}"
+                    CornerRadius="4">
                     <Frame.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding Commands.NavigateToPaymentPageCommand}" />
                     </Frame.GestureRecognizers>
 
-                    <Grid ColumnDefinitions="auto,*">
+                    <Grid ColumnDefinitions="28,*">
                         <BoxView
                             Grid.Column="0"
                             Margin="10"
                             BackgroundColor="{Binding PixKey.FinancialInstitution.Institution.MaterialColor.Primary}"
-                            CornerRadius="5"
+                            CornerRadius="4"
                             WidthRequest="8" />
 
-                        <StackLayout Grid.Column="1" Padding="0,15,15,15">
+                        <StackLayout Grid.Column="1" Padding="0,16,16,16">
                             <Label
                                 Grid.Row="0"
                                 FontSize="{StaticResource FontSizeMedium}"
@@ -71,7 +74,7 @@
                                 Style="{StaticResource StyleTextValue}"
                                 Text="{Binding Identity, StringFormat='ID: {0}'}" />
 
-                            <Grid ColumnDefinitions="auto, *" RowDefinitions="auto, auto">
+                            <Grid ColumnDefinitions="20, *">
                                 <controls:CustomIcon
                                     Grid.Row="0"
                                     Grid.Column="0"

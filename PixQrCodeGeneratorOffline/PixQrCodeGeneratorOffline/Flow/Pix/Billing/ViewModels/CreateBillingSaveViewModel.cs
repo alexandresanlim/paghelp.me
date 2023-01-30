@@ -7,8 +7,9 @@ using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.ViewModels
 {
-    public class CreateBillingSaveViewModel : ViewModelBase
+    public class CreateBillingSaveViewModel : BillingSaveListViewModel
     {
+
         public Command<PixKey> LoadDataCommand => new Command<PixKey>((pixKey) =>
         {
             try
@@ -22,24 +23,5 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 e.SendToLog();
             }
         });
-
-        private void LoadPixPayloadSave()
-        {
-            BillingSaveList = _pixPayloadService?.GetAll(x => x.PixKey.Id == CurrentPixKey.Id)?.ToObservableCollection() ?? new ObservableCollection<PixPayload>();
-        }
-
-        private ObservableCollection<PixPayload> _billingSaveList;
-        public ObservableCollection<PixPayload> BillingSaveList
-        {
-            set => SetProperty(ref _billingSaveList, value);
-            get => _billingSaveList;
-        }
-
-        private PixKey _currentPixKey;
-        public PixKey CurrentPixKey
-        {
-            set => SetProperty(ref _currentPixKey, value);
-            get => _currentPixKey;
-        }
     }
 }

@@ -18,7 +18,7 @@
             DurationOut="300"
             EasingIn="SinOut"
             EasingOut="SinIn"
-            HasBackgroundAnimation="True"
+            HasBackgroundAnimation="False"
             PositionIn="Bottom"
             PositionOut="Bottom"
             ScaleIn="1.2"
@@ -28,11 +28,9 @@
     <pages:PopupPage.Resources>
         <ResourceDictionary>
 
-            <Style x:Key="styleInputFrame" TargetType="Frame">
-                <Setter Property="BackgroundColor" Value="{DynamicResource primaryDark}" />
-                <Setter Property="Padding" Value="15,0" />
-                <Setter Property="CornerRadius" Value="5" />
-                <Setter Property="VerticalOptions" Value="FillAndExpand" />
+            <Style x:Key="styleInputFrame" TargetType="StackLayout">
+                <Setter Property="BackgroundColor" Value="#e6f4f1" />
+                <Setter Property="Padding" Value="8" />
             </Style>
 
             <Style x:Key="styleInputTitle" TargetType="Label">
@@ -65,21 +63,27 @@
         </ResourceDictionary>
     </pages:PopupPage.Resources>
 
-    <StackLayout VerticalOptions="End">
-        <controls:CustomIcon
-            Margin="8"
-            FontSize="{StaticResource FontSizeLarge}"
-            Glyph="{x:Static icons:FontAwesomeSolid.TimesCircle}"
-            HorizontalOptions="End"
-            TextColor="White" />
+    <StackLayout Spacing="0" VerticalOptions="End">
+        <BoxView
+            BackgroundColor="{StaticResource staticBackgroundPage}"
+            CornerRadius="8,8,0,0"
+            HeightRequest="8" />
 
         <StackLayout
-            Padding="0,16"
+            Padding="0,4,0,0"
             BackgroundColor="{StaticResource staticBackgroundPage}"
             Spacing="0">
 
+            <Frame
+                Margin="8,0,8,8"
+                Padding="16,8"
+                BackgroundColor="{StaticResource alertWarning}"
+                CornerRadius="4">
+                <Label Text="Todos os dados informados aqui, serão salvos somente no seu aparelho." TextColor="{StaticResource textOnAlert}" />
+            </Frame>
+
             <controls:CustomProgress
-                Margin="20,15,20,0"
+                Margin="16,4,16,0"
                 ColorLess="{DynamicResource staticAccentPrimaryLight}"
                 ColorMore="{DynamicResource staticAccentPrimaryDark}"
                 CurrentPhase="{Binding ActualInputNextPosition}"
@@ -88,14 +92,14 @@
             <CarouselView
                 CurrentItem="{Binding CurrentInput}"
                 CurrentItemChangedCommand="{Binding CurrentInputChangedCommand}"
-                HeightRequest="210"
+                HeightRequest="200"
                 ItemsSource="{Binding InputList}"
-                PeekAreaInsets="25"
+                PeekAreaInsets="8"
                 Position="{Binding ActualInputNextPosition}">
 
                 <CarouselView.ItemTemplate>
                     <DataTemplate x:DataType="helpers:AddPixInput">
-                        <StackLayout Padding="5,15">
+                        <StackLayout Padding="4,0" Spacing="0">
 
                             <StackLayout Padding="0,15,0,0" Spacing="15">
                                 <controls:CustomIcon
@@ -111,33 +115,44 @@
                                     Text="{Binding Title}" />
                             </StackLayout>
 
-                            <Frame IsVisible="{Binding IsInstitution, Converter={StaticResource InvertedBooleanConverter}}" Style="{StaticResource styleInputFrame}">
+                            <controls:FloatingEntry
+                                Title="{Binding Placeholder}"
+                                IsVisible="{Binding IsInstitution, Converter={StaticResource InvertedBooleanConverter}}"
+                                Text="{Binding Value}"
+                                VerticalOptions="CenterAndExpand" />
+
+                            <!--<Frame IsVisible="{Binding IsInstitution, Converter={StaticResource InvertedBooleanConverter}}" Style="{StaticResource styleInputFrame}">
                                 <Entry
                                     Placeholder="{Binding Placeholder}"
                                     PlaceholderColor="{DynamicResource textOnPrimary}"
                                     ReturnCommand="{Binding Source={RelativeSource AncestorType={x:Type vm:AddPixKeyViewModel}}, Path=InputNextCommand}"
                                     Text="{Binding Value}"
                                     TextColor="{DynamicResource textOnPrimary}" />
-                            </Frame>
+                            </Frame>-->
 
-                            <Frame IsVisible="{Binding IsInstitution}" Style="{StaticResource styleInputFrame}">
-                                <Frame.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:AddPixKeyViewModel}}, Path=SelectedInstitutionCommand}" />
-                                </Frame.GestureRecognizers>
-                                <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand">
-                                    <Label
-                                        FontSize="{DynamicResource FontSizeMedium}"
-                                        HorizontalOptions="FillAndExpand"
-                                        Text="{Binding Placeholder}"
-                                        TextColor="{DynamicResource textOnPrimary}"
-                                        VerticalOptions="CenterAndExpand" />
-                                    <controls:CustomIcon
-                                        FontSize="{DynamicResource FontSizeMedium}"
-                                        Glyph="{x:Static icons:FontAwesomeSolid.ChevronDown}"
-                                        TextColor="{DynamicResource textOnPrimary}"
-                                        VerticalOptions="CenterAndExpand" />
-                                </StackLayout>
-                            </Frame>
+
+                            <StackLayout
+                                HorizontalOptions="FillAndExpand"
+                                IsVisible="{Binding IsInstitution}"
+                                Orientation="Horizontal"
+                                Style="{StaticResource styleInputFrame}"
+                                VerticalOptions="CenterAndExpand">
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:AddPixKeyViewModel}}, Path=SelectedInstitutionCommand, Mode=OneTime}" />
+                                </StackLayout.GestureRecognizers>
+
+                                <Label
+                                    FontSize="{DynamicResource FontSizeMedium}"
+                                    HorizontalOptions="FillAndExpand"
+                                    Text="{Binding Placeholder}"
+                                    TextColor="{StaticResource staticTextSecondary}"
+                                    VerticalOptions="CenterAndExpand" />
+                                <controls:CustomIcon
+                                    FontSize="{DynamicResource FontSizeMedium}"
+                                    Glyph="{x:Static icons:FontAwesomeSolid.ChevronDown}"
+                                    TextColor="{StaticResource staticTextSecondary}"
+                                    VerticalOptions="CenterAndExpand" />
+                            </StackLayout>
 
                         </StackLayout>
 
@@ -156,9 +171,6 @@
                 Text="Salvar" />
 
         </StackLayout>
-
-        <StackLayout.GestureRecognizers>
-            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
-        </StackLayout.GestureRecognizers>
     </StackLayout>
+
 </pages:PopupPage>

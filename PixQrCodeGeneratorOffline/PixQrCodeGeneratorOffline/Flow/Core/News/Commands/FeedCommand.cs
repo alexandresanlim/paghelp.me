@@ -43,7 +43,7 @@ namespace PixQrCodeGeneratorOffline.Models.Commands
 
                     await Task.Delay(500);
 
-                    await Shell.Current.Navigation.PushModalAsync(new WebViewPage(feed.Link, feed?.Title));
+                    await Shell.Current.Navigation.PushAsync(new WebViewPage(feed.Link, feed?.Title));
                 }
                 catch (Exception e)
                 {
@@ -83,7 +83,7 @@ namespace PixQrCodeGeneratorOffline.Models.Commands
                 }
                 finally
                 {
-                    _eventService.SendEvent("Compartilhou uma notícia: " + feed?.Title, EventType.SHARE, nameof(FeedCommand), new Dictionary<string, string> { { "Título: ", feed?.Title } });
+                    _eventService.SendEvent("Compartilhou uma notícia", EventType.SHARE, nameof(FeedCommand), new Dictionary<string, string> { { "Título: ", feed?.Title } });
 
                     DialogService.HideLoading();
                 }

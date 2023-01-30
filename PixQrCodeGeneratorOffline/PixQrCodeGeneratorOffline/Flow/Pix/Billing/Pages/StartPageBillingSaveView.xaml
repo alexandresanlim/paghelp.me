@@ -9,7 +9,6 @@
     xmlns:templates="clr-namespace:PixQrCodeGeneratorOffline.Templates"
     xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
     x:DataType="vm:DashboardViewModel"
-    CompressedLayout.IsHeadless="True"
     Spacing="0">
 
     <StackLayout.Resources>
@@ -59,6 +58,7 @@
         <controls:CustomCollectionView.ItemTemplate>
             <DataTemplate x:DataType="models:PixPayload">
                 <Frame
+                    Padding="8"
                     BackgroundColor="{DynamicResource foreground_page}"
                     CornerRadius="4"
                     VerticalOptions="FillAndExpand"
@@ -133,7 +133,6 @@
     <templates:TemplateAction
         Title="Exportar todas"
         Icon="{x:Static icons:FontAwesomeSolid.FileCsv}"
-        IsNew="True"
         TapCommand="{Binding ExportToFileBillingCommand}" />
 
     <templates:TemplateAction

@@ -66,7 +66,7 @@ namespace PixQrCodeGeneratorOffline.Models.Commands
             { 
                 SetIsLoading(); 
                 
-                await Shell.Current.Navigation.PushAsync(new CreateBillingTabbedPage(pixKey)); 
+                await Shell.Current.Navigation.PushAsync(new CreateBillingPage(pixKey)).ConfigureAwait(false); 
                 
                 SetIsLoading(false); 
             });
@@ -102,11 +102,7 @@ namespace PixQrCodeGeneratorOffline.Models.Commands
         {
             return _customAsyncCommand.Create(async () =>
             {
-                SetIsLoading();
-
-                await Shell.Current.Navigation.PushPopupAsync(new PaymentPage(_pixPayloadService.Create(pixKey)));
-
-                SetIsLoading(false);
+                await Shell.Current.Navigation.PushPopupAsync(new PaymentPage(_pixPayloadService.Create(pixKey))).ConfigureAwait(false);
             });
         }
             

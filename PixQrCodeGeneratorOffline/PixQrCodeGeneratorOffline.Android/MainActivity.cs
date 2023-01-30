@@ -45,7 +45,7 @@ namespace PixQrCodeGeneratorOffline.Droid
 
         //private void ConfigureWindow()
         //{
-        //    Window.SetSoftInputMode(Android.Views.SoftInput.AdjustResize);
+        //    Window.SetSoftInputMode(SoftInput.AdjustResize);
         //}
 
         private void StartAndroidDependency()

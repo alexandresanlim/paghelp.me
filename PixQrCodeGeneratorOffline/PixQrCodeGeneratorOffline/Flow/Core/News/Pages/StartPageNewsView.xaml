@@ -11,80 +11,88 @@
     x:DataType="vm:DashboardViewModel">
 
     <CollectionView
-        HeightRequest="960"
-        IsVisible="{Binding CurrentFeedList, Converter={StaticResource HasDataConverter}}"
+        Margin="8,0,0,0"
+        BackgroundColor="Red"
+        HeightRequest="290"
         ItemsSource="{Binding CurrentFeedList}"
         SelectionMode="None">
 
+        <CollectionView.ItemsLayout>
+            <LinearItemsLayout ItemSpacing="8" Orientation="Horizontal" />
+        </CollectionView.ItemsLayout>
+
         <CollectionView.ItemTemplate>
             <DataTemplate x:DataType="models:Feed">
-                <StackLayout Padding="5,0,5,5">
 
-                    <StackLayout.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding Command.NavigateToWebViewCommand}" />
-                    </StackLayout.GestureRecognizers>
+                <Frame
+                    Padding="0"
+                    BackgroundColor="{DynamicResource background_page}"
+                    BorderColor="{DynamicResource foreground_page}"
+                    CornerRadius="8"
+                    IsClippedToBounds="True"
+                    VerticalOptions="FillAndExpand"
+                    WidthRequest="230">
 
-                    <Frame
-                        Padding="0"
-                        BackgroundColor="{DynamicResource foreground_page}"
-                        CornerRadius="10">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding Command.NavigateToWebViewCommand, Mode=OneTime}" />
+                    </Frame.GestureRecognizers>
 
-                        <StackLayout>
-                            <!--<controls:CustomImage Source="{Binding Image}" Aspect="Fill" HeightRequest="200" />-->
-                            <StackLayout Padding="15">
-                                <Label
-                                    FontFamily="{DynamicResource FontSemiBold}"
-                                    FontSize="{DynamicResource FontSizeSmall}"
-                                    Text="{Binding Source}"
-                                    TextColor="{DynamicResource textPrimary}" />
+                    <StackLayout Spacing="0">
 
-                                <Grid ColumnDefinitions="auto,*" ColumnSpacing="15">
+                        <Image
+                            Aspect="AspectFill"
+                            HeightRequest="120"
+                            Source="{Binding Image}"
+                            VerticalOptions="Start" />
 
-                                    <StackLayout Grid.Column="0">
-                                        <Image
-                                            Aspect="Fill"
-                                            HeightRequest="80"
-                                            Source="{Binding Image}"
-                                            WidthRequest="80" />
-                                    </StackLayout>
 
-                                    <Label
-                                        Grid.Column="1"
-                                        FontSize="{DynamicResource FontSizeSmall}"
-                                        LineBreakMode="TailTruncation"
-                                        MaxLines="4"
-                                        Text="{Binding Title}"
-                                        TextColor="{DynamicResource textSecondary}"
-                                        VerticalOptions="FillAndExpand" />
-                                </Grid>
+                        <Label
+                            Margin="8,8,8,0"
+                            FontSize="{StaticResource FontSizeMicro}"
+                            LineBreakMode="TailTruncation"
+                            MaxLines="1"
+                            Text="{Binding Source}"
+                            TextColor="{DynamicResource textSecondary}" />
 
-                                <StackLayout Orientation="Horizontal">
-                                    <Label
-                                        FontSize="{DynamicResource FontSizeMicro}"
-                                        HorizontalOptions="StartAndExpand"
-                                        Text="{Binding Viewer.PublishDateDisplay}"
-                                        TextColor="{DynamicResource textSecondary}"
-                                        VerticalOptions="EndAndExpand" />
-                                    <StackLayout Padding="15,15,0,0">
-                                        <StackLayout.GestureRecognizers>
-                                            <TapGestureRecognizer Command="{Binding Command.ShareCommand}" />
-                                        </StackLayout.GestureRecognizers>
-                                        <controls:CustomIcon
-                                            FontSize="{DynamicResource FontSizeMedium}"
-                                            Glyph="{x:Static icons:FontAwesomeSolid.ShareAlt}"
-                                            HorizontalOptions="CenterAndExpand"
-                                            TextColor="{DynamicResource textSecondary}" />
-                                    </StackLayout>
-                                </StackLayout>
+                        <Label
+                            Margin="8,0"
+                            FontSize="{StaticResource FontSizeMicro}"
+                            LineBreakMode="TailTruncation"
+                            MaxLines="4"
+                            Text="{Binding Title}"
+                            TextColor="{DynamicResource textLink}"
+                            VerticalOptions="FillAndExpand" />
+
+                        <StackLayout
+                            Margin="8,0"
+                            Orientation="Horizontal"
+                            VerticalOptions="EndAndExpand">
+                            <Label
+                                FontSize="{DynamicResource FontSizeMicro}"
+                                HorizontalOptions="StartAndExpand"
+                                Text="{Binding Viewer.PublishDateDisplay}"
+                                TextColor="{DynamicResource textSecondary}"
+                                VerticalOptions="CenterAndExpand" />
+                            <StackLayout HeightRequest="42" WidthRequest="42">
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding Command.ShareCommand}" />
+                                </StackLayout.GestureRecognizers>
+                                <controls:CustomIcon
+                                    FontSize="{DynamicResource FontSizeMedium}"
+                                    Glyph="{x:Static icons:FontAwesomeSolid.ShareAlt}"
+                                    HorizontalOptions="EndAndExpand"
+                                    TextColor="{DynamicResource textSecondary}"
+                                    VerticalOptions="CenterAndExpand" />
                             </StackLayout>
                         </StackLayout>
+                    </StackLayout>
 
-                    </Frame>
+                </Frame>
 
-                </StackLayout>
             </DataTemplate>
         </CollectionView.ItemTemplate>
     </CollectionView>
 
-    <!--<content:PanelLoadView IsVisible="{Binding CurrentDashboardLoadInfo.IsLoadNews}" />-->
+
+    <content:PanelLoadView IsVisible="{Binding IsBusy}" />
 </Grid>

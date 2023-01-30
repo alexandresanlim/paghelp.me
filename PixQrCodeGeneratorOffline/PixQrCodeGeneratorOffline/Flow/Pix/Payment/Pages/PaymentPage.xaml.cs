@@ -30,8 +30,8 @@ namespace PixQrCodeGeneratorOffline.Views
 
             //SetStatusBarColor(_paymentViewModel.CurrentInfo.Color.PrimaryDark);
 
-            if (!(_paymentViewModel?.CurrentPixPaylod?.Id > 0) && _paymentViewModel?.CurrentPixPaylod?.PixCob != null && _paymentViewModel.CurrentPixPaylod.PixCob.HasValue())
-                btnSave.IsVisible = true;
+            //if (!(_paymentViewModel?.CurrentPixPaylod?.Id > 0) && _paymentViewModel?.CurrentPixPaylod?.PixCob != null && _paymentViewModel.CurrentPixPaylod.PixCob.HasValue())
+            //    btnSave.IsVisible = true;
         }
 
         private void TapGestureRecognizer_Tapped(object sender, System.EventArgs e)

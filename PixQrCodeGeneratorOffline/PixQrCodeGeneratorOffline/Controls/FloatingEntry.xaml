@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView
+    x:Class="PixQrCodeGeneratorOffline.Controls.FloatingEntry"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Name="this">
+    <ContentView.Content>
+        <Grid>
+            <Entry
+                x:Name="EntryField"
+                BackgroundColor="#E6F4F1"
+                Completed="Handle_Completed"
+                Focused="Handle_Focused"
+                HeightRequest="46"
+                IsPassword="{Binding IsPassword, Source={x:Reference this}}"
+                Keyboard="{Binding Keyboard, Source={x:Reference this}}"
+                ReturnType="{Binding ReturnType, Source={x:Reference this}}"
+                Text="{Binding Text, Source={x:Reference this}}"
+                TextColor="{StaticResource staticTextPrimary}"
+                Unfocused="Handle_Unfocused" />
+            <Label
+                x:Name="LabelTitle"
+                Text="{Binding Title, Source={x:Reference this}}"
+                TextColor="{StaticResource staticTextSecondary}"
+                VerticalOptions="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Handle_Tapped" />
+                </Label.GestureRecognizers>
+            </Label>
+        </Grid>
+
+
+    </ContentView.Content>
+</ContentView>

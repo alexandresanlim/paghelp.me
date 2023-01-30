@@ -7,6 +7,7 @@
     xmlns:contentStart="clr-namespace:PixQrCodeGeneratorOffline.Views.Content.StartPageContents"
     xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
     xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon"
+    xmlns:local="clr-namespace:PixQrCodeGeneratorOffline.Extention;assembly=PixQrCodeGeneratorOffline"
     xmlns:templates="clr-namespace:PixQrCodeGeneratorOffline.Templates"
     xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
     x:DataType="vm:DashboardViewModel"
@@ -14,13 +15,6 @@
 
     <ContentPage.Resources>
         <ResourceDictionary>
-
-
-            <Style x:Key="styleGridActionChevronRight" TargetType="Grid">
-                <Setter Property="ColumnDefinitions" Value="auto,*, auto" />
-                <Setter Property="Padding" Value="10" />
-                <Setter Property="ColumnSpacing" Value="15" />
-            </Style>
 
             <Style x:Key="styleGridActionChevronIcon" TargetType="controls:CustomIcon">
                 <Setter Property="VerticalOptions" Value="CenterAndExpand" />
@@ -70,134 +64,136 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    <ContentPage.Content>
 
+    <!--<Grid>-->
 
-        <!--<Grid>-->
+    <ScrollView VerticalOptions="FillAndExpand">
+        <StackLayout Spacing="0">
 
-        <ScrollView>
-            <StackLayout CompressedLayout.IsHeadless="True" Spacing="0">
+            <Grid ColumnDefinitions="*, 80" ColumnSpacing="0">
 
-                <Grid ColumnDefinitions="*, auto" ColumnSpacing="0">
-                    <templates:TemplateTitlePanel
-                        Title="Minhas Chaves Pix"
-                        Grid.Column="0"
-                        BackgroundColor="{Binding CurrentPixKey.FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
-                        Icon="{x:Static icons:FontAwesomeSolid.Key}"
-                        IconColor="{Binding CurrentPixKey.FinancialInstitution.Institution.MaterialColor.TextOnPrimary}"
-                        TitleColor="{Binding CurrentPixKey.FinancialInstitution.Institution.MaterialColor.TextOnPrimary}" />
-
-                    <StackLayout
-                        Grid.Column="1"
-                        Padding="30,15,15,15"
-                        BackgroundColor="{Binding CurrentPixKey.FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
-                        IsVisible="{Binding PixKeyList, Mode=TwoWay, Converter={StaticResource HasDataConverter}}">
-                        <controls:CustomIcon TextColor="{Binding CurrentPixKey.FinancialInstitution.Institution.MaterialColor.TextOnPrimary}">
-                            <controls:CustomIcon.Triggers>
-                                <DataTrigger
-                                    Binding="{Binding IsHideValue, Mode=TwoWay}"
-                                    TargetType="controls:CustomIcon"
-                                    Value="False">
-                                    <Setter Property="Glyph" Value="{x:Static icons:FontAwesomeSolid.Eye}" />
-                                </DataTrigger>
-                                <DataTrigger
-                                    Binding="{Binding IsHideValue, Mode=TwoWay}"
-                                    TargetType="controls:CustomIcon"
-                                    Value="True">
-                                    <Setter Property="Glyph" Value="{x:Static icons:FontAwesomeSolid.EyeSlash}" />
-                                </DataTrigger>
-                            </controls:CustomIcon.Triggers>
-                        </controls:CustomIcon>
-                        <StackLayout.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding HideValueCommand}" />
-                        </StackLayout.GestureRecognizers>
-                    </StackLayout>
-                </Grid>
-
-                <contentStart:StartPageMyKeysView IsVisible="{Binding PixKeyList, Converter={StaticResource HasDataConverter}}" />
-
-                <templates:TemplateAction
-                    Title="Adicionar Nova"
-                    Margin="8,8,8,0"
-                    Icon="{x:Static icons:FontAwesomeSolid.PlusCircle}"
-                    TapCommand="{Binding NavigateToAddNewKeyPageCommand}" />
-
-                <content:DivisionView Margin="0,8,0,0" />
-
-                <!--  //////////////////////////////////////////////////////////////////////////////////////////////////////////////  -->
-
-                <StackLayout IsVisible="{Binding BillingSaveList, Converter={StaticResource HasDataConverter}}">
-
-                    <templates:TemplateTitlePanel Title="Cobranças Salvas" Icon="{x:Static icons:FontAwesomeSolid.HandHoldingUsd}" />
-
-                    <contentStart:StartPageBillingSaveView />
-
-                    <content:DivisionView />
-
-                </StackLayout>
-
-                <!--  //////////////////////////////////////////////////////////////////////////////////////////////////////////////  -->
+                <Image Grid.ColumnSpan="2" Source="{local:ImageResource PixQrCodeGeneratorOffline.}" />
 
                 <templates:TemplateTitlePanel
-                    Title="Chaves de Contatos"
-                    Margin="0,8,0,0"
-                    Icon="{x:Static icons:FontAwesomeSolid.Users}" />
+                    Title="Minhas Chaves Pix"
+                    Grid.Column="0"
+                    BackgroundColor="{Binding CurrentPixKey.FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
+                    Icon="{x:Static icons:FontAwesomeSolid.Key}"
+                    IconColor="{Binding CurrentPixKey.FinancialInstitution.Institution.MaterialColor.TextOnPrimary}"
+                    TitleColor="{Binding CurrentPixKey.FinancialInstitution.Institution.MaterialColor.TextOnPrimary}" />
 
-                <contentStart:StartPageContactsKeysView IsVisible="{Binding PixKeyListContact, Converter={StaticResource HasDataConverter}}" />
+                <StackLayout
+                    Grid.Column="1"
+                    Padding="0,8,8,0"
+                    BackgroundColor="{Binding CurrentPixKey.FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
+                    IsVisible="{Binding PixKeyList, Mode=TwoWay, Converter={StaticResource HasDataConverter}}">
+                    <controls:CustomIcon HorizontalOptions="End" TextColor="{Binding CurrentPixKey.FinancialInstitution.Institution.MaterialColor.TextOnPrimary}">
+                        <controls:CustomIcon.Triggers>
+                            <DataTrigger
+                                Binding="{Binding IsHideValue, Mode=TwoWay}"
+                                TargetType="controls:CustomIcon"
+                                Value="False">
+                                <Setter Property="Glyph" Value="{x:Static icons:FontAwesomeSolid.Eye}" />
+                            </DataTrigger>
+                            <DataTrigger
+                                Binding="{Binding IsHideValue, Mode=TwoWay}"
+                                TargetType="controls:CustomIcon"
+                                Value="True">
+                                <Setter Property="Glyph" Value="{x:Static icons:FontAwesomeSolid.EyeSlash}" />
+                            </DataTrigger>
+                        </controls:CustomIcon.Triggers>
+                    </controls:CustomIcon>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding HideValueCommand}" />
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+            </Grid>
 
-                <templates:TemplateAction
-                    Title="Adicionar Nova"
-                    Icon="{x:Static icons:FontAwesomeSolid.PlusCircle}"
-                    TapCommand="{Binding NavigateToAddNewKeyPageContactCommand}" />
+            <contentStart:StartPageMyKeysView IsVisible="{Binding PixKeyList, Converter={StaticResource HasDataConverter}}" />
 
-                <!--<content:DivisionView />
+            <templates:TemplateAction
+                Title="Adicionar Nova"
+                Margin="8,8,8,0"
+                Icon="{x:Static icons:FontAwesomeSolid.PlusCircle}"
+                TapCommand="{Binding NavigateToAddNewKeyPageCommand}" />
 
-                -->
-                <!--  //////////////////////////////////////////////////////////////////////////////////////////////////////////////  -->
-                <!--
+            <content:DivisionView Margin="0,8,0,0" />
 
-                    <StackLayout IsVisible="{Binding CurrentFeedList, Converter={StaticResource HasDataConverter}}">
+            <!--  //////////////////////////////////////////////////////////////////////////////////////////////////////////////  -->
 
-                        <templates:TemplateTitlePanel Title="Notícias" Icon="{x:Static icons:FontAwesomeSolid.Rss}" />
+            <StackLayout IsVisible="{Binding BillingSaveList, Converter={StaticResource HasDataConverter}}">
 
-                        <contentStart:StartPageNewsView />
+                <templates:TemplateTitlePanel
+                    Title="Cobranças Salvas"
+                    BackgroundImage="banner_cobrancas_salvas.png"
+                    Icon="{x:Static icons:FontAwesomeSolid.HandHoldingUsd}"
+                    SubTitle="Suas cobranças salvas aparecerão &#x0a;aqui. Você encontrará essa opção &#x0a;na tela de criação de cobrança." />
 
-                        <content:DivisionView />
-                    </StackLayout>-->
-
-                <!--  Preferences  -->
-
-                <content:DivisionView Margin="0,8,0,0" />
-
-
-
-                <!--  //////////////////////////////////////////////////////////////////////////////////////////////////////////////  -->
-
-                <Grid Padding="0,0,8,0" ColumnDefinitions="*, auto">
-
-                    <Grid.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding NavigateToGuidCommand}" />
-                    </Grid.GestureRecognizers>
-
-                    <templates:TemplateTitlePanel Title="Guia Pix" Icon="{x:Static icons:FontAwesomeSolid.Lightbulb}" />
-
-                    <content:ChevronRightView Grid.Column="1" />
-                </Grid>
-
+                <contentStart:StartPageBillingSaveView />
 
                 <content:DivisionView />
 
             </StackLayout>
-        </ScrollView>
 
-        <!--<templates1:AutenticationTemplate />
+            <!--  //////////////////////////////////////////////////////////////////////////////////////////////////////////////  -->
+
+            <templates:TemplateTitlePanel
+                Title="Chaves de Contatos"
+                Margin="0,8,0,0"
+                BackgroundImage="banner_chaves_contatos.png"
+                Icon="{x:Static icons:FontAwesomeSolid.Users}"
+                SubTitle="Guarde aqui as chaves dos &#x0a;seus contatos, para nunca &#x0a;mais precisar perguntar &#x0a;novamente." />
+
+            <contentStart:StartPageContactsKeysView Margin="0,8,0,0" IsVisible="{Binding PixKeyListContact, Converter={StaticResource HasDataConverter}}" />
+
+            <templates:TemplateAction
+                Title="Adicionar Nova"
+                Icon="{x:Static icons:FontAwesomeSolid.PlusCircle}"
+                TapCommand="{Binding NavigateToAddNewKeyPageContactCommand}" />
+
+            <content:DivisionView />
+
+            <!--  //////////////////////////////////////////////////////////////////////////////////////////////////////////////  -->
+
+            <StackLayout IsVisible="{Binding CurrentFeedList, Converter={StaticResource HasDataConverter}}">
+
+                <templates:TemplateTitlePanel
+                    Title="Notícias"
+                    BackgroundImage="banner_noticias.png"
+                    Icon="{x:Static icons:FontAwesomeSolid.Rss}"
+                    SubTitle="Fique por dentro das principais &#x0a;notícias diárias sobre o Pix" />
+
+                <contentStart:StartPageNewsView />
+
+            </StackLayout>
+
+            <!--  Preferences  -->
+
+            <content:DivisionView Margin="0,8,0,0" />
+
+            <!--  //////////////////////////////////////////////////////////////////////////////////////////////////////////////  -->
+
+            <Grid Padding="0,0,8,0" ColumnDefinitions="*, auto">
+
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding NavigateToGuidCommand}" />
+                </Grid.GestureRecognizers>
+
+                <templates:TemplateTitlePanel Title="Guia Pix" Icon="{x:Static icons:FontAwesomeSolid.Lightbulb}" />
+
+                <content:ChevronRightView Grid.Column="1" />
+            </Grid>
+
+
+            <content:DivisionView />
+
+        </StackLayout>
+    </ScrollView>
+
+    <!--<templates1:AutenticationTemplate />
 
             <content:PanelLoadView IsVisible="{Binding IsBusy}" />
 
         </Grid>-->
 
-
-
-
-    </ContentPage.Content>
 </ContentPage>

@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
-<StackLayout
+<Grid
     x:Class="PixQrCodeGeneratorOffline.Templates.TemplateTitlePanel"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
-    Padding="10"
-    Spacing="15">
+    xmlns:templates="clr-namespace:PixQrCodeGeneratorOffline.Templates"
+    x:DataType="templates:TemplateTitlePanel">
 
-    <StackLayout.Resources>
+    <Grid.Resources>
         <ResourceDictionary>
             <Style x:Key="styleTitleBottomIcon" TargetType="Label">
                 <Setter Property="FontSize" Value="{DynamicResource FontSizeMedium}" />
@@ -21,12 +21,29 @@
                 <Setter Property="TextColor" Value="{DynamicResource textPrimary}" />
             </Style>
         </ResourceDictionary>
-    </StackLayout.Resources>
+    </Grid.Resources>
 
-    <controls:CustomIcon x:Name="xIcon" Style="{DynamicResource styleTitleIcon}" />
-    <Label
-        x:Name="xTitle"
-        Style="{DynamicResource styleTitleBottomIcon}"
-        Text="Minhas Chaves" />
+    <Image
+        x:Name="xBackgroundImage"
+        Margin="8,0"
+        IsVisible="False" />
 
-</StackLayout>
+    <StackLayout Padding="10" Spacing="0">
+        <controls:CustomIcon x:Name="xIcon" Style="{DynamicResource styleTitleIcon}" />
+
+        <Label
+            x:Name="xTitle"
+            Margin="0,16,0,0"
+            Style="{DynamicResource styleTitleBottomIcon}"
+            Text="Minhas Chaves" />
+
+        <Label
+            x:Name="xSubTitle"
+            FontSize="{StaticResource FontSizeMicro}"
+            IsVisible="False"
+            TextColor="{DynamicResource textPrimary}" />
+    </StackLayout>
+
+
+
+</Grid>

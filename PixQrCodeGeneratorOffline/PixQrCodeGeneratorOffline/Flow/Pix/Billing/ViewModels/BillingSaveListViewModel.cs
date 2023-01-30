@@ -15,14 +15,15 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             LoadPixPayloadSave();
         }
 
-        private void LoadPixPayloadSave()
+        protected void LoadPixPayloadSave()
         {
-            BillingSaveList = CurrentPixKey.IsValid() ?
-                _pixPayloadService?.GetAll(x => x.PixKey.Id == CurrentPixKey.Id)?.ToObservableCollection() ?? new ObservableCollection<PixPayload>() :
-                _pixPayloadService?.GetAll()?.ToObservableCollection() ?? new ObservableCollection<PixPayload>();
+            if (!CurrentPixKey.IsValid() || !BillingSaveList.IsNullOrEmpty())
+                return;
+
+            BillingSaveList = _pixPayloadService?.GetAll(x => x.PixKey.Id == CurrentPixKey.Id)?.ToObservableCollection() ?? new ObservableCollection<PixPayload>();
         }
 
-        private PixKey CurrentPixKey { get; set; }
+        protected PixKey CurrentPixKey { get; set; }
 
         private ObservableCollection<PixPayload> _billingSaveList;
         public ObservableCollection<PixPayload> BillingSaveList

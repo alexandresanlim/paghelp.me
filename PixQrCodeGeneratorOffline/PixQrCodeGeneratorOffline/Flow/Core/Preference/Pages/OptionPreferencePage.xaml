@@ -17,7 +17,7 @@
         <ResourceDictionary>
 
             <Style x:Key="styleGrid" TargetType="Grid">
-                <Setter Property="ColumnDefinitions" Value="*,auto" />
+                <Setter Property="ColumnDefinitions" Value="*,45" />
                 <Setter Property="ColumnSpacing" Value="0" />
                 <Setter Property="Padding" Value="0,0,15,0" />
             </Style>
@@ -28,24 +28,9 @@
 
     <ContentPage.Content>
 
-        <ScrollView>
+        <ScrollView VerticalOptions="FillAndExpand">
 
             <StackLayout>
-
-                <!--<Grid Style="{StaticResource styleGrid}">
-                <preferences:PreferencePanelTemplate
-                    Title="Exibir Notícias"
-                    Grid.Column="0"
-                    Description="Veja notícias do Pix direto na dashboard"
-                    Icon="{x:Static icons:FontAwesomeSolid.Rss}" />
-
-                <Switch
-                    Grid.Column="1"
-                    IsToggled="{Binding IsPreferenceNews}"
-                    Toggled="Switch_News" />
-            </Grid>
-
-            <content:DivisionView />-->
 
                 <Grid Style="{StaticResource styleGrid}">
                     <preferences:PreferencePanelTemplate
@@ -63,6 +48,7 @@
                 <content:DivisionView />
 
                 <Grid Style="{StaticResource styleGrid}">
+
                     <preferences:PreferencePanelTemplate
                         Title="Modo PDV"
                         Grid.Column="0"
@@ -105,6 +91,21 @@
                         IsToggled="{Binding IsCryptoAble}"
                         Toggled="Switch_Cypto" />
                 </Grid>
+
+                <Grid Style="{StaticResource styleGrid}">
+                    <preferences:PreferencePanelTemplate
+                        Title="Exibir Notícias"
+                        Grid.Column="0"
+                        Description="Veja notícias do Pix direto na dashboard"
+                        Icon="{x:Static icons:FontAwesomeSolid.Rss}" />
+
+                    <Switch
+                        Grid.Column="1"
+                        IsToggled="{Binding IsPreferenceNews}"
+                        Toggled="Switch_News" />
+                </Grid>
+
+
 
             </StackLayout>
 

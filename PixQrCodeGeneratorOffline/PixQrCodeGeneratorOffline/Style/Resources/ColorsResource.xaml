@@ -17,6 +17,7 @@
 
     <Color x:Key="textPrimary">#212121</Color>
     <Color x:Key="textSecondary">#757575</Color>
+    <Color x:Key="textLink">#1a52c6</Color>
 
     <Color x:Key="backgroundTransparent">#25000000</Color>
     <Color x:Key="textOnBackgroundTransparent">#ffffff</Color>
@@ -35,5 +36,20 @@
     <Color x:Key="staticTextPrimary">#212121</Color>
     <Color x:Key="staticTextSecondary">#757575</Color>
     <Color x:Key="staticBackgroundPage">#ffffff</Color>
+    <Color x:Key="staticForegroundPage">#f0f1f5</Color>
+
+
+    <Color x:Key="warning">#ffc107</Color>
+    <Color x:Key="success">#28a745</Color>
+    <Color x:Key="danger">#dc3545</Color>
+    <Color x:Key="info">#17a2b8</Color>
+
+    <Color x:Key="textOnAlert">#212529</Color>
+
+    <Color x:Key="alertWarning">#fffaed</Color>
+    <Color x:Key="alertDanger">#fcf0f1</Color>
+    <Color x:Key="alertInfo">#edfbfe</Color>
+
+
 
 </ResourceDictionary>

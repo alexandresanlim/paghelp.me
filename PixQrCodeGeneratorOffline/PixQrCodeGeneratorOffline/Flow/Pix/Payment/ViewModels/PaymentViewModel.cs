@@ -5,6 +5,7 @@ using PixQrCodeGeneratorOffline.Models.Base;
 using PixQrCodeGeneratorOffline.Models.PaymentMethods.Base;
 using PixQrCodeGeneratorOffline.Models.PaymentMethods.Crypto;
 using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix;
+using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix.Extentions;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -35,7 +36,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 CurrentInfo.Value = pixPayload.PixCob?.Viewer?.ValuePresentation;
                 CurrentInfo.Name = pixPayload.PixKey?.Viewer?.NamePresentation;
                 CurrentInfo.Institution = pixPayload?.PixKey?.Viewer?.InstitutionPresentation;
-                CurrentInfo.Key = $"Chave: {pixPayload?.PixKey?.Viewer?.KeyPresentation}";
+                CurrentInfo.Key = $"| Chave: {pixPayload?.PixKey?.Viewer?.KeyPresentation}";
             }
 
             else if (payloadParameter is CryptoPayload cryptoPayload)
@@ -43,10 +44,10 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 CurrentCryptoPaylod = cryptoPayload;
                 CurrentInfo.Color = cryptoPayload?.CryptoKey?.FinancialInstitution?.Institution?.MaterialColor;
                 CurrentInfo.Institution = $"Criptomoeda: {cryptoPayload?.CryptoKey?.Viewer?.InstitutionPresentation}";
-                CurrentInfo.Key = $"Chave: {cryptoPayload?.CryptoKey?.Viewer?.KeyPresentation}";
+                CurrentInfo.Key = $"| Chave: {cryptoPayload?.CryptoKey?.Viewer?.KeyPresentation}";
             }
 
-            //SaveButtonVisible = !(CurrentPixPaylod.Id > 0) && CurrentPixPaylod?.PixCob != null && CurrentPixPaylod.PixCob.Validation.HasValue;
+            SaveButtonIsVisible = !(CurrentPixPaylod?.Id > 0) && CurrentPixPaylod?.PixCob != null && CurrentPixPaylod.PixCob.HasValue();
 
             IsActionVisible = false;
 
@@ -55,7 +56,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         private void LoadHelpPhrase()
         {
-            var paymentType = CurrentPaylodBase.Type == PayloadType.Crypto ? "Cripto" : "Pix";
+            var paymentType = (CurrentPaylodBase?.Type ?? PayloadType.Pix) == PayloadType.Crypto ? "Cripto" : "Pix";
 
             CurrentInfo.HelpPhrase =
                 $"O pagador precisa abrir o app que vai fazer a transferência {paymentType} e escanear este QR Code ou colar o código copia e cola.";
@@ -126,6 +127,13 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         {
             set => SetProperty(ref _isActionVisible, value);
             get => _isActionVisible;
+        }
+
+        private bool _saveButtonIsVisible;
+        public bool SaveButtonIsVisible
+        {
+            set => SetProperty(ref _saveButtonIsVisible, value);
+            get => _saveButtonIsVisible;
         }
 
         private PaymentViewModelInfo _currentInfo;

@@ -11,55 +11,97 @@ namespace PixQrCodeGeneratorOffline.ViewModels
     {
         public async Task LoadData()
         {
-            IsPreferenceFingerPrint = Preference.FingerPrint && await CrossFingerprint.Current.IsAvailableAsync();
-            IsPreferenceNews = Preference.ShowNews;
-            IsPreferncePdvMode = Preference.IsPDVMode;
-            IsThemeDark = Preference.ThemeIsDark;
-            IsCryptoAble = Preference.CryptoAble;
-            LoadThemeIcon();
+            try
+            {
+                IsPreferenceFingerPrint = Preference.FingerPrint && await CrossFingerprint.Current.IsAvailableAsync().ConfigureAwait(false);
+                IsPreferenceNews = Preference.ShowNews;
+                IsPreferncePdvMode = Preference.IsPDVMode;
+                IsThemeDark = Preference.ThemeIsDark;
+                IsCryptoAble = Preference.CryptoAble;
+                LoadThemeIcon();
+            }
+            catch (System.Exception ex)
+            {
+                ex?.SendToLog();
+            }
         }
 
         public async Task OptionFingerPrint()
         {
             await _preferenceService.RequireAuthenticationToAction(async () =>
             {
-                var success = await _preferenceService.ChangeFingerPrint();
-
-                if (success)
+                try
                 {
-                    await LoadData();
+                    var success = await _preferenceService.ChangeFingerPrint().ConfigureAwait(false);
+
+                    if (success)
+                    {
+                        await LoadData().ConfigureAwait(false);
+                    }
+
+                    else
+                    {
+                        IsPreferenceFingerPrint = false;
+                    }
                 }
-
-                else
+                catch (System.Exception ex)
                 {
-                    IsPreferenceFingerPrint = false;
+                    ex?.SendToLog();
                 }
             }, false);
         }
 
         public async Task OptionPDV()
         {
-            _preferenceService.ChangePDVMode();
-            await LoadData();
+            try
+            {
+                _preferenceService.ChangePDVMode();
+                await LoadData().ConfigureAwait(false);
+            }
+            catch (System.Exception ex)
+            {
+                ex.SendToLog();
+            }
         }
 
         public async Task OptionShowNews()
         {
-            _preferenceService.ChangeShowNewsMode();
-            await LoadData();
-            //await DashboardVM.LoadNews();
+            try
+            {
+                _preferenceService.ChangeShowNewsMode();
+                await LoadData().ConfigureAwait(false);
+                await DashboardVM.LoadNews().ConfigureAwait(false);
+            }
+            catch (System.Exception ex)
+            {
+                ex?.SendToLog();
+            }
         }
 
         public async Task OptionTheme()
         {
-            _preferenceService.ChangeTheme();
-            await LoadData();
+            try
+            {
+                _preferenceService.ChangeTheme();
+                await LoadData().ConfigureAwait(false);
+            }
+            catch (System.Exception ex)
+            {
+                ex?.SendToLog();
+            }
         }
 
         public async Task ChangeCrypto()
         {
-            _preferenceService.ChangeCrypto();
-            await LoadData();
+            try
+            {
+                _preferenceService.ChangeCrypto();
+                await LoadData().ConfigureAwait(false);
+            }
+            catch (System.Exception ex)
+            {
+                ex?.SendToLog();
+            }
         }
 
         private void LoadThemeIcon()

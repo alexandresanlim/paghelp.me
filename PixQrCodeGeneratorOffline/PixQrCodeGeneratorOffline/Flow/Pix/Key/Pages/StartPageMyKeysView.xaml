@@ -39,7 +39,7 @@
 
         <CarouselView
             CurrentItem="{Binding CurrentPixKey}"
-            CurrentItemChangedCommand="{Binding ChangeSelectPixKeyCommand}"
+            CurrentItemChangedCommand="{Binding ChangeSelectPixKeyCommand, Mode=OneTime}"
             CurrentItemChangedCommandParameter="{Binding Source={RelativeSource Self}, Path=CurrentItem}"
             HeightRequest="142"
             IndicatorView="indicatorView"
@@ -109,7 +109,6 @@
         <templates:TemplateAction
             Title="Exportar Todas"
             Icon="{x:Static icons:FontAwesomeSolid.FileCsv}"
-            IsNew="True"
             TapCommand="{Binding ExportToFileCommand}" />
 
         <!--<Grid Style="{DynamicResource styleGridActionChevronRight}" IsVisible="{Binding PixKeyList, Converter={StaticResource HasDataConverter}}">
