@@ -12,7 +12,6 @@
 
     <CollectionView
         Margin="8,0,0,0"
-        BackgroundColor="Red"
         HeightRequest="290"
         ItemsSource="{Binding CurrentFeedList}"
         SelectionMode="None">
@@ -41,10 +40,9 @@
 
                         <Image
                             Aspect="AspectFill"
-                            HeightRequest="120"
+                            HeightRequest="130"
                             Source="{Binding Image}"
                             VerticalOptions="Start" />
-
 
                         <Label
                             Margin="8,8,8,0"

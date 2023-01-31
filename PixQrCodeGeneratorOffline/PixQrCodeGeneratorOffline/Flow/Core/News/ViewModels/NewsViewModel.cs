@@ -54,14 +54,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             finally
             {
                 IsBusy = false;
-
-                foreach (var item in CurrentFeedList)
-                {
-                    var uri = await item.Link.GetImage();
-
-                    if (!string.IsNullOrEmpty(uri))
-                        item.Image = new UriImageSource { CachingEnabled = true, Uri = new Uri(uri) };
-                }
             }
         }
 
