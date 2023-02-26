@@ -20,7 +20,7 @@
 
 
 # Build Status
-[![Build status](https://build.appcenter.ms/v0.1/apps/114095c5-8cba-402d-94bb-31a1f3df8a98/branches/master/badge)](https://appcenter.ms)
+[![Build status](https://build.appcenter.ms/v0.1/apps/158188fb-8062-4b87-9ced-2194368998ef/branches/develop/badge)](https://appcenter.ms)
 
 # Pacotes usados
 - [pix-payload-generator.net](https://github.com/alexandresanlim/pix-payload-generator.net)
