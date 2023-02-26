@@ -63,11 +63,11 @@
         </ResourceDictionary>
     </pages:PopupPage.Resources>
 
-    <StackLayout Spacing="0" VerticalOptions="End">
-        <BoxView
-            BackgroundColor="{StaticResource staticBackgroundPage}"
-            CornerRadius="8,8,0,0"
-            HeightRequest="8" />
+    <Frame
+        Margin="0,100,0,0"
+        Padding="8"
+        BackgroundColor="{StaticResource staticBackgroundPage}"
+        CornerRadius="8">
 
         <StackLayout
             Padding="0,4,0,0"
@@ -171,6 +171,6 @@
                 Text="Salvar" />
 
         </StackLayout>
-    </StackLayout>
+    </Frame>
 
 </pages:PopupPage>

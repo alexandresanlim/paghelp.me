@@ -37,15 +37,15 @@ namespace PixQrCodeGeneratorOffline.Services
 
                 var rss = RSSFeedData?.Where(x => x.IsValid())?.Take(5)?.OrderByDescending(x => x.PublishDate).ToList();
 
-                foreach (var item in rss)
-                {
-                    var uri = await item.Link.GetImage();
+                //foreach (var item in rss)
+                //{
+                //    var uri = await item.Link.GetImage();
 
-                    if (!string.IsNullOrWhiteSpace(uri))
-                    {
-                        item.Image = new UriImageSource { Uri = new Uri(uri), CachingEnabled = false };
-                    }
-                }
+                //    if (!string.IsNullOrWhiteSpace(uri))
+                //    {
+                //        item.Image = new UriImageSource { Uri = new Uri(uri), CachingEnabled = false };
+                //    }
+                //}
 
                 return rss;
             }

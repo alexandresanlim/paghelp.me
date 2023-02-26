@@ -1,11 +1,20 @@
 ﻿using Android.App;
 using Android.Content;
+using Android.Content.PM;
 using Android.OS;
-using System.Threading.Tasks;
 
 namespace PixQrCodeGeneratorOffline.Droid
 {
-    [Activity(Theme = "@style/MyTheme.Splash", MainLauncher = true, NoHistory = true, Label = App.AppName, Icon = "@mipmap/icon", HardwareAccelerated = false)]
+    [Activity(Theme = "@style/MyTheme.Splash",
+        MainLauncher = true,
+        NoHistory = true,
+        LaunchMode = LaunchMode.SingleTop,
+        Exported = true,
+        Label = App.AppName,
+        Icon = "@mipmap/icon",
+        HardwareAccelerated = true,
+        WindowSoftInputMode = Android.Views.SoftInput.AdjustResize,
+        ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.KeyboardHidden | ConfigChanges.Keyboard | ConfigChanges.ScreenSize | ConfigChanges.SmallestScreenSize | ConfigChanges.Locale | ConfigChanges.LayoutDirection | ConfigChanges.FontScale | ConfigChanges.ScreenLayout | ConfigChanges.Density | ConfigChanges.UiMode)]
     public class LoaderActivity : Activity
     {
         static readonly string TAG = "X:" + typeof(LoaderActivity).Name;

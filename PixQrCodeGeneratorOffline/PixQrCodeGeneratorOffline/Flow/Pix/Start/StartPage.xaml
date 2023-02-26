@@ -104,7 +104,7 @@
                         </controls:CustomIcon.Triggers>
                     </controls:CustomIcon>
                     <StackLayout.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding HideValueCommand}" />
+                        <TapGestureRecognizer Command="{Binding HideValueCommand, Mode=OneTime}" />
                     </StackLayout.GestureRecognizers>
                 </StackLayout>
             </Grid>
@@ -115,7 +115,7 @@
                 Title="Adicionar Nova"
                 Margin="8,8,8,0"
                 Icon="{x:Static icons:FontAwesomeSolid.PlusCircle}"
-                TapCommand="{Binding NavigateToAddNewKeyPageCommand}" />
+                TapCommand="{Binding NavigateToAddNewKeyPageCommand, Mode=OneTime}" />
 
             <content:DivisionView Margin="0,8,0,0" />
 
@@ -142,20 +142,20 @@
                 Margin="0,8,0,0"
                 BackgroundImage="banner_chaves_contatos.png"
                 Icon="{x:Static icons:FontAwesomeSolid.Users}"
-                SubTitle="Guarde aqui as chaves dos &#x0a;seus contatos, para nunca &#x0a;mais precisar perguntar &#x0a;novamente." />
+                SubTitle="Guarde aqui as chaves dos &#x0a;seus contatos, para não &#x0a;precisar perguntar de novo." />
 
             <contentStart:StartPageContactsKeysView Margin="0,8,0,0" IsVisible="{Binding PixKeyListContact, Converter={StaticResource HasDataConverter}}" />
 
             <templates:TemplateAction
                 Title="Adicionar Nova"
                 Icon="{x:Static icons:FontAwesomeSolid.PlusCircle}"
-                TapCommand="{Binding NavigateToAddNewKeyPageContactCommand}" />
+                TapCommand="{Binding NavigateToAddNewKeyPageContactCommand, Mode=OneTime}" />
 
             <content:DivisionView />
 
             <!--  //////////////////////////////////////////////////////////////////////////////////////////////////////////////  -->
 
-            <StackLayout IsVisible="{Binding CurrentFeedList, Converter={StaticResource HasDataConverter}}">
+            <!--<StackLayout IsVisible="{Binding CurrentFeedList, Converter={StaticResource HasDataConverter}}">
 
                 <templates:TemplateTitlePanel
                     Title="Notícias"
@@ -165,7 +165,20 @@
 
                 <contentStart:StartPageNewsView />
 
-            </StackLayout>
+            </StackLayout>-->
+
+            <content:DivisionView Margin="0,8,0,0" />
+
+            <Grid Padding="0,0,8,0" ColumnDefinitions="*, auto">
+
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding NavigateToNewsCommand, Mode=OneTime}" />
+                </Grid.GestureRecognizers>
+
+                <templates:TemplateTitlePanel Title="Notícias" Icon="{x:Static icons:FontAwesomeSolid.Newspaper}" />
+
+                <content:ChevronRightView Grid.Column="1" />
+            </Grid>
 
             <!--  Preferences  -->
 
@@ -176,7 +189,7 @@
             <Grid Padding="0,0,8,0" ColumnDefinitions="*, auto">
 
                 <Grid.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding NavigateToGuidCommand}" />
+                    <TapGestureRecognizer Command="{Binding NavigateToGuidCommand, Mode=OneTime}" />
                 </Grid.GestureRecognizers>
 
                 <templates:TemplateTitlePanel Title="Guia Pix" Icon="{x:Static icons:FontAwesomeSolid.Lightbulb}" />
