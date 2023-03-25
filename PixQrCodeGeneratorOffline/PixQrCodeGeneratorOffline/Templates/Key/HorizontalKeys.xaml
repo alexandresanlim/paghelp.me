@@ -55,54 +55,50 @@
                     VerticalOptions="Center"
                     WidthRequest="80" />
 
-                <Grid
+                <StackLayout
                     Grid.Column="1"
-                    ColumnDefinitions="auto, *"
-                    RowDefinitions="auto, auto"
-                    RowSpacing="0"
-                    VerticalOptions="Center">
+                    Spacing="8"
+                    VerticalOptions="CenterAndExpand">
+                    <StackLayout Orientation="Horizontal">
+                        <controls:CustomIcon
+                            x:Name="xIconInstitution"
+                            FontSize="{StaticResource FontSizeLarge}"
+                            IconType="FonteBancosBrasileiros"
+                            Style="{DynamicResource styleActionIcon}" />
 
-                    <controls:CustomIcon
-                        x:Name="xIconInstitution"
-                        Grid.Row="0"
-                        Grid.Column="0"
-                        Glyph="{x:Static icons:FontAwesomeSolid.University}"
-                        Style="{DynamicResource styleActionIcon}" />
+                        <Label
+                            x:Name="xInstitutionValue"
+                            Style="{DynamicResource styleActionText}"
+                            Text="InstitutionName"
+                            VerticalOptions="CenterAndExpand" />
+                    </StackLayout>
 
-                    <Label
-                        x:Name="xInstitutionValue"
-                        Grid.Row="0"
-                        Grid.Column="1"
-                        Style="{DynamicResource styleActionText}"
-                        Text="InstitutionName" />
+                    <StackLayout Orientation="Horizontal">
+                        <controls:CustomIcon
+                            x:Name="xIconKey"
+                            FontSize="{StaticResource FontSizeMedium}"
+                            Glyph="{x:Static icons:FontAwesomeSolid.Key}"
+                            Style="{DynamicResource styleActionIcon}" />
 
-                    <controls:CustomIcon
-                        x:Name="xIconKey"
-                        Grid.Row="1"
-                        Grid.Column="0"
-                        Glyph="{x:Static icons:FontAwesomeSolid.Key}"
-                        Style="{DynamicResource styleActionIcon}" />
+                        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                            <Label
+                                x:Name="xKeyValue"
+                                LineBreakMode="MiddleTruncation"
+                                MaxLines="1"
+                                Style="{DynamicResource styleActionText}"
+                                Text="Key" />
 
-
-                    <Label
-                        x:Name="xKeyValue"
-                        Grid.Row="1"
-                        Grid.Column="1"
-                        LineBreakMode="MiddleTruncation"
-                        MaxLines="1"
-                        Style="{DynamicResource styleActionText}"
-                        Text="Key" />
-
-                    <StackLayout
-                        x:Name="xHidePanel"
-                        Grid.Row="1"
-                        Grid.Column="1"
-                        HorizontalOptions="FillAndExpand"
-                        IsVisible="False" />
+                            <StackLayout
+                                x:Name="xHidePanel"
+                                HorizontalOptions="FillAndExpand"
+                                IsVisible="False" />
+                        </Grid>
+                    </StackLayout>
 
 
+                </StackLayout>
 
-                </Grid>
+
 
             </Grid>
 

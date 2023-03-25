@@ -12,6 +12,7 @@
     <None Remove="banner_suas_chaves.png" />
     <None Remove="Fonts\fa-brands-400.ttf" />
     <None Remove="Fonts\fa-solid-900.ttf" />
+    <None Remove="Fonts\Fonte-Bancos-Brasileiros.ttf" />
     <None Remove="Fonts\Poppins-Bold.ttf" />
     <None Remove="Fonts\Poppins-ExtraBold.ttf" />
     <None Remove="Fonts\Poppins-Italic.ttf" />
@@ -28,6 +29,7 @@
     <EmbeddedResource Include="banner_suas_chaves.png" />
     <EmbeddedResource Include="Fonts\fa-brands-400.ttf" />
     <EmbeddedResource Include="Fonts\fa-solid-900.ttf" />
+    <EmbeddedResource Include="Fonts\Fonte-Bancos-Brasileiros.ttf" />
     <EmbeddedResource Include="Fonts\Poppins-Bold.ttf" />
     <EmbeddedResource Include="Fonts\Poppins-ExtraBold.ttf" />
     <EmbeddedResource Include="Fonts\Poppins-Italic.ttf" />

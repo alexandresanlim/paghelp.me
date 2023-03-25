@@ -70,9 +70,8 @@
     <ScrollView VerticalOptions="FillAndExpand">
         <StackLayout Spacing="0">
 
-            <Grid ColumnDefinitions="*, 80" ColumnSpacing="0">
 
-                <Image Grid.ColumnSpan="2" Source="{local:ImageResource PixQrCodeGeneratorOffline.}" />
+            <Grid ColumnDefinitions="*, 80" ColumnSpacing="0">
 
                 <templates:TemplateTitlePanel
                     Title="Minhas Chaves Pix"

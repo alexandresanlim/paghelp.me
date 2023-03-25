@@ -1,4 +1,5 @@
-﻿using PixQrCodeGeneratorOffline.Models.DataStatic.Institutions.Base;
+﻿using PixQrCodeGeneratorOffline.Helpers.Icon;
+using PixQrCodeGeneratorOffline.Models.DataStatic.Institutions.Base;
 using PixQrCodeGeneratorOffline.Models.DataStatic.Institutions.Interfaces;
 using Xamarin.Forms;
 
@@ -9,6 +10,8 @@ namespace PixQrCodeGeneratorOffline.Models.DataStatic.Institutions
         public string Name => "Safra";
 
         public FinancialInstitutionType Type => FinancialInstitutionType.Safra;
+
+        public new string Icon => FontBancos.Safra;
 
         public MaterialColor MaterialColor => new MaterialColor()
         {

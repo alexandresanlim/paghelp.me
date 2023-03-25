@@ -10,3 +10,4 @@ using Xamarin.Forms.Xaml;
 [assembly: ExportFont("Poppins-Italic.ttf", Alias = "FontPoppinsItalic")]
 [assembly: ExportFont("fa-brands-400.ttf", Alias = "FontAwesomeBrands")]
 [assembly: ExportFont("fa-solid-900.ttf", Alias = "FontAwesomeSolid")]
+[assembly: ExportFont("Fonte-Bancos-Brasileiros.ttf", Alias = "FonteBancosBrasileiros")]

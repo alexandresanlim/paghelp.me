@@ -23,6 +23,8 @@
                                 Icon="{Binding Emoji}" />
 
                             <content:DivisionView />
+                            
+                            
                         </StackLayout>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>

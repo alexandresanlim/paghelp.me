@@ -1,6 +1,7 @@
 ﻿using AsyncAwaitBestPractices;
 using PixQrCodeGeneratorOffline.Base.ViewModels;
 using PixQrCodeGeneratorOffline.Extention;
+using PixQrCodeGeneratorOffline.Helpers.Icon;
 using PixQrCodeGeneratorOffline.Services;
 using Plugin.Fingerprint;
 using System.Threading.Tasks;

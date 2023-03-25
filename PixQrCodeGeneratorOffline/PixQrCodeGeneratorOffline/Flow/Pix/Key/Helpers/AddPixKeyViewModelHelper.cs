@@ -1,4 +1,5 @@
 ﻿using PixQrCodeGeneratorOffline.Extention;
+using PixQrCodeGeneratorOffline.Helpers.Icon;
 using PixQrCodeGeneratorOffline.Models.Base;
 using System.Collections.ObjectModel;
 using System.Linq;
