@@ -8,7 +8,7 @@ namespace PixQrCodeGeneratorOffline.Models.DataStatic.Institutions.Base
     {
         protected readonly IMaterialColorService _materialColorService;
 
-        public string Icon => "";
+        public string Icon => FontBancos.Pix;
 
         public InstitutionBase()
         {

@@ -969,5 +969,7 @@
         public const string BancoBrasilia = "\ue912";
         public const string BancoBrasil = "\ue913";
         public const string BancoAmazonia = "\ue914";
+        public const string PicPay = "\ue915";
+        public const string Pix = "\ue999";
     }
 }

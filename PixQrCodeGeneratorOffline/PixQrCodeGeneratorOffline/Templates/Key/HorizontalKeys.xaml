@@ -82,11 +82,13 @@
                             x:Name="xIconKey"
                             FontSize="{StaticResource FontSizeMicro}"
                             Glyph="{x:Static icons:FontAwesomeSolid.Key}"
+                            IsVisible="False"
                             Style="{DynamicResource styleActionIcon}" />
 
                         <Grid HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
                             <Label
                                 x:Name="xKeyValue"
+                                FontSize="{StaticResource FontSizeSmall}"
                                 LineBreakMode="MiddleTruncation"
                                 MaxLines="1"
                                 Text="Key" />
