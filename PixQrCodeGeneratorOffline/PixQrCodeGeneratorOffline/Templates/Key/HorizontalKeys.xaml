@@ -13,14 +13,14 @@
     <StackLayout.Resources>
         <ResourceDictionary>
             <Style x:Key="styleActionText" TargetType="Label">
-                <Setter Property="FontSize" Value="{DynamicResource FontSizeSmall}" />
+                <Setter Property="FontSize" Value="{StaticResource FontSizeSmall}" />
                 <Setter Property="TextColor" Value="{DynamicResource textPrimary}" />
-                <Setter Property="FontFamily" Value="{DynamicResource FontSemiBold}" />
+                <Setter Property="FontFamily" Value="{StaticResource FontSemiBold}" />
                 <Setter Property="VerticalOptions" Value="CenterAndExpand" />
             </Style>
 
             <Style x:Key="styleActionIcon" TargetType="controls:CustomIcon">
-                <Setter Property="FontSize" Value="{DynamicResource FontSizeSmall}" />
+                <Setter Property="FontSize" Value="{StaticResource FontSizeSmall}" />
                 <Setter Property="TextColor" Value="{DynamicResource textPrimary}" />
                 <Setter Property="VerticalOptions" Value="CenterAndExpand" />
                 <Setter Property="FontSize" Value="{StaticResource FontSizeSmall}" />
@@ -43,9 +43,9 @@
 
             <Grid
                 Grid.Column="1"
-                Padding="10,15"
+                Padding="8,16"
                 ColumnDefinitions="80,*"
-                ColumnSpacing="15">
+                ColumnSpacing="16">
 
                 <qr:QRCode
                     x:Name="xQrCode"
@@ -55,11 +55,11 @@
                     VerticalOptions="Center"
                     WidthRequest="80" />
 
-                <StackLayout
-                    Grid.Column="1"
-                    Spacing="8"
-                    VerticalOptions="CenterAndExpand">
-                    <StackLayout Orientation="Horizontal">
+                <StackLayout Grid.Column="1" Padding="0,4">
+                    <StackLayout
+                        Orientation="Horizontal"
+                        Spacing="8"
+                        VerticalOptions="EndAndExpand">
                         <controls:CustomIcon
                             x:Name="xIconInstitution"
                             FontSize="{StaticResource FontSizeLarge}"
@@ -68,15 +68,19 @@
 
                         <Label
                             x:Name="xInstitutionValue"
+                            FontSize="{StaticResource FontSizeMedium}"
                             Style="{DynamicResource styleActionText}"
                             Text="InstitutionName"
                             VerticalOptions="CenterAndExpand" />
                     </StackLayout>
 
-                    <StackLayout Orientation="Horizontal">
+                    <StackLayout
+                        Orientation="Horizontal"
+                        Spacing="8"
+                        VerticalOptions="EndAndExpand">
                         <controls:CustomIcon
                             x:Name="xIconKey"
-                            FontSize="{StaticResource FontSizeMedium}"
+                            FontSize="{StaticResource FontSizeMicro}"
                             Glyph="{x:Static icons:FontAwesomeSolid.Key}"
                             Style="{DynamicResource styleActionIcon}" />
 
@@ -85,7 +89,6 @@
                                 x:Name="xKeyValue"
                                 LineBreakMode="MiddleTruncation"
                                 MaxLines="1"
-                                Style="{DynamicResource styleActionText}"
                                 Text="Key" />
 
                             <StackLayout

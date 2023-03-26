@@ -11,7 +11,7 @@ namespace PixQrCodeGeneratorOffline.Models.DataStatic.Institutions
 
         public FinancialInstitutionType Type => FinancialInstitutionType.Bradesco;
 
-        public new string Icon => FontBancos.Bradesco;
+        public new string Icon => FontBancos.BradescoAlt;
 
         public MaterialColor MaterialColor => new MaterialColor()
         {

@@ -19,12 +19,6 @@ namespace PixQrCodeGeneratorOffline.Controls
                if (newValue is string value)
                {
                    b.Text = value;
-
-                   if(string.IsNullOrWhiteSpace(b?.Text))
-                   {
-
-                   }
-
                    b.IsVisible = !string.IsNullOrWhiteSpace(b?.Text);
                }
            });
