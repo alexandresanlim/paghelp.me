@@ -164,7 +164,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                     var confirm = await DialogService.ConfirmAsync("Tem certeza que deseja excluir a chave " + CurrentPixKey.Key + "?", "Confirmação", "Sim", "Cancelar");
 
                     if (!confirm)
-                        return;
+                        break;
 
                     try
                     {
