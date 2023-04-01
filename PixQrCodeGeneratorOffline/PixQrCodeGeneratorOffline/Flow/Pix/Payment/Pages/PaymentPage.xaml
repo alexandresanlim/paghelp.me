@@ -84,7 +84,7 @@
 
                     <Frame
                         Margin="0,8,0,12"
-                        Padding="16,8"
+                        Padding="8"
                         BackgroundColor="{StaticResource staticForegroundPage}"
                         CornerRadius="4">
                         <Label TextColor="{StaticResource staticTextPrimary}">
