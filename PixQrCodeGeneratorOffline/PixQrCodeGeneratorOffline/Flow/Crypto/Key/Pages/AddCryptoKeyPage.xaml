@@ -19,8 +19,8 @@
             </Style>
 
             <Style x:Key="styleInputTitle" TargetType="Label">
-                <Setter Property="FontSize" Value="{DynamicResource FontSizeMedium}" />
-                <Setter Property="FontFamily" Value="{DynamicResource FontSemiBold}" />
+                <Setter Property="FontSize" Value="{StaticResource FontSizeMedium}" />
+                <Setter Property="FontFamily" Value="{StaticResource FontSemiBold}" />
                 <Setter Property="Margin" Value="10,0,0,0" />
                 <Setter Property="TextColor" Value="{DynamicResource textPrimary}" />
             </Style>
@@ -53,7 +53,7 @@
                         HorizontalOptions="Center"
                         TextColor="{DynamicResource textPrimary}" />
                     <Label
-                        FontFamily="{DynamicResource FontBold}"
+                        FontFamily="{StaticResource FontBold}"
                         Text="Excluir"
                         TextColor="{DynamicResource textPrimary}" />
                 </StackLayout>
@@ -67,7 +67,7 @@
                         HorizontalOptions="Center"
                         TextColor="{DynamicResource textPrimary}" />
                     <Label
-                        FontFamily="{DynamicResource FontBold}"
+                        FontFamily="{StaticResource FontBold}"
                         Text="Salvar"
                         TextColor="{DynamicResource textPrimary}" />
                 </StackLayout>
@@ -86,13 +86,13 @@
                         <StackLayout Padding="5,15,5,0">
                             <StackLayout Padding="0,15,0,0" Spacing="15">
                                 <controls:CustomIcon
-                                    FontSize="{DynamicResource FontSizeLarge}"
+                                    FontSize="{StaticResource FontSizeLarge}"
                                     Glyph="{Binding Icon}"
                                     HorizontalOptions="CenterAndExpand"
                                     TextColor="{DynamicResource textPrimary}" />
                                 <Label
                                     FontFamily="{StaticResource FontBold}"
-                                    FontSize="{DynamicResource FontSizeLarge}"
+                                    FontSize="{StaticResource FontSizeLarge}"
                                     HorizontalTextAlignment="Center"
                                     Text="{Binding Title}"
                                     TextColor="{DynamicResource textPrimary}"
@@ -119,8 +119,8 @@
                                 </Frame.GestureRecognizers>
                                 <StackLayout Orientation="Horizontal">
                                     <Label
-                                        FontFamily="{DynamicResource FontBold}"
-                                        FontSize="{DynamicResource FontSizeMedium}"
+                                        FontFamily="{StaticResource FontBold}"
+                                        FontSize="{StaticResource FontSizeMedium}"
                                         HorizontalOptions="FillAndExpand"
                                         Text="{Binding Placeholder}"
                                         TextColor="{DynamicResource textSecondary}" />

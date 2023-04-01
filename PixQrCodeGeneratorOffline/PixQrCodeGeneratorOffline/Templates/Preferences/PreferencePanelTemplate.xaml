@@ -9,7 +9,7 @@
 
     <controls:CustomIcon
         x:Name="xIcon"
-        FontSize="{DynamicResource FontSizeMedium}"
+        FontSize="{StaticResource FontSizeMedium}"
         HorizontalOptions="Start"
         TextColor="{DynamicResource textPrimary}" />
 

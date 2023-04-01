@@ -34,8 +34,8 @@
             </Style>
 
             <Style x:Key="styleInputTitle" TargetType="Label">
-                <Setter Property="FontSize" Value="{DynamicResource FontSizeMedium}" />
-                <Setter Property="FontFamily" Value="{DynamicResource FontSemiBold}" />
+                <Setter Property="FontSize" Value="{StaticResource FontSizeMedium}" />
+                <Setter Property="FontFamily" Value="{StaticResource FontSemiBold}" />
                 <Setter Property="Margin" Value="10,0,0,0" />
                 <Setter Property="TextColor" Value="{StaticResource staticTextPrimary}" />
             </Style>
@@ -103,13 +103,13 @@
 
                             <StackLayout Padding="0,15,0,0" Spacing="15">
                                 <controls:CustomIcon
-                                    FontSize="{DynamicResource FontSizeLarge}"
+                                    FontSize="{StaticResource FontSizeLarge}"
                                     Glyph="{Binding Icon}"
                                     HorizontalOptions="CenterAndExpand"
                                     Style="{StaticResource styleForegroundText}" />
                                 <Label
                                     FontFamily="{StaticResource FontBold}"
-                                    FontSize="{DynamicResource FontSizeLarge}"
+                                    FontSize="{StaticResource FontSizeLarge}"
                                     HorizontalTextAlignment="Center"
                                     Style="{StaticResource styleForegroundText}"
                                     Text="{Binding Title}" />
@@ -142,13 +142,13 @@
                                 </StackLayout.GestureRecognizers>
 
                                 <Label
-                                    FontSize="{DynamicResource FontSizeMedium}"
+                                    FontSize="{StaticResource FontSizeMedium}"
                                     HorizontalOptions="FillAndExpand"
                                     Text="{Binding Placeholder}"
                                     TextColor="{StaticResource staticTextSecondary}"
                                     VerticalOptions="CenterAndExpand" />
                                 <controls:CustomIcon
-                                    FontSize="{DynamicResource FontSizeMedium}"
+                                    FontSize="{StaticResource FontSizeMedium}"
                                     Glyph="{x:Static icons:FontAwesomeSolid.ChevronDown}"
                                     TextColor="{StaticResource staticTextSecondary}"
                                     VerticalOptions="CenterAndExpand" />

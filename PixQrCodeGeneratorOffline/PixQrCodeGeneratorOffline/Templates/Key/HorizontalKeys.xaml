@@ -64,12 +64,14 @@
                             x:Name="xIconInstitution"
                             FontSize="{StaticResource FontSizeLarge}"
                             IconType="FonteBancosBrasileiros"
-                            Style="{DynamicResource styleActionIcon}" />
+                            Style="{StaticResource styleActionIcon}" />
 
                         <Label
                             x:Name="xInstitutionValue"
                             FontSize="{StaticResource FontSizeMedium}"
-                            Style="{DynamicResource styleActionText}"
+                            LineBreakMode="TailTruncation"
+                            MaxLines="1"
+                            Style="{StaticResource styleActionText}"
                             Text="InstitutionName"
                             VerticalOptions="CenterAndExpand" />
                     </StackLayout>
@@ -83,7 +85,7 @@
                             FontSize="{StaticResource FontSizeMicro}"
                             Glyph="{x:Static icons:FontAwesomeSolid.Key}"
                             IsVisible="False"
-                            Style="{DynamicResource styleActionIcon}" />
+                            Style="{StaticResource styleActionIcon}" />
 
                         <Grid HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
                             <Label

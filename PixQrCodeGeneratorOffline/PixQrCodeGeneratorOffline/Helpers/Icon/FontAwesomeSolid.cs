@@ -970,6 +970,10 @@
         public const string BancoBrasil = "\ue913";
         public const string BancoAmazonia = "\ue914";
         public const string PicPay = "\ue915";
+        public const string BancoInter = "\ue916";
+        public const string BtgPactual = "\ue927";
+        public const string EfiBank = "\ue928";
+        public const string Neon = "\ue929";
         public const string Pix = "\ue999";
     }
 }

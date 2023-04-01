@@ -66,7 +66,7 @@
                             Orientation="Horizontal"
                             VerticalOptions="EndAndExpand">
                             <Label
-                                FontSize="{DynamicResource FontSizeMicro}"
+                                FontSize="{StaticResource FontSizeMicro}"
                                 HorizontalOptions="StartAndExpand"
                                 Text="{Binding Viewer.PublishDateDisplay}"
                                 TextColor="{DynamicResource textSecondary}"
@@ -76,7 +76,7 @@
                                     <TapGestureRecognizer Command="{Binding Command.ShareCommand}" />
                                 </StackLayout.GestureRecognizers>
                                 <controls:CustomIcon
-                                    FontSize="{DynamicResource FontSizeMedium}"
+                                    FontSize="{StaticResource FontSizeMedium}"
                                     Glyph="{x:Static icons:FontAwesomeSolid.ShareAlt}"
                                     HorizontalOptions="EndAndExpand"
                                     TextColor="{DynamicResource textSecondary}"

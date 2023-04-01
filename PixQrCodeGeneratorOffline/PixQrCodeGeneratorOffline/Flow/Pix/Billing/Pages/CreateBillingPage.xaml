@@ -23,7 +23,7 @@
                 BasedOn="{StaticResource StyleTextOnButton}"
                 TargetType="Label">
                 <Setter Property="FontSize" Value="35" />
-                <Setter Property="FontFamily" Value="{DynamicResource FontSemiBold}" />
+                <Setter Property="FontFamily" Value="{StaticResource FontSemiBold}" />
                 <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
                 <Setter Property="VerticalOptions" Value="CenterAndExpand" />
             </Style>
@@ -44,21 +44,21 @@
             <Style x:Key="styleSymbolValueText" TargetType="Label">
                 <Setter Property="TextColor" Value="{DynamicResource textPrimary}" />
                 <Setter Property="FontSize" Value="30" />
-                <Setter Property="FontFamily" Value="{DynamicResource FontSemiBold}" />
+                <Setter Property="FontFamily" Value="{StaticResource FontSemiBold}" />
                 <Setter Property="Margin" Value="0,15,0,0" />
             </Style>
 
             <Style x:Key="styleValueText" TargetType="Label">
                 <Setter Property="TextColor" Value="{DynamicResource textPrimary}" />
                 <Setter Property="FontSize" Value="60" />
-                <Setter Property="FontFamily" Value="{DynamicResource FontSemiBold}" />
+                <Setter Property="FontFamily" Value="{StaticResource FontSemiBold}" />
             </Style>
 
             <Style x:Key="styleActionText" TargetType="Label">
                 <Setter Property="TextTransform" Value="Uppercase" />
                 <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
-                <Setter Property="FontFamily" Value="{DynamicResource FontBold}" />
-                <Setter Property="FontSize" Value="{DynamicResource FontSizeLarge}" />
+                <Setter Property="FontFamily" Value="{StaticResource FontBold}" />
+                <Setter Property="FontSize" Value="{StaticResource FontSizeLarge}" />
 
             </Style>
 
@@ -66,7 +66,7 @@
                 x:Key="styleActionIcon"
                 BasedOn="{StaticResource StyleTextOnButton}"
                 TargetType="controls:CustomIcon">
-                <Setter Property="FontSize" Value="{DynamicResource FontSizeLarge}" />
+                <Setter Property="FontSize" Value="{StaticResource FontSizeLarge}" />
                 <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
             </Style>
 
@@ -106,8 +106,8 @@
 
                         <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
                             <Label
-                                FontFamily="{DynamicResource FontBold}"
-                                FontSize="{DynamicResource FontSizeSmall}"
+                                FontFamily="{StaticResource FontBold}"
+                                FontSize="{StaticResource FontSizeSmall}"
                                 Text="{Binding CurrentDescription}"
                                 TextColor="{Binding CurrentStyleFromKey.TextOnPrimary}"
                                 VerticalOptions="CenterAndExpand" />

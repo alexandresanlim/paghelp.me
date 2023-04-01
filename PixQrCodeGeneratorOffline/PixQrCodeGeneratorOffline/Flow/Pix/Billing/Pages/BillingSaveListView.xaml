@@ -101,8 +101,8 @@
                             <Label
                                 Grid.Row="2"
                                 Grid.Column="1"
-                                FontFamily="{DynamicResource FontBold}"
-                                FontSize="{DynamicResource FontSizeLarge}"
+                                FontFamily="{StaticResource FontBold}"
+                                FontSize="{StaticResource FontSizeLarge}"
                                 Text="{Binding PixCob.Viewer.ValuePresentation}"
                                 TextColor="{Binding PixKey.FinancialInstitution.Institution.MaterialColor.Primary}" />
 

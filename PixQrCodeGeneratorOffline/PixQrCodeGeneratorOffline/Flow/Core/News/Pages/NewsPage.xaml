@@ -70,19 +70,19 @@
 
                                         <StackLayout Padding="15">
                                             <Label
-                                                FontFamily="{DynamicResource FontSemiBold}"
-                                                FontSize="{DynamicResource FontSizeSmall}"
+                                                FontFamily="{StaticResource FontSemiBold}"
+                                                FontSize="{StaticResource FontSizeSmall}"
                                                 Text="{Binding Source}"
                                                 TextColor="{DynamicResource textPrimary}" />
                                             <Label
-                                                FontSize="{DynamicResource FontSizeSmall}"
+                                                FontSize="{StaticResource FontSizeSmall}"
                                                 Text="{Binding Title}"
                                                 TextColor="{DynamicResource textSecondary}"
                                                 VerticalOptions="FillAndExpand" />
 
                                             <StackLayout Orientation="Horizontal">
                                                 <Label
-                                                    FontSize="{DynamicResource FontSizeMicro}"
+                                                    FontSize="{StaticResource FontSizeMicro}"
                                                     HorizontalOptions="StartAndExpand"
                                                     Text="{Binding Viewer.PublishDateDisplay}"
                                                     TextColor="{DynamicResource textSecondary}"
@@ -93,7 +93,7 @@
 
                                                     </StackLayout.GestureRecognizers>
                                                     <controls:CustomIcon
-                                                        FontSize="{DynamicResource FontSizeMedium}"
+                                                        FontSize="{StaticResource FontSizeMedium}"
                                                         Glyph="{x:Static icons:FontAwesomeSolid.ShareAlt}"
                                                         HorizontalOptions="CenterAndExpand"
                                                         TextColor="{DynamicResource textSecondary}" />

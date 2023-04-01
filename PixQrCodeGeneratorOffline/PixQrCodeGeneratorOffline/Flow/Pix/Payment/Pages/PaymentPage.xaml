@@ -123,8 +123,8 @@
 
                     <!--<Label
                     Margin="0,15,0,0"
-                    FontFamily="{DynamicResource FontBold}"
-                    FontSize="{DynamicResource FontSizeMedium}"
+                    FontFamily="{StaticResource FontBold}"
+                    FontSize="{StaticResource FontSizeMedium}"
                     HorizontalOptions="Center"
                     IsVisible="{Binding CurrentPixPaylod.PixKey.Viewer.NamePresentation, Converter={StaticResource HasDataConverter}}"
                     Text="{Binding CurrentPixPaylod.PixKey.Viewer.NamePresentation, StringFormat='Para: {0}'}"

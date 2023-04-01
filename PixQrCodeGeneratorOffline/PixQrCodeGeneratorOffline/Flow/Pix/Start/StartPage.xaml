@@ -18,16 +18,16 @@
 
             <Style x:Key="styleGridActionChevronIcon" TargetType="controls:CustomIcon">
                 <Setter Property="VerticalOptions" Value="CenterAndExpand" />
-                <Setter Property="FontSize" Value="{DynamicResource FontSizeMedium}" />
+                <Setter Property="FontSize" Value="{StaticResource FontSizeMedium}" />
                 <Setter Property="TextColor" Value="{DynamicResource textPrimary}" />
                 <Setter Property="Grid.Column" Value="0" />
             </Style>
 
             <Style x:Key="styleGridActionTitle" TargetType="Label">
-                <Setter Property="FontSize" Value="{DynamicResource FontSizeSmall}" />
+                <Setter Property="FontSize" Value="{StaticResource FontSizeSmall}" />
                 <Setter Property="TextColor" Value="{DynamicResource textPrimary}" />
                 <Setter Property="Grid.Column" Value="1" />
-                <Setter Property="FontFamily" Value="{DynamicResource FontSemiBold}" />
+                <Setter Property="FontFamily" Value="{StaticResource FontSemiBold}" />
             </Style>
 
             <Style x:Key="styleFrameAction" TargetType="Frame">
@@ -42,13 +42,13 @@
             <Style x:Key="styleTextOnButtonActionListContact" TargetType="Label">
                 <Setter Property="TextColor" Value="{DynamicResource textPrimary}" />
                 <Setter Property="HorizontalOptions" Value="Center" />
-                <Setter Property="FontSize" Value="{DynamicResource FontSizeMicro}" />
-                <Setter Property="FontFamily" Value="{DynamicResource FontSemiBold}" />
+                <Setter Property="FontSize" Value="{StaticResource FontSizeMicro}" />
+                <Setter Property="FontFamily" Value="{StaticResource FontSemiBold}" />
 
             </Style>
 
             <Style x:Key="styleIconActionListContact" TargetType="controls:CustomIcon">
-                <Setter Property="FontSize" Value="{DynamicResource FontSizeMedium}" />
+                <Setter Property="FontSize" Value="{StaticResource FontSizeMedium}" />
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="TextColor" Value="{DynamicResource textPrimary}" />
             </Style>
@@ -77,8 +77,9 @@
                     Title="Minhas Chaves Pix"
                     Grid.Column="0"
                     BackgroundColor="{Binding CurrentPixKey.FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
-                    Icon="{x:Static icons:FontAwesomeSolid.Key}"
+                    Icon="{x:Static icons:FontBancos.Pix}"
                     IconColor="{Binding CurrentPixKey.FinancialInstitution.Institution.MaterialColor.TextOnPrimary}"
+                    IconType="FonteBancosBrasileiros"
                     TitleColor="{Binding CurrentPixKey.FinancialInstitution.Institution.MaterialColor.TextOnPrimary}" />
 
                 <StackLayout

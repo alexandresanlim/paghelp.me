@@ -22,7 +22,7 @@
         </Frame.GestureRecognizers>
         <controls:CustomIcon
             BackgroundColor="#99000000"
-            FontSize="{DynamicResource FontSizeMedium}"
+            FontSize="{StaticResource FontSizeMedium}"
             Glyph="{x:Static icons:FontAwesomeSolid.TimesCircle}"
             TextColor="{DynamicResource primary}" />
     </Frame>

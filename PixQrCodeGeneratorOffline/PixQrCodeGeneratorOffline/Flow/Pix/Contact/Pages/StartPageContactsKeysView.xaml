@@ -74,7 +74,7 @@
                                 Spacing="0"
                                 VerticalOptions="CenterAndExpand">
                                 <Label
-                                    FontFamily="{DynamicResource FontSemiBold}"
+                                    FontFamily="{StaticResource FontSemiBold}"
                                     FontSize="{StaticResource FontSizeSmall}"
                                     Style="{StaticResource StyleInfos}"
                                     Text="{Binding Viewer.NamePresentation}" />
