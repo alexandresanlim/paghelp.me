@@ -12,8 +12,8 @@
         <Style x:Key="styleTextOnButtonActionList" TargetType="Label">
             <Setter Property="TextColor" Value="{DynamicResource staticAccentTextOnPrimary}" />
             <Setter Property="HorizontalOptions" Value="Center" />
-            <Setter Property="FontSize" Value="{DynamicResource FontSizeMicro}" />
-            <Setter Property="FontFamily" Value="{DynamicResource FontSemiBold}" />
+            <Setter Property="FontSize" Value="{StaticResource FontSizeMicro}" />
+            <Setter Property="FontFamily" Value="{StaticResource FontSemiBold}" />
 
         </Style>
 
@@ -91,7 +91,7 @@
 
                                     <StackLayout Grid.Column="1" Spacing="0">
                                         <Label
-                                            FontFamily="{DynamicResource FontBold}"
+                                            FontFamily="{StaticResource FontBold}"
                                             FontSize="{StaticResource FontSizeMedium}"
                                             Text="{Binding Viewer.NamePresentation}"
                                             TextColor="{DynamicResource textPrimary}" />
@@ -180,11 +180,11 @@
 
                         <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
                             <controls:CustomIcon
-                                FontSize="{DynamicResource FontSizeSmall}"
+                                FontSize="{StaticResource FontSizeSmall}"
                                 Glyph="{x:Static icons:FontAwesomeSolid.Cog}"
                                 TextColor="{DynamicResource textOnSecondary}" />
                             <Label
-                                FontFamily="{DynamicResource FontBold}"
+                                FontFamily="{StaticResource FontBold}"
                                 FontSize="{StaticResource FontSizeSmall}"
                                 Text="Opções"
                                 TextColor="{DynamicResource textOnSecondary}" />
@@ -204,12 +204,12 @@
 
                         <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
                             <Label
-                                FontFamily="{DynamicResource FontBold}"
+                                FontFamily="{StaticResource FontBold}"
                                 FontSize="{StaticResource FontSizeSmall}"
                                 Text="Adicionar"
                                 TextColor="{DynamicResource textOnSecondary}" />
                             <controls:CustomIcon
-                                FontSize="{DynamicResource FontSizeSmall}"
+                                FontSize="{StaticResource FontSizeSmall}"
                                 Glyph="{x:Static icons:FontAwesomeSolid.PlusCircle}"
                                 TextColor="{DynamicResource textOnSecondary}" />
                         </StackLayout>
@@ -266,12 +266,12 @@
                         <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
 
                             <Label
-                                FontFamily="{DynamicResource FontBold}"
+                                FontFamily="{StaticResource FontBold}"
                                 FontSize="{StaticResource FontSizeSmall}"
                                 Text="Adicionar chave de contato"
                                 TextColor="{DynamicResource textOnSecondary}" />
                             <controls:CustomIcon
-                                FontSize="{DynamicResource FontSizeSmall}"
+                                FontSize="{StaticResource FontSizeSmall}"
                                 Glyph="{x:Static icons:FontAwesomeSolid.PlusCircle}"
                                 TextColor="{DynamicResource textOnSecondary}" />
                         </StackLayout>

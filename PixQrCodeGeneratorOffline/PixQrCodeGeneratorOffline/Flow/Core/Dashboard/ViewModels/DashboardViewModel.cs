@@ -27,6 +27,8 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public IAsyncCommand NavigateToGuidCommand => new AsyncCommand(async () => await NavigateAsync(new GuidePage()));
 
+        public IAsyncCommand NavigateToNewsCommand => new AsyncCommand(async () => await NavigateAsync(new NewsPage()));
+
         public IAsyncCommand NavigateToAddNewKeyPageCommand => new AsyncCommand(async () => await _pixKeyService.NavigateToAdd().ConfigureAwait(false));
 
         public IAsyncCommand NavigateToAddNewKeyPageContactCommand => new AsyncCommand(async () => await _pixKeyService.NavigateToAdd(isContact: true));
@@ -95,8 +97,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 finally
                 {
                     IsBusy = false;
-
-                    await LoadNews().ConfigureAwait(false);
                 }
             });
         }
@@ -164,7 +164,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                     var confirm = await DialogService.ConfirmAsync("Tem certeza que deseja excluir a chave " + CurrentPixKey.Key + "?", "Confirmação", "Sim", "Cancelar");
 
                     if (!confirm)
-                        return;
+                        break;
 
                     try
                     {
@@ -255,42 +255,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                         }),
                     });
                 }
-            }
-        }
-
-        public async Task LoadNews()
-        {
-            if (!Preference.ShowNews || Connectivity.NetworkAccess != NetworkAccess.Internet)
-            {
-                CurrentFeedList = new ObservableCollection<Feed>();
-                return;
-            }
-
-            try
-            {
-                IsBusy = true;
-
-                FeedFromService = FeedFromService ?? await _feedService.Get("https://news.google.com/rss/search?q=pix%20-fraude%20-golpista%20-golpistas%20-erro%20-lula%20-bolsonaro%20-golpe&hl=pt-BR&gl=BR&ceid=BR%3Apt-419");
-
-                CurrentFeedList = FeedFromService?.ToObservableCollection();
-            }
-            catch (Exception e)
-            {
-                e.SendToLog();
-            }
-            finally
-            {
-                IsBusy = false;
-
-                //foreach (var item in CurrentFeedList)
-                //{
-                //    var uri = await item.Link.GetImage();
-
-                //    if (!string.IsNullOrEmpty(uri))
-                //    {
-                //        item.Image = uri;
-                //    }
-                //}
             }
         }
 

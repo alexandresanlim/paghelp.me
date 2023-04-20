@@ -1,4 +1,5 @@
-﻿using PixQrCodeGeneratorOffline.Models.DataStatic.Institutions.Base;
+﻿using PixQrCodeGeneratorOffline.Helpers.Icon;
+using PixQrCodeGeneratorOffline.Models.DataStatic.Institutions.Base;
 using PixQrCodeGeneratorOffline.Models.DataStatic.Institutions.Interfaces;
 using Xamarin.Forms;
 
@@ -10,6 +11,8 @@ namespace PixQrCodeGeneratorOffline.Models.DataStatic.Institutions
 
         public FinancialInstitutionType Type => FinancialInstitutionType.Sicredi;
 
+        public new string Icon => FontBancos.Sicred;
+
         public MaterialColor MaterialColor => new MaterialColor()
         {
             Name = "sicredi",
@@ -18,5 +21,7 @@ namespace PixQrCodeGeneratorOffline.Models.DataStatic.Institutions
             PrimaryLight = Color.FromHex("#9af866"),
             TextOnPrimary = Color.FromHex("#ffffff")
         };
+
+        
     }
 }

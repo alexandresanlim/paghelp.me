@@ -37,16 +37,28 @@
 
     <!--<Grid RowDefinitions="*, 0.1*">-->
 
-    <Frame
+    <!--<Frame
         Margin="8,8,8,50"
         Padding="0"
-        BackgroundColor="{StaticResource staticBackgroundPage}"
         CornerRadius="8"
         VerticalOptions="Center">
 
-        <Grid RowDefinitions="*,auto" RowSpacing="0">
 
-            <ScrollView Grid.Row="0" Padding="16,24,16,0">
+
+    </Frame>-->
+
+    <Grid
+        RowDefinitions="*,20,auto"
+        RowSpacing="0"
+        VerticalOptions="Center">
+
+        <Frame
+            Grid.Row="0"
+            Margin="8,0,8,-1"
+            Padding="16,16,16,0"
+            BackgroundColor="{StaticResource staticBackgroundPage}"
+            CornerRadius="12">
+            <ScrollView>
                 <StackLayout Spacing="0" VerticalOptions="End">
 
                     <Label
@@ -72,7 +84,7 @@
 
                     <Frame
                         Margin="0,8,0,12"
-                        Padding="16,8"
+                        Padding="8"
                         BackgroundColor="{StaticResource staticForegroundPage}"
                         CornerRadius="4">
                         <Label TextColor="{StaticResource staticTextPrimary}">
@@ -123,8 +135,8 @@
 
                     <!--<Label
                     Margin="0,15,0,0"
-                    FontFamily="{DynamicResource FontBold}"
-                    FontSize="{DynamicResource FontSizeMedium}"
+                    FontFamily="{StaticResource FontBold}"
+                    FontSize="{StaticResource FontSizeMedium}"
                     HorizontalOptions="Center"
                     IsVisible="{Binding CurrentPixPaylod.PixKey.Viewer.NamePresentation, Converter={StaticResource HasDataConverter}}"
                     Text="{Binding CurrentPixPaylod.PixKey.Viewer.NamePresentation, StringFormat='Para: {0}'}"
@@ -157,19 +169,33 @@
 
                 </StackLayout>
             </ScrollView>
+        </Frame>
 
-            <StackLayout
-                Grid.Row="1"
-                Margin="0,0,0,8"
-                Padding="8"
-                BackgroundColor="{StaticResource staticBackgroundPage}"
-                Spacing="8">
+        <BoxView
+            Grid.Row="1"
+            Margin="20,0"
+            BackgroundColor="{StaticResource staticBackgroundPage}"
+            HeightRequest="20" />
+
+        <Label
+            Grid.Row="1"
+            HorizontalOptions="CenterAndExpand"
+            Text=" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -"
+            TextColor="#30000000"
+            VerticalOptions="CenterAndExpand" />
+
+
+        <Frame
+            Grid.Row="2"
+            Margin="8,-1,8,0"
+            Padding="16"
+            BackgroundColor="{StaticResource staticBackgroundPage}"
+            CornerRadius="12">
+            <StackLayout Spacing="8">
 
                 <StackLayout.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding ChangeIsActionVisibleCommand, Mode=OneTime}" />
                 </StackLayout.GestureRecognizers>
-
-                <content:DivisionView BackgroundColor="{StaticResource staticForegroundPage}" />
 
                 <StackLayout Orientation="Horizontal">
                     <Label
@@ -286,10 +312,9 @@
                     </Frame>
                 </Grid>
             </StackLayout>
+        </Frame>
 
-        </Grid>
-
-    </Frame>
+    </Grid>
 
     <!--</Grid>-->
 

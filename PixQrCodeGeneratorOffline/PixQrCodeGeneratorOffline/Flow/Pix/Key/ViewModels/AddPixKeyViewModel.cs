@@ -223,7 +223,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 DialogService.ActionSheet(new Acr.UserDialogs.ActionSheetConfig
                 {
-                    Title = "Selecione um instituição",
+                    Title = "Selecione uma instituição",
                     Message = "Caso sua instituição não esteja na lista, toque em adicionar nova",
                     Options = options,
                     //UseBottomSheet = true,

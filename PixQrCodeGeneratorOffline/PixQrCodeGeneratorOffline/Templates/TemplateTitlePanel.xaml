@@ -10,14 +10,14 @@
     <Grid.Resources>
         <ResourceDictionary>
             <Style x:Key="styleTitleBottomIcon" TargetType="Label">
-                <Setter Property="FontSize" Value="{DynamicResource FontSizeMedium}" />
-                <Setter Property="FontFamily" Value="{DynamicResource FontBold}" />
+                <Setter Property="FontSize" Value="{StaticResource FontSizeMedium}" />
+                <Setter Property="FontFamily" Value="{StaticResource FontBold}" />
                 <Setter Property="TextColor" Value="{DynamicResource textPrimary}" />
             </Style>
 
             <Style x:Key="styleTitleIcon" TargetType="controls:CustomIcon">
                 <Setter Property="HorizontalOptions" Value="Start" />
-                <Setter Property="FontSize" Value="{DynamicResource FontSizeMedium}" />
+                <Setter Property="FontSize" Value="{StaticResource FontSizeMedium}" />
                 <Setter Property="TextColor" Value="{DynamicResource textPrimary}" />
             </Style>
         </ResourceDictionary>
@@ -29,7 +29,10 @@
         IsVisible="False" />
 
     <StackLayout Padding="10" Spacing="0">
-        <controls:CustomIcon x:Name="xIcon" Style="{DynamicResource styleTitleIcon}" />
+        <controls:CustomIcon
+            x:Name="xIcon"
+            FontSize="{StaticResource FontSizeLarge}"
+            Style="{DynamicResource styleTitleIcon}" />
 
         <Label
             x:Name="xTitle"

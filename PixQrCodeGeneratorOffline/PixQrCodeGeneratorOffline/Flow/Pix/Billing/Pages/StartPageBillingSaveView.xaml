@@ -14,13 +14,13 @@
     <StackLayout.Resources>
         <ResourceDictionary>
             <Style x:Key="styleActionIcon" TargetType="controls:CustomIcon">
-                <Setter Property="FontSize" Value="{DynamicResource FontSizeSmall}" />
+                <Setter Property="FontSize" Value="{StaticResource FontSizeSmall}" />
                 <Setter Property="VerticalOptions" Value="CenterAndExpand" />
                 <Setter Property="TextColor" Value="{DynamicResource textPrimary}" />
             </Style>
             <Style x:Key="styleActionText" TargetType="Label">
-                <Setter Property="FontFamily" Value="{DynamicResource FontSemiBold}" />
-                <Setter Property="FontSize" Value="{DynamicResource FontSizeSmall}" />
+                <Setter Property="FontFamily" Value="{StaticResource FontSemiBold}" />
+                <Setter Property="FontSize" Value="{StaticResource FontSizeSmall}" />
                 <Setter Property="VerticalOptions" Value="CenterAndExpand" />
                 <Setter Property="TextColor" Value="{DynamicResource textPrimary}" />
             </Style>
@@ -79,7 +79,7 @@
                             VerticalOptions="CenterAndExpand">
 
                             <Label
-                                FontFamily="{DynamicResource FontBold}"
+                                FontFamily="{StaticResource FontBold}"
                                 FontSize="{StaticResource FontSizeMedium}"
                                 LineBreakMode="TailTruncation"
                                 MaxLines="1"
@@ -117,8 +117,8 @@
                             </Grid>
 
                             <Label
-                                FontFamily="{DynamicResource FontBold}"
-                                FontSize="{DynamicResource FontSizeLarge}"
+                                FontFamily="{StaticResource FontBold}"
+                                FontSize="{StaticResource FontSizeLarge}"
                                 Text="{Binding PixCob.Viewer.ValuePresentation}"
                                 TextColor="{DynamicResource textPrimary}" />
 

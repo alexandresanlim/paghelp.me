@@ -1,4 +1,5 @@
-﻿using PixQrCodeGeneratorOffline.Models.DataStatic.Institutions.Base;
+﻿using PixQrCodeGeneratorOffline.Helpers.Icon;
+using PixQrCodeGeneratorOffline.Models.DataStatic.Institutions.Base;
 using PixQrCodeGeneratorOffline.Models.DataStatic.Institutions.Interfaces;
 using Xamarin.Forms;
 
@@ -10,13 +11,15 @@ namespace PixQrCodeGeneratorOffline.Models.DataStatic.Institutions
 
         public FinancialInstitutionType Type => FinancialInstitutionType.Itau;
 
+        public new string Icon => FontBancos.Itau;
+
         public MaterialColor MaterialColor => new MaterialColor()
         {
             Name = "itau",
             Primary = Color.FromHex("#e97515"),
             PrimaryDark = Color.FromHex("#b04700"),
             PrimaryLight = Color.FromHex("#ffa549"),
-            TextOnPrimary = Color.FromHex("#000000")
+            TextOnPrimary = Color.FromHex("#ffffff")
         };
     }
 }

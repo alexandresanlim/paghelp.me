@@ -154,7 +154,9 @@ namespace PixQrCodeGeneratorOffline.Models.Services
             {
                 Name = GetName(institution),
                 Type = GetType(institution),
-                MaterialColor = GetMaterialColor(institution)
+                MaterialColor = GetMaterialColor(institution),
+                Icon = GetIcon(institution),
+                 
             };
         }
 
@@ -166,6 +168,11 @@ namespace PixQrCodeGeneratorOffline.Models.Services
         public MaterialColor GetMaterialColor(IInstitutionBank institution)
         {
             return institution.MaterialColor;
+        }
+
+        public string GetIcon(IInstitutionBank institution)
+        {
+            return institution.Icon;
         }
 
         public FinancialInstitutionType GetType(IInstitutionBank institution)

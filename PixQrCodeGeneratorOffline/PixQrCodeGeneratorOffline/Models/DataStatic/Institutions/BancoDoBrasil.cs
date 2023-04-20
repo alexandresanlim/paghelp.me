@@ -1,8 +1,6 @@
-﻿using PixQrCodeGeneratorOffline.Models.DataStatic.Institutions.Base;
+﻿using PixQrCodeGeneratorOffline.Helpers.Icon;
+using PixQrCodeGeneratorOffline.Models.DataStatic.Institutions.Base;
 using PixQrCodeGeneratorOffline.Models.DataStatic.Institutions.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.Models.DataStatic.Institutions
@@ -12,6 +10,8 @@ namespace PixQrCodeGeneratorOffline.Models.DataStatic.Institutions
         public string Name => "Banco do Brasil";
 
         public FinancialInstitutionType Type => FinancialInstitutionType.BancodoBrasil;
+
+        public new string Icon => FontBancos.BancoBrasil;
 
         public MaterialColor MaterialColor => new MaterialColor()
         {

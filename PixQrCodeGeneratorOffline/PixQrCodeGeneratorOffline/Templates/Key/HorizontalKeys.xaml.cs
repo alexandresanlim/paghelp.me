@@ -1,4 +1,6 @@
 ﻿
+using PixQrCodeGeneratorOffline.Extention;
+using PixQrCodeGeneratorOffline.Helpers.Icon;
 using PixQrCodeGeneratorOffline.Services;
 using System.Windows.Input;
 using Xamarin.Forms;

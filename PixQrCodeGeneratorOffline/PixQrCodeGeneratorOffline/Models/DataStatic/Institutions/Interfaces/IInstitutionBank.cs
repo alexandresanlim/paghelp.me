@@ -7,5 +7,7 @@
         string Name { get; }
 
         MaterialColor MaterialColor { get; }
+
+        public string Icon { get; }
     }
 }

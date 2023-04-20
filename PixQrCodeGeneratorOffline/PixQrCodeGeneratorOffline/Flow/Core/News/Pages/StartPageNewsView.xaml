@@ -12,7 +12,6 @@
 
     <CollectionView
         Margin="8,0,0,0"
-        BackgroundColor="Red"
         HeightRequest="290"
         ItemsSource="{Binding CurrentFeedList}"
         SelectionMode="None">
@@ -41,10 +40,9 @@
 
                         <Image
                             Aspect="AspectFill"
-                            HeightRequest="120"
+                            HeightRequest="130"
                             Source="{Binding Image}"
                             VerticalOptions="Start" />
-
 
                         <Label
                             Margin="8,8,8,0"
@@ -68,7 +66,7 @@
                             Orientation="Horizontal"
                             VerticalOptions="EndAndExpand">
                             <Label
-                                FontSize="{DynamicResource FontSizeMicro}"
+                                FontSize="{StaticResource FontSizeMicro}"
                                 HorizontalOptions="StartAndExpand"
                                 Text="{Binding Viewer.PublishDateDisplay}"
                                 TextColor="{DynamicResource textSecondary}"
@@ -78,7 +76,7 @@
                                     <TapGestureRecognizer Command="{Binding Command.ShareCommand}" />
                                 </StackLayout.GestureRecognizers>
                                 <controls:CustomIcon
-                                    FontSize="{DynamicResource FontSizeMedium}"
+                                    FontSize="{StaticResource FontSizeMedium}"
                                     Glyph="{x:Static icons:FontAwesomeSolid.ShareAlt}"
                                     HorizontalOptions="EndAndExpand"
                                     TextColor="{DynamicResource textSecondary}"

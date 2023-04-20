@@ -15,14 +15,13 @@
     <Grid.Resources>
         <ResourceDictionary>
             <Style x:Key="styleActionText" TargetType="Label">
-                <Setter Property="FontSize" Value="{DynamicResource FontSizeSmall}" />
+                <Setter Property="FontSize" Value="{StaticResource FontSizeSmall}" />
                 <Setter Property="TextColor" Value="{DynamicResource textPrimary}" />
-                <Setter Property="FontFamily" Value="{DynamicResource FontSemiBold}" />
+                <Setter Property="FontFamily" Value="{StaticResource FontSemiBold}" />
                 <Setter Property="VerticalOptions" Value="CenterAndExpand" />
             </Style>
 
             <Style x:Key="styleActionIcon" TargetType="controls:CustomIcon">
-                <Setter Property="FontSize" Value="{DynamicResource FontSizeSmall}" />
                 <Setter Property="TextColor" Value="{DynamicResource textPrimary}" />
                 <Setter Property="VerticalOptions" Value="CenterAndExpand" />
                 <Setter Property="FontSize" Value="{StaticResource FontSizeSmall}" />
@@ -53,8 +52,7 @@
                         BoxColor="{Binding FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
                         HidePanelColor="{Binding FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
                         HideValue="{Binding Source={RelativeSource AncestorType={x:Type vmBase:DashboardViewModelBase}}, Path=IsHideValue}"
-                        IconInstitution="{x:Static icons:FontAwesomeSolid.University}"
-                        IconKey="{x:Static icons:FontAwesomeSolid.Key}"
+                        IconInstitution="{Binding FinancialInstitution.Institution.Icon}"
                         InstitutionValue="{Binding Viewer.InstitutionPresentation}"
                         KeyValue="{Binding Viewer.KeyPresentation}"
                         QrCode="{Binding Payload.QrCode}">

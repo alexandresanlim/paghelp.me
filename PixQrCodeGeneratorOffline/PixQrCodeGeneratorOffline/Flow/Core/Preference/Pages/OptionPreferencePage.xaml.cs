@@ -43,7 +43,7 @@ namespace PixQrCodeGeneratorOffline.Views
             if (IsOppearing)
                 return;
 
-            _optionPreferenceViewModel.OptionShowNews().SafeFireAndForget();
+            //_optionPreferenceViewModel.OptionShowNews().SafeFireAndForget();
         }
 
         private void Switch_FingerPrint(object sender, ToggledEventArgs e)

@@ -6,10 +6,7 @@ using PixQrCodeGeneratorOffline.Services;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
 using System.Threading.Tasks;
-using System.Windows.Input;
-using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.ViewModels
 {
@@ -54,14 +51,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             finally
             {
                 IsBusy = false;
-
-                foreach (var item in CurrentFeedList)
-                {
-                    var uri = await item.Link.GetImage();
-
-                    if (!string.IsNullOrEmpty(uri))
-                        item.Image = new UriImageSource { CachingEnabled = true, Uri = new Uri(uri) };
-                }
             }
         }
 

@@ -152,7 +152,7 @@
       <Version>2.1.5</Version>
     </PackageReference>
     <PackageReference Include="Plugin.StoreReview">
-      <Version>3.3.1</Version>
+      <Version>5.0.1</Version>
     </PackageReference>
     <PackageReference Include="Rg.Plugins.Popup">
       <Version>2.1.0</Version>

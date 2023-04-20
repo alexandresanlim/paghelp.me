@@ -15,7 +15,12 @@ namespace PixQrCodeGeneratorOffline.Controls
            BindableProperty.Create(nameof(Glyph), typeof(string), typeof(CustomIcon), null, BindingMode.Default, null, propertyChanged: (BindableObject bindable, object oldValue, object newValue) =>
            {
                var b = (CustomIcon)bindable;
-               b.Text = (string)newValue;
+
+               if (newValue is string value)
+               {
+                   b.Text = value;
+                   b.IsVisible = !string.IsNullOrWhiteSpace(b?.Text);
+               }
            });
 
         public string Glyph

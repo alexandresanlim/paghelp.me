@@ -28,13 +28,13 @@
             <StackLayout Orientation="Horizontal">
                 <controls:CustomIcon
                     x:Name="xIcon"
-                    FontSize="{DynamicResource FontSizeLarge}"
+                    FontSize="{StaticResource FontSizeLarge}"
                     HorizontalOptions="Start"
                     TextColor="White" />
 
                 <controls:CustomIcon
                     x:Name="xIconRequiresInternet"
-                    FontSize="{DynamicResource FontSizeSmall}"
+                    FontSize="{StaticResource FontSizeSmall}"
                     Glyph="{x:Static icons:FontAwesomeSolid.Wifi}"
                     HorizontalOptions="EndAndExpand"
                     IsVisible="False"
@@ -43,8 +43,8 @@
 
             <Label
                 x:Name="xTitle"
-                FontFamily="{DynamicResource FontBold}"
-                FontSize="{DynamicResource FontSizeSmall}"
+                FontFamily="{StaticResource FontBold}"
+                FontSize="{StaticResource FontSizeSmall}"
                 LineBreakMode="TailTruncation"
                 MaxLines="2"
                 VerticalOptions="EndAndExpand" />

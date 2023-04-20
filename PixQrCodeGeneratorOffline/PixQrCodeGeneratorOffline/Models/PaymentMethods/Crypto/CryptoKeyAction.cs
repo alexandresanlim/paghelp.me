@@ -1,4 +1,5 @@
 ﻿using PixQrCodeGeneratorOffline.Extention;
+using PixQrCodeGeneratorOffline.Helpers.Icon;
 using PixQrCodeGeneratorOffline.Models.PaymentMethods.Base;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;

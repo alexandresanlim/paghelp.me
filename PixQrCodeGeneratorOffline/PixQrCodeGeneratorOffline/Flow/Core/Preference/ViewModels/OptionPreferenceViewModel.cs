@@ -1,6 +1,7 @@
 ﻿using AsyncAwaitBestPractices;
 using PixQrCodeGeneratorOffline.Base.ViewModels;
 using PixQrCodeGeneratorOffline.Extention;
+using PixQrCodeGeneratorOffline.Helpers.Icon;
 using PixQrCodeGeneratorOffline.Services;
 using Plugin.Fingerprint;
 using System.Threading.Tasks;
@@ -61,20 +62,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             catch (System.Exception ex)
             {
                 ex.SendToLog();
-            }
-        }
-
-        public async Task OptionShowNews()
-        {
-            try
-            {
-                _preferenceService.ChangeShowNewsMode();
-                await LoadData().ConfigureAwait(false);
-                await DashboardVM.LoadNews().ConfigureAwait(false);
-            }
-            catch (System.Exception ex)
-            {
-                ex?.SendToLog();
             }
         }
 

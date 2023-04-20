@@ -92,21 +92,6 @@
                         Toggled="Switch_Cypto" />
                 </Grid>
 
-                <Grid Style="{StaticResource styleGrid}">
-                    <preferences:PreferencePanelTemplate
-                        Title="Exibir Notícias"
-                        Grid.Column="0"
-                        Description="Veja notícias do Pix direto na dashboard"
-                        Icon="{x:Static icons:FontAwesomeSolid.Rss}" />
-
-                    <Switch
-                        Grid.Column="1"
-                        IsToggled="{Binding IsPreferenceNews}"
-                        Toggled="Switch_News" />
-                </Grid>
-
-
-
             </StackLayout>
 
         </ScrollView>

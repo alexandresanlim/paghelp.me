@@ -45,8 +45,8 @@
 
                                 <Label
                                     Grid.Column="0"
-                                    FontFamily="{DynamicResource FontSemiBold}"
-                                    FontSize="{DynamicResource FontSizeSmall}"
+                                    FontFamily="{StaticResource FontSemiBold}"
+                                    FontSize="{StaticResource FontSizeSmall}"
                                     Text="{Binding Question}"
                                     TextColor="{DynamicResource textPrimary}" />
                                 <content:ChevronRightView Grid.Column="1" />
