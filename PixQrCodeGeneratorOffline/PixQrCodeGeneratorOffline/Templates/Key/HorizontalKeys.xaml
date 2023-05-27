@@ -32,7 +32,7 @@
         x:Name="xMainFrame"
         Padding="12"
         CornerRadius="10">
-        <Grid ColumnDefinitions="auto,*">
+        <Grid ColumnDefinitions="8,*">
 
             <BoxView
                 x:Name="xBoxView"

@@ -17,5 +17,12 @@ namespace PixQrCodeGeneratorOffline.Models.PaymentMethods.Base
             set { SetProperty(ref _description, value); }
             get { return _description; }
         }
+
+        private bool _isDynamic;
+        public bool IsDynamic
+        {
+            set { SetProperty(ref _isDynamic, value); }
+            get { return _isDynamic; }
+        }
     }
 }

@@ -16,6 +16,7 @@ using Plugin.Fingerprint;
 using Rg.Plugins.Popup.Extensions;
 using Rg.Plugins.Popup.Pages;
 using System;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Essentials;
@@ -119,7 +120,7 @@ namespace PixQrCodeGeneratorOffline.Base.ViewModels
         {
             var isVisibleFingerPrint = Preference.FingerPrint && await CrossFingerprint.Current.IsAvailableAsync().ConfigureAwait(false);
 
-            if(isVisibleFingerPrint)
+            if (isVisibleFingerPrint)
             {
                 await Shell.Current.Navigation.PushPopupAsync(new AuthenticationPage(execute)).ConfigureAwait(false);
             }
@@ -185,9 +186,13 @@ namespace PixQrCodeGeneratorOffline.Base.ViewModels
             return NavigatePopupAsync(new LikingPage());
         }
 
-        public async Task WaitAndExecute(int milisec, Action actionToExecute)
+        public async Task WaitAndExecute(int milisec, Action actionToExecute, CancellationToken? token = null)
         {
-            await Task.Delay(milisec).ConfigureAwait(false); 
+            if (token == null)
+                await Task.Delay(milisec).ConfigureAwait(false);
+
+            else
+                await Task.Delay(milisec, token.Value).ConfigureAwait(false);
 
             MainThread.BeginInvokeOnMainThread(() => actionToExecute.Invoke());
         }

@@ -1,57 +1,108 @@
-﻿using AsyncAwaitBestPractices.MVVM;
+﻿using AsyncAwaitBestPractices;
+using AsyncAwaitBestPractices.MVVM;
+using pix_dynamic_payload_generator.net.Models;
+using pix_dynamic_payload_generator.net.Requests.RequestServices;
 using PixQrCodeGeneratorOffline.Base.ViewModels;
+using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models;
 using PixQrCodeGeneratorOffline.Models.Base;
 using PixQrCodeGeneratorOffline.Models.PaymentMethods.Base;
 using PixQrCodeGeneratorOffline.Models.PaymentMethods.Crypto;
 using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix;
 using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix.Extentions;
+using Rg.Plugins.Popup.Services;
+using System;
+using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
+
 
 namespace PixQrCodeGeneratorOffline.ViewModels
 {
     public class PaymentViewModel : ViewModelBase
     {
+
+
+        private Cob currentCob;
+
+        public bool paymentCanceled;
+
+        public CancellationTokenSource waitingPaymentTokenSource = new CancellationTokenSource();
+
+        public PaymentViewModel(PayloadBase payload)
+        {
+            paymentCanceled = true;
+
+            LoadData(payload).SafeFireAndForget((ex) => ex.SendToLog());
+        }
+
         #region Commands
 
         public IAsyncCommand SaveCommand => new AsyncCommand(Save);
-
-        public ICommand LoadDataCommand => new Command<PayloadBase>((payloadParameter) => LoadData(payloadParameter));
 
         public ICommand ChangeIsActionVisibleCommand => new Command(ChangeIsActionVisible);
 
         #endregion
 
-        private void LoadData(PayloadBase payloadParameter)
+        private async Task LoadData(PayloadBase payloadParameter)
         {
-            CurrentPaylodBase = payloadParameter;
-            CurrentInfo = new PaymentViewModelInfo();
-
-            if (payloadParameter is PixPayload pixPayload)
+            try
             {
-                CurrentPixPaylod = pixPayload;
-                CurrentInfo.Color = pixPayload.PixKey?.FinancialInstitution?.Institution?.MaterialColor;
-                CurrentInfo.Value = pixPayload.PixCob?.Viewer?.ValuePresentation;
-                CurrentInfo.Name = pixPayload.PixKey?.Viewer?.NamePresentation;
-                CurrentInfo.Institution = pixPayload?.PixKey?.Viewer?.InstitutionPresentation;
-                CurrentInfo.Key = $"| Chave: {pixPayload?.PixKey?.Viewer?.KeyPresentation}";
-            }
+                SetIsLoading();
 
-            else if (payloadParameter is CryptoPayload cryptoPayload)
+                CurrentPaylodBase = payloadParameter;
+                CurrentInfo = new PaymentViewModelInfo();
+
+                if (payloadParameter is PixPayload pixPayload)
+                {
+                    CurrentPixPaylod = pixPayload;
+                    CurrentInfo.Color = pixPayload.PixKey?.FinancialInstitution?.Institution?.MaterialColor;
+                    CurrentInfo.Value = pixPayload.PixCob?.Viewer?.ValuePresentation;
+                    CurrentInfo.Name = pixPayload.PixKey?.Viewer?.NamePresentation;
+                    CurrentInfo.Institution = pixPayload?.PixKey?.Viewer?.InstitutionPresentation;
+                    CurrentInfo.Key = $"| Chave: {pixPayload?.PixKey?.Viewer?.KeyPresentation}";
+
+                    if (pixPayload.PixCob != null && pixPayload.PixCob.IsDynamic)
+                    {
+                        await WatingPayment(waitingPaymentTokenSource.Token).ConfigureAwait(false);
+                    }
+                    else
+                    {
+                        SaveButtonIsVisible = !(CurrentPixPaylod?.Id > 0) && CurrentPixPaylod?.PixCob != null && CurrentPixPaylod.PixCob.HasValue();
+
+                        pixPayload.PixCob = new PixCob
+                        {
+                            IsDynamic = false
+                        };
+                    }
+                }
+
+                else if (payloadParameter is CryptoPayload cryptoPayload)
+                {
+                    CurrentCryptoPaylod = cryptoPayload;
+                    CurrentInfo.Color = cryptoPayload?.CryptoKey?.FinancialInstitution?.Institution?.MaterialColor;
+                    CurrentInfo.Institution = $"Criptomoeda: {cryptoPayload?.CryptoKey?.Viewer?.InstitutionPresentation}";
+                    CurrentInfo.Key = $"| Chave: {cryptoPayload?.CryptoKey?.Viewer?.KeyPresentation}";
+                }
+
+                IsActionVisible = false;
+
+                LoadHelpPhrase();
+            }
+            catch (OperationCanceledException)
             {
-                CurrentCryptoPaylod = cryptoPayload;
-                CurrentInfo.Color = cryptoPayload?.CryptoKey?.FinancialInstitution?.Institution?.MaterialColor;
-                CurrentInfo.Institution = $"Criptomoeda: {cryptoPayload?.CryptoKey?.Viewer?.InstitutionPresentation}";
-                CurrentInfo.Key = $"| Chave: {cryptoPayload?.CryptoKey?.Viewer?.KeyPresentation}";
+                paymentCanceled = true;
             }
-
-            SaveButtonIsVisible = !(CurrentPixPaylod?.Id > 0) && CurrentPixPaylod?.PixCob != null && CurrentPixPaylod.PixCob.HasValue();
-
-            IsActionVisible = false;
-
-            LoadHelpPhrase();
+            catch (Exception ex)
+            {
+                ex.SendToLog();
+            }
+            finally
+            {
+                SetIsLoading(false);
+            }
         }
 
         private void LoadHelpPhrase()
@@ -94,6 +145,53 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             {
                 DialogService.Toast("Algo de errado aconteceu, tente novamente mais tarde ou atualize o app.");
             }
+        }
+
+        private async Task WatingPayment(CancellationToken token)
+        {
+            paymentCanceled = false;
+
+            var cobRequest = new CobRequestService();
+
+            await WaitAndExecute(10000, async () =>
+            {
+                var isPaid = false;
+
+                do
+                {
+                    try
+                    {
+                        token.ThrowIfCancellationRequested();
+
+                        if (!paymentCanceled)
+                        {
+                            await WaitAndExecute(3000, async () =>
+                            {
+                                currentCob = await cobRequest.GetByTxId(currentCob.Txid).ConfigureAwait(false);
+                                isPaid = currentCob.HasPix && currentCob.StatusPagamento == PaymenStatus.PAGO_TOTALMENTE;
+                            }, token);
+                        }
+                    }
+                    catch (OperationCanceledException)
+                    {
+                        paymentCanceled = true;
+                    }
+                    catch (Exception ex)
+                    {
+                        paymentCanceled = true;
+                        ex.SendToLog();
+                    }
+
+                }
+                while (!paymentCanceled && !isPaid);
+
+                if (isPaid)
+                    DialogService.Toast("Pago com sucesso!", TimeSpan.FromSeconds(5));
+
+                if (PopupNavigation.Instance.PopupStack.Any())
+                    await NavigateBackPopupAsync().ConfigureAwait(false);
+
+            }, token).ConfigureAwait(false);
         }
 
         private void ChangeIsActionVisible()
@@ -186,6 +284,13 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         {
             set => SetProperty(ref _color, value);
             get => _color;
+        }
+
+        private bool _isPaid;
+        public bool IsPaid
+        {
+            set => SetProperty(ref _isPaid, value);
+            get => _isPaid;
         }
     }
 }

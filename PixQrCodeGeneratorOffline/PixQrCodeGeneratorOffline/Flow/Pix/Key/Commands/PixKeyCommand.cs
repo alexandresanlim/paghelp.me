@@ -31,6 +31,8 @@ namespace PixQrCodeGeneratorOffline.Models.Commands
 
         public IAsyncCommand NavigateToCreateBillingPageCommand { get; private set; }
 
+        public IAsyncCommand NavigateToCreateBillingDynamicPageCommand { get; private set; }
+
         public IAsyncCommand NavigateToPaymentPageCommand { get; private set; }
 
         public IAsyncCommand EditKeyCommand { get; private set; }
@@ -45,6 +47,7 @@ namespace PixQrCodeGeneratorOffline.Models.Commands
                 ShareKeyCommand = GetShareKeyCommand(pixKey),
                 ShareOnWhatsCommand = GetShareKeyOnWhatsCommand(pixKey),
                 NavigateToCreateBillingPageCommand = GetNavigateToCreateBillingCommand(pixKey),
+                NavigateToCreateBillingDynamicPageCommand = GetNavigateToCreateBillingDynamicCommand(pixKey),
                 NavigateToPaymentPageCommand = GetNavigateToPaymentPageCommand(pixKey),
                 EditKeyCommand = GetEdityKeyCommand(pixKey),
                 NavigateToBillingCommand = GetNavigateToBillingCommand(pixKey)
@@ -69,6 +72,18 @@ namespace PixQrCodeGeneratorOffline.Models.Commands
                 await Shell.Current.Navigation.PushAsync(new CreateBillingPage(pixKey)).ConfigureAwait(false); 
                 
                 SetIsLoading(false); 
+            });
+        }
+
+        private IAsyncCommand GetNavigateToCreateBillingDynamicCommand(PixKey pixKey)
+        {
+            return _customAsyncCommand.Create(async () =>
+            {
+                SetIsLoading();
+
+                await Shell.Current.Navigation.PushAsync(new CreateBillingPage(pixKey, true)).ConfigureAwait(false);
+
+                SetIsLoading(false);
             });
         }
 

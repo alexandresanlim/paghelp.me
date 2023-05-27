@@ -112,5 +112,16 @@ namespace PixQrCodeGeneratorOffline.Services
             }
         }
 
+        public static string CertificatePath
+        {
+            get => Preferences.Get(nameof(CertificatePath), string.Empty);
+            set
+            {
+                if (CertificatePath == value)
+                    return;
+
+                Preferences.Set(nameof(CertificatePath), value);
+            }
+        }
     }
 }

@@ -5,6 +5,8 @@ using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix.Extentions;
 using PixQrCodeGeneratorOffline.ViewModels;
 using Rg.Plugins.Popup.Extensions;
 using Rg.Plugins.Popup.Pages;
+using Rg.Plugins.Popup.Services;
+using System.Linq;
 using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.Views
@@ -13,20 +15,16 @@ namespace PixQrCodeGeneratorOffline.Views
     {
         PaymentViewModel _paymentViewModel;
 
-        PayloadBase _pixPaylod;
-
         public PaymentPage(PayloadBase paylod)
         {
             InitializeComponent();
-
-            _pixPaylod = paylod;
-
-            BindingContext = _paymentViewModel = new PaymentViewModel();
+            BindingContext = _paymentViewModel = new PaymentViewModel(paylod);
         }
 
         protected override void OnAppearing()
         {
-            _paymentViewModel.LoadDataCommand.Execute(_pixPaylod);
+            //_paymentViewModel.paymentCanceled = false;
+            //_paymentViewModel.LoadDataCommand.Execute(_pixPaylod);
 
             //SetStatusBarColor(_paymentViewModel.CurrentInfo.Color.PrimaryDark);
 
@@ -34,15 +32,32 @@ namespace PixQrCodeGeneratorOffline.Views
             //    btnSave.IsVisible = true;
         }
 
-        private void TapGestureRecognizer_Tapped(object sender, System.EventArgs e)
+        protected override void OnDisappearing()
         {
-            //SetStatusBarColor(App.ThemeColors.PrimaryDark);
-            Shell.Current.Navigation.PopPopupAsync().SafeFireAndForget(x => x.SendToLog());
+            //_paymentViewModel.paymentCanceled = true;
+
+            _paymentViewModel.waitingPaymentTokenSource.Cancel();
         }
 
-        private void SetStatusBarColor(Color color)
+        protected override bool OnBackButtonPressed()
         {
-            App.StatusBarService.SetStatusBarColor(color);
+            //_paymentViewModel.waitingPaymentTokenSource.Cancel();
+
+            if (PopupNavigation.Instance.PopupStack.Any())
+            {
+                Shell.Current.Navigation.PopPopupAsync().SafeFireAndForget(x => x.SendToLog());
+            }
+
+            return base.OnBackButtonPressed();
+        }
+
+        private void TapGestureRecognizer_Tapped(object sender, System.EventArgs e)
+        {
+            //_paymentViewModel.paymentCanceled = true;
+
+            _paymentViewModel.waitingPaymentTokenSource.Cancel();
+            //SetStatusBarColor(App.ThemeColors.PrimaryDark);
+            Shell.Current.Navigation.PopPopupAsync().SafeFireAndForget(x => x.SendToLog());
         }
     }
 }

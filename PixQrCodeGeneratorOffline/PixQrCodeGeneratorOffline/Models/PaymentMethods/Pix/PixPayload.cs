@@ -1,7 +1,7 @@
-﻿using PixQrCodeGeneratorOffline.Models.Commands;
-using PixQrCodeGeneratorOffline.Models.Commands.Interfaces;
+﻿using pix_dynamic_payload_generator.net.Models;
+using pix_payload_generator.net.Models.PayloadModels;
+using PixQrCodeGeneratorOffline.Models.Commands;
 using PixQrCodeGeneratorOffline.Models.PaymentMethods.Base;
-using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix
 {
@@ -17,9 +17,12 @@ namespace PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix
         public PixCob PixCob { get; set; }
 
         [LiteDB.BsonIgnore]
-        public pix_payload_generator.net.Models.PayloadModels.Payload Payload { get; set; }
+        public Cob PixDynamicCob { get; set; }
 
         [LiteDB.BsonIgnore]
-        public PixPayloadCommand Commands { get; set; }
+        public Payload Payload { get; set; }
+
+        [LiteDB.BsonIgnore]
+        public new PixPayloadCommand Commands { get; set; }
     }
 }

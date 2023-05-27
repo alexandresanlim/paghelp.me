@@ -7,7 +7,6 @@
     xmlns:contentStart="clr-namespace:PixQrCodeGeneratorOffline.Views.Content.StartPageContents"
     xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
     xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon"
-    xmlns:local="clr-namespace:PixQrCodeGeneratorOffline.Extention;assembly=PixQrCodeGeneratorOffline"
     xmlns:templates="clr-namespace:PixQrCodeGeneratorOffline.Templates"
     xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
     x:DataType="vm:DashboardViewModel"
@@ -73,10 +72,17 @@
 
             <Grid ColumnDefinitions="*, 80" ColumnSpacing="0">
 
+                <ContentView
+                    x:Name="tpMyKeys"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    BackgroundColor="{Binding CurrentPixKey.FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
+                    PropertyChanged="TemplateTitlePanel_PropertyChanged"
+                    VerticalOptions="FillAndExpand" />
+
                 <templates:TemplateTitlePanel
                     Title="Minhas Chaves Pix"
                     Grid.Column="0"
-                    BackgroundColor="{Binding CurrentPixKey.FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
                     Icon="{x:Static icons:FontBancos.Pix}"
                     IconColor="{Binding CurrentPixKey.FinancialInstitution.Institution.MaterialColor.TextOnPrimary}"
                     IconType="FonteBancosBrasileiros"
@@ -85,7 +91,6 @@
                 <StackLayout
                     Grid.Column="1"
                     Padding="0,8,8,0"
-                    BackgroundColor="{Binding CurrentPixKey.FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
                     IsVisible="{Binding PixKeyList, Mode=TwoWay, Converter={StaticResource HasDataConverter}}">
                     <controls:CustomIcon HorizontalOptions="End" TextColor="{Binding CurrentPixKey.FinancialInstitution.Institution.MaterialColor.TextOnPrimary}">
                         <controls:CustomIcon.Triggers>

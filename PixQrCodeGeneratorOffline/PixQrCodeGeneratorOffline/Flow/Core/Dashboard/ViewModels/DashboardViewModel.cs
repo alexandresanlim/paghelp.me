@@ -142,6 +142,9 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 case KeyActionType.CreateBilling:
                     await CurrentPixKey.Command.NavigateToCreateBillingPageCommand.ExecuteAsync().ConfigureAwait(false);
                     break;
+                case KeyActionType.CreateBillingDynamic:
+                    await CurrentPixKey.Command.NavigateToCreateBillingDynamicPageCommand.ExecuteAsync().ConfigureAwait(false);
+                    break;
                 case KeyActionType.CopyKey:
                     await CurrentPixKey.Command.CopyKeyCommand.ExecuteAsync().ConfigureAwait(false);
                     break;
