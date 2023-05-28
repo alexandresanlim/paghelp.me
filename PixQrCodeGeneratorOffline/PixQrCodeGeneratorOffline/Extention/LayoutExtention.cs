@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.Extention
@@ -7,8 +8,16 @@ namespace PixQrCodeGeneratorOffline.Extention
     {
         public static Task RunOpacityAnimationAsync(this VisualElement visualElement)
         {
-            visualElement.Opacity = 0;
-            return visualElement.FadeTo(1, 500);
+            try
+            {
+                visualElement.Opacity = 0;
+                return visualElement.FadeTo(1, 1000);
+            }
+            catch (Exception ex)
+            {
+                ex.SendToLog();
+                return Task.CompletedTask;
+            }
         }
 
 

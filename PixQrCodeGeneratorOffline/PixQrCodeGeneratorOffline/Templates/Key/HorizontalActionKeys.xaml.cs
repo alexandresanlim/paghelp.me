@@ -1,4 +1,5 @@
 ﻿
+using AsyncAwaitBestPractices;
 using PixQrCodeGeneratorOffline.Extention;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -56,7 +57,7 @@ namespace PixQrCodeGeneratorOffline.Templates.Key
             set => SetValue(BoxColorProperty, value);
         }
 
-        private static async void BoxColorPropertyChanged(BindableObject bindable, object oldValue, object newValue)
+        private static void BoxColorPropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
             if (newValue == null)
                 return;
@@ -66,7 +67,7 @@ namespace PixQrCodeGeneratorOffline.Templates.Key
 
             template.xBoxView.BackgroundColor = value;
 
-            await template.xBoxView.RunOpacityAnimationAsync().ConfigureAwait(false);
+            template.xBoxView.RunOpacityAnimationAsync().SafeFireAndForget(ex => ex.SendToLog());
         }
 
         public static readonly BindableProperty TapCommandProperty =

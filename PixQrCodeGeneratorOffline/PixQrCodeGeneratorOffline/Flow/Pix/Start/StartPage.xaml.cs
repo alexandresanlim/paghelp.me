@@ -1,4 +1,5 @@
-﻿using PixQrCodeGeneratorOffline.Extention;
+﻿using AsyncAwaitBestPractices;
+using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Templates;
 using PixQrCodeGeneratorOffline.ViewModels;
 
@@ -17,11 +18,11 @@ namespace PixQrCodeGeneratorOffline.Views
             BindingContext = _viewModel = new DashboardViewModel();
         }
 
-        private async void TemplateTitlePanel_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        private void TemplateTitlePanel_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
             if (sender is ContentView && e.PropertyName.Equals(nameof(BackgroundColor)))
             {
-                await tpMyKeys.RunOpacityAnimationAsync().ConfigureAwait(false);
+                tpMyKeys.RunOpacityAnimationAsync().SafeFireAndForget(ex => ex.SendToLog());
             }
         }
     }

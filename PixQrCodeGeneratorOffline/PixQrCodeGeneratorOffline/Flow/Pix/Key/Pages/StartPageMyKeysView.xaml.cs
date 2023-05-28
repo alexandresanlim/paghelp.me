@@ -1,4 +1,5 @@
 ﻿
+using AsyncAwaitBestPractices;
 using PixQrCodeGeneratorOffline.Extention;
 using Xamarin.Forms;
 
@@ -11,11 +12,11 @@ namespace PixQrCodeGeneratorOffline.Views.Content.StartPageContents
             InitializeComponent();
         }
 
-        private async void BoxView_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        private void BoxView_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
             if (sender is BoxView && e.PropertyName.Equals(nameof(BackgroundColor)))
             {
-                await bvKeys.RunOpacityAnimationAsync().ConfigureAwait(false);
+                bvKeys.RunOpacityAnimationAsync().SafeFireAndForget(ex => ex.SendToLog());
             }
         }
     }
