@@ -11,7 +11,7 @@ namespace PixQrCodeGeneratorOffline.Extention
             try
             {
                 visualElement.Opacity = 0;
-                return visualElement.FadeTo(1, 1000);
+                return visualElement.FadeTo(1, 500);
             }
             catch (Exception ex)
             {
