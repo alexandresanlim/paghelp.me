@@ -8,7 +8,6 @@ using System.Net;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Xml.Linq;
-using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.Services
 {
@@ -35,7 +34,12 @@ namespace PixQrCodeGeneratorOffline.Services
                                        Source = ((string)x.Element("source"))
                                    });
 
-                var rss = RSSFeedData?.Where(x => x.IsValid())?.Take(5)?.OrderByDescending(x => x.PublishDate).ToList();
+                var rss = RSSFeedData?.Where(x => x.IsValid())?.OrderByDescending(x => x.PublishDate).ToList();
+
+                foreach (var feed in rss)
+                {
+                    feed.Tag = feed.GetTag();
+                }
 
                 //foreach (var item in rss)
                 //{

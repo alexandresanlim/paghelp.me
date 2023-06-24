@@ -9,7 +9,7 @@
     xmlns:models="clr-namespace:PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix"
     xmlns:templates="clr-namespace:PixQrCodeGeneratorOffline.Templates"
     xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
-    x:DataType="vm:DashboardViewModel"
+    x:DataType="vm:DashboardContactViewModel"
     Spacing="0">
 
     <StackLayout.Resources>

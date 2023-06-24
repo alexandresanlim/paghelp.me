@@ -20,7 +20,7 @@ namespace PixQrCodeGeneratorOffline.Models
             _feedViewerService = DependencyService.Get<IFeedViewerService>();
             _feedCommand = DependencyService.Get<IFeedCommand>();
 
-            Image = new UriImageSource { CachingEnabled = true, Uri = new Uri("https://img.olhardigital.com.br/wp-content/uploads/2021/04/PIX-2.jpg") };
+            //Image = new UriImageSource { CachingEnabled = true, Uri = new Uri("https://img.olhardigital.com.br/wp-content/uploads/2021/04/PIX-2.jpg") };
         }
 
         public string Title { get; set; }
@@ -33,6 +33,8 @@ namespace PixQrCodeGeneratorOffline.Models
 
         public ImageSource Image { get; set; }
 
+        public FeedTag Tag { get; set; }
+
         public DateTimeOffset? PublishDate { get; set; }
 
         public DateTimeOffset? PublishDateLocal => PublishDate?.ToLocalTime();
@@ -42,5 +44,14 @@ namespace PixQrCodeGeneratorOffline.Models
         public FeedViewer Viewer => _feedViewerService?.Create(this) ?? new FeedViewer();
 
         public FeedCommand Command => _feedCommand?.Create(this) ?? new FeedCommand();
+    }
+
+    public class FeedTag
+    {
+        public string Title { get; set; }
+
+        public Color Color { get; set; }
+
+        public bool IsVisible { get; set; }
     }
 }

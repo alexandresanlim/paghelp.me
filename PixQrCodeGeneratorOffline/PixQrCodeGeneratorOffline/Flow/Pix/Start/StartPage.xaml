@@ -36,30 +36,6 @@
                 <Setter Property="BackgroundColor" Value="{DynamicResource foreground_page}" />
             </Style>
 
-
-
-            <Style x:Key="styleTextOnButtonActionListContact" TargetType="Label">
-                <Setter Property="TextColor" Value="{DynamicResource textPrimary}" />
-                <Setter Property="HorizontalOptions" Value="Center" />
-                <Setter Property="FontSize" Value="{StaticResource FontSizeMicro}" />
-                <Setter Property="FontFamily" Value="{StaticResource FontSemiBold}" />
-
-            </Style>
-
-            <Style x:Key="styleIconActionListContact" TargetType="controls:CustomIcon">
-                <Setter Property="FontSize" Value="{StaticResource FontSizeMedium}" />
-                <Setter Property="HorizontalOptions" Value="Center" />
-                <Setter Property="TextColor" Value="{DynamicResource textPrimary}" />
-            </Style>
-
-
-            <Style x:Key="styleButtonActionListContact" TargetType="Frame">
-                <Setter Property="BackgroundColor" Value="{DynamicResource textPrimary}" />
-                <Setter Property="CornerRadius" Value="10" />
-                <Setter Property="Padding" Value="10,15" />
-
-            </Style>
-
         </ResourceDictionary>
     </ContentPage.Resources>
 
@@ -140,25 +116,6 @@
 
             </StackLayout>
 
-            <!--  //////////////////////////////////////////////////////////////////////////////////////////////////////////////  -->
-
-            <templates:TemplateTitlePanel
-                Title="Chaves de Contatos"
-                Margin="0,8,0,0"
-                BackgroundImage="banner_chaves_contatos.png"
-                Icon="{x:Static icons:FontAwesomeSolid.Users}"
-                SubTitle="Guarde aqui as chaves dos &#x0a;seus contatos, para não &#x0a;precisar perguntar de novo." />
-
-            <contentStart:StartPageContactsKeysView Margin="0,8,0,0" IsVisible="{Binding PixKeyListContact, Converter={StaticResource HasDataConverter}}" />
-
-            <templates:TemplateAction
-                Title="Adicionar Nova"
-                Icon="{x:Static icons:FontAwesomeSolid.PlusCircle}"
-                TapCommand="{Binding NavigateToAddNewKeyPageContactCommand, Mode=OneTime}" />
-
-            <content:DivisionView />
-
-            <!--  //////////////////////////////////////////////////////////////////////////////////////////////////////////////  -->
 
             <!--<StackLayout IsVisible="{Binding CurrentFeedList, Converter={StaticResource HasDataConverter}}">
 
@@ -172,9 +129,22 @@
 
             </StackLayout>-->
 
+            <content:DivisionView />
+
+            <Grid Padding="0,0,8,0" ColumnDefinitions="*, 15">
+
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding NavigateToContactsCommand, Mode=OneTime}" />
+                </Grid.GestureRecognizers>
+
+                <templates:TemplateTitlePanel Title="Chaves de Contatos" Icon="{x:Static icons:FontAwesomeSolid.AddressBook}" />
+
+                <content:ChevronRightView Grid.Column="1" />
+            </Grid>
+
             <content:DivisionView Margin="0,8,0,0" />
 
-            <Grid Padding="0,0,8,0" ColumnDefinitions="*, auto">
+            <Grid Padding="0,0,8,0" ColumnDefinitions="*, 15">
 
                 <Grid.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding NavigateToNewsCommand, Mode=OneTime}" />
@@ -191,7 +161,7 @@
 
             <!--  //////////////////////////////////////////////////////////////////////////////////////////////////////////////  -->
 
-            <Grid Padding="0,0,8,0" ColumnDefinitions="*, auto">
+            <Grid Padding="0,0,8,0" ColumnDefinitions="*, 15">
 
                 <Grid.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding NavigateToGuidCommand, Mode=OneTime}" />

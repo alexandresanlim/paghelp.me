@@ -3,6 +3,7 @@ using AsyncAwaitBestPractices.MVVM;
 using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix;
 using PixQrCodeGeneratorOffline.ViewModels.Base;
+using System;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
@@ -15,33 +16,109 @@ namespace PixQrCodeGeneratorOffline.ViewModels
     {
         #region Commands
 
-        public ICommand LoadDataCommand => new Command(LoadData);
+        public IAsyncCommand LoadDataCommand => new AsyncCommand(LoadData);
 
-        public IAsyncCommand NavigateToAddNewKeyPageCommand => new AsyncCommand(async () => await _pixKeyService.NavigateToAdd(isContact: true));
+        public IAsyncCommand ExportToFileContactCommand => new AsyncCommand(() => _pixKeyService.ExportToFileContact(PixKeyListContact));
+
+        public IAsyncCommand NavigateToAddNewKeyPageContactCommand => new AsyncCommand(async () => await _pixKeyService.NavigateToAdd(isContact: true));
+
+        public IAsyncCommand RemoveAllKeyContactCommand => new AsyncCommand(RemoveAllContactKeys);
+
+        public ICommand DeleteContactKeyCommand => new AsyncCommand<PixKey>(DeleteContactKey);
 
         #endregion
 
         public DashboardContactViewModel()
         {
-            LoadDataCommand.Execute(null);
+            LoadDataCommand.ExecuteAsync().SafeFireAndForget();
 
             DashboardContactVM = this;
         }
 
-        public void LoadData()
+        public async Task LoadData()
         {
             try
             {
-                var list = _pixKeyService?.GetAll(isContact: true);
+                await LoadAuthenticationPage(() =>
+                {
+                    LoadPixKeyContact();
+                });
 
-                PixKeyList = list?.OrderBy(x => x?.Name)?.ToObservableCollection() ?? new ObservableCollection<PixKey>();
-
-                LoadCurrentPixKey();
+                //LoadCurrentPixKey();
             }
             catch (System.Exception e)
             {
                 e.SendToLog();
             }
+        }
+
+        public void LoadPixKeyContact()
+        {
+            PixKeyListContact = new ObservableCollection<PixKey>();
+
+            PixKeyListContact = _pixKeyService?
+                .GetAll(isContact: true)?.OrderBy(x => x?.Name)?
+                .ToObservableCollection() ?? new ObservableCollection<PixKey>();
+        }
+
+        #region Contact
+
+        private async Task RemoveAllContactKeys()
+        {
+            var success = await _pixKeyService.RemoveAll(isContact: true);
+
+            if (success)
+                PixKeyListContact = new ObservableCollection<PixKey>();
+        }
+
+        private async Task DeleteContactKey(PixKey contactKey)
+        {
+            var confirm = await DialogService.ConfirmAsync("Tem certeza que deseja excluir a chave do contato " + contactKey?.Name + "?", "Confirmação", "Sim", "Cancelar");
+
+            if (!confirm)
+                return;
+
+            try
+            {
+                SetIsLoading(true);
+
+                var success = _pixKeyService.Remove(contactKey);
+
+                if (success)
+                {
+                    int index = PixKeyListContact.IndexOf(PixKeyListContact.FirstOrDefault(x => x.Id == contactKey.Id));
+
+                    if (index != -1)
+                        PixKeyListContact.RemoveAt(index);
+
+                    if (PixKeyListContact.Count == 0)
+                    {
+                        PixKeyListContact = new ObservableCollection<PixKey>();
+                    }
+
+                    DialogService.Toast("Chave removida com sucesso");
+                }
+
+                else
+                    ShowToastErrorMessage();
+            }
+            catch (Exception e)
+            {
+                e.SendToLog();
+            }
+            finally
+            {
+                SetIsLoading(false);
+            }
+        }
+
+        #endregion
+
+        private ObservableCollection<PixKey> _pixKeyListContact;
+        public ObservableCollection<PixKey> PixKeyListContact
+        {
+            set => SetProperty(ref _pixKeyListContact, value);
+            get => _pixKeyListContact;
         }
     }
 

@@ -29,9 +29,9 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public IAsyncCommand NavigateToNewsCommand => new AsyncCommand(async () => await NavigateAsync(new NewsPage()));
 
-        public IAsyncCommand NavigateToAddNewKeyPageCommand => new AsyncCommand(async () => await _pixKeyService.NavigateToAdd().ConfigureAwait(false));
+        public IAsyncCommand NavigateToContactsCommand => new AsyncCommand(async () => await NavigateAsync(new DashboardContactPage()));
 
-        public IAsyncCommand NavigateToAddNewKeyPageContactCommand => new AsyncCommand(async () => await _pixKeyService.NavigateToAdd(isContact: true));
+        public IAsyncCommand NavigateToAddNewKeyPageCommand => new AsyncCommand(async () => await _pixKeyService.NavigateToAdd().ConfigureAwait(false));
 
         public IAsyncCommand ExecuteActionCommand => new AsyncCommand(ExecuteAction);
 
@@ -41,17 +41,17 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public IAsyncCommand RemoveAllCommand => new AsyncCommand(RemoveAllKeys);
 
-        public IAsyncCommand RemoveAllKeyContactCommand => new AsyncCommand(RemoveAllContactKeys);
+        
 
         public IAsyncCommand RemoveAllBillingCommand => new AsyncCommand(RemoveAllBilling);
 
         public IAsyncCommand LoadDataCommand => new AsyncCommand(LoadData);
 
-        public ICommand DeleteContactKeyCommand => new AsyncCommand<PixKey>(DeleteContactKey);
+        
 
         public IAsyncCommand ExportToFileCommand => new AsyncCommand(() => _pixKeyService.ExportToFile(PixKeyList));
 
-        public IAsyncCommand ExportToFileContactCommand => new AsyncCommand(() => _pixKeyService.ExportToFileContact(PixKeyListContact));
+        
 
         public IAsyncCommand ExportToFileBillingCommand => new AsyncCommand(() => _pixPayloadService.ExportToFile(BillingSaveList));
 
@@ -74,7 +74,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                     LoadPixKey();
 
-                    LoadPixKeyContact();
+                    
 
                     LoadBilling();
 
@@ -84,7 +84,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                     CurrentPixKeyActions = PixKeyAction.GetList();
 
-                    if (!Preference.LikingAppMsgWasShowed && (PixKeyList?.Count > 0 || PixKeyListContact?.Count > 0) && Preference.AreYouLikingAppMsgCount >= Constants.COUNTER_TO_SHOWED_LIKING_PAGE)
+                    if (!Preference.LikingAppMsgWasShowed && (PixKeyList?.Count > 0) && Preference.AreYouLikingAppMsgCount >= Constants.COUNTER_TO_SHOWED_LIKING_PAGE)
                     {
                         _preferenceService.ChangeLikingAppMsgWasShowed(true);
                         await WaitAndExecute(3000, async () => await NavigateToLikingPage().ConfigureAwait(false));
@@ -109,14 +109,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             });
         }
 
-        public void LoadPixKeyContact()
-        {
-            PixKeyListContact = new ObservableCollection<PixKey>();
-
-            PixKeyListContact = _pixKeyService?
-            .GetAll(isContact: true)?.OrderBy(x => x?.Name)?
-            .ToObservableCollection() ?? new ObservableCollection<PixKey>();
-        }
+        
 
         public void LoadBilling()
         {
@@ -273,60 +266,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             if (success)
                 PixKeyList = new ObservableCollection<PixKey>();
         }
-
-        #region Contact
-
-        private async Task RemoveAllContactKeys()
-        {
-            var success = await _pixKeyService.RemoveAll(isContact: true);
-
-            if (success)
-                PixKeyListContact = new ObservableCollection<PixKey>();
-        }
-
-        private async Task DeleteContactKey(PixKey contactKey)
-        {
-            var confirm = await DialogService.ConfirmAsync("Tem certeza que deseja excluir a chave do contato " + contactKey?.Name + "?", "Confirmação", "Sim", "Cancelar");
-
-            if (!confirm)
-                return;
-
-            try
-            {
-                SetIsLoading(true);
-
-                var success = _pixKeyService.Remove(contactKey);
-
-                if (success)
-                {
-                    int index = PixKeyListContact.IndexOf(PixKeyListContact.FirstOrDefault(x => x.Id == contactKey.Id));
-
-                    if (index != -1)
-                        PixKeyListContact.RemoveAt(index);
-
-                    if (PixKeyListContact.Count == 0)
-                    {
-                        PixKeyListContact = new ObservableCollection<PixKey>();
-                    }
-
-                    DialogService.Toast("Chave removida com sucesso");
-                }
-
-                else
-                    ShowToastErrorMessage();
-            }
-            catch (Exception e)
-            {
-                e.SendToLog();
-            }
-            finally
-            {
-                SetIsLoading(false);
-            }
-        }
-
-        #endregion
-
+    
         private async Task RemoveAllBilling()
         {
             var success = await _pixPayloadService.RemoveAll().ConfigureAwait(false);
@@ -346,12 +286,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             get => _currentPixKeyActions;
         }
 
-        private ObservableCollection<PixKey> _pixKeyListContact;
-        public ObservableCollection<PixKey> PixKeyListContact
-        {
-            set => SetProperty(ref _pixKeyListContact, value);
-            get => _pixKeyListContact;
-        }
+        
 
         private ObservableCollection<PixPayload> _billingSaveList;
         public ObservableCollection<PixPayload> BillingSaveList

@@ -3,283 +3,56 @@
     x:Class="PixQrCodeGeneratorOffline.Views.DashboardContactPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:contentStart="clr-namespace:PixQrCodeGeneratorOffline.Views.Content.StartPageContents"
     xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
     xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon"
-    BackgroundColor="{DynamicResource background_page}"
-    Shell.NavBarIsVisible="False">
+    xmlns:templates="clr-namespace:PixQrCodeGeneratorOffline.Templates"
+    xmlns:viewmodels="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
+    Title="Chaves de contatos"
+    x:DataType="viewmodels:DashboardContactViewModel"
+    BackgroundColor="{DynamicResource background_page}">
 
     <ContentPage.Resources>
-        <Style x:Key="styleTextOnButtonActionList" TargetType="Label">
-            <Setter Property="TextColor" Value="{DynamicResource staticAccentTextOnPrimary}" />
+        <Style x:Key="styleIconActionListContact" TargetType="controls:CustomIcon">
+            <Setter Property="FontSize" Value="{StaticResource FontSizeMedium}" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+            <Setter Property="TextColor" Value="{DynamicResource textPrimary}" />
+        </Style>
+
+        <Style x:Key="styleButtonActionListContact" TargetType="Frame">
+            <Setter Property="BackgroundColor" Value="{DynamicResource textPrimary}" />
+            <Setter Property="CornerRadius" Value="10" />
+            <Setter Property="Padding" Value="10,15" />
+        </Style>
+
+        <Style x:Key="styleTextOnButtonActionListContact" TargetType="Label">
+            <Setter Property="TextColor" Value="{DynamicResource textPrimary}" />
             <Setter Property="HorizontalOptions" Value="Center" />
             <Setter Property="FontSize" Value="{StaticResource FontSizeMicro}" />
             <Setter Property="FontFamily" Value="{StaticResource FontSemiBold}" />
-
-        </Style>
-
-        <Style x:Key="styleButtonActionList" TargetType="Frame">
-            <Setter Property="BackgroundColor" Value="{DynamicResource staticAccentPrimary}" />
-            <Setter Property="CornerRadius" Value="10" />
-            <Setter Property="Padding" Value="10,15" />
-
-        </Style>
-
-        <Style x:Key="styleIconActionList" TargetType="controls:CustomIcon">
-            <Setter Property="TextColor" Value="{DynamicResource textOnSecondary}" />
-            <Setter Property="FontSize" Value="Medium" />
-            <Setter Property="HorizontalOptions" Value="Center" />
-
         </Style>
 
     </ContentPage.Resources>
 
     <ContentPage.Content>
 
-        <Grid>
+        <StackLayout Spacing="0">
 
-            <Grid
-                IsVisible="{Binding ShowWelcome, Converter={StaticResource InvertedBooleanConverter}}"
-                RowDefinitions="*, auto"
-                RowSpacing="0">
+            <templates:TemplateTitlePanel
+                Title="Chaves de Contatos"
+                Margin="0,8,0,0"
+                BackgroundImage="banner_chaves_contatos.png"
+                Icon="{x:Static icons:FontAwesomeSolid.Users}"
+                SubTitle="Guarde aqui as chaves dos &#x0a;seus contatos, para não &#x0a;precisar perguntar de novo." />
 
+            <contentStart:StartPageContactsKeysView Margin="0,8,0,0" IsVisible="{Binding PixKeyListContact, Converter={StaticResource HasDataConverter}}" />
 
-                <controls:CustomCollectionView
-                    x:Name="collectionKeysList"
-                    Grid.Row="0"
-                    ItemsSource="{Binding PixKeyList}">
-                    <controls:CustomCollectionView.ItemsLayout>
-                        <LinearItemsLayout ItemSpacing="10" Orientation="Vertical" />
-                    </controls:CustomCollectionView.ItemsLayout>
+            <templates:TemplateAction
+                Title="Adicionar Nova"
+                Icon="{x:Static icons:FontAwesomeSolid.PlusCircle}"
+                TapCommand="{Binding NavigateToAddNewKeyPageContactCommand, Mode=OneTime}" />
 
-                    <controls:CustomCollectionView.ItemTemplate>
-                        <DataTemplate>
-
-                            <StackLayout
-                                Padding="10,15,10,10"
-                                BackgroundColor="{DynamicResource foreground_page}"
-                                Spacing="15">
-
-
-                                <Grid ColumnDefinitions="auto,*,auto" ColumnSpacing="15">
-
-
-                                    <controls:CustomIcon
-                                        Grid.Column="0"
-                                        FontSize="50"
-                                        Glyph="{x:Static icons:FontAwesomeSolid.UserCircle}"
-                                        TextColor="{DynamicResource textSecondary}"
-                                        VerticalOptions="Center" />
-
-                                    <!--<StackLayout BackgroundColor="{Binding FinancialInstitution.Institution.MaterialColor.PrimaryDark}" Grid.Column="0" Padding="15">-->
-                                    <!--<qr:QRCode
-                                                        Grid.Column="0"
-                                                        Content="{Binding Payload.QrCode}"
-                                                        BackgroundColor="White"
-                                                        Color="#000000"
-                                                        Level="H"
-                                                        WidthRequest="85"
-                                                        HeightRequest="85"
-                                                        HorizontalOptions="CenterAndExpand"
-                                                        >
-
-                                            <qr:QRCode.GestureRecognizers>
-                                                <TapGestureRecognizer Command="{Binding Command.NavigateToPaymentPageCommand}" />
-                                            </qr:QRCode.GestureRecognizers>
-
-                                        </qr:QRCode>-->
-                                    <!--</StackLayout>-->
-
-                                    <StackLayout Grid.Column="1" Spacing="0">
-                                        <Label
-                                            FontFamily="{StaticResource FontBold}"
-                                            FontSize="{StaticResource FontSizeMedium}"
-                                            Text="{Binding Viewer.NamePresentation}"
-                                            TextColor="{DynamicResource textPrimary}" />
-                                        <Label
-                                            LineBreakMode="MiddleTruncation"
-                                            MaxLines="1"
-                                            Text="{Binding Viewer.KeyPresentation}"
-                                            TextColor="{DynamicResource textSecondary}" />
-                                    </StackLayout>
-
-                                    <StackLayout
-                                        Grid.Column="2"
-                                        Padding="30,5,0,15"
-                                        VerticalOptions="Start">
-                                        <StackLayout.GestureRecognizers>
-                                            <TapGestureRecognizer Command="{Binding Command.EditKeyCommand}" />
-                                        </StackLayout.GestureRecognizers>
-                                        <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Edit}" TextColor="{DynamicResource textSecondary}" />
-                                        <Label
-                                            Style="{DynamicResource styleTextOnButtonActionList}"
-                                            Text="Editar"
-                                            TextColor="{DynamicResource textSecondary}" />
-                                    </StackLayout>
-
-                                    <!--<controls:CustomIcon Grid.Column="2" Glyph="{x:Static icons:FontAwesomeSolid.ChevronRight }" IconColor="{Binding FinancialInstitution.Institution.MaterialColor.TextOnPrimary}" IconSize="Title" HorizontalOptions="Center" Margin="0,0,10,0" />-->
-                                </Grid>
-
-                                <Grid ColumnDefinitions="*">
-                                    <Frame Grid.Column="0" Style="{DynamicResource styleButtonActionList}">
-                                        <Frame.GestureRecognizers>
-                                            <TapGestureRecognizer Command="{Binding Command.CopyKeyCommand}" />
-                                        </Frame.GestureRecognizers>
-                                        <StackLayout>
-                                            <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Copy}" Style="{DynamicResource styleIconActionList}" />
-                                            <Label Style="{DynamicResource styleTextOnButtonActionList}" Text="Copiar" />
-                                        </StackLayout>
-                                    </Frame>
-
-                                    <!--<Frame Grid.Column="1" Style="{DynamicResource styleButtonActionList}">
-                                        <Frame.GestureRecognizers>
-                                            <TapGestureRecognizer Command="{Binding Command.NavigateToPaymentPageCommand}" />
-                                        </Frame.GestureRecognizers>
-                                        <StackLayout>
-                                            <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Qrcode }" Style="{DynamicResource styleIconActionList}" />
-                                            <Label Text="Qr Code" Style="{DynamicResource styleTextOnButtonActionList}"/>
-                                        </StackLayout>
-                                    </Frame>-->
-
-                                    <!--<Frame Grid.Column="2" Style="{DynamicResource styleButtonActionList}">
-                                            <Frame.GestureRecognizers>
-                                                <TapGestureRecognizer Command="{Binding Command.ShareKeyCommand}" />
-                                            </Frame.GestureRecognizers>
-                                            <StackLayout>
-                                                <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.ShareAlt }" Style="{DynamicResource styleIconActionList}" />
-                                                <Label Text="Compartilhar" Style="{DynamicResource styleTextOnButtonActionList}"/>
-                                            </StackLayout>
-                                        </Frame>-->
-                                </Grid>
-                            </StackLayout>
-                            <!--</StackLayout>-->
-                            <!--</SwipeView>-->
-
-
-                        </DataTemplate>
-                    </controls:CustomCollectionView.ItemTemplate>
-                </controls:CustomCollectionView>
-
-
-
-                <Grid
-                    Grid.Row="1"
-                    Padding="10"
-                    BackgroundColor="{DynamicResource primaryDark}"
-                    ColumnDefinitions="*,*"
-                    ColumnSpacing="15"
-                    HorizontalOptions="FillAndExpand">
-                    <Frame
-                        Grid.Column="0"
-                        Padding="5,12"
-                        BackgroundColor="{DynamicResource secondary}"
-                        CornerRadius="30">
-
-                        <Frame.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding SettingsCommand}" />
-                        </Frame.GestureRecognizers>
-
-                        <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
-                            <controls:CustomIcon
-                                FontSize="{StaticResource FontSizeSmall}"
-                                Glyph="{x:Static icons:FontAwesomeSolid.Cog}"
-                                TextColor="{DynamicResource textOnSecondary}" />
-                            <Label
-                                FontFamily="{StaticResource FontBold}"
-                                FontSize="{StaticResource FontSizeSmall}"
-                                Text="Opções"
-                                TextColor="{DynamicResource textOnSecondary}" />
-                        </StackLayout>
-                    </Frame>
-
-                    <Frame
-                        Grid.Column="1"
-                        Padding="5,12"
-                        BackgroundColor="{DynamicResource secondary}"
-                        CornerRadius="30"
-                        HorizontalOptions="FillAndExpand">
-
-                        <Frame.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding NavigateToAddNewKeyPageCommand}" />
-                        </Frame.GestureRecognizers>
-
-                        <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
-                            <Label
-                                FontFamily="{StaticResource FontBold}"
-                                FontSize="{StaticResource FontSizeSmall}"
-                                Text="Adicionar"
-                                TextColor="{DynamicResource textOnSecondary}" />
-                            <controls:CustomIcon
-                                FontSize="{StaticResource FontSizeSmall}"
-                                Glyph="{x:Static icons:FontAwesomeSolid.PlusCircle}"
-                                TextColor="{DynamicResource textOnSecondary}" />
-                        </StackLayout>
-                    </Frame>
-                </Grid>
-
-            </Grid>
-
-            <Grid IsVisible="{Binding ShowWelcome}" RowDefinitions="*,auto">
-
-                <Grid.Background>
-                    <LinearGradientBrush EndPoint="0,1">
-                        <GradientStop Offset="0.1" Color="{DynamicResource primary}" />
-                        <GradientStop Offset="1.0" Color="{DynamicResource primaryDark}" />
-                    </LinearGradientBrush>
-                </Grid.Background>
-
-                <StackLayout
-                    Grid.Row="0"
-                    Spacing="30"
-                    VerticalOptions="CenterAndExpand">
-                    <controls:CustomIcon
-                        FontSize="100"
-                        Glyph="{x:Static icons:FontAwesomeSolid.AddressCard}"
-                        TextColor="{DynamicResource textOnSecondary}" />
-                    <Label
-                        FontFamily="{StaticResource FontSemiBold}"
-                        FontSize="{StaticResource FontSizeMedium}"
-                        HorizontalOptions="Center"
-                        Text="Adicione chaves de seus contatos"
-                        TextColor="{DynamicResource textOnPrimary}" />
-                    <Label
-                        Margin="10,0"
-                        FontSize="{StaticResource FontSizeSmall}"
-                        Text="Um contato te mandou uma chave e você não sabe onde pode guardar? Guarde aqui para fazer transferências futuras ;)"
-                        TextColor="{DynamicResource textOnPrimary}" />
-                </StackLayout>
-
-
-
-                <StackLayout Grid.Row="1" Padding="15,10">
-
-
-                    <Frame
-                        Padding="5,12"
-                        BackgroundColor="{DynamicResource secondary}"
-                        CornerRadius="30"
-                        HorizontalOptions="FillAndExpand"
-                        IsVisible="{Binding ShowAddkeyOnWelcome}">
-                        <Frame.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding NavigateToAddNewKeyPageCommand}" />
-                        </Frame.GestureRecognizers>
-
-                        <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
-
-                            <Label
-                                FontFamily="{StaticResource FontBold}"
-                                FontSize="{StaticResource FontSizeSmall}"
-                                Text="Adicionar chave de contato"
-                                TextColor="{DynamicResource textOnSecondary}" />
-                            <controls:CustomIcon
-                                FontSize="{StaticResource FontSizeSmall}"
-                                Glyph="{x:Static icons:FontAwesomeSolid.PlusCircle}"
-                                TextColor="{DynamicResource textOnSecondary}" />
-                        </StackLayout>
-                    </Frame>
-
-                </StackLayout>
-            </Grid>
-        </Grid>
+        </StackLayout>
 
 
     </ContentPage.Content>
