@@ -41,17 +41,11 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public IAsyncCommand RemoveAllCommand => new AsyncCommand(RemoveAllKeys);
 
-        
-
         public IAsyncCommand RemoveAllBillingCommand => new AsyncCommand(RemoveAllBilling);
 
         public IAsyncCommand LoadDataCommand => new AsyncCommand(LoadData);
 
-        
-
         public IAsyncCommand ExportToFileCommand => new AsyncCommand(() => _pixKeyService.ExportToFile(PixKeyList));
-
-        
 
         public IAsyncCommand ExportToFileBillingCommand => new AsyncCommand(() => _pixPayloadService.ExportToFile(BillingSaveList));
 

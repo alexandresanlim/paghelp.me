@@ -1,5 +1,4 @@
-﻿using AsyncAwaitBestPractices;
-using AsyncAwaitBestPractices.MVVM;
+﻿using AsyncAwaitBestPractices.MVVM;
 using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix;
 using PixQrCodeGeneratorOffline.ViewModels.Base;
@@ -8,7 +7,6 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.ViewModels
 {
@@ -18,7 +16,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public IAsyncCommand LoadDataCommand => new AsyncCommand(LoadData);
 
-        public IAsyncCommand ExportToFileContactCommand => new AsyncCommand(() => _pixKeyService.ExportToFileContact(PixKeyListContact));
+        public IAsyncCommand ExportToFileContactCommand => new AsyncCommand(async () => await _pixKeyService.ExportToFileContact(PixKeyListContact));
 
         public IAsyncCommand NavigateToAddNewKeyPageContactCommand => new AsyncCommand(async () => await _pixKeyService.NavigateToAdd(isContact: true));
 
@@ -30,8 +28,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public DashboardContactViewModel()
         {
-            LoadDataCommand.ExecuteAsync().SafeFireAndForget();
-
             DashboardContactVM = this;
         }
 

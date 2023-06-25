@@ -109,7 +109,7 @@
                             </StackLayout>
                             <StackLayout Grid.Column="2" Padding="0,5,0,0">
                                 <StackLayout.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:DashboardViewModel}}, Path=DeleteContactKeyCommand}" CommandParameter="{Binding .}" />
+                                    <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:DashboardContactViewModel}}, Path=DeleteContactKeyCommand}" CommandParameter="{Binding .}" />
                                 </StackLayout.GestureRecognizers>
 
                                 <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Trash}" Style="{DynamicResource styleIconActionListContact}" />
