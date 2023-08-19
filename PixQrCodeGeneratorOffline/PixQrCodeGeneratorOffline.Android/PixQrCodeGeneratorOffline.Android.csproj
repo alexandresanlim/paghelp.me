@@ -168,10 +168,13 @@
   <ItemGroup>
     <ProguardConfiguration Include="proguard.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\icon_contact.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties XamarinHotReloadUnhandledDeviceExceptionPixQrCodeGeneratorOfflineAndroidHideInfoBar="True" TriggeredFromHotReload="False" />
+      <UserProperties TriggeredFromHotReload="False" XamarinHotReloadUnhandledDeviceExceptionPixQrCodeGeneratorOfflineAndroidHideInfoBar="True" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>
