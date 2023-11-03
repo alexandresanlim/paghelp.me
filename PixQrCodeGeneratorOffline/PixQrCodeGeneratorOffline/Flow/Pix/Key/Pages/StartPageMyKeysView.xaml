@@ -33,7 +33,6 @@
         x:Name="bvKeys"
         BackgroundColor="{Binding CurrentPixKey.FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
         HeightRequest="50"
-        PropertyChanged="BoxView_PropertyChanged"
         VerticalOptions="Start" />
 
     <StackLayout Spacing="0">

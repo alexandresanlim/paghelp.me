@@ -11,13 +11,5 @@ namespace PixQrCodeGeneratorOffline.Views.Content.StartPageContents
         {
             InitializeComponent();
         }
-
-        private void BoxView_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
-        {
-            if (sender is BoxView && e.PropertyName.Equals(nameof(BackgroundColor)))
-            {
-                bvKeys.RunOpacityAnimationAsync().SafeFireAndForget(ex => ex.SendToLog());
-            }
-        }
     }
 }

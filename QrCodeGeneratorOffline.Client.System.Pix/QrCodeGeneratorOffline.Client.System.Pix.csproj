@@ -8,10 +8,10 @@
   <ItemGroup>
     <PackageReference Include="Acr.UserDialogs" Version="7.1.0.483" />
     <PackageReference Include="AsyncAwaitBestPractices.MVVM" Version="6.0.6" />
-    <PackageReference Include="LiteDB" Version="5.0.15" />
-    <PackageReference Include="Microsoft.AppCenter.Crashes" Version="5.0.1" />
-    <PackageReference Include="pix-payload-generator.net" Version="1.0.19-pre-release" />
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2545" />
+    <PackageReference Include="LiteDB" Version="5.0.17" />
+    <PackageReference Include="Microsoft.AppCenter.Crashes" Version="5.0.3" />
+    <PackageReference Include="pix-payload-generator.net" Version="1.0.21" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2612" />
   </ItemGroup>
 
 </Project>
