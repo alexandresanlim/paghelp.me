@@ -90,8 +90,6 @@
 
                 </IndicatorView>
 
-
-
                 <ContentView
                     Grid.Column="1"
                     HeightRequest="50"

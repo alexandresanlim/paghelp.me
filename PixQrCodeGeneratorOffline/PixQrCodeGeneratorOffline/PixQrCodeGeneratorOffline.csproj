@@ -158,9 +158,6 @@
     <EmbeddedResource Update="Flow\Pix\Billing\Pages\StartPageBillingSaveView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Flow\Pix\Contact\Pages\StartPageContactsKeysView.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Update="Flow\Crypto\Key\Pages\StartPageMyKeysCryptoView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

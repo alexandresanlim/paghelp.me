@@ -3,6 +3,7 @@ using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix;
 using PixQrCodeGeneratorOffline.ViewModels.Base;
 using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
@@ -55,6 +56,13 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             PixKeyListContact = _pixKeyService?
                 .GetAll(isContact: true)?.OrderBy(x => x?.Name)?
                 .ToObservableCollection() ?? new ObservableCollection<PixKey>();
+
+            var piskeyListContactGrouped = PixKeyListContact.GroupBy(x => x.Viewer.StartLetter);
+
+            foreach (var item in piskeyListContactGrouped)
+            {
+                PixKeyListContactGroup.Add(new PixKeyGroup(item.Key, item.ToList()));
+            }
         }
 
         #region Contact
@@ -116,6 +124,8 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             set => SetProperty(ref _pixKeyListContact, value);
             get => _pixKeyListContact;
         }
+
+        public List<PixKeyGroup> PixKeyListContactGroup { get; private set; } = new List<PixKeyGroup>();
     }
 
     //public static class DashboardContactViewModelExtention

@@ -83,7 +83,7 @@
                                                         FontFamily="{StaticResource FontSemiBold}"
                                                         FontSize="{StaticResource FontSizeMicro}"
                                                         Text="{Binding Tag.Title}"
-                                                        TextColor="{DynamicResource textPrimary}" />
+                                                        TextColor="#ffffff" />
                                                 </Frame>
                                             </StackLayout>
                                             <Label

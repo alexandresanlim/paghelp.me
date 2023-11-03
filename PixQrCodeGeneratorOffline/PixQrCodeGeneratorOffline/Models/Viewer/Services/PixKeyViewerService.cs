@@ -17,6 +17,7 @@ namespace PixQrCodeGeneratorOffline.Models.Viewer.Services
                 InstitutionAndKey = GetInstitutionAndKey(pixKey),
                 BankAndKey = GetBankAndKey(pixKey),
                 Initial = GetInitial(pixKey),
+                StartLetter = GetInitialStartLetter(pixKey),
             } : new PixKeyViewer();
         }
 
@@ -61,6 +62,20 @@ namespace PixQrCodeGeneratorOffline.Models.Viewer.Services
             catch (System.Exception)
             {
                 return "**";
+            }
+        }
+
+        private char GetInitialStartLetter(PixKey pixKey)
+        {
+            try
+            {
+                
+
+                return GetInitial(pixKey)[0];
+            }
+            catch (System.Exception)
+            {
+                return '*';
             }
         }
     }

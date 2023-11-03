@@ -3,9 +3,11 @@
     x:Class="PixQrCodeGeneratorOffline.Views.DashboardContactPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:content="clr-namespace:PixQrCodeGeneratorOffline.Views.Content"
     xmlns:contentStart="clr-namespace:PixQrCodeGeneratorOffline.Views.Content.StartPageContents"
     xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
     xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon"
+    xmlns:models="clr-namespace:PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix"
     xmlns:templates="clr-namespace:PixQrCodeGeneratorOffline.Templates"
     xmlns:viewmodels="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
     Title="Chaves de contatos"
@@ -32,27 +34,167 @@
             <Setter Property="FontFamily" Value="{StaticResource FontSemiBold}" />
         </Style>
 
+        <Style x:Key="StyleInfos" TargetType="Label">
+            <Setter Property="LineBreakMode" Value="MiddleTruncation" />
+            <Setter Property="MaxLines" Value="1" />
+            <Setter Property="TextColor" Value="{DynamicResource textPrimary}" />
+        </Style>
+
     </ContentPage.Resources>
 
     <ContentPage.Content>
 
-        <StackLayout Spacing="0">
+        <Grid RowDefinitions="*, 210" RowSpacing="0">
 
-            <templates:TemplateTitlePanel
-                Title="Chaves de Contatos"
-                Margin="0,8,0,0"
-                BackgroundImage="banner_chaves_contatos.png"
-                Icon="{x:Static icons:FontAwesomeSolid.Users}"
-                SubTitle="Guarde aqui as chaves dos &#x0a;seus contatos, para não &#x0a;precisar perguntar de novo." />
+            <StackLayout
+                Grid.Row="0"
+                IsVisible="{Binding PixKeyListContact, Converter={StaticResource HasDataConverterInverted}}"
+                Spacing="0">
 
-            <contentStart:StartPageContactsKeysView Margin="0,8,0,0" IsVisible="{Binding PixKeyListContact, Converter={StaticResource HasDataConverter}}" />
+                <templates:TemplateTitlePanel
+                    Title="Chaves de Contatos"
+                    Margin="0,8,0,0"
+                    BackgroundImage="banner_chaves_contatos.png"
+                    Icon="{x:Static icons:FontAwesomeSolid.Users}"
+                    SubTitle="Guarde aqui as chaves dos &#x0a;seus contatos, para não &#x0a;precisar perguntar de novo." />
 
-            <templates:TemplateAction
-                Title="Adicionar Nova"
-                Icon="{x:Static icons:FontAwesomeSolid.PlusCircle}"
-                TapCommand="{Binding NavigateToAddNewKeyPageContactCommand, Mode=OneTime}" />
+                <Label Margin="8,16" Text="Você ainda não adicionou nenhuma chave de contato, adicione para começar a usar e ter todas as vantagens. Vale lembra que nos preocupamos muito com a sua privacidade, e todos os seus dados informados aqui serão salvos somente neste dispositivo. 😉" />
 
-        </StackLayout>
+            </StackLayout>
+
+
+            <controls:CustomCollectionView
+                Grid.Row="0"
+                IsGrouped="True"
+                IsVisible="{Binding PixKeyListContact, Converter={StaticResource HasDataConverter}}"
+                ItemsSource="{Binding PixKeyListContactGroup}">
+
+                <CollectionView.GroupHeaderTemplate>
+                    <DataTemplate x:DataType="models:PixKeyGroup">
+                        <Label
+                            Padding="16,4"
+                            BackgroundColor="{StaticResource foreground_page}"
+                            FontFamily="{StaticResource FontBold}"
+                            FontSize="Large"
+                            Text="{Binding Name}"
+                            TextTransform="Uppercase" />
+                    </DataTemplate>
+                </CollectionView.GroupHeaderTemplate>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="models:PixKey">
+
+                        <StackLayout Padding="8,4">
+                            <Frame
+                                Padding="16"
+                                BackgroundColor="{DynamicResource foreground_page}"
+                                CornerRadius="16"
+                                HorizontalOptions="FillAndExpand">
+
+                                <StackLayout HorizontalOptions="FillAndExpand" Spacing="0">
+
+                                    <Grid ColumnDefinitions="70,*">
+
+                                        <Frame
+                                            Grid.Column="0"
+                                            Padding="4"
+                                            BackgroundColor="{DynamicResource primaryDark}"
+                                            CornerRadius="40"
+                                            HasShadow="False"
+                                            HeightRequest="50"
+                                            HorizontalOptions="Center"
+                                            IsClippedToBounds="True"
+                                            VerticalOptions="Center"
+                                            WidthRequest="50">
+                                            <Label
+                                                FontFamily="{StaticResource FontBold}"
+                                                FontSize="20"
+                                                HorizontalOptions="Center"
+                                                LineBreakMode="TailTruncation"
+                                                MaxLines="1"
+                                                Text="{Binding Viewer.Initial}"
+                                                TextColor="{StaticResource textOnPrimary}"
+                                                TextTransform="Uppercase"
+                                                VerticalOptions="Center" />
+                                        </Frame>
+
+
+                                        <StackLayout
+                                            Grid.Column="1"
+                                            Spacing="0"
+                                            VerticalOptions="CenterAndExpand">
+                                            <Label
+                                                FontFamily="{StaticResource FontSemiBold}"
+                                                FontSize="{StaticResource FontSizeSmall}"
+                                                Style="{StaticResource StyleInfos}"
+                                                Text="{Binding Viewer.NamePresentation}" />
+
+                                            <Label
+                                                FontSize="{StaticResource FontSizeMicro}"
+                                                Style="{StaticResource StyleInfos}"
+                                                Text="{Binding Viewer.KeyPresentation}" />
+                                        </StackLayout>
+
+                                    </Grid>
+
+                                    <content:DivisionView />
+
+                                    <Grid Margin="0,16,0,0" ColumnDefinitions="*,*,*">
+                                        <StackLayout Grid.Column="0">
+                                            <StackLayout.GestureRecognizers>
+                                                <TapGestureRecognizer Command="{Binding Command.CopyKeyCommand}" />
+                                            </StackLayout.GestureRecognizers>
+
+                                            <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Copy}" Style="{DynamicResource styleIconActionListContact}" />
+                                            <Label Style="{DynamicResource styleTextOnButtonActionListContact}" Text="Copiar" />
+                                        </StackLayout>
+
+                                        <StackLayout Grid.Column="1">
+                                            <StackLayout.GestureRecognizers>
+                                                <TapGestureRecognizer Command="{Binding Command.EditKeyCommand}" />
+                                            </StackLayout.GestureRecognizers>
+
+                                            <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Pen}" Style="{DynamicResource styleIconActionListContact}" />
+                                            <Label Style="{DynamicResource styleTextOnButtonActionListContact}" Text="Editar" />
+                                        </StackLayout>
+                                        <StackLayout Grid.Column="2">
+                                            <StackLayout.GestureRecognizers>
+                                                <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:AddPixKeyViewModel}}, Path=DeleteContactKeyCommand}" CommandParameter="{Binding .}" />
+                                            </StackLayout.GestureRecognizers>
+
+                                            <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Trash}" Style="{DynamicResource styleIconActionListContact}" />
+                                            <Label Style="{DynamicResource styleTextOnButtonActionListContact}" Text="Excluir" />
+                                        </StackLayout>
+                                    </Grid>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+
+            </controls:CustomCollectionView>
+
+
+
+            <StackLayout Grid.Row="1" Spacing="0">
+                <templates:TemplateAction
+                    Title="Adicionar chave de contato"
+                    Icon="{x:Static icons:FontAwesomeSolid.PlusCircle}"
+                    TapCommand="{Binding NavigateToAddNewKeyPageContactCommand, Mode=OneTime}" />
+
+                <templates:TemplateAction
+                    Title="Exportar Todas"
+                    Icon="{x:Static icons:FontAwesomeSolid.FileCsv}"
+                    TapCommand="{Binding ExportToFileContactCommand}" />
+
+                <templates:TemplateAction
+                    Title="Excluir Todas"
+                    Icon="{x:Static icons:FontAwesomeSolid.Trash}"
+                    TapCommand="{Binding RemoveAllKeyContactCommand}" />
+            </StackLayout>
+
+        </Grid>
 
 
     </ContentPage.Content>
