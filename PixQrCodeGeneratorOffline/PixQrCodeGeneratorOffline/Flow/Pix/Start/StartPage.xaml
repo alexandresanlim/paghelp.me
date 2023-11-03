@@ -76,21 +76,21 @@
                     Grid.Column="0"
                     Margin="8,0,0,0"
                     HorizontalOptions="StartAndExpand"
-                    IndicatorColor="#50000000"
-                    SelectedIndicatorColor="White"
+                    IndicatorColor="#80000000"
+                    SelectedIndicatorColor="#ffffff"
                     VerticalOptions="CenterAndExpand">
                     <IndicatorView.IndicatorTemplate>
                         <DataTemplate>
                             <BoxView
                                 HeightRequest="2"
                                 Style="{StaticResource IndicatorLabelStyle}"
-                                WidthRequest="14" />
+                                WidthRequest="16" />
                         </DataTemplate>
                     </IndicatorView.IndicatorTemplate>
 
                 </IndicatorView>
 
-              
+
 
                 <ContentView
                     Grid.Column="1"
