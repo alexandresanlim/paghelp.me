@@ -73,7 +73,6 @@
                     <DataTemplate x:DataType="models:PixKeyGroup">
                         <Label
                             Padding="16,4"
-                            BackgroundColor="{StaticResource foreground_page}"
                             FontFamily="{StaticResource FontBold}"
                             FontSize="Large"
                             Text="{Binding Name}"
