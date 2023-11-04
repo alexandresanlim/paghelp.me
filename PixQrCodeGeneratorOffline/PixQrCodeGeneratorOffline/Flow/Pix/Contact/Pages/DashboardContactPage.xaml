@@ -44,7 +44,7 @@
 
     <ContentPage.Content>
 
-        <Grid RowDefinitions="*, 210" RowSpacing="0">
+        <Grid>
 
             <StackLayout
                 Grid.Row="0"
@@ -60,11 +60,15 @@
 
                 <Label Margin="8,16" Text="Você ainda não adicionou nenhuma chave de contato, adicione para começar a usar e ter todas as vantagens. Vale lembra que nos preocupamos muito com a sua privacidade, e todos os seus dados informados aqui serão salvos somente neste dispositivo. 😉" />
 
+                <templates:TemplateAction
+                    Title="Adicionar chave de contato"
+                    Icon="{x:Static icons:FontAwesomeSolid.PlusCircle}"
+                    TapCommand="{Binding NavigateToAddNewKeyPageContactCommand, Mode=OneTime}" />
+
             </StackLayout>
 
 
             <controls:CustomCollectionView
-                Grid.Row="0"
                 IsGrouped="True"
                 IsVisible="{Binding PixKeyListContact, Converter={StaticResource HasDataConverter}}"
                 ItemsSource="{Binding PixKeyListContactGroup}">
@@ -172,11 +176,33 @@
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
 
+                <CollectionView.Footer>
+                    <BoxView HeightRequest="100" />
+                </CollectionView.Footer>
+
             </controls:CustomCollectionView>
 
+            <Frame
+                Margin="16"
+                BackgroundColor="{StaticResource staticAccentPrimary}"
+                CornerRadius="25"
+                HeightRequest="40"
+                HorizontalOptions="End"
+                VerticalOptions="End"
+                WidthRequest="40">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding OpenOptionsCommand, Mode=OneWay}" />
+                </Frame.GestureRecognizers>
+                <controls:CustomIcon
+                    Glyph="{x:Static icons:FontAwesomeSolid.Plus}"
+                    HorizontalOptions="CenterAndExpand"
+                    TextColor="{StaticResource staticAccentTextOnPrimary}"
+                    VerticalOptions="CenterAndExpand" />
+            </Frame>
 
 
-            <StackLayout Grid.Row="1" Spacing="0">
+
+            <!--<StackLayout Grid.Row="1" Spacing="0">
                 <templates:TemplateAction
                     Title="Adicionar chave de contato"
                     Icon="{x:Static icons:FontAwesomeSolid.PlusCircle}"
@@ -191,7 +217,7 @@
                     Title="Excluir Todas"
                     Icon="{x:Static icons:FontAwesomeSolid.Trash}"
                     TapCommand="{Binding RemoveAllKeyContactCommand}" />
-            </StackLayout>
+            </StackLayout>-->
 
         </Grid>
 

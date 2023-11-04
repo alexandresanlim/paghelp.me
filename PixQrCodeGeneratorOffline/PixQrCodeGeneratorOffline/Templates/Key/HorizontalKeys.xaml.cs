@@ -7,7 +7,7 @@ namespace PixQrCodeGeneratorOffline.Templates.Key
     {
         const string BULLET = "● ● ● ● ● ● ● ● ●";
 
-        private static string CurrentKeyValue;
+        //private static string CurrentKeyValue;
 
         private static bool CurrentKeyIsHide;
 
@@ -181,9 +181,12 @@ namespace PixQrCodeGeneratorOffline.Templates.Key
             var template = (HorizontalKeys)bindable;
             string value = (string)newValue;
 
-            CurrentKeyValue = value;
+            //CurrentKeyValue = value;
+
+            if (value != BULLET)
+                template.xKeyValueHide.Text = value;
+
             template.xKeyValue.Text = CurrentKeyIsHide ? value : BULLET;
-            
         }
 
         public static readonly BindableProperty HideValueProperty =
@@ -210,7 +213,7 @@ namespace PixQrCodeGeneratorOffline.Templates.Key
             var template = (HorizontalKeys)bindable;
             bool value = (bool)newValue;
 
-            template.xKeyValue.Text = value ? CurrentKeyValue : BULLET;
+            template.xKeyValue.Text = value ? template.xKeyValueHide.Text : BULLET;
         }
     }
 }

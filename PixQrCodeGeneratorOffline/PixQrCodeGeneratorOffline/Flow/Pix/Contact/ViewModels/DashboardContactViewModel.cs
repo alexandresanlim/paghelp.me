@@ -1,5 +1,8 @@
-﻿using AsyncAwaitBestPractices.MVVM;
+﻿using Acr.UserDialogs;
+using AsyncAwaitBestPractices.MVVM;
 using PixQrCodeGeneratorOffline.Extention;
+using PixQrCodeGeneratorOffline.Helpers;
+using PixQrCodeGeneratorOffline.Models.DataStatic.Files;
 using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix;
 using PixQrCodeGeneratorOffline.ViewModels.Base;
 using System;
@@ -8,6 +11,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.ViewModels
 {
@@ -24,6 +28,8 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         public IAsyncCommand RemoveAllKeyContactCommand => new AsyncCommand(RemoveAllContactKeys);
 
         public ICommand DeleteContactKeyCommand => new AsyncCommand<PixKey>(DeleteContactKey);
+
+        public ICommand OpenOptionsCommand => new Command(OpenOptions);
 
         #endregion
 
@@ -105,6 +111,37 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 else
                     ShowToastErrorMessage();
+            }
+            catch (Exception e)
+            {
+                e.SendToLog();
+            }
+            finally
+            {
+                SetIsLoading(false);
+            }
+        }
+
+        private void OpenOptions()
+        {
+            try
+            {
+                var options = new List<ActionSheetOption>()
+                {
+                    new ActionSheetOption("Adicionar nova chave",() => NavigateToAddNewKeyPageContactCommand.Execute(null)),
+                    new ActionSheetOption("Exportar todas",() => ExportToFileContactCommand.Execute(null)),
+                    new ActionSheetOption("Excluir todas",() => RemoveAllKeyContactCommand.Execute(null)),
+                };
+
+                DialogService.ActionSheet(new ActionSheetConfig
+                {
+                    Title = "Selecione uma opção",
+                    Options = options,
+                    Cancel = new ActionSheetOption(Constants.CANCEL, () =>
+                    {
+                        return;
+                    })
+                });
             }
             catch (Exception e)
             {

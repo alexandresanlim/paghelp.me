@@ -66,6 +66,11 @@
                 MaxLines="1"
                 Text="Key" />
 
+            <Label
+                x:Name="xKeyValueHide"
+                IsVisible="false"
+                Text="" />
+
 
         </StackLayout>
 
