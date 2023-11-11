@@ -1,9 +1,10 @@
 ﻿using PixQrCodeGeneratorOffline.Services;
 using Xamarin.Forms;
+using static PixQrCodeGeneratorOffline.Extention.IconExtention;
 
 namespace PixQrCodeGeneratorOffline.Templates.Key
 {
-    public partial class HorizontalKeys : StackLayout
+    public partial class HorizontalKeys : Grid
     {
         const string BULLET = "● ● ● ● ● ● ● ● ●";
 
@@ -36,13 +37,8 @@ namespace PixQrCodeGeneratorOffline.Templates.Key
 
         static void QrCodePropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
-            if (newValue == null)
-                return;
-
-            var template = (HorizontalKeys)bindable;
-            string value = (string)newValue;
-
-            template.xQrCode.Content = value;
+            if (bindable is HorizontalKeys template && newValue is string value && !string.IsNullOrEmpty(value))
+                template.xQrCode.Content = value;
         }
 
 
@@ -52,8 +48,6 @@ namespace PixQrCodeGeneratorOffline.Templates.Key
                returnType: typeof(Color),
                declaringType: typeof(HorizontalKeys),
                defaultValue: Color.White,
-               defaultBindingMode: BindingMode.Default,
-               validateValue: null,
                propertyChanged: BoxColorPropertyChanged);
 
         public Color BoxColor
@@ -64,13 +58,8 @@ namespace PixQrCodeGeneratorOffline.Templates.Key
 
         static void BoxColorPropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
-            if (newValue == null)
-                return;
-
-            var template = (HorizontalKeys)bindable;
-            Color value = (Color)newValue;
-
-            template.xMainFrame.BackgroundColor = value;
+            if (bindable is HorizontalKeys template && newValue is Color value && value != null)
+                template.xMainFrame.BackgroundColor = value;
         }
 
         public static readonly BindableProperty IconInstitutionProperty =
@@ -78,9 +67,6 @@ namespace PixQrCodeGeneratorOffline.Templates.Key
                propertyName: nameof(IconInstitution),
                returnType: typeof(string),
                declaringType: typeof(HorizontalKeys),
-               defaultValue: string.Empty,
-               defaultBindingMode: BindingMode.Default,
-               validateValue: null,
                propertyChanged: IconInstitutionPropertyChanged);
 
         public string IconInstitution
@@ -91,14 +77,31 @@ namespace PixQrCodeGeneratorOffline.Templates.Key
 
         static void IconInstitutionPropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
-            if (newValue == null)
-                return;
-
-            var template = (HorizontalKeys)bindable;
-            string value = (string)newValue;
-
-            template.xIconInstitution.Glyph = value;
+            if(bindable is HorizontalKeys template && newValue is string value && !string.IsNullOrEmpty(value))
+                template.xIconInstitution.Glyph = value;
         }
+
+        public static readonly BindableProperty IconTypeProperty =
+           BindableProperty.Create(
+               propertyName: nameof(IconType),
+               returnType: typeof(FontAwesomeType),
+               declaringType: typeof(HorizontalKeys),
+               propertyChanged: IconTypePropertyChanged);
+
+        public FontAwesomeType IconType
+        {
+            get => (FontAwesomeType)GetValue(IconInstitutionProperty);
+            set => SetValue(IconInstitutionProperty, value);
+        }
+
+        static void IconTypePropertyChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            if (bindable is HorizontalKeys template && newValue is FontAwesomeType value)
+                template.xIconInstitution.IconType = value;
+        }
+
+
+        
 
 
         //public static readonly BindableProperty IconKeyProperty =
@@ -147,13 +150,8 @@ namespace PixQrCodeGeneratorOffline.Templates.Key
 
         static void IntitutionValuePropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
-            if (newValue == null)
-                return;
-
-            var template = (HorizontalKeys)bindable;
-            string value = (string)newValue;
-
-            template.xInstitutionValue.Text = value;
+            if (bindable is HorizontalKeys template && newValue is string value && !string.IsNullOrWhiteSpace(value))
+                template.xInstitutionValue.Text = value;
         }
 
 
@@ -175,18 +173,13 @@ namespace PixQrCodeGeneratorOffline.Templates.Key
 
         static void KeyValuePropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
-            if (newValue == null)
-                return;
+            if (bindable is HorizontalKeys template && newValue is string value && !string.IsNullOrEmpty(value))
+            { 
+                if (value != BULLET)
+                    template.xKeyValueHide.Text = value;
 
-            var template = (HorizontalKeys)bindable;
-            string value = (string)newValue;
-
-            //CurrentKeyValue = value;
-
-            if (value != BULLET)
-                template.xKeyValueHide.Text = value;
-
-            template.xKeyValue.Text = CurrentKeyIsHide ? value : BULLET;
+                template.xKeyValue.Text = CurrentKeyIsHide ? value : BULLET;
+            }
         }
 
         public static readonly BindableProperty HideValueProperty =
@@ -207,13 +200,8 @@ namespace PixQrCodeGeneratorOffline.Templates.Key
 
         private static void HideValuePropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
-            if (newValue == null)
-                return;
-
-            var template = (HorizontalKeys)bindable;
-            bool value = (bool)newValue;
-
-            template.xKeyValue.Text = value ? template.xKeyValueHide.Text : BULLET;
+            if (bindable is HorizontalKeys template && newValue is bool value)
+                template.xKeyValue.Text = value ? template.xKeyValueHide.Text : BULLET;
         }
     }
 }

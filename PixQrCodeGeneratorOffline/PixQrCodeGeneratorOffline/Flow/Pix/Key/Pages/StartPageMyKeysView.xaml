@@ -34,10 +34,11 @@
 
         <CarouselView
             x:Name="xCarouselView"
+            Margin="0,0,0,8"
             CurrentItem="{Binding CurrentPixKey}"
             CurrentItemChangedCommand="{Binding ChangeSelectPixKeyCommand, Mode=OneTime}"
             CurrentItemChangedCommandParameter="{Binding Source={RelativeSource Self}, Path=CurrentItem}"
-            HeightRequest="150"
+            HeightRequest="130"
             ItemsSource="{Binding PixKeyList}">
 
             <CarouselView.ItemTemplate>
@@ -47,6 +48,7 @@
                         BoxColor="{Binding FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
                         HideValue="{Binding Source={RelativeSource AncestorType={x:Type vmBase:DashboardViewModelBase}}, Path=IsHideValue}"
                         IconInstitution="{Binding FinancialInstitution.Institution.Icon}"
+                        IconType="FonteBancosBrasileiros"
                         InstitutionValue="{Binding Viewer.InstitutionPresentation}"
                         KeyValue="{Binding Viewer.KeyPresentation}"
                         QrCode="{Binding Payload.QrCode}">

@@ -38,10 +38,11 @@
 
         <CarouselView
             x:Name="xCarouselCryptoView"
+            Margin="0,0,0,8"
             CurrentItem="{Binding CurrentCryptoKey}"
             CurrentItemChangedCommand="{Binding ChangeSelectCryptoKeyCommand}"
             CurrentItemChangedCommandParameter="{Binding Source={RelativeSource Self}, Path=CurrentItem}"
-            HeightRequest="150"
+            HeightRequest="130"
             ItemsSource="{Binding CryptoKeyList}">
 
             <CarouselView.ItemTemplate>
@@ -50,14 +51,14 @@
                     <key:HorizontalKeys
                         BoxColor="{Binding FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
                         HideValue="{Binding Source={RelativeSource AncestorType={x:Type vmBase:DashboardViewModelBase}}, Path=IsHideValue}"
-                        IconInstitution="{x:Static icons:FontAwesomeSolid.Coins}"
+                        IconInstitution="{Binding FinancialInstitution.Institution.Icon}"
+                        IconType="brand"
                         InstitutionValue="{Binding Viewer.InstitutionPresentation}"
                         KeyValue="{Binding Viewer.KeyPresentation}"
                         QrCode="{Binding Payload.QrCode}">
                         <key:HorizontalKeys.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding Command.NavigateToPaymentPageCommand}" NumberOfTapsRequired="1" />
                             <TapGestureRecognizer Command="{Binding Command.CopyKeyCommand}" NumberOfTapsRequired="2" />
-                            <TapGestureRecognizer Command="{Binding Command.ShareKeyCommand}" NumberOfTapsRequired="3" />
                         </key:HorizontalKeys.GestureRecognizers>
                     </key:HorizontalKeys>
 

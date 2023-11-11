@@ -1,4 +1,5 @@
-﻿using PixQrCodeGeneratorOffline.Models.DataStatic.Institutions.Base;
+﻿using PixQrCodeGeneratorOffline.Helpers.Icon;
+using PixQrCodeGeneratorOffline.Models.DataStatic.Institutions.Base;
 using PixQrCodeGeneratorOffline.Models.DataStatic.InstitutionsCrypto.Interfaces;
 using Xamarin.Forms;
 
@@ -11,6 +12,8 @@ namespace PixQrCodeGeneratorOffline.Models.DataStatic.InstitutionsCrypto
         public string LinkToWallet => "bitcoin:";
 
         public FinancialInstitutionCryptoType Type => FinancialInstitutionCryptoType.Bitcoin;
+
+        public new string Icon => FontAwesomeBrands.Bitcoin;
 
         public MaterialColor MaterialColor => new MaterialColor()
         {

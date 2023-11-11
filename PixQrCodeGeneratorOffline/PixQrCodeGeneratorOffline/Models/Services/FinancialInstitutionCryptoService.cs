@@ -1,4 +1,5 @@
-﻿using PixQrCodeGeneratorOffline.Models.DataStatic.InstitutionsCrypto;
+﻿using PixQrCodeGeneratorOffline.Models.DataStatic.Institutions.Interfaces;
+using PixQrCodeGeneratorOffline.Models.DataStatic.InstitutionsCrypto;
 using PixQrCodeGeneratorOffline.Models.DataStatic.InstitutionsCrypto.Base;
 using PixQrCodeGeneratorOffline.Models.DataStatic.InstitutionsCrypto.Interfaces;
 using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
@@ -46,6 +47,11 @@ namespace PixQrCodeGeneratorOffline.Models.Services
         public MaterialColor GetMaterialColor(IInstitutionCrypto institution)
         {
             return institution.MaterialColor;
+        }
+
+        public string GetIcon(IInstitutionCrypto institution)
+        {
+            return institution.Icon;
         }
 
         public FinancialInstitutionCryptoType GetType(IInstitutionCrypto institution)
@@ -106,7 +112,8 @@ namespace PixQrCodeGeneratorOffline.Models.Services
                 Name = GetName(institution),
                 Type = GetType(institution),
                 LinkToWallet = GetLinkToWallet(institution),
-                MaterialColor = GetMaterialColor(institution)
+                MaterialColor = GetMaterialColor(institution),
+                Icon = GetIcon(institution)
             };
         }
     }
