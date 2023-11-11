@@ -1,4 +1,5 @@
 ﻿
+using Acr.UserDialogs;
 using Android.App;
 using Android.Gms.Ads;
 using Android.OS;
@@ -10,6 +11,8 @@ using Microsoft.AppCenter.Crashes;
 using PixQrCodeGeneratorOffline.Services;
 using PixQrCodeGeneratorOffline.Style.Interfaces;
 using Plugin.Fingerprint;
+using Rg.Plugins.Popup;
+using System;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
@@ -35,10 +38,10 @@ namespace PixQrCodeGeneratorOffline.Droid
         {
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-            Acr.UserDialogs.UserDialogs.Init(this);
+            UserDialogs.Init(this);
             MobileAds.Initialize(ApplicationContext);
             CrossFingerprint.SetCurrentActivityResolver(() => Platform.CurrentActivity);
-            Rg.Plugins.Popup.Popup.Init(this);
+            Popup.Init(this);
             //ConfigureWindow();
             AppCenter.Start(App.Ids.AppCenter, typeof(Analytics), typeof(Crashes));
         }
@@ -63,7 +66,14 @@ namespace PixQrCodeGeneratorOffline.Droid
         public override void OnBackPressed()
         {
             //base.OnBackPressed();
-            Rg.Plugins.Popup.Popup.SendBackPressed(base.OnBackPressed);
+            try
+            {
+                Popup.SendBackPressed(base.OnBackPressed);
+            }
+            catch
+            {
+
+            }
         }
 
         public class StatusBarChanger : IStatusBar

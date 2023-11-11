@@ -1,18 +1,21 @@
-﻿
-using PixQrCodeGeneratorOffline.Extention;
-using PixQrCodeGeneratorOffline.Helpers.Icon;
-using PixQrCodeGeneratorOffline.Services;
-using System.Windows.Input;
+﻿using PixQrCodeGeneratorOffline.Services;
 using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.Templates.Key
 {
     public partial class HorizontalKeys : StackLayout
     {
+        const string BULLET = "● ● ● ● ● ● ● ● ●";
+
+        //private static string CurrentKeyValue;
+
+        private static bool CurrentKeyIsHide;
+
         public HorizontalKeys()
         {
             InitializeComponent();
-            xHidePanel.IsVisible = Preference.HideData;
+
+            CurrentKeyIsHide = Preference.HideData;
         }
 
         public static readonly BindableProperty QrCodeProperty =
@@ -67,7 +70,7 @@ namespace PixQrCodeGeneratorOffline.Templates.Key
             var template = (HorizontalKeys)bindable;
             Color value = (Color)newValue;
 
-            template.xBoxView.BackgroundColor = value;
+            template.xMainFrame.BackgroundColor = value;
         }
 
         public static readonly BindableProperty IconInstitutionProperty =
@@ -98,32 +101,32 @@ namespace PixQrCodeGeneratorOffline.Templates.Key
         }
 
 
-        public static readonly BindableProperty IconKeyProperty =
-           BindableProperty.Create(
-               propertyName: nameof(IconKey),
-               returnType: typeof(string),
-               declaringType: typeof(HorizontalKeys),
-               defaultValue: string.Empty,
-               defaultBindingMode: BindingMode.Default,
-               validateValue: null,
-               propertyChanged: IconKeyPropertyChanged);
+        //public static readonly BindableProperty IconKeyProperty =
+        //   BindableProperty.Create(
+        //       propertyName: nameof(IconKey),
+        //       returnType: typeof(string),
+        //       declaringType: typeof(HorizontalKeys),
+        //       defaultValue: string.Empty,
+        //       defaultBindingMode: BindingMode.Default,
+        //       validateValue: null,
+        //       propertyChanged: IconKeyPropertyChanged);
 
-        public string IconKey
-        {
-            get => (string)GetValue(IconKeyProperty);
-            set => SetValue(IconKeyProperty, value);
-        }
+        //public string IconKey
+        //{
+        //    get => (string)GetValue(IconKeyProperty);
+        //    set => SetValue(IconKeyProperty, value);
+        //}
 
-        static void IconKeyPropertyChanged(BindableObject bindable, object oldValue, object newValue)
-        {
-            if (newValue == null)
-                return;
+        //static void IconKeyPropertyChanged(BindableObject bindable, object oldValue, object newValue)
+        //{
+        //    if (newValue == null)
+        //        return;
 
-            var template = (HorizontalKeys)bindable;
-            string value = (string)newValue;
+        //    var template = (HorizontalKeys)bindable;
+        //    string value = (string)newValue;
 
-            template.xIconKey.Glyph = value;
-        }
+        //    template.xIconKey.Glyph = value;
+        //}
 
 
         public static readonly BindableProperty InstitutionValueProperty =
@@ -178,36 +181,13 @@ namespace PixQrCodeGeneratorOffline.Templates.Key
             var template = (HorizontalKeys)bindable;
             string value = (string)newValue;
 
-            template.xKeyValue.Text = value;
+            //CurrentKeyValue = value;
+
+            if (value != BULLET)
+                template.xKeyValueHide.Text = value;
+
+            template.xKeyValue.Text = CurrentKeyIsHide ? value : BULLET;
         }
-
-        //public static readonly BindableProperty TapCommandProperty =
-        //    BindableProperty.Create(nameof(TapCommand),
-        //        typeof(ICommand),
-        //        typeof(HorizontalKeys),
-        //        null,
-        //        BindingMode.Default,
-        //        null,
-        //        propertyChanged: TapPropertyChanged);
-
-        //public ICommand TapCommand
-        //{
-        //    get => (ICommand)GetValue(TapCommandProperty);
-        //    set => SetValue(TapCommandProperty, value);
-        //}
-
-        //static void TapPropertyChanged(BindableObject bindable, object oldValue, object newValue)
-        //{
-        //    if (newValue == null)
-        //        return;
-
-        //    var b = (HorizontalKeys)bindable;
-        //    b.GestureRecognizers.Add(new TapGestureRecognizer
-        //    {
-        //        Command = (ICommand)newValue,
-        //    });
-        //}
-
 
         public static readonly BindableProperty HideValueProperty =
            BindableProperty.Create(
@@ -233,34 +213,7 @@ namespace PixQrCodeGeneratorOffline.Templates.Key
             var template = (HorizontalKeys)bindable;
             bool value = (bool)newValue;
 
-            template.xHidePanel.IsVisible = value;
-        }
-
-        public static readonly BindableProperty HidePanelColorProperty =
-           BindableProperty.Create(
-               propertyName: nameof(HidePanelColor),
-               returnType: typeof(Color),
-               declaringType: typeof(HorizontalKeys),
-               defaultValue: Color.White,
-               defaultBindingMode: BindingMode.Default,
-               validateValue: null,
-               propertyChanged: HidePanelColorPropertyChanged);
-
-        public Color HidePanelColor
-        {
-            get => (Color)GetValue(HidePanelColorProperty);
-            set => SetValue(HidePanelColorProperty, value);
-        }
-
-        private static void HidePanelColorPropertyChanged(BindableObject bindable, object oldValue, object newValue)
-        {
-            if (newValue == null)
-                return;
-
-            var template = (HorizontalKeys)bindable;
-            Color value = (Color)newValue;
-
-            template.xHidePanel.BackgroundColor = value;
+            template.xKeyValue.Text = value ? template.xKeyValueHide.Text : BULLET;
         }
     }
 }

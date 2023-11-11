@@ -7,7 +7,6 @@
     xmlns:contentStart="clr-namespace:PixQrCodeGeneratorOffline.Views.Content.StartPageContents"
     xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
     xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon"
-    xmlns:local="clr-namespace:PixQrCodeGeneratorOffline.Extention;assembly=PixQrCodeGeneratorOffline"
     xmlns:templates="clr-namespace:PixQrCodeGeneratorOffline.Templates"
     xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
     x:DataType="vm:DashboardViewModel"
@@ -37,31 +36,26 @@
                 <Setter Property="BackgroundColor" Value="{DynamicResource foreground_page}" />
             </Style>
 
-
-
-            <Style x:Key="styleTextOnButtonActionListContact" TargetType="Label">
-                <Setter Property="TextColor" Value="{DynamicResource textPrimary}" />
-                <Setter Property="HorizontalOptions" Value="Center" />
-                <Setter Property="FontSize" Value="{StaticResource FontSizeMicro}" />
-                <Setter Property="FontFamily" Value="{StaticResource FontSemiBold}" />
-
-            </Style>
-
-            <Style x:Key="styleIconActionListContact" TargetType="controls:CustomIcon">
-                <Setter Property="FontSize" Value="{StaticResource FontSizeMedium}" />
-                <Setter Property="HorizontalOptions" Value="Center" />
-                <Setter Property="TextColor" Value="{DynamicResource textPrimary}" />
-            </Style>
-
-
-            <Style x:Key="styleButtonActionListContact" TargetType="Frame">
-                <Setter Property="BackgroundColor" Value="{DynamicResource textPrimary}" />
-                <Setter Property="CornerRadius" Value="10" />
-                <Setter Property="Padding" Value="10,15" />
-
-            </Style>
-
         </ResourceDictionary>
+
+        <Style x:Key="IndicatorLabelStyle" TargetType="BoxView">
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="#50000000" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="Selected">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="#ffffff" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
     </ContentPage.Resources>
 
 
@@ -71,23 +65,40 @@
         <StackLayout Spacing="0">
 
 
-            <Grid ColumnDefinitions="*, 80" ColumnSpacing="0">
+            <!--  {Binding CurrentPixKey.FinancialInstitution.Institution.MaterialColor.PrimaryDark}  -->
+            <Grid
+                BackgroundColor="{Binding CurrentPixKey.FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
+                ColumnDefinitions="*, 50"
+                ColumnSpacing="0">
 
-                <templates:TemplateTitlePanel
-                    Title="Minhas Chaves Pix"
+                <IndicatorView
+                    x:Name="xIndicatorView"
                     Grid.Column="0"
-                    BackgroundColor="{Binding CurrentPixKey.FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
-                    Icon="{x:Static icons:FontBancos.Pix}"
-                    IconColor="{Binding CurrentPixKey.FinancialInstitution.Institution.MaterialColor.TextOnPrimary}"
-                    IconType="FonteBancosBrasileiros"
-                    TitleColor="{Binding CurrentPixKey.FinancialInstitution.Institution.MaterialColor.TextOnPrimary}" />
+                    Margin="8,0,0,0"
+                    HorizontalOptions="StartAndExpand"
+                    IndicatorColor="#80000000"
+                    SelectedIndicatorColor="#ffffff"
+                    VerticalOptions="CenterAndExpand">
+                    <IndicatorView.IndicatorTemplate>
+                        <DataTemplate>
+                            <BoxView
+                                HeightRequest="2"
+                                Style="{StaticResource IndicatorLabelStyle}"
+                                WidthRequest="16" />
+                        </DataTemplate>
+                    </IndicatorView.IndicatorTemplate>
 
-                <StackLayout
+                </IndicatorView>
+
+                <ContentView
                     Grid.Column="1"
-                    Padding="0,8,8,0"
-                    BackgroundColor="{Binding CurrentPixKey.FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
-                    IsVisible="{Binding PixKeyList, Mode=TwoWay, Converter={StaticResource HasDataConverter}}">
-                    <controls:CustomIcon HorizontalOptions="End" TextColor="{Binding CurrentPixKey.FinancialInstitution.Institution.MaterialColor.TextOnPrimary}">
+                    HeightRequest="50"
+                    IsVisible="{Binding PixKeyList, Mode=TwoWay, Converter={StaticResource HasDataConverter}}"
+                    WidthRequest="50">
+                    <controls:CustomIcon
+                        HorizontalOptions="CenterAndExpand"
+                        TextColor="{Binding CurrentPixKey.FinancialInstitution.Institution.MaterialColor.TextOnPrimary}"
+                        VerticalOptions="CenterAndExpand">
                         <controls:CustomIcon.Triggers>
                             <DataTrigger
                                 Binding="{Binding IsHideValue, Mode=TwoWay}"
@@ -103,18 +114,50 @@
                             </DataTrigger>
                         </controls:CustomIcon.Triggers>
                     </controls:CustomIcon>
-                    <StackLayout.GestureRecognizers>
+                    <ContentView.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding HideValueCommand, Mode=OneTime}" />
-                    </StackLayout.GestureRecognizers>
-                </StackLayout>
+                    </ContentView.GestureRecognizers>
+                </ContentView>
             </Grid>
 
-            <contentStart:StartPageMyKeysView IsVisible="{Binding PixKeyList, Converter={StaticResource HasDataConverter}}" />
+
+
+            <contentStart:StartPageMyKeysView x:Name="xMyKeys" IsVisible="{Binding PixKeyList, Converter={StaticResource HasDataConverter}}" />
+
+            <StackLayout IsVisible="{Binding PixKeyList, Converter={StaticResource HasDataConverterInverted}}" Spacing="0">
+                <StackLayout Padding="8" Spacing="0">
+                    <Label
+                        FontFamily="{StaticResource FontBold}"
+                        FontSize="{StaticResource FontSizeExtraLarge}"
+                        Text="Olá!" />
+                    <Label
+                        FontFamily="{StaticResource FontBold}"
+                        FontSize="{StaticResource FontSizeLarge}"
+                        Text="Seja muito bem vindo!" />
+                    <Label
+                        FontFamily="{StaticResource FontSemiBold}"
+                        FontSize="{StaticResource FontSizeMedium}"
+                        Text="meu grande amigo novo usuário 🧍" />
+                </StackLayout>
+                <Label Margin="8" Text="Vamos te levar para uma grande experiência incrivel." />
+                <Label Margin="8" Text="Você ainda não adicionou nenhuma chave, adicione para começar a usar e ter todas as vantagens. Vale lembra que nos preocupamos muito com a sua privacidade, e todos os seus dados informados aqui serão salvos somente neste dispositivo. 😉" />
+                <templates:TemplateAction
+                    Title="Ver vantagens Paghelp.me!"
+                    Icon="{x:Static icons:FontAwesomeSolid.Heart}"
+                    TapCommand="{Binding NavigateBenefitsCommand, Mode=OneTime}" />
+                <templates:TemplateAction
+                    Title="Adicionar minha primeira chave"
+                    Icon="{x:Static icons:FontAwesomeSolid.PlusCircle}"
+                    TapCommand="{Binding NavigateToAddNewKeyPageCommand, Mode=OneTime}" />
+
+
+            </StackLayout>
 
             <templates:TemplateAction
                 Title="Adicionar Nova"
                 Margin="8,8,8,0"
                 Icon="{x:Static icons:FontAwesomeSolid.PlusCircle}"
+                IsVisible="{Binding PixKeyList, Converter={StaticResource HasDataConverter}}"
                 TapCommand="{Binding NavigateToAddNewKeyPageCommand, Mode=OneTime}" />
 
             <content:DivisionView Margin="0,8,0,0" />
@@ -135,25 +178,6 @@
 
             </StackLayout>
 
-            <!--  //////////////////////////////////////////////////////////////////////////////////////////////////////////////  -->
-
-            <templates:TemplateTitlePanel
-                Title="Chaves de Contatos"
-                Margin="0,8,0,0"
-                BackgroundImage="banner_chaves_contatos.png"
-                Icon="{x:Static icons:FontAwesomeSolid.Users}"
-                SubTitle="Guarde aqui as chaves dos &#x0a;seus contatos, para não &#x0a;precisar perguntar de novo." />
-
-            <contentStart:StartPageContactsKeysView Margin="0,8,0,0" IsVisible="{Binding PixKeyListContact, Converter={StaticResource HasDataConverter}}" />
-
-            <templates:TemplateAction
-                Title="Adicionar Nova"
-                Icon="{x:Static icons:FontAwesomeSolid.PlusCircle}"
-                TapCommand="{Binding NavigateToAddNewKeyPageContactCommand, Mode=OneTime}" />
-
-            <content:DivisionView />
-
-            <!--  //////////////////////////////////////////////////////////////////////////////////////////////////////////////  -->
 
             <!--<StackLayout IsVisible="{Binding CurrentFeedList, Converter={StaticResource HasDataConverter}}">
 
@@ -167,9 +191,22 @@
 
             </StackLayout>-->
 
+            <content:DivisionView />
+
+            <Grid Padding="0,0,8,0" ColumnDefinitions="*, 15">
+
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding NavigateToContactsCommand, Mode=OneTime}" />
+                </Grid.GestureRecognizers>
+
+                <templates:TemplateTitlePanel Title="Chaves de Contatos" Icon="{x:Static icons:FontAwesomeSolid.AddressBook}" />
+
+                <content:ChevronRightView Grid.Column="1" />
+            </Grid>
+
             <content:DivisionView Margin="0,8,0,0" />
 
-            <Grid Padding="0,0,8,0" ColumnDefinitions="*, auto">
+            <Grid Padding="0,0,8,0" ColumnDefinitions="*, 15">
 
                 <Grid.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding NavigateToNewsCommand, Mode=OneTime}" />
@@ -186,7 +223,7 @@
 
             <!--  //////////////////////////////////////////////////////////////////////////////////////////////////////////////  -->
 
-            <Grid Padding="0,0,8,0" ColumnDefinitions="*, auto">
+            <Grid Padding="0,0,8,0" ColumnDefinitions="*, 15">
 
                 <Grid.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding NavigateToGuidCommand, Mode=OneTime}" />

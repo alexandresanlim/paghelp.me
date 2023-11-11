@@ -3,14 +3,13 @@
     x:Class="PixQrCodeGeneratorOffline.Views.PaymentPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
-    xmlns:content="clr-namespace:PixQrCodeGeneratorOffline.Views.Content"
     xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
     xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon"
     xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
     xmlns:qr="clr-namespace:Xam.Forms;assembly=Xam.Forms.QRCode"
     xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
     x:DataType="vm:PaymentViewModel"
+    BackgroundClicked="TapGestureRecognizer_Tapped"
     CloseWhenBackgroundIsClicked="True">
 
 
@@ -35,18 +34,6 @@
         </ResourceDictionary>
     </pages:PopupPage.Resources>
 
-    <!--<Grid RowDefinitions="*, 0.1*">-->
-
-    <!--<Frame
-        Margin="8,8,8,50"
-        Padding="0"
-        CornerRadius="8"
-        VerticalOptions="Center">
-
-
-
-    </Frame>-->
-
     <Grid
         RowDefinitions="*,20,auto"
         RowSpacing="0"
@@ -55,32 +42,51 @@
         <Frame
             Grid.Row="0"
             Margin="8,0,8,-1"
-            Padding="16,16,16,0"
+            Padding="16,0,16,0"
             BackgroundColor="{StaticResource staticBackgroundPage}"
             CornerRadius="12">
             <ScrollView>
-                <StackLayout Spacing="0" VerticalOptions="End">
+                <StackLayout Spacing="0">
 
-                    <Label
-                        FontFamily="{StaticResource FontBold}"
-                        FontSize="{StaticResource FontSizeMedium}"
-                        HorizontalTextAlignment="Center"
-                        TextColor="{StaticResource staticTextPrimary}">
-                        <Label.Triggers>
-                            <DataTrigger
-                                Binding="{Binding IsActionVisible}"
-                                TargetType="Label"
-                                Value="False">
-                                <Setter Property="Text" Value="QR Code" />
-                            </DataTrigger>
-                            <DataTrigger
-                                Binding="{Binding IsActionVisible}"
-                                TargetType="Label"
-                                Value="True">
-                                <Setter Property="Text" Value="Código Copia e Cola" />
-                            </DataTrigger>
-                        </Label.Triggers>
-                    </Label>
+                    <Grid>
+                        <Label
+                            Margin="0,16,0,0"
+                            FontFamily="{StaticResource FontBold}"
+                            FontSize="{StaticResource FontSizeMedium}"
+                            HorizontalTextAlignment="Center"
+                            TextColor="{StaticResource staticTextPrimary}">
+                            <Label.Triggers>
+                                <DataTrigger
+                                    Binding="{Binding IsActionVisible}"
+                                    TargetType="Label"
+                                    Value="False">
+                                    <Setter Property="Text" Value="QR Code" />
+                                </DataTrigger>
+                                <DataTrigger
+                                    Binding="{Binding IsActionVisible}"
+                                    TargetType="Label"
+                                    Value="True">
+                                    <Setter Property="Text" Value="Código Copia e Cola" />
+                                </DataTrigger>
+                            </Label.Triggers>
+                        </Label>
+
+                        <StackLayout
+                            HorizontalOptions="End"
+                            VerticalOptions="FillAndExpand"
+                            WidthRequest="80">
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                            </StackLayout.GestureRecognizers>
+                            <controls:CustomIcon
+                                Margin="0,12,0,0"
+                                FontSize="{StaticResource FontSizeMedium}"
+                                Glyph="{x:Static icons:FontAwesomeSolid.Times}"
+                                HorizontalOptions="EndAndExpand"
+                                TextColor="{StaticResource staticTextPrimary}"
+                                VerticalOptions="CenterAndExpand" />
+                        </StackLayout>
+                    </Grid>
 
                     <Frame
                         Margin="0,8,0,12"
@@ -131,6 +137,17 @@
                         HorizontalOptions="Center"
                         IsVisible="{Binding CurrentInfo.Value, Converter={StaticResource HasDataConverter}}"
                         Text="{Binding CurrentInfo.Value}"
+                        TextColor="{StaticResource staticTextPrimary}" />
+
+                    <ActivityIndicator
+                        HorizontalOptions="CenterAndExpand"
+                        IsVisible="{Binding CurrentPixPaylod.PixCob.IsDynamic}"
+                        Color="{Binding CurrentInfo.Color.PrimaryDark}" />
+
+                    <Label
+                        HorizontalOptions="CenterAndExpand"
+                        IsVisible="{Binding CurrentPixPaylod.PixCob.IsDynamic}"
+                        Text="Aguardando pagamento..."
                         TextColor="{StaticResource staticTextPrimary}" />
 
                     <!--<Label

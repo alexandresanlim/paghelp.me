@@ -40,6 +40,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             CurrentPixKey.IsContact = isContact;
 
             CurrentDashboard = DashboardVM; //CurrentPixKey.IsContact ? DashboardContactVM : (DashboardViewModelBase)DashboardVM;
+            CurrentContactDashboard = DashboardContactVM;
 
             LoadDataCommand.ExecuteAsync().SafeFireAndForget();
         }
@@ -142,16 +143,16 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 {
                     success = _pixKeyService.Update(CurrentPixKey);
 
-                    var l = CurrentPixKey.IsContact ? CurrentDashboard.PixKeyListContact.FirstOrDefault(x => x.Id.Equals(CurrentPixKey.Id)) : CurrentDashboard.PixKeyList.FirstOrDefault(x => x.Id.Equals(CurrentPixKey.Id));
+                    var l = CurrentPixKey.IsContact ? CurrentContactDashboard.PixKeyListContact.FirstOrDefault(x => x.Id.Equals(CurrentPixKey.Id)) : CurrentDashboard.PixKeyList.FirstOrDefault(x => x.Id.Equals(CurrentPixKey.Id));
 
                     if (l != null)
                     {
-                        int index = CurrentPixKey.IsContact ? CurrentDashboard.PixKeyListContact.IndexOf(l) : CurrentDashboard.PixKeyList.IndexOf(l);
+                        int index = CurrentPixKey.IsContact ? CurrentContactDashboard.PixKeyListContact.IndexOf(l) : CurrentDashboard.PixKeyList.IndexOf(l);
 
                         if (index != -1)
                         {
                             if (CurrentPixKey.IsContact)
-                                CurrentDashboard.PixKeyListContact[index] = CurrentPixKey;
+                                CurrentContactDashboard.PixKeyListContact[index] = CurrentPixKey;
 
                             else
                                 CurrentDashboard.PixKeyList[index] = CurrentPixKey;
@@ -165,11 +166,11 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                     if (CurrentPixKey.IsContact)
                     {
-                        if (CurrentDashboard.PixKeyListContact.Count == 0)
-                            CurrentDashboard.PixKeyListContact = new ObservableCollection<PixKey>(new List<PixKey> { CurrentPixKey });
+                        if (CurrentContactDashboard.PixKeyListContact.Count == 0)
+                            CurrentContactDashboard.PixKeyListContact = new ObservableCollection<PixKey>(new List<PixKey> { CurrentPixKey });
 
                         else
-                            CurrentDashboard.PixKeyListContact.Add(CurrentPixKey);
+                            CurrentContactDashboard.PixKeyListContact.Add(CurrentPixKey);
                     }
 
                     else
@@ -388,5 +389,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         public FinancialInstitution SelectedFinancialInstitution { get; set; }
 
         public DashboardViewModel CurrentDashboard { get; set; }
+
+        public DashboardContactViewModel CurrentContactDashboard { get; set; }
     }
 }

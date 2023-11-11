@@ -9,7 +9,7 @@ namespace PixQrCodeGeneratorOffline.Views
     {
         CreateBillingViewModel _createBillingViewModel;
 
-        public CreateBillingPage(PixKey pixKey)
+        public CreateBillingPage(PixKey pixKey, bool isDynamic = false)
         {
             InitializeComponent();
 
@@ -20,8 +20,8 @@ namespace PixQrCodeGeneratorOffline.Views
 
             //pixPayload.PixKey?.FinancialInstitution?.Institution?.MaterialColor;
             BindingContext = _createBillingViewModel = new CreateBillingViewModel();
+            _createBillingViewModel.isDynamic = isDynamic;
             _createBillingViewModel.LoadDataCommand.Execute(pixKey);
-
         }
 
         private void SetStatusBarColor(Color color)

@@ -18,6 +18,12 @@ namespace PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix
                     Icon = FontAwesomeSolid.HandHoldingUsd,
                     Type = KeyActionType.CreateBilling,
                 },
+                //new PixKeyAction
+                //{
+                //    Title = "Criar Cobrança Dinâmica",
+                //    Icon = FontAwesomeSolid.HandHoldingUsd,
+                //    Type = KeyActionType.CreateBillingDynamic,
+                //},
                 new PixKeyAction
                 {
                     Title = "Copiar Chave",
@@ -55,7 +61,6 @@ namespace PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix
                     Icon = FontAwesomeSolid.Download,
                     Type= KeyActionType.DownloadQRCode,
                     RequiresInternet = true
-                    
                 },
                 new PixKeyAction
                 {
@@ -69,14 +74,6 @@ namespace PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix
                     Icon = FontAwesomeSolid.Trash,
                     Type = KeyActionType.Delete
                 },
-                
-                //new PixKeyAction
-                //{
-                //    Title = "Excluir",
-                //    Icon = FontAwesomeSolid.TrashAlt,
-                //    Command = pixKey?.Command?.EditKeyCommand,
-                //    Colors = pixKey?.FinancialInstitution?.Institution?.MaterialColor
-                //}
             };
         }
     }
@@ -85,6 +82,7 @@ namespace PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix
     {
         None,
         CreateBilling,
+        CreateBillingDynamic,
         CopyKey,
         ShareKey,
         ShareOnWhatsApp,

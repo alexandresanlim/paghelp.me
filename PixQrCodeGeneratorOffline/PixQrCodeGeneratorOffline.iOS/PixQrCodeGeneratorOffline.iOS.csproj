@@ -137,22 +137,22 @@
       <Version>7.1.0.483</Version>
     </PackageReference>
     <PackageReference Include="LiteDB">
-      <Version>5.0.15</Version>
+      <Version>5.0.17</Version>
     </PackageReference>
     <PackageReference Include="MarcTron.Admob">
       <Version>1.6.1</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.AppCenter.Analytics">
-      <Version>5.0.1</Version>
+      <Version>5.0.3</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.AppCenter.Crashes">
-      <Version>5.0.1</Version>
+      <Version>5.0.3</Version>
     </PackageReference>
     <PackageReference Include="Plugin.Fingerprint">
       <Version>2.1.5</Version>
     </PackageReference>
     <PackageReference Include="Plugin.StoreReview">
-      <Version>5.0.1</Version>
+      <Version>6.0.0</Version>
     </PackageReference>
     <PackageReference Include="Rg.Plugins.Popup">
       <Version>2.1.0</Version>
@@ -163,9 +163,9 @@
     <PackageReference Include="Xam.Plugins.Forms.KeyboardOverlap">
       <Version>1.0.0.4</Version>
     </PackageReference>
-    <PackageReference Include="Xamarin.Essentials" Version="1.7.4" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.8.0" />
     <PackageReference Include="Xamarin.Forms">
-      <Version>5.0.0.2545</Version>
+      <Version>5.0.0.2612</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
@@ -192,6 +192,15 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\icon_help%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon_contact%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon_contact.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon_contact%402x.png" />
   </ItemGroup>
   <ProjectExtensions>
     <VisualStudio>

@@ -29,28 +29,22 @@
         </ResourceDictionary>
     </Grid.Resources>
 
-    <BoxView
-        BackgroundColor="{Binding CurrentPixKey.FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
-        HeightRequest="50"
-        VerticalOptions="Start" />
 
     <StackLayout Spacing="0">
 
         <CarouselView
+            x:Name="xCarouselView"
             CurrentItem="{Binding CurrentPixKey}"
             CurrentItemChangedCommand="{Binding ChangeSelectPixKeyCommand, Mode=OneTime}"
             CurrentItemChangedCommandParameter="{Binding Source={RelativeSource Self}, Path=CurrentItem}"
-            HeightRequest="142"
-            IndicatorView="indicatorView"
-            ItemsSource="{Binding PixKeyList}"
-            PeekAreaInsets="20,0">
+            HeightRequest="150"
+            ItemsSource="{Binding PixKeyList}">
 
             <CarouselView.ItemTemplate>
                 <DataTemplate x:DataType="models:PixKey">
 
                     <key:HorizontalKeys
                         BoxColor="{Binding FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
-                        HidePanelColor="{Binding FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
                         HideValue="{Binding Source={RelativeSource AncestorType={x:Type vmBase:DashboardViewModelBase}}, Path=IsHideValue}"
                         IconInstitution="{Binding FinancialInstitution.Institution.Icon}"
                         InstitutionValue="{Binding Viewer.InstitutionPresentation}"
@@ -65,11 +59,6 @@
                 </DataTemplate>
             </CarouselView.ItemTemplate>
         </CarouselView>
-
-        <IndicatorView
-            x:Name="indicatorView"
-            Margin="8"
-            IsVisible="{Binding PixKeyList, Converter={StaticResource HasDataIfMore}}" />
 
         <!--  Actions  -->
         <controls:CustomCollectionView

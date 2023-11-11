@@ -1,15 +1,19 @@
-﻿using AsyncAwaitBestPractices;
+﻿using AsyncAwaitBestPractices.MVVM;
 using PixQrCodeGeneratorOffline.Base.ViewModels;
 using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Helpers.Icon;
 using PixQrCodeGeneratorOffline.Services;
 using Plugin.Fingerprint;
+using System;
 using System.Threading.Tasks;
+using Xamarin.Essentials;
 
 namespace PixQrCodeGeneratorOffline.ViewModels
 {
     public class OptionPreferenceViewModel : ViewModelBase
     {
+        public IAsyncCommand SelectedCertificadoExecuteCommandAsync => new AsyncCommand(SelectedCertificadoAsync);
+
         public async Task LoadData()
         {
             try
@@ -89,6 +93,36 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             {
                 ex?.SendToLog();
             }
+        }
+
+        private async Task SelectedCertificadoAsync()
+        {
+            try
+            {
+                var result = await FilePicker.PickAsync(new PickOptions
+                {
+                    PickerTitle = "Selecione"
+                });
+                if (result != null)
+                {
+                    Preference.CertificatePath = result.FullPath;
+
+                    //Text = $"File Name: {result.FileName}";
+                    //if (result.FileName.EndsWith("jpg", StringComparison.OrdinalIgnoreCase) ||
+                    //    result.FileName.EndsWith("png", StringComparison.OrdinalIgnoreCase))
+                    //{
+                        var stream = await result.OpenReadAsync();
+                        //Image = ImageSource.FromStream(() => stream);
+                    //}
+                }
+
+                //return result;
+            }
+            catch (Exception ex)
+            {
+                // The user canceled or something went wrong
+            }
+
         }
 
         private void LoadThemeIcon()

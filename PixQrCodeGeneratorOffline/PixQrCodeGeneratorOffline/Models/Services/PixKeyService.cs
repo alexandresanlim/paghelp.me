@@ -1,6 +1,4 @@
 ﻿using Acr.UserDialogs;
-using CsvHelper;
-using CsvHelper.Configuration;
 using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Helpers;
 using PixQrCodeGeneratorOffline.Models.Commands;
@@ -11,13 +9,11 @@ using PixQrCodeGeneratorOffline.Models.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Models.Viewer;
 using PixQrCodeGeneratorOffline.Models.Viewer.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Services;
-using PixQrCodeGeneratorOffline.Services.Interfaces;
 using PixQrCodeGeneratorOffline.Views;
 using Rg.Plugins.Popup.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.IO;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
@@ -305,7 +301,7 @@ namespace PixQrCodeGeneratorOffline.Models.Services
             }
             finally
             {
-                _eventService.SendEvent("Removeu todas as chaves", PixQrCodeGeneratorOffline.Services.EventType.DELETE);
+                _eventService.SendEvent("Removeu todas as chaves", EventType.DELETE);
             }
         }
 

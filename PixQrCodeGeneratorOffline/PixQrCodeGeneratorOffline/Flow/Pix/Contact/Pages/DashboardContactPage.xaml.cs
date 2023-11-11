@@ -1,4 +1,5 @@
-﻿using PixQrCodeGeneratorOffline.ViewModels;
+﻿using AsyncAwaitBestPractices;
+using PixQrCodeGeneratorOffline.ViewModels;
 
 using Xamarin.Forms;
 
@@ -13,6 +14,11 @@ namespace PixQrCodeGeneratorOffline.Views
             BindingContext = _dashboardContactViewModel = new DashboardContactViewModel();
 
             InitializeComponent();
+        }
+
+        protected override void OnAppearing()
+        {
+            _dashboardContactViewModel.LoadDataCommand.ExecuteAsync().SafeFireAndForget();
         }
     }
 }

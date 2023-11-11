@@ -92,6 +92,11 @@
                         Toggled="Switch_Cypto" />
                 </Grid>
 
+                <Button
+                    Command="{Binding SelectedCertificadoExecuteCommandAsync, Mode=OneTime}"
+                    IsVisible="False"
+                    Text="Selecionar certificado" />
+
             </StackLayout>
 
         </ScrollView>

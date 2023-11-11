@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 
 namespace PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix.Extentions
 {
@@ -52,6 +53,39 @@ namespace PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix.Extentions
                 return "";
 
             return feed.PublishDateLocal.HasValue ? feed.PublishDateLocal.Value.ToString("dd MMM yyyy HH:mm") : "";
+        }
+
+        public static FeedTag GetTag(this Feed feed)
+        {
+            var invalidFeedTag = new FeedTag
+            {
+                IsVisible = false
+            };
+
+            if (!feed.IsValid() || !feed.PublishDateLocal.HasValue)
+                return invalidFeedTag;
+
+            else if (feed.IsToday())
+            {
+                return new FeedTag
+                {
+                    Title = "Hoje",
+                    Color = Color.Green,
+                    IsVisible = true,
+                };
+            }
+
+            else if (feed.IsYesterday())
+            {
+                return new FeedTag
+                {
+                    Title = "Ontem",
+                    Color = Color.Blue,
+                    IsVisible = true,
+                };
+            }
+
+            return invalidFeedTag;
         }
     }
 }

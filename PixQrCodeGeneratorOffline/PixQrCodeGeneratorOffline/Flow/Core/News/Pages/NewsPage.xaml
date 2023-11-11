@@ -4,7 +4,6 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
-    xmlns:cv="clr-namespace:PixQrCodeGeneratorOffline.Converters"
     xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon"
     xmlns:models="clr-namespace:PixQrCodeGeneratorOffline.Models"
     xmlns:share="clr-namespace:PixQrCodeGeneratorOffline.Views.Shared"
@@ -69,11 +68,24 @@
                                         CornerRadius="8">
 
                                         <StackLayout Padding="15">
-                                            <Label
-                                                FontFamily="{StaticResource FontSemiBold}"
-                                                FontSize="{StaticResource FontSizeSmall}"
-                                                Text="{Binding Source}"
-                                                TextColor="{DynamicResource textPrimary}" />
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label
+                                                    FontFamily="{StaticResource FontSemiBold}"
+                                                    FontSize="{StaticResource FontSizeSmall}"
+                                                    Text="{Binding Source}"
+                                                    TextColor="{DynamicResource textPrimary}" />
+                                                <Frame
+                                                    Padding="12,2"
+                                                    BackgroundColor="{Binding Tag.Color}"
+                                                    HorizontalOptions="EndAndExpand"
+                                                    IsVisible="{Binding Tag.IsVisible}">
+                                                    <Label
+                                                        FontFamily="{StaticResource FontSemiBold}"
+                                                        FontSize="{StaticResource FontSizeMicro}"
+                                                        Text="{Binding Tag.Title}"
+                                                        TextColor="#ffffff" />
+                                                </Frame>
+                                            </StackLayout>
                                             <Label
                                                 FontSize="{StaticResource FontSizeSmall}"
                                                 Text="{Binding Title}"

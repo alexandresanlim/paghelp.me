@@ -11,5 +11,7 @@ namespace PixQrCodeGeneratorOffline.Models.Viewer
         public string BankAndKey { get; set; }
 
         public string Initial { get; set; }
+
+        public char StartLetter { get; set; }
     }
 }

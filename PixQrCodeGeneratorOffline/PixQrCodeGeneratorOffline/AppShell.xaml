@@ -32,10 +32,18 @@
 
     <TabBar>
         <ShellContent
-            Title="Pix"
+            Title="Início"
             ContentTemplate="{DataTemplate local:StartTabbedPage}"
             Icon="icon_key.png" />
-        <!--<ShellContent Title="Notícias" Icon="icon_feed.png" ContentTemplate="{DataTemplate local:NewsPage}" />-->
+        <!--<ShellContent
+            Title="Contatos"
+            ContentTemplate="{DataTemplate local:DashboardContactPage}"
+            Icon="icon_contact.png" />-->
+
+        <!--<ShellContent
+            Title="Notícias"
+            ContentTemplate="{DataTemplate local:NewsPage}"
+            Icon="icon_feed.png" />-->
         <!--<ShellContent Title="Guia PIX" Icon="icon_help.png" ContentTemplate="{DataTemplate local:GuidePage}" />
         <ShellContent Title="Sobre" Icon="icon_about.png" ContentTemplate="{DataTemplate local:AboutPage}" />-->
     </TabBar>
