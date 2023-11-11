@@ -36,44 +36,34 @@
 
     <StackLayout Spacing="0">
 
-        <StackLayout CompressedLayout.IsHeadless="True" Spacing="0">
-            <CarouselView
-                CurrentItem="{Binding CurrentCryptoKey}"
-                CurrentItemChangedCommand="{Binding ChangeSelectCryptoKeyCommand}"
-                CurrentItemChangedCommandParameter="{Binding Source={RelativeSource Self}, Path=CurrentItem}"
-                HeightRequest="142"
-                IndicatorView="indicatorView"
-                IsVisible="{Binding CryptoKeyList, Converter={StaticResource HasDataConverter}}"
-                ItemsSource="{Binding CryptoKeyList}"
-                PeekAreaInsets="20,0">
+        <CarouselView
+            x:Name="xCarouselCryptoView"
+            CurrentItem="{Binding CurrentCryptoKey}"
+            CurrentItemChangedCommand="{Binding ChangeSelectCryptoKeyCommand}"
+            CurrentItemChangedCommandParameter="{Binding Source={RelativeSource Self}, Path=CurrentItem}"
+            HeightRequest="150"
+            ItemsSource="{Binding CryptoKeyList}">
 
-                <CarouselView.ItemTemplate>
-                    <DataTemplate x:DataType="models:CryptoKey">
+            <CarouselView.ItemTemplate>
+                <DataTemplate x:DataType="models:CryptoKey">
 
-                        <key:HorizontalKeys
-                            BoxColor="{Binding FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
-                            HideValue="{Binding Source={RelativeSource AncestorType={x:Type vmBase:DashboardViewModelBase}}, Path=IsHideValue}"
-                            IconInstitution="{x:Static icons:FontAwesomeSolid.Coins}"
-                            InstitutionValue="{Binding Viewer.InstitutionPresentation}"
-                            KeyValue="{Binding Viewer.KeyPresentation}"
-                            QrCode="{Binding Payload.QrCode}">
-                            <key:HorizontalKeys.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding Command.NavigateToPaymentPageCommand}" NumberOfTapsRequired="1" />
-                                <TapGestureRecognizer Command="{Binding Command.CopyKeyCommand}" NumberOfTapsRequired="2" />
-                                <TapGestureRecognizer Command="{Binding Command.ShareKeyCommand}" NumberOfTapsRequired="3" />
-                            </key:HorizontalKeys.GestureRecognizers>
-                        </key:HorizontalKeys>
+                    <key:HorizontalKeys
+                        BoxColor="{Binding FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
+                        HideValue="{Binding Source={RelativeSource AncestorType={x:Type vmBase:DashboardViewModelBase}}, Path=IsHideValue}"
+                        IconInstitution="{x:Static icons:FontAwesomeSolid.Coins}"
+                        InstitutionValue="{Binding Viewer.InstitutionPresentation}"
+                        KeyValue="{Binding Viewer.KeyPresentation}"
+                        QrCode="{Binding Payload.QrCode}">
+                        <key:HorizontalKeys.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding Command.NavigateToPaymentPageCommand}" NumberOfTapsRequired="1" />
+                            <TapGestureRecognizer Command="{Binding Command.CopyKeyCommand}" NumberOfTapsRequired="2" />
+                            <TapGestureRecognizer Command="{Binding Command.ShareKeyCommand}" NumberOfTapsRequired="3" />
+                        </key:HorizontalKeys.GestureRecognizers>
+                    </key:HorizontalKeys>
 
-                    </DataTemplate>
-                </CarouselView.ItemTemplate>
-            </CarouselView>
-
-            <IndicatorView
-                x:Name="indicatorView"
-                Margin="5"
-                IsVisible="{Binding CryptoKeyList, Converter={StaticResource HasDataIfMore}, Mode=TwoWay}" />
-
-        </StackLayout>
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
 
         <!--  Actions  -->
         <CollectionView

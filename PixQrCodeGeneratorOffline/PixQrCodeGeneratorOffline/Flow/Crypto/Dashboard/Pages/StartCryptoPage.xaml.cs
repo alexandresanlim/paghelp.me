@@ -10,9 +10,18 @@ namespace PixQrCodeGeneratorOffline.Views
 
         public StartCryptoPage()
         {
-            InitializeComponent();
+            try
+            {
+                InitializeComponent();
+                xMyKeysCrypto.IndicatorView = xIndicatorView;
 
-            BindingContext = dashboardCryptoViewModel = new DashboardCryptoViewModel();
+                BindingContext = dashboardCryptoViewModel = new DashboardCryptoViewModel();
+            }
+            catch (System.Exception ex)
+            {
+
+                throw;
+            }
         }
     }
 }

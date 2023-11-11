@@ -1,6 +1,8 @@
-﻿using PixQrCodeGeneratorOffline.Base.ViewModels;
+﻿using AsyncAwaitBestPractices.MVVM;
+using PixQrCodeGeneratorOffline.Base.ViewModels;
 using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix;
 using PixQrCodeGeneratorOffline.Services;
+using PixQrCodeGeneratorOffline.Views;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows.Input;
@@ -11,6 +13,8 @@ namespace PixQrCodeGeneratorOffline.ViewModels.Base
     public class DashboardViewModelBase : ViewModelBase
     {
         public ICommand HideValueCommand => new Command(HideValue);
+
+        public IAsyncCommand NavigateBenefitsCommand => new AsyncCommand(async () => await NavigateAsync(new BenefitsPage(true)));
 
         public void LoadCurrentPixKey(PixKey pixKeySelected = null)
         {

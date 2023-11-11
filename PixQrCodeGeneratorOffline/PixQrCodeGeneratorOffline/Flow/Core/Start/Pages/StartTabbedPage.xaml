@@ -9,17 +9,18 @@
     xmlns:local="clr-namespace:PixQrCodeGeneratorOffline.Extention;assembly=PixQrCodeGeneratorOffline"
     xmlns:views="clr-namespace:PixQrCodeGeneratorOffline.Views"
     android:TabbedPage.IsSwipePagingEnabled="False"
-    BarBackgroundColor="{DynamicResource primaryDark}"
     CurrentPageChanged="TabbedPage_CurrentPageChanged">
 
     <Shell.TitleView>
         <Grid
+            x:Name="xHeader"
             Padding="0,5,0,0"
             ColumnDefinitions="60,*,70"
             ColumnSpacing="10">
             <Image
                 Grid.Column="0"
                 Margin="0,3,0,0"
+                BackgroundColor="Transparent"
                 Source="{local:ImageResource PixQrCodeGeneratorOffline.title_icon.png}"
                 VerticalOptions="StartAndExpand"
                 WidthRequest="60" />
@@ -64,10 +65,7 @@
     <!--  Pages can be added as references or inline  -->
 
     <views:StartPage Title="Pix" />
-    <!--<views:StartCryptoPage
-        x:Name="xCryptoTab"
-        Title="Cripto"
-        IsVisible="False" />-->
+    <views:StartCryptoPage x:Name="xCryptoTab" Title="Bitcoin (BETA)" />
     <views:StartMorePage Title="Mais" />
 
 </TabbedPage>

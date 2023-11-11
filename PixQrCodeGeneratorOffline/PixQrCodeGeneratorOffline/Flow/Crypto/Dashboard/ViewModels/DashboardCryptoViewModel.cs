@@ -1,5 +1,4 @@
-﻿using AsyncAwaitBestPractices;
-using AsyncAwaitBestPractices.MVVM;
+﻿using AsyncAwaitBestPractices.MVVM;
 using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models.PaymentMethods.Crypto;
 using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix;

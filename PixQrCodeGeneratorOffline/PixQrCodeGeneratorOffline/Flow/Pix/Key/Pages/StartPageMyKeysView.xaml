@@ -87,7 +87,6 @@
 
         </controls:CustomCollectionView>
 
-
         <templates:TemplateAction
             Title="Compartilhar Todas"
             Icon="{x:Static icons:FontAwesomeSolid.Share}"

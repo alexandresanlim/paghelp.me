@@ -30,10 +30,10 @@ namespace PixQrCodeGeneratorOffline.Models.Services
             return new List<FinancialInstitutionCrypto>
             {
                 Create(GetType(new Bitcoin())),
-                Create(GetType(new BinanceCoin())),
-                Create(GetType(new Ethereum())),
-                Create(GetType(new Litecoin())),
-                Create(GetType(new Dash())),
+                //Create(GetType(new BinanceCoin())),
+                //Create(GetType(new Ethereum())),
+                //Create(GetType(new Litecoin())),
+                //Create(GetType(new Dash())),
                 Create(GetType(new Theter())),
             };
         }
