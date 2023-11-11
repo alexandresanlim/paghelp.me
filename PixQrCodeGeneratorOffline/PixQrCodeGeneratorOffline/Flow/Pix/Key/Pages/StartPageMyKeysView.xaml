@@ -39,7 +39,8 @@
             CurrentItemChangedCommand="{Binding ChangeSelectPixKeyCommand, Mode=OneTime}"
             CurrentItemChangedCommandParameter="{Binding Source={RelativeSource Self}, Path=CurrentItem}"
             HeightRequest="130"
-            ItemsSource="{Binding PixKeyList}">
+            ItemsSource="{Binding PixKeyList}"
+            Loop="True">
 
             <CarouselView.ItemTemplate>
                 <DataTemplate x:DataType="models:PixKey">

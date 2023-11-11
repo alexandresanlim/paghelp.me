@@ -43,7 +43,8 @@
             CurrentItemChangedCommand="{Binding ChangeSelectCryptoKeyCommand}"
             CurrentItemChangedCommandParameter="{Binding Source={RelativeSource Self}, Path=CurrentItem}"
             HeightRequest="130"
-            ItemsSource="{Binding CryptoKeyList}">
+            ItemsSource="{Binding CryptoKeyList}"
+            Loop="True">
 
             <CarouselView.ItemTemplate>
                 <DataTemplate x:DataType="models:CryptoKey">

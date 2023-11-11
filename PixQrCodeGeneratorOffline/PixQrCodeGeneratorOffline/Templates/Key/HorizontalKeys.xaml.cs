@@ -24,9 +24,6 @@ namespace PixQrCodeGeneratorOffline.Templates.Key
                propertyName: nameof(QrCode),
                returnType: typeof(string),
                declaringType: typeof(HorizontalKeys),
-               defaultValue: string.Empty,
-               defaultBindingMode: BindingMode.Default,
-               validateValue: null,
                propertyChanged: QrCodePropertyChanged);
 
         public string QrCode
@@ -137,9 +134,6 @@ namespace PixQrCodeGeneratorOffline.Templates.Key
                propertyName: nameof(InstitutionValue),
                returnType: typeof(string),
                declaringType: typeof(HorizontalKeys),
-               defaultValue: string.Empty,
-               defaultBindingMode: BindingMode.Default,
-               validateValue: null,
                propertyChanged: IntitutionValuePropertyChanged);
 
         public string InstitutionValue
@@ -160,9 +154,6 @@ namespace PixQrCodeGeneratorOffline.Templates.Key
                propertyName: nameof(KeyValue),
                returnType: typeof(string),
                declaringType: typeof(HorizontalKeys),
-               defaultValue: string.Empty,
-               defaultBindingMode: BindingMode.Default,
-               validateValue: null,
                propertyChanged: KeyValuePropertyChanged);
 
         public string KeyValue
@@ -188,8 +179,6 @@ namespace PixQrCodeGeneratorOffline.Templates.Key
                returnType: typeof(bool),
                declaringType: typeof(HorizontalKeys),
                defaultValue: Preference.HideData,
-               defaultBindingMode: BindingMode.Default,
-               validateValue: null,
                propertyChanged: HideValuePropertyChanged);
 
         public bool HideValue

@@ -8,7 +8,6 @@
     xmlns:qr="clr-namespace:Xam.Forms;assembly=Xam.Forms.QRCode"
     x:Name="xMainFrame"
     x:DataType="key:HorizontalKeys"
-    BackgroundColor="Red"
     ColumnDefinitions="130,*"
     ColumnSpacing="16">
 
@@ -54,6 +53,7 @@
     <StackLayout
         Grid.Column="1"
         Margin="0,0,8,0"
+        Padding="0,0,0,16"
         HorizontalOptions="FillAndExpand"
         Spacing="0"
         VerticalOptions="Start">
@@ -71,7 +71,9 @@
             FontSize="{StaticResource FontSizeSmall}"
             LineBreakMode="MiddleTruncation"
             MaxLines="1"
-            Text="Key" />
+            Text="Key"
+            VerticalOptions="StartAndExpand" />
+
 
 
 
