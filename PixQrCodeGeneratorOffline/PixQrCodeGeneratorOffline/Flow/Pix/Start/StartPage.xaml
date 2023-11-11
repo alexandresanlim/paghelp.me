@@ -190,6 +190,23 @@
                 <contentStart:StartPageNewsView />
 
             </StackLayout>-->
+            <content:DivisionView />
+
+            <Frame
+                Margin="8"
+                Padding="0"
+                BackgroundColor="#060644"
+                CornerRadius="16"
+                HeightRequest="180">
+                <StackLayout>
+                    <controls:ImageLocal HeightRequest="180" LocalPath="banner_fgts.png" />
+                </StackLayout>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding NavigateToFGTSAdCommand, Mode=OneTime}" />
+                </Frame.GestureRecognizers>
+            </Frame>
+
+
 
             <content:DivisionView />
 

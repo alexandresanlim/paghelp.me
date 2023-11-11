@@ -51,6 +51,8 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public IAsyncCommand ExportToFileBillingCommand => new AsyncCommand(() => _pixPayloadService.ExportToFile(BillingSaveList));
 
+        public IAsyncCommand NavigateToFGTSAdCommand => new AsyncCommand(NavigateToFGTSAd);
+
         #endregion
 
         public DashboardViewModel()
@@ -270,6 +272,18 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             if (success)
             {
                 LoadBilling();
+            }
+        }
+
+        private async Task NavigateToFGTSAd()
+        {
+            try
+            {
+                await _externalActionService.ShareOnWhats("Olá, vim através do Paghelp.me! e gostaria de informações para antecipar o meu saque de aniversário do FGTS.", "+5518996822936");
+            }
+            catch (Exception ex)
+            {
+                ex.SendToLog();
             }
         }
 
