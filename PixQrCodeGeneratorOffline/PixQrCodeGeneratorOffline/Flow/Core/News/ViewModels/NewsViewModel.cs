@@ -38,7 +38,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             {
                 IsBusy = true;
 
-                FeedFromService ??= await _feedService.Get("https://news.google.com/rss/search?q=pix+-fraude+-golpista+-golpistas+-erro+-bolsonaro+-lula+-blaze+-ladr%C3%A3o+-roubo+-sequestro+-assaltado+-assalto&hl=pt-BR&gl=BR&ceid=BR:pt-419");
+                FeedFromService ??= await _feedService.Get("https://news.google.com/rss/search?q=pix+-fraude+-golpista+-golpistas+-erro+-bolsonaro+-lula+-blaze+-ladr%C3%A3o+-roubo+-sequestro+-assaltado+-assalto+-crime+-criminosos+-criminoso&hl=pt-BR&gl=BR&ceid=BR:pt-419");
 
                 CurrentFeedList = FeedFromService?.ToObservableCollection();
 
