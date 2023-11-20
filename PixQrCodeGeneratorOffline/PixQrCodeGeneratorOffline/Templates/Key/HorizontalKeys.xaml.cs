@@ -8,8 +8,6 @@ namespace PixQrCodeGeneratorOffline.Templates.Key
     {
         const string BULLET = "● ● ● ● ● ● ● ● ●";
 
-        //private static string CurrentKeyValue;
-
         private static bool CurrentKeyIsHide;
 
         public HorizontalKeys()
@@ -96,38 +94,6 @@ namespace PixQrCodeGeneratorOffline.Templates.Key
             if (bindable is HorizontalKeys template && newValue is FontAwesomeType value)
                 template.xIconInstitution.IconType = value;
         }
-
-
-        
-
-
-        //public static readonly BindableProperty IconKeyProperty =
-        //   BindableProperty.Create(
-        //       propertyName: nameof(IconKey),
-        //       returnType: typeof(string),
-        //       declaringType: typeof(HorizontalKeys),
-        //       defaultValue: string.Empty,
-        //       defaultBindingMode: BindingMode.Default,
-        //       validateValue: null,
-        //       propertyChanged: IconKeyPropertyChanged);
-
-        //public string IconKey
-        //{
-        //    get => (string)GetValue(IconKeyProperty);
-        //    set => SetValue(IconKeyProperty, value);
-        //}
-
-        //static void IconKeyPropertyChanged(BindableObject bindable, object oldValue, object newValue)
-        //{
-        //    if (newValue == null)
-        //        return;
-
-        //    var template = (HorizontalKeys)bindable;
-        //    string value = (string)newValue;
-
-        //    template.xIconKey.Glyph = value;
-        //}
-
 
         public static readonly BindableProperty InstitutionValueProperty =
            BindableProperty.Create(

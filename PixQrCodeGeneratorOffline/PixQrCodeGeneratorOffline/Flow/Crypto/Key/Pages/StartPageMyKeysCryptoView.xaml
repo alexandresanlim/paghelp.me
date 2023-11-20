@@ -5,9 +5,9 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
     xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon"
-    xmlns:key="clr-namespace:PixQrCodeGeneratorOffline.Templates.Key"
     xmlns:models="clr-namespace:PixQrCodeGeneratorOffline.Models.PaymentMethods.Crypto"
     xmlns:templates="clr-namespace:PixQrCodeGeneratorOffline.Templates"
+    xmlns:key="clr-namespace:PixQrCodeGeneratorOffline.Templates.Key"
     xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
     xmlns:vmBase="clr-namespace:PixQrCodeGeneratorOffline.ViewModels.Base"
     x:DataType="vm:DashboardCryptoViewModel">
@@ -29,24 +29,16 @@
         </ResourceDictionary>
     </Grid.Resources>
 
-    <BoxView
-        BackgroundColor="{Binding CurrentCryptoKey.FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
-        HeightRequest="50"
-        VerticalOptions="Start" />
-
     <StackLayout Spacing="0">
 
-        <CarouselView
+        <controls:CarouselKeyList
             x:Name="xCarouselCryptoView"
-            Margin="0,0,0,8"
             CurrentItem="{Binding CurrentCryptoKey}"
-            CurrentItemChangedCommand="{Binding ChangeSelectCryptoKeyCommand}"
+            CurrentItemChangedCommand="{Binding ChangeSelectCryptoKeyCommand, Mode=OneTime}"
             CurrentItemChangedCommandParameter="{Binding Source={RelativeSource Self}, Path=CurrentItem}"
-            HeightRequest="130"
-            ItemsSource="{Binding CryptoKeyList}"
-            Loop="True">
+            ItemsSource="{Binding CryptoKeyList}">
 
-            <CarouselView.ItemTemplate>
+            <controls:CarouselKeyList.ItemTemplate>
                 <DataTemplate x:DataType="models:CryptoKey">
 
                     <key:HorizontalKeys
@@ -64,22 +56,14 @@
                     </key:HorizontalKeys>
 
                 </DataTemplate>
-            </CarouselView.ItemTemplate>
-        </CarouselView>
+            </controls:CarouselKeyList.ItemTemplate>
+        </controls:CarouselKeyList>
 
         <!--  Actions  -->
-        <CollectionView
-            Margin="8,0,0,0"
-            HeightRequest="140"
-            IsVisible="{Binding CryptoKeyList, Converter={StaticResource HasDataConverter}}"
+        <controls:HorizontalActionKeyList
             ItemsSource="{Binding CurrentCryptoKeyActions}"
             SelectedItem="{Binding SelectedAction}"
-            SelectionChangedCommand="{Binding ExecuteActionCommand}"
-            SelectionMode="Single">
-
-            <CollectionView.ItemsLayout>
-                <LinearItemsLayout ItemSpacing="8" Orientation="Horizontal" />
-            </CollectionView.ItemsLayout>
+            SelectionChangedCommand="{Binding ExecuteActionCommand}">
 
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="models:CryptoKeyAction">
@@ -87,13 +71,13 @@
                         Title="{Binding Title}"
                         BoxColor="{Binding Source={RelativeSource AncestorType={x:Type vm:DashboardCryptoViewModel}}, Path=CurrentCryptoKey.FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
                         Icon="{Binding Icon}"
-                        IconColor="{Binding Source={RelativeSource AncestorType={x:Type vm:DashboardCryptoViewModel}}, Path=CurrentCryptoKey.FinancialInstitution.Institution.MaterialColor.TextOnPrimary}"
-                        IconType="{Binding IconType}" />
+                        IconType="{Binding IconType}"
+                        RequiresInternet="{Binding RequiresInternet}" />
 
                 </DataTemplate>
             </CollectionView.ItemTemplate>
 
-        </CollectionView>
+        </controls:HorizontalActionKeyList>
 
         <templates:TemplateAction
             Title="Adicionar Nova"

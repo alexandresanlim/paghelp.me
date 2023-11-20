@@ -5,9 +5,9 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
     xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon"
-    xmlns:key="clr-namespace:PixQrCodeGeneratorOffline.Templates.Key"
     xmlns:models="clr-namespace:PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix"
     xmlns:templates="clr-namespace:PixQrCodeGeneratorOffline.Templates"
+    xmlns:key="clr-namespace:PixQrCodeGeneratorOffline.Templates.Key"
     xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
     xmlns:vmBase="clr-namespace:PixQrCodeGeneratorOffline.ViewModels.Base"
     x:DataType="vm:DashboardViewModel">
@@ -32,17 +32,14 @@
 
     <StackLayout Spacing="0">
 
-        <CarouselView
+        <controls:CarouselKeyList
             x:Name="xCarouselView"
-            Margin="0,0,0,8"
             CurrentItem="{Binding CurrentPixKey}"
             CurrentItemChangedCommand="{Binding ChangeSelectPixKeyCommand, Mode=OneTime}"
             CurrentItemChangedCommandParameter="{Binding Source={RelativeSource Self}, Path=CurrentItem}"
-            HeightRequest="130"
-            ItemsSource="{Binding PixKeyList}"
-            Loop="True">
+            ItemsSource="{Binding PixKeyList}">
 
-            <CarouselView.ItemTemplate>
+            <controls:CarouselKeyList.ItemTemplate>
                 <DataTemplate x:DataType="models:PixKey">
 
                     <key:HorizontalKeys
@@ -60,25 +57,18 @@
                     </key:HorizontalKeys>
 
                 </DataTemplate>
-            </CarouselView.ItemTemplate>
-        </CarouselView>
+            </controls:CarouselKeyList.ItemTemplate>
+        </controls:CarouselKeyList>
 
         <!--  Actions  -->
-        <controls:CustomCollectionView
-            Margin="8,0,0,0"
-            HeightRequest="140"
+        <controls:HorizontalActionKeyList
             ItemsSource="{Binding CurrentPixKeyActions}"
             SelectedItem="{Binding SelectedAction}"
-            SelectionChangedCommand="{Binding ExecuteActionCommand}"
-            SelectionMode="Single">
-
-            <CollectionView.ItemsLayout>
-                <LinearItemsLayout ItemSpacing="8" Orientation="Horizontal" />
-            </CollectionView.ItemsLayout>
-
-            <CollectionView.ItemTemplate>
+            SelectionChangedCommand="{Binding ExecuteActionCommand}">
+            <controls:HorizontalActionKeyList.ItemTemplate>
                 <DataTemplate x:DataType="models:PixKeyAction">
                     <key:HorizontalActionKeys
+                        x:Name="xHorizontalActionKeys"
                         Title="{Binding Title}"
                         BoxColor="{Binding Source={RelativeSource AncestorType={x:Type vm:DashboardViewModel}}, Path=CurrentPixKey.FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
                         Icon="{Binding Icon}"
@@ -86,9 +76,9 @@
                         RequiresInternet="{Binding RequiresInternet}" />
 
                 </DataTemplate>
-            </CollectionView.ItemTemplate>
+            </controls:HorizontalActionKeyList.ItemTemplate>
+        </controls:HorizontalActionKeyList>
 
-        </controls:CustomCollectionView>
 
         <templates:TemplateAction
             Title="Compartilhar Todas"
