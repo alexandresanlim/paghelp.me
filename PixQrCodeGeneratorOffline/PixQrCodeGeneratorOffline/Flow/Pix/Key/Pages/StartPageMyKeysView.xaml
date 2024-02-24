@@ -5,9 +5,9 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
     xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon"
-    xmlns:key="clr-namespace:PixQrCodeGeneratorOffline.Templates.Key"
     xmlns:models="clr-namespace:PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix"
     xmlns:templates="clr-namespace:PixQrCodeGeneratorOffline.Templates"
+    xmlns:key="clr-namespace:PixQrCodeGeneratorOffline.Templates.Key"
     xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
     xmlns:vmBase="clr-namespace:PixQrCodeGeneratorOffline.ViewModels.Base"
     x:DataType="vm:DashboardViewModel">
@@ -32,21 +32,21 @@
 
     <StackLayout Spacing="0">
 
-        <CarouselView
+        <controls:CarouselKeyList
             x:Name="xCarouselView"
             CurrentItem="{Binding CurrentPixKey}"
             CurrentItemChangedCommand="{Binding ChangeSelectPixKeyCommand, Mode=OneTime}"
             CurrentItemChangedCommandParameter="{Binding Source={RelativeSource Self}, Path=CurrentItem}"
-            HeightRequest="150"
             ItemsSource="{Binding PixKeyList}">
 
-            <CarouselView.ItemTemplate>
+            <controls:CarouselKeyList.ItemTemplate>
                 <DataTemplate x:DataType="models:PixKey">
 
                     <key:HorizontalKeys
                         BoxColor="{Binding FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
                         HideValue="{Binding Source={RelativeSource AncestorType={x:Type vmBase:DashboardViewModelBase}}, Path=IsHideValue}"
                         IconInstitution="{Binding FinancialInstitution.Institution.Icon}"
+                        IconType="FonteBancosBrasileiros"
                         InstitutionValue="{Binding Viewer.InstitutionPresentation}"
                         KeyValue="{Binding Viewer.KeyPresentation}"
                         QrCode="{Binding Payload.QrCode}">
@@ -57,25 +57,18 @@
                     </key:HorizontalKeys>
 
                 </DataTemplate>
-            </CarouselView.ItemTemplate>
-        </CarouselView>
+            </controls:CarouselKeyList.ItemTemplate>
+        </controls:CarouselKeyList>
 
         <!--  Actions  -->
-        <controls:CustomCollectionView
-            Margin="8,0,0,0"
-            HeightRequest="140"
+        <controls:HorizontalActionKeyList
             ItemsSource="{Binding CurrentPixKeyActions}"
             SelectedItem="{Binding SelectedAction}"
-            SelectionChangedCommand="{Binding ExecuteActionCommand}"
-            SelectionMode="Single">
-
-            <CollectionView.ItemsLayout>
-                <LinearItemsLayout ItemSpacing="8" Orientation="Horizontal" />
-            </CollectionView.ItemsLayout>
-
-            <CollectionView.ItemTemplate>
+            SelectionChangedCommand="{Binding ExecuteActionCommand}">
+            <controls:HorizontalActionKeyList.ItemTemplate>
                 <DataTemplate x:DataType="models:PixKeyAction">
                     <key:HorizontalActionKeys
+                        x:Name="xHorizontalActionKeys"
                         Title="{Binding Title}"
                         BoxColor="{Binding Source={RelativeSource AncestorType={x:Type vm:DashboardViewModel}}, Path=CurrentPixKey.FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
                         Icon="{Binding Icon}"
@@ -83,9 +76,8 @@
                         RequiresInternet="{Binding RequiresInternet}" />
 
                 </DataTemplate>
-            </CollectionView.ItemTemplate>
-
-        </controls:CustomCollectionView>
+            </controls:HorizontalActionKeyList.ItemTemplate>
+        </controls:HorizontalActionKeyList>
 
 
         <templates:TemplateAction

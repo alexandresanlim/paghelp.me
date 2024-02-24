@@ -6,52 +6,97 @@
     xmlns:contentStart="clr-namespace:PixQrCodeGeneratorOffline.Views.Content.StartPageContents"
     xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
     xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon"
-    xmlns:templates="clr-namespace:PixQrCodeGeneratorOffline.Templates"
+    xmlns:templatesKey="clr-namespace:PixQrCodeGeneratorOffline.Templates.Key"
     xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
     x:DataType="vm:DashboardCryptoViewModel"
     BackgroundColor="{DynamicResource background_page}">
-    
+
+    <ContentPage.Resources>
+        <Style x:Key="IndicatorLabelStyle" TargetType="BoxView">
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="#50000000" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="Selected">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="#ffffff" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+    </ContentPage.Resources>
+
     <ContentPage.Content>
-        <ScrollView>
-            <StackLayout Spacing="0">
-                <Grid ColumnDefinitions="*, auto" ColumnSpacing="0">
-                    <templates:TemplateTitlePanel
-                        Title="Minhas Chaves Cripto"
-                        Grid.Column="0"
-                        BackgroundColor="{Binding CurrentCryptoKey.FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
-                        Icon="{x:Static icons:FontAwesomeSolid.Key}"
-                        IconColor="{Binding CurrentCryptoKey.FinancialInstitution.Institution.MaterialColor.TextOnPrimary}"
-                        TitleColor="{Binding CurrentCryptoKey.FinancialInstitution.Institution.MaterialColor.TextOnPrimary}" />
 
-                    <StackLayout
-                        Grid.Column="1"
-                        Padding="30,15,15,15"
-                        BackgroundColor="{Binding CurrentCryptoKey.FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
-                        IsVisible="{Binding CryptoKeyList, Converter={StaticResource HasDataConverter}}">
-                        <controls:CustomIcon TextColor="{Binding CurrentCryptoKey.FinancialInstitution.Institution.MaterialColor.TextOnPrimary}">
-                            <controls:CustomIcon.Triggers>
-                                <DataTrigger
-                                    Binding="{Binding IsHideValue}"
-                                    TargetType="controls:CustomIcon"
-                                    Value="False">
-                                    <Setter Property="Glyph" Value="{x:Static icons:FontAwesomeSolid.Eye}" />
-                                </DataTrigger>
-                                <DataTrigger
-                                    Binding="{Binding IsHideValue}"
-                                    TargetType="controls:CustomIcon"
-                                    Value="True">
-                                    <Setter Property="Glyph" Value="{x:Static icons:FontAwesomeSolid.EyeSlash}" />
-                                </DataTrigger>
-                            </controls:CustomIcon.Triggers>
-                        </controls:CustomIcon>
-                        <StackLayout.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding HideValueCommand}" />
-                        </StackLayout.GestureRecognizers>
-                    </StackLayout>
-                </Grid>
+        <StackLayout Spacing="0">
 
-                <contentStart:StartPageMyKeysCryptoView />
-            </StackLayout>
-        </ScrollView>
+            <Grid
+                BackgroundColor="{Binding CurrentCryptoKey.FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
+                ColumnDefinitions="*, 50"
+                ColumnSpacing="0">
+
+                <IndicatorView
+                    x:Name="xIndicatorView"
+                    Grid.Column="0"
+                    Margin="8,0,0,0"
+                    HorizontalOptions="StartAndExpand"
+                    IndicatorColor="#80000000"
+                    SelectedIndicatorColor="#ffffff"
+                    VerticalOptions="CenterAndExpand">
+                    <IndicatorView.IndicatorTemplate>
+                        <DataTemplate>
+                            <BoxView
+                                HeightRequest="2"
+                                Style="{StaticResource IndicatorLabelStyle}"
+                                WidthRequest="16" />
+                        </DataTemplate>
+                    </IndicatorView.IndicatorTemplate>
+
+                </IndicatorView>
+
+                <ContentView
+                    Grid.Column="1"
+                    HeightRequest="50"
+                    IsVisible="{Binding CryptoKeyList, Mode=TwoWay, Converter={StaticResource HasDataConverter}}"
+                    WidthRequest="50">
+                    <controls:CustomIcon
+                        HorizontalOptions="CenterAndExpand"
+                        TextColor="{Binding CurrentCryptoKey.FinancialInstitution.Institution.MaterialColor.TextOnPrimary}"
+                        VerticalOptions="CenterAndExpand">
+                        <controls:CustomIcon.Triggers>
+                            <DataTrigger
+                                Binding="{Binding IsHideValue, Mode=TwoWay}"
+                                TargetType="controls:CustomIcon"
+                                Value="False">
+                                <Setter Property="Glyph" Value="{x:Static icons:FontAwesomeSolid.Eye}" />
+                            </DataTrigger>
+                            <DataTrigger
+                                Binding="{Binding IsHideValue, Mode=TwoWay}"
+                                TargetType="controls:CustomIcon"
+                                Value="True">
+                                <Setter Property="Glyph" Value="{x:Static icons:FontAwesomeSolid.EyeSlash}" />
+                            </DataTrigger>
+                        </controls:CustomIcon.Triggers>
+                    </controls:CustomIcon>
+                    <ContentView.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding HideValueCommand, Mode=OneTime}" />
+                    </ContentView.GestureRecognizers>
+                </ContentView>
+            </Grid>
+
+            <contentStart:StartPageMyKeysCryptoView x:Name="xMyKeysCrypto" IsVisible="{Binding CryptoKeyList, Converter={StaticResource HasDataConverter}}" />
+
+            <templatesKey:EmptyKeysWelcome IsVisible="{Binding CryptoKeyList, Converter={StaticResource HasDataConverterInverted}}" NavigateToAddKeyCommand="{Binding NavigateToAddNewKeyPageCommand, Mode=OneTime}" />
+
+
+
+        </StackLayout>
+
     </ContentPage.Content>
 </ContentPage>

@@ -1,5 +1,4 @@
-﻿using PixQrCodeGeneratorOffline.Models.DataStatic.Institutions.Base;
-using PixQrCodeGeneratorOffline.Models.DataStatic.InstitutionsCrypto.Base;
+﻿using PixQrCodeGeneratorOffline.Models.DataStatic.InstitutionsCrypto.Base;
 using System.Collections.Generic;
 
 namespace PixQrCodeGeneratorOffline.Models.Services.Interfaces

@@ -3,12 +3,13 @@
     x:Class="PixQrCodeGeneratorOffline.Views.StartPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:content="clr-namespace:PixQrCodeGeneratorOffline.Views.Content"
-    xmlns:contentStart="clr-namespace:PixQrCodeGeneratorOffline.Views.Content.StartPageContents"
     xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
     xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon"
     xmlns:templates="clr-namespace:PixQrCodeGeneratorOffline.Templates"
+    xmlns:templatesKey="clr-namespace:PixQrCodeGeneratorOffline.Templates.Key"
     xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
+    xmlns:content="clr-namespace:PixQrCodeGeneratorOffline.Views.Content"
+    xmlns:contentStart="clr-namespace:PixQrCodeGeneratorOffline.Views.Content.StartPageContents"
     x:DataType="vm:DashboardViewModel"
     BackgroundColor="{DynamicResource background_page}">
 
@@ -124,34 +125,9 @@
 
             <contentStart:StartPageMyKeysView x:Name="xMyKeys" IsVisible="{Binding PixKeyList, Converter={StaticResource HasDataConverter}}" />
 
-            <StackLayout IsVisible="{Binding PixKeyList, Converter={StaticResource HasDataConverterInverted}}" Spacing="0">
-                <StackLayout Padding="8" Spacing="0">
-                    <Label
-                        FontFamily="{StaticResource FontBold}"
-                        FontSize="{StaticResource FontSizeExtraLarge}"
-                        Text="Olá!" />
-                    <Label
-                        FontFamily="{StaticResource FontBold}"
-                        FontSize="{StaticResource FontSizeLarge}"
-                        Text="Seja muito bem vindo!" />
-                    <Label
-                        FontFamily="{StaticResource FontSemiBold}"
-                        FontSize="{StaticResource FontSizeMedium}"
-                        Text="meu grande amigo novo usuário 🧍" />
-                </StackLayout>
-                <Label Margin="8" Text="Vamos te levar para uma grande experiência incrivel." />
-                <Label Margin="8" Text="Você ainda não adicionou nenhuma chave, adicione para começar a usar e ter todas as vantagens. Vale lembra que nos preocupamos muito com a sua privacidade, e todos os seus dados informados aqui serão salvos somente neste dispositivo. 😉" />
-                <templates:TemplateAction
-                    Title="Ver vantagens Paghelp.me!"
-                    Icon="{x:Static icons:FontAwesomeSolid.Heart}"
-                    TapCommand="{Binding NavigateBenefitsCommand, Mode=OneTime}" />
-                <templates:TemplateAction
-                    Title="Adicionar minha primeira chave"
-                    Icon="{x:Static icons:FontAwesomeSolid.PlusCircle}"
-                    TapCommand="{Binding NavigateToAddNewKeyPageCommand, Mode=OneTime}" />
+            <templatesKey:EmptyKeysWelcome IsVisible="{Binding PixKeyList, Converter={StaticResource HasDataConverterInverted}}" NavigateToAddKeyCommand="{Binding NavigateToAddNewKeyPageCommand, Mode=OneTime}" />
 
 
-            </StackLayout>
 
             <templates:TemplateAction
                 Title="Adicionar Nova"
@@ -190,6 +166,21 @@
                 <contentStart:StartPageNewsView />
 
             </StackLayout>-->
+            <content:DivisionView />
+
+            <ContentView
+                Margin="0,8"
+                Padding="0"
+                BackgroundColor="#060644"
+                HeightRequest="180">
+                <controls:ImageLocal HeightRequest="180" LocalPath="banner_fgts.png" />
+
+                <ContentView.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding NavigateToFGTSAdCommand, Mode=OneTime}" />
+                </ContentView.GestureRecognizers>
+            </ContentView>
+
+
 
             <content:DivisionView />
 

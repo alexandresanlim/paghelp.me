@@ -1,4 +1,5 @@
 ﻿using PixQrCodeGeneratorOffline.Extention;
+using PixQrCodeGeneratorOffline.Models.DataStatic.InstitutionsCrypto;
 using PixQrCodeGeneratorOffline.ViewModels.Base;
 using System;
 using Xamarin.Forms;
@@ -20,8 +21,7 @@ namespace PixQrCodeGeneratorOffline.Views
             base.OnAppearing();
             //AddPages();
 
-            if (App.StatusBarService != null && App.ThemeColors?.PrimaryDark != null)
-                App.StatusBarService.SetStatusBarColor(App.ThemeColors.PrimaryDark);
+            SetPixStatusBarColor();
         }
 
         //private void AddPages()
@@ -44,6 +44,15 @@ namespace PixQrCodeGeneratorOffline.Views
         {
             var tabbed = (TabbedPage)sender;
 
+            if (tabbed.CurrentPage is StartCryptoPage)
+            {
+                //SetCryptoStatusBarColor();
+            }
+            else
+            {
+                SetPixStatusBarColor();
+            }
+
             if (tabbed.CurrentPage is StartCryptoPage || tabbed.CurrentPage is StartPage)
             {
                 var vm = (DashboardViewModelBase)tabbed.CurrentPage.BindingContext;
@@ -54,6 +63,29 @@ namespace PixQrCodeGeneratorOffline.Views
         private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
             Shell.Current.Navigation.PushAsync(new OptionPreferencePage(), true);
+        }
+
+        private void SetCryptoStatusBarColor()
+        {
+            var btcColor = new Bitcoin().MaterialColor.Primary;
+
+            SetStatusBarColor(btcColor);
+            xHeader.BackgroundColor = BarBackgroundColor = btcColor;
+        }
+
+        private void SetPixStatusBarColor()
+        {
+            if (App.ThemeColors?.PrimaryDark != null)
+            { 
+                SetStatusBarColor(App.ThemeColors.PrimaryDark);
+                xHeader.BackgroundColor = BarBackgroundColor = App.ThemeColors.PrimaryDark;
+            }
+        }
+
+        private void SetStatusBarColor(Color color)
+        {
+            if (App.StatusBarService != null)
+                App.StatusBarService.SetStatusBarColor(color);
         }
     }
 }

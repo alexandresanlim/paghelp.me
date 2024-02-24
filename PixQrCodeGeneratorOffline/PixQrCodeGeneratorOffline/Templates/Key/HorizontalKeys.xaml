@@ -1,14 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<StackLayout
+<Grid
     x:Class="PixQrCodeGeneratorOffline.Templates.Key.HorizontalKeys"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
     xmlns:key="clr-namespace:PixQrCodeGeneratorOffline.Templates.Key"
     xmlns:qr="clr-namespace:Xam.Forms;assembly=Xam.Forms.QRCode"
-    x:DataType="key:HorizontalKeys">
+    x:Name="xMainFrame"
+    x:DataType="key:HorizontalKeys"
+    ColumnDefinitions="130,*"
+    ColumnSpacing="16">
 
-    <StackLayout.Resources>
+    <Grid.Resources>
         <ResourceDictionary>
             <Style x:Key="styleActionText" TargetType="Label">
                 <Setter Property="FontSize" Value="{StaticResource FontSizeSmall}" />
@@ -24,58 +27,65 @@
                 <Setter Property="FontSize" Value="{StaticResource FontSizeSmall}" />
             </Style>
         </ResourceDictionary>
-    </StackLayout.Resources>
+    </Grid.Resources>
 
-    <Grid
-        x:Name="xMainFrame"
-        Padding="16,8,16,32"
-        ColumnDefinitions="100,*"
-        ColumnSpacing="16">
+    <controls:CustomIcon
+        x:Name="xIconInstitution"
+        Grid.Column="0"
+        Grid.ColumnSpan="2"
+        Margin="0,0,-25,-25"
+        FontSize="160"
+        HorizontalOptions="End"
+        IconType="FonteBancosBrasileiros"
+        Opacity="0.3"
+        VerticalOptions="End" />
 
-        <qr:QRCode
-            x:Name="xQrCode"
-            Grid.Column="0"
-            Content="QrCodeContent"
-            HeightRequest="100"
-            VerticalOptions="Center"
-            WidthRequest="100" />
+    <qr:QRCode
+        x:Name="xQrCode"
+        Grid.Column="0"
+        Margin="16,0,0,0"
+        Content="QrCodeContent"
+        HeightRequest="110"
+        HorizontalOptions="Start"
+        VerticalOptions="Start"
+        WidthRequest="110" />
 
-        <StackLayout Grid.Column="1" Padding="0,4">
-            <StackLayout Orientation="Horizontal" Spacing="8">
-                <controls:CustomIcon
-                    x:Name="xIconInstitution"
-                    FontSize="{StaticResource FontSizeLarge}"
-                    IconType="FonteBancosBrasileiros"
-                    Style="{StaticResource styleActionIcon}" />
+    <StackLayout
+        Grid.Column="1"
+        Margin="0,0,8,0"
+        Padding="0,0,0,16"
+        HorizontalOptions="FillAndExpand"
+        Spacing="0"
+        VerticalOptions="Start">
+        <Label
+            x:Name="xInstitutionValue"
+            FontSize="{StaticResource FontSizeMedium}"
+            LineBreakMode="TailTruncation"
+            MaxLines="1"
+            Style="{StaticResource styleActionText}"
+            Text="InstitutionName" />
 
-                <Label
-                    x:Name="xInstitutionValue"
-                    FontSize="{StaticResource FontSizeMedium}"
-                    LineBreakMode="TailTruncation"
-                    MaxLines="1"
-                    Style="{StaticResource styleActionText}"
-                    Text="InstitutionName"
-                    VerticalOptions="CenterAndExpand" />
-            </StackLayout>
-
-            <Label
-                x:Name="xKeyValue"
-                FontFamily="{StaticResource FontSemiBold}"
-                FontSize="{StaticResource FontSizeSmall}"
-                LineBreakMode="MiddleTruncation"
-                MaxLines="1"
-                Text="Key" />
-
-            <Label
-                x:Name="xKeyValueHide"
-                IsVisible="false"
-                Text="" />
-
-
-        </StackLayout>
+        <Label
+            x:Name="xKeyValue"
+            FontFamily="{StaticResource FontSemiBold}"
+            FontSize="{StaticResource FontSizeSmall}"
+            LineBreakMode="MiddleTruncation"
+            MaxLines="1"
+            Text="Key"
+            VerticalOptions="StartAndExpand" />
 
 
 
-    </Grid>
 
-</StackLayout>
+
+    </StackLayout>
+
+
+
+
+    <Label
+        x:Name="xKeyValueHide"
+        IsVisible="false"
+        Text="" />
+
+</Grid>

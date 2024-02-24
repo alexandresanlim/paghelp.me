@@ -1,9 +1,9 @@
-﻿using AsyncAwaitBestPractices;
-using AsyncAwaitBestPractices.MVVM;
+﻿using AsyncAwaitBestPractices.MVVM;
 using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models.PaymentMethods.Crypto;
 using PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix;
 using PixQrCodeGeneratorOffline.ViewModels.Base;
+using System;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows.Input;
@@ -144,12 +144,10 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         private void ChangeSelectedCryptoKey(CryptoKey pixkey)
         {
-            MainThread.BeginInvokeOnMainThread(() =>
-            {
-                CurrentCryptoKey = pixkey;
-                //_statusBar.SetStatusBarColor(pixkey.FinancialInstitution.Institution.MaterialColor.PrimaryDark);
-                //CurrentCryptoKeyActions = pixkey?.Actions?.ToObservableCollection() ?? new ObservableCollection<CryptoKeyAction>();
-            });
+            CurrentCryptoKey = pixkey;
+            try { HapticFeedback.Perform(HapticFeedbackType.Click); } catch (Exception) { }
+            //_statusBar.SetStatusBarColor(pixkey.FinancialInstitution.Institution.MaterialColor.PrimaryDark);
+            //CurrentCryptoKeyActions = pixkey?.Actions?.ToObservableCollection() ?? new ObservableCollection<CryptoKeyAction>();
         }
     }
 }

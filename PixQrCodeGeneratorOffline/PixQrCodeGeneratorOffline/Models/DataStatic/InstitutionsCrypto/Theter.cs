@@ -18,7 +18,7 @@ namespace PixQrCodeGeneratorOffline.Models.DataStatic.InstitutionsCrypto
 
         public FinancialInstitutionCryptoType Type => FinancialInstitutionCryptoType.Theter;
 
-        public string Name => "Theter";
+        public string Name => "Theter (USD)";
 
         public string Code => "USDT";
 

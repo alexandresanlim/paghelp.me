@@ -33,8 +33,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         public IAsyncCommand NavigateToAddNewKeyPageCommand => new AsyncCommand(async () => await _pixKeyService.NavigateToAdd().ConfigureAwait(false));
 
-        public IAsyncCommand NavigateBenefitsCommand => new AsyncCommand(async () => await NavigateAsync(new BenefitsPage(true)));
-
         public IAsyncCommand ExecuteActionCommand => new AsyncCommand(ExecuteAction);
 
         public ICommand ChangeSelectPixKeyCommand => new Command<PixKey>(ChangeSelectedPixKey);
@@ -50,6 +48,8 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         public IAsyncCommand ExportToFileCommand => new AsyncCommand(() => _pixKeyService.ExportToFile(PixKeyList));
 
         public IAsyncCommand ExportToFileBillingCommand => new AsyncCommand(() => _pixPayloadService.ExportToFile(BillingSaveList));
+
+        public IAsyncCommand NavigateToFGTSAdCommand => new AsyncCommand(NavigateToFGTSAd);
 
         #endregion
 
@@ -270,6 +270,18 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             if (success)
             {
                 LoadBilling();
+            }
+        }
+
+        private async Task NavigateToFGTSAd()
+        {
+            try
+            {
+                await _externalActionService.ShareOnWhats("Olá, vim através do Paghelp.me! e gostaria de informações para antecipar o meu saque de aniversário do FGTS.", "+5518996822936");
+            }
+            catch (Exception ex)
+            {
+                ex.SendToLog();
             }
         }
 

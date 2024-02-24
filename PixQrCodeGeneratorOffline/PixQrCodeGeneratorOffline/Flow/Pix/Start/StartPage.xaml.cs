@@ -10,11 +10,10 @@ namespace PixQrCodeGeneratorOffline.Views
 
         public StartPage()
         {
-                InitializeComponent();
-                xMyKeys.IndicatorView = xIndicatorView;
+            InitializeComponent();
+            xMyKeys.IndicatorView = xIndicatorView;
 
-                BindingContext = _viewModel = new DashboardViewModel();
-           
+            BindingContext = _viewModel = new DashboardViewModel();
         }
     }
 }

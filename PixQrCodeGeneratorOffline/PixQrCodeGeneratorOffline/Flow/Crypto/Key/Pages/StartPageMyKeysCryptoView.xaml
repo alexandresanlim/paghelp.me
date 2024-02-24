@@ -5,9 +5,9 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
     xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon"
-    xmlns:key="clr-namespace:PixQrCodeGeneratorOffline.Templates.Key"
     xmlns:models="clr-namespace:PixQrCodeGeneratorOffline.Models.PaymentMethods.Crypto"
     xmlns:templates="clr-namespace:PixQrCodeGeneratorOffline.Templates"
+    xmlns:key="clr-namespace:PixQrCodeGeneratorOffline.Templates.Key"
     xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
     xmlns:vmBase="clr-namespace:PixQrCodeGeneratorOffline.ViewModels.Base"
     x:DataType="vm:DashboardCryptoViewModel">
@@ -29,65 +29,41 @@
         </ResourceDictionary>
     </Grid.Resources>
 
-    <BoxView
-        BackgroundColor="{Binding CurrentCryptoKey.FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
-        HeightRequest="50"
-        VerticalOptions="Start" />
-
     <StackLayout Spacing="0">
 
-        <StackLayout CompressedLayout.IsHeadless="True" Spacing="0">
-            <CarouselView
-                CurrentItem="{Binding CurrentCryptoKey}"
-                CurrentItemChangedCommand="{Binding ChangeSelectCryptoKeyCommand}"
-                CurrentItemChangedCommandParameter="{Binding Source={RelativeSource Self}, Path=CurrentItem}"
-                HeightRequest="142"
-                IndicatorView="indicatorView"
-                IsVisible="{Binding CryptoKeyList, Converter={StaticResource HasDataConverter}}"
-                ItemsSource="{Binding CryptoKeyList}"
-                PeekAreaInsets="20,0">
+        <controls:CarouselKeyList
+            x:Name="xCarouselCryptoView"
+            CurrentItem="{Binding CurrentCryptoKey}"
+            CurrentItemChangedCommand="{Binding ChangeSelectCryptoKeyCommand, Mode=OneTime}"
+            CurrentItemChangedCommandParameter="{Binding Source={RelativeSource Self}, Path=CurrentItem}"
+            ItemsSource="{Binding CryptoKeyList}">
 
-                <CarouselView.ItemTemplate>
-                    <DataTemplate x:DataType="models:CryptoKey">
+            <controls:CarouselKeyList.ItemTemplate>
+                <DataTemplate x:DataType="models:CryptoKey">
 
-                        <key:HorizontalKeys
-                            BoxColor="{Binding FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
-                            HideValue="{Binding Source={RelativeSource AncestorType={x:Type vmBase:DashboardViewModelBase}}, Path=IsHideValue}"
-                            IconInstitution="{x:Static icons:FontAwesomeSolid.Coins}"
-                            InstitutionValue="{Binding Viewer.InstitutionPresentation}"
-                            KeyValue="{Binding Viewer.KeyPresentation}"
-                            QrCode="{Binding Payload.QrCode}">
-                            <key:HorizontalKeys.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding Command.NavigateToPaymentPageCommand}" NumberOfTapsRequired="1" />
-                                <TapGestureRecognizer Command="{Binding Command.CopyKeyCommand}" NumberOfTapsRequired="2" />
-                                <TapGestureRecognizer Command="{Binding Command.ShareKeyCommand}" NumberOfTapsRequired="3" />
-                            </key:HorizontalKeys.GestureRecognizers>
-                        </key:HorizontalKeys>
+                    <key:HorizontalKeys
+                        BoxColor="{Binding FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
+                        HideValue="{Binding Source={RelativeSource AncestorType={x:Type vmBase:DashboardViewModelBase}}, Path=IsHideValue}"
+                        IconInstitution="{Binding FinancialInstitution.Institution.Icon}"
+                        IconType="brand"
+                        InstitutionValue="{Binding Viewer.InstitutionPresentation}"
+                        KeyValue="{Binding Viewer.KeyPresentation}"
+                        QrCode="{Binding Payload.QrCode}">
+                        <key:HorizontalKeys.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding Command.NavigateToPaymentPageCommand}" NumberOfTapsRequired="1" />
+                            <TapGestureRecognizer Command="{Binding Command.CopyKeyCommand}" NumberOfTapsRequired="2" />
+                        </key:HorizontalKeys.GestureRecognizers>
+                    </key:HorizontalKeys>
 
-                    </DataTemplate>
-                </CarouselView.ItemTemplate>
-            </CarouselView>
-
-            <IndicatorView
-                x:Name="indicatorView"
-                Margin="5"
-                IsVisible="{Binding CryptoKeyList, Converter={StaticResource HasDataIfMore}, Mode=TwoWay}" />
-
-        </StackLayout>
+                </DataTemplate>
+            </controls:CarouselKeyList.ItemTemplate>
+        </controls:CarouselKeyList>
 
         <!--  Actions  -->
-        <CollectionView
-            Margin="8,0,0,0"
-            HeightRequest="140"
-            IsVisible="{Binding CryptoKeyList, Converter={StaticResource HasDataConverter}}"
+        <controls:HorizontalActionKeyList
             ItemsSource="{Binding CurrentCryptoKeyActions}"
             SelectedItem="{Binding SelectedAction}"
-            SelectionChangedCommand="{Binding ExecuteActionCommand}"
-            SelectionMode="Single">
-
-            <CollectionView.ItemsLayout>
-                <LinearItemsLayout ItemSpacing="8" Orientation="Horizontal" />
-            </CollectionView.ItemsLayout>
+            SelectionChangedCommand="{Binding ExecuteActionCommand}">
 
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="models:CryptoKeyAction">
@@ -95,13 +71,13 @@
                         Title="{Binding Title}"
                         BoxColor="{Binding Source={RelativeSource AncestorType={x:Type vm:DashboardCryptoViewModel}}, Path=CurrentCryptoKey.FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
                         Icon="{Binding Icon}"
-                        IconColor="{Binding Source={RelativeSource AncestorType={x:Type vm:DashboardCryptoViewModel}}, Path=CurrentCryptoKey.FinancialInstitution.Institution.MaterialColor.TextOnPrimary}"
-                        IconType="{Binding IconType}" />
+                        IconType="{Binding IconType}"
+                        RequiresInternet="{Binding RequiresInternet}" />
 
                 </DataTemplate>
             </CollectionView.ItemTemplate>
 
-        </CollectionView>
+        </controls:HorizontalActionKeyList>
 
         <templates:TemplateAction
             Title="Adicionar Nova"

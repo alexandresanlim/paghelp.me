@@ -1,7 +1,4 @@
-﻿
-using AsyncAwaitBestPractices;
-using PixQrCodeGeneratorOffline.Extention;
-using System.Windows.Input;
+﻿using System.Windows.Input;
 using Xamarin.Forms;
 using static PixQrCodeGeneratorOffline.Extention.IconExtention;
 
@@ -19,9 +16,6 @@ namespace PixQrCodeGeneratorOffline.Templates.Key
                propertyName: nameof(Title),
                returnType: typeof(string),
                declaringType: typeof(HorizontalActionKeys),
-               defaultValue: string.Empty,
-               defaultBindingMode: BindingMode.Default,
-               validateValue: null,
                propertyChanged: TitlePropertyChanged);
 
         public string Title
@@ -32,13 +26,8 @@ namespace PixQrCodeGeneratorOffline.Templates.Key
 
         private static void TitlePropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
-            if (newValue == null)
-                return;
-
-            var template = (HorizontalActionKeys)bindable;
-            string value = (string)newValue;
-
-            template.xTitle.Text = value;
+            if(bindable is HorizontalActionKeys template && newValue is string value && !string.IsNullOrWhiteSpace(value))
+                template.xTitle.Text = value;
         }
 
         public static readonly BindableProperty BoxColorProperty =
@@ -47,8 +36,6 @@ namespace PixQrCodeGeneratorOffline.Templates.Key
                returnType: typeof(Color),
                declaringType: typeof(HorizontalActionKeys),
                defaultValue: Color.White,
-               defaultBindingMode: BindingMode.Default,
-               validateValue: null,
                propertyChanged: BoxColorPropertyChanged);
 
         public Color BoxColor
@@ -59,24 +46,15 @@ namespace PixQrCodeGeneratorOffline.Templates.Key
 
         private static void BoxColorPropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
-            if (newValue == null)
-                return;
-
-            var template = (HorizontalActionKeys)bindable;
-            Color value = (Color)newValue;
-
-            template.xBoxView.BackgroundColor = value;
-
-            template.xBoxView.RunOpacityAnimationAsync().SafeFireAndForget(ex => ex.SendToLog());
+            if (bindable is HorizontalActionKeys template && newValue is Color value)
+                template.xBoxView.BackgroundColor = value;
         }
 
         public static readonly BindableProperty TapCommandProperty =
-            BindableProperty.Create(nameof(TapCommand),
-                typeof(ICommand),
-                typeof(HorizontalActionKeys),
-                null,
-                BindingMode.Default,
-                null,
+            BindableProperty.Create(
+                propertyName: nameof(TapCommand),
+                returnType: typeof(ICommand),
+                declaringType: typeof(HorizontalActionKeys),
                 propertyChanged: TapPropertyChanged);
 
         public ICommand TapCommand
@@ -87,14 +65,11 @@ namespace PixQrCodeGeneratorOffline.Templates.Key
 
         static void TapPropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
-            if (newValue == null)
-                return;
-
-            var b = (HorizontalActionKeys)bindable;
-            b.GestureRecognizers.Add(new TapGestureRecognizer
-            {
-                Command = (ICommand)newValue
-            });
+            if (bindable is HorizontalActionKeys template && newValue is ICommand value)
+                template.GestureRecognizers.Add(new TapGestureRecognizer
+                {
+                    Command = value
+                });
         }
 
         public static readonly BindableProperty IconProperty =
@@ -102,9 +77,6 @@ namespace PixQrCodeGeneratorOffline.Templates.Key
                propertyName: nameof(Icon),
                returnType: typeof(string),
                declaringType: typeof(HorizontalActionKeys),
-               defaultValue: string.Empty,
-               defaultBindingMode: BindingMode.Default,
-               validateValue: null,
                propertyChanged: IconPropertyChanged);
 
         public string Icon
@@ -115,13 +87,8 @@ namespace PixQrCodeGeneratorOffline.Templates.Key
 
         private static void IconPropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
-            if (newValue == null)
-                return;
-
-            var template = (HorizontalActionKeys)bindable;
-            string value = (string)newValue;
-
-            template.xIcon.Glyph = value;
+            if (bindable is HorizontalActionKeys template && newValue is string value && !string.IsNullOrWhiteSpace(value))
+                template.xIcon.Glyph = value;
         }
 
         public static readonly BindableProperty IconTypeProperty =
@@ -130,8 +97,6 @@ namespace PixQrCodeGeneratorOffline.Templates.Key
                returnType: typeof(FontAwesomeType),
                declaringType: typeof(HorizontalActionKeys),
                defaultValue: FontAwesomeType.solid,
-               defaultBindingMode: BindingMode.Default,
-               validateValue: null,
                propertyChanged: IconTypePropertyChanged);
 
         public FontAwesomeType IconType
@@ -142,13 +107,8 @@ namespace PixQrCodeGeneratorOffline.Templates.Key
 
         private static void IconTypePropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
-            if (newValue == null)
-                return;
-
-            var template = (HorizontalActionKeys)bindable;
-            FontAwesomeType value = (FontAwesomeType)newValue;
-
-            template.xIcon.IconType = value;
+            if (bindable is HorizontalActionKeys template && newValue is FontAwesomeType value)
+                template.xIcon.IconType = value;
         }
 
         public static readonly BindableProperty IconColorProperty =
@@ -157,8 +117,6 @@ namespace PixQrCodeGeneratorOffline.Templates.Key
               returnType: typeof(Color),
               declaringType: typeof(HorizontalActionKeys),
               defaultValue: Color.White,
-              defaultBindingMode: BindingMode.Default,
-              validateValue: null,
               propertyChanged: IconColorPropertyChanged);
 
         public Color IconColor
@@ -169,13 +127,8 @@ namespace PixQrCodeGeneratorOffline.Templates.Key
 
         private static void IconColorPropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
-            if (newValue == null)
-                return;
-
-            var template = (HorizontalActionKeys)bindable;
-            Color value = (Color)newValue;
-
-            template.xIcon.TextColor = value;
+            if (bindable is HorizontalActionKeys template && newValue is Color value)
+                template.xIcon.TextColor = value;
         }
 
         public static readonly BindableProperty RequiresInternetProperty =
@@ -184,8 +137,6 @@ namespace PixQrCodeGeneratorOffline.Templates.Key
                returnType: typeof(bool),
                declaringType: typeof(HorizontalActionKeys),
                defaultValue: false,
-               defaultBindingMode: BindingMode.Default,
-               validateValue: null,
                propertyChanged: RequiresInternetPropertyChanged);
 
         public bool RequiresInternet
@@ -196,7 +147,7 @@ namespace PixQrCodeGeneratorOffline.Templates.Key
 
         private static void RequiresInternetPropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
-            if (bindable is HorizontalActionKeys control && newValue != null && newValue is bool value)
+            if (bindable is HorizontalActionKeys control && newValue is bool value)
                 control.xIconRequiresInternet.IsVisible = value;
         }
     }
