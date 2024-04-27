@@ -4,25 +4,24 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
+    xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon"
     xmlns:key="clr-namespace:PixQrCodeGeneratorOffline.Templates.Key"
     xmlns:qr="clr-namespace:Xam.Forms;assembly=Xam.Forms.QRCode"
     x:Name="xMainFrame"
-    x:DataType="key:HorizontalKeys"
-    ColumnDefinitions="130,*"
-    ColumnSpacing="16">
+    x:DataType="key:HorizontalKeys">
 
     <Grid.Resources>
         <ResourceDictionary>
             <Style x:Key="styleActionText" TargetType="Label">
                 <Setter Property="FontSize" Value="{StaticResource FontSizeSmall}" />
-                <Setter Property="TextColor" Value="#ffffff" />
+                <Setter Property="TextColor" Value="{StaticResource white}" />
                 <Setter Property="FontFamily" Value="{StaticResource FontSemiBold}" />
                 <Setter Property="VerticalOptions" Value="CenterAndExpand" />
             </Style>
 
             <Style x:Key="styleActionIcon" TargetType="controls:CustomIcon">
                 <Setter Property="FontSize" Value="{StaticResource FontSizeSmall}" />
-                <Setter Property="TextColor" Value="#ffffff" />
+                <Setter Property="TextColor" Value="{StaticResource white}" />
                 <Setter Property="VerticalOptions" Value="CenterAndExpand" />
                 <Setter Property="FontSize" Value="{StaticResource FontSizeSmall}" />
             </Style>
@@ -31,8 +30,6 @@
 
     <controls:CustomIcon
         x:Name="xIconInstitution"
-        Grid.Column="0"
-        Grid.ColumnSpan="2"
         Margin="0,0,-25,-25"
         FontSize="160"
         HorizontalOptions="End"
@@ -40,7 +37,7 @@
         Opacity="0.3"
         VerticalOptions="End" />
 
-    <qr:QRCode
+    <!--<qr:QRCode
         x:Name="xQrCode"
         Grid.Column="0"
         Margin="16,0,0,0"
@@ -48,11 +45,10 @@
         HeightRequest="110"
         HorizontalOptions="Start"
         VerticalOptions="Start"
-        WidthRequest="110" />
+        WidthRequest="110" />-->
 
     <StackLayout
-        Grid.Column="1"
-        Margin="0,0,8,0"
+        Margin="16,0"
         Padding="0,0,0,16"
         HorizontalOptions="FillAndExpand"
         Spacing="0"
@@ -72,7 +68,59 @@
             LineBreakMode="MiddleTruncation"
             MaxLines="1"
             Text="Key"
+            TextColor="{StaticResource white}"
             VerticalOptions="StartAndExpand" />
+
+        <StackLayout
+            HorizontalOptions="Start"
+            Orientation="Horizontal"
+            Spacing="0">
+            <ContentView
+                x:Name="xPrimaryIcon"
+                HeightRequest="52"
+                WidthRequest="42">
+                <controls:CustomIcon
+                    FontSize="{StaticResource FontSizeLarge}"
+                    Glyph="{x:Static icons:FontAwesomeSolid.Qrcode}"
+                    HorizontalOptions="Start"
+                    TextColor="{StaticResource white}"
+                    VerticalOptions="Center" />
+            </ContentView>
+            <ContentView
+                x:Name="xSecondaryIcon"
+                HeightRequest="52"
+                WidthRequest="42">
+                <controls:CustomIcon
+                    FontSize="{StaticResource FontSizeLarge}"
+                    Glyph="{x:Static icons:FontAwesomeSolid.Copy}"
+                    HorizontalOptions="Start"
+                    TextColor="{StaticResource white}"
+                    VerticalOptions="Center" />
+            </ContentView>
+            <ContentView
+                x:Name="xThirdIcon"
+                HeightRequest="52"
+                WidthRequest="42">
+                <controls:CustomIcon
+                    FontSize="{StaticResource FontSizeLarge}"
+                    Glyph="{x:Static icons:FontAwesomeSolid.ShareAlt}"
+                    HorizontalOptions="Start"
+                    TextColor="{StaticResource white}"
+                    VerticalOptions="Center" />
+            </ContentView>
+            <ContentView
+                x:Name="xFourthIcon"
+                HeightRequest="52"
+                WidthRequest="42">
+                <controls:CustomIcon
+                    FontSize="{StaticResource FontSizeLarge}"
+                    Glyph="{x:Static icons:FontAwesomeBrands.Whatsapp}"
+                    HorizontalOptions="Start"
+                    IconType="brand"
+                    TextColor="{StaticResource white}"
+                    VerticalOptions="Center" />
+            </ContentView>
+        </StackLayout>
 
 
 

@@ -20,7 +20,6 @@
             <Image
                 Grid.Column="0"
                 Margin="0,3,0,0"
-                BackgroundColor="Transparent"
                 Source="{local:ImageResource PixQrCodeGeneratorOffline.title_icon.png}"
                 VerticalOptions="StartAndExpand"
                 WidthRequest="60" />

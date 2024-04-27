@@ -3,13 +3,13 @@
     x:Class="PixQrCodeGeneratorOffline.Views.StartPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:content="clr-namespace:PixQrCodeGeneratorOffline.Views.Content"
+    xmlns:contentStart="clr-namespace:PixQrCodeGeneratorOffline.Views.Content.StartPageContents"
     xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
     xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon"
     xmlns:templates="clr-namespace:PixQrCodeGeneratorOffline.Templates"
     xmlns:templatesKey="clr-namespace:PixQrCodeGeneratorOffline.Templates.Key"
     xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
-    xmlns:content="clr-namespace:PixQrCodeGeneratorOffline.Views.Content"
-    xmlns:contentStart="clr-namespace:PixQrCodeGeneratorOffline.Views.Content.StartPageContents"
     x:DataType="vm:DashboardViewModel"
     BackgroundColor="{DynamicResource background_page}">
 
@@ -166,22 +166,6 @@
                 <contentStart:StartPageNewsView />
 
             </StackLayout>-->
-            <content:DivisionView />
-
-            <ContentView
-                Margin="0,8"
-                Padding="0"
-                BackgroundColor="#060644"
-                HeightRequest="180">
-                <controls:ImageLocal HeightRequest="180" LocalPath="banner_fgts.png" />
-
-                <ContentView.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding NavigateToFGTSAdCommand, Mode=OneTime}" />
-                </ContentView.GestureRecognizers>
-            </ContentView>
-
-
-
             <content:DivisionView />
 
             <Grid Padding="0,0,8,0" ColumnDefinitions="*, 15">

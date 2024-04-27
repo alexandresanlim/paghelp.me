@@ -5,9 +5,9 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
     xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon"
+    xmlns:key="clr-namespace:PixQrCodeGeneratorOffline.Templates.Key"
     xmlns:models="clr-namespace:PixQrCodeGeneratorOffline.Models.PaymentMethods.Pix"
     xmlns:templates="clr-namespace:PixQrCodeGeneratorOffline.Templates"
-    xmlns:key="clr-namespace:PixQrCodeGeneratorOffline.Templates.Key"
     xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
     xmlns:vmBase="clr-namespace:PixQrCodeGeneratorOffline.ViewModels.Base"
     x:DataType="vm:DashboardViewModel">
@@ -44,17 +44,15 @@
 
                     <key:HorizontalKeys
                         BoxColor="{Binding FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
+                        FourthIconCommand="{Binding Command.ShareOnWhatsCommand, Mode=OneTime}"
                         HideValue="{Binding Source={RelativeSource AncestorType={x:Type vmBase:DashboardViewModelBase}}, Path=IsHideValue}"
                         IconInstitution="{Binding FinancialInstitution.Institution.Icon}"
                         IconType="FonteBancosBrasileiros"
                         InstitutionValue="{Binding Viewer.InstitutionPresentation}"
                         KeyValue="{Binding Viewer.KeyPresentation}"
-                        QrCode="{Binding Payload.QrCode}">
-                        <key:HorizontalKeys.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding Command.NavigateToPaymentPageCommand}" NumberOfTapsRequired="1" />
-                            <TapGestureRecognizer Command="{Binding Command.CopyKeyCommand}" NumberOfTapsRequired="2" />
-                        </key:HorizontalKeys.GestureRecognizers>
-                    </key:HorizontalKeys>
+                        PrimaryIconCommand="{Binding Command.NavigateToPaymentPageCommand, Mode=OneTime}"
+                        SecondaryIconCommand="{Binding Command.CopyKeyCommand, Mode=OneTime}"
+                        ThirdIconCommand="{Binding Command.ShareKeyCommand, Mode=OneTime}" />
 
                 </DataTemplate>
             </controls:CarouselKeyList.ItemTemplate>

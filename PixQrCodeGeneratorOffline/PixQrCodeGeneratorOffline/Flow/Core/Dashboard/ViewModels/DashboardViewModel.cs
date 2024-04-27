@@ -70,7 +70,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                     LoadPixKey();
 
-                    
+                    LoadContactKeys();
 
                     LoadBilling();
 
@@ -105,7 +105,14 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             });
         }
 
-        
+        public void LoadContactKeys()
+        {
+            PixKeyListContact = new ObservableCollection<PixKey>();
+
+            PixKeyListContact = _pixKeyService?
+                .GetAll(isContact: true)?.OrderBy(x => x?.Name)?
+                .ToObservableCollection() ?? new ObservableCollection<PixKey>();
+        }
 
         public void LoadBilling()
         {
@@ -294,7 +301,12 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             get => _currentPixKeyActions;
         }
 
-        
+        private ObservableCollection<PixKey> _pixKeyListContact;
+        public ObservableCollection<PixKey> PixKeyListContact
+        {
+            set => SetProperty(ref _pixKeyListContact, value);
+            get => _pixKeyListContact;
+        }
 
         private ObservableCollection<PixPayload> _billingSaveList;
         public ObservableCollection<PixPayload> BillingSaveList
