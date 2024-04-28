@@ -42,10 +42,9 @@
 
     <StackLayout
         Margin="16,0"
-        Padding="0,0,0,16"
         HorizontalOptions="FillAndExpand"
-        Spacing="0"
-        VerticalOptions="Start">
+        Spacing="2"
+        VerticalOptions="FillAndExpand">
         <StackLayout Orientation="Horizontal">
             <controls:CustomIcon
                 x:Name="xIconInstitutionTitle"
@@ -76,7 +75,8 @@
         <StackLayout
             HorizontalOptions="Start"
             Orientation="Horizontal"
-            Spacing="0">
+            Spacing="0"
+            VerticalOptions="EndAndExpand">
             <ContentView x:Name="xPrimaryIcon" Style="{StaticResource styleContainerIcon}">
                 <controls:CustomIcon
                     x:Name="xPrimaryIconContent"

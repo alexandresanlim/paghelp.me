@@ -13,6 +13,13 @@ namespace PixQrCodeGeneratorOffline.Services
     {
         protected IUserDialogs DialogService => UserDialogs.Instance;
 
+        protected readonly IFeedbackService _feedbackService;
+
+        public ExternalActionService()
+        {
+            _feedbackService = DependencyService.Get<IFeedbackService>();
+        }
+
         public async Task ShareText(string text)
         {
             if (string.IsNullOrWhiteSpace(text))
@@ -20,6 +27,8 @@ namespace PixQrCodeGeneratorOffline.Services
                 DialogService.Toast("Texto a ser compartilhado é inválido");
                 return;
             }
+
+            _feedbackService.Feedback();
 
             await Share.RequestAsync(new ShareTextRequest
             {
@@ -40,6 +49,8 @@ namespace PixQrCodeGeneratorOffline.Services
 
             var supportsUri = await Launcher.CanOpenAsync("whatsapp://");
 
+            _feedbackService.Feedback();
+
             if (supportsUri)
                 await Launcher.OpenAsync(new Uri("whatsapp://" + textAndPhone));
 
@@ -57,7 +68,7 @@ namespace PixQrCodeGeneratorOffline.Services
 
             await Clipboard.SetTextAsync(text);
 
-            try { HapticFeedback.Perform(HapticFeedbackType.Click); } catch (Exception) { }
+            _feedbackService.Feedback();
 
             DialogService.Toast(new ToastConfig(textSuccess)
             {
@@ -88,6 +99,8 @@ namespace PixQrCodeGeneratorOffline.Services
                 DialogService.Toast("O caminho para o arquivo é inválido");
                 return;
             }
+
+            _feedbackService.Feedback();
 
             await Share.RequestAsync(new ShareFileRequest
             {

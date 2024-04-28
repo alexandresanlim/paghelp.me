@@ -1,4 +1,5 @@
 ﻿using AsyncAwaitBestPractices.MVVM;
+using pix_dynamic_payload_generator.net.Requests.RequestModels;
 using PixQrCodeGeneratorOffline.Extention;
 using PixQrCodeGeneratorOffline.Models.Commands.Base;
 using PixQrCodeGeneratorOffline.Models.Commands.Interfaces;
@@ -54,8 +55,17 @@ namespace PixQrCodeGeneratorOffline.Models.Commands
             } : new PixKeyCommand();
         }
 
-        private IAsyncCommand GetCopyKeyCommand(PixKey pixKey) =>
-            _customAsyncCommand.Create(async () => await _externalActionService.CopyText(pixKey?.Key, $"Chave {pixKey?.Key} em {pixKey?.FinancialInstitution?.Institution?.Name} copiada.", pixKey?.FinancialInstitution?.Institution?.MaterialColor?.PrimaryDark, pixKey?.FinancialInstitution?.Institution?.MaterialColor?.TextOnPrimary));
+        private IAsyncCommand GetCopyKeyCommand(PixKey pixKey)
+        {
+            var message = $"Chave {pixKey?.Key}";
+            message += pixKey.IsContact ? $" do contato {pixKey.Name}" : $" em {pixKey?.FinancialInstitution?.Institution?.Name}";
+            message += " copiada.";
+
+            var financialColors = pixKey?.FinancialInstitution?.Institution?.MaterialColor;
+
+            return _customAsyncCommand.Create(async () => await _externalActionService.CopyText(pixKey?.Key, message , financialColors?.PrimaryDark, financialColors?.TextOnPrimary));
+        }
+            
 
         private IAsyncCommand GetShareKeyCommand(PixKey pixKey) =>
             _customAsyncCommand.Create(async () => await _externalActionService.ShareText(pixKey?.Key));

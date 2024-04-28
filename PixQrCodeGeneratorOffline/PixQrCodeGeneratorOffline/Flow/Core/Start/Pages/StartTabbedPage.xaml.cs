@@ -20,6 +20,7 @@ namespace PixQrCodeGeneratorOffline.Views
         {
             base.OnAppearing();
             AddPages();
+            SetPixStatusBarColor();
 
         }
 
