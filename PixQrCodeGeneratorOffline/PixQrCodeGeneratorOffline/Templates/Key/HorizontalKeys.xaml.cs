@@ -101,7 +101,7 @@ namespace PixQrCodeGeneratorOffline.Templates.Key
         static void IconTypePropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
             if (bindable is HorizontalKeys template && newValue is FontAwesomeType value)
-                template.xIconInstitution.IconType = value;
+                template.xIconInstitution.IconType = template.xIconInstitutionTitle.IconType = value;
         }
 
         public static readonly BindableProperty InstitutionValueProperty =

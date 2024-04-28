@@ -50,6 +50,28 @@ namespace PixQrCodeGeneratorOffline.Templates.Key
                 template.xBoxView.BackgroundColor = value;
         }
 
+        public static readonly BindableProperty OnBoxColorProperty =
+           BindableProperty.Create(
+               propertyName: nameof(OnBoxColor),
+               returnType: typeof(Color),
+               declaringType: typeof(HorizontalKeys),
+               propertyChanged: OnBoxColorPropertyChanged);
+
+        public Color OnBoxColor
+        {
+            get => (Color)GetValue(OnBoxColorProperty);
+            set => SetValue(OnBoxColorProperty, value);
+        }
+
+        static void OnBoxColorPropertyChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            if (bindable is HorizontalActionKeys template && newValue is Color value && value != null)
+                template.xIcon.TextColor = value;
+        }
+
+
+       
+
         public static readonly BindableProperty TapCommandProperty =
             BindableProperty.Create(
                 propertyName: nameof(TapCommand),
