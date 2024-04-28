@@ -54,6 +54,8 @@ namespace PixQrCodeGeneratorOffline.Base.ViewModels
 
         protected readonly IPixKeyCommand _pixKeyCommand;
 
+        protected readonly IFeedbackService _feedbackService;
+
         public ViewModelBase()
         {
             _financialInstitutionService = DependencyService.Get<IFinancialInstitutionService>();
@@ -70,6 +72,7 @@ namespace PixQrCodeGeneratorOffline.Base.ViewModels
             _statusBar = DependencyService.Get<IStatusBar>();
             _pixKeyViewerService = DependencyService.Get<IPixKeyViewerService>();
             _pixKeyCommand = DependencyService.Get<IPixKeyCommand>();
+            _feedbackService = DependencyService.Get<IFeedbackService>();
 
             ShowAds = false;
 

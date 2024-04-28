@@ -23,8 +23,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 {
     public class PaymentViewModel : ViewModelBase
     {
-
-
         private Cob currentCob;
 
         public bool paymentCanceled;
@@ -70,12 +68,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                     }
                     else
                     {
-                        SaveButtonIsVisible = !(CurrentPixPaylod?.Id > 0) && CurrentPixPaylod?.PixCob != null && CurrentPixPaylod.PixCob.HasValue();
-
-                        pixPayload.PixCob = new PixCob
-                        {
-                            IsDynamic = false
-                        };
+                        SaveButtonIsVisible = !(CurrentPixPaylod?.Id > 0) && CurrentPixPaylod.PixCob.HasValue();
                     }
                 }
 
