@@ -44,15 +44,16 @@
 
                     <key:HorizontalKeys
                         BoxColor="{Binding FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
-                        FourthIconCommand="{Binding Command.ShareOnWhatsCommand, Mode=OneTime}"
+                        FourthIconCommand="{Binding Command.ShareOnWhatsCommand}"
                         HideValue="{Binding Source={RelativeSource AncestorType={x:Type vmBase:DashboardViewModelBase}}, Path=IsHideValue}"
                         IconInstitution="{Binding FinancialInstitution.Institution.Icon}"
                         IconType="FonteBancosBrasileiros"
                         InstitutionValue="{Binding Viewer.InstitutionPresentation}"
                         KeyValue="{Binding Viewer.KeyPresentation}"
-                        PrimaryIconCommand="{Binding Command.NavigateToPaymentPageCommand, Mode=OneTime}"
-                        SecondaryIconCommand="{Binding Command.CopyKeyCommand, Mode=OneTime}"
-                        ThirdIconCommand="{Binding Command.ShareKeyCommand, Mode=OneTime}" />
+                        OnBoxColor="{Binding FinancialInstitution.Institution.MaterialColor.TextOnPrimary}"
+                        PrimaryIconCommand="{Binding Command.NavigateToPaymentPageCommand}"
+                        SecondaryIconCommand="{Binding Command.CopyKeyCommand}"
+                        ThirdIconCommand="{Binding Command.ShareKeyCommand}" />
 
                 </DataTemplate>
             </controls:CarouselKeyList.ItemTemplate>
