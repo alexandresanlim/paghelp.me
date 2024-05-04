@@ -22,6 +22,7 @@ using System.IO;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace PixQrCodeGeneratorOffline.Models.Services
@@ -63,9 +64,13 @@ namespace PixQrCodeGeneratorOffline.Models.Services
                 return null;
             }
 
-            pixPaylod.Payload = cobranca?.ToPayload("PAGHELPME" + Guid.NewGuid().ToString("N").Substring(0, 10), new Merchant(pixKey?.Name, pixKey?.City));
+            pixPaylod.Payload = cobranca?.ToPayload("PAGHELPME" + Guid.NewGuid().ToString("N")[..10], new Merchant(pixKey?.Name, pixKey?.City));
             pixPaylod.QrCode = pixPaylod.Payload?.GenerateStringToQrCode();
             pixPaylod.Commands = _pixPayloadCommand.Create(pixPaylod);
+            pixPaylod.PixCob = new PixCob
+            {
+                IsDynamic = false
+            };
 
             return pixPaylod;
         }
@@ -81,7 +86,7 @@ namespace PixQrCodeGeneratorOffline.Models.Services
                 PixCob = pixCob,
             };
 
-            Xamarin.Essentials.MainThread.BeginInvokeOnMainThread(() =>
+            MainThread.BeginInvokeOnMainThread(() =>
             {
                 Cobranca cobranca = new Cobranca(_chave: pixKey.Key)
                 {

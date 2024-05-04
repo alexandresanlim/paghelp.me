@@ -16,11 +16,17 @@ namespace PixQrCodeGeneratorOffline.Models.Viewer.Services
 
         private string GetValueFormatter(PixCob pixCob)
         {
+            if (string.IsNullOrWhiteSpace(pixCob?.Value))
+                return string.Empty;
+
             return pixCob.Value?.Replace(".", "")?.Replace(",", ".") ?? "";
         }
 
         private string GetValuePresentation(PixCob pixCob)
         {
+            if(string.IsNullOrWhiteSpace(pixCob?.Value))
+                return string.Empty;
+
             return "R$ " + pixCob.Value;
         }
     }
