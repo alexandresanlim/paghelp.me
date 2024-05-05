@@ -1,12 +1,11 @@
-﻿using PixQrCodeGeneratorOffline.Extention;
-using PixQrCodeGeneratorOffline.Services;
+﻿using PixQrCodeGeneratorOffline.Services;
 using System.Windows.Input;
 using Xamarin.Forms;
 using static PixQrCodeGeneratorOffline.Extention.IconExtention;
 
 namespace PixQrCodeGeneratorOffline.Templates.Key
 {
-    public partial class HorizontalKeys : Grid
+    public partial class HorizontalKeys : Frame
     {
         const string BULLET = "● ● ● ● ● ● ● ● ●";
 

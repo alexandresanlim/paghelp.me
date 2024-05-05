@@ -42,18 +42,22 @@
             <controls:CarouselKeyList.ItemTemplate>
                 <DataTemplate x:DataType="models:PixKey">
 
-                    <key:HorizontalKeys
-                        BoxColor="{Binding FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
-                        FourthIconCommand="{Binding Command.ShareOnWhatsCommand}"
-                        HideValue="{Binding Source={RelativeSource AncestorType={x:Type vmBase:DashboardViewModelBase}}, Path=IsHideValue}"
-                        IconInstitution="{Binding FinancialInstitution.Institution.Icon}"
-                        IconType="FonteBancosBrasileiros"
-                        InstitutionValue="{Binding Viewer.InstitutionPresentation}"
-                        KeyValue="{Binding Viewer.KeyPresentation}"
-                        OnBoxColor="{Binding FinancialInstitution.Institution.MaterialColor.TextOnPrimary}"
-                        PrimaryIconCommand="{Binding Command.NavigateToPaymentPageCommand}"
-                        SecondaryIconCommand="{Binding Command.CopyKeyCommand}"
-                        ThirdIconCommand="{Binding Command.ShareKeyCommand}" />
+                    <StackLayout Padding="4,0">
+                        <Frame BackgroundColor="{Binding FinancialInstitution.Institution.MaterialColor.PrimaryDark}" CornerRadius="16">
+                            <key:HorizontalKeys
+                                BoxColor="{Binding FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
+                                FourthIconCommand="{Binding Command.ShareOnWhatsCommand}"
+                                HideValue="{Binding Source={RelativeSource AncestorType={x:Type vmBase:DashboardViewModelBase}}, Path=IsHideValue}"
+                                IconInstitution="{Binding FinancialInstitution.Institution.Icon}"
+                                IconType="FonteBancosBrasileiros"
+                                InstitutionValue="{Binding Viewer.InstitutionPresentation}"
+                                KeyValue="{Binding Viewer.KeyPresentation}"
+                                OnBoxColor="{Binding FinancialInstitution.Institution.MaterialColor.TextOnPrimary}"
+                                PrimaryIconCommand="{Binding Command.NavigateToPaymentPageCommand}"
+                                SecondaryIconCommand="{Binding Command.CopyKeyCommand}"
+                                ThirdIconCommand="{Binding Command.ShareKeyCommand}" />
+                        </Frame>
+                    </StackLayout>
 
                 </DataTemplate>
             </controls:CarouselKeyList.ItemTemplate>

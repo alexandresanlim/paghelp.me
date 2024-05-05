@@ -50,7 +50,7 @@
                         </VisualState>
                         <VisualState x:Name="Selected">
                             <VisualState.Setters>
-                                <Setter Property="BackgroundColor" Value="#ffffff" />
+                                <Setter Property="BackgroundColor" Value="{Binding CurrentPixKey.FinancialInstitution.Institution.MaterialColor.PrimaryDark}" />
                             </VisualState.Setters>
                         </VisualState>
                     </VisualStateGroup>
@@ -67,10 +67,7 @@
 
 
             <!--  {Binding CurrentPixKey.FinancialInstitution.Institution.MaterialColor.PrimaryDark}  -->
-            <Grid
-                BackgroundColor="{Binding CurrentPixKey.FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
-                ColumnDefinitions="*, 50"
-                ColumnSpacing="0">
+            <Grid ColumnDefinitions="*, 50" ColumnSpacing="0">
 
                 <IndicatorView
                     x:Name="xIndicatorView"
@@ -78,7 +75,7 @@
                     Margin="8,0,0,0"
                     HorizontalOptions="StartAndExpand"
                     IndicatorColor="#80000000"
-                    SelectedIndicatorColor="#ffffff"
+                    SelectedIndicatorColor="{Binding CurrentPixKey.FinancialInstitution.Institution.MaterialColor.TextOnPrimary}"
                     VerticalOptions="CenterAndExpand">
                     <IndicatorView.IndicatorTemplate>
                         <DataTemplate>
@@ -98,7 +95,7 @@
                     WidthRequest="50">
                     <controls:CustomIcon
                         HorizontalOptions="CenterAndExpand"
-                        TextColor="{Binding CurrentPixKey.FinancialInstitution.Institution.MaterialColor.TextOnPrimary}"
+                        TextColor="{StaticResource primaryDark}"
                         VerticalOptions="CenterAndExpand">
                         <controls:CustomIcon.Triggers>
                             <DataTrigger
