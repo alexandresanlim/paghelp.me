@@ -7,8 +7,10 @@
     xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon"
     xmlns:key="clr-namespace:PixQrCodeGeneratorOffline.Templates.Key"
     x:Name="xMainFrame"
-    Padding="8"
-    x:DataType="key:HorizontalKeys">
+    Padding="16"
+    x:DataType="key:HorizontalKeys"
+    CornerRadius="16"
+    VerticalOptions="FillAndExpand">
 
     <Frame.Resources>
         <ResourceDictionary>

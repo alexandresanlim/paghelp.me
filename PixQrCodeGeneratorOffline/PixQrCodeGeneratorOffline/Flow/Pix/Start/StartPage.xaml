@@ -45,12 +45,12 @@
                     <VisualStateGroup x:Name="CommonStates">
                         <VisualState x:Name="Normal">
                             <VisualState.Setters>
-                                <Setter Property="BackgroundColor" Value="#50000000" />
+                                <Setter Property="BackgroundColor" Value="{StaticResource secondaryLight}" />
                             </VisualState.Setters>
                         </VisualState>
                         <VisualState x:Name="Selected">
                             <VisualState.Setters>
-                                <Setter Property="BackgroundColor" Value="{Binding CurrentPixKey.FinancialInstitution.Institution.MaterialColor.PrimaryDark}" />
+                                <Setter Property="BackgroundColor" Value="{StaticResource secondaryDark}" />
                             </VisualState.Setters>
                         </VisualState>
                     </VisualStateGroup>
@@ -74,8 +74,8 @@
                     Grid.Column="0"
                     Margin="8,0,0,0"
                     HorizontalOptions="StartAndExpand"
-                    IndicatorColor="#80000000"
-                    SelectedIndicatorColor="{Binding CurrentPixKey.FinancialInstitution.Institution.MaterialColor.TextOnPrimary}"
+                    IndicatorColor="{StaticResource secondaryLight}"
+                    SelectedIndicatorColor="{StaticResource secondaryDark}"
                     VerticalOptions="CenterAndExpand">
                     <IndicatorView.IndicatorTemplate>
                         <DataTemplate>
@@ -95,7 +95,7 @@
                     WidthRequest="50">
                     <controls:CustomIcon
                         HorizontalOptions="CenterAndExpand"
-                        TextColor="{StaticResource primaryDark}"
+                        TextColor="{DynamicResource textPrimary}"
                         VerticalOptions="CenterAndExpand">
                         <controls:CustomIcon.Triggers>
                             <DataTrigger

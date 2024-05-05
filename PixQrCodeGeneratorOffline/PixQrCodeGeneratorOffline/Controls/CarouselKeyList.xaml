@@ -4,10 +4,6 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     Margin="0,0,0,8"
-    HeightRequest="160"
-    Loop="True"
-    PeekAreaInsets="20">
-    <!--<CarouselView.ItemsLayout>
-        <LinearItemsLayout ItemSpacing="4" Orientation="Horizontal" />
-    </CarouselView.ItemsLayout>-->
-</CarouselView>
+    HeightRequest="170"
+    Loop="False"
+    PeekAreaInsets="16" />
