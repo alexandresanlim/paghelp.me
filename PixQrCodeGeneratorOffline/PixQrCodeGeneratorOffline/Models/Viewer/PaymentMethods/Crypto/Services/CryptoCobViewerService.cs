@@ -19,11 +19,17 @@ namespace PixQrCodeGeneratorOffline.Models.Viewer.PaymentMethods.Crypto.Services
 
         private string GetValueFormatter(CryptoCob pixCob)
         {
+            if (string.IsNullOrWhiteSpace(pixCob?.Value))
+                return string.Empty;
+
             return pixCob.Value?.Replace(".", "")?.Replace(",", ".") ?? "";
         }
 
         private string GetValuePresentation(CryptoCob pixCob)
         {
+            if (string.IsNullOrWhiteSpace(pixCob?.Value))
+                return string.Empty;
+
             return "R$ " + pixCob.Value;
         }
     }

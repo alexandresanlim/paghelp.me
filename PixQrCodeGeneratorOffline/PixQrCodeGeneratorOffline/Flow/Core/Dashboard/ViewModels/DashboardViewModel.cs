@@ -70,7 +70,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                     LoadPixKey();
 
-                    
+                    LoadContactKeys();
 
                     LoadBilling();
 
@@ -105,7 +105,14 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             });
         }
 
-        
+        public void LoadContactKeys()
+        {
+            PixKeyListContact = new ObservableCollection<PixKey>();
+
+            PixKeyListContact = _pixKeyService?
+                .GetAll(isContact: true)?.OrderBy(x => x?.Name)?
+                .ToObservableCollection() ?? new ObservableCollection<PixKey>();
+        }
 
         public void LoadBilling()
         {
@@ -118,93 +125,78 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         private void ChangeSelectedPixKey(PixKey pixkey) => MainThread.BeginInvokeOnMainThread(() =>
         {
             CurrentPixKey = pixkey;
-            try { HapticFeedback.Perform(HapticFeedbackType.Click); } catch (Exception) { }
+            _feedbackService.Feedback();
         });
 
-        private async Task ExecuteAction()
+        private Task ExecuteAction()
         {
             if (SelectedAction?.Type == KeyActionType.None)
-                return;
+                return Task.CompletedTask;
 
-            switch (SelectedAction.Type)
+            var commandToReturn = SelectedAction.Type switch
             {
-                case KeyActionType.CreateBilling:
-                    await CurrentPixKey.Command.NavigateToCreateBillingPageCommand.ExecuteAsync().ConfigureAwait(false);
-                    break;
-                case KeyActionType.CreateBillingDynamic:
-                    await CurrentPixKey.Command.NavigateToCreateBillingDynamicPageCommand.ExecuteAsync().ConfigureAwait(false);
-                    break;
-                case KeyActionType.CopyKey:
-                    await CurrentPixKey.Command.CopyKeyCommand.ExecuteAsync().ConfigureAwait(false);
-                    break;
-                case KeyActionType.ShareKey:
-                    await CurrentPixKey.Command.ShareKeyCommand.ExecuteAsync().ConfigureAwait(false);
-                    break;
-                case KeyActionType.ShareOnWhatsApp:
-                    await CurrentPixKey.Command.ShareOnWhatsCommand.ExecuteAsync().ConfigureAwait(false);
-                    break;
-                case KeyActionType.BillingList:
-                    await CurrentPixKey.Command.NavigateToBillingCommand.ExecuteAsync().ConfigureAwait(false);
-                    break;
-                case KeyActionType.PaymentPage:
-                    await CurrentPixKey.Command.NavigateToPaymentPageCommand.ExecuteAsync().ConfigureAwait(false);
-                    break;
-                case KeyActionType.Edit:
-                    await CurrentPixKey.Command.EditKeyCommand.ExecuteAsync().ConfigureAwait(false);
-                    break;
-                case KeyActionType.Delete:
-                    var confirm = await DialogService.ConfirmAsync("Tem certeza que deseja excluir a chave " + CurrentPixKey.Key + "?", "Confirmação", "Sim", "Cancelar");
-
-                    if (!confirm)
-                        break;
-
-                    try
-                    {
-                        SetIsLoading(true);
-
-                        var success = _pixKeyService.Remove(CurrentPixKey);
-
-                        if (success)
-                        {
-                            int index = PixKeyList.IndexOf(PixKeyList.FirstOrDefault(x => x.Id == CurrentPixKey.Id));
-
-                            if (index != -1)
-                            {
-                                PixKeyList.RemoveAt(index);
-                                CurrentPixKey = PixKeyList?.FirstOrDefault() ?? new PixKey();
-                            }
-
-                            if (PixKeyList.Count == 0)
-                            {
-                                PixKeyList = new ObservableCollection<PixKey>();
-                            }
-
-                            DialogService.Toast("Chave removida com sucesso");
-                        }
-
-                        else
-                        {
-                            DialogService.Toast("Algo de errado aconteceu, tente novamente mais tarde ou atualize o app");
-                        }
-                    }
-                    catch (Exception e)
-                    {
-                        e.SendToLog();
-                    }
-                    finally
-                    {
-                        SetIsLoading(false);
-                    }
-                    break;
-                case KeyActionType.DownloadQRCode:
-                    await CurrentPixKey.Payload.Commands.DownloadQrCodeCommand.ExecuteAsync().ConfigureAwait(false);
-                    break;
-                case KeyActionType.None:
-                default:
-                    break;
-            }
+                KeyActionType.CreateBilling => CurrentPixKey.Command.NavigateToCreateBillingPageCommand.ExecuteAsync(),
+                KeyActionType.CreateBillingDynamic => CurrentPixKey.Command.NavigateToCreateBillingDynamicPageCommand.ExecuteAsync(),
+                KeyActionType.CopyKey => CurrentPixKey.Command.CopyKeyCommand.ExecuteAsync(),
+                KeyActionType.ShareKey => CurrentPixKey.Command.ShareKeyCommand.ExecuteAsync(),
+                KeyActionType.ShareOnWhatsApp => CurrentPixKey.Command.ShareOnWhatsCommand.ExecuteAsync(),
+                KeyActionType.BillingList => CurrentPixKey.Command.NavigateToBillingCommand.ExecuteAsync(),
+                KeyActionType.PaymentPage => CurrentPixKey.Command.NavigateToPaymentPageCommand.ExecuteAsync(),
+                KeyActionType.Edit => CurrentPixKey.Command.EditKeyCommand.ExecuteAsync(),
+                KeyActionType.Delete => DeleteCurrentKeyAsync(),
+                KeyActionType.DownloadQRCode => CurrentPixKey.Payload.Commands.DownloadQrCodeCommand.ExecuteAsync(),
+                _ => Task.CompletedTask,
+            };
 
             SelectedAction = new PixKeyAction();
+
+            return commandToReturn;
+        }
+
+        private async Task DeleteCurrentKeyAsync()
+        {
+            var confirm = await DialogService.ConfirmAsync("Tem certeza que deseja excluir a chave " + CurrentPixKey.Key + "?", "Confirmação", "Sim", "Cancelar");
+
+            if (!confirm)
+                return;
+
+            try
+            {
+                SetIsLoading(true);
+
+                var success = _pixKeyService.Remove(CurrentPixKey);
+
+                if (success)
+                {
+                    int index = PixKeyList.IndexOf(PixKeyList.FirstOrDefault(x => x.Id == CurrentPixKey.Id));
+
+                    if (index != -1)
+                    {
+                        PixKeyList.RemoveAt(index);
+                        CurrentPixKey = PixKeyList?.FirstOrDefault() ?? new PixKey();
+                    }
+
+                    if (PixKeyList.Count == 0)
+                    {
+                        PixKeyList = new ObservableCollection<PixKey>();
+                    }
+
+                    DialogService.Toast("Chave removida com sucesso");
+                }
+
+                else
+                {
+                    DialogService.Toast("Algo de errado aconteceu, tente novamente mais tarde ou atualize o app");
+                }
+            }
+            catch (Exception e)
+            {
+                e.SendToLog();
+            }
+            finally
+            {
+                SetIsLoading(false);
+            }
         }
 
         private async Task CheckHasAKeyOnClipboard()
@@ -294,7 +286,12 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             get => _currentPixKeyActions;
         }
 
-        
+        private ObservableCollection<PixKey> _pixKeyListContact;
+        public ObservableCollection<PixKey> PixKeyListContact
+        {
+            set => SetProperty(ref _pixKeyListContact, value);
+            get => _pixKeyListContact;
+        }
 
         private ObservableCollection<PixPayload> _billingSaveList;
         public ObservableCollection<PixPayload> BillingSaveList

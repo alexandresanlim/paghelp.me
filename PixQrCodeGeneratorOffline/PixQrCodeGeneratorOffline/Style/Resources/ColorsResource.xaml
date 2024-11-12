@@ -50,6 +50,8 @@
     <Color x:Key="alertDanger">#fcf0f1</Color>
     <Color x:Key="alertInfo">#edfbfe</Color>
 
+    <Color x:Key="white">#ffffff</Color>
+
 
 
 </ResourceDictionary>

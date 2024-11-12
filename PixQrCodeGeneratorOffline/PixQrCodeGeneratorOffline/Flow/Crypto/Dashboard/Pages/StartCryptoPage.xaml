@@ -18,12 +18,12 @@
                     <VisualStateGroup x:Name="CommonStates">
                         <VisualState x:Name="Normal">
                             <VisualState.Setters>
-                                <Setter Property="BackgroundColor" Value="#50000000" />
+                                <Setter Property="BackgroundColor" Value="{StaticResource secondaryLight}" />
                             </VisualState.Setters>
                         </VisualState>
                         <VisualState x:Name="Selected">
                             <VisualState.Setters>
-                                <Setter Property="BackgroundColor" Value="#ffffff" />
+                                <Setter Property="BackgroundColor" Value="{StaticResource secondaryDark}" />
                             </VisualState.Setters>
                         </VisualState>
                     </VisualStateGroup>
@@ -36,18 +36,15 @@
 
         <StackLayout Spacing="0">
 
-            <Grid
-                BackgroundColor="{Binding CurrentCryptoKey.FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
-                ColumnDefinitions="*, 50"
-                ColumnSpacing="0">
+            <Grid ColumnDefinitions="*, 50" ColumnSpacing="0">
 
                 <IndicatorView
                     x:Name="xIndicatorView"
                     Grid.Column="0"
                     Margin="8,0,0,0"
                     HorizontalOptions="StartAndExpand"
-                    IndicatorColor="#80000000"
-                    SelectedIndicatorColor="#ffffff"
+                    IndicatorColor="{StaticResource secondaryLight}"
+                    SelectedIndicatorColor="{StaticResource secondaryDark}"
                     VerticalOptions="CenterAndExpand">
                     <IndicatorView.IndicatorTemplate>
                         <DataTemplate>

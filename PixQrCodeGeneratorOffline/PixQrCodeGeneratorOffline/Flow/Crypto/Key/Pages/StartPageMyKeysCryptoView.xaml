@@ -5,9 +5,9 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
     xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon"
+    xmlns:key="clr-namespace:PixQrCodeGeneratorOffline.Templates.Key"
     xmlns:models="clr-namespace:PixQrCodeGeneratorOffline.Models.PaymentMethods.Crypto"
     xmlns:templates="clr-namespace:PixQrCodeGeneratorOffline.Templates"
-    xmlns:key="clr-namespace:PixQrCodeGeneratorOffline.Templates.Key"
     xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
     xmlns:vmBase="clr-namespace:PixQrCodeGeneratorOffline.ViewModels.Base"
     x:DataType="vm:DashboardCryptoViewModel">
@@ -41,19 +41,21 @@
             <controls:CarouselKeyList.ItemTemplate>
                 <DataTemplate x:DataType="models:CryptoKey">
 
-                    <key:HorizontalKeys
-                        BoxColor="{Binding FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
-                        HideValue="{Binding Source={RelativeSource AncestorType={x:Type vmBase:DashboardViewModelBase}}, Path=IsHideValue}"
-                        IconInstitution="{Binding FinancialInstitution.Institution.Icon}"
-                        IconType="brand"
-                        InstitutionValue="{Binding Viewer.InstitutionPresentation}"
-                        KeyValue="{Binding Viewer.KeyPresentation}"
-                        QrCode="{Binding Payload.QrCode}">
-                        <key:HorizontalKeys.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding Command.NavigateToPaymentPageCommand}" NumberOfTapsRequired="1" />
-                            <TapGestureRecognizer Command="{Binding Command.CopyKeyCommand}" NumberOfTapsRequired="2" />
-                        </key:HorizontalKeys.GestureRecognizers>
-                    </key:HorizontalKeys>
+                    <StackLayout Padding="4,0">
+
+                        <key:HorizontalKeys
+                            BoxColor="{Binding FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
+                            FourthIconCommand="{Binding Command.ShareOnWhatsCommand}"
+                            HideValue="{Binding Source={RelativeSource AncestorType={x:Type vmBase:DashboardViewModelBase}}, Path=IsHideValue}"
+                            IconInstitution="{Binding FinancialInstitution.Institution.Icon}"
+                            IconType="brand"
+                            InstitutionValue="{Binding Viewer.InstitutionPresentation}"
+                            KeyValue="{Binding Viewer.KeyPresentation}"
+                            OnBoxColor="{Binding FinancialInstitution.Institution.MaterialColor.TextOnPrimary}"
+                            PrimaryIconCommand="{Binding Command.NavigateToPaymentPageCommand}"
+                            SecondaryIconCommand="{Binding Command.CopyKeyCommand}"
+                            ThirdIconCommand="{Binding Command.ShareKeyCommand}" />
+                    </StackLayout>
 
                 </DataTemplate>
             </controls:CarouselKeyList.ItemTemplate>
@@ -72,6 +74,7 @@
                         BoxColor="{Binding Source={RelativeSource AncestorType={x:Type vm:DashboardCryptoViewModel}}, Path=CurrentCryptoKey.FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
                         Icon="{Binding Icon}"
                         IconType="{Binding IconType}"
+                        OnBoxColor="{Binding Source={RelativeSource AncestorType={x:Type vm:DashboardCryptoViewModel}}, Path=CurrentCryptoKey.FinancialInstitution.Institution.MaterialColor.TextOnPrimary}"
                         RequiresInternet="{Binding RequiresInternet}" />
 
                 </DataTemplate>

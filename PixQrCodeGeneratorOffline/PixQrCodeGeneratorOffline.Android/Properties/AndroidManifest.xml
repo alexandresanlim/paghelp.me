@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="2" android:versionName="1.0.17" package="io.github.paghelpme" android:installLocation="auto">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="2" android:versionName="1.0.25" package="io.github.paghelpme" android:installLocation="auto">
 	<uses-sdk android:minSdkVersion="23" android:targetSdkVersion="33" />
-	<application android:allowBackup="true" android:fullBackupContent="@xml/my_backup_rules" android:hardwareAccelerated="false" android:largeHeap="true" android:label="Paghelp - PIX e BTC" android:theme="@style/MainTheme">
+	<application android:allowBackup="true" android:fullBackupContent="@xml/my_backup_rules" android:hardwareAccelerated="false" android:largeHeap="true" android:label="Paghelp - Pix" android:theme="@style/MainTheme">
 		<meta-data android:name="com.google.android.gms.ads.APPLICATION_ID" android:value="ca-app-pub-1328926374682196~1325825239" />
 	</application>
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />

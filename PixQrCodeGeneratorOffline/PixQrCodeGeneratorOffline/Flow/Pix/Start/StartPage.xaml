@@ -3,13 +3,13 @@
     x:Class="PixQrCodeGeneratorOffline.Views.StartPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:content="clr-namespace:PixQrCodeGeneratorOffline.Views.Content"
+    xmlns:contentStart="clr-namespace:PixQrCodeGeneratorOffline.Views.Content.StartPageContents"
     xmlns:controls="clr-namespace:PixQrCodeGeneratorOffline.Controls"
     xmlns:icons="clr-namespace:PixQrCodeGeneratorOffline.Helpers.Icon"
     xmlns:templates="clr-namespace:PixQrCodeGeneratorOffline.Templates"
     xmlns:templatesKey="clr-namespace:PixQrCodeGeneratorOffline.Templates.Key"
     xmlns:vm="clr-namespace:PixQrCodeGeneratorOffline.ViewModels"
-    xmlns:content="clr-namespace:PixQrCodeGeneratorOffline.Views.Content"
-    xmlns:contentStart="clr-namespace:PixQrCodeGeneratorOffline.Views.Content.StartPageContents"
     x:DataType="vm:DashboardViewModel"
     BackgroundColor="{DynamicResource background_page}">
 
@@ -45,12 +45,12 @@
                     <VisualStateGroup x:Name="CommonStates">
                         <VisualState x:Name="Normal">
                             <VisualState.Setters>
-                                <Setter Property="BackgroundColor" Value="#50000000" />
+                                <Setter Property="BackgroundColor" Value="{StaticResource secondaryLight}" />
                             </VisualState.Setters>
                         </VisualState>
                         <VisualState x:Name="Selected">
                             <VisualState.Setters>
-                                <Setter Property="BackgroundColor" Value="#ffffff" />
+                                <Setter Property="BackgroundColor" Value="{StaticResource secondaryDark}" />
                             </VisualState.Setters>
                         </VisualState>
                     </VisualStateGroup>
@@ -67,18 +67,15 @@
 
 
             <!--  {Binding CurrentPixKey.FinancialInstitution.Institution.MaterialColor.PrimaryDark}  -->
-            <Grid
-                BackgroundColor="{Binding CurrentPixKey.FinancialInstitution.Institution.MaterialColor.PrimaryDark}"
-                ColumnDefinitions="*, 50"
-                ColumnSpacing="0">
+            <Grid ColumnDefinitions="*, 50" ColumnSpacing="0">
 
                 <IndicatorView
                     x:Name="xIndicatorView"
                     Grid.Column="0"
                     Margin="8,0,0,0"
                     HorizontalOptions="StartAndExpand"
-                    IndicatorColor="#80000000"
-                    SelectedIndicatorColor="#ffffff"
+                    IndicatorColor="{StaticResource secondaryLight}"
+                    SelectedIndicatorColor="{StaticResource secondaryDark}"
                     VerticalOptions="CenterAndExpand">
                     <IndicatorView.IndicatorTemplate>
                         <DataTemplate>
@@ -98,7 +95,7 @@
                     WidthRequest="50">
                     <controls:CustomIcon
                         HorizontalOptions="CenterAndExpand"
-                        TextColor="{Binding CurrentPixKey.FinancialInstitution.Institution.MaterialColor.TextOnPrimary}"
+                        TextColor="{DynamicResource textPrimary}"
                         VerticalOptions="CenterAndExpand">
                         <controls:CustomIcon.Triggers>
                             <DataTrigger
@@ -166,22 +163,6 @@
                 <contentStart:StartPageNewsView />
 
             </StackLayout>-->
-            <content:DivisionView />
-
-            <ContentView
-                Margin="0,8"
-                Padding="0"
-                BackgroundColor="#060644"
-                HeightRequest="180">
-                <controls:ImageLocal HeightRequest="180" LocalPath="banner_fgts.png" />
-
-                <ContentView.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding NavigateToFGTSAdCommand, Mode=OneTime}" />
-                </ContentView.GestureRecognizers>
-            </ContentView>
-
-
-
             <content:DivisionView />
 
             <Grid Padding="0,0,8,0" ColumnDefinitions="*, 15">

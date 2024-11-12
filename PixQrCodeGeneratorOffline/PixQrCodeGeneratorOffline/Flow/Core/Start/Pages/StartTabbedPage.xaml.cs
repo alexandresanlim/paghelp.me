@@ -19,26 +19,26 @@ namespace PixQrCodeGeneratorOffline.Views
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            //AddPages();
-
+            AddPages();
             SetPixStatusBarColor();
+
         }
 
-        //private void AddPages()
-        //{
-        //    if (Children.Count.Equals(2) && Services.Preference.CryptoAble || (Children.Count.Equals(3) && !Services.Preference.CryptoAble))
-        //        Children.Clear();
+        private void AddPages()
+        {
+            if (Children.Count.Equals(2) && Services.Preference.CryptoAble || (Children.Count.Equals(3) && !Services.Preference.CryptoAble))
+                Children.Clear();
 
-        //    if (Children.Count.Equals(0))
-        //    {
-        //        Children.Add(new StartPage { Title = "Pix" });
+            if (Children.Count.Equals(0))
+            {
+                Children.Add(new StartPage { Title = "Pix" });
 
-        //        if (Services.Preference.CryptoAble)
-        //            Children.Add(new StartCryptoPage { Title = "Cripto (Beta)" });
+                if (Services.Preference.CryptoAble)
+                    Children.Add(new StartCryptoPage { Title = "Cripto (Beta)" });
 
-        //        Children.Add(new StartMorePage { Title = "Mais" });
-        //    }
-        //}
+                Children.Add(new StartMorePage { Title = "Mais" });
+            }
+        }
 
         private void TabbedPage_CurrentPageChanged(object sender, EventArgs e)
         {

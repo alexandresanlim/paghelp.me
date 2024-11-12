@@ -29,8 +29,7 @@
                 <controls:CustomIcon
                     x:Name="xIcon"
                     FontSize="{StaticResource FontSizeLarge}"
-                    HorizontalOptions="Start"
-                    TextColor="White" />
+                    HorizontalOptions="Start" />
 
                 <controls:CustomIcon
                     x:Name="xIconRequiresInternet"

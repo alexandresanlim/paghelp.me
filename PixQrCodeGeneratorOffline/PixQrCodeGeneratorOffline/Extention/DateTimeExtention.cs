@@ -11,7 +11,7 @@ namespace PixQrCodeGeneratorOffline.Extention
 
             var msg = "Olá, ";
 
-            if (period > 6 && period < 12)
+            if (period > 4 && period < 12)
                 msg += "Bom dia";
 
             else if (period >= 12 && period < 18)

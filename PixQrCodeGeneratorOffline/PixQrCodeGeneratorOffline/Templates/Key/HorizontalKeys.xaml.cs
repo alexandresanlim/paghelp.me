@@ -1,10 +1,11 @@
 ﻿using PixQrCodeGeneratorOffline.Services;
+using System.Windows.Input;
 using Xamarin.Forms;
 using static PixQrCodeGeneratorOffline.Extention.IconExtention;
 
 namespace PixQrCodeGeneratorOffline.Templates.Key
 {
-    public partial class HorizontalKeys : Grid
+    public partial class HorizontalKeys : Frame
     {
         const string BULLET = "● ● ● ● ● ● ● ● ●";
 
@@ -17,32 +18,11 @@ namespace PixQrCodeGeneratorOffline.Templates.Key
             CurrentKeyIsHide = Preference.HideData;
         }
 
-        public static readonly BindableProperty QrCodeProperty =
-           BindableProperty.Create(
-               propertyName: nameof(QrCode),
-               returnType: typeof(string),
-               declaringType: typeof(HorizontalKeys),
-               propertyChanged: QrCodePropertyChanged);
-
-        public string QrCode
-        {
-            get => (string)GetValue(QrCodeProperty);
-            set => SetValue(QrCodeProperty, value);
-        }
-
-        static void QrCodePropertyChanged(BindableObject bindable, object oldValue, object newValue)
-        {
-            if (bindable is HorizontalKeys template && newValue is string value && !string.IsNullOrEmpty(value))
-                template.xQrCode.Content = value;
-        }
-
-
         public static readonly BindableProperty BoxColorProperty =
            BindableProperty.Create(
                propertyName: nameof(BoxColor),
                returnType: typeof(Color),
                declaringType: typeof(HorizontalKeys),
-               defaultValue: Color.White,
                propertyChanged: BoxColorPropertyChanged);
 
         public Color BoxColor
@@ -55,6 +35,33 @@ namespace PixQrCodeGeneratorOffline.Templates.Key
         {
             if (bindable is HorizontalKeys template && newValue is Color value && value != null)
                 template.xMainFrame.BackgroundColor = value;
+        }
+
+        public static readonly BindableProperty OnBoxColorProperty =
+           BindableProperty.Create(
+               propertyName: nameof(OnBoxColor),
+               returnType: typeof(Color),
+               declaringType: typeof(HorizontalKeys),
+               propertyChanged: OnBoxColorPropertyChanged);
+
+        public Color OnBoxColor
+        {
+            get => (Color)GetValue(OnBoxColorProperty);
+            set => SetValue(OnBoxColorProperty, value);
+        }
+
+        static void OnBoxColorPropertyChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            if (bindable is HorizontalKeys template && newValue is Color value && value != null)
+                template.xInstitutionValue.TextColor =
+                    template.xIconInstitutionTitle.TextColor =
+                    template.xKeyValue.TextColor =
+                    template.xKeyValueHide.TextColor =
+                    template.xFourthIconContent.TextColor =
+                    template.xPrimaryIconContent.TextColor =
+                    template.xSecondaryIconContent.TextColor =
+                    template.xThirdIconContent.TextColor =
+                    template.xIconInstitution.TextColor = value;
         }
 
         public static readonly BindableProperty IconInstitutionProperty =
@@ -73,7 +80,8 @@ namespace PixQrCodeGeneratorOffline.Templates.Key
         static void IconInstitutionPropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
             if(bindable is HorizontalKeys template && newValue is string value && !string.IsNullOrEmpty(value))
-                template.xIconInstitution.Glyph = value;
+                template.xIconInstitution.Glyph = template.xIconInstitutionTitle.Glyph = value;
+
         }
 
         public static readonly BindableProperty IconTypeProperty =
@@ -92,7 +100,7 @@ namespace PixQrCodeGeneratorOffline.Templates.Key
         static void IconTypePropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
             if (bindable is HorizontalKeys template && newValue is FontAwesomeType value)
-                template.xIconInstitution.IconType = value;
+                template.xIconInstitution.IconType = template.xIconInstitutionTitle.IconType = value;
         }
 
         public static readonly BindableProperty InstitutionValueProperty =
@@ -157,6 +165,95 @@ namespace PixQrCodeGeneratorOffline.Templates.Key
         {
             if (bindable is HorizontalKeys template && newValue is bool value)
                 template.xKeyValue.Text = value ? template.xKeyValueHide.Text : BULLET;
+        }
+
+
+        public static readonly BindableProperty PrimaryIconCommandProperty =
+          BindableProperty.Create(
+              propertyName: nameof(PrimaryIconCommand),
+              returnType: typeof(ICommand),
+              declaringType: typeof(HorizontalKeys),
+              propertyChanged: PrimaryIconCommandChanged);
+
+        public ICommand PrimaryIconCommand
+        {
+            get => (ICommand)GetValue(PrimaryIconCommandProperty);
+            set => SetValue(PrimaryIconCommandProperty, value);
+        }
+
+        static void PrimaryIconCommandChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            if (bindable is HorizontalKeys template && newValue is ICommand value && value != null)
+            {
+                template.xPrimaryIcon.GestureRecognizers.Clear();
+                template.xPrimaryIcon.GestureRecognizers.Add(new TapGestureRecognizer { Command = value });
+            }
+        }
+
+        public static readonly BindableProperty SecondaryIconCommandProperty =
+          BindableProperty.Create(
+              propertyName: nameof(SecondaryIconCommand),
+              returnType: typeof(ICommand),
+              declaringType: typeof(HorizontalKeys),
+              propertyChanged: SecondaryIconCommandChanged);
+
+        public ICommand SecondaryIconCommand
+        {
+            get => (ICommand)GetValue(SecondaryIconCommandProperty);
+            set => SetValue(SecondaryIconCommandProperty, value);
+        }
+
+        static void SecondaryIconCommandChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            if (bindable is HorizontalKeys template && newValue is ICommand value && value != null)
+            {
+                template.xSecondaryIcon.GestureRecognizers.Clear();
+                template.xSecondaryIcon.GestureRecognizers.Add(new TapGestureRecognizer { Command = value });
+            }
+        }
+
+        public static readonly BindableProperty ThirdIconCommandProperty =
+          BindableProperty.Create(
+              propertyName: nameof(ThirdIconCommand),
+              returnType: typeof(ICommand),
+              declaringType: typeof(HorizontalKeys),
+              propertyChanged: ThirdIconCommandChanged);
+
+        public ICommand ThirdIconCommand
+        {
+            get => (ICommand)GetValue(ThirdIconCommandProperty);
+            set => SetValue(ThirdIconCommandProperty, value);
+        }
+
+        static void ThirdIconCommandChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            if (bindable is HorizontalKeys template && newValue is ICommand value && value != null)
+            {
+                template.xThirdIcon.GestureRecognizers.Clear();
+                template.xThirdIcon.GestureRecognizers.Add(new TapGestureRecognizer { Command = value });
+            }   
+        }
+
+        public static readonly BindableProperty FourthIconCommandProperty =
+         BindableProperty.Create(
+             propertyName: nameof(FourthIconCommand),
+             returnType: typeof(ICommand),
+             declaringType: typeof(HorizontalKeys),
+             propertyChanged: FourthIconCommandChanged);
+
+        public ICommand FourthIconCommand
+        {
+            get => (ICommand)GetValue(FourthIconCommandProperty);
+            set => SetValue(FourthIconCommandProperty, value);
+        }
+
+        static void FourthIconCommandChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            if (bindable is HorizontalKeys template && newValue is ICommand value && value != null)
+            {
+                template.xFourthIcon.GestureRecognizers.Clear();
+                template.xFourthIcon.GestureRecognizers.Add(new TapGestureRecognizer { Command = value });
+            }
         }
     }
 }
