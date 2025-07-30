@@ -1,3 +1,6 @@
+> [!IMPORTANT]
+> Este app foi construído com Xamarin.Forms, tecnologia que foi [descontinuada pela Microsoft](https://dotnet.microsoft.com/pt-br/apps/xamarin) em maio de 2024. No momento, não tenho interesse em migrar para o [.Net MAUI](https://github.com/dotnet/maui/), seu sucessor. Sendo assim, este repositório foi arquivado. .
+
 <h1 align='center'> PIX OFF - Gerador de QR Code Offline </h1>
 <p align='center'> Aplicativo gerador de QR Code offline para pagamento e gerenciador de chaves. </p>
 
