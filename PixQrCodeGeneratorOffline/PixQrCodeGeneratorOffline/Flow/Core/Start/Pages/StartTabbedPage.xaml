@@ -61,7 +61,7 @@
         </Grid>
     </Shell.TitleView>
 
-    <!--  Pages can be added as references or inline  -->
+
 
     <views:StartPage Title="Pix" />
     <views:StartCryptoPage x:Name="xCryptoTab" Title="Bitcoin (BETA)" />

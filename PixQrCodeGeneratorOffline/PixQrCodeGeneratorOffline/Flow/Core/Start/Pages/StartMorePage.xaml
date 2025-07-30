@@ -27,8 +27,6 @@
 
             <content:DivisionView />
 
-            <!--  //////////////////////////////////////////////////////////////////////////////////////////////////////////////  -->
-
             <Grid Padding="0,0,10,0" ColumnDefinitions="*, auto">
 
                 <Grid.GestureRecognizers>
@@ -42,8 +40,6 @@
 
             <content:DivisionView />
 
-            <!--  //////////////////////////////////////////////////////////////////////////////////////////////////////////////  -->
-
             <templates:TemplateTitlePanel
                 Title="Está gostando do App?"
                 Margin="0,0,10,0"
@@ -55,8 +51,6 @@
 
 
             <content:DivisionView />
-
-            <!--  //////////////////////////////////////////////////////////////////////////////////////////////////////////////  -->
 
             <templates:TemplateTitlePanel
                 Title="{Binding CurrentStore}"
@@ -72,8 +66,6 @@
 
 
             <content:DivisionView />
-
-            <!--  //////////////////////////////////////////////////////////////////////////////////////////////////////////////  -->
 
             <!--<Grid Padding="0,0,10,0" ColumnDefinitions="*, auto">
 

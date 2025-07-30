@@ -66,7 +66,7 @@
             <share:AdsView Grid.Row="1" />
         </Grid>
 
-        <!--</controls:CustomFrame>-->
+
 
 
     </ContentPage.Content>

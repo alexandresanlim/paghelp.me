@@ -30,7 +30,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         {
             LoadDataCommand.Execute(null);
 
-            //Connectivity.ConnectivityChanged += Connectivity_ConnectivityChanged;
+
 
             DashboardCryptoVM = this;
         }
@@ -43,19 +43,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 LoadPixKey();
 
-                //await LoadPixKeyContact();
 
-                //await LoadBilling();
-
-                //await LoadCurrentPixKey();
-
-                //await CheckHasAKeyOnClipboard();
-
-                //await LoadNews();
-
-                //await NavigateToBenefitsPage();
-
-                //LoadHideValue();
 
                 CurrentCryptoKeyActions = CryptoKeyAction.GetList();
             }
@@ -81,9 +69,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
             switch (SelectedAction.Type)
             {
-                //case KeyActionType.CreateBilling:
-                //    CurrentCryptoKey.Command.NavigateToCreateBillingPageCommand.Execute(null);
-                //    break;
+
                 case KeyActionType.CopyKey:
                     CurrentCryptoKey.Command.CopyKeyCommand.Execute(null);
                     break;
@@ -93,9 +79,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 case KeyActionType.ShareOnWhatsApp:
                     CurrentCryptoKey.Command.ShareOnWhatsCommand.Execute(null);
                     break;
-                //case KeyActionType.BillingList:
-                //    CurrentCryptoKey.Command.NavigateToBillingCommand.Execute(null);
-                //    break;
+
                 case KeyActionType.PaymentPage:
                     CurrentCryptoKey.Command.NavigateToPaymentPageCommand.Execute(null);
                     break;
@@ -146,8 +130,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         {
             CurrentCryptoKey = pixkey;
             try { HapticFeedback.Perform(HapticFeedbackType.Click); } catch (Exception) { }
-            //_statusBar.SetStatusBarColor(pixkey.FinancialInstitution.Institution.MaterialColor.PrimaryDark);
-            //CurrentCryptoKeyActions = pixkey?.Actions?.ToObservableCollection() ?? new ObservableCollection<CryptoKeyAction>();
+
         }
     }
 }

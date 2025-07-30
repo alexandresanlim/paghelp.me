@@ -39,7 +39,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             CurrentPixKey = pixKey ?? new PixKey();
             CurrentPixKey.IsContact = isContact;
 
-            CurrentDashboard = DashboardVM; //CurrentPixKey.IsContact ? DashboardContactVM : (DashboardViewModelBase)DashboardVM;
+            CurrentDashboard = DashboardVM;
             CurrentContactDashboard = DashboardContactVM;
 
             LoadDataCommand.ExecuteAsync().SafeFireAndForget();
@@ -227,7 +227,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                     Title = "Selecione uma instituição",
                     Message = "Caso sua instituição não esteja na lista, toque em adicionar nova",
                     Options = options,
-                    //UseBottomSheet = true,
+
                     Destructive = new Acr.UserDialogs.ActionSheetOption("ADICIONAR NOVA", async () =>
                     {
                         var newInstitution = await DialogService.PromptAsync(new Acr.UserDialogs.PromptConfig

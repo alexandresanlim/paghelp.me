@@ -61,7 +61,7 @@
             </controls:CarouselKeyList.ItemTemplate>
         </controls:CarouselKeyList>
 
-        <!--  Actions  -->
+
         <controls:HorizontalActionKeyList
             ItemsSource="{Binding CurrentCryptoKeyActions}"
             SelectedItem="{Binding SelectedAction}"
@@ -89,5 +89,5 @@
 
     </StackLayout>
 
-    <!--<content:PanelLoadView IsVisible="{Binding CurrentDashboardLoadInfo.IsLoadMyKeys}" />-->
+
 </Grid>

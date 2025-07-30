@@ -10,13 +10,6 @@
     CurrentPageChanged="TabbedPage_CurrentPageChanged"
     Shell.NavBarIsVisible="False">
 
-    <!--  Pages can be added as references or inline  -->
-
-    <!--<views:CreateBillingPage Title="Teclado" />-->
     <views:CreateBillingSavePage Title="Cobranças Salvas" />
-
-
-    <!--  Adicionar cobranças mais realizadas  -->
-    <!--  Adicionar histórico das últimas 30 cobranças  -->
 
 </TabbedPage>

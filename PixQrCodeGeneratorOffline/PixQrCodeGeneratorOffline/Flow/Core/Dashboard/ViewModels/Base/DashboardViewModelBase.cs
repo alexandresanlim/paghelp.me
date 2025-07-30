@@ -20,17 +20,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels.Base
         {
             CurrentPixKey = pixKeySelected ?? PixKeyList.FirstOrDefault();
 
-            //if (PixKeyList == null || !(PixKeyList.Count > 0))
-            //{
-            //    DashboardWelcomenList = DashboardWelcome.GetList();
-            //    ShowWelcome = true;
-            //}
 
-            //else
-            //{
-            //    CurrentPixKey = pixKeySelected ?? PixKeyList.FirstOrDefault();
-            //    ShowWelcome = false;
-            //}
         }
 
         private void HideValue()

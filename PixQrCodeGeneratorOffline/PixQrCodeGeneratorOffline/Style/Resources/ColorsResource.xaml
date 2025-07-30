@@ -24,7 +24,7 @@
 
     <Color x:Key="backgroundTransparentDashboard">#99000000</Color>
 
-    <!--<Color x:Key="background_page">#0c143c</Color>-->
+
 
     <Color x:Key="background_page">#ffffff</Color>
     <Color x:Key="foreground_page">#f0f1f5</Color>

@@ -18,7 +18,7 @@ namespace PixQrCodeGeneratorOffline.Views
             if (color != null)
                 SetStatusBarColor(color.Value);
 
-            //pixPayload.PixKey?.FinancialInstitution?.Institution?.MaterialColor;
+
             BindingContext = _createBillingViewModel = new CreateBillingViewModel();
             _createBillingViewModel.isDynamic = isDynamic;
             _createBillingViewModel.LoadDataCommand.Execute(pixKey);

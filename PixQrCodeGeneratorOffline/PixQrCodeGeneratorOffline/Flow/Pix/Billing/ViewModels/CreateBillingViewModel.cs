@@ -52,11 +52,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
         private void LoadStyle()
         {
             CurrentStyleFromKey = CurrentPixKey?.FinancialInstitution?.Institution?.MaterialColor;
-
-            //return;
-
-            //if (CurrentStyleFromKey != null)
-            //    App.LoadTheme(CurrentStyleFromKey);
         }
 
         public Command<string> InputTextCommand => new Command<string>((text) =>
@@ -131,67 +126,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
                 if (!_pixPayloadService.IsValid(pixPaylod))
                     return;
-
-                if (CurrentCob.IsDynamic)
-                {
-                    var pspClientId = new PspClientId(
-                        _productionClientId: "Client_Id_505c65a6e2cd5e048d583b80f8da2356a7230275",
-                        _homologationClientId: "Client_Id_51d92e9836716a4ab9b3ec1d9d34f6644ac28d69");
-
-                    var pspClientSecret = new PspClientSecret(
-                        _productionClientSecret: "Client_Secret_4bd8c21a1107a627c2db3a7dcf1c4180ce1a040a",
-                        _homologationClientSecret: "Client_Secret_0ab77acbf2bde2cc40a1162f596846fa75ff710e");
-
-                    var client = new PspClient(pspClientId, pspClientSecret);
-
-                    var certificate = new X509Certificate2(Preference.CertificatePath);
-
-                    var psp = new PspHomologated.Gerencianet(client, certificate);
-
-                    new StartConfig(psp, PspEnvironment.Production);
-
-
-                    var cob = new CobRequest(_chave: "1b0e2743-0769-4f21-b0b7-9cfddb2a5a2b")
-                    {
-                        Calendario = new CalendarioRequest
-                        {
-                            Expiracao = 3600
-                        },
-                        //Devedor = new DevedorRequest
-                        //{
-                        //    Cpf = "12345678909",
-                        //    Nome = "Francisco da Silva",
-                        //},
-                        Valor = new ValorRequest
-                        {
-                            Original = pixPaylod.PixCob.Viewer.ValueFormatter
-                        },
-                        SolicitacaoPagador = pixPaylod.PixCob.Description,
-                        //    InfoAdicionais = new List<InfoAdicional>
-                        //{
-                        //    new InfoAdicionalRequest
-                        //    {
-                        //        Nome = "Campo 1",
-                        //        Valor = "Informação Adicional1 do PSP-Recebedor"
-                        //    },
-                        //    new InfoAdicionalRequest
-                        //    {
-                        //        Nome = "Campo 2",
-                        //        Valor = "Informação Adicional2 do PSP-Recebedor"
-                        //    }
-                        //}
-                    };
-
-                    var cobRequest = new CobRequestService();
-
-                    pixPaylod.PixDynamicCob = await cobRequest.Create(Guid.NewGuid().ToString("N"), cob).ConfigureAwait(false);
-
-                    var payload = pixPaylod.PixDynamicCob.ToDynamicPayload(pixPaylod.PixDynamicCob.Txid, new Merchant(pixPaylod.PixKey.Name, pixPaylod.PixKey.City), pixPaylod.PixDynamicCob.Location);
-
-                    var stringToQrCode = payload.GenerateStringToQrCode();
-
-                    pixPaylod.QrCode = stringToQrCode;
-                }
 
                 await pixPaylod.Commands.NavigateToPaymentPageCommand.ExecuteAsync();
             }

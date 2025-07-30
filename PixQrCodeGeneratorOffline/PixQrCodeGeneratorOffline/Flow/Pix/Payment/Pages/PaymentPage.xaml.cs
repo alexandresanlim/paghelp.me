@@ -23,26 +23,15 @@ namespace PixQrCodeGeneratorOffline.Views
 
         protected override void OnAppearing()
         {
-            //_paymentViewModel.paymentCanceled = false;
-            //_paymentViewModel.LoadDataCommand.Execute(_pixPaylod);
-
-            //SetStatusBarColor(_paymentViewModel.CurrentInfo.Color.PrimaryDark);
-
-            //if (!(_paymentViewModel?.CurrentPixPaylod?.Id > 0) && _paymentViewModel?.CurrentPixPaylod?.PixCob != null && _paymentViewModel.CurrentPixPaylod.PixCob.HasValue())
-            //    btnSave.IsVisible = true;
         }
 
         protected override void OnDisappearing()
         {
-            //_paymentViewModel.paymentCanceled = true;
-
             _paymentViewModel.waitingPaymentTokenSource.Cancel();
         }
 
         protected override bool OnBackButtonPressed()
         {
-            //_paymentViewModel.waitingPaymentTokenSource.Cancel();
-
             if (PopupNavigation.Instance.PopupStack.Any())
             {
                 Shell.Current.Navigation.PopPopupAsync().SafeFireAndForget(x => x.SendToLog());
@@ -53,10 +42,7 @@ namespace PixQrCodeGeneratorOffline.Views
 
         private void TapGestureRecognizer_Tapped(object sender, System.EventArgs e)
         {
-            //_paymentViewModel.paymentCanceled = true;
-
             _paymentViewModel.waitingPaymentTokenSource.Cancel();
-            //SetStatusBarColor(App.ThemeColors.PrimaryDark);
             Shell.Current.Navigation.PopPopupAsync().SafeFireAndForget(x => x.SendToLog());
         }
     }

@@ -247,7 +247,7 @@
                                 <TapGestureRecognizer Command="{Binding InputTextCommand}" CommandParameter="" />
                             </Frame.GestureRecognizers>
                             <StackLayout Spacing="0" VerticalOptions="CenterAndExpand">
-                                <!--<controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Backspace }" IconSize="Title" IconColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />-->
+
                                 <Label Style="{DynamicResource styleActionText}" Text="limpa" />
                             </StackLayout>
                         </Frame>
@@ -270,6 +270,6 @@
             </Grid>
         </ScrollView>
 
-        <!--</controls:CustomFrame>-->
+
     </ContentPage.Content>
 </ContentPage>

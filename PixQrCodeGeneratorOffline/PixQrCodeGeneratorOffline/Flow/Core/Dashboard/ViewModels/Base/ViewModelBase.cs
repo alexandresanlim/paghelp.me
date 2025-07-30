@@ -34,7 +34,7 @@ namespace PixQrCodeGeneratorOffline.Base.ViewModels
 
         protected readonly ICryptoKeyService _cryptoKeyService;
 
-        //public readonly IStatusBar _statusBarService;
+
 
         protected readonly IMaterialColorService _materialColorService;
 
@@ -62,7 +62,7 @@ namespace PixQrCodeGeneratorOffline.Base.ViewModels
             _financialInstitutionCryptoService = DependencyService.Get<IFinancialInstitutionCryptoService>();
             _pixKeyService = DependencyService.Get<IPixKeyService>();
             _cryptoKeyService = DependencyService.Get<ICryptoKeyService>();
-            //_statusBarService = DependencyService.Get<IStatusBar>();
+
             _materialColorService = DependencyService.Get<IMaterialColorService>();
             _pixPayloadService = DependencyService.Get<IPixPayloadService>();
             _preferenceService = DependencyService.Get<IPreferenceService>();
@@ -76,7 +76,7 @@ namespace PixQrCodeGeneratorOffline.Base.ViewModels
 
             ShowAds = false;
 
-            //Application.Current.RequestedThemeChanged += Current_RequestedThemeChanged;
+
         }
 
         public static DashboardViewModel DashboardVM { get; set; }
@@ -85,15 +85,7 @@ namespace PixQrCodeGeneratorOffline.Base.ViewModels
 
         public static DashboardContactViewModel DashboardContactVM { get; set; }
 
-        //private void Current_RequestedThemeChanged(object sender, AppThemeChangedEventArgs e)
-        //{
-        //    ReloadAppColorIfShowInListStyle();
-        //}
 
-        //public void ReloadAppColorIfShowInListStyle()
-        //{
-        //    App.LoadTheme();
-        //}
 
         protected IUserDialogs DialogService => UserDialogs.Instance;
 

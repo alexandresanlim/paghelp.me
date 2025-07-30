@@ -124,7 +124,7 @@
                 <share:AdsView Grid.Row="1" />
             </Grid>
 
-            <!--<StackLayout BackgroundColor="Black" IsVisible="{Binding IsLoading}"/>-->
+
         </Grid>
 
     </ContentPage.Content>

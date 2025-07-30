@@ -20,7 +20,7 @@ namespace PixQrCodeGeneratorOffline.Models
             _feedViewerService = DependencyService.Get<IFeedViewerService>();
             _feedCommand = DependencyService.Get<IFeedCommand>();
 
-            //Image = new UriImageSource { CachingEnabled = true, Uri = new Uri("https://img.olhardigital.com.br/wp-content/uploads/2021/04/PIX-2.jpg") };
+
         }
 
         public string Title { get; set; }

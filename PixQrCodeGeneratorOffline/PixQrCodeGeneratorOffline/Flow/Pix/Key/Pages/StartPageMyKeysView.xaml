@@ -63,7 +63,7 @@
             </controls:CarouselKeyList.ItemTemplate>
         </controls:CarouselKeyList>
 
-        <!--  Actions  -->
+
         <controls:HorizontalActionKeyList
             ItemsSource="{Binding CurrentPixKeyActions}"
             SelectedItem="{Binding SelectedAction}"
@@ -94,18 +94,8 @@
             Icon="{x:Static icons:FontAwesomeSolid.FileCsv}"
             TapCommand="{Binding ExportToFileCommand}" />
 
-        <!--<Grid Style="{DynamicResource styleGridActionChevronRight}" IsVisible="{Binding PixKeyList, Converter={StaticResource HasDataConverter}}">
 
-                    <Grid.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding RemoveAllCommand}" />
-                    </Grid.GestureRecognizers>
-
-                    <controls:CustomIcon Glyph="{x:Static icons:FontAwesomeSolid.Trash }" Style="{DynamicResource styleGridActionChevronIcon}" />
-                    <Label Text="Excluir Todas" Style="{DynamicResource styleGridActionTitle}" />
-                    <content:ChevronRightView Grid.Column="2" />
-
-                </Grid>-->
     </StackLayout>
 
-    <!--<content:PanelLoadView IsVisible="{Binding CurrentDashboardLoadInfo.IsLoadMyKeys}" />-->
+
 </Grid>

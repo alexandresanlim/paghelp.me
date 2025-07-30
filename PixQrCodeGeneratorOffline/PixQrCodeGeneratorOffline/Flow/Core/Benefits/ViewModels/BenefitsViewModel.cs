@@ -20,9 +20,6 @@ namespace PixQrCodeGeneratorOffline.ViewModels
 
         private void LoadShowWelcome()
         {
-            //CurrentDashboardCustomInfo.ShowWelcome = !Preference.HaveSeenWelcome;
-
-            //if (CurrentDashboardCustomInfo.ShowWelcome)
             DashboardWelcomenList = DashboardWelcome.GetList();
         }
 

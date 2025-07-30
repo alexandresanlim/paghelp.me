@@ -60,13 +60,13 @@
     </ContentPage.Resources>
 
 
-    <!--<Grid>-->
+
 
     <ScrollView VerticalOptions="FillAndExpand">
         <StackLayout Spacing="0">
 
 
-            <!--  {Binding CurrentPixKey.FinancialInstitution.Institution.MaterialColor.PrimaryDark}  -->
+
             <Grid ColumnDefinitions="*, 50" ColumnSpacing="0">
 
                 <IndicatorView
@@ -135,8 +135,6 @@
 
             <content:DivisionView Margin="0,8,0,0" />
 
-            <!--  //////////////////////////////////////////////////////////////////////////////////////////////////////////////  -->
-
             <StackLayout IsVisible="{Binding BillingSaveList, Converter={StaticResource HasDataConverter}}">
 
                 <templates:TemplateTitlePanel
@@ -152,17 +150,7 @@
             </StackLayout>
 
 
-            <!--<StackLayout IsVisible="{Binding CurrentFeedList, Converter={StaticResource HasDataConverter}}">
 
-                <templates:TemplateTitlePanel
-                    Title="Notícias"
-                    BackgroundImage="banner_noticias.png"
-                    Icon="{x:Static icons:FontAwesomeSolid.Rss}"
-                    SubTitle="Fique por dentro das principais &#x0a;notícias diárias sobre o Pix" />
-
-                <contentStart:StartPageNewsView />
-
-            </StackLayout>-->
             <content:DivisionView />
 
             <Grid Padding="0,0,8,0" ColumnDefinitions="*, 15">
@@ -189,11 +177,7 @@
                 <content:ChevronRightView Grid.Column="1" />
             </Grid>
 
-            <!--  Preferences  -->
-
             <content:DivisionView Margin="0,8,0,0" />
-
-            <!--  //////////////////////////////////////////////////////////////////////////////////////////////////////////////  -->
 
             <Grid Padding="0,0,8,0" ColumnDefinitions="*, 15">
 
@@ -212,10 +196,6 @@
         </StackLayout>
     </ScrollView>
 
-    <!--<templates1:AutenticationTemplate />
 
-            <content:PanelLoadView IsVisible="{Binding IsBusy}" />
-
-        </Grid>-->
 
 </ContentPage>

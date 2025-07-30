@@ -46,7 +46,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                     LoadPixKeyContact();
                 });
 
-                //LoadCurrentPixKey();
+
             }
             catch (System.Exception e)
             {
@@ -62,12 +62,7 @@ namespace PixQrCodeGeneratorOffline.ViewModels
                 .GetAll(isContact: true)?.OrderBy(x => x?.Name)?
                 .ToObservableCollection() ?? new ObservableCollection<PixKey>();
 
-            //var piskeyListContactGrouped = PixKeyListContact.GroupBy(x => x.Viewer.StartLetter);
 
-            //foreach (var item in piskeyListContactGrouped)
-            //{
-            //    PixKeyListContactGroup.Add(new PixKeyGroup(item.Key, item.ToList()));
-            //}
         }
 
         #region Contact
@@ -161,18 +156,5 @@ namespace PixQrCodeGeneratorOffline.ViewModels
             get => _pixKeyListContact;
         }
 
-        //public List<PixKeyGroup> PixKeyListContactGroup { get; private set; } = new List<PixKeyGroup>();
     }
-
-    //public static class DashboardContactViewModelExtention
-    //{
-    //    private static async Task LoadDataContact(this DashboardContactViewModel dashboardViewModelBase)
-    //    {
-    //        //var list = _pixKeyService?.GetAll(isContact: true);
-
-    //        //dashboardViewModelBase.PixKeyList = list?.OrderBy(x => x?.FinancialInstitution?.Name)?.ToObservableCollection() ?? new ObservableCollection<PixKey>();
-
-    //        //await dashboardViewModelBase.LoadCurrentPixKey();
-    //    }
-    //}
 }
